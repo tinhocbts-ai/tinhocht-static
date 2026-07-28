@@ -114,6 +114,36 @@ Kiểm tra sau khi xoá: `curl -sI https://tinhocht.com/` phải trả 301 về 
 - Bộ khớp link đã sửa 3 lỗi nghiêm trọng: số quận bị nuốt (do quy tắc "24/7"), chữ "Tân" bị nuốt
   (do "tận nơi"), và điểm "chứa trọn" kéo mọi link về trang tổng. Kết quả: **50/50 link gãy nối đúng trang**.
 
+## 🚀 Tối ưu cho Google & trợ lý AI (28/07/2026)
+
+### Ảnh — đã nén
+`node tools/optimize-images.js --clean` → 551 ảnh sang WebP (tối đa 1000px, chất lượng 76):
+**20,7 MB → 7,0 MB (giảm 66%)**. Giữ nguyên 22 ảnh GIF động. Script tự cập nhật đường dẫn trong
+`data/images.json`, `export/pages-dom/*.json` và `data/bang-gia.json`.
+
+### Dữ liệu có cấu trúc (JSON-LD) — thứ Google Sites không cho làm
+`tools/schema.js` sinh theo từng loại trang, hồ sơ shop nằm ở `data/business.json`:
+
+| Loại | Số trang | Dùng để làm gì |
+|---|---:|---|
+| LocalBusiness + ComputerStore | 1 (trang chủ) | Tên, địa chỉ 79 Bắc Hải Q10, toạ độ thật từ Google Maps, giờ 8–19h, 19 khu vực, 9 mức giá, link Maps |
+| WebPage + BreadcrumbList | 158 | Hiện đường dẫn phân cấp ngay trong kết quả tìm kiếm |
+| Service | 93 | Dịch vụ gì, phục vụ quận nào (53 trang gắn quận cụ thể) |
+| HowTo | 21 | Bài có "Bước 1-2-3" rõ ràng, gồm cả 5 trang ngôi sao reset Epson |
+| Article | 37 | Bài hướng dẫn không có cấu trúc bước |
+| FAQPage | 12 | Chỉ trang thật sự có cặp hỏi–đáp hiển thị |
+| OfferCatalog | 1 | Bảng giá 9 nhóm, máy đọc được giá |
+
+**Nguyên tắc:** chỉ khai báo thứ THẬT SỰ hiển thị trên trang. Không bịa giá, không bịa đánh giá sao
+(khai khống là vi phạm chính sách Google, bị phạt nặng hơn là không khai).
+
+Kiểm tra: `node tools/check-schema.js` → 0 lỗi JSON, 0 trang gắn sai khu vực.
+
+**2 lỗi đã bắt được khi kiểm tra** (đáng nhớ nếu sau này sửa `tools/schema.js`):
+1. `quan-1` khớp nhầm cả `quan-10`, `quan-11`, `quan-12` → nay so khớp theo biên từ.
+2. Thiếu Quận 2 và Quận 9 trong danh sách khu vực (đã sáp nhập TP Thủ Đức từ 2021 nhưng khách
+   và Google vẫn tìm theo tên cũ, site cũng có trang riêng cho 2 khu vực này).
+
 ## ⏳ VIỆC CÒN LẠI
 
 1. **Đổi DNS + go-live** — xem mục "KHI GẮN TÊN MIỀN THẬT" ở trên (chờ chủ shop bấm nút).

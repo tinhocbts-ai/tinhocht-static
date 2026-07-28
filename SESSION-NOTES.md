@@ -1,120 +1,107 @@
 # SESSION NOTES — Migrate tinhocht.com: Google Sites → GitHub Pages
 
-> Đọc file này đầu tiên khi mở phiên mới cho dự án này. Trí nhớ dự án (memory) cũng đã lưu tóm tắt, nhưng file này chi tiết hơn để tiếp tục đúng mạch.
+> Đọc file này đầu tiên khi mở phiên mới cho dự án này.
 
 ## 📍 Bối cảnh
-tinhocht.com đang chạy Google Sites (traffic thật ~196k impressions/6 tháng, GSC). Đang khảo sát + bắt đầu build bản site tĩnh song song trên GitHub Pages, **chưa trỏ domain thật**, site Google Sites gốc vẫn chạy bình thường không bị đụng.
+tinhocht.com đang chạy Google Sites (traffic thật ~196k impressions/6 tháng theo GSC). Bản tĩnh chạy
+song song trên GitHub Pages, **chưa trỏ domain thật** — site Google Sites gốc vẫn chạy bình thường,
+không bị đụng vào.
 
-## 📂 2 thư mục liên quan
-
-| Thư mục | Vai trò |
-|---|---|
-| `D:\AUTOMATION\projects\tinhocht\export\` | Dữ liệu khảo sát: báo cáo, crawl 163 trang, đề xuất URL map (**KHÔNG đưa lên git public**) |
-| `D:\AUTOMATION\projects\tinhochtgithub\` | Code site tĩnh mới — đây là repo Git thật, đã push lên GitHub |
-
-## ✅ ĐÃ XONG
-
-### Giai đoạn 1 — Khảo sát (100%)
-- Crawl + kiểm kê đầy đủ **163/163 trang thật** của tinhocht.com (nội dung, ảnh, SĐT, cấu trúc URL).
-- Báo cáo đầy đủ: `D:\AUTOMATION\projects\tinhocht\export\BAO-CAO-KHAO-SAT-GIAI-DOAN-1.md` — **đọc file này để biết toàn bộ chi tiết** (trang "ngôi sao" không được đổi, rủi ro URL, v.v).
-- Đề xuất URL cũ→mới: `export/url-mapping-proposal.json` (149 dòng).
-- 21 trang đã đối chiếu nguyên văn xong (dùng Browser tool đọc DOM, không dùng WebFetch vì hay tóm lược sai).
-- **Các quyết định phạm vi đã chốt với chủ shop:**
-  - "Dịch vụ mạng tổng đài" → LOẠI BỎ khỏi migrate (dịch vụ cũ đã nghỉ, xác nhận trang này rỗng không có nội dung riêng).
-  - "Nạp mực máy in bill" → KHÔNG build đầy đủ, chỉ để trang giới thiệu ngắn + link trỏ sang `mucinht.com` (đúng theo bảng phân vùng keyword hệ thống — cụm máy in bill/POS thuộc site đó).
-  - (28/07/2026) SĐT lạ **089 886 0052** trên trang sửa máy tính quận 9 → khi build THAY bằng hotline công ty `0934 393 550`, không giữ số ngoài hệ thống (ngoại lệ được phép sửa).
-  - (28/07/2026) Link tải tool trên trang ngôi sao L3210 (và các link tương tự) trỏ sang `tinhocnamphong.net` → **GIỮ NGUYÊN** — chung hệ thống, chủ shop chấp nhận traffic qua lại.
-  - (28/07/2026) **SĐT 098 131 9853** (trang Gia Lai) → cũng GOM VỀ hotline `0934 393 550`.
-  - (28/07/2026) ⚠️ **QUAN TRỌNG NHẤT: KHÔNG ĐỔI SLUG URL** — giữ nguyên 100% từng ký tự URL gốc (kể cả dấu tiếng Việt `/liên-hệ`, chữ hoa `/Phan-mem-reset-may-in/`, `---` trong slug) vì site đang có traffic thật. **HỦY phương án đổi slug + redirect trong `url-mapping-proposal.json`** — file đó chỉ còn giá trị tham khảo pillar, KHÔNG dùng làm redirects.json. Nav/footer partials + index.html hiện đang link theo URL mới (`nap-muc-may-in/`, `lien-he/`...) → **PHẢI sửa về slug gốc** trước khi build tiếp (việc còn lại số 0 bên dưới).
-  - (28/07/2026) **Pillar sửa máy tính**: nghề này không làm nữa, giữ trang CHỈ để kéo traffic → build y nguyên nội dung, KHÔNG tối ưu/đầu tư thêm.
-
-### Giai đoạn 2 — Bắt đầu build (đang chạy)
-- **Cài `gh` CLI + đăng nhập** (winget install GitHub.cli, `gh auth login --web`, tài khoản `tinhocbts-ai`). Từ giờ dùng `git`/`gh` trực tiếp cho mọi thao tác GitHub — **không cần Claude in Chrome** (extension hay bị đứt kết nối trong phiên trước, đây là lối tắt ổn định hơn).
-- **Repo đã tạo:** `tinhocbts-ai/tinhocht-static` (public) — GitHub Pages đã bật.
 - **Demo:** https://tinhocbts-ai.github.io/tinhocht-static/
-- **Trang chủ (`index.html`) đã build xong đúng chuẩn:**
-  - Nội dung 100% nguyên văn (lấy từ DOM thật qua Browser tool, không tóm lược).
-  - 14 ảnh gốc đã tải về, tự host tại `assets/img/home/`.
-  - Logo header dùng đúng ảnh "HT" thật (`assets/img/logo-ht.jpg`), không phải icon tự vẽ.
-  - Menu mobile có nút đóng ✕ rõ ràng (fix bug bị đè khuất).
-  - **KHÔNG hiển thị email** `tinhocbts@gmail.com` ở bất kỳ đâu (đã gỡ khỏi footer + site.config.json — chủ shop không muốn email dùng chung nhiều site bị lộ ra site này).
-- Đã fix 1 bug quan trọng trong `build.js`: từng vô tình skip thư mục `partials/` khỏi build khiến header/footer trống — đã sửa.
+- **Repo:** `tinhocbts-ai/tinhocht-static` · code local `D:\AUTOMATION\projects\tinhochtgithub`
+- **Dữ liệu khảo sát/crawl:** `D:\AUTOMATION\projects\tinhocht\export\` (KHÔNG đưa lên git public)
 
-## 🔧 Công cụ / quy trình build (đọc kỹ trước khi build trang mới)
+## ✅ TRẠNG THÁI: đã dựng xong toàn bộ site (28/07/2026)
 
-**Quy tắc cứng: giữ nguyên 100% nội dung chữ + ảnh gốc khi build mỗi trang — chỉ đổi giao diện/CSS, KHÔNG viết lại câu chữ.** (trừ 2 ngoại lệ phạm vi đã nêu trên)
+| Hạng mục | Số liệu |
+|---|---|
+| Trang đã dựng | **162** (159 trang nội dung + trang chủ + 404 + stub `/home`) |
+| Nội dung | **149.654 từ**, trung bình 924 từ/trang — nguyên văn DOM thật |
+| Ảnh | **562 ảnh** tải về tự host `assets/img/p/` (23 MB) |
+| Link nội bộ | **0/21.208 gãy** (trước đó 187 link gãy) |
+| SEO cơ bản | 0 trang thiếu title/H1/canonical; 1 cặp title trùng ("BẢNG GIÁ" — xem việc còn lại) |
 
-Quy trình đúng cho MỖI trang (đã rút kinh nghiệm từ lỗi ở trang chủ — lần đầu dùng WebFetch bị tóm lược sai nội dung + quên ảnh):
-1. `mcp__Claude_Browser__navigate` mở đúng URL sống trên tinhocht.com (KHÔNG dùng WebFetch — hay tự ý tóm lược dù đã dặn).
-2. Lấy text chính xác: `javascript_tool` → `document.body.innerText` (hoặc đúng container).
-3. Lấy ảnh thật: `javascript_tool` → query `document.querySelectorAll('img')`, lấy `currentSrc`/`src`. **TUYỆT ĐỐI giữ nguyên URL, không sửa tham số `=w...` cuối URL googleusercontent — sửa là hỏng chữ ký, tải về bị lỗi 403.**
-4. Tải ảnh về bằng `curl` (Bash) — dùng đúng URL gốc là tải được bình thường.
-5. Viết HTML: giữ đúng thứ tự heading/đoạn/danh sách như bản gốc, không tự bịa section, không gộp/rút gọn.
-6. Build (`node build.js`), xem trước bằng server cục bộ (xem mục dưới) — **KHÔNG dùng `file://`** (bị giới hạn, partials không tải được do CORS).
-7. **Build xong 1 trang → DỪNG lại, chờ duyệt trước khi làm tiếp** (bài học: làm ẩu 1 lần cho nhiều trang sẽ nhân lỗi lên nhiều lần).
+### Quy trình build (3 lệnh)
 
-### Xem preview cục bộ
-- File `serve.js` trong `tinhochtgithub/` là static server nhẹ, port 8123.
-- Cấu hình sẵn ở `D:\AUTOMATION\projects\tinhocht\.claude\launch.json` (tên `tinhochtgithub-preview`) — gọi qua `preview_start` (Browser tool) là chạy được ngay.
+```bash
+node tools/crawl-dom.js     # crawl nguyên văn từ tinhocht.com + tải ảnh  (chạy lại khi site gốc đổi)
+node build-site.js          # dựng toàn bộ HTML + menu 2 cấp + sitemap
+node serve.js               # xem thử http://localhost:8123
+```
+Kiểm tra: `node tools/check-links.js` (link gãy) · `node tools/audit.js` (SEO, trang mỏng).
 
-### Danh sách/loại nội dung (mẹo SEO đã thống nhất)
-- Ký hiệu hiển thị (✓ hay •) — **không ảnh hưởng SEO gì cả** (Google chỉ đọc thẻ HTML, không đọc icon).
-- Dùng `<ol>` (số 1-2-3 thật) CHỈ cho nội dung **tuần tự thật sự** (quy trình các bước, hướng dẫn) — đây là chỗ AI Overview thực sự ưu tiên.
-- Dùng `<ul>` (bullet/✓) cho danh sách **không tuần tự** (lợi ích, tính năng, dịch vụ) — ép thành số không giúp gì thêm.
+Crawl thêm 1 URL lẻ: `node tools/crawl-dom.js "https://www.tinhocht.com/duong-dan"` (dùng URL đầy đủ,
+Git Bash sẽ bẻ `/duong-dan` thành đường dẫn Windows).
 
-### Bản nháp TOÀN BỘ URL — ĐÃ PUSH GitHub Pages (28/07/2026, commit 51e9870)
-- **Demo sống: https://tinhocbts-ai.github.io/tinhocht-static/** (chưa gắn domain — chủ shop yêu cầu "làm như web thật, đẩy github test luôn"). Mục lục duyệt: **`/tinhocht-static/danh-sach-trang/`**.
-- **`build-draft-all.js`** sinh **156 trang nháp + 2 stub bill** từ crawl `export/`, mỗi trang ĐÚNG slug gốc (thư mục Unicode + index.html), **dùng layout THẬT của site** (nhúng partials header/footer + style.css, prefix tương đối theo độ sâu — chủ shop đã chê bản khung tự chế ban đầu). Chạy lại: `node build-draft-all.js && node build.js` (build.js sau cùng để sinh stub `/home`→`/`).
-- Nhãn duyệt trên từng trang + mục lục: ✅ đã đối chiếu nguyên văn DOM (21) · ⚠️ bản WebFetch (build thật phải đối chiếu DOM lại) · 🔒 trang ẩn 0-traffic (12, chờ chốt bỏ/giữ).
-- `/home` = stub meta-refresh về `/` (hợp nhất trang chủ phân mảnh, báo cáo 4.1) qua `data/redirects.json` — build-draft-all chủ động skip `home` để không đè stub.
-- 2 SĐT ngoài hệ thống đã tự thay → hotline; **MỌI trang (kể cả index.html) đang `noindex` — GỠ khi gắn domain thật**; ảnh đang hotlink googleusercontent (tải về khi build thật từng trang).
-- `serve.js` nhận `PORT` env + phục vụ URL không `/` cuối; `launch.json` bật `autoPort`. Nav/footer partials + include.js + src/index.html **ĐÃ sửa xong về slug gốc** (việc #0 hoàn tất; include.js NESTED_PAGES = slug gốc + decodeURIComponent).
+### Cách hoạt động
 
-## ⏳ VIỆC CÒN LẠI (theo thứ tự ưu tiên)
+- **`tools/crawl-dom.js`** đọc thẳng HTML thật bằng `https.get` — Google Sites render sẵn nội dung
+  server-side nên lấy được nguyên văn 100%. **Tuyệt đối không dùng WebFetch** (tóm lược sai nội dung,
+  đây là lỗi đã mắc 2 lần trong dự án này). Parser quét token tuần tự, giữ đúng thứ tự h1/h2/h3/p/li/img.
+- **`build-site.js`** dựng mọi trang từ `export/pages-dom/*.json`:
+  - Menu 2 cấp sinh động từ cây URL thật (hover trên desktop, accordion trên mobile).
+  - Mỗi trang: breadcrumb → nội dung → CTA gọi/Zalo → mục lục trang con → bài liên quan.
+  - **Bộ khớp lại link gãy**: site gốc có sẵn ~187 link trỏ sai (viết không dấu, `đ`→`dh`, slug tự
+    đoán). Bộ khớp dùng khoá chuẩn hoá + trùng token + **cặp từ liền kề** (để không nhầm
+    "Tân Bình" với "Bình Tân"). Báo cáo: `export/link-fix-report.json`.
+  - Trang chủ lấy `src/index.html` (có hero riêng), chèn header/footer rồi ghi ra `index.html`.
 
-0. ~~Sửa nav/footer partials + index.html về slug GỐC~~ ✅ XONG 28/07 (commit 46283a6).
-1. **8 trang "ngôi sao"** (CTR cao nhất, top 1-5 — xem mục 3 báo cáo khảo sát) — ưu tiên cao nhất, làm từng trang 1, dừng lại duyệt sau mỗi trang:
-   - `/thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310`
-   - `/Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210`
-   - `/Phan-mem-reset-may-in/phan-mem-reset-epson-l3110`
-   - `/Phan-mem-reset-may-in/phan-mem-reset-epson-l1110`
-   - `/Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150`
-   - `/home/nap-muc-may-in-quan-10`
-   - `/home/nap-muc-may-in-quan-tan-binh`
-   - `/home/nap-muc-may-in-quan-tan-phu`
-2. ~155 trang còn lại, theo pillar (nạp mực quận → reset máy in → sửa máy tính → blog thủ thuật → sửa máy in → bán máy in cũ).
-3. **2 trang "Bảng giá" trùng nhau** (`/bang-gia-nap-muc-may-in-tan-noi` và `/bảng-giá` cấp 1 ẩn) — cần hỏi chủ shop giữ/gộp cái nào trước khi build.
-3b. **Trang tỉnh xa (ngoài TPHCM)** — chủ shop cho biết (28/07/2026) các trang này làm để ăn traffic VÀ có người quen ở tỉnh chạy được đơn thật → nghiêng về GIỮ. Khuyến nghị đã đưa: giữ 7 trang CÓ traffic (Gia Lai 619 impr — có địa chỉ chi nhánh thật 409 Hẻm 42 Lê Lợi Pleiku, Bình Dương 913, Mỹ Tho 489, Quy Nhơn 301, Bình Phước 268, Bắc Ninh 241, Kon Tum 99), BỎ 13 trang tỉnh ẩn 0-traffic (đúng đề xuất mục 5.5 báo cáo). Chờ chủ shop chốt hẳn; nếu giữ thì cập nhật luôn file phân vùng keyword (tinhocht không chỉ TPHCM). Lưu ý phụ: trang Gia Lai có SĐT riêng 098 131 9853 (có thể là số người quen ở tỉnh?) — hỏi chủ shop giữ hay thay khi build trang đó.
-4. `data/redirects.json` — điền đầy đủ từ `export/url-mapping-proposal.json` (đang để trống `{}`).
-5. Trang "Nạp mực máy in bill" → build dạng rút gọn + link sang mucinht.com (không phải trang đầy đủ).
-6. Sau khi build xong hết + duyệt demo → mới bàn bước trỏ domain thật (ngoài phạm vi hiện tại, cần duyệt riêng).
+## 🔒 Nguyên tắc bất di bất dịch
 
-## ⚠️ VẤN ĐỀ KẾT NỐI "Claude in Chrome" (claude-in-chrome extension) — hay bị đứt
+1. **KHÔNG đổi slug URL** — giữ nguyên 100% ký tự đường dẫn gốc (dấu tiếng Việt `/liên-hệ`, chữ hoa
+   `/Phan-mem-reset-may-in/`, `---` trong slug). Site có traffic thật, đổi URL là mất ranking.
+   Phương án đổi slug + redirect trong `export/url-mapping-proposal.json` đã **HỦY**.
+2. **Giữ nguyên văn nội dung + ảnh gốc**, chỉ nâng cấp giao diện/CSS.
+3. Ngoại lệ đã chốt với chủ shop:
+   - SĐT ngoài hệ thống `089 886 0052` (trang Q9) và `098 131 9853` (trang Gia Lai) → **gom về hotline
+     `0934 393 550`** (build tự thay, kể cả khi có non-breaking space).
+   - Trang **"nạp mực máy in bill"** → chỉ giới thiệu ngắn + link sang mucinht.com.
+   - **Loại khỏi phạm vi:** "dịch vụ mạng tổng đài" (đã nghỉ kinh doanh), "untitled page" (trang rác).
+   - Link tải tool trỏ sang **tinhocnamphong.net** → **GIỮ NGUYÊN** (chung hệ thống).
+   - **KHÔNG hiển thị email** `tinhocbts@gmail.com` ở bất kỳ trang nào.
+4. **Pillar sửa máy tính**: nghề không làm nữa, giữ trang chỉ để kéo traffic — build y nguyên,
+   không đầu tư tối ưu thêm.
+5. 8 trang "ngôi sao" (CTR cao, top 1-5): nạp mực Q10/Tân Bình/Tân Phú, reset Epson
+   L310/L3210/L1110/L3110/L3150 — không đổi title/URL. Lưu ý **title thật trên site đã khác bản GSC cũ**
+   ở 8 trang (đợt SEO batch sửa) — build lấy title thật hiện tại, không lấy từ GSC export.
 
-**Hiện tượng:** Extension Claude trong Chrome thật của anh (side panel anh hay dùng để sửa Google Sites) **hay bị mất kết nối với phiên chat** — gọi `tabs_context_mcp` / `list_connected_browsers` báo lỗi *"Claude in Chrome is not connected"*.
+## 🌐 KHI GẮN TÊN MIỀN THẬT (bước tiếp theo, cần chủ shop duyệt)
 
-**Đã thử ở phiên trước — KHÔNG cái nào fix được:**
-1. Đóng side panel trong Chrome
-2. Restart toàn bộ Chrome (đóng hết cửa sổ, mở lại)
-3. Tắt/bật lại extension trong `chrome://extensions`
-4. Xác nhận đăng nhập đúng tài khoản
+```bash
+NOINDEX=0 node build-site.js          # bỏ thẻ noindex khỏi toàn bộ trang
+echo tinhocht.com > CNAME             # tạo file CNAME ở thư mục gốc repo
+git add -A && git commit -m "Go live: bo noindex + them CNAME" && git push
+```
+Sau đó:
+1. DNS tại nhà cung cấp domain: 4 bản ghi **A** cho `tinhocht.com` → `185.199.108.153`,
+   `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; bản ghi **CNAME** cho `www` →
+   `tinhocbts-ai.github.io`.
+2. GitHub → repo → Settings → Pages → điền custom domain `tinhocht.com` → bật **Enforce HTTPS**
+   (chờ cấp chứng chỉ vài phút).
+3. Google Search Console: gửi lại `sitemap.xml`, dùng URL Inspection kiểm 8 trang ngôi sao.
+4. **Chỉ tắt Google Sites sau khi** bản tĩnh đã chạy đúng trên domain thật và index bình thường.
 
-→ Ngay cả lệnh chẩn đoán gốc (`list_connected_browsers`, không cần chọn đúng Chrome/profile) cũng lỗi y hệt → **kết luận: lỗi nằm ở phía kết nối của phiên chat, không phải cấu hình Chrome.** Đừng tốn công thử lại 4 cách trên nữa.
+⚠️ Bản demo đang để `noindex` toàn site để Google không index trùng nội dung với site thật đang chạy.
 
-**Cách duy nhất từng fix được:** mở **cuộc trò chuyện mới** trong app — phiên mới thường tự bắt tay lại được với extension.
+## ⏳ VIỆC CÒN LẠI
 
-### 🎯 Quan trọng: đa số việc KHÔNG CẦN extension này, dùng thứ khác thay được
+1. **2 trang "Bảng giá" trùng title** — `/bang-gia-nap-muc-may-in-tan-noi` và `/bảng-giá` (trang ẩn cấp 1,
+   8 ảnh bảng giá theo hãng). Cần chủ shop chốt giữ/gộp cái nào.
+2. **12 trang ẩn 0-traffic** (11 trang tỉnh xa Bình Dương/Vũng Tàu/Bạc Liêu/Bắc Kạn/Bắc Giang/Long Xuyên
+   + trang lẻ) — chủ shop nói *"mấy cái ở tỉnh do muốn ăn traffic, có người quen chạy làm được"* nên
+   **tạm GIỮ**; chốt lại lần cuối trước khi go-live.
+3. **Nén ảnh** — 562 ảnh/23 MB đang là bản gốc từ Google. Có thể chuyển WebP ≤640px để trang nhẹ hơn
+   (chưa làm, không chặn go-live).
+4. 4 trang mỏng <120 từ: `ban-may-in-cu-gia-re`, `home/nap-muc-may-in-mau-tai-nha/thay-muc-may-in-mau-hp`,
+   `nap-muc-may-in-bill.../thay-muc-may-in-bill-epson-tm-u220` (bill — cố ý ngắn), `404.html` (bình thường).
+5. Sau go-live: theo dõi GSC 2-4 tuần, so ranking 8 trang ngôi sao trước/sau.
 
-| Việc cần làm | Đừng dùng | Dùng thay bằng |
-|---|---|---|
-| Đọc nội dung/ảnh thật trên tinhocht.com (để build lại) | ~~claude-in-chrome~~ | **`mcp__Claude_Browser__*`** (Browser pane tích hợp sẵn trong app — KHÁC HẲN Chrome thật, KHÔNG phụ thuộc extension, luôn hoạt động ổn định suốt phiên trước) |
-| Preview site tĩnh cục bộ khi build | ~~claude-in-chrome~~ | `mcp__Claude_Browser__preview_start` + `serve.js` (xem mục trên) |
-| Tạo repo / push / mọi thao tác GitHub | ~~claude-in-chrome~~ | `gh` CLI + `git` trực tiếp qua Bash (đã cài + auth sẵn, xem mục dưới) |
-| **Sửa nội dung TRÊN Google Sites gốc** (site cũ đang chạy) | — | **CHỈ việc này mới thật sự cần** side panel Chrome thật + shortcut `seo-mayin` (xem `googlesite-shortcut-bridge.md` trong trí nhớ). Nếu đứt kết nối lúc cần việc này → mở phiên mới. |
+## 🔧 Ghi chú kỹ thuật
 
-**Tóm lại:** nếu thấy "not connected", đừng loay hoay sửa Chrome — 90% việc của dự án này (đọc trang, build site, push code) đều làm được bằng `mcp__Claude_Browser` + `gh`/`git`, không đụng tới extension đó.
-
-## 🔑 Thông tin kỹ thuật nhanh
-- GitHub: `tinhocbts-ai/tinhocht-static` · `gh` CLI đã auth sẵn, dùng thẳng `git push` bình thường.
-- Hotline chính: `0934 393 550` · Zalo: `089 886 9964` · Địa chỉ: `79 Đường Bắc Hải, Phường 15, Quận 10, TP.HCM`.
-- KHÔNG hiển thị email `tinhocbts@gmail.com` ở site này.
+- **Claude in Chrome (extension) hay mất kết nối** — đừng loay hoay sửa Chrome. 90% việc dùng được
+  `mcp__Claude_Browser__*` (Browser pane tích hợp) + `git`/`gh` CLI. Chỉ việc **sửa nội dung trên
+  Google Sites gốc** mới cần side panel Chrome thật (shortcut `seo-mayin`).
+- `gh` CLI không có trong PATH của Git Bash → gọi bằng đường dẫn đầy đủ trong PowerShell:
+  `& "$env:LOCALAPPDATA\Microsoft\WinGet\Links\gh.exe" api ...`
+- `serve.js` nhận `PORT` từ env và phục vụ URL không có `/` cuối; `.claude/launch.json` bật `autoPort`.
+- Nhánh git là **master** (không phải main).

@@ -195,6 +195,14 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 .gallery-grid img { width: 100%; height: 100%; object-fit: contain; margin: 0; border: 0; }
 .price-more { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: .93rem; }
 
+/* Bảng giá rút gọn nhúng trong bài viết hỏi về giá */
+.price-inline { margin: 34px 0; padding: 22px 24px; background: var(--bg-alt); border: 1px solid var(--line); border-radius: 14px; }
+.price-inline h2 { margin-top: 0; }
+.price-inline .price-table-wrap { background: #fff; }
+.price-table-compact th[scope="row"] { width: auto; }
+.price-table-compact .pt-gia { width: 150px; }
+.price-inline .price-notes { margin-bottom: 16px; }
+
 /* Responsive */
 @media (max-width: 860px) {
   .card-grid, .link-list { grid-template-columns: 1fr; }

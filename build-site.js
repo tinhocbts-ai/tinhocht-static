@@ -381,6 +381,36 @@ function relatedSection(page, pages, prefix) {
 const PRICE_PATH = 'bang-gia-nap-muc-may-in-tan-noi';   // trang chính (đang có traffic GSC)
 const PRICE_MERGED = 'bảng-giá';                        // trang trùng nội dung -> chuyển hướng về trang chính
 
+/* Trang hỏi về giá nhưng bản gốc Google Sites bị rớt cột giá (chỉ còn danh sách máy).
+   Chèn thẳng bảng giá thật vào để khách đọc là biết luôn, không phải nhảy sang trang khác. */
+const PRICE_EMBED = new Set([
+  'home/bơm-mực-máy-in-bao-nhiêu-tiền',
+  'home/nap-muc-may-in-gia-re-tp-hcm---chi-con-80k/nạp-mực-máy-in-giá-bao-nhiêu-rẻ-nhất-247',
+]);
+
+function priceTableCompact(prefix) {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'bang-gia.json'), 'utf8'));
+  const rows = data.nhom.map(g => `<tr>
+            <th scope="row"><span class="pt-hang">${esc(g.hang)}</span><span class="pt-loai">${esc(g.loai)}</span></th>
+            <td class="pt-gia"><strong>${esc(g.gia)}</strong><small>${esc(data.donVi)}</small></td>
+          </tr>`).join('\n          ');
+  return `
+      <section class="price-inline">
+        <h2>Giá nạp mực máy in bao nhiêu tiền?</h2>
+        <p>Bảng giá áp dụng tại TP.HCM, đã gồm công đến tận nơi — không phụ thu phí đi lại:</p>
+        <div class="price-table-wrap">
+          <table class="price-table price-table-compact">
+            <thead><tr><th scope="col">Loại máy in</th><th scope="col">Giá nạp mực</th></tr></thead>
+            <tbody>
+          ${rows}
+            </tbody>
+          </table>
+        </div>
+        <ul class="price-notes"><li>${data.ghiChu.slice(0, 2).map(esc).join('</li><li>')}</li></ul>
+        <p><a class="btn btn-outline" href="${prefix}${encPath(PRICE_PATH)}/">Xem bảng giá đầy đủ theo từng dòng máy →</a></p>
+      </section>`;
+}
+
 function renderPricePage(page, pages, prefix) {
   const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'bang-gia.json'), 'utf8'));
 
@@ -465,6 +495,7 @@ function build() {
         '<p>Cần hỗ trợ nhanh, quý khách vui lòng gọi <a href="tel:' + cfg.hotlineTel + '">' + cfg.hotlineDisplay + '</a>.</p>';
     } else {
       body = '<h1>' + esc(page.title) + '</h1>\n      ' + renderBlocks(page.blocks, prefix, prefix, page.path);
+      if (PRICE_EMBED.has(page.path)) body += priceTableCompact(prefix);
     }
 
     const html = `<!DOCTYPE html>

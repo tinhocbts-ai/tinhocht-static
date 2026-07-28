@@ -571,7 +571,11 @@ ${renderFooter(menu, prefix)}
   console.log('Link nội bộ gãy sẵn trên site gốc: đã khớp lại ' + rep.khopLai.length +
     ' kiểu link, không khớp được ' + rep.khongKhop.length + ' (trỏ tạm về trang chủ) — xem export/link-fix-report.json');
 
-  console.log('Đã dựng ' + n + ' trang (nguyên văn DOM) + sitemap ' + urls.length + ' URL.');
+  // robots.txt — mở cho mọi bot + chỉ đường tới sitemap
+  fs.writeFileSync(path.join(ROOT, 'robots.txt'),
+    'User-agent: *\nAllow: /\n\nSitemap: ' + SITE_URL + '/sitemap.xml\n', 'utf8');
+
+  console.log('Đã dựng ' + n + ' trang (nguyên văn DOM) + sitemap ' + urls.length + ' URL + robots.txt.');
   console.log('Menu 2 cấp: ' + menu.map(m => m.label + '(' + m.children.length + ')').join(', '));
   console.log(NOINDEX ? 'noindex: BẬT (demo). Gắn domain thật: NOINDEX=0 node build-site.js' : 'noindex: TẮT — bản production.');
 }

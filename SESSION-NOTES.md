@@ -83,10 +83,20 @@ Sau đó:
 
 ⚠️ Bản demo đang để `noindex` toàn site để Google không index trùng nội dung với site thật đang chạy.
 
-## ⏳ VIỆC CÒN LẠI
+## 🔀 Gộp trang trùng & trang chuyển hướng (28/07/2026)
 
-1. **2 trang "Bảng giá" trùng title** — `/bang-gia-nap-muc-may-in-tan-noi` và `/bảng-giá` (trang ẩn cấp 1,
-   8 ảnh bảng giá theo hãng). Cần chủ shop chốt giữ/gộp cái nào.
+- **2 trang "Bảng giá" đã gộp**: nội dung dồn về `/bang-gia-nap-muc-may-in-tan-noi` (trang có traffic GSC),
+  còn `/bảng-giá` **giữ nguyên URL** nhưng thành trang chuyển hướng → **không link nào bị gãy**.
+  Khai báo trong `MERGE_INTO` (build-site.js) — muốn gộp thêm trang nào chỉ cần thêm 1 dòng.
+- Trang bảng giá được dựng lại từ `data/bang-gia.json`: bảng 9 nhóm hãng × (dòng máy · đơn giá · ảnh máy in),
+  4 chỉ số nổi bật, ghi chú giá, khối cam kết. **Sửa giá chỉ cần sửa JSON** rồi build lại.
+  Title cũ "BẢNG GIÁ" (trùng, GSC vị trí 27) đã đổi qua `TITLE_OVERRIDE` — không đụng title 8 trang ngôi sao.
+- **52 trang chuyển hướng** sinh tự động cho URL cũ/sai (link gãy sẵn trên site gốc + `/home` + `/bảng-giá`),
+  ai vào URL cũ vẫn ra đúng nội dung. Stub luôn được ghi đè mỗi lần build (tránh giữ lại đích sai cũ).
+- Bộ khớp link đã sửa 3 lỗi nghiêm trọng: số quận bị nuốt (do quy tắc "24/7"), chữ "Tân" bị nuốt
+  (do "tận nơi"), và điểm "chứa trọn" kéo mọi link về trang tổng. Kết quả: **50/50 link gãy nối đúng trang**.
+
+## ⏳ VIỆC CÒN LẠI
 2. **12 trang ẩn 0-traffic** (11 trang tỉnh xa Bình Dương/Vũng Tàu/Bạc Liêu/Bắc Kạn/Bắc Giang/Long Xuyên
    + trang lẻ) — chủ shop nói *"mấy cái ở tỉnh do muốn ăn traffic, có người quen chạy làm được"* nên
    **tạm GIỮ**; chốt lại lần cuối trước khi go-live.

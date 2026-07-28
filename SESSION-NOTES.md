@@ -144,6 +144,29 @@ Kiểm tra: `node tools/check-schema.js` → 0 lỗi JSON, 0 trang gắn sai khu
 2. Thiếu Quận 2 và Quận 9 trong danh sách khu vực (đã sáp nhập TP Thủ Đức từ 2021 nhưng khách
    và Google vẫn tìm theo tên cũ, site cũng có trang riêng cho 2 khu vực này).
 
+## 🔗 Cấu trúc file & URL — ĐỌC TRƯỚC KHI SỬA BUILD
+
+**Mỗi trang là một FILE `<đường-dẫn>.html`, KHÔNG phải thư mục `<đường-dẫn>/index.html`.**
+
+Lý do (đã kiểm chứng bằng 3 trang thử trên chính domain, 28/07/2026):
+
+| Cấu trúc trong repo | Khi khách/Google vào `/duong-dan` |
+|---|---|
+| `duong-dan.html` | **200 trực tiếp** ✅ |
+| `duong-dan/index.html` | **301** chuyển sang `/duong-dan/` ❌ |
+| có cả hai | `/duong-dan` lấy file · `/duong-dan/` lấy thư mục (2 URL trùng nội dung — tránh) |
+
+Google đã index toàn bộ URL dạng **không có dấu `/` cuối**. Nếu build ra thư mục, mỗi lần Google
+ghé đều gặp 301 → Search Console báo *"chưa được lập chỉ mục"*. Đây chính là lỗi đã gặp và đã
+sửa ngày 28/07/2026. **Đừng đổi ngược lại.**
+
+Kéo theo: canonical, sitemap, menu, breadcrumb, link nội bộ, trang chuyển hướng — tất cả đều
+KHÔNG có dấu `/` cuối. `serve.js` và `tools/check-links.js` đã mô phỏng đúng cách GitHub Pages
+phân giải URL (thử `<path>.html` trước, rồi mới tới `<path>/index.html`).
+
+Có file `.nojekyll` ở gốc repo: tắt Jekyll để nó không bỏ qua file bắt đầu bằng `_` và không xử
+lý lạ với thư mục tên tiếng Việt.
+
 ## ⏳ VIỆC CÒN LẠI
 
 1. **Đổi DNS + go-live** — xem mục "KHI GẮN TÊN MIỀN THẬT" ở trên (chờ chủ shop bấm nút).

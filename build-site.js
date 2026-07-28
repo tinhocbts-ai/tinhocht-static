@@ -474,7 +474,7 @@ function build() {
 <title>${esc(TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].title : page.title)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="${esc(TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].desc : metaDescOf(page))}">
-<link rel="canonical" href="${SITE_URL}/${encPath(page.path)}">${NOINDEX ? '\n<meta name="robots" content="noindex"><!-- demo github.io — bỏ dòng này khi gắn domain thật (NOINDEX=0) -->' : ''}
+<link rel="canonical" href="${SITE_URL}/${encPath(page.path)}/">${NOINDEX ? '\n<meta name="robots" content="noindex"><!-- demo github.io — bỏ dòng này khi gắn domain thật (NOINDEX=0) -->' : ''}
 <link rel="stylesheet" href="${prefix}assets/css/style.css">
 </head>
 <body>
@@ -536,7 +536,7 @@ ${renderFooter(menu, prefix)}
     if (fs.existsSync(cur) && !/http-equiv="refresh"/.test(fs.readFileSync(cur, 'utf8'))) return false;
     const depth = fromPath.split('/').length;
     const target = '../'.repeat(depth) + (toPath ? encPath(toPath) + '/' : '');
-    const canon = SITE_URL + '/' + (toPath ? encPath(toPath) : '');
+    const canon = SITE_URL + '/' + (toPath ? encPath(toPath) + '/' : '');
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'),
       '<!DOCTYPE html>\n<html lang="vi">\n<head>\n<meta charset="UTF-8">\n<title>Đang chuyển hướng…</title>\n' +
@@ -556,7 +556,7 @@ ${renderFooter(menu, prefix)}
 
   // sitemap: trang chủ + tất cả trang (kể cả khi noindex, để sẵn cho lúc gắn domain)
   const today = new Date().toISOString().slice(0, 10);
-  const urls = [SITE_URL + '/'].concat(pages.map(p => SITE_URL + '/' + encPath(p.path)).sort());
+  const urls = [SITE_URL + '/'].concat(pages.map(p => SITE_URL + '/' + encPath(p.path) + '/').sort());
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map(u => '  <url><loc>' + u + '</loc><lastmod>' + today + '</lastmod></url>').join('\n') +

@@ -195,15 +195,15 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 .gallery-grid img { width: 100%; height: 100%; object-fit: contain; margin: 0; border: 0; }
 .price-more { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: .93rem; }
 
-/* Khối dẫn sang website cùng hệ thống (mucinht.com — mảng máy in bill/tem) */
-.cross-site { margin: 34px 0; padding: 22px 24px; border: 1px solid var(--line); border-left: 4px solid var(--brand-dark);
-  border-radius: 12px; background: linear-gradient(180deg, var(--bg-alt), #fff); }
-.cross-site h2 { margin: 0 0 10px; font-size: 1.12rem; }
-.cross-site p { margin: 0 0 10px; }
-.cross-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
-.cross-note { font-size: .88rem; color: var(--muted); margin: 12px 0 0; }
-.cross-site-slim { padding: 14px 18px; background: var(--bg-alt); }
-.cross-site-slim p { margin: 0; font-size: .93rem; }
+/* Dòng dẫn nhẹ sang website cùng hệ thống — đặt cuối bài, cỡ chữ nhỏ, không phô trương */
+.cross-hint { margin: 26px 0 0; padding-top: 14px; border-top: 1px solid var(--line);
+  font-size: .88rem; color: var(--muted); }
+.cross-hint a { color: var(--brand-dark); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Dẫn sang bài hướng dẫn cùng site (gom sức mạnh về một bài chủ lực) */
+.inline-guide { margin: 26px 0; padding: 14px 18px; background: var(--bg-alt);
+  border-left: 3px solid var(--brand); border-radius: 8px; }
+.inline-guide p { margin: 0; font-size: .95rem; }
 
 /* Bảng giá rút gọn nhúng trong bài viết hỏi về giá */
 .price-inline { margin: 34px 0; padding: 22px 24px; background: var(--bg-alt); border: 1px solid var(--line); border-radius: 14px; }

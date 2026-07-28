@@ -61,6 +61,19 @@ const TITLE_OVERRIDE = {
     title: 'Top 3 Máy In Đơn Hàng Giá Rẻ Cho Shop Online — Chọn Loại Nào?',
     desc: 'So sánh 3 máy in dùng để in đơn hàng cho shop bán online: máy in A4 Canon 2900 in đơn tiết kiệm, và các lựa chọn khác. Kèm giá nạp mực thực tế và tư vấn chọn theo lượng đơn mỗi ngày.',
   },
+  /* Bài hướng dẫn ruy băng đang đứng vị trí 6,3 với 727 lượt hiển thị nhưng chỉ 24 lượt nhấp
+     (3,3% — thấp so với vị trí này). Giữ nguyên title vì đang xếp hạng tốt, chỉ viết mô tả
+     riêng thay cho đoạn tự cắt, để người tìm thấy ngay "có hình từng bước, tự làm được". */
+  'thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-thay-ruy-bang-may-in-hoa-dhon-epson-lq-300-310-2190': {
+    title: 'Hướng Dẫn Cách Thay Ruy Băng Máy In Hóa Đơn Epson LQ 300/310/2190',
+    desc: 'Cách thay ruy băng (băng mực) máy in kim Epson LQ 300+, LQ 310, LQ 2190 — hướng dẫn từng bước kèm hình, tự làm tại chỗ trong 5 phút, không cần gọi thợ. Kèm mẹo tránh kẹt băng và lệch mực.',
+  },
+  /* Trang này trùng chủ đề với bài trên nên bị chia phiếu (vị trí 16, 0 lượt nhấp). Nội dung thật
+     của nó là TRANG DỊCH VỤ, nên đổi title theo hướng "thay tận nơi" để tách khỏi ý định "tự làm". */
+  'home/thay-ruy-bang-muc-may-in-kim-epson-lq-300-lq-310': {
+    title: 'Thay Ruy Băng Máy In Kim Epson LQ 300/310 Tận Nơi TP.HCM',
+    desc: 'Dịch vụ thay ruy băng máy in kim Epson LQ 300, LQ 310, LQ 2190 tận nơi tại TP.HCM — kỹ thuật có mặt trong 20–30 phút, có sẵn băng mực, kiểm tra đầu kim và căn chỉnh bản in trước khi bàn giao.',
+  },
   'bang-gia-nap-muc-may-in-tan-noi': {
     title: 'Bảng Giá Nạp Mực Máy In Tận Nơi TP.HCM — Công Khai, Không Phụ Thu',
     desc: 'Bảng giá nạp mực máy in tận nơi TP.HCM của Tin Học HT: laser trắng đen từ 90.000đ, laser màu 300.000đ, in phun 90.000đ. Miễn phí đi lại nội thành, có mặt 20–30 phút, bảo hành đến hết mực.',
@@ -413,34 +426,50 @@ const MUCINHT = {
   service: 'https://mucinht.com/category/dich-vu-sua-chua/sua-may-in-bill-ma-vach/',
   home: 'https://mucinht.com/',
 };
+/* Chỉ 3 trang thuộc mảng in nhiệt / in hoá đơn mới dẫn sang mucinht, và dẫn NHẸ:
+   một dòng chữ cuối bài, không tiêu đề, không nút — chỉ để anchor mang từ khoá đi qua.
+   2 bài ruy băng máy in kim KHÔNG dẫn đi: đó là ngách nạp mực/ruy băng của chính tinhocht. */
 const CROSS_LINK = {
-  'nap-muc-may-in-bill---thay-muc-may-in-hoa-don': 'chinh',
-  'nap-muc-may-in-bill---thay-muc-may-in-hoa-don/thay-muc-may-in-bill-epson-tm-u220': 'chinh',
-  'thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-thay-ruy-bang-may-in-hoa-dhon-epson-lq-300-310-2190': 'phu',
-  'home/thay-ruy-bang-muc-may-in-kim-epson-lq-300-lq-310': 'phu',
-  'thu-thuat-tin-hoc/top-3-máy-in-chuyên-in-đơn-hàng-giá-rẻ-tiết-kiệm-chi-phí': 'phu',
+  'nap-muc-may-in-bill---thay-muc-may-in-hoa-don': {
+    truoc: 'Khách cần thay máy, mua giấy in nhiệt khổ 80mm hoặc',
+    anchor: 'sửa máy in bill, máy in tem mã vạch',
+    sau: 'có thể xem thêm bên mucinht.com cùng hệ thống.',
+  },
+  'nap-muc-may-in-bill---thay-muc-may-in-hoa-don/thay-muc-may-in-bill-epson-tm-u220': {
+    truoc: 'Ngoài ra, nếu cần',
+    anchor: 'máy in hoá đơn Epson và giấy in nhiệt khổ 80mm',
+    sau: 'thì bên mucinht.com có sẵn hàng.',
+  },
+  'thu-thuat-tin-hoc/top-3-máy-in-chuyên-in-đơn-hàng-giá-rẻ-tiết-kiệm-chi-phí': {
+    truoc: 'Shop in nhiều đơn mỗi ngày thường chuyển sang',
+    anchor: 'máy in nhiệt in tem vận đơn khổ A6',
+    sau: '— dòng máy này bên mucinht.com có bán và bảo hành.',
+  },
 };
 
-function crossLinkBlock(kieu) {
-  if (kieu === 'chinh') {
-    return `
-      <aside class="cross-site">
-        <h2>Máy in bill · hoá đơn · tem mã vạch — xem tại Mực In Hưng Thịnh</h2>
-        <p>Riêng mảng máy in bill, máy in hoá đơn và máy in tem mã vạch, hệ thống chúng tôi phục vụ
-           tại <strong>mucinht.com</strong> — nơi có sẵn máy, linh kiện, giấy in nhiệt và thợ chuyên
-           dòng máy này.</p>
-        <p class="cross-actions">
-          <a class="btn btn-primary" href="${MUCINHT.service}" target="_blank" rel="noopener">Sửa máy in bill &amp; mã vạch →</a>
-          <a class="btn btn-outline" href="${MUCINHT.home}" target="_blank" rel="noopener">Xem máy in bill, giấy in nhiệt</a>
-        </p>
-        <p class="cross-note">Cần gấp trong ngày, gọi thẳng <a href="tel:${cfg.hotlineTel}">${cfg.hotlineDisplay}</a> — cùng một hệ thống kỹ thuật.</p>
-      </aside>`;
-  }
+function crossLinkBlock(o) {
   return `
-      <aside class="cross-site cross-site-slim">
-        <p><strong>Máy in bill, máy in hoá đơn, máy in tem mã vạch?</strong>
-           Mảng này do <a href="${MUCINHT.service}" target="_blank" rel="noopener">mucinht.com</a>
-           phụ trách — có sẵn máy, giấy in nhiệt, ruy băng và thợ chuyên dòng máy in bill.</p>
+      <p class="cross-hint">${esc(o.truoc)}
+        <a href="${MUCINHT.service}" rel="noopener">${esc(o.anchor)}</a> ${esc(o.sau)}</p>`;
+}
+
+/* Hai bài cùng nhắm cụm "thay ruy băng máy in kim Epson LQ" đang giẫm chân nhau trên Google:
+   bài hướng dẫn (290 từ) đứng vị trí 6,3 với 24 lượt nhấp, còn trang dịch vụ (929 từ) đứng
+   vị trí 16 và 0 lượt nhấp. Cho trang yếu trỏ về bài mạnh để dồn tín hiệu về một chỗ. */
+const BOOST_LINK = {
+  'home/thay-ruy-bang-muc-may-in-kim-epson-lq-300-lq-310': {
+    to: 'thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-thay-ruy-bang-may-in-hoa-dhon-epson-lq-300-310-2190',
+    anchor: 'Hướng dẫn cách thay ruy băng máy in kim Epson LQ 300 / LQ 310 / LQ 2190',
+    lead: 'Muốn tự thay ruy băng tại chỗ, xem hướng dẫn từng bước kèm hình:',
+  },
+};
+
+function boostLinkBlock(cfgBoost, prefix) {
+  return `
+      <aside class="inline-guide">
+        <p>${esc(cfgBoost.lead)}
+          <a href="${prefix}${encPath(cfgBoost.to)}.html"><strong>${esc(cfgBoost.anchor)}</strong></a>
+        </p>
       </aside>`;
 }
 
@@ -552,9 +581,10 @@ function build() {
     } else {
       body = '<h1>' + esc(page.title) + '</h1>\n      ' + renderBlocks(page.blocks, prefix, prefix, page.path);
       if (PRICE_EMBED.has(page.path)) body += priceTableCompact(prefix);
-      /* Trang thuộc mảng bill/hoá đơn/tem: giữ nguyên nội dung (đang có thứ hạng thật)
-         và thêm khối dẫn khách sang mucinht.com */
+      /* Mảng in nhiệt/hoá đơn: giữ nguyên nội dung (đang có thứ hạng thật), chỉ dẫn nhẹ sang mucinht */
       if (CROSS_LINK[page.path]) body += crossLinkBlock(CROSS_LINK[page.path]);
+      /* Trang trùng chủ đề: trỏ về bài hướng dẫn đang xếp hạng tốt hơn */
+      if (BOOST_LINK[page.path]) body += boostLinkBlock(BOOST_LINK[page.path], prefix);
     }
 
     const pageTitle = TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].title : page.title;

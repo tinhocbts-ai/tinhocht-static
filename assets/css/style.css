@@ -1,0 +1,110 @@
+/* Tin Học HT — static site stylesheet. Palette: xanh lá đậm (#1f8a70) + navy (#0f3d5c), accent cam CTA (#ff7a30). */
+:root {
+  --brand: #1f8a70;
+  --brand-dark: #0f3d5c;
+  --accent: #ff7a30;
+  --ink: #1c2733;
+  --muted: #56626e;
+  --line: #e3e9f0;
+  --bg-alt: #f5f8fc;
+  --radius: 14px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', Roboto, Arial, sans-serif; color: var(--ink); line-height: 1.6; }
+img { max-width: 100%; display: block; }
+a { color: var(--brand-dark); text-decoration: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 20px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+.logo-text-1 { color: var(--brand-dark); font-weight: 800; }
+.logo-text-2 { color: var(--brand); font-weight: 800; }
+.logo-text small { color: var(--muted); font-size: .72rem; }
+
+.main-nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; flex-wrap: wrap; }
+.main-nav a { color: var(--ink); font-weight: 600; font-size: .94rem; padding: 6px 2px; border-bottom: 2px solid transparent; }
+.main-nav a:hover, .main-nav a.active { color: var(--brand); border-bottom-color: var(--brand); }
+.hotline-btn { background: var(--accent); color: #fff !important; font-weight: 700; padding: 10px 18px; border-radius: 999px; white-space: nowrap; }
+.hotline-btn-mobile { display: none; margin-top: 14px; text-align: center; }
+.nav-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: 0; cursor: pointer; padding: 8px; }
+.nav-toggle span { width: 24px; height: 2px; background: var(--ink); }
+
+.mobile-cta-bar, .float-cta { display: none; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--brand-dark), var(--brand)); color: #fff; padding: 60px 0; }
+.hero-inner { max-width: 760px; }
+.hero h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 16px; }
+.hero p { color: #dceee8; font-size: 1.05rem; margin: 0 0 24px; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn { display: inline-block; padding: 12px 24px; border-radius: 999px; font-weight: 700; cursor: pointer; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #e8691f; }
+.btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7); }
+.btn-outline:hover { background: rgba(255,255,255,.12); }
+.btn-lg { font-size: 1.05rem; padding: 14px 32px; }
+
+/* Sections */
+.section { padding: 52px 0; }
+.section-alt { background: var(--bg-alt); }
+.section h2 { font-size: 1.5rem; color: var(--brand-dark); margin: 0 0 24px; }
+.section-cta { background: var(--brand-dark); color: #fff; text-align: center; }
+.section-cta h2 { color: #fff; }
+.section-cta p { color: #cfe3dc; margin-bottom: 22px; }
+
+.grid { display: grid; gap: 24px; }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.check-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.check-list li { padding-left: 28px; position: relative; }
+.check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-weight: 800; }
+.check-list-2col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; }
+
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(15,61,92,.06); }
+.card h3 { margin: 0 0 10px; color: var(--brand-dark); }
+.card p { color: var(--muted); font-size: .94rem; }
+.card-link { font-weight: 700; color: var(--brand); display: inline-block; margin-top: 10px; }
+
+.price-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.price-table { width: 100%; border-collapse: collapse; }
+.price-table th, .price-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+.price-table th { background: var(--bg-alt); color: var(--brand-dark); }
+.price-table .price { font-weight: 700; color: var(--accent); text-align: right; }
+.price-note { color: var(--muted); font-size: .86rem; margin-top: 12px; }
+
+/* Footer */
+.site-footer { background: var(--brand-dark); color: #cfe3dc; padding: 48px 0 20px; }
+.footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px; }
+.footer-col h2 { color: #fff; font-size: 1.05rem; margin: 0 0 14px; }
+.footer-col p { font-size: .9rem; margin: 0 0 8px; }
+.footer-col a { color: #cfe3dc; }
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: .9rem; }
+.copyright { text-align: center; color: #9fc2b8; font-size: .82rem; margin: 36px 0 0; }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .nav-toggle { display: flex; }
+  .main-nav { position: fixed; inset: 0 0 0 30%; background: #fff; padding: 90px 24px 24px; transform: translateX(100%); transition: transform .25s ease; overflow-y: auto; }
+  body.nav-open .main-nav { transform: translateX(0); }
+  .main-nav ul { flex-direction: column; gap: 4px; }
+  .hotline-btn-mobile { display: block; }
+  .hotline-btn-desktop { display: none; }
+  .grid-2, .grid-3, .check-list-2col { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .mobile-cta-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; }
+  .mobile-cta-bar .mobile-cta { flex: 1; text-align: center; padding: 14px 0; font-weight: 700; color: #fff; }
+  .mobile-cta-bar .call { background: var(--accent); }
+  .mobile-cta-bar .zalo { background: #0068ff; }
+  body { padding-bottom: 54px; }
+}
+@media (min-width: 861px) {
+  .float-cta { display: flex; flex-direction: column; gap: 10px; position: fixed; right: 20px; bottom: 24px; z-index: 40; }
+  .float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: .8rem; box-shadow: 0 8px 20px rgba(0,0,0,.18); }
+  .float-zalo { background: #0068ff; }
+  .float-call { background: var(--accent); font-size: 1.1rem; }
+}

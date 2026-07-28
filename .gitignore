@@ -1,0 +1,12 @@
+.claude/
+# Du lieu keyword / GSC / khao sat noi bo (khong public)
+export/
+all_keywords_*.csv
+*.keywords.csv
+*Performance-on-Search*/
+*Performance-on-Search*.zip
+.DS_Store
+Thumbs.db
+node_modules/
+*.bak
+*.log

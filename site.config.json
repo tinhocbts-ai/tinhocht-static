@@ -1,0 +1,16 @@
+{
+  "_help": "File thong tin dung chung cho ca website. Sua o day roi chay 'node build.js' la moi trang tu cap nhat. KHONG sua truc tiep cac file .html o thu muc goc (chung la file tu sinh).",
+
+  "hotlineDisplay": "0934 393 550",
+  "hotlineTel": "0934393550",
+  "hotlineIntl": "+84934393550",
+
+  "zaloDisplay": "089 886 9964",
+  "zaloTel": "0898869964",
+
+  "email": "tinhocbts@gmail.com",
+
+  "addressFull": "79 Đường Bắc Hải, Phường 15, Quận 10, TP. Hồ Chí Minh",
+  "addressShort": "79 Bắc Hải, Phường 15, TP.HCM",
+  "addressStreet": "79 Đường Bắc Hải, Phường 15"
+}

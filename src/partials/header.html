@@ -1,0 +1,51 @@
+<!-- partials/header.html : included on every page via assets/js/include.js -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" data-href="index.html" class="logo">
+      <svg class="logo-icon" width="42" height="42" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="11" fill="url(#lgGrad)"/>
+        <path d="M12 14h16v5H12zM10 20h20v9H10zM13 27h14v6H13z" fill="#fff" fill-opacity=".95"/>
+        <defs>
+          <linearGradient id="lgGrad" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1f8a70"/>
+            <stop offset="1" stop-color="#0f3d5c"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="logo-text">
+        <span><span class="logo-text-1">Tin Học</span> <span class="logo-text-2">HT</span></span>
+        <small>Nạp mực · Sửa máy in · Sửa máy tính</small>
+      </span>
+    </a>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Mở menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menu chính">
+      <ul>
+        <li><a href="index.html" data-href="index.html">Trang chủ</a></li>
+        <li><a href="nap-muc-may-in/" data-href="nap-muc-may-in/">Nạp mực máy in</a></li>
+        <li><a href="phan-mem-reset-may-in/" data-href="phan-mem-reset-may-in/">Phần mềm reset</a></li>
+        <li><a href="sua-may-in/" data-href="sua-may-in/">Sửa máy in</a></li>
+        <li><a href="sua-may-tinh/" data-href="sua-may-tinh/">Sửa máy tính</a></li>
+        <li><a href="ban-may-in-cu/" data-href="ban-may-in-cu/">Máy in cũ</a></li>
+        <li><a href="thu-thuat/" data-href="thu-thuat/">Thủ thuật</a></li>
+        <li><a href="lien-he/" data-href="lien-he/">Liên hệ</a></li>
+      </ul>
+      <a href="tel:{{hotlineTel}}" class="hotline-btn hotline-btn-mobile">📞 Gọi {{hotlineDisplay}}</a>
+    </nav>
+
+    <a href="tel:{{hotlineTel}}" class="hotline-btn hotline-btn-desktop">📞 {{hotlineDisplay}}</a>
+  </div>
+</header>
+
+<div class="mobile-cta-bar" aria-label="Liên hệ nhanh">
+  <a href="tel:{{hotlineTel}}" class="mobile-cta call">📞 Gọi ngay</a>
+  <a href="https://zalo.me/{{zaloTel}}" class="mobile-cta zalo" target="_blank" rel="noopener">💬 Chat Zalo</a>
+</div>
+
+<div class="float-cta" aria-label="Liên hệ nhanh nổi">
+  <a href="https://zalo.me/{{zaloTel}}" class="float-btn float-zalo" target="_blank" rel="noopener" title="Chat Zalo">Zalo</a>
+  <a href="tel:{{hotlineTel}}" class="float-btn float-call" title="Gọi điện">📞</a>
+</div>

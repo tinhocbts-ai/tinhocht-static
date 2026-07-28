@@ -127,6 +127,7 @@ function build() {
   for (const { url, slug, hidden } of entries) {
     const relPath = pathFromUrl(url);
     if (!relPath) { skipped.push({ relPath: '/', reason: 'trang chủ — đã build thật (index.html)' }); continue; }
+    if (relPath === 'home') { skipped.push({ relPath, reason: 'hợp nhất về trang chủ / (stub redirect do build.js sinh — báo cáo mục 4.1)' }); continue; }
     if (seen.has(relPath)) { skipped.push({ relPath, reason: 'URL trùng (bản có dấu / cuối) — gộp về 1 trang' }); continue; }
     seen.add(relPath);
 

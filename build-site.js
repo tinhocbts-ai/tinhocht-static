@@ -12,6 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { buildSchema } = require('./tools/schema');
 
 const ROOT = __dirname;
 const EXPORT = 'D:\\AUTOMATION\\projects\\tinhocht\\export';
@@ -342,6 +343,22 @@ function metaDescOf(page) {
   return b ? b.text.replace(/\s+/g, ' ').slice(0, 300) : shortLabel(page.title);
 }
 
+/* Danh sách cấp bậc trang — dùng chung cho breadcrumb hiển thị và dữ liệu có cấu trúc */
+function crumbList(page, pages) {
+  const parts = page.path.split('/');
+  const byPath = new Map(pages.map(p => [p.path, p]));
+  const out = [{ name: 'Trang chủ', url: '/' }];
+  for (let i = 0; i < parts.length - 1; i++) {
+    const sub = parts.slice(0, i + 1).join('/');
+    if (sub === 'home') continue;
+    const pg = byPath.get(sub);
+    const pil = PILLARS.find(p => p.key === sub);
+    if (pg || pil) out.push({ name: pil ? pil.label : shortLabel(pg.title), url: '/' + encPath(sub) + '/' });
+  }
+  out.push({ name: shortLabel(page.title), url: null });
+  return out;
+}
+
 function breadcrumb(page, pages, prefix) {
   const parts = page.path.split('/');
   const byPath = new Map(pages.map(p => [p.path, p]));
@@ -498,15 +515,24 @@ function build() {
       if (PRICE_EMBED.has(page.path)) body += priceTableCompact(prefix);
     }
 
+    const pageTitle = TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].title : page.title;
+    const pageDesc = TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].desc : metaDescOf(page);
+
     const html = `<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>${esc(TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].title : page.title)}</title>
+<title>${esc(pageTitle)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="${esc(TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].desc : metaDescOf(page))}">
+<meta name="description" content="${esc(pageDesc)}">
 <link rel="canonical" href="${SITE_URL}/${encPath(page.path)}/">${NOINDEX ? '\n<meta name="robots" content="noindex"><!-- demo github.io — bỏ dòng này khi gắn domain thật (NOINDEX=0) -->' : ''}
 <link rel="stylesheet" href="${prefix}assets/css/style.css">
+<script type="application/ld+json">${buildSchema({
+  SITE_URL, page, crumbs: crumbList(page, pages), title: pageTitle,
+  description: pageDesc,
+  imageUrl: (page.blocks || []).filter(b => b.t === 'img' && b.local)[0]
+    ? SITE_URL + '/' + (page.blocks.filter(b => b.t === 'img' && b.local)[0].local) : '',
+})}</script>
 </head>
 <body>
 ${renderMenu(menu, prefix, page.path)}
@@ -545,6 +571,14 @@ ${renderFooter(menu, prefix)}
     home = home.replace('<div id="site-header"></div>', renderMenu(menu, '', ''));
     home = home.replace('<div id="site-footer"></div>', renderFooter(menu, ''));
     home = home.replace('assets/js/include.js', 'assets/js/nav.js');
+    // Hồ sơ doanh nghiệp (địa chỉ, toạ độ, giờ mở cửa, khu vực phục vụ, bảng giá) — đặt ở trang chủ
+    const homeSchema = buildSchema({
+      SITE_URL, page: { path: '', blocks: [], title: 'Trang chủ' }, crumbs: [],
+      title: (home.match(/<title>([^<]*)/) || [, ''])[1],
+      description: (home.match(/name="description" content="([^"]*)"/) || [, ''])[1],
+      imageUrl: SITE_URL + '/assets/img/logo-ht.jpg',
+    });
+    home = home.replace('</head>', '<script type="application/ld+json">' + homeSchema + '</script>\n</head>');
     if (!NOINDEX) home = home.replace(/\s*<meta name="robots" content="noindex">(<!--[^>]*-->)?/g, '');
     fs.writeFileSync(path.join(ROOT, 'index.html'), home, 'utf8');
     console.log('  ✓ index.html (trang chủ, menu 2 cấp inline)');

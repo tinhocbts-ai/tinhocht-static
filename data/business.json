@@ -1,0 +1,44 @@
+{
+  "_help": "Hồ sơ doanh nghiệp dùng để sinh dữ liệu có cấu trúc (JSON-LD) cho Google và các trợ lý AI. Sửa ở đây rồi chạy 'node build-site.js'.",
+
+  "name": "Mực In Hitech Quận 10",
+  "legalName": "Công Ty TNHH TMDV Tin Học Hi-Tech",
+  "taxID": "0315587367",
+  "description": "Nạp mực máy in tận nơi, sửa máy in tại nhà và sửa máy tính tại TP.HCM. Có mặt trong 20–30 phút, bảo hành đến hết mực.",
+
+  "street": "79 Đường Bắc Hải",
+  "ward": "Phường 15",
+  "district": "Quận 10",
+  "city": "Thành phố Hồ Chí Minh",
+  "postalCode": "700000",
+  "countryCode": "VN",
+
+  "latitude": 10.7848849,
+  "longitude": 106.6628515,
+  "mapUrl": "https://www.google.com/maps/place/M%E1%BB%B1c+in+Hitech+Qu%E1%BA%ADn+10/@10.7848849,106.6628515,17z/data=!3m1!4b1!4m6!3m5!1s0x3175295fbd319829:0x2f2c663f3728a46f!8m2!3d10.7848849!4d106.6628515!16s%2Fg%2F11wtbswqy3",
+
+  "openingHours": "Mo-Su 08:00-19:00",
+  "priceRangeText": "90.000₫ - 300.000₫",
+
+  "_note_areaServed": "Giữ cả 'Quận 2' và 'Quận 9' dù đã sáp nhập vào TP Thủ Đức từ 2021 — khách và Google vẫn tìm theo tên cũ, và site có sẵn trang riêng cho 2 khu vực này.",
+  "areaServed": [
+    "Quận 1", "Quận 2", "Quận 3", "Quận 4", "Quận 5", "Quận 6", "Quận 7", "Quận 8", "Quận 9",
+    "Quận 10", "Quận 11", "Quận 12",
+    "Quận Tân Bình", "Quận Tân Phú", "Quận Phú Nhuận", "Quận Bình Thạnh", "Quận Gò Vấp", "Quận Bình Tân",
+    "Thành phố Thủ Đức"
+  ],
+
+  "services": [
+    "Nạp mực máy in tận nơi",
+    "Bơm mực máy in tại nhà",
+    "Sửa máy in tận nơi",
+    "Sửa máy tính tại nhà",
+    "Mua bán máy in cũ",
+    "Cung cấp linh kiện máy in"
+  ],
+
+  "_note_sameAs": "Chỉ liệt kê hồ sơ CHÍNH CHỦ của shop. Không thêm trang không thuộc quyền quản lý.",
+  "sameAs": [
+    "https://www.google.com/maps/place/?q=place_id:ChIJKZgxvV8pdTERb6QoNz9mLC8"
+  ]
+}

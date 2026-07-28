@@ -18,7 +18,7 @@
         "HP LaserJet Pro 400 / 401D",
         "HP LaserJet P2035"
       ],
-      "anh": "assets/img/p/142rh49.png"
+      "anh": "assets/img/p/142rh49.webp"
     },
     {
       "hang": "HP",
@@ -32,7 +32,7 @@
         "HP LaserJet Pro M252",
         "HP LaserJet Pro M254"
       ],
-      "anh": "assets/img/p/1qafdxn.png"
+      "anh": "assets/img/p/1qafdxn.webp"
     },
     {
       "hang": "Canon",
@@ -48,7 +48,7 @@
         "Canon LBP 151DW",
         "Canon AIO MF 3010AE"
       ],
-      "anh": "assets/img/p/cky8ga.png"
+      "anh": "assets/img/p/cky8ga.webp"
     },
     {
       "hang": "Canon",
@@ -65,7 +65,7 @@
         "Canon MF 8280CW",
         "Canon LBP 7780CX"
       ],
-      "anh": "assets/img/p/15dqy7p.png"
+      "anh": "assets/img/p/15dqy7p.webp"
     },
     {
       "hang": "Brother",
@@ -84,7 +84,7 @@
         "Brother DCP-1901 / DCP-1916NW",
         "Brother MFC-L2701D"
       ],
-      "anh": "assets/img/p/cwuo0q.png"
+      "anh": "assets/img/p/cwuo0q.webp"
     },
     {
       "hang": "Samsung",
@@ -103,7 +103,7 @@
         "Samsung SCX-3401F",
         "Samsung SL-M2070FW"
       ],
-      "anh": "assets/img/p/10r283o.png"
+      "anh": "assets/img/p/10r283o.webp"
     },
     {
       "hang": "Panasonic",
@@ -117,7 +117,7 @@
         "Panasonic KX-MB2130",
         "Panasonic KX-MB2170"
       ],
-      "anh": "assets/img/p/ouyqkk.png"
+      "anh": "assets/img/p/ouyqkk.webp"
     },
     {
       "hang": "Xerox",
@@ -134,7 +134,7 @@
         "Xerox M115Z",
         "Xerox M225Z"
       ],
-      "anh": "assets/img/p/ni62lt.png"
+      "anh": "assets/img/p/ni62lt.webp"
     },
     {
       "hang": "Epson · Canon · HP · Brother",
@@ -149,7 +149,7 @@
         "Canon in phun màu",
         "Brother in phun màu"
       ],
-      "anh": "assets/img/p/1a90obm.png"
+      "anh": "assets/img/p/1a90obm.webp"
     }
   ],
   "ghiChu": [
@@ -165,5 +165,5 @@
     "Số lượng bản in tương đương hộp mực mới.",
     "Bảo hành đến hết mực nếu bị lỗi sau khi nạp."
   ],
-  "banner": "assets/img/p/lp5ah4.jpg"
+  "banner": "assets/img/p/lp5ah4.webp"
 }

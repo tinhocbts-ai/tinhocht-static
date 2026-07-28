@@ -74,6 +74,31 @@ Quy trình đúng cho MỖI trang (đã rút kinh nghiệm từ lỗi ở trang 
 5. Trang "Nạp mực máy in bill" → build dạng rút gọn + link sang mucinht.com (không phải trang đầy đủ).
 6. Sau khi build xong hết + duyệt demo → mới bàn bước trỏ domain thật (ngoài phạm vi hiện tại, cần duyệt riêng).
 
+## ⚠️ VẤN ĐỀ KẾT NỐI "Claude in Chrome" (claude-in-chrome extension) — hay bị đứt
+
+**Hiện tượng:** Extension Claude trong Chrome thật của anh (side panel anh hay dùng để sửa Google Sites) **hay bị mất kết nối với phiên chat** — gọi `tabs_context_mcp` / `list_connected_browsers` báo lỗi *"Claude in Chrome is not connected"*.
+
+**Đã thử ở phiên trước — KHÔNG cái nào fix được:**
+1. Đóng side panel trong Chrome
+2. Restart toàn bộ Chrome (đóng hết cửa sổ, mở lại)
+3. Tắt/bật lại extension trong `chrome://extensions`
+4. Xác nhận đăng nhập đúng tài khoản
+
+→ Ngay cả lệnh chẩn đoán gốc (`list_connected_browsers`, không cần chọn đúng Chrome/profile) cũng lỗi y hệt → **kết luận: lỗi nằm ở phía kết nối của phiên chat, không phải cấu hình Chrome.** Đừng tốn công thử lại 4 cách trên nữa.
+
+**Cách duy nhất từng fix được:** mở **cuộc trò chuyện mới** trong app — phiên mới thường tự bắt tay lại được với extension.
+
+### 🎯 Quan trọng: đa số việc KHÔNG CẦN extension này, dùng thứ khác thay được
+
+| Việc cần làm | Đừng dùng | Dùng thay bằng |
+|---|---|---|
+| Đọc nội dung/ảnh thật trên tinhocht.com (để build lại) | ~~claude-in-chrome~~ | **`mcp__Claude_Browser__*`** (Browser pane tích hợp sẵn trong app — KHÁC HẲN Chrome thật, KHÔNG phụ thuộc extension, luôn hoạt động ổn định suốt phiên trước) |
+| Preview site tĩnh cục bộ khi build | ~~claude-in-chrome~~ | `mcp__Claude_Browser__preview_start` + `serve.js` (xem mục trên) |
+| Tạo repo / push / mọi thao tác GitHub | ~~claude-in-chrome~~ | `gh` CLI + `git` trực tiếp qua Bash (đã cài + auth sẵn, xem mục dưới) |
+| **Sửa nội dung TRÊN Google Sites gốc** (site cũ đang chạy) | — | **CHỈ việc này mới thật sự cần** side panel Chrome thật + shortcut `seo-mayin` (xem `googlesite-shortcut-bridge.md` trong trí nhớ). Nếu đứt kết nối lúc cần việc này → mở phiên mới. |
+
+**Tóm lại:** nếu thấy "not connected", đừng loay hoay sửa Chrome — 90% việc của dự án này (đọc trang, build site, push code) đều làm được bằng `mcp__Claude_Browser` + `gh`/`git`, không đụng tới extension đó.
+
 ## 🔑 Thông tin kỹ thuật nhanh
 - GitHub: `tinhocbts-ai/tinhocht-static` · `gh` CLI đã auth sẵn, dùng thẳng `git push` bình thường.
 - Hotline chính: `0934 393 550` · Zalo: `089 886 9964` · Địa chỉ: `79 Đường Bắc Hải, Phường 15, Quận 10, TP.HCM`.

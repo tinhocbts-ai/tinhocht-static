@@ -62,15 +62,17 @@ Quy trình đúng cho MỖI trang (đã rút kinh nghiệm từ lỗi ở trang 
 - Dùng `<ol>` (số 1-2-3 thật) CHỈ cho nội dung **tuần tự thật sự** (quy trình các bước, hướng dẫn) — đây là chỗ AI Overview thực sự ưu tiên.
 - Dùng `<ul>` (bullet/✓) cho danh sách **không tuần tự** (lợi ích, tính năng, dịch vụ) — ép thành số không giúp gì thêm.
 
-### Bản nháp offline TOÀN BỘ URL (28/07/2026) — để chủ shop duyệt
-- **`build-draft-all.js`** sinh **157 trang nháp + 2 stub bill** từ dữ liệu crawl `export/`, mỗi trang nằm ĐÚNG tại slug gốc (thư mục Unicode + index.html). Chạy lại: `node build-draft-all.js`.
-- **Mục lục duyệt: `/danh-sach-trang/`** — nhóm theo pillar, đánh dấu: ✅ đã đối chiếu nguyên văn DOM (21 trang) · ⚠️ bản WebFetch (build thật phải đối chiếu DOM lại) · 🔒 trang ẩn 0-traffic (12, đề xuất bỏ, chờ chốt).
-- Draft đã tự thay 2 SĐT ngoài hệ thống → hotline; mọi trang draft có `noindex`; ảnh đang hotlink googleusercontent (tải về khi build thật). **Các trang draft CHƯA commit lên git** — chỉ để xem local.
-- `serve.js` đã nhận `PORT` từ env + phục vụ URL không có `/` cuối; `launch.json` bật `autoPort` (nếu 8123 bận sẽ tự đổi port).
+### Bản nháp TOÀN BỘ URL — ĐÃ PUSH GitHub Pages (28/07/2026, commit 51e9870)
+- **Demo sống: https://tinhocbts-ai.github.io/tinhocht-static/** (chưa gắn domain — chủ shop yêu cầu "làm như web thật, đẩy github test luôn"). Mục lục duyệt: **`/tinhocht-static/danh-sach-trang/`**.
+- **`build-draft-all.js`** sinh **156 trang nháp + 2 stub bill** từ crawl `export/`, mỗi trang ĐÚNG slug gốc (thư mục Unicode + index.html), **dùng layout THẬT của site** (nhúng partials header/footer + style.css, prefix tương đối theo độ sâu — chủ shop đã chê bản khung tự chế ban đầu). Chạy lại: `node build-draft-all.js && node build.js` (build.js sau cùng để sinh stub `/home`→`/`).
+- Nhãn duyệt trên từng trang + mục lục: ✅ đã đối chiếu nguyên văn DOM (21) · ⚠️ bản WebFetch (build thật phải đối chiếu DOM lại) · 🔒 trang ẩn 0-traffic (12, chờ chốt bỏ/giữ).
+- `/home` = stub meta-refresh về `/` (hợp nhất trang chủ phân mảnh, báo cáo 4.1) qua `data/redirects.json` — build-draft-all chủ động skip `home` để không đè stub.
+- 2 SĐT ngoài hệ thống đã tự thay → hotline; **MỌI trang (kể cả index.html) đang `noindex` — GỠ khi gắn domain thật**; ảnh đang hotlink googleusercontent (tải về khi build thật từng trang).
+- `serve.js` nhận `PORT` env + phục vụ URL không `/` cuối; `launch.json` bật `autoPort`. Nav/footer partials + include.js + src/index.html **ĐÃ sửa xong về slug gốc** (việc #0 hoàn tất; include.js NESTED_PAGES = slug gốc + decodeURIComponent).
 
 ## ⏳ VIỆC CÒN LẠI (theo thứ tự ưu tiên)
 
-0. **Sửa nav/footer partials + index.html về slug GỐC** (đang trỏ `nap-muc-may-in/`, `lien-he/`... là cấu trúc mới đã HỦY — xem quyết định 28/07). Trang đích nav gốc: `/` · `/sua-may-in-tai-hcm` · `/sua-may-tinh-tan-noi` · `/ban-may-in-cu-gia-re` · `/bang-gia-nap-muc-may-in-tan-noi` · `/liên-hệ` · `/thu-thuat-tin-hoc` (+ `/Phan-mem-reset-may-in`).
+0. ~~Sửa nav/footer partials + index.html về slug GỐC~~ ✅ XONG 28/07 (commit 46283a6).
 1. **8 trang "ngôi sao"** (CTR cao nhất, top 1-5 — xem mục 3 báo cáo khảo sát) — ưu tiên cao nhất, làm từng trang 1, dừng lại duyệt sau mỗi trang:
    - `/thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310`
    - `/Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210`

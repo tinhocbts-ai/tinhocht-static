@@ -1,0 +1,169 @@
+{
+  "_help": "Bảng giá nạp mực — trích NGUYÊN VĂN từ 2 trang bảng giá gốc trên tinhocht.com (28/07/2026), gộp lại thành 1 bảng có cấu trúc. Sửa giá ở đây rồi chạy 'node build-site.js'. Ảnh minh hoạ máy in lấy từ chính 2 trang bảng giá gốc, gán theo đúng thứ tự nhóm.",
+  "donVi": "VNĐ / lần nạp",
+  "nhom": [
+    {
+      "hang": "HP",
+      "loai": "Laser trắng đen",
+      "gia": "90.000",
+      "models": [
+        "HP LaserJet 1005 / 1006",
+        "HP LaserJet 1010 / 1020",
+        "HP LaserJet P1102 / P1102W",
+        "HP LaserJet 1200 / 1300",
+        "HP LaserJet 1160 / 1320",
+        "HP LaserJet 2055dn",
+        "HP LaserJet Pro 127FN / 125NW",
+        "HP LaserJet Pro M1132MFP",
+        "HP LaserJet Pro 400 / 401D",
+        "HP LaserJet P2035"
+      ],
+      "anh": "assets/img/p/142rh49.png"
+    },
+    {
+      "hang": "HP",
+      "loai": "Laser màu",
+      "gia": "300.000",
+      "models": [
+        "HP LaserJet Pro CP1025",
+        "HP LaserJet Pro M176N",
+        "HP LaserJet Pro M177FW",
+        "HP LaserJet Pro M251NW",
+        "HP LaserJet Pro M252",
+        "HP LaserJet Pro M254"
+      ],
+      "anh": "assets/img/p/1qafdxn.png"
+    },
+    {
+      "hang": "Canon",
+      "loai": "Laser trắng đen",
+      "gia": "90.000",
+      "models": [
+        "Canon Laser Shot LBP 2900",
+        "Canon Laser Shot LBP 3050",
+        "Canon Laser Shot LBP 3300",
+        "Canon Laser Shot LBP 6030",
+        "Canon Laser Shot LBP 6200",
+        "Canon MF221D",
+        "Canon LBP 151DW",
+        "Canon AIO MF 3010AE"
+      ],
+      "anh": "assets/img/p/cky8ga.png"
+    },
+    {
+      "hang": "Canon",
+      "loai": "Laser màu",
+      "gia": "300.000",
+      "models": [
+        "Canon LBP 5050",
+        "Canon LBP 7018C",
+        "Canon LBP 7100CN",
+        "Canon LBP 7110CW",
+        "Canon LBP 7200CDN",
+        "Canon LBP 7680CX",
+        "Canon MF 8210CN",
+        "Canon MF 8280CW",
+        "Canon LBP 7780CX"
+      ],
+      "anh": "assets/img/p/15dqy7p.png"
+    },
+    {
+      "hang": "Brother",
+      "loai": "Laser trắng đen",
+      "gia": "140.000",
+      "models": [
+        "Brother HL-2140",
+        "Brother HL-2240",
+        "Brother HL-2250",
+        "Brother HL-5150",
+        "Brother MFC-7360",
+        "Brother MFC-7360N",
+        "Brother HL-1210 / HL-1211W",
+        "Brother HL-L2321D",
+        "Brother DCP-1601 / DCP-1616NW",
+        "Brother DCP-1901 / DCP-1916NW",
+        "Brother MFC-L2701D"
+      ],
+      "anh": "assets/img/p/cwuo0q.png"
+    },
+    {
+      "hang": "Samsung",
+      "loai": "Laser trắng đen",
+      "gia": "120.000",
+      "models": [
+        "Samsung ML-1666 / ML-1661",
+        "Samsung ML-2150 / ML-2160",
+        "Samsung ML-2240 / ML-2260",
+        "Samsung ML-2520 / ML-2540",
+        "Samsung SCX-4200 / SCX-4300",
+        "Samsung SCX-3401 / SCX-3406",
+        "Samsung ML-2164",
+        "Samsung SL-M2020W",
+        "Samsung SL-2825ND",
+        "Samsung SCX-3401F",
+        "Samsung SL-M2070FW"
+      ],
+      "anh": "assets/img/p/10r283o.png"
+    },
+    {
+      "hang": "Panasonic",
+      "loai": "Laser trắng đen (máy in – fax)",
+      "gia": "150.000",
+      "models": [
+        "Panasonic KX-MB772",
+        "Panasonic KX-MB2030",
+        "Panasonic KX-MB2085",
+        "Panasonic KX-MB2120",
+        "Panasonic KX-MB2130",
+        "Panasonic KX-MB2170"
+      ],
+      "anh": "assets/img/p/ouyqkk.png"
+    },
+    {
+      "hang": "Xerox",
+      "loai": "Laser trắng đen",
+      "gia": "120.000",
+      "models": [
+        "Xerox 3110 / 3114 / 3115",
+        "Xerox 3435 / 3435D",
+        "Xerox WC3210 / WC3220",
+        "Xerox Phaser 3200MFP",
+        "Xerox P225BB",
+        "Xerox M115W",
+        "Xerox P265DW",
+        "Xerox M115Z",
+        "Xerox M225Z"
+      ],
+      "anh": "assets/img/p/ni62lt.png"
+    },
+    {
+      "hang": "Epson · Canon · HP · Brother",
+      "loai": "Máy in phun màu",
+      "gia": "90.000",
+      "models": [
+        "Epson T13 / T30 / T50 / T60",
+        "Epson L220 / L310 / L360 / L550",
+        "Epson L800 / L805 / L850 / L1800",
+        "Epson R230 / 1390",
+        "HP in phun màu",
+        "Canon in phun màu",
+        "Brother in phun màu"
+      ],
+      "anh": "assets/img/p/1a90obm.png"
+    }
+  ],
+  "ghiChu": [
+    "Giá trên đã bao gồm công nạp mực tận nơi trong nội thành TP.HCM — không phụ thu phí đi lại.",
+    "Bảo hành đến hết mực nếu bản in bị lỗi sau khi nạp.",
+    "Công ty / doanh nghiệp nạp mực số lượng nhiều, vui lòng liên hệ để có giá tốt hơn và hỗ trợ công nợ cuối tháng.",
+    "Máy in đời đặc biệt hoặc cần thay linh kiện (drum, gạt, trục từ…) sẽ được báo giá riêng trước khi làm."
+  ],
+  "camKet": [
+    "Chưa đầy 30 phút chúng tôi sẽ có mặt ngay.",
+    "Cam kết nạp mực chính hãng không để hư hao linh kiện.",
+    "Bản in sắc nét không bị lem.",
+    "Số lượng bản in tương đương hộp mực mới.",
+    "Bảo hành đến hết mực nếu bị lỗi sau khi nạp."
+  ],
+  "banner": "assets/img/p/lp5ah4.jpg"
+}

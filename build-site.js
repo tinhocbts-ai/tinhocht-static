@@ -43,6 +43,19 @@ function loadPages() {
   return pages;
 }
 
+/* Trang trùng nội dung -> gộp về 1 trang chính, URL cũ giữ lại dưới dạng chuyển hướng
+   (KHÔNG xoá URL nào, nên link cũ trỏ vào đâu cũng không gãy). */
+const MERGE_INTO = { 'bảng-giá': 'bang-gia-nap-muc-may-in-tan-noi' };
+
+/* Ghi đè title/description — CHỈ dùng cho trang gộp có title mơ hồ ("BẢNG GIÁ" bị trùng 2 trang,
+   vị trí GSC 27 nên gần như không có ranking để mất). KHÔNG áp dụng cho 8 trang ngôi sao. */
+const TITLE_OVERRIDE = {
+  'bang-gia-nap-muc-may-in-tan-noi': {
+    title: 'Bảng Giá Nạp Mực Máy In Tận Nơi TP.HCM — Công Khai, Không Phụ Thu',
+    desc: 'Bảng giá nạp mực máy in tận nơi TP.HCM của Tin Học HT: laser trắng đen từ 90.000đ, laser màu 300.000đ, in phun 90.000đ. Miễn phí đi lại nội thành, có mặt 20–30 phút, bảo hành đến hết mực.',
+  },
+};
+
 /* Tên ngắn gọn cho menu/mục lục: bỏ đuôi quảng cáo sau dấu | - : ▷ */
 function shortLabel(title) {
   let t = String(title).split(/\s*[|▷►]\s*/)[0];
@@ -191,10 +204,13 @@ function bigrams(s) {
   for (let i = 0; i < l.length - 1; i++) out.add(l[i] + '|' + l[i + 1]);
   return out;
 }
-function indexPages(pages) {
+function indexPages(allPages) {
+  const pages = allPages.filter(p => !MERGE_INTO[p.path]);   // trang đã gộp không còn là đích
   PAGE_SET = new Set(pages.map(p => p.path));
   BASE_MAP = new Map();
   TOKEN_IDX = [];
+  // URL của trang bị gộp -> trỏ thẳng sang trang chính
+  for (const [from, to] of Object.entries(MERGE_INTO)) BASE_MAP.set(normKey(from.split('/').pop()), to);
   for (const p of pages) {
     const base = p.path.split('/').pop();
     const key = normKey(base);
@@ -337,6 +353,63 @@ function relatedSection(page, pages, prefix) {
     sib.map(s => '<li><a href="' + prefix + encPath(s.path) + '/">' + esc(shortLabel(s.title)) + '</a></li>').join('') + '</ul></section>';
 }
 
+/* ---------------- trang Bảng giá (gộp 2 trang gốc) ---------------- */
+const PRICE_PATH = 'bang-gia-nap-muc-may-in-tan-noi';   // trang chính (đang có traffic GSC)
+const PRICE_MERGED = 'bảng-giá';                        // trang trùng nội dung -> chuyển hướng về trang chính
+
+function renderPricePage(page, pages, prefix) {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'bang-gia.json'), 'utf8'));
+
+  const rows = data.nhom.map(g => `
+        <tr>
+          <th scope="row">
+            ${g.anh ? '<img class="pt-anh" src="' + prefix + esc(g.anh) + '" alt="Máy in ' + esc(g.hang) + ' ' + esc(g.loai) + '" loading="lazy">' : ''}
+            <span class="pt-hang">${esc(g.hang)}</span><span class="pt-loai">${esc(g.loai)}</span>
+          </th>
+          <td class="pt-models"><ul>${g.models.map(m => '<li>' + esc(m) + '</li>').join('')}</ul></td>
+          <td class="pt-gia"><strong>${esc(g.gia)}</strong><small>${esc(data.donVi)}</small></td>
+        </tr>`).join('');
+  const gallery = '';
+
+  // giữ nguyên văn các đoạn mô tả / quy trình của trang gốc (bỏ phần liệt kê model & giá rời rạc)
+  const keep = page.blocks.filter(b =>
+    (b.t === 'p' || b.t === 'li') && b.text && b.text.length > 60 &&
+    !/^-\s*Máy in/i.test(b.text) && !/^\d+[kK]$/.test(b.text.trim()));
+  const intro = keep.slice(0, 2).map(b => '<p>' + linkify(b.text, b.links, prefix, page.path) + '</p>').join('\n      ');
+  const rest = keep.slice(2).map(b => '<p>' + linkify(b.text, b.links, prefix, page.path) + '</p>').join('\n        ');
+
+  return `<h1>${esc(page.title === 'BẢNG GIÁ' ? 'Bảng giá nạp mực máy in tận nơi TP.HCM' : page.title)}</h1>
+      ${intro}
+
+      <div class="price-highlight">
+        <div><span class="ph-num">20–30′</span><span class="ph-lbl">Có mặt tận nơi</span></div>
+        <div><span class="ph-num">90.000đ</span><span class="ph-lbl">Nạp mực laser từ</span></div>
+        <div><span class="ph-num">0đ</span><span class="ph-lbl">Phí đi lại nội thành</span></div>
+        <div><span class="ph-num">Hết mực</span><span class="ph-lbl">Thời gian bảo hành</span></div>
+      </div>
+
+      <section>
+        <h2>Bảng giá nạp mực máy in theo hãng</h2>
+        <div class="price-table-wrap">
+          <table class="price-table">
+            <thead><tr><th scope="col">Hãng máy in</th><th scope="col">Dòng máy áp dụng</th><th scope="col">Đơn giá</th></tr></thead>
+            <tbody>${rows}
+            </tbody>
+          </table>
+        </div>
+        <ul class="price-notes">${data.ghiChu.map(x => '<li>' + esc(x) + '</li>').join('')}</ul>
+      </section>
+
+      <section class="price-commit">
+        <h2>Cam kết khi nạp mực tại Tin Học HT</h2>
+        <ul class="check-list">${data.camKet.map(x => '<li>' + esc(x) + '</li>').join('')}</ul>
+      </section>
+${gallery}
+      <section class="price-more">
+        ${rest}
+      </section>`;
+}
+
 function ctaBlock() {
   return `\n      <aside class="cta-box">
         <p><strong>Cần nạp mực / sửa máy in gấp?</strong> Kỹ thuật có mặt trong 20–30 phút tại TP.HCM.</p>
@@ -347,8 +420,9 @@ function ctaBlock() {
 
 /* ---------------- build ---------------- */
 function build() {
-  const pages = loadPages();
-  indexPages(pages);
+  const allPages = loadPages();
+  indexPages(allPages);
+  const pages = allPages.filter(p => !MERGE_INTO[p.path]); // trang gộp -> chỉ còn là chuyển hướng
   const menu = buildMenu(pages);
   let n = 0;
 
@@ -358,7 +432,9 @@ function build() {
     const isBill = /nap-muc-may-in-bill/.test(page.path);
 
     let body;
-    if (isBill) {
+    if (page.path === PRICE_PATH) {
+      body = renderPricePage(page, allPages, prefix);
+    } else if (isBill) {
       body = '<h1>' + esc(page.title) + '</h1>\n' +
         '<p>Mảng <strong>nạp mực máy in bill / máy in hóa đơn</strong> được phục vụ tại website chuyên trách của hệ thống:</p>\n' +
         '<p><a href="https://mucinht.com/" target="_blank" rel="noopener"><strong>👉 mucinht.com — Nạp mực máy in bill, thay mực máy in hóa đơn</strong></a></p>\n' +
@@ -371,9 +447,9 @@ function build() {
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>${esc(page.title)}</title>
+<title>${esc(TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].title : page.title)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="${esc(metaDescOf(page))}">
+<meta name="description" content="${esc(TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].desc : metaDescOf(page))}">
 <link rel="canonical" href="${SITE_URL}/${encPath(page.path)}">${NOINDEX ? '\n<meta name="robots" content="noindex"><!-- demo github.io — bỏ dòng này khi gắn domain thật (NOINDEX=0) -->' : ''}
 <link rel="stylesheet" href="${prefix}assets/css/style.css">
 </head>
@@ -425,12 +501,32 @@ ${renderFooter(menu, prefix)}
     let p404 = fs.readFileSync(src404, 'utf8').replace(/\{\{\s*([\w.]+)\s*\}\}/g, (m, k) => (k in cfg ? cfg[k] : m));
     fs.writeFileSync(path.join(ROOT, '404.html'), p404, 'utf8');
   }
-  const homeStub = '<!DOCTYPE html>\n<html lang="vi">\n<head>\n<meta charset="UTF-8">\n<title>Đang chuyển hướng…</title>\n' +
-    '<link rel="canonical" href="' + SITE_URL + '/">\n<meta name="robots" content="noindex">\n' +
-    '<meta http-equiv="refresh" content="0; url=../">\n<script>location.replace("../");</script>\n</head>\n' +
-    '<body><p>Trang này đã chuyển về <a href="../">' + SITE_URL + '/</a></p></body>\n</html>\n';
-  fs.mkdirSync(path.join(ROOT, 'home'), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, 'home', 'index.html'), homeStub, 'utf8');
+  /* Stub chuyển hướng: URL cũ/sai -> trang thật.
+     Gồm /home (gộp trang chủ) + mọi URL gãy mà bộ khớp đã tìm được trang đúng,
+     để ai lỡ truy cập URL cũ (hoặc Google còn giữ) vẫn về đúng nội dung, không gặp 404. */
+  function writeStub(fromPath, toPath) {
+    if (!fromPath || PAGE_SET.has(fromPath)) return false;       // không đè trang thật
+    const dir = path.join(ROOT, fromPath.split('/').join(path.sep));
+    if (fs.existsSync(path.join(dir, 'index.html'))) return false;
+    const depth = fromPath.split('/').length;
+    const target = '../'.repeat(depth) + (toPath ? encPath(toPath) + '/' : '');
+    const canon = SITE_URL + '/' + (toPath ? encPath(toPath) : '');
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'),
+      '<!DOCTYPE html>\n<html lang="vi">\n<head>\n<meta charset="UTF-8">\n<title>Đang chuyển hướng…</title>\n' +
+      '<link rel="canonical" href="' + canon + '">\n<meta name="robots" content="noindex">\n' +
+      '<meta http-equiv="refresh" content="0; url=' + target + '">\n' +
+      '<script>location.replace("' + target + '");</script>\n</head>\n' +
+      '<body><p>Trang này đã chuyển sang <a href="' + target + '">' + canon + '</a></p></body>\n</html>\n', 'utf8');
+    return true;
+  }
+  let nStub = writeStub('home', '') ? 1 : 0;
+  for (const [from, to] of Object.entries(MERGE_INTO)) {
+    fs.rmSync(path.join(ROOT, from.split('/').join(path.sep)), { recursive: true, force: true });
+    if (writeStub(from, to)) nStub++;
+  }
+  for (const [from, to] of FIX_LOG.entries()) if (writeStub(from, to)) nStub++;
+  console.log('  ✓ ' + nStub + ' trang chuyển hướng (URL cũ/sai -> trang đúng)');
 
   // sitemap: trang chủ + tất cả trang (kể cả khi noindex, để sẵn cho lúc gắn domain)
   const today = new Date().toISOString().slice(0, 10);

@@ -54,6 +54,13 @@ const MERGE_INTO = { 'bảng-giá': 'bang-gia-nap-muc-may-in-tan-noi' };
 /* Ghi đè title/description — CHỈ dùng cho trang gộp có title mơ hồ ("BẢNG GIÁ" bị trùng 2 trang,
    vị trí GSC 27 nên gần như không có ranking để mất). KHÔNG áp dụng cho 8 trang ngôi sao. */
 const TITLE_OVERRIDE = {
+  /* Trang này đang đứng vị trí 3,1 với 256 lượt hiển thị nhưng 0 lượt nhấp (GSC 6 tháng).
+     Title cũ có ký tự "▷▷" và mô tả tự cắt từ đoạn mở bài nói về "năm 2020" — người tìm thấy
+     nội dung cũ nên không bấm. Đổi title + mô tả để lấy lại lượt nhấp; nội dung bài giữ nguyên. */
+  'thu-thuat-tin-hoc/top-3-máy-in-chuyên-in-đơn-hàng-giá-rẻ-tiết-kiệm-chi-phí': {
+    title: 'Top 3 Máy In Đơn Hàng Giá Rẻ Cho Shop Online — Chọn Loại Nào?',
+    desc: 'So sánh 3 máy in dùng để in đơn hàng cho shop bán online: máy in A4 Canon 2900 in đơn tiết kiệm, và các lựa chọn khác. Kèm giá nạp mực thực tế và tư vấn chọn theo lượng đơn mỗi ngày.',
+  },
   'bang-gia-nap-muc-may-in-tan-noi': {
     title: 'Bảng Giá Nạp Mực Máy In Tận Nơi TP.HCM — Công Khai, Không Phụ Thu',
     desc: 'Bảng giá nạp mực máy in tận nơi TP.HCM của Tin Học HT: laser trắng đen từ 90.000đ, laser màu 300.000đ, in phun 90.000đ. Miễn phí đi lại nội thành, có mặt 20–30 phút, bảo hành đến hết mực.',
@@ -398,6 +405,45 @@ function relatedSection(page, pages, prefix) {
 const PRICE_PATH = 'bang-gia-nap-muc-may-in-tan-noi';   // trang chính (đang có traffic GSC)
 const PRICE_MERGED = 'bảng-giá';                        // trang trùng nội dung -> chuyển hướng về trang chính
 
+/* ---------------- liên kết chéo sang mucinht.com ----------------
+   Mảng máy in bill / hoá đơn / tem mã vạch thuộc lãnh địa mucinht.com (đã chốt theo bảng phân
+   vùng keyword). Các trang dưới đây của tinhocht đang có thứ hạng thật cho nhóm từ khoá đó,
+   nên GIỮ NGUYÊN nội dung để không mất vị trí, chỉ thêm một khối dẫn khách sang mucinht.com. */
+const MUCINHT = {
+  service: 'https://mucinht.com/category/dich-vu-sua-chua/sua-may-in-bill-ma-vach/',
+  home: 'https://mucinht.com/',
+};
+const CROSS_LINK = {
+  'nap-muc-may-in-bill---thay-muc-may-in-hoa-don': 'chinh',
+  'nap-muc-may-in-bill---thay-muc-may-in-hoa-don/thay-muc-may-in-bill-epson-tm-u220': 'chinh',
+  'thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-thay-ruy-bang-may-in-hoa-dhon-epson-lq-300-310-2190': 'phu',
+  'home/thay-ruy-bang-muc-may-in-kim-epson-lq-300-lq-310': 'phu',
+  'thu-thuat-tin-hoc/top-3-máy-in-chuyên-in-đơn-hàng-giá-rẻ-tiết-kiệm-chi-phí': 'phu',
+};
+
+function crossLinkBlock(kieu) {
+  if (kieu === 'chinh') {
+    return `
+      <aside class="cross-site">
+        <h2>Máy in bill · hoá đơn · tem mã vạch — xem tại Mực In Hưng Thịnh</h2>
+        <p>Riêng mảng máy in bill, máy in hoá đơn và máy in tem mã vạch, hệ thống chúng tôi phục vụ
+           tại <strong>mucinht.com</strong> — nơi có sẵn máy, linh kiện, giấy in nhiệt và thợ chuyên
+           dòng máy này.</p>
+        <p class="cross-actions">
+          <a class="btn btn-primary" href="${MUCINHT.service}" target="_blank" rel="noopener">Sửa máy in bill &amp; mã vạch →</a>
+          <a class="btn btn-outline" href="${MUCINHT.home}" target="_blank" rel="noopener">Xem máy in bill, giấy in nhiệt</a>
+        </p>
+        <p class="cross-note">Cần gấp trong ngày, gọi thẳng <a href="tel:${cfg.hotlineTel}">${cfg.hotlineDisplay}</a> — cùng một hệ thống kỹ thuật.</p>
+      </aside>`;
+  }
+  return `
+      <aside class="cross-site cross-site-slim">
+        <p><strong>Máy in bill, máy in hoá đơn, máy in tem mã vạch?</strong>
+           Mảng này do <a href="${MUCINHT.service}" target="_blank" rel="noopener">mucinht.com</a>
+           phụ trách — có sẵn máy, giấy in nhiệt, ruy băng và thợ chuyên dòng máy in bill.</p>
+      </aside>`;
+}
+
 /* Trang hỏi về giá nhưng bản gốc Google Sites bị rớt cột giá (chỉ còn danh sách máy).
    Chèn thẳng bảng giá thật vào để khách đọc là biết luôn, không phải nhảy sang trang khác. */
 const PRICE_EMBED = new Set([
@@ -500,19 +546,15 @@ function build() {
   for (const page of pages) {
     const depth = page.path.split('/').length - 1;   // file .html nằm ngay trong thư mục cha
     const prefix = '../'.repeat(depth);
-    const isBill = /nap-muc-may-in-bill/.test(page.path);
-
     let body;
     if (page.path === PRICE_PATH) {
       body = renderPricePage(page, allPages, prefix);
-    } else if (isBill) {
-      body = '<h1>' + esc(page.title) + '</h1>\n' +
-        '<p>Mảng <strong>nạp mực máy in bill / máy in hóa đơn</strong> được phục vụ tại website chuyên trách của hệ thống:</p>\n' +
-        '<p><a href="https://mucinht.com/" target="_blank" rel="noopener"><strong>👉 mucinht.com — Nạp mực máy in bill, thay mực máy in hóa đơn</strong></a></p>\n' +
-        '<p>Cần hỗ trợ nhanh, quý khách vui lòng gọi <a href="tel:' + cfg.hotlineTel + '">' + cfg.hotlineDisplay + '</a>.</p>';
     } else {
       body = '<h1>' + esc(page.title) + '</h1>\n      ' + renderBlocks(page.blocks, prefix, prefix, page.path);
       if (PRICE_EMBED.has(page.path)) body += priceTableCompact(prefix);
+      /* Trang thuộc mảng bill/hoá đơn/tem: giữ nguyên nội dung (đang có thứ hạng thật)
+         và thêm khối dẫn khách sang mucinht.com */
+      if (CROSS_LINK[page.path]) body += crossLinkBlock(CROSS_LINK[page.path]);
     }
 
     const pageTitle = TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].title : page.title;

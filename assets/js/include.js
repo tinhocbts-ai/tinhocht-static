@@ -21,6 +21,9 @@
     root.querySelectorAll('[data-href]').forEach(function (el) {
       el.setAttribute('href', prefix + el.getAttribute('data-href'));
     });
+    root.querySelectorAll('[data-src]').forEach(function (el) {
+      el.setAttribute('src', prefix + el.getAttribute('data-src'));
+    });
   }
 
   function currentKey() {

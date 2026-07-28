@@ -7,7 +7,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const EXPORT = 'D:\\AUTOMATION\\projects\\tinhocht\\export';
 const OLD = 'https://www.tinhocht.com';
-const NEW = 'https://tinhocht.com';
+const NEW = 'https://www.tinhocht.com';   // domain chính giữ nguyên bản có www (theo GSC)
 const SKIP = new Set(['node_modules', '.git', 'assets', 'src', 'tools', 'data', 'export', 'partials']);
 
 function walk(dir, out) {

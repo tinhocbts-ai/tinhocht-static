@@ -16,7 +16,10 @@ const path = require('path');
 const ROOT = __dirname;
 const EXPORT = 'D:\\AUTOMATION\\projects\\tinhocht\\export';
 const DOM_DIR = path.join(EXPORT, 'pages-dom');
-const SITE_URL = 'https://tinhocht.com';
+/* Domain chính là BẢN CÓ www: 148/149 URL đang có traffic trên GSC đều là www.tinhocht.com
+   (bản không www hiện không phục vụ). Canonical + sitemap phải dùng đúng bản này, nếu không
+   Google sẽ coi là URL khác và ranking cũ không chuyển sang. */
+const SITE_URL = 'https://www.tinhocht.com';
 const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), 'utf8'));
 const NOINDEX = process.env.NOINDEX !== '0'; // demo github.io: noindex; gắn domain thật -> NOINDEX=0
 

@@ -65,21 +65,57 @@ Git Bash sẽ bẻ `/duong-dan` thành đường dẫn Windows).
    L310/L3210/L1110/L3110/L3150 — không đổi title/URL. Lưu ý **title thật trên site đã khác bản GSC cũ**
    ở 8 trang (đợt SEO batch sửa) — build lấy title thật hiện tại, không lấy từ GSC export.
 
-## 🌐 KHI GẮN TÊN MIỀN THẬT (bước tiếp theo, cần chủ shop duyệt)
+## 🌐 KHI GẮN TÊN MIỀN THẬT (bước tiếp theo, chờ chủ shop duyệt)
+
+### ⚠️ Domain chính là bản CÓ www — nhưng khách gõ kiểu nào cũng vào được
+
+Kiểm chứng 28/07/2026: **148/149 URL đang có traffic trên GSC đều là `https://www.tinhocht.com/...`**.
+Bản không www hiện **không mở được** (curl timeout) vì bản ghi "URL REDIRECT" của nhà cung cấp
+không kèm chứng chỉ HTTPS. Cấu hình dưới đây sửa luôn việc đó:
+
+- `SITE_URL` trong build-site.js = `https://www.tinhocht.com` (canonical + sitemap).
+- File `CNAME` ghi **`www.tinhocht.com`** — KHÔNG bỏ www. Đặt sai = Google coi là URL khác,
+  mất toàn bộ ranking của 148 trang.
+- Khách gõ `tinhocht.com` (không www) → GitHub tự chuyển sang `www.tinhocht.com`, có HTTPS đầy đủ.
+
+### DNS hiện tại (theo ảnh chụp 28/07/2026) — sửa 2 chỗ
+
+| # | Host | Loại | Giá trị hiện tại | Xử lý |
+|---|---|---|---|---|
+| 1 | @ | URL REDIRECT | https://www.tinhocht.com/ | **XOÁ**, thay bằng 4 bản ghi A bên dưới |
+| 2-4 | @ | TXT | google-site-verification=… | **GIỮ NGUYÊN** — xoá là mất xác minh Search Console |
+| 5 | www | CNAME | ghs.googlehosted.com. | **SỬA** → `tinhocbts-ai.github.io.` (bản ghi này đang trỏ Google Sites) |
+
+Thêm mới (thay cho bản ghi 1) — 4 bản ghi **A**, Host `@`:
+
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+Vì sao cần cả 4: đó là 4 máy chủ GitHub Pages, thêm đủ để không chết khi 1 máy bảo trì.
+Có 4 bản ghi A này thì `tinhocht.com` do GitHub phục vụ → tự chuyển sang `www.tinhocht.com`
+(GitHub đọc file CNAME để biết bản nào là chính) và cấp chứng chỉ HTTPS cho cả hai.
+
+### Thứ tự thao tác (không để site chết giữa chừng)
 
 ```bash
-NOINDEX=0 node build-site.js          # bỏ thẻ noindex khỏi toàn bộ trang
-echo tinhocht.com > CNAME             # tạo file CNAME ở thư mục gốc repo
-git add -A && git commit -m "Go live: bo noindex + them CNAME" && git push
+NOINDEX=0 node build-site.js               # bỏ noindex toàn site
+echo www.tinhocht.com > CNAME              # PHẢI có www
+git add -A && git commit -m "Go live" && git push
 ```
-Sau đó:
-1. DNS tại nhà cung cấp domain: 4 bản ghi **A** cho `tinhocht.com` → `185.199.108.153`,
-   `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; bản ghi **CNAME** cho `www` →
-   `tinhocbts-ai.github.io`.
-2. GitHub → repo → Settings → Pages → điền custom domain `tinhocht.com` → bật **Enforce HTTPS**
-   (chờ cấp chứng chỉ vài phút).
-3. Google Search Console: gửi lại `sitemap.xml`, dùng URL Inspection kiểm 8 trang ngôi sao.
-4. **Chỉ tắt Google Sites sau khi** bản tĩnh đã chạy đúng trên domain thật và index bình thường.
+1. GitHub → repo → Settings → Pages → Custom domain: `www.tinhocht.com` → Save.
+2. DNS: sửa bản ghi 5 sang `tinhocbts-ai.github.io.`; xoá bản ghi 1; thêm 4 bản ghi A (TTL 360s).
+3. Chờ GitHub cấp chứng chỉ (vài phút–1 giờ) → bật **Enforce HTTPS**.
+4. Kiểm tra cả 4 kiểu gõ: `tinhocht.com`, `www.tinhocht.com`, kèm/không kèm `https://`,
+   và 1 trang sâu: `www.tinhocht.com/home/nap-muc-may-in-quan-10`.
+5. Search Console: gửi lại `sitemap.xml`, URL Inspection 8 trang ngôi sao.
+6. **Chỉ gỡ/tắt Google Sites sau khi** bản tĩnh chạy ổn trên domain thật vài ngày.
+
+> Khi thêm file `CNAME`, bản demo `tinhocbts-ai.github.io` sẽ tự chuyển hướng sang www.tinhocht.com
+> — nên chỉ thêm CNAME khi đã sẵn sàng đổi DNS trong cùng buổi.
 
 ⚠️ Bản demo đang để `noindex` toàn site để Google không index trùng nội dung với site thật đang chạy.
 
@@ -97,6 +133,8 @@ Sau đó:
   (do "tận nơi"), và điểm "chứa trọn" kéo mọi link về trang tổng. Kết quả: **50/50 link gãy nối đúng trang**.
 
 ## ⏳ VIỆC CÒN LẠI
+
+1. **Đổi DNS + go-live** — xem mục "KHI GẮN TÊN MIỀN THẬT" ở trên (chờ chủ shop bấm nút).
 2. **12 trang ẩn 0-traffic** (11 trang tỉnh xa Bình Dương/Vũng Tàu/Bạc Liêu/Bắc Kạn/Bắc Giang/Long Xuyên
    + trang lẻ) — chủ shop nói *"mấy cái ở tỉnh do muốn ăn traffic, có người quen chạy làm được"* nên
    **tạm GIỮ**; chốt lại lần cuối trước khi go-live.

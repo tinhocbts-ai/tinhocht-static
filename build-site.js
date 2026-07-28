@@ -190,9 +190,14 @@ function deaccent(s) {
 function normKey(s) {
   return deaccent(s).replace(/dh/g, 'd').replace(/[^a-z0-9]/g, '');
 }
-const STOP = new Set(['i', 'la', 'va', 'cho', 'the', 'gia', 're', 'nhanh', 'nhat', 'uy', 'tin', 'tai', 'nha', 'tan', 'noi', 'o', '24', '7', '247', 'hcm', 'tphcm', 'tp']);
+/* Từ nhiễu trong slug quảng cáo. KHÔNG bỏ chữ số (số quận là thông tin phân biệt quan trọng:
+   "quận 7" khác "quận 10"); chỉ bỏ cụm "24/7" khi 2 số đi liền nhau. */
+const STOP = new Set(['i', 'la', 'va', 'cho', 'the', 'gia', 're', 'nhanh', 'nhat', 'uy', 'tin', 'tai', 'nha', 'o', '247', 'hcm', 'tphcm', 'tp']);
 function tokenList(s) {
-  return deaccent(s).replace(/dh/g, 'd').replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(Boolean);
+  return deaccent(s).replace(/dh/g, 'd')
+    .replace(/\b24[\s\-\/]*7\b/g, ' ')          // "24/7", "24-7" -> bỏ, nhưng giữ số quận
+    .replace(/\btan[\s\-]+noi\b/g, ' ')         // "tận nơi" -> bỏ, nhưng giữ "Tân" trong Tân Phú/Tân Bình
+    .replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(Boolean);
 }
 function tokens(s) {
   return new Set(tokenList(s).filter(x => !STOP.has(x)));
@@ -224,8 +229,17 @@ function indexPages(allPages) {
 }
 /* Khớp lại link gãy: (1) đúng path, (2) khoá chuẩn hoá, (3) trùng token cao nhất.
    Chỉ nhận khi phần lớn token của bên ngắn hơn nằm trong bên kia (containment ≥ .8). */
+/* Vài link gãy mà máy không tự đoán an toàn được -> chỉ định tay (đã đối chiếu nội dung trang đích) */
+const ALIAS = {
+  'kinh-nghiem---thu-thuat': 'thu-thuat-tin-hoc',
+  'home/bom-muc-may-in-sieu-toc-quan-tan-binh-gia-80-000': 'home/nap-muc-may-in-quan-tan-binh',
+  'home/nap-muc-may-in-gia-re-tp-hcm---chi-con-80k/nap-muc-may-in-hp-pro-m402dn':
+    'home/nap-muc-may-in-gia-re-tp-hcm---chi-con-80k/nạp-mực-máy-in-hp-pro-m-404dn-giá-rẻ-nhất', // trang này viết về cả M402 và M404
+};
+
 function fixInternalPath(p, fromPath) {
   if (!p || PAGE_SET.has(p)) return p;
+  if (ALIAS[p] && PAGE_SET.has(ALIAS[p])) { FIX_LOG.set(p, ALIAS[p]); return ALIAS[p]; }
   const base = p.split('/').pop();
   const exact = BASE_MAP.get(normKey(base)) || BASE_MAP.get(normKey(p.replace(/\//g, '')));
   if (exact) { FIX_LOG.set(p, exact); return exact; }
@@ -233,12 +247,19 @@ function fixInternalPath(p, fromPath) {
   const want = tokens(base);
   const wantBg = bigrams(base);
   if (want.size < 2) { unresolved.add(p); return p; }
+  // số trong tên trang (quận 4, L3110, M254…) là yếu tố phân biệt — thiếu số là loại thẳng
+  const wantNums = [...want].filter(t => /\d/.test(t));
   let best = null, bestScore = 0;
   for (const cand of TOKEN_IDX) {
+    if (wantNums.length && !wantNums.every(n => cand.tk.has(n))) continue;
     let inter = 0;
     for (const t of want) if (cand.tk.has(t)) inter++;
     if (inter < 2) continue;
-    const score = inter / Math.min(want.size, cand.tk.size);
+    // Dice cân bằng 2 phía; chỉ cho phép chấm theo "chứa trọn" khi ứng viên không quá ngắn
+    // (nếu không, mọi link sẽ rơi hết về trang tổng vì tên trang tổng chỉ vài từ).
+    const dice = 2 * inter / (want.size + cand.tk.size);
+    const cont = inter / Math.min(want.size, cand.tk.size);
+    const score = cand.tk.size >= want.size * 0.6 ? Math.max(dice, cont) : dice;
     let bg = 0;
     for (const g of wantBg) if (cand.bg.has(g)) bg++;
     const bgScore = wantBg.size ? bg / Math.min(wantBg.size, Math.max(cand.bg.size, 1)) : 0;
@@ -507,7 +528,9 @@ ${renderFooter(menu, prefix)}
   function writeStub(fromPath, toPath) {
     if (!fromPath || PAGE_SET.has(fromPath)) return false;       // không đè trang thật
     const dir = path.join(ROOT, fromPath.split('/').join(path.sep));
-    if (fs.existsSync(path.join(dir, 'index.html'))) return false;
+    const cur = path.join(dir, 'index.html');
+    // luôn ghi lại: stub từ lần build trước có thể trỏ sai sau khi bộ khớp được sửa
+    if (fs.existsSync(cur) && !/http-equiv="refresh"/.test(fs.readFileSync(cur, 'utf8'))) return false;
     const depth = fromPath.split('/').length;
     const target = '../'.repeat(depth) + (toPath ? encPath(toPath) + '/' : '');
     const canon = SITE_URL + '/' + (toPath ? encPath(toPath) : '');

@@ -31,7 +31,6 @@ function listTemplates(dir, base) {
   base = base || dir;
   let out = [];
   for (const name of fs.readdirSync(dir)) {
-    if (name === 'partials') continue; // partials khong phai trang doc lap
     const full = path.join(dir, name);
     const stat = fs.statSync(full);
     if (stat.isDirectory()) out = out.concat(listTemplates(full, base));

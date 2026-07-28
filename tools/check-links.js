@@ -30,8 +30,13 @@ for (const f of files) {
       total++;
       let p = decodeURIComponent(h.replace(/[?#].*/, ''));
       let full = path.normalize(path.join(dir, p));
-      if (full.endsWith(path.sep) || !path.extname(full)) full = path.join(full, 'index.html');
-      if (!fs.existsSync(full)) list.push(path.relative(ROOT, f).replace(/\\/g, '/') + ' -> ' + h);
+      if (full.endsWith(path.sep) || !path.extname(full)) {
+        // GitHub Pages phục vụ /duong-dan bằng file duong-dan.html; nếu không có thì mới tới duong-dan/index.html
+        const stripped = full.replace(/[\\/]+$/, '');
+        const asFile = stripped + '.html';
+        full = fs.existsSync(asFile) ? asFile : path.join(stripped, 'index.html');
+      }
+      if (!fs.existsSync(full)) list.push(path.relative(ROOT, f).split(path.sep).join('/') + ' -> ' + h);
     }
   };
   check('href', bad);

@@ -13,8 +13,14 @@ http.createServer((req, res) => {
   if (p.endsWith('/')) p += 'index.html';
   let full = path.join(ROOT, p);
   if (!full.startsWith(ROOT)) { res.writeHead(403); return res.end('Forbidden'); }
-  // URL kiểu Google Sites không có / cuối: nếu là thư mục thì phục vụ index.html bên trong
-  try { if (fs.statSync(full).isDirectory()) full = path.join(full, 'index.html'); } catch (e) {}
+  /* Mô phỏng đúng cách GitHub Pages phân giải URL, để xem thử ở máy giống hệt lúc chạy thật:
+     /duong-dan  ->  duong-dan.html  (ưu tiên, giữ nguyên URL không có dấu / cuối)
+                 ->  duong-dan/index.html (nếu không có file trên) */
+  if (!path.extname(full)) {
+    const asFile = full.replace(/[\\/]+$/, '') + '.html';
+    if (fs.existsSync(asFile)) full = asFile;
+    else { try { if (fs.statSync(full).isDirectory()) full = path.join(full, 'index.html'); } catch (e) {} }
+  }
   fs.readFile(full, (err, data) => {
     if (err) {
       fs.readFile(path.join(ROOT, '404.html'), (e2, d2) => {

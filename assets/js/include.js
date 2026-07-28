@@ -3,10 +3,14 @@
    site works correctly both at the domain root and nested one folder deep,
    wires up the mobile hamburger menu. */
 (function () {
-  var NESTED_PAGES = ['nap-muc-may-in', 'phan-mem-reset-may-in', 'sua-may-in', 'sua-may-tinh', 'ban-may-in-cu', 'thu-thuat', 'lien-he', 'bang-gia'];
+  // Cac slug GOC cua Google Sites (khong doi URL — quyet dinh 28/07/2026)
+  var NESTED_PAGES = ['home', 'sua-may-in-tai-hcm', 'sua-may-tinh-tan-noi', 'ban-may-in-cu-gia-re',
+    'bang-gia-nap-muc-may-in-tan-noi', 'thu-thuat-tin-hoc', 'Phan-mem-reset-may-in',
+    'liên-hệ', 'bảng-giá', 'mua-bán-linh-kiện-máy-in-hp-canon-brother',
+    'nap-muc-may-in-bill---thay-muc-may-in-hoa-don', 'danh-sach-trang'];
 
   function computeDepth() {
-    var parts = window.location.pathname.split('/').filter(Boolean);
+    var parts = decodeURIComponent(window.location.pathname).split('/').filter(Boolean);
     if (parts.length && parts[parts.length - 1] === 'index.html') parts.pop();
     for (var i = parts.length - 1; i >= 0; i--) {
       if (NESTED_PAGES.indexOf(parts[i]) !== -1) return parts.length - i;
@@ -27,7 +31,7 @@
   }
 
   function currentKey() {
-    var parts = window.location.pathname.split('/').filter(Boolean);
+    var parts = decodeURIComponent(window.location.pathname).split('/').filter(Boolean);
     if (parts.length && parts[parts.length - 1] === 'index.html') parts.pop();
     for (var i = parts.length - 1; i >= 0; i--) {
       if (NESTED_PAGES.indexOf(parts[i]) !== -1) return parts[i] + '/';

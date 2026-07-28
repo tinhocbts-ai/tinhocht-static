@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const PORT = 8123;
+const PORT = Number(process.env.PORT) || 8123;
 const MIME = { '.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.json':'application/json',
   '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.png':'image/png', '.webp':'image/webp', '.svg':'image/svg+xml', '.xml':'application/xml' };
 
@@ -13,6 +13,8 @@ http.createServer((req, res) => {
   if (p.endsWith('/')) p += 'index.html';
   let full = path.join(ROOT, p);
   if (!full.startsWith(ROOT)) { res.writeHead(403); return res.end('Forbidden'); }
+  // URL kiểu Google Sites không có / cuối: nếu là thư mục thì phục vụ index.html bên trong
+  try { if (fs.statSync(full).isDirectory()) full = path.join(full, 'index.html'); } catch (e) {}
   fs.readFile(full, (err, data) => {
     if (err) {
       fs.readFile(path.join(ROOT, '404.html'), (e2, d2) => {

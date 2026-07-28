@@ -19,9 +19,14 @@ tinhocht.com đang chạy Google Sites (traffic thật ~196k impressions/6 thán
 - Báo cáo đầy đủ: `D:\AUTOMATION\projects\tinhocht\export\BAO-CAO-KHAO-SAT-GIAI-DOAN-1.md` — **đọc file này để biết toàn bộ chi tiết** (trang "ngôi sao" không được đổi, rủi ro URL, v.v).
 - Đề xuất URL cũ→mới: `export/url-mapping-proposal.json` (149 dòng).
 - 21 trang đã đối chiếu nguyên văn xong (dùng Browser tool đọc DOM, không dùng WebFetch vì hay tóm lược sai).
-- **2 quyết định phạm vi đã chốt với chủ shop:**
+- **Các quyết định phạm vi đã chốt với chủ shop:**
   - "Dịch vụ mạng tổng đài" → LOẠI BỎ khỏi migrate (dịch vụ cũ đã nghỉ, xác nhận trang này rỗng không có nội dung riêng).
   - "Nạp mực máy in bill" → KHÔNG build đầy đủ, chỉ để trang giới thiệu ngắn + link trỏ sang `mucinht.com` (đúng theo bảng phân vùng keyword hệ thống — cụm máy in bill/POS thuộc site đó).
+  - (28/07/2026) SĐT lạ **089 886 0052** trên trang sửa máy tính quận 9 → khi build THAY bằng hotline công ty `0934 393 550`, không giữ số ngoài hệ thống (ngoại lệ được phép sửa).
+  - (28/07/2026) Link tải tool trên trang ngôi sao L3210 (và các link tương tự) trỏ sang `tinhocnamphong.net` → **GIỮ NGUYÊN** — chung hệ thống, chủ shop chấp nhận traffic qua lại.
+  - (28/07/2026) **SĐT 098 131 9853** (trang Gia Lai) → cũng GOM VỀ hotline `0934 393 550`.
+  - (28/07/2026) ⚠️ **QUAN TRỌNG NHẤT: KHÔNG ĐỔI SLUG URL** — giữ nguyên 100% từng ký tự URL gốc (kể cả dấu tiếng Việt `/liên-hệ`, chữ hoa `/Phan-mem-reset-may-in/`, `---` trong slug) vì site đang có traffic thật. **HỦY phương án đổi slug + redirect trong `url-mapping-proposal.json`** — file đó chỉ còn giá trị tham khảo pillar, KHÔNG dùng làm redirects.json. Nav/footer partials + index.html hiện đang link theo URL mới (`nap-muc-may-in/`, `lien-he/`...) → **PHẢI sửa về slug gốc** trước khi build tiếp (việc còn lại số 0 bên dưới).
+  - (28/07/2026) **Pillar sửa máy tính**: nghề này không làm nữa, giữ trang CHỈ để kéo traffic → build y nguyên nội dung, KHÔNG tối ưu/đầu tư thêm.
 
 ### Giai đoạn 2 — Bắt đầu build (đang chạy)
 - **Cài `gh` CLI + đăng nhập** (winget install GitHub.cli, `gh auth login --web`, tài khoản `tinhocbts-ai`). Từ giờ dùng `git`/`gh` trực tiếp cho mọi thao tác GitHub — **không cần Claude in Chrome** (extension hay bị đứt kết nối trong phiên trước, đây là lối tắt ổn định hơn).
@@ -57,8 +62,15 @@ Quy trình đúng cho MỖI trang (đã rút kinh nghiệm từ lỗi ở trang 
 - Dùng `<ol>` (số 1-2-3 thật) CHỈ cho nội dung **tuần tự thật sự** (quy trình các bước, hướng dẫn) — đây là chỗ AI Overview thực sự ưu tiên.
 - Dùng `<ul>` (bullet/✓) cho danh sách **không tuần tự** (lợi ích, tính năng, dịch vụ) — ép thành số không giúp gì thêm.
 
+### Bản nháp offline TOÀN BỘ URL (28/07/2026) — để chủ shop duyệt
+- **`build-draft-all.js`** sinh **157 trang nháp + 2 stub bill** từ dữ liệu crawl `export/`, mỗi trang nằm ĐÚNG tại slug gốc (thư mục Unicode + index.html). Chạy lại: `node build-draft-all.js`.
+- **Mục lục duyệt: `/danh-sach-trang/`** — nhóm theo pillar, đánh dấu: ✅ đã đối chiếu nguyên văn DOM (21 trang) · ⚠️ bản WebFetch (build thật phải đối chiếu DOM lại) · 🔒 trang ẩn 0-traffic (12, đề xuất bỏ, chờ chốt).
+- Draft đã tự thay 2 SĐT ngoài hệ thống → hotline; mọi trang draft có `noindex`; ảnh đang hotlink googleusercontent (tải về khi build thật). **Các trang draft CHƯA commit lên git** — chỉ để xem local.
+- `serve.js` đã nhận `PORT` từ env + phục vụ URL không có `/` cuối; `launch.json` bật `autoPort` (nếu 8123 bận sẽ tự đổi port).
+
 ## ⏳ VIỆC CÒN LẠI (theo thứ tự ưu tiên)
 
+0. **Sửa nav/footer partials + index.html về slug GỐC** (đang trỏ `nap-muc-may-in/`, `lien-he/`... là cấu trúc mới đã HỦY — xem quyết định 28/07). Trang đích nav gốc: `/` · `/sua-may-in-tai-hcm` · `/sua-may-tinh-tan-noi` · `/ban-may-in-cu-gia-re` · `/bang-gia-nap-muc-may-in-tan-noi` · `/liên-hệ` · `/thu-thuat-tin-hoc` (+ `/Phan-mem-reset-may-in`).
 1. **8 trang "ngôi sao"** (CTR cao nhất, top 1-5 — xem mục 3 báo cáo khảo sát) — ưu tiên cao nhất, làm từng trang 1, dừng lại duyệt sau mỗi trang:
    - `/thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310`
    - `/Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210`
@@ -70,6 +82,7 @@ Quy trình đúng cho MỖI trang (đã rút kinh nghiệm từ lỗi ở trang 
    - `/home/nap-muc-may-in-quan-tan-phu`
 2. ~155 trang còn lại, theo pillar (nạp mực quận → reset máy in → sửa máy tính → blog thủ thuật → sửa máy in → bán máy in cũ).
 3. **2 trang "Bảng giá" trùng nhau** (`/bang-gia-nap-muc-may-in-tan-noi` và `/bảng-giá` cấp 1 ẩn) — cần hỏi chủ shop giữ/gộp cái nào trước khi build.
+3b. **Trang tỉnh xa (ngoài TPHCM)** — chủ shop cho biết (28/07/2026) các trang này làm để ăn traffic VÀ có người quen ở tỉnh chạy được đơn thật → nghiêng về GIỮ. Khuyến nghị đã đưa: giữ 7 trang CÓ traffic (Gia Lai 619 impr — có địa chỉ chi nhánh thật 409 Hẻm 42 Lê Lợi Pleiku, Bình Dương 913, Mỹ Tho 489, Quy Nhơn 301, Bình Phước 268, Bắc Ninh 241, Kon Tum 99), BỎ 13 trang tỉnh ẩn 0-traffic (đúng đề xuất mục 5.5 báo cáo). Chờ chủ shop chốt hẳn; nếu giữ thì cập nhật luôn file phân vùng keyword (tinhocht không chỉ TPHCM). Lưu ý phụ: trang Gia Lai có SĐT riêng 098 131 9853 (có thể là số người quen ở tỉnh?) — hỏi chủ shop giữ hay thay khi build trang đó.
 4. `data/redirects.json` — điền đầy đủ từ `export/url-mapping-proposal.json` (đang để trống `{}`).
 5. Trang "Nạp mực máy in bill" → build dạng rút gọn + link sang mucinht.com (không phải trang đầy đủ).
 6. Sau khi build xong hết + duyệt demo → mới bàn bước trỏ domain thật (ngoài phạm vi hiện tại, cần duyệt riêng).

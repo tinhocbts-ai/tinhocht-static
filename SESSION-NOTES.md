@@ -3,11 +3,12 @@
 > Đọc file này đầu tiên khi mở phiên mới cho dự án này.
 
 ## 📍 Bối cảnh
-tinhocht.com đang chạy Google Sites (traffic thật ~196k impressions/6 tháng theo GSC). Bản tĩnh chạy
-song song trên GitHub Pages, **chưa trỏ domain thật** — site Google Sites gốc vẫn chạy bình thường,
-không bị đụng vào.
 
-- **Demo:** https://tinhocbts-ai.github.io/tinhocht-static/
+**🟢 ĐÃ GO-LIVE 28/07/2026** — bản tĩnh đang phục vụ tại **https://www.tinhocht.com/** (GitHub Pages,
+commit efc8532). Google Sites cũ không còn được trỏ tới; giữ nguyên tài khoản, chưa xoá.
+
+- **Site thật:** https://www.tinhocht.com/ · HTTPS bắt buộc, chứng chỉ GitHub đã cấp
+- **Demo cũ:** https://tinhocbts-ai.github.io/tinhocht-static/ (nay tự chuyển sang domain thật)
 - **Repo:** `tinhocbts-ai/tinhocht-static` · code local `D:\AUTOMATION\projects\tinhochtgithub`
 - **Dữ liệu khảo sát/crawl:** `D:\AUTOMATION\projects\tinhocht\export\` (KHÔNG đưa lên git public)
 
@@ -65,59 +66,40 @@ Git Bash sẽ bẻ `/duong-dan` thành đường dẫn Windows).
    L310/L3210/L1110/L3110/L3150 — không đổi title/URL. Lưu ý **title thật trên site đã khác bản GSC cũ**
    ở 8 trang (đợt SEO batch sửa) — build lấy title thật hiện tại, không lấy từ GSC export.
 
-## 🌐 KHI GẮN TÊN MIỀN THẬT (bước tiếp theo, chờ chủ shop duyệt)
+## 🌐 TÊN MIỀN — ĐÃ GẮN XONG (28/07/2026)
 
-### ⚠️ Domain chính là bản CÓ www — nhưng khách gõ kiểu nào cũng vào được
+Cấu hình đang chạy:
 
-Kiểm chứng 28/07/2026: **148/149 URL đang có traffic trên GSC đều là `https://www.tinhocht.com/...`**.
-Bản không www hiện **không mở được** (curl timeout) vì bản ghi "URL REDIRECT" của nhà cung cấp
-không kèm chứng chỉ HTTPS. Cấu hình dưới đây sửa luôn việc đó:
+| Thành phần | Giá trị |
+|---|---|
+| File `CNAME` trong repo | `www.tinhocht.com` |
+| GitHub Pages custom domain | `www.tinhocht.com` · Enforce HTTPS **bật** · chứng chỉ **approved** |
+| DNS `www` | CNAME → `tinhocbts-ai.github.io.` ✅ |
+| DNS `@` (apex) | 4 bản ghi A → 185.199.108–111.153 ✅ |
+| DNS `@` TXT | 3 bản ghi google-site-verification — giữ nguyên ✅ |
 
-- `SITE_URL` trong build-site.js = `https://www.tinhocht.com` (canonical + sitemap).
-- File `CNAME` ghi **`www.tinhocht.com`** — KHÔNG bỏ www. Đặt sai = Google coi là URL khác,
-  mất toàn bộ ranking của 148 trang.
-- Khách gõ `tinhocht.com` (không www) → GitHub tự chuyển sang `www.tinhocht.com`, có HTTPS đầy đủ.
+`SITE_URL` = `https://www.tinhocht.com` (canonical + sitemap + robots.txt). **Không bao giờ bỏ www**:
+148/149 URL có traffic đều là bản www, đổi canonical = mất ranking.
 
-### DNS hiện tại (theo ảnh chụp 28/07/2026) — sửa 2 chỗ
+### ⚠️ Việc DNS còn sót: bản ghi AAAA của apex
 
-| # | Host | Loại | Giá trị hiện tại | Xử lý |
-|---|---|---|---|---|
-| 1 | @ | URL REDIRECT | https://www.tinhocht.com/ | **XOÁ**, thay bằng 4 bản ghi A bên dưới |
-| 2-4 | @ | TXT | google-site-verification=… | **GIỮ NGUYÊN** — xoá là mất xác minh Search Console |
-| 5 | www | CNAME | ghs.googlehosted.com. | **SỬA** → `tinhocbts-ai.github.io.` (bản ghi này đang trỏ Google Sites) |
+`tinhocht.com` vẫn còn **bản ghi AAAA (IPv6) `2001:ee0:23::23`** trỏ về máy chủ nhà cung cấp
+(server `nginx-V-ddos`), không phải GitHub. Hậu quả: máy/mạng dùng IPv6 khi gõ `tinhocht.com`
+sẽ vào nhầm máy chủ đó (trang trắng, https lỗi). Bản ghi A (IPv4) thì đã đúng.
 
-Thêm mới (thay cho bản ghi 1) — 4 bản ghi **A**, Host `@`:
+**Cách xử lý:** vào trang quản lý DNS, **xoá bản ghi AAAA của Host `@`**. Không cần thay gì —
+IPv4 đã trỏ GitHub. (Hoặc thay bằng 4 AAAA của GitHub: `2606:50c0:8000::153`, `…8001::153`,
+`…8002::153`, `…8003::153`.)
 
-```
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-```
+Kiểm tra sau khi xoá: `curl -sI https://tinhocht.com/` phải trả 301 về `https://www.tinhocht.com/`.
 
-Vì sao cần cả 4: đó là 4 máy chủ GitHub Pages, thêm đủ để không chết khi 1 máy bảo trì.
-Có 4 bản ghi A này thì `tinhocht.com` do GitHub phục vụ → tự chuyển sang `www.tinhocht.com`
-(GitHub đọc file CNAME để biết bản nào là chính) và cấp chứng chỉ HTTPS cho cả hai.
+### Việc nên làm trong Search Console (sau go-live)
 
-### Thứ tự thao tác (không để site chết giữa chừng)
-
-```bash
-NOINDEX=0 node build-site.js               # bỏ noindex toàn site
-echo www.tinhocht.com > CNAME              # PHẢI có www
-git add -A && git commit -m "Go live" && git push
-```
-1. GitHub → repo → Settings → Pages → Custom domain: `www.tinhocht.com` → Save.
-2. DNS: sửa bản ghi 5 sang `tinhocbts-ai.github.io.`; xoá bản ghi 1; thêm 4 bản ghi A (TTL 360s).
-3. Chờ GitHub cấp chứng chỉ (vài phút–1 giờ) → bật **Enforce HTTPS**.
-4. Kiểm tra cả 4 kiểu gõ: `tinhocht.com`, `www.tinhocht.com`, kèm/không kèm `https://`,
-   và 1 trang sâu: `www.tinhocht.com/home/nap-muc-may-in-quan-10`.
-5. Search Console: gửi lại `sitemap.xml`, URL Inspection 8 trang ngôi sao.
-6. **Chỉ gỡ/tắt Google Sites sau khi** bản tĩnh chạy ổn trên domain thật vài ngày.
-
-> Khi thêm file `CNAME`, bản demo `tinhocbts-ai.github.io` sẽ tự chuyển hướng sang www.tinhocht.com
-> — nên chỉ thêm CNAME khi đã sẵn sàng đổi DNS trong cùng buổi.
-
-⚠️ Bản demo đang để `noindex` toàn site để Google không index trùng nội dung với site thật đang chạy.
+1. Gửi lại sitemap: `https://www.tinhocht.com/sitemap.xml` (159 URL).
+2. URL Inspection → Request indexing cho 8 trang ngôi sao.
+3. Theo dõi 2–4 tuần: so clicks/vị trí trước–sau. Nếu tụt bất thường ở trang nào, kiểm tra
+   canonical + nội dung trang đó trước tiên.
+4. **Chưa xoá Google Sites** — để nguyên vài tuần phòng khi cần đối chiếu nội dung gốc.
 
 ## 🔀 Gộp trang trùng & trang chuyển hướng (28/07/2026)
 

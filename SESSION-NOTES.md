@@ -133,10 +133,36 @@ http/https) đều về đúng một địa chỉ.
 
 Kiểm tra: `node tools/check-schema.js` → 0 lỗi JSON, 0 trang gắn sai khu vực.
 
-**2 lỗi đã bắt được khi kiểm tra** (đáng nhớ nếu sau này sửa `tools/schema.js`):
+**3 lỗi đã bắt được khi kiểm tra** (đáng nhớ nếu sau này sửa `tools/schema.js`):
 1. `quan-1` khớp nhầm cả `quan-10`, `quan-11`, `quan-12` → nay so khớp theo biên từ.
 2. Thiếu Quận 2 và Quận 9 trong danh sách khu vực (đã sáp nhập TP Thủ Đức từ 2021 nhưng khách
    và Google vẫn tìm theo tên cũ, site cũng có trang riêng cho 2 khu vực này).
+3. Trang **sửa máy in / sửa máy tính theo quận** cũng khớp tên quận nên nhận luôn phần khai giá
+   nạp mực, trong khi trên trang không có bảng giá nào → khai khống. Nay builder đặt cờ
+   `page.coBangGia` đúng chỗ chèn bảng, schema chỉ khai `offers` khi có cờ này (18 trang).
+
+## 📍 Tín hiệu địa phương cho trang quận (29/07/2026)
+
+**Vì sao làm:** nhóm từ khoá theo quận đang đứng vị trí 5–10 (quận 3, 6, 5, Phú Nhuận, Bình Thạnh,
+quận 8) — khoảng 3.400 lượt hiển thị/6 tháng nhưng rất ít lượt nhấp. Đo trên chính site cho thấy
+điểm nghẽn **không phải** nội dung hay liên kết nội bộ: trang quận 3 dài hơn (2.982 từ) và được
+nhiều liên kết hơn (65) trang quận 10 nhưng vẫn đứng sau 4 bậc. Khác biệt còn lại là mức độ cụ thể
+về địa lý — trước đây trang nào cũng chỉ nói chung chung "phục vụ toàn quận".
+
+`data/quan-dia-ban.json` — 18 quận, mỗi quận có: tuyến đường lớn, địa điểm quen thuộc (chợ, bệnh
+viện, trung tâm thương mại), quãng đường + thời gian chạy từ cửa hàng 79 Bắc Hải, toạ độ trung tâm.
+
+> **Cố ý dùng tên đường và địa điểm, KHÔNG dùng tên phường.** Đường và chợ không đổi khi sắp xếp
+> lại đơn vị hành chính, còn khách cũng tìm theo đường/chợ nhiều hơn theo số phường.
+
+Mỗi trang quận nay có thêm (chỉ thêm, không đụng nội dung gốc):
+- khối **"Địa bàn nhận nạp mực"** — thời gian di chuyển thật, danh sách đường và địa điểm
+- **bảng giá rút gọn** ngay trên trang (trước đây khách phải nhảy sang trang khác mới thấy giá)
+- 1 câu hỏi gắn với địa bàn trong phần hỏi–đáp → 88 câu trên 18 trang
+- schema `Service`: `areaServed` kèm `GeoCircle` theo toạ độ từng quận + `offers` 90.000–300.000đ
+
+Kết quả kiểm tra: 18/18 trang đủ 4 hạng mục, 52 trang dịch vụ có toạ độ vùng phục vụ,
+0/23.619 liên kết gãy, không đổi slug nào.
 
 ## 🔗 Cấu trúc file & URL — ĐỌC TRƯỚC KHI SỬA BUILD
 

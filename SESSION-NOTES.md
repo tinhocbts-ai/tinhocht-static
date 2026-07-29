@@ -81,17 +81,11 @@ Cấu hình đang chạy:
 `SITE_URL` = `https://www.tinhocht.com` (canonical + sitemap + robots.txt). **Không bao giờ bỏ www**:
 148/149 URL có traffic đều là bản www, đổi canonical = mất ranking.
 
-### ⚠️ Việc DNS còn sót: bản ghi AAAA của apex
+### ✅ DNS đã hoàn tất (29/07/2026)
 
-`tinhocht.com` vẫn còn **bản ghi AAAA (IPv6) `2001:ee0:23::23`** trỏ về máy chủ nhà cung cấp
-(server `nginx-V-ddos`), không phải GitHub. Hậu quả: máy/mạng dùng IPv6 khi gõ `tinhocht.com`
-sẽ vào nhầm máy chủ đó (trang trắng, https lỗi). Bản ghi A (IPv4) thì đã đúng.
-
-**Cách xử lý:** vào trang quản lý DNS, **xoá bản ghi AAAA của Host `@`**. Không cần thay gì —
-IPv4 đã trỏ GitHub. (Hoặc thay bằng 4 AAAA của GitHub: `2606:50c0:8000::153`, `…8001::153`,
-`…8002::153`, `…8003::153`.)
-
-Kiểm tra sau khi xoá: `curl -sI https://tinhocht.com/` phải trả 301 về `https://www.tinhocht.com/`.
+Đã xoá bản ghi URL REDIRECT của apex. Kiểm tra thực tế: gõ `tinhocht.com` (không www) 6/6 lần
+vào đúng GitHub và chuyển 301 sang `https://www.tinhocht.com/`. Cả 4 kiểu gõ (có/không www,
+http/https) đều về đúng một địa chỉ.
 
 ### Việc nên làm trong Search Console (sau go-live)
 

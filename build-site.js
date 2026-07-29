@@ -568,9 +568,98 @@ function renderPricePage(page, pages, prefix) {
         <h2>Cam kết khi nạp mực tại Tin Học HT</h2>
         <ul class="check-list">${data.camKet.map(x => '<li>' + esc(x) + '</li>').join('')}</ul>
       </section>
+
+      <section class="khu-vuc-gia">
+        <h2>Bảng giá này áp dụng ở những khu vực nào?</h2>
+        <p>Mức giá trên áp dụng cho toàn bộ khu vực nội thành TP.HCM, đã gồm công tới tận nơi.
+           Bấm vào quận của bạn để xem thời gian kỹ thuật có mặt và các dịch vụ kèm theo:</p>
+        <ul class="link-list">${Object.keys(TEN_QUAN)
+          .filter(q => PAGE_SET.has(pathCuaQuan(q)))
+          .map(q => `<li><a href="${prefix}${encPath(pathCuaQuan(q))}.html">Nạp mực máy in ${esc(TEN_QUAN[q])}</a></li>`)
+          .join('')}</ul>
+      </section>
 ${gallery}
       <section class="price-more">
         ${rest}
+      </section>`;
+}
+
+/* ---------------- khu vực lân cận + hỏi đáp cho trang dịch vụ theo quận ----------------
+   Hai mục đích cùng lúc:
+   1) Khách ở giáp ranh hai quận tìm được đúng trang mình cần.
+   2) Chia đều liên kết nội bộ. Đo trên chính site: trang được ≥8 liên kết trỏ tới đứng
+      trung bình vị trí 18,8; trang dưới 8 liên kết tụt xuống 23,1. Nhóm quận 7, 8, 9, 12,
+      Gò Vấp, Bình Tân đang ở nhóm ít liên kết và cũng đang xếp hạng thấp nhất. */
+const LAN_CAN = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quan-lan-can.json'), 'utf8'));
+const TEN_QUAN = LAN_CAN._ten_hien_thi;
+/* Vài trang đặt URL không theo mẫu chung (giữ nguyên slug gốc nên không đổi được) */
+const QUAN_PATH = {
+  'quan-4': 'home/bơm-mực-máy-in-quận-4-có-mặt-nhanh-nhất-giá-rẻ',
+};
+const pathCuaQuan = q => QUAN_PATH[q] || ('home/nap-muc-may-in-' + q);
+
+function quanCuaTrang(p) {
+  for (const [q, duongDan] of Object.entries(QUAN_PATH)) if (duongDan === p) return q;
+  const m = p.match(/^home\/nap-muc-may-in-(quan-[a-z0-9-]+)$/);
+  return m && LAN_CAN[m[1]] ? m[1] : null;
+}
+
+function khuVucLanCan(quan, prefix, pageSet) {
+  const ds = (LAN_CAN[quan] || []).filter(q => pageSet.has(pathCuaQuan(q)));
+  if (ds.length < 2) return '';
+  const ten = TEN_QUAN[quan];
+  return `
+      <section class="lan-can">
+        <h2>Nạp mực máy in ở khu vực gần ${esc(ten)}</h2>
+        <p>Kỹ thuật phụ trách ${esc(ten)} cũng nhận việc ở các quận sát bên. Nhà hoặc công ty nằm ở
+           ranh giới thì bấm vào khu vực gần mình nhất để xem giá và thời gian có mặt:</p>
+        <ul class="link-list">${ds.map(q =>
+          `<li><a href="${prefix}${encPath(pathCuaQuan(q))}.html">Nạp mực máy in ${esc(TEN_QUAN[q])}</a></li>`).join('')}</ul>
+      </section>`;
+}
+
+/* Hỏi–đáp cho trang quận. Xoay theo số thứ tự quận để các trang không giống hệt nhau,
+   và mỗi câu trả lời đều gắn với chính khu vực đó. */
+function cauHoiQuan(quan) {
+  const ten = TEN_QUAN[quan];
+  const lc = (LAN_CAN[quan] || []).slice(0, 2).map(q => TEN_QUAN[q]).join(' và ');
+  const bo = [
+    ['Nạp mực máy in ở ' + ten + ' giá bao nhiêu?',
+     'Máy in laser trắng đen 90.000đ, laser màu 300.000đ, máy in phun 90.000đ — giá đã gồm công tới tận nơi trong ' + ten + ', không phụ thu phí đi lại. Máy cần thay thêm linh kiện thì báo giá trước khi làm.'],
+    ['Bao lâu thì có kỹ thuật tới ' + ten + '?',
+     'Trong giờ hành chính thường 20–30 phút kể từ lúc gọi, vì luôn có kỹ thuật trực sẵn ở khu vực ' + ten + ' và ' + lc + '. Giờ cao điểm hoặc trời mưa có thể lâu hơn khoảng 15 phút.'],
+    ['Nạp mực xong bản in có đậm đẹp như mực hãng không?',
+     'Mực dùng là loại nhập từ Nhật và Mỹ, in ra đậm nét và đều màu. Trước khi bàn giao đều in thử tại chỗ cho khách xem, bản in chưa ưng thì làm lại ngay, không tính thêm tiền.'],
+    ['Có làm ngoài giờ và cuối tuần ở ' + ten + ' không?',
+     'Có. Nhận cả thứ 7, chủ nhật, ngày lễ và buổi tối. Cần gấp ngoài giờ thì gọi trước để kỹ thuật sắp lịch, không tính phụ phí ngoài giờ.'],
+    ['Công ty ở ' + ten + ' có xuất hoá đơn và làm công nợ được không?',
+     'Được. Xuất hoá đơn VAT đầy đủ theo yêu cầu, doanh nghiệp dùng thường xuyên có thể ký phiếu từng lần rồi thanh toán gộp cuối tháng.'],
+    ['Bảo hành sau khi nạp mực thế nào?',
+     'Bảo hành đến khi hết hộp mực. Trong thời gian đó bản in bị mờ, lem hay sọc thì gọi lại, kỹ thuật quay lại xử lý miễn phí.'],
+  ];
+  /* Mỗi trang lấy 3 câu trong bộ 6, xoay theo tên quận để không trang nào giống hệt trang nào.
+     Dùng mã băm từ cả tên chứ không chỉ chữ số — nếu không thì Gò Vấp, Bình Tân, Tân Bình…
+     (những quận không có số) sẽ rơi vào cùng một tổ hợp. */
+  let h = 0;
+  for (let i = 0; i < quan.length; i++) h = (h * 31 + quan.charCodeAt(i)) >>> 0;
+  const chon = [], dung = new Set();
+  for (let k = 0; chon.length < 3 && k < bo.length * 2; k++) {
+    const idx = (h + k * 2 + Math.floor(k / 3)) % bo.length;
+    if (dung.has(idx)) continue;
+    dung.add(idx);
+    chon.push(bo[idx]);
+  }
+  // câu giá luôn có mặt vì đó là thứ khách hỏi nhiều nhất
+  if (!chon.includes(bo[0])) chon[2] = bo[0];
+  return chon;
+}
+
+function hoiDapQuan(quan) {
+  const chon = cauHoiQuan(quan);
+  return `
+      <section class="hoi-dap">
+        <h2>Câu hỏi thường gặp khi nạp mực máy in ${esc(TEN_QUAN[quan])}</h2>
+        ${chon.map(c => `<h3>${esc(c[0])}</h3>\n        <p>${esc(c[1])}</p>`).join('\n        ')}
       </section>`;
 }
 
@@ -605,6 +694,17 @@ function build() {
       if (CROSS_LINK[page.path]) body += crossLinkBlock(CROSS_LINK[page.path]);
       /* Trang trùng chủ đề: trỏ về bài hướng dẫn đang xếp hạng tốt hơn */
       if (BOOST_LINK[page.path]) body += boostLinkBlock(BOOST_LINK[page.path], prefix);
+      /* Trang dịch vụ theo quận: thêm hỏi–đáp riêng và khu vực giáp ranh (chỉ thêm, không sửa bài gốc) */
+      const quan = quanCuaTrang(page.path);
+      if (quan) {
+        // đưa hỏi–đáp vào blocks để bộ sinh dữ liệu có cấu trúc nhận ra FAQPage
+        for (const c of cauHoiQuan(quan)) {
+          page.blocks.push({ t: 'h3', text: c[0] });
+          page.blocks.push({ t: 'p', text: c[1] });
+        }
+        body += hoiDapQuan(quan, prefix);
+        body += khuVucLanCan(quan, prefix, PAGE_SET);
+      }
     }
 
     const pageTitle = TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].title : page.title;

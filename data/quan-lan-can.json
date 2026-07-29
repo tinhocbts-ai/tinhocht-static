@@ -1,0 +1,144 @@
+{
+  "_help": "Bản đồ quận giáp ranh dùng để gợi ý khu vực lân cận ở cuối trang dịch vụ. Dữ liệu địa lý thật của TP.HCM — khách ở giáp ranh hai quận sẽ tìm thấy đúng trang họ cần, đồng thời liên kết nội bộ được chia đều thay vì dồn hết vào vài trang.",
+  "_luu_y": "Danh sách là khu vực GẦN nhau về mặt đi lại (phần lớn giáp ranh thật). Dữ liệu để đối xứng hai chiều: A có B thì B có A, nhờ vậy liên kết nội bộ chia đều thay vì dồn về vài trang.",
+  "quan-1": [
+    "quan-3",
+    "quan-4",
+    "quan-5",
+    "quan-binh-thanh",
+    "quan-phu-nhua",
+    "quan-2"
+  ],
+  "quan-2": [
+    "quan-1",
+    "quan-4",
+    "quan-7",
+    "quan-9",
+    "quan-binh-thanh"
+  ],
+  "quan-3": [
+    "quan-1",
+    "quan-10",
+    "quan-phu-nhua",
+    "quan-tan-binh",
+    "quan-binh-thanh"
+  ],
+  "quan-4": [
+    "quan-1",
+    "quan-7",
+    "quan-8",
+    "quan-2"
+  ],
+  "quan-5": [
+    "quan-1",
+    "quan-6",
+    "quan-8",
+    "quan-10",
+    "quan-11"
+  ],
+  "quan-6": [
+    "quan-5",
+    "quan-8",
+    "quan-11",
+    "quan-binh-tan",
+    "quan-tan-phu"
+  ],
+  "quan-7": [
+    "quan-4",
+    "quan-8",
+    "quan-2",
+    "quan-9"
+  ],
+  "quan-8": [
+    "quan-4",
+    "quan-5",
+    "quan-6",
+    "quan-7",
+    "quan-binh-tan"
+  ],
+  "quan-9": [
+    "quan-2",
+    "quan-binh-thanh",
+    "quan-7"
+  ],
+  "quan-10": [
+    "quan-3",
+    "quan-5",
+    "quan-11",
+    "quan-tan-binh"
+  ],
+  "quan-11": [
+    "quan-5",
+    "quan-6",
+    "quan-10",
+    "quan-tan-binh",
+    "quan-tan-phu"
+  ],
+  "quan-12": [
+    "quan-go-vap",
+    "quan-tan-binh",
+    "quan-binh-thanh"
+  ],
+  "quan-binh-thanh": [
+    "quan-1",
+    "quan-3",
+    "quan-phu-nhua",
+    "quan-go-vap",
+    "quan-12",
+    "quan-2",
+    "quan-9"
+  ],
+  "quan-phu-nhua": [
+    "quan-1",
+    "quan-3",
+    "quan-binh-thanh",
+    "quan-go-vap",
+    "quan-tan-binh"
+  ],
+  "quan-tan-binh": [
+    "quan-3",
+    "quan-10",
+    "quan-11",
+    "quan-phu-nhua",
+    "quan-go-vap",
+    "quan-tan-phu",
+    "quan-12"
+  ],
+  "quan-tan-phu": [
+    "quan-tan-binh",
+    "quan-11",
+    "quan-6",
+    "quan-binh-tan"
+  ],
+  "quan-go-vap": [
+    "quan-12",
+    "quan-binh-thanh",
+    "quan-phu-nhua",
+    "quan-tan-binh"
+  ],
+  "quan-binh-tan": [
+    "quan-6",
+    "quan-8",
+    "quan-tan-phu"
+  ],
+  "_ten_hien_thi": {
+    "quan-1": "Quận 1",
+    "quan-2": "Quận 2",
+    "quan-3": "Quận 3",
+    "quan-4": "Quận 4",
+    "quan-5": "Quận 5",
+    "quan-6": "Quận 6",
+    "quan-7": "Quận 7",
+    "quan-8": "Quận 8",
+    "quan-9": "Quận 9",
+    "quan-10": "Quận 10",
+    "quan-11": "Quận 11",
+    "quan-12": "Quận 12",
+    "quan-binh-thanh": "Quận Bình Thạnh",
+    "quan-phu-nhua": "Quận Phú Nhuận",
+    "quan-tan-binh": "Quận Tân Bình",
+    "quan-tan-phu": "Quận Tân Phú",
+    "quan-go-vap": "Quận Gò Vấp",
+    "quan-binh-tan": "Quận Bình Tân"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "_help": "Tiêu đề + mô tả hiển thị trên Google cho từng trang. Sửa ở đây rồi chạy 'node build-site.js'. Nội dung bài KHÔNG bị đụng tới.",
+  "_quy_tac": [
+    "Tiêu đề ≤ 60 ký tự để Google không cắt giữa chừng; từ khoá chính đặt ở đầu.",
+    "Bỏ ký hiệu rác (▷▷, !!!, nháy kép thừa) — trông như spam nên người ta không bấm.",
+    "Mô tả ≤ 155 ký tự, nói rõ khách được gì: giá thật, thời gian có mặt, bảo hành.",
+    "KHÔNG đụng trang đang có tỷ lệ nhấp tốt (≥5%): L310, L3210, L3110, L1110, quận 10, Tân Bình, Tân Phú, Brother chạy chậm."
+  ],
+
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-8": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 8 — Thợ Tới Trong 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nhà quận 8: máy chạy chậm, không lên nguồn, mất mạng, cài lại Windows. Kiểm tra trước, báo giá sau, chỉ thu tiền khi máy chạy ổn."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-tan-phu": {
+    "title": "Sửa Máy Tính Tại Nhà Quận Tân Phú — Có Mặt Sau 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nơi quận Tân Phú: treo máy, chạy chậm, không lên nguồn, lỗi wifi, cài Windows và phần mềm văn phòng. Báo giá trước khi làm."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-7": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 7 — Kỹ Thuật Đến Trong 30 Phút",
+    "desc": "Dịch vụ sửa máy tính, laptop tận nhà quận 7: máy chậm, treo, không vào được mạng, cài lại Windows. Kiểm tra tận nơi, báo giá trước, bảo hành sau sửa."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-11": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 11 — Có Mặt Trong 30 Phút",
+    "desc": "Sửa máy tính, laptop tại nhà quận 11: không lên nguồn, chạy chậm, lỗi mạng, cài Windows, vệ sinh máy. Thợ tới tận nơi, báo giá trước khi sửa."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-3": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 3 — Thợ Đến Sau 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nơi quận 3: máy treo, chạy chậm, không lên hình, lỗi wifi, cài lại Windows và Office. Kiểm tra trước, thu tiền khi máy chạy ổn."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-1": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 1 — Kỹ Thuật Có Mặt 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nơi quận 1 cho văn phòng và hộ gia đình: máy chậm, treo, mất mạng, cài Windows. Xuất hoá đơn VAT, hỗ trợ công nợ cuối tháng."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-4": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 4 — Có Mặt Trong 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nhà quận 4: không lên nguồn, chạy chậm, lỗi mạng wifi, cài lại Windows. Báo giá trước khi làm, bảo hành sau khi sửa."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-phu-nhuan": {
+    "title": "Sửa Máy Tính Tại Nhà Quận Phú Nhuận — Tới Sau 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nơi quận Phú Nhuận: máy chậm, treo, không lên nguồn, lỗi mạng, cài Windows. Kiểm tra tại chỗ, báo giá trước khi sửa."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-binh-thanh": {
+    "title": "Sửa Máy Tính Tại Nhà Quận Bình Thạnh — Có Mặt 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nơi quận Bình Thạnh: không lên nguồn, chạy chậm, lỗi wifi, cài lại Windows và phần mềm. Báo giá trước, bảo hành sau sửa."
+  },
+
+  "home/nap-muc-may-in-gia-re-tp-hcm---chi-con-80k": {
+    "title": "Nạp Mực Máy In Giá Rẻ TP.HCM Từ 90.000đ — Tận Nơi 20 Phút",
+    "desc": "Bảng giá nạp mực máy in tận nơi TP.HCM: laser trắng đen từ 90.000đ, laser màu 300.000đ, in phun 90.000đ. Miễn phí đi lại nội thành, bảo hành đến hết mực."
+  },
+  "home/nap-muc-may-in-quan-go-vap": {
+    "title": "Nạp Mực Máy In Quận Gò Vấp Tận Nơi — Từ 90.000đ, 20 Phút",
+    "desc": "Nạp mực máy in tại nhà quận Gò Vấp cho HP, Canon, Brother, Samsung. Giá từ 90.000đ đã gồm công tới nơi, in thử trước khi bàn giao, bảo hành đến hết mực."
+  },
+  "home/nap-muc-may-in-quan-phu-nhua": {
+    "title": "Nạp Mực Máy In Quận Phú Nhuận — Từ 90.000đ, Tới 20 Phút",
+    "desc": "Nạp mực máy in tận nơi quận Phú Nhuận: HP, Canon, Brother, Samsung, Xerox. Giá từ 90.000đ gồm công đến tận nơi, in thử tại chỗ, bảo hành đến hết mực."
+  },
+  "home/nap-muc-may-in-quan-3": {
+    "title": "Nạp Mực Máy In Quận 3 Tận Nơi — Từ 90.000đ, Có Mặt 20 Phút",
+    "desc": "Nạp mực máy in tại nhà quận 3 cho HP, Canon, Brother, Samsung. Giá từ 90.000đ đã gồm công tới nơi, in thử trước khi giao, xuất hoá đơn VAT theo yêu cầu."
+  },
+  "home/nap-muc-may-in-quan-12": {
+    "title": "Nạp Mực Máy In Quận 12 Tận Nơi — Từ 90.000đ, 20–30 Phút",
+    "desc": "Nạp mực máy in tại nhà quận 12: HP, Canon, Brother, Samsung, Panasonic. Giá từ 90.000đ gồm công đến nơi, in thử tại chỗ, bảo hành đến khi hết mực."
+  },
+  "home/nap-muc-may-in-quan-7": {
+    "title": "Nạp Mực Máy In Quận 7 Tận Nơi — Từ 90.000đ, Tới 30 Phút",
+    "desc": "Nạp mực máy in tại nhà quận 7 cho HP, Canon, Brother, Samsung. Giá từ 90.000đ đã gồm công tới nơi, in thử trước khi bàn giao, bảo hành đến hết mực."
+  },
+  "home/nap-muc-may-in-quan-1": {
+    "title": "Nạp Mực Máy In Quận 1 Tận Nơi — Từ 90.000đ, Có Mặt 20 Phút",
+    "desc": "Nạp mực máy in tại nhà và văn phòng quận 1: HP, Canon, Brother, Samsung. Từ 90.000đ gồm công tới nơi, xuất hoá đơn VAT, hỗ trợ công nợ cuối tháng."
+  },
+  "home/nap-muc-may-in-quan-6": {
+    "title": "Nạp Mực Máy In Quận 6 Tận Nơi — Từ 90.000đ, 20–30 Phút",
+    "desc": "Nạp mực máy in tại nhà quận 6 cho HP, Canon, Brother, Samsung, Xerox. Giá từ 90.000đ gồm công đến nơi, in thử tại chỗ, bảo hành đến hết mực."
+  },
+  "home/nap-muc-may-in-quan-binh-thanh": {
+    "title": "Nạp Mực Máy In Quận Bình Thạnh — Từ 90.000đ, Tới 20 Phút",
+    "desc": "Nạp mực máy in tận nơi quận Bình Thạnh: HP, Canon, Brother, Samsung. Giá từ 90.000đ đã gồm công đi lại, in thử trước khi giao, bảo hành đến hết mực."
+  },
+  "home/nạp-mực-in-đường-trần-hưng-đạo-quận-1-tại-nhà": {
+    "title": "Nạp Mực Máy In Đường Trần Hưng Đạo, Quận 1 — Tận Nơi 20 Phút",
+    "desc": "Nạp mực máy in tại nhà khu vực đường Trần Hưng Đạo, quận 1. Giá từ 90.000đ gồm công tới nơi, có mặt trong 20 phút, in thử tại chỗ trước khi bàn giao."
+  },
+  "home/ban-can-nap-muc-may-in-gap-24-7-tai-hcm---thong-tin-o-day": {
+    "title": "Nạp Mực Máy In Gấp Trong Ngày Tại TP.HCM — Kể Cả Chủ Nhật",
+    "desc": "Cần nạp mực máy in gấp ở TP.HCM? Kỹ thuật có mặt trong 20–30 phút, làm cả thứ 7, chủ nhật và ngoài giờ. Giá từ 90.000đ, in thử ngay trước khi bàn giao."
+  },
+
+  "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw": {
+    "title": "Cách Nạp Mực Và Reset Máy In Brother B7535DW Chi Tiết",
+    "desc": "Hướng dẫn nạp mực và reset bộ đếm máy in Brother DCP-B7535DW từng bước kèm hình: tháo hộp mực, đổ mực, reset chip, in thử. Tự làm tại chỗ trong 10 phút."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-kéo-giấy-liên-tục-đơn-giản-nhất": {
+    "title": "Máy In Kéo Nhiều Tờ Giấy Cùng Lúc — Cách Sửa Tại Chỗ",
+    "desc": "Máy in kéo 2–3 tờ giấy một lúc hoặc kẹt giấy liên tục? Nguyên nhân thường ở quả đào và tấm đệm khay giấy. Hướng dẫn kiểm tra và xử lý ngay tại nhà."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-tu-bom-muc-may-in-brother": {
+    "title": "Cách Tự Bơm Mực Máy In Brother Tại Nhà — Hướng Dẫn Từng Bước",
+    "desc": "Tự bơm mực máy in Brother tại nhà: chọn đúng loại mực, tháo hộp mực, đổ mực, reset chip và in thử. Kèm lưu ý tránh làm lem mực và hỏng trống."
+  },
+  "thu-thuat-tin-hoc/huong-dan-reset-may-in-mau-brother-hl-3150-nhanh-nhat": {
+    "title": "Cách Reset Máy In Màu Brother HL-3150 — Làm Trong 2 Phút",
+    "desc": "Hướng dẫn reset máy in màu Brother HL-3150CDN, HL-3150CDW khi báo hết mực hoặc nháy đèn: thao tác trên bảng điều khiển từng bước, không cần phần mềm."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-brother-hl-l5100dn-dhon-gian": {
+    "title": "Cách Reset Máy In Brother HL-L5100DN Khi Báo Hết Mực",
+    "desc": "Reset bộ đếm mực máy in Brother HL-L5100DN, L5100DNT ngay trên máy: mở nắp, giữ phím, chọn Toner Reset. Làm trong 2 phút, in tiếp bình thường."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-dcp-l2520d-l2540dw-de-nhat": {
+    "title": "Máy In Brother Báo Lỗi Drum — Cách Reset Trống Trong 1 Phút",
+    "desc": "Máy in Brother nháy đèn Drum hoặc báo Replace Drum dù trống còn tốt? Hướng dẫn reset trống ngay trên máy theo từng dòng, kèm cách vệ sinh dây cao áp."
+  },
+  "thu-thuat-tin-hoc/tai-sao-phai-thay-drum-may-in-khi-nap-muc-lan-dau": {
+    "title": "Vì Sao Nạp Mực Lần Đầu Phải Thay Drum? Giá Thay Bao Nhiêu",
+    "desc": "Giải thích vì sao thợ báo thay drum khi nạp mực lần đầu, khi nào thật sự cần thay, dòng máy nào bắt buộc. Kèm giá thay drum HP, Canon, Brother, Samsung."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-phun-canon-toan-tap": {
+    "title": "Cách Reset Máy In Phun Canon Toàn Tập — Mọi Dòng Máy",
+    "desc": "Tổng hợp cách reset máy in phun Canon khi báo tràn mực thải, nháy đèn cam: reset bằng phím trên máy và bằng phần mềm Service Tool, kèm mã lỗi thường gặp."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/thứ-tự-trang-in-bị-lỗi": {
+    "title": "Máy In Ra Ngược Thứ Tự Trang — Cách Chỉnh Lại Trong 30 Giây",
+    "desc": "Máy in in ngược thứ tự trang, trang cuối ra trước? Chỉnh lại trong phần Advanced của driver hoặc cài đặt in ngược. Hướng dẫn cho Word, PDF và Excel."
+  },
+  "thu-thuat-tin-hoc/thủ-thuật-máy-tính/sửa-lỗi-cột-wifi-bị-dấu-x-đỏ": {
+    "title": "Wifi Bị Dấu X Đỏ, Không Vào Được Mạng — 6 Cách Sửa Nhanh",
+    "desc": "Biểu tượng wifi bị dấu X đỏ trên Windows: bật lại card mạng, khởi động WLAN AutoConfig, cài lại driver, reset TCP/IP. Làm lần lượt là vào mạng lại được."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc": {
+    "title": "Máy In Epson In Sai Màu, Bản In Bị Sọc — Cách Xử Lý Tại Nhà",
+    "desc": "Máy in phun Epson in không đúng màu, bản in bị sọc ngang hoặc mất màu? Hướng dẫn kiểm tra đầu phun, làm sạch bằng Head Cleaning và xử lý khi tắc mực."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4": {
+    "title": "Máy In Brother HL-L2321D Nháy 4 Đèn — Nguyên Nhân & Cách Sửa",
+    "desc": "Máy in Brother HL-L2321D nháy 4 đèn liên tục, không in được: lỗi thường ở cụm sấy hoặc cảm biến giấy. Hướng dẫn kiểm tra và xử lý theo từng nguyên nhân."
+  }
+}

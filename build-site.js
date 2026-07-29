@@ -53,6 +53,10 @@ const MERGE_INTO = { 'bảng-giá': 'bang-gia-nap-muc-may-in-tan-noi' };
 
 /* Ghi đè title/description — CHỈ dùng cho trang gộp có title mơ hồ ("BẢNG GIÁ" bị trùng 2 trang,
    vị trí GSC 27 nên gần như không có ranking để mất). KHÔNG áp dụng cho 8 trang ngôi sao. */
+/* Tiêu đề + mô tả viết tay cho các trang nhiều lượt hiển thị nhưng ít người bấm.
+   Tách ra data/seo-meta.json để sửa nội dung hiển thị trên Google mà không phải đụng code. */
+const SEO_META = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'seo-meta.json'), 'utf8'));
+
 const TITLE_OVERRIDE = {
   /* Trang này đang đứng vị trí 3,1 với 256 lượt hiển thị nhưng 0 lượt nhấp (GSC 6 tháng).
      Title cũ có ký tự "▷▷" và mô tả tự cắt từ đoạn mở bài nói về "năm 2020" — người tìm thấy
@@ -79,6 +83,10 @@ const TITLE_OVERRIDE = {
     desc: 'Bảng giá nạp mực máy in tận nơi TP.HCM của Tin Học HT: laser trắng đen từ 90.000đ, laser màu 300.000đ, in phun 90.000đ. Miễn phí đi lại nội thành, có mặt 20–30 phút, bảo hành đến hết mực.',
   },
 };
+for (const [k, v] of Object.entries(SEO_META)) {
+  if (k.startsWith('_')) continue;
+  TITLE_OVERRIDE[k] = { title: v.title, desc: v.desc };
+}
 
 /* Tên ngắn gọn cho menu/mục lục: bỏ đuôi quảng cáo sau dấu | - : ▷ */
 function shortLabel(title) {

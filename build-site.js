@@ -737,7 +737,7 @@ function build() {
       body = renderPricePage(page, allPages, prefix);
     } else {
       body = '<h1>' + esc(page.title) + '</h1>\n      ' + renderBlocks(page.blocks, prefix, prefix, page.path);
-      if (PRICE_EMBED.has(page.path)) body += priceTableCompact(prefix);
+      if (PRICE_EMBED.has(page.path)) { body += priceTableCompact(prefix); page.coBangGia = true; }
       /* Mảng in nhiệt/hoá đơn: giữ nguyên nội dung (đang có thứ hạng thật), chỉ dẫn nhẹ sang mucinht */
       if (CROSS_LINK[page.path]) body += crossLinkBlock(CROSS_LINK[page.path]);
       /* Trang trùng chủ đề: trỏ về bài hướng dẫn đang xếp hạng tốt hơn */
@@ -754,6 +754,7 @@ function build() {
         /* Bảng giá ngay trên trang quận: "giá bao nhiêu" là câu hỏi kèm theo nhiều nhất
            trong các tìm kiếm theo quận, trước đây khách phải nhảy sang trang khác mới thấy. */
         body += priceTableCompact(prefix);
+        page.coBangGia = true;   // để phần dữ liệu có cấu trúc chỉ khai giá ở trang thật sự có bảng giá
         body += hoiDapQuan(quan, prefix);
         body += khuVucLanCan(quan, prefix, PAGE_SET);
       }

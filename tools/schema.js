@@ -190,7 +190,10 @@ function buildSchema(opts) {
           geoRadius: 3000,
         },
       };
-      svc.offers = {
+      /* Chỉ khai giá ở trang thật sự in bảng giá ra màn hình. Trang sửa máy in và sửa máy
+         tính theo quận cũng khớp tên quận nhưng không có bảng giá nào — khai giá ở đó là
+         khai khống, đúng thứ mục NGUYÊN TẮC đầu file này cấm. */
+      if (page.coBangGia) svc.offers = {
         '@type': 'Offer', priceCurrency: 'VND', price: giaThapNhat(gia),
         priceSpecification: {
           '@type': 'PriceSpecification', priceCurrency: 'VND',

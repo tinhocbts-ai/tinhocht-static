@@ -14,6 +14,13 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const biz = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'business.json'), 'utf8'));
 const gia = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'bang-gia.json'), 'utf8'));
+const DIA_BAN = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quan-dia-ban.json'), 'utf8'));
+
+/* Giá trong bảng ghi dạng "90.000đ" — lấy ra số để khai báo cho đúng kiểu dữ liệu */
+const soGia = s => Number(String(s).replace(/[^\d]/g, '')) || 0;
+const mocGia = g => g.nhom.map(x => soGia(x.gia)).filter(Boolean);
+const giaThapNhat = g => Math.min(...mocGia(g));
+const giaCaoNhat = g => Math.max(...mocGia(g));
 
 const ORG_ID = url => url + '/#business';
 const SITE_ID = url => url + '/#website';
@@ -165,6 +172,36 @@ function buildSchema(opts) {
         '@type': 'ServiceChannel', servicePhone: '+84934393550', serviceUrl: url,
       },
     });
+
+    /* Trang dịch vụ theo quận: nói rõ vùng phục vụ bằng toạ độ và mức giá khởi điểm.
+       Toạ độ giúp phân biệt trang quận này với quận kia — nếu không thì mọi trang đều
+       chỉ mang một địa chỉ cửa hàng duy nhất. Giá khởi điểm là thứ khách hỏi nhiều nhất
+       và cũng là dữ liệu Google trích ra để trả lời trực tiếp trên trang kết quả. */
+    const db = Object.entries(DIA_BAN).find(([k]) =>
+      k !== '_help' && new RegExp('(^|[-/])' + k + '([-/]|$)').test(slug));
+    if (db) {
+      const d = db[1];
+      const svc = graph[graph.length - 1];
+      svc.areaServed = {
+        '@type': 'AdministrativeArea', name: d.ten + ', TP.HCM',
+        geo: {
+          '@type': 'GeoCircle',
+          geoMidpoint: { '@type': 'GeoCoordinates', latitude: d.lat, longitude: d.lon },
+          geoRadius: 3000,
+        },
+      };
+      svc.offers = {
+        '@type': 'Offer', priceCurrency: 'VND', price: giaThapNhat(gia),
+        priceSpecification: {
+          '@type': 'PriceSpecification', priceCurrency: 'VND',
+          minPrice: giaThapNhat(gia), maxPrice: giaCaoNhat(gia),
+          valueAddedTaxIncluded: false,
+        },
+        availability: 'https://schema.org/InStock',
+        areaServed: { '@type': 'AdministrativeArea', name: d.ten + ', TP.HCM' },
+        description: 'Giá đã gồm công đến tận nơi trong ' + d.ten + ', không phụ thu phí đi lại.',
+      };
+    }
   }
 
   // 5) Bảng giá — danh mục dịch vụ kèm giá

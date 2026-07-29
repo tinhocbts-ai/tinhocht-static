@@ -618,6 +618,40 @@ function khuVucLanCan(quan, prefix, pageSet) {
       </section>`;
 }
 
+/* Địa bàn phục vụ của từng quận: tuyến đường, địa điểm quen thuộc, quãng đường từ cửa hàng.
+   Lý do thêm: đo trên chính site cho thấy trang quận 3 dài hơn và được nhiều liên kết hơn
+   trang quận 10 nhưng vẫn đứng sau 4 bậc. Khác biệt còn lại là mức độ cụ thể về địa lý —
+   trang nào cũng nói chung chung "phục vụ toàn quận" thì không có gì để Google phân biệt.
+   Nêu đúng tên đường, chợ, toà nhà và thời gian di chuyển thật là thứ khách cần biết,
+   đồng thời bắt được các tìm kiếm kèm tên đường. */
+const DIA_BAN = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quan-dia-ban.json'), 'utf8'));
+
+function diaBanQuan(quan) {
+  const d = DIA_BAN[quan];
+  if (!d) return '';
+  const ten = d.ten;
+  const duong = d.duong.map(esc);
+  const dsDuong = duong.slice(0, -1).join(', ') + ' và ' + duong[duong.length - 1];
+  const diaDiem = d.diaDiem.map(esc);
+  const dsDiaDiem = diaDiem.slice(0, -1).join(', ') + ' và ' + diaDiem[diaDiem.length - 1];
+  const taiCho = d.km <= 1;
+  const cauDiChuyen = taiCho
+    ? `Cửa hàng nằm ngay tại ${esc(ten)} — số 79 Bắc Hải — nên khách trong quận gọi là kỹ thuật có mặt nhanh nhất,
+       thường trong vòng 15 phút.`
+    : `Từ cửa hàng ở 79 Bắc Hải (Quận 10) sang ${esc(ten)} khoảng ${String(d.km).replace('.', ',')} km, kỹ thuật chạy mất chừng
+       ${d.phut} phút. Đây là quãng đường đi lại hằng ngày nên khách gọi buổi sáng thường được nhận trong buổi.`;
+  return `
+      <section class="dia-ban">
+        <h2>Địa bàn nhận nạp mực máy in tại ${esc(ten)}</h2>
+        <p>${cauDiChuyen}</p>
+        <p>Kỹ thuật nhận việc trên khắp các tuyến ${dsDuong} cùng những khu vực lân cận. Khách ở quanh
+           ${dsDiaDiem} là nhóm gọi thường xuyên nhất, phần lớn là văn phòng, cửa hàng photo và hộ kinh doanh
+           in hoá đơn mỗi ngày.</p>
+        <p>Nhà hoặc công ty nằm trong hẻm, trên tầng cao hay trong toà nhà văn phòng đều nhận bình thường,
+           không tính thêm phí. Máy đặt ở đâu thì bơm mực ngay tại đó, không cần tháo máy mang đi.</p>
+      </section>`;
+}
+
 /* Hỏi–đáp cho trang quận. Xoay theo số thứ tự quận để các trang không giống hệt nhau,
    và mỗi câu trả lời đều gắn với chính khu vực đó. */
 function cauHoiQuan(quan) {
@@ -651,6 +685,20 @@ function cauHoiQuan(quan) {
   }
   // câu giá luôn có mặt vì đó là thứ khách hỏi nhiều nhất
   if (!chon.includes(bo[0])) chon[2] = bo[0];
+
+  /* Thêm một câu gắn với đúng địa bàn quận đó. Câu này có mặt ở mọi trang quận nhưng
+     nội dung khác nhau hoàn toàn vì tên đường và địa điểm mỗi quận một khác, nên không
+     tạo ra các đoạn trùng lặp giữa các trang. */
+  const d = DIA_BAN[quan];
+  if (d) {
+    const duong = d.duong.slice(0, 4).join(', ');
+    const noi = d.diaDiem.slice(0, 3).join(', ');
+    chon.push([
+      'Khu vực nào trong ' + ten + ' được nhận nạp mực tận nơi?',
+      'Toàn bộ ' + ten + ', gồm các tuyến ' + duong + ' và vùng quanh ' + noi +
+      '. Nhà trong hẻm hay văn phòng trên tầng cao đều nhận, không tính thêm phí đi lại.',
+    ]);
+  }
   return chon;
 }
 
@@ -702,6 +750,10 @@ function build() {
           page.blocks.push({ t: 'h3', text: c[0] });
           page.blocks.push({ t: 'p', text: c[1] });
         }
+        body += diaBanQuan(quan);
+        /* Bảng giá ngay trên trang quận: "giá bao nhiêu" là câu hỏi kèm theo nhiều nhất
+           trong các tìm kiếm theo quận, trước đây khách phải nhảy sang trang khác mới thấy. */
+        body += priceTableCompact(prefix);
         body += hoiDapQuan(quan, prefix);
         body += khuVucLanCan(quan, prefix, PAGE_SET);
       }

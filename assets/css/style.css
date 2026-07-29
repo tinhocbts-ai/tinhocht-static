@@ -206,6 +206,13 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 .khu-vuc-gia .link-list { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 860px) { .khu-vuc-gia .link-list { grid-template-columns: 1fr 1fr; } }
 
+/* Địa bàn phục vụ — đặt giữa bài nên dùng dải màu nhạt bên trái thay vì khung kín,
+   để không cắt mạch đọc như hai khối ở cuối trang */
+.dia-ban { margin: 34px 0 30px; padding: 4px 0 4px 18px; border-left: 3px solid var(--brand); }
+.dia-ban h2 { font-size: 1.18rem; margin-top: 0; }
+.dia-ban p { margin: 0 0 12px; }
+.dia-ban p:last-child { margin-bottom: 0; }
+
 /* Sơ đồ quy trình (SVG tự vẽ — không tải ảnh ngoài nên không tốn thời gian tải) */
 .quy-trinh { margin: 26px 0 30px; padding: 0; }
 .quy-trinh svg { width: 100%; height: auto; display: block; border: 1px solid var(--line);

@@ -1,0 +1,168 @@
+{
+  "_help": "Địa bàn chi tiết từng quận: tuyến đường lớn, địa điểm quen thuộc, thời gian kỹ thuật viên di chuyển từ cửa hàng 79 Bắc Hải (Quận 10), toạ độ trung tâm quận. Dùng để bổ sung tín hiệu địa phương cho trang dịch vụ theo quận — Google xếp hạng dịch vụ tại chỗ dựa nhiều vào mức độ cụ thể về địa lý.",
+  "_vi_sao_dung_ten_duong": "Cố ý dùng TÊN ĐƯỜNG và ĐỊA ĐIỂM quen thuộc thay vì tên phường hành chính: đường và địa điểm không đổi khi sắp xếp lại đơn vị hành chính, còn khách cũng tìm theo đường/chợ/toà nhà nhiều hơn theo số phường.",
+  "_goc_toa_do": "Cửa hàng: 79 Bắc Hải, Quận 10 — 10.7848849, 106.6628515",
+
+  "quan-1": {
+    "ten": "Quận 1",
+    "duong": ["Nguyễn Huệ", "Lê Lợi", "Đồng Khởi", "Hàm Nghi", "Nguyễn Thị Minh Khai", "Điện Biên Phủ", "Trần Hưng Đạo", "Nguyễn Trãi"],
+    "diaDiem": ["chợ Bến Thành", "toà nhà Bitexco", "phố đi bộ Nguyễn Huệ", "khu văn phòng Lê Duẩn", "chợ Tân Định"],
+    "phut": 15,
+    "km": 4.5,
+    "lat": 10.7756,
+    "lon": 106.7019
+  },
+  "quan-2": {
+    "ten": "Quận 2",
+    "duong": ["Mai Chí Thọ", "Trần Não", "Lương Định Của", "Nguyễn Duy Trinh", "Xa lộ Hà Nội", "Nguyễn Thị Định"],
+    "diaDiem": ["khu Thảo Điền", "khu An Phú", "Vincom Mega Mall", "khu đô thị Sala", "chợ Cây Xoài"],
+    "phut": 25,
+    "km": 9.5,
+    "lat": 10.7872,
+    "lon": 106.7498
+  },
+  "quan-3": {
+    "ten": "Quận 3",
+    "duong": ["Cách Mạng Tháng 8", "Nam Kỳ Khởi Nghĩa", "Võ Văn Tần", "Lý Chính Thắng", "Trần Quốc Thảo", "Điện Biên Phủ", "Nguyễn Đình Chiểu", "Bà Huyện Thanh Quan"],
+    "diaDiem": ["chợ Bàn Cờ", "Hồ Con Rùa", "Bệnh viện Bình Dân", "chợ Nguyễn Văn Trỗi", "khu văn phòng Nam Kỳ Khởi Nghĩa"],
+    "phut": 10,
+    "km": 2.8,
+    "lat": 10.7843,
+    "lon": 106.6844
+  },
+  "quan-4": {
+    "ten": "Quận 4",
+    "duong": ["Khánh Hội", "Nguyễn Tất Thành", "Hoàng Diệu", "Bến Vân Đồn", "Đoàn Văn Bơ", "Tôn Đản"],
+    "diaDiem": ["chợ Xóm Chiếu", "cầu Ông Lãnh", "cảng Sài Gòn", "phố ẩm thực Vĩnh Khánh"],
+    "phut": 18,
+    "km": 5.5,
+    "lat": 10.7578,
+    "lon": 106.7012
+  },
+  "quan-5": {
+    "ten": "Quận 5",
+    "duong": ["Trần Hưng Đạo", "Nguyễn Trãi", "An Dương Vương", "Hùng Vương", "Châu Văn Liêm", "Hải Thượng Lãn Ông", "Nguyễn Tri Phương", "Trần Phú"],
+    "diaDiem": ["chợ Kim Biên", "chợ An Đông", "Bệnh viện Chợ Rẫy", "Thuận Kiều Plaza", "chợ vải Soái Kình Lâm", "Đại học Sài Gòn"],
+    "phut": 12,
+    "km": 3.6,
+    "lat": 10.754,
+    "lon": 106.6634
+  },
+  "quan-6": {
+    "ten": "Quận 6",
+    "duong": ["Hậu Giang", "Kinh Dương Vương", "Bà Hom", "Minh Phụng", "Hồng Bàng", "Nguyễn Văn Luông", "Phạm Văn Chí"],
+    "diaDiem": ["chợ Bình Tây", "Bến xe Chợ Lớn", "chợ Phú Lâm", "khu Bình Phú"],
+    "phut": 15,
+    "km": 5.2,
+    "lat": 10.7463,
+    "lon": 106.635
+  },
+  "quan-7": {
+    "ten": "Quận 7",
+    "duong": ["Nguyễn Thị Thập", "Nguyễn Văn Linh", "Huỳnh Tấn Phát", "Nguyễn Lương Bằng", "Lê Văn Lương", "Tân Thuận Đông"],
+    "diaDiem": ["khu Phú Mỹ Hưng", "Crescent Mall", "Đại học Tôn Đức Thắng", "khu chế xuất Tân Thuận", "chợ Tân Mỹ"],
+    "phut": 25,
+    "km": 9,
+    "lat": 10.734,
+    "lon": 106.7215
+  },
+  "quan-8": {
+    "ten": "Quận 8",
+    "duong": ["Phạm Thế Hiển", "Tạ Quang Bửu", "Dương Bá Trạc", "Âu Dương Lân", "Bùi Minh Trực", "Nguyễn Duy"],
+    "diaDiem": ["chợ Rạch Ông", "cầu Chữ Y", "chợ Xóm Củi", "khu Bình Đông"],
+    "phut": 20,
+    "km": 6.8,
+    "lat": 10.724,
+    "lon": 106.6286
+  },
+  "quan-9": {
+    "ten": "Quận 9",
+    "duong": ["Lê Văn Việt", "Đỗ Xuân Hợp", "Nguyễn Duy Trinh", "Xa lộ Hà Nội", "Nguyễn Xiển", "Lã Xuân Oai"],
+    "diaDiem": ["Khu Công nghệ cao", "Vinhomes Grand Park", "Đại học Sư phạm Kỹ thuật", "chợ Tăng Nhơn Phú", "Suối Tiên"],
+    "phut": 35,
+    "km": 16,
+    "lat": 10.8428,
+    "lon": 106.8287
+  },
+  "quan-10": {
+    "ten": "Quận 10",
+    "duong": ["Ba Tháng Hai", "Sư Vạn Hạnh", "Lý Thường Kiệt", "Tô Hiến Thành", "Bắc Hải", "Cách Mạng Tháng 8", "Nguyễn Tri Phương", "Thành Thái"],
+    "diaDiem": ["Vạn Hạnh Mall", "chợ Nguyễn Tri Phương", "Bệnh viện Nhân dân 115", "Nhà thi đấu Phú Thọ", "chợ Hoà Hưng"],
+    "phut": 5,
+    "km": 1,
+    "lat": 10.7729,
+    "lon": 106.6674
+  },
+  "quan-11": {
+    "ten": "Quận 11",
+    "duong": ["Lạc Long Quân", "Ba Tháng Hai", "Lãnh Binh Thăng", "Hoà Bình", "Minh Phụng", "Đường số 3 Tháng 2"],
+    "diaDiem": ["Công viên Đầm Sen", "chợ Bình Thới", "chợ Thiếc", "Trường đua Phú Thọ"],
+    "phut": 10,
+    "km": 2.5,
+    "lat": 10.7629,
+    "lon": 106.65
+  },
+  "quan-12": {
+    "ten": "Quận 12",
+    "duong": ["Nguyễn Ảnh Thủ", "Lê Văn Khương", "Trường Chinh", "Hà Huy Giáp", "Tô Ký", "Quốc lộ 1A", "Nguyễn Văn Quá"],
+    "diaDiem": ["chợ Hiệp Thành", "Khu công nghiệp Tân Thới Hiệp", "chợ Cầu", "ngã tư Ga"],
+    "phut": 25,
+    "km": 11,
+    "lat": 10.8671,
+    "lon": 106.6413
+  },
+  "quan-binh-thanh": {
+    "ten": "Quận Bình Thạnh",
+    "duong": ["Điện Biên Phủ", "Xô Viết Nghệ Tĩnh", "Bạch Đằng", "Nguyễn Xí", "Phan Văn Trị", "Ung Văn Khiêm", "Đinh Bộ Lĩnh", "Nơ Trang Long"],
+    "diaDiem": ["toà nhà Landmark 81", "Vinhomes Central Park", "chợ Bà Chiểu", "Bến xe Miền Đông cũ", "chợ Thanh Đa"],
+    "phut": 15,
+    "km": 5,
+    "lat": 10.8106,
+    "lon": 106.7091
+  },
+  "quan-phu-nhua": {
+    "ten": "Quận Phú Nhuận",
+    "duong": ["Phan Xích Long", "Nguyễn Văn Trỗi", "Hoàng Văn Thụ", "Phan Đình Phùng", "Huỳnh Văn Bánh", "Nguyễn Kiệm", "Trần Huy Liệu"],
+    "diaDiem": ["chợ Phú Nhuận", "khu ẩm thực Phan Xích Long", "chợ Nguyễn Đình Chiểu", "Central Plaza"],
+    "phut": 12,
+    "km": 3.5,
+    "lat": 10.7995,
+    "lon": 106.68
+  },
+  "quan-tan-binh": {
+    "ten": "Quận Tân Bình",
+    "duong": ["Cộng Hoà", "Trường Chinh", "Hoàng Văn Thụ", "Âu Cơ", "Lý Thường Kiệt", "Bàu Cát", "Cách Mạng Tháng 8", "Phạm Văn Hai"],
+    "diaDiem": ["Sân bay Tân Sơn Nhất", "chợ Tân Bình", "toà nhà E.town", "chợ Phạm Văn Hai", "khu Bàu Cát"],
+    "phut": 10,
+    "km": 3.2,
+    "lat": 10.8014,
+    "lon": 106.6528
+  },
+  "quan-tan-phu": {
+    "ten": "Quận Tân Phú",
+    "duong": ["Luỹ Bán Bích", "Âu Cơ", "Tân Kỳ Tân Quý", "Gò Dầu", "Hoà Bình", "Trường Chinh", "Thoại Ngọc Hầu"],
+    "diaDiem": ["Aeon Mall Tân Phú", "chợ Tân Hương", "chợ Sơn Kỳ", "khu công nghiệp Tân Bình"],
+    "phut": 15,
+    "km": 6,
+    "lat": 10.79,
+    "lon": 106.628
+  },
+  "quan-go-vap": {
+    "ten": "Quận Gò Vấp",
+    "duong": ["Quang Trung", "Nguyễn Oanh", "Phan Văn Trị", "Lê Đức Thọ", "Nguyễn Kiệm", "Phạm Văn Đồng", "Nguyễn Văn Nghi", "Thống Nhất"],
+    "diaDiem": ["Emart Gò Vấp", "Vincom Quang Trung", "chợ Gò Vấp", "chợ Hạnh Thông Tây", "công viên Gia Định"],
+    "phut": 18,
+    "km": 7,
+    "lat": 10.8386,
+    "lon": 106.665
+  },
+  "quan-binh-tan": {
+    "ten": "Quận Bình Tân",
+    "duong": ["Kinh Dương Vương", "Tên Lửa", "Hồ Học Lãm", "Vành Đai Trong", "Mã Lò", "Tân Kỳ Tân Quý", "Quốc lộ 1A"],
+    "diaDiem": ["Aeon Mall Bình Tân", "Bến xe Miền Tây", "Khu công nghiệp Tân Tạo", "chợ Bà Hom", "khu Tên Lửa"],
+    "phut": 22,
+    "km": 9.5,
+    "lat": 10.7652,
+    "lon": 106.6033
+  }
+}

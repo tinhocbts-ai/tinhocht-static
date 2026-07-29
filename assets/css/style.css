@@ -195,6 +195,24 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 .gallery-grid img { width: 100%; height: 100%; object-fit: contain; margin: 0; border: 0; }
 .price-more { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: .93rem; }
 
+/* Sơ đồ quy trình (SVG tự vẽ — không tải ảnh ngoài nên không tốn thời gian tải) */
+.quy-trinh { margin: 26px 0 30px; padding: 0; }
+.quy-trinh svg { width: 100%; height: auto; display: block; border: 1px solid var(--line);
+  border-radius: 12px; background: #fff; }
+.quy-trinh .qt-doc { display: none; }   /* điện thoại mới hiện bản xếp dọc */
+.quy-trinh figcaption { margin-top: 10px; font-size: .86rem; color: var(--muted); text-align: center; }
+
+/* Các bước hướng dẫn đánh số */
+.steps { list-style: none; counter-reset: b; margin: 18px 0 0; padding: 0; }
+.steps > li { position: relative; padding: 0 0 4px 0; margin-bottom: 20px; }
+.steps h3 { margin: 0 0 6px; font-size: 1.05rem; color: var(--brand-dark); }
+.steps p { margin: 0; }
+.callout-download { background: var(--brand-soft, #e8f5f0); border-left: 4px solid var(--brand);
+  border-radius: 10px; padding: 16px 20px; margin: 26px 0; }
+.callout-download p { margin: 0 0 6px; }
+.callout-download a { font-weight: 700; }
+.callout-note { font-size: .86rem; color: var(--muted); margin: 0; }
+
 /* Dòng dẫn nhẹ sang website cùng hệ thống — đặt cuối bài, cỡ chữ nhỏ, không phô trương */
 .cross-hint { margin: 26px 0 0; padding-top: 14px; border-top: 1px solid var(--line);
   font-size: .88rem; color: var(--muted); }
@@ -215,6 +233,8 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 
 /* Responsive */
 @media (max-width: 860px) {
+  .quy-trinh .qt-ngang { display: none; }
+  .quy-trinh .qt-doc { display: block; }
   .card-grid, .link-list { grid-template-columns: 1fr; }
   .page-content h1 { font-size: 1.5rem; }
   .price-highlight { grid-template-columns: 1fr 1fr; }

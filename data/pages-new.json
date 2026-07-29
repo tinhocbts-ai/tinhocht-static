@@ -1,0 +1,104 @@
+{
+  "_help": "Trang MỚI viết thêm (không có trên Google Sites cũ). Mỗi mục là 1 trang; build-site.js tự dựng HTML + dữ liệu có cấu trúc HowTo/FAQ. Thêm trang mới = thêm 1 mục ở đây rồi chạy 'node build-site.js'.",
+  "_can_cu": "Chọn model dựa trên: (1) gợi ý tìm kiếm của Google cho thấy có người tìm, (2) tinhocnamphong.net cùng hệ thống đã có sẵn file tải nên link tải là thật, (3) site đang xếp hạng tốt cụm reset Epson nên viết thêm model là đi trên nền uy tín sẵn có.",
+
+  "pages": [
+    {
+      "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251",
+      "title": "Phần Mềm Reset Epson L3250/L3251 — Tool Miễn Phí, 8 Bước",
+      "desc": "Tải phần mềm reset bộ đếm mực thải Epson L3250, L3251, L3256 và hướng dẫn reset từng bước bằng Adjustment Program. Sửa lỗi 2 đèn đỏ nhấp nháy, in tiếp bình thường.",
+      "h1": "Phần mềm reset Epson L3250 / L3251 — tool miễn phí, hướng dẫn 8 bước",
+      "model": "Epson L3250",
+      "dongMay": "L3250, L3251, L3256",
+      "loi": "nhấp nháy 2 đèn đỏ (đèn giấy và đèn mực) và máy tính báo \"Service Required\" hoặc \"Ink pad is at the end of its service life\"",
+      "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l3250/",
+      "taiNhan": "Tải phần mềm reset Epson L3250 (Adjustment Program)",
+      "lienQuan": ["Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110"]
+    },
+    {
+      "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160",
+      "title": "Phần Mềm Reset Epson L4150/L4160 — Tool Miễn Phí, 8 Bước",
+      "desc": "Tải tool reset bộ đếm mực thải Epson L4150, L4160 và hướng dẫn reset bằng Adjustment Program từng bước. Khắc phục lỗi máy nháy đèn đỏ, không in được.",
+      "h1": "Phần mềm reset Epson L4150 / L4160 — tool miễn phí, hướng dẫn 8 bước",
+      "model": "Epson L4150",
+      "dongMay": "L4150, L4160",
+      "loi": "nháy đèn đỏ liên tục và máy tính báo tràn bộ đếm mực thải",
+      "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l4150/",
+      "taiNhan": "Tải phần mềm reset Epson L4150 / L4160",
+      "lienQuan": ["Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251"]
+    },
+    {
+      "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l805",
+      "title": "Phần Mềm Reset Epson L805 — Tool Miễn Phí Kèm Hướng Dẫn",
+      "desc": "Tải phần mềm reset Epson L805, L800, L850 và hướng dẫn reset bộ đếm mực thải từng bước. Xử lý lỗi nháy đèn đỏ, máy không nhận lệnh in, in ra bản trắng.",
+      "h1": "Phần mềm reset Epson L805 — tool miễn phí kèm hướng dẫn từng bước",
+      "model": "Epson L805",
+      "dongMay": "L805, L800, L850",
+      "loi": "nháy đèn đỏ và báo tràn bộ đếm mực thải, máy không nhận lệnh in",
+      "tai": "https://tinhocnamphong.net/phan-mem-reset-may-in-epson-l805/",
+      "taiNhan": "Tải phần mềm reset Epson L805 / L800 / L850",
+      "lienQuan": ["Phan-mem-reset-may-in/phan-mem-reset-epson-l1800", "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc"]
+    },
+    {
+      "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800",
+      "title": "Phần Mềm Reset Epson L1800 A3 — Tool Miễn Phí, 8 Bước",
+      "desc": "Tải tool reset Epson L1800 khổ A3 và hướng dẫn reset bộ đếm mực thải bằng Adjustment Program. Khắc phục máy báo tràn mực thải, nháy đèn đỏ không in được.",
+      "h1": "Phần mềm reset Epson L1800 (khổ A3) — tool miễn phí, hướng dẫn 8 bước",
+      "model": "Epson L1800",
+      "dongMay": "L1800, L1300",
+      "loi": "nháy đèn đỏ và báo tràn bộ đếm mực thải sau khi in số lượng lớn khổ A3",
+      "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l1800/",
+      "taiNhan": "Tải phần mềm reset Epson L1800",
+      "lienQuan": ["Phan-mem-reset-may-in/phan-mem-reset-epson-l805"]
+    },
+    {
+      "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300",
+      "title": "Phần Mềm Reset Epson L110, L210, L300 — Tool Miễn Phí",
+      "desc": "Tải phần mềm reset Epson L110, L210, L300, L350 và hướng dẫn reset bộ đếm mực thải từng bước. Xử lý lỗi nháy 2 đèn đỏ trên các dòng máy in phun Epson đời cũ.",
+      "h1": "Phần mềm reset Epson L110 / L210 / L300 — tool miễn phí kèm hướng dẫn",
+      "model": "Epson L210",
+      "dongMay": "L110, L210, L300, L350",
+      "loi": "nháy 2 đèn đỏ xen kẽ và báo hết hạn sử dụng miếng thấm mực thải",
+      "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l210/",
+      "taiNhan": "Tải phần mềm reset Epson L110 / L210 / L300",
+      "lienQuan": ["Phan-mem-reset-may-in/Phan-mem-reset-may-in-epson-l350", "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310"]
+    },
+    {
+      "path": "Phan-mem-reset-may-in/phan-mem-reset-canon-g1010-g2010-g3010",
+      "title": "Reset Máy In Canon G1010, G2010, G3010 — Hướng Dẫn Đầy Đủ",
+      "desc": "Cách reset máy in Canon G1010, G2010, G3010 khi báo tràn mực thải hoặc nháy đèn cam: reset bằng tổ hợp phím trên máy và bằng phần mềm Service Tool.",
+      "h1": "Reset máy in Canon G1010 / G2010 / G3010 — hướng dẫn đầy đủ",
+      "model": "Canon G1010",
+      "dongMay": "G1010, G2010, G3010, G1020, G2020",
+      "loi": "nháy đèn cam xen kẽ, báo lỗi 5B00 hoặc 1700 (tràn bộ đếm mực thải)",
+      "tai": "https://tinhocnamphong.net/phan-mem-reset-may-in-canon-g1010-g2010-g3010/",
+      "taiNhan": "Tải phần mềm reset Canon G1010 / G2010 / G3010 (Service Tool)",
+      "canon": true,
+      "lienQuan": ["thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-phun-canon-toan-tap"]
+    },
+    {
+      "path": "Phan-mem-reset-may-in/reset-chip-may-in-hp-135a-135w-137w",
+      "title": "Reset Chip Mực Máy In HP 135A, 135W, 137W — Cách Làm Chi Tiết",
+      "desc": "Hướng dẫn reset chip hộp mực máy in HP Laser MFP 135A, 135W, 137W khi máy báo hết mực dù còn mực. Kèm cách nhận biết chip và lưu ý khi nạp mực lại.",
+      "h1": "Reset chip mực máy in HP Laser MFP 135A / 135W / 137W",
+      "model": "HP Laser MFP 135A",
+      "dongMay": "135A, 135W, 137W, 138P",
+      "loi": "báo hết mực, nháy đèn đỏ hoặc hiện \"Toner low\" dù hộp mực vừa được nạp đầy",
+      "tai": "https://tinhocnamphong.net/reset-chip-may-in-hp-135a-135w-137w/",
+      "taiNhan": "Xem chi tiết cách reset chip HP 135A / 135W / 137W",
+      "hpChip": true,
+      "lienQuan": ["thu-thuat-tin-hoc/thu-thuat-may-in/phan-men-reset-hp-107a-107w-135a", "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-chip-may-in-hp-m107w"]
+    },
+    {
+      "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn",
+      "title": "Reset Máy In Brother HL-L5210DN Khi Báo Hết Mực — 2 Phút",
+      "desc": "Cách reset bộ đếm mực máy in Brother HL-L5210DN, HL-L5210DW ngay trên bảng điều khiển khi máy báo Replace Toner. Không cần phần mềm, làm trong 2 phút.",
+      "h1": "Reset máy in Brother HL-L5210DN khi báo hết mực",
+      "model": "Brother HL-L5210DN",
+      "dongMay": "HL-L5210DN, HL-L5210DW, HL-L5100DN",
+      "loi": "báo \"Replace Toner\" hoặc \"Toner Ended\" dù hộp mực vừa được nạp đầy",
+      "brother": true,
+      "lienQuan": ["thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-brother-hl-l5100dn-dhon-gian", "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-hl-l2321d"]
+    }
+  ]
+}

@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const { buildSchema } = require('./tools/schema');
+const { renderNewPage, toBlocks } = require('./tools/new-pages');
 
 const ROOT = __dirname;
 const EXPORT = 'D:\\AUTOMATION\\projects\\tinhocht\\export';
@@ -35,6 +36,11 @@ const fixPhones = s => String(s)
 const esc = s => fixPhones(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const encPath = p => p.split('/').map(encodeURIComponent).join('/');
 
+/* Trang MỚI viết thêm (data/pages-new.json) — không có trên bản Google Sites cũ.
+   Nhắm các model máy in đang có người tìm mà site chưa có trang. */
+const NEW_PAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pages-new.json'), 'utf8')).pages;
+const NEW_BY_PATH = new Map(NEW_PAGES.map(p => [p.path, p]));
+
 function loadPages() {
   const pages = [];
   for (const f of fs.readdirSync(DOM_DIR)) {
@@ -43,6 +49,10 @@ function loadPages() {
     if (!p.path || p.path === 'home') continue;              // /home == trang chủ (stub redirect)
     if (/dịch-vụ-mạng-tổng-đài|untitled-page/.test(p.path)) continue; // đã chốt loại
     pages.push(p);
+  }
+  // trang mới: tạo "blocks" giả để bộ sinh dữ liệu có cấu trúc đọc được các bước và hỏi–đáp
+  for (const np of NEW_PAGES) {
+    pages.push({ path: np.path, title: np.title, metaDesc: np.desc, blocks: toBlocks(np), isNew: true });
   }
   return pages;
 }
@@ -584,7 +594,9 @@ function build() {
     const depth = page.path.split('/').length - 1;   // file .html nằm ngay trong thư mục cha
     const prefix = '../'.repeat(depth);
     let body;
-    if (page.path === PRICE_PATH) {
+    if (NEW_BY_PATH.has(page.path)) {
+      body = renderNewPage(NEW_BY_PATH.get(page.path), prefix, cfg, new Map(pages.map(x => [x.path, x.title])));
+    } else if (page.path === PRICE_PATH) {
       body = renderPricePage(page, allPages, prefix);
     } else {
       body = '<h1>' + esc(page.title) + '</h1>\n      ' + renderBlocks(page.blocks, prefix, prefix, page.path);

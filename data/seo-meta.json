@@ -6,7 +6,6 @@
     "Mô tả ≤ 155 ký tự, nói rõ khách được gì: giá thật, thời gian có mặt, bảo hành.",
     "KHÔNG đụng trang đang có tỷ lệ nhấp tốt (≥5%): L310, L3210, L3110, L1110, quận 10, Tân Bình, Tân Phú, Brother chạy chậm."
   ],
-
   "sua-may-tinh-tan-noi/sua-may-tinh-quan-8": {
     "title": "Sửa Máy Tính Tại Nhà Quận 8 — Thợ Tới Trong 30 Phút",
     "desc": "Sửa máy tính, laptop tận nhà quận 8: máy chạy chậm, không lên nguồn, mất mạng, cài lại Windows. Kiểm tra trước, báo giá sau, chỉ thu tiền khi máy chạy ổn."
@@ -43,7 +42,6 @@
     "title": "Sửa Máy Tính Tại Nhà Quận Bình Thạnh — Có Mặt 30 Phút",
     "desc": "Sửa máy tính, laptop tận nơi quận Bình Thạnh: không lên nguồn, chạy chậm, lỗi wifi, cài lại Windows và phần mềm. Báo giá trước, bảo hành sau sửa."
   },
-
   "home/nap-muc-may-in-gia-re-tp-hcm---chi-con-80k": {
     "title": "Nạp Mực Máy In Giá Rẻ TP.HCM Từ 90.000đ — Tận Nơi 20 Phút",
     "desc": "Bảng giá nạp mực máy in tận nơi TP.HCM: laser trắng đen từ 90.000đ, laser màu 300.000đ, in phun 90.000đ. Miễn phí đi lại nội thành, bảo hành đến hết mực."
@@ -88,7 +86,6 @@
     "title": "Nạp Mực Máy In Gấp Trong Ngày Tại TP.HCM — Kể Cả Chủ Nhật",
     "desc": "Cần nạp mực máy in gấp ở TP.HCM? Kỹ thuật có mặt trong 20–30 phút, làm cả thứ 7, chủ nhật và ngoài giờ. Giá từ 90.000đ, in thử ngay trước khi bàn giao."
   },
-
   "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw": {
     "title": "Cách Nạp Mực Và Reset Máy In Brother B7535DW Chi Tiết",
     "desc": "Hướng dẫn nạp mực và reset bộ đếm máy in Brother DCP-B7535DW từng bước kèm hình: tháo hộp mực, đổ mực, reset chip, in thử. Tự làm tại chỗ trong 10 phút."
@@ -136,5 +133,21 @@
   "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4": {
     "title": "Máy In Brother HL-L2321D Nháy 4 Đèn — Nguyên Nhân & Cách Sửa",
     "desc": "Máy in Brother HL-L2321D nháy 4 đèn liên tục, không in được: lỗi thường ở cụm sấy hoặc cảm biến giấy. Hướng dẫn kiểm tra và xử lý theo từng nguyên nhân."
+  },
+  "home/ở-đâu-bơm-mực-máy-in-nhanh-nhất": {
+    "title": "Bơm Mực Máy In Ở Đâu Uy Tín? — Địa Chỉ Tại Quận 10",
+    "desc": "Tiệm bơm mực máy in tại 79 Bắc Hải, Quận 10 — có cửa hàng thật, xem máy tại chỗ hoặc gọi kỹ thuật tới nhà. Nhận cả máy laser, máy in phun và máy in màu."
+  },
+  "home/bơm-mực-máy-in-bao-nhiêu-tiền": {
+    "title": "Bơm Mực Máy In Bao Nhiêu Tiền? — 90.000đ Đến 300.000đ",
+    "desc": "Giải đáp giá bơm mực máy in theo từng loại máy: laser trắng đen 90.000đ, laser màu 300.000đ, máy in phun 90.000đ. Kèm những khoản dễ bị tính thêm cần biết."
+  },
+  "home/nap-muc-may-in-mau-tai-nha": {
+    "title": "Nạp Mực Máy In Màu Tại Nhà TP.HCM — Laser Màu & In Phun",
+    "desc": "Nạp mực máy in màu tận nhà TP.HCM: laser màu 300.000đ, máy in phun 90.000đ. Thay chip, đổ mực liên tục, in thử tại chỗ cho khách xem trước khi bàn giao."
+  },
+  "bang-gia-nap-muc-may-in-tan-noi": {
+    "title": "Bảng Giá Nạp Mực Máy In Tận Nơi TP.HCM — Không Phụ Thu",
+    "desc": "Bảng giá nạp mực máy in tận nơi TP.HCM theo từng dòng máy: laser trắng đen 90.000đ, laser màu 300.000đ, in phun 90.000đ. Đã gồm công đi lại, không phụ thu."
   }
 }

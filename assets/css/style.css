@@ -206,6 +206,12 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 .khu-vuc-gia .link-list { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 860px) { .khu-vuc-gia .link-list { grid-template-columns: 1fr 1fr; } }
 
+/* Câu dẫn sang trang cùng chủ đề — mỗi trang một câu riêng nên viết như một lời nhắc
+   trong mạch bài, không phải khung điều hướng */
+.dan-cluster { margin: 28px 0; padding: 14px 18px; background: var(--bg-alt);
+  border-left: 3px solid var(--brand); border-radius: 0 8px 8px 0; }
+.dan-cluster p { margin: 0; font-size: .95rem; }
+
 /* Địa bàn phục vụ — đặt giữa bài nên dùng dải màu nhạt bên trái thay vì khung kín,
    để không cắt mạch đọc như hai khối ở cuối trang */
 .dia-ban { margin: 34px 0 30px; padding: 4px 0 4px 18px; border-left: 3px solid var(--brand); }

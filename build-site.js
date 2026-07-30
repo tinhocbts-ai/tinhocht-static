@@ -491,6 +491,75 @@ function boostLinkBlock(cfgBoost, prefix) {
       </aside>`;
 }
 
+/* ---------- Phân vai nhóm trang nạp mực TP.HCM ----------
+   Vấn đề đo được: 6-9 trang cùng nhắm nhóm truy vấn "nạp / bơm / thay mực máy in" ở TP.HCM,
+   nội dung trùng nhau rất nặng (trang chủ ↔ liên-hệ/dịch-vụ 81%, chi-con-80k ↔ siêu-tốc 71%,
+   trang chủ ↔ siêu-tốc 58%). Cả nhóm nằm ở vị trí 18-36. Đối chiếu ngược: các trang tỉnh có
+   nội dung riêng, không trùng ai, vẫn giữ vị trí 5,9-9,5 với tỷ lệ nhấp 5-9%. Nghĩa là Google
+   không phạt vì thiếu nội dung mà vì không biết chọn trang nào trong mấy trang giống nhau.
+
+   Cách xử lý ở đây (không xoá trang, không đổi URL): mỗi trang nhận một ý định riêng, và mọi
+   trang trong nhóm đều in ra cùng một bảng phân vai này. Khách thấy ngay chỗ cần bấm, còn
+   Google đọc được trang nào phụ trách việc gì thay vì phải tự đoán. */
+/* ĐÃ THỬ VÀ BỎ: một bảng "phân vai" dùng chung in trên cả 6 trang, liệt kê mọi ý định kèm
+   liên kết. Nghe hợp lý nhưng đo lại thì chính nó làm độ trùng lặp TĂNG — cặp "bao nhiêu tiền"
+   ↔ "bảng giá" từ 31% lên 43%, cặp "giá rẻ" ↔ "ở đâu" từ 43% lên 45% — vì khối giống hệt nhau
+   ở mọi trang. Rút khối xuống chỉ còn danh sách liên kết vẫn tăng (35-40%), do bản thân danh
+   sách đã giống nhau. Trang ngắn như "bao nhiêu tiền" (630 từ) chịu ảnh hưởng nặng nhất.
+   Kết luận: khối dùng chung không dùng được cho đúng nhóm trang đang bị trùng lặp.
+
+   Thay bằng cách dưới đây: mỗi trang một câu dẫn VIẾT RIÊNG, trỏ tới đúng trang liên quan
+   nhất với nó. Vẫn đủ để Google thấy quan hệ giữa các trang và khách vẫn có đường đi, nhưng
+   không trang nào chứa đoạn văn giống trang khác. */
+const CLUSTER_DAN = {
+  'home/nap-muc-may-in-gia-re-tp-hcm---chi-con-80k': {
+    to: 'bang-gia-nap-muc-may-in-tan-noi',
+    truoc: 'Muốn biết chính xác máy mình hết bao nhiêu, tra theo mã máy in trong',
+    anchor: 'bảng giá nạp mực máy in tận nơi',
+    sau: '— giá ghi công khai theo từng dòng máy.',
+  },
+  'home/ban-can-nap-muc-may-in-gap-24-7-tai-hcm---thong-tin-o-day': {
+    to: 'home/ở-đâu-bơm-mực-máy-in-nhanh-nhất',
+    truoc: 'Nếu tiện đường và muốn chờ lấy liền, có thể mang máy tới thẳng',
+    anchor: 'tiệm bơm mực máy in ở Quận 10',
+    sau: 'thay vì đợi kỹ thuật di chuyển.',
+  },
+  'home/ở-đâu-bơm-mực-máy-in-nhanh-nhất': {
+    to: 'home/ban-can-nap-muc-may-in-gap-24-7-tai-hcm---thong-tin-o-day',
+    truoc: 'Máy đang cần dùng ngay mà không rảnh đem đi thì xem cách',
+    anchor: 'gọi nạp mực gấp trong ngày, kể cả chủ nhật',
+    sau: '— kỹ thuật mang dụng cụ tới chỗ khách.',
+  },
+  'home/bơm-mực-máy-in-bao-nhiêu-tiền': {
+    to: 'home/nap-muc-may-in-mau-tai-nha',
+    truoc: 'Máy in màu tính giá khác máy trắng đen, chi tiết xem ở',
+    anchor: 'nạp mực máy in màu tại nhà',
+    sau: '(có cả laser màu và máy in phun).',
+  },
+  'home/nap-muc-may-in-mau-tai-nha': {
+    to: 'bang-gia-nap-muc-may-in-tan-noi',
+    truoc: 'Nhà dùng cả máy trắng đen lẫn máy màu thì tra một lượt trong',
+    anchor: 'bảng giá nạp mực đầy đủ theo dòng máy',
+    sau: 'cho khỏi gọi hỏi hai lần.',
+  },
+  'bang-gia-nap-muc-may-in-tan-noi': {
+    to: 'home/ban-can-nap-muc-may-in-gap-24-7-tai-hcm---thong-tin-o-day',
+    truoc: 'Xem giá xong mà cần làm ngay hôm nay thì gọi theo hướng dẫn ở',
+    anchor: 'nạp mực máy in gấp trong ngày',
+    sau: '— nhận cả thứ 7 và chủ nhật.',
+  },
+};
+
+function danCluster(hienTai, prefix, pageSet) {
+  const o = CLUSTER_DAN[hienTai];
+  if (!o || !pageSet.has(o.to)) return '';
+  return `
+      <aside class="dan-cluster">
+        <p>${esc(o.truoc)}
+          <a href="${prefix}${encPath(o.to)}.html">${esc(o.anchor)}</a> ${esc(o.sau)}</p>
+      </aside>`;
+}
+
 /* Trang hỏi về giá nhưng bản gốc Google Sites bị rớt cột giá (chỉ còn danh sách máy).
    Chèn thẳng bảng giá thật vào để khách đọc là biết luôn, không phải nhảy sang trang khác. */
 const PRICE_EMBED = new Set([
@@ -735,6 +804,7 @@ function build() {
       body = renderNewPage(NEW_BY_PATH.get(page.path), prefix, cfg, new Map(pages.map(x => [x.path, x.title])));
     } else if (page.path === PRICE_PATH) {
       body = renderPricePage(page, allPages, prefix);
+      body += danCluster(page.path, prefix, PAGE_SET);
     } else {
       body = '<h1>' + esc(page.title) + '</h1>\n      ' + renderBlocks(page.blocks, prefix, prefix, page.path);
       if (PRICE_EMBED.has(page.path)) { body += priceTableCompact(prefix); page.coBangGia = true; }
@@ -742,6 +812,9 @@ function build() {
       if (CROSS_LINK[page.path]) body += crossLinkBlock(CROSS_LINK[page.path]);
       /* Trang trùng chủ đề: trỏ về bài hướng dẫn đang xếp hạng tốt hơn */
       if (BOOST_LINK[page.path]) body += boostLinkBlock(BOOST_LINK[page.path], prefix);
+      /* Nhóm trang nạp mực TP.HCM đang giẫm chân nhau: mỗi trang một câu dẫn riêng trỏ tới
+         trang liên quan nhất, để Google thấy quan hệ mà không sinh đoạn trùng nhau */
+      body += danCluster(page.path, prefix, PAGE_SET);
       /* Trang dịch vụ theo quận: thêm hỏi–đáp riêng và khu vực giáp ranh (chỉ thêm, không sửa bài gốc) */
       const quan = quanCuaTrang(page.path);
       if (quan) {

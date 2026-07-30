@@ -550,6 +550,51 @@ const CLUSTER_DAN = {
   },
 };
 
+/* Nội dung viết thêm cho hai trang trùng lặp nặng nhất (71% và 81% với trang khác).
+   Chỉ nối vào cuối bài, không sửa chữ nào của bài gốc. Xem data/noi-dung-them.json. */
+const THEM = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'noi-dung-them.json'), 'utf8'));
+
+function bangThoiGianDiChuyen() {
+  /* Bảng này sinh từ data/quan-dia-ban.json nên không trang nào khác trên site có,
+     đồng thời đúng là thứ khách vào trang "có mặt nhanh" muốn biết. */
+  const ds = Object.entries(DIA_BAN).filter(([k]) => !k.startsWith('_'))
+    .map(([, d]) => d).sort((a, b) => a.phut - b.phut);
+  const rows = ds.map(d => `<tr><th scope="row">${esc(d.ten)}</th>
+            <td>${String(d.km).replace('.', ',')} km</td>
+            <td class="tg-phut">${d.phut} phút</td></tr>`).join('\n          ');
+  return `
+      <h2>Thời gian có mặt thực tế ở từng quận</h2>
+      <p>Tính từ cửa hàng 79 Bắc Hải, Quận 10, trong điều kiện đường bình thường:</p>
+      <div class="price-table-wrap">
+        <table class="price-table tg-table">
+          <thead><tr><th scope="col">Khu vực</th><th scope="col">Quãng đường</th><th scope="col">Thời gian chạy</th></tr></thead>
+          <tbody>
+          ${rows}
+          </tbody>
+        </table>
+      </div>
+      <p class="price-note">Cộng thêm khoảng 10 phút chuẩn bị mực và dụng cụ. Số phút là thời gian di chuyển,
+         chưa tính thời gian làm việc tại chỗ — nạp mực xong thường mất thêm 15-20 phút.</p>`;
+}
+
+function noiDungThem(p) {
+  const o = THEM[p];
+  if (!o || !o.khoi) return '';
+  const html = o.khoi.map(b => b.h2 ? `<h2>${esc(b.h2)}</h2>` : `<p>${esc(b.p)}</p>`).join('\n      ');
+  return `
+      <section class="them-noi-dung">
+      ${html}
+      ${o.bangThoiGian ? bangThoiGianDiChuyen() : ''}
+      </section>`;
+}
+
+/* Đưa phần viết thêm vào blocks để bộ sinh dữ liệu có cấu trúc đọc được như nội dung thật */
+function themVaoBlocks(page) {
+  const o = THEM[page.path];
+  if (!o || !o.khoi) return;
+  for (const b of o.khoi) page.blocks.push(b.h2 ? { t: 'h2', text: b.h2 } : { t: 'p', text: b.p });
+}
+
 function danCluster(hienTai, prefix, pageSet) {
   const o = CLUSTER_DAN[hienTai];
   if (!o || !pageSet.has(o.to)) return '';
@@ -812,6 +857,8 @@ function build() {
       if (CROSS_LINK[page.path]) body += crossLinkBlock(CROSS_LINK[page.path]);
       /* Trang trùng chủ đề: trỏ về bài hướng dẫn đang xếp hạng tốt hơn */
       if (BOOST_LINK[page.path]) body += boostLinkBlock(BOOST_LINK[page.path], prefix);
+      /* Hai trang trùng lặp nặng nhất: nối thêm phần nội dung riêng đã viết sẵn */
+      if (THEM[page.path]) { body += noiDungThem(page.path); themVaoBlocks(page); }
       /* Nhóm trang nạp mực TP.HCM đang giẫm chân nhau: mỗi trang một câu dẫn riêng trỏ tới
          trang liên quan nhất, để Google thấy quan hệ mà không sinh đoạn trùng nhau */
       body += danCluster(page.path, prefix, PAGE_SET);

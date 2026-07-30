@@ -212,6 +212,15 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
   border-left: 3px solid var(--brand); border-radius: 0 8px 8px 0; }
 .dan-cluster p { margin: 0; font-size: .95rem; }
 
+/* Phần nội dung viết thêm cho trang bị trùng lặp — trình bày như phần thân bài bình thường */
+.them-noi-dung { margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+.them-noi-dung h2 { font-size: 1.22rem; margin: 26px 0 10px; }
+.them-noi-dung h2:first-child { margin-top: 0; }
+.them-noi-dung p { margin: 0 0 12px; }
+.tg-table .tg-phut { font-weight: 700; color: var(--brand); text-align: right;
+  font-variant-numeric: tabular-nums; }
+.tg-table td { font-variant-numeric: tabular-nums; }
+
 /* Địa bàn phục vụ — đặt giữa bài nên dùng dải màu nhạt bên trái thay vì khung kín,
    để không cắt mạch đọc như hai khối ở cuối trang */
 .dia-ban { margin: 34px 0 30px; padding: 4px 0 4px 18px; border-left: 3px solid var(--brand); }

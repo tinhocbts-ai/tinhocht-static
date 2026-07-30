@@ -1,0 +1,35 @@
+{
+  "_help": "Nội dung viết THÊM cho những trang bị trùng lặp quá nặng với trang khác. Chỉ thêm khối mới vào cuối bài, không sửa và không xoá một chữ nào của bài gốc.",
+  "_vi_sao": "Hai trang dưới đây trùng nội dung 71-81% với trang khác trên cùng site nên Google không biết chọn trang nào, đẩy cả hai xuống vị trí 29-36. Cách mạnh nhất là gắn canonical dồn về trang chính, nhưng như vậy trang phụ mất khả năng tự xếp hạng — trái nguyên tắc chỉ thêm không bớt. Thay vào đó viết thêm phần nội dung riêng, có thật và hữu ích, để mỗi trang có phần của mình.",
+
+  "liên-hệ/dịch-vụ-nạp-mực-máy-in-tphcm": {
+    "_ghi_chu": "Trùng 81% với trang chủ. Trang nằm trong mục Liên hệ nên phần thêm nói về CÁCH LÀM VIỆC — đặt lịch, thanh toán, hoá đơn — là những thứ trang chủ không nói.",
+    "khoi": [
+      { "h2": "Đặt lịch nạp mực thế nào cho nhanh" },
+      { "p": "Gọi hotline hoặc nhắn Zalo, đọc giúp mã máy in ghi ở mặt trước hoặc trên tem sau máy — ví dụ HP 1102, Canon 2900, Epson L3210. Có mã máy là báo được giá ngay trong cuộc gọi, không phải chờ kỹ thuật tới xem mới biết bao nhiêu." },
+      { "p": "Nếu không tìm thấy mã máy thì chụp ảnh máy gửi qua Zalo cũng được. Trường hợp máy đang báo lỗi trên màn hình, đọc luôn mã lỗi để kỹ thuật mang sẵn linh kiện thay, đỡ phải đi lại hai lần." },
+      { "p": "Sau khi chốt giờ, kỹ thuật gọi lại xác nhận trước khi xuất phát. Khách đổi giờ hoặc dời sang hôm sau đều được, chỉ cần nhắn lại, không tính phí gì." },
+      { "h2": "Thanh toán và hoá đơn" },
+      { "p": "Kỹ thuật in thử tại chỗ cho khách xem bản in trước, đạt rồi mới tính tiền. Bản in chưa đậm đều thì làm lại ngay, không thu thêm." },
+      { "p": "Nhận tiền mặt hoặc chuyển khoản tại chỗ. Công ty cần hoá đơn VAT thì nói trước để chuẩn bị, xuất theo đúng thông tin doanh nghiệp." },
+      { "p": "Doanh nghiệp dùng thường xuyên có thể ký phiếu từng lần rồi thanh toán gộp một lần vào cuối tháng, không cần trả ngay mỗi lần gọi." },
+      { "h2": "Giờ làm việc và khu vực nhận" },
+      { "p": "Làm việc 8h đến 19h tất cả các ngày trong tuần, gồm cả thứ 7, chủ nhật và ngày lễ. Ngoài khoảng giờ này vẫn nhận nếu hẹn trước, không phụ thu tiền ngoài giờ." },
+      { "p": "Nhận toàn bộ các quận nội thành TP.HCM. Khu vực xa trung tâm như Quận 9, Quận 12, Bình Chánh vẫn tới nhưng thời gian di chuyển lâu hơn, nên gọi sớm trong buổi sáng để kỹ thuật xếp được lịch trong ngày." }
+    ]
+  },
+
+  "home/nạp-mực-máy-in-nhanh-có-mặt-siêu-tốc": {
+    "_ghi_chu": "Trùng 71% với trang chi-con-80k và 58% với trang chủ. Phần thêm nói riêng về TỐC ĐỘ: vì sao nhanh được, nhanh tới mức nào ở từng cụm quận, và khi nào không thể nhanh. Bảng thời gian sinh từ data/quan-dia-ban.json nên không trang nào khác có.",
+    "bangThoiGian": true,
+    "khoi": [
+      { "h2": "Vì sao có mặt nhanh được" },
+      { "p": "Cửa hàng nằm ở 79 Bắc Hải, Quận 10 — gần như trung tâm hình học của các quận nội thành, nên đi hướng nào cũng không quá xa. Mực và hộp mực cho những dòng máy phổ biến luôn để sẵn trong kho, kỹ thuật lấy là đi ngay, không mất thời gian chờ đặt hàng." },
+      { "p": "Kỹ thuật chia theo cụm quận chứ không xuất phát tất cả từ cửa hàng. Người phụ trách cụm Quận 3 – Quận 10 – Tân Bình thường đang ở trong khu vực đó, nhận việc mới là chạy tới luôn thay vì quay về lấy dụng cụ." },
+      { "h2": "Khi nào không thể nhanh" },
+      { "p": "Nói thẳng để khách khỏi chờ vô ích: giờ cao điểm 7-8h sáng và 17-18h chiều, thời gian di chuyển đội lên khoảng 15 phút so với bảng dưới. Trời mưa lớn cũng vậy." },
+      { "p": "Máy cần thay linh kiện không có sẵn — trống drum dòng ít gặp, bao lụa máy cũ, hộp mực máy in màu đời mới — thì phải lấy hàng trước, thường trong ngày hoặc sang sáng hôm sau. Trường hợp này kỹ thuật báo rõ mốc thời gian ngay trong cuộc gọi, không hẹn suông." },
+      { "p": "Muốn nhanh nhất thì khi gọi đọc luôn mã máy in. Biết mã là biết cần mang loại mực nào, kỹ thuật tới một lần làm xong, khỏi phải về lấy thêm." }
+    ]
+  }
+}

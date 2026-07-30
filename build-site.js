@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const { buildSchema } = require('./tools/schema');
+const { renderQuanManh, quanManhBlocks } = require('./tools/quan-manh');
 const { renderNewPage, toBlocks } = require('./tools/new-pages');
 
 const ROOT = __dirname;
@@ -739,6 +740,9 @@ function khuVucLanCan(quan, prefix, pageSet) {
    Nêu đúng tên đường, chợ, toà nhà và thời gian di chuyển thật là thứ khách cần biết,
    đồng thời bắt được các tìm kiếm kèm tên đường. */
 const DIA_BAN = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quan-dia-ban.json'), 'utf8'));
+/* 3 quận mạnh nhất (Tân Bình / Quận 10 / Tân Phú) nhận thêm khối nội dung theo công thức
+   đối thủ top — xem tools/quan-manh.js và data/quan-manh.json */
+const QUAN_MANH = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quan-manh.json'), 'utf8'));
 
 function diaBanQuan(quan) {
   const d = DIA_BAN[quan];
@@ -871,6 +875,12 @@ function build() {
           page.blocks.push({ t: 'p', text: c[1] });
         }
         body += diaBanQuan(quan);
+        /* 3 quận mạnh nhất: khối tăng cường theo công thức đối thủ top (so sánh, quy trình
+           có hình, dấu hiệu cần nạp) — mỗi quận một góc riêng để không trùng nhau */
+        if (QUAN_MANH[quan]) {
+          body += renderQuanManh(QUAN_MANH[quan], prefix, esc, encPath);
+          for (const b of quanManhBlocks(QUAN_MANH[quan])) page.blocks.push(b);
+        }
         /* Bảng giá ngay trên trang quận: "giá bao nhiêu" là câu hỏi kèm theo nhiều nhất
            trong các tìm kiếm theo quận, trước đây khách phải nhảy sang trang khác mới thấy. */
         body += priceTableCompact(prefix);

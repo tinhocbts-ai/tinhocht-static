@@ -206,6 +206,21 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 .khu-vuc-gia .link-list { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 860px) { .khu-vuc-gia .link-list { grid-template-columns: 1fr 1fr; } }
 
+/* Nội dung gốc Google Sites có link dạng URL trần (facebook.com/..., tinhocht.com/...) —
+   chuỗi không có khoảng trắng nên không tự xuống dòng, tràn ngang ở màn hình hẹp */
+main a { overflow-wrap: anywhere; }
+
+/* Khối tăng cường 3 quận mạnh (Tân Bình / Q10 / Tân Phú) — theo công thức đối thủ top */
+.qm-tang-cuong { margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+.qm-tang-cuong h2 { font-size: 1.22rem; margin: 26px 0 10px; }
+.qm-tang-cuong h2:first-child { margin-top: 0; }
+.qm-tang-cuong p { margin: 0 0 12px; }
+.qm-so-sanh th[scope="row"] { background: var(--bg-alt); font-size: .92rem; }
+.qm-so-sanh td { font-size: .93rem; }
+.hinh-thuc-te { margin: 22px 0; }
+.hinh-thuc-te img { border-radius: var(--radius); margin: 0; }
+.hinh-thuc-te figcaption { font-size: .86rem; color: var(--muted); margin-top: 8px; }
+
 /* Câu dẫn sang trang cùng chủ đề — mỗi trang một câu riêng nên viết như một lời nhắc
    trong mạch bài, không phải khung điều hướng */
 .dan-cluster { margin: 28px 0; padding: 14px 18px; background: var(--bg-alt);

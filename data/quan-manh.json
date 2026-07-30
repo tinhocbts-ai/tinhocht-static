@@ -1,0 +1,255 @@
+{
+  "_help": "Nội dung tăng cường cho 3 quận mạnh nhất (Tân Bình 71% share, Quận 10 73%, Tân Phú 53% — đo GSC 90 ngày so với 2 web nhà còn lại). Đúc từ công thức đối thủ top trong seo/COMPETITOR-INSIGHTS.md: bảng so sánh tận nơi vs mang tiệm, quy trình có hình, dấu hiệu cần nạp, điệp khúc báo giá trước khi làm.",
+  "_chong_trung_lap": "3 trang đã trùng nhau 36-63% TRƯỚC khi thêm. Vì vậy mỗi trang viết theo MỘT GÓC RIÊNG, không dùng chung câu nào: Quận 10 = góc cửa hàng (chỉ Q10 có tiệm thật); Tân Bình = góc văn phòng công ty; Tân Phú = góc hộ kinh doanh in ấn. Sau build PHẢI chạy lại phép đo trùng lặp — tỷ lệ phải GIẢM so với trước.",
+  "_hinh_that": "Khối 'hinh' chỉ hiện khi file có mặt trong assets/img/thuc-te/ — đẩy web trước, bổ sung ảnh sau không cần sửa code, chỉ cần build lại. Danh sách ảnh cần chụp: DANH-SACH-HINH-CAN-CHUP.md",
+  "quan-10": {
+    "path": "home/nap-muc-may-in-quan-10",
+    "goc": "cửa hàng",
+    "khoi": [
+      {
+        "t": "h2",
+        "text": "Ghé cửa hàng hay gọi thợ tới — chọn kiểu nào?"
+      },
+      {
+        "t": "p",
+        "text": "Quận 10 là quận duy nhất khách có cả hai lựa chọn, vì cửa hàng Hi-Tech nằm ngay 79 Bắc Hải. Máy in nhỏ gọn kiểu Canon 2900, HP 1102 bỏ vừa cốp xe thì mang ghé tiệm, ngồi uống ly cà phê bên kia đường là xong; máy đặt cố định trong văn phòng hay máy in màu cồng kềnh thì gọi thợ bơm mực máy in tới tận bàn."
+      },
+      {
+        "t": "hinh",
+        "file": "cua-hang-79-bac-hai.webp",
+        "alt": "Cửa hàng nạp mực máy in Hi-Tech tại 79 Bắc Hải, Quận 10",
+        "chuThich": "Cửa hàng Hi-Tech tại 79 Bắc Hải — khách Quận 10 có thể ghé trực tiếp"
+      },
+      {
+        "t": "table",
+        "cols": [
+          "",
+          "Mang máy ghé tiệm 79 Bắc Hải",
+          "Gọi thợ tới chỗ"
+        ],
+        "rows": [
+          [
+            "Chờ bao lâu",
+            "Làm ngay trước mặt, 15–20 phút",
+            "Thợ tới trong ~15 phút rồi làm 15–20 phút"
+          ],
+          [
+            "Hợp với máy nào",
+            "Máy nhỏ tháo rời dễ mang",
+            "Máy văn phòng, máy màu, máy đang kẹt tài liệu"
+          ],
+          [
+            "Chi phí",
+            "Theo bảng giá niêm yết",
+            "Bằng giá tại tiệm — không cộng phí đi lại"
+          ],
+          [
+            "Được xem tận mắt",
+            "Xem thợ làm từng bước tại quầy",
+            "Xem tại bàn mình, in thử ngay tài liệu thật"
+          ],
+          [
+            "Tiện thêm",
+            "Sẵn tiệm nhờ vệ sinh máy, kiểm tra trục kéo giấy",
+            "Thợ xem luôn dây cáp, driver, khay giấy tại chỗ"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Cả hai kiểu đều theo một nguyên tắc: kiểm tra xong báo giá trước, khách gật đầu mới làm. Máy rơi vào trường hợp phải thay linh kiện — trống drum, gạt mực, trục cao su — thợ đưa linh kiện cũ ra đối chứng chứ không nói miệng."
+      },
+      {
+        "t": "h2",
+        "text": "Khi nào máy in cần thay mực, khi nào là hỏng cần sửa?"
+      },
+      {
+        "t": "p",
+        "text": "Nhiều khách Quận 10 gọi thay mực máy in nhưng khám ra bệnh khác. Phân biệt nhanh: bản in nhạt dần đều cả trang, lắc hộp mực in đậm lại được vài chục trang — đó là hết mực, chỉ cần bơm. Còn bản in có sọc dọc lặp đúng một vị trí, chấm đen theo chu kỳ, hoặc nền xám loang lổ — thường là drum hoặc gạt đã mòn, bơm mực mới vào cũng không hết."
+      },
+      {
+        "t": "p",
+        "text": "Máy không nhận lệnh in, kẹt giấy liên tục, kêu ken két là chuyện của sửa máy in chứ không phải mực. Cửa hàng nhận sửa máy in luôn tại quầy, đa số bệnh xử lý trong ngày; bệnh nặng cần đặt linh kiện thì hẹn rõ ngày trả, báo giá trước khi đụng máy."
+      },
+      {
+        "t": "plink",
+        "truoc": "Máy Epson phun màu báo đèn đỏ tràn bộ đếm là bệnh phần mềm, không phải hết mực —",
+        "path": "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
+        "anchor": "tải tool reset bộ đếm Epson",
+        "sau": "về tự chạy được, miễn phí."
+      },
+      {
+        "t": "hinh",
+        "file": "ky-thuat-nap-muc-tai-quay.webp",
+        "alt": "Kỹ thuật viên bơm mực máy in tại quầy cửa hàng Quận 10",
+        "chuThich": "Bơm mực tại quầy — khách ngồi xem trực tiếp từng bước"
+      }
+    ]
+  },
+  "quan-tan-binh": {
+    "path": "home/nap-muc-may-in-quan-tan-binh",
+    "goc": "văn phòng công ty",
+    "khoi": [
+      {
+        "t": "h2",
+        "text": "Quy trình thay mực máy in cho văn phòng ở Tân Bình"
+      },
+      {
+        "t": "p",
+        "text": "Khách Tân Bình phần lớn là công ty quanh trục Cộng Hoà — Hoàng Văn Thụ và cụm văn phòng E.town, nơi một chiếc máy in phục vụ cả phòng. Máy đứng là công việc cả phòng khựng lại, nên quy trình được sắp để máy chỉ nghỉ đúng quãng thợ thao tác:"
+      },
+      {
+        "t": "svg",
+        "loai": "quytrinh"
+      },
+      {
+        "t": "p",
+        "text": "Bước báo giá nằm trước bước làm — nguyên tắc cố định. Kỹ thuật kiểm tra xong đọc rõ: bơm mực bao nhiêu, có linh kiện nào mòn cần thay không, tổng cộng hết bao nhiêu. Kế toán cần chứng từ thì có phiếu dịch vụ và hoá đơn VAT xuất theo thông tin công ty."
+      },
+      {
+        "t": "h2",
+        "text": "Công ty nên gọi thợ tới hay cử người mang máy đi?"
+      },
+      {
+        "t": "p",
+        "text": "Bài toán của doanh nghiệp không phải tiền mực mà là thời gian nhân sự. Cử một nhân viên tháo máy, chạy xe đi, ngồi chờ rồi quay về lắp lại — mất trọn buổi làm việc của người đó, chưa kể rủi ro rơi vỡ hộp mực dọc đường."
+      },
+      {
+        "t": "table",
+        "cols": [
+          "",
+          "Cử nhân viên mang máy đi",
+          "Thợ tới văn phòng"
+        ],
+        "rows": [
+          [
+            "Thời gian nhân viên bỏ ra",
+            "Nửa buổi tới cả buổi",
+            "Chỉ cần người mở cửa, ~30 phút"
+          ],
+          [
+            "Máy ngưng hoạt động",
+            "Từ lúc tháo tới lúc lắp lại",
+            "Chỉ trong lúc thợ thao tác"
+          ],
+          [
+            "Rủi ro vận chuyển",
+            "Rơi vỡ, đổ mực, lỏng cáp do tự tháo lắp",
+            "Không phải di chuyển máy"
+          ],
+          [
+            "Giấy tờ công ty",
+            "Tự giữ hoá đơn mang về",
+            "Phiếu dịch vụ + hoá đơn VAT tại chỗ, công nợ cuối tháng"
+          ],
+          [
+            "Nhiều máy một lúc",
+            "Mỗi chuyến một máy",
+            "Thợ làm lần lượt cả cụm máy trong một lần tới"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Văn phòng dùng máy in liên tục nên ghép lịch thay mực máy in định kỳ: thợ qua theo chu kỳ đếm trang thực tế của từng máy, thay trước khi mực cạn hẳn, không còn cảnh sáng thứ hai cả phòng đứng chờ. Máy nào trong cụm trở chứng — kéo giấy đôi, in lệch lề, mờ nửa trang — thợ sửa máy in luôn trong cùng chuyến, khỏi phát sinh cuộc hẹn mới."
+      },
+      {
+        "t": "hinh",
+        "file": "nap-muc-van-phong-tan-binh.webp",
+        "alt": "Thay mực máy in tại bàn làm việc văn phòng ở Tân Bình",
+        "chuThich": "Thay mực ngay tại bàn — máy chỉ nghỉ trong lúc thợ thao tác"
+      },
+      {
+        "t": "plink",
+        "truoc": "Văn phòng có cả máy in màu thì xem thêm trang",
+        "path": "home/nap-muc-may-in-mau-tai-nha",
+        "anchor": "nạp mực máy in màu tại nhà",
+        "sau": "— mực màu tính giá riêng theo bộ bốn màu."
+      },
+      {
+        "t": "hinh",
+        "file": "ban-in-test-truoc-sau.webp",
+        "alt": "Bản in test trước và sau khi bơm mực máy in",
+        "chuThich": "Bản in trước – sau bàn giao: đậm đều mới tính tiền"
+      }
+    ]
+  },
+  "quan-tan-phu": {
+    "path": "home/nap-muc-may-in-quan-tan-phu",
+    "goc": "hộ kinh doanh in ấn",
+    "khoi": [
+      {
+        "t": "h2",
+        "text": "Nhận diện máy sắp hết mực trước khi nó dừng giữa chừng"
+      },
+      {
+        "t": "p",
+        "text": "Tân Phú nhiều tiệm photo, shop online và hộ kinh doanh quanh Aeon Mall — Luỹ Bán Bích, nơi máy in chạy đơn hàng cả ngày. Với nhóm này máy dừng là đơn hàng dừng, nên đừng đợi máy trắng trang mới gọi. Bốn dấu hiệu dưới đây xuất hiện là mực đã cạn tới đáy:"
+      },
+      {
+        "t": "svg",
+        "loai": "dauhieu"
+      },
+      {
+        "t": "p",
+        "text": "Thấy một trong bốn dấu hiệu, gọi trước một ngày là chủ động được giờ trống của tiệm mình. Thợ tới nơi kiểm tra, báo giá cụ thể cho chủ tiệm trước khi tháo máy — đồng ý mới làm, làm xong in thử chính loại giấy tiệm hay dùng."
+      },
+      {
+        "t": "h2",
+        "text": "Tiệm đang có khách — thay mực máy in mất bao lâu?"
+      },
+      {
+        "t": "p",
+        "text": "Câu chủ tiệm photo hỏi nhiều nhất không phải giá mà là máy phải nghỉ mấy phút. Trả lời thật: máy laser trắng đen nghỉ khoảng 15 phút; máy in phun màu lâu hơn, chừng 25–30 phút nếu phải thông đầu phun. Thợ phụ trách khu Tân Phú thường trực quanh Luỹ Bán Bích — Tân Kỳ Tân Quý nên buổi sáng gọi, trưa vắng khách là làm xong."
+      },
+      {
+        "t": "table",
+        "cols": [
+          "Tình huống của tiệm",
+          "Cách xử lý hợp lý nhất"
+        ],
+        "rows": [
+          [
+            "Đang in dở xấp đơn hàng, mực nhạt dần",
+            "Bơm mực máy in ngay tại tiệm, chọn khung giờ vắng khách"
+          ],
+          [
+            "Máy chính hỏng nặng, đơn không chờ được",
+            "Thợ mang máy về xưởng sửa, tiệm dùng máy dự phòng — có biên nhận ghi rõ hẹn trả"
+          ],
+          [
+            "In tem, in ảnh bị lệch màu",
+            "Thông đầu phun + cân màu lại, làm tại chỗ để thử ngay trên giấy in thật"
+          ],
+          [
+            "Muốn khỏi lo giữa mùa cao điểm",
+            "Hẹn thay mực máy in định kỳ trước Tết và mùa tựu trường — hai đợt in nhiều nhất năm"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Hộ kinh doanh in số lượng lớn nên cân nhắc thêm một hộp mực nạp sẵn để xoay vòng: hết là thay ngay trong một phút, hộp cạn đưa thợ bơm lại trong lần ghé sau. Tiền mực không đổi mà máy gần như không có phút chết. Máy giở chứng giữa mùa — kẹt giấy liên tục, kéo giấy đôi — thì gọi sửa máy in theo cùng số hotline — thợ cũng kiểm tra rồi báo giá trước khi làm, không phải tìm chỗ khác."
+      },
+      {
+        "t": "hinh",
+        "file": "nap-muc-tiem-photo-tan-phu.webp",
+        "alt": "Bơm mực máy in cho tiệm photo tại Quận Tân Phú",
+        "chuThich": "Bơm mực tại tiệm photo — chọn khung giờ vắng khách để máy không nghỉ lâu"
+      },
+      {
+        "t": "plink",
+        "truoc": "Cần biết trước con số cụ thể từng dòng máy, mở",
+        "path": "bang-gia-nap-muc-may-in-tan-noi",
+        "anchor": "bảng giá nạp mực niêm yết theo dòng máy",
+        "sau": "— giá tiệm photo hay hộ kinh doanh đều như nhau."
+      },
+      {
+        "t": "hinh",
+        "file": "thong-dau-phun-epson.webp",
+        "alt": "Thông đầu phun máy in màu Epson khi thay mực tại Tân Phú",
+        "chuThich": "Thông đầu phun cho máy in màu — công đoạn quyết định bản in không sọc"
+      }
+    ]
+  }
+}

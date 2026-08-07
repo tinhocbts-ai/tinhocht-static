@@ -25,6 +25,9 @@ const DOM_DIR = path.join(EXPORT, 'pages-dom');
 const SITE_URL = 'https://www.tinhocht.com';
 const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), 'utf8'));
 const NOINDEX = process.env.NOINDEX !== '0'; // demo github.io: noindex; gắn domain thật -> NOINDEX=0
+/* Đường dẫn các trang có nội dung thật sự khác so với lần dựng trước (dùng cho lastmod sitemap).
+   Trang chủ ghi bằng khoá riêng '__home__' vì nó không nằm trong danh sách pages. */
+const DOI_NOI_DUNG = new Set();
 
 /* ---------------- tiện ích ---------------- */
 /* 2 số ngoài hệ thống -> hotline công ty (đã chốt với chủ shop 28/07/2026).
@@ -442,34 +445,41 @@ const PRICE_MERGED = 'bảng-giá';                        // trang trùng nội
    vùng keyword). Các trang dưới đây của tinhocht đang có thứ hạng thật cho nhóm từ khoá đó,
    nên GIỮ NGUYÊN nội dung để không mất vị trí, chỉ thêm một khối dẫn khách sang mucinht.com. */
 const MUCINHT = {
-  service: 'https://mucinht.com/category/dich-vu-sua-chua/sua-may-in-bill-ma-vach/',
+  service: 'https://mucinht.com/sua-may-in-bill-hoa-don-ma-vach-tphcm/',
   home: 'https://mucinht.com/',
 };
 /* Chỉ 3 trang thuộc mảng in nhiệt / in hoá đơn mới dẫn sang mucinht, và dẫn NHẸ:
    một dòng chữ cuối bài, không tiêu đề, không nút — chỉ để anchor mang từ khoá đi qua.
-   2 bài ruy băng máy in kim KHÔNG dẫn đi: đó là ngách nạp mực/ruy băng của chính tinhocht. */
+   2 bài ruy băng máy in kim KHÔNG dẫn đi: đó là ngách nạp mực/ruy băng của chính tinhocht.
+
+   Mỗi trang trỏ THẲNG tới trang đích đúng chủ đề bên mucinht, không đi qua URL category
+   (category bên đó trả 301 — đi vòng làm loãng tín hiệu liên kết). Sửa URL ở ĐÂY, đừng sửa
+   tay trong file .html đã dựng: mỗi lần chạy build-site.js là mọi sửa tay bị ghi đè. */
 const CROSS_LINK = {
   'nap-muc-may-in-bill---thay-muc-may-in-hoa-don': {
     truoc: 'Khách cần thay máy, mua giấy in nhiệt khổ 80mm hoặc',
     anchor: 'sửa máy in bill, máy in tem mã vạch',
     sau: 'có thể xem thêm bên mucinht.com cùng hệ thống.',
+    url: 'https://mucinht.com/sua-may-in-bill-hoa-don-ma-vach-tphcm/',
   },
   'nap-muc-may-in-bill---thay-muc-may-in-hoa-don/thay-muc-may-in-bill-epson-tm-u220': {
     truoc: 'Ngoài ra, nếu cần',
     anchor: 'máy in hoá đơn Epson và giấy in nhiệt khổ 80mm',
     sau: 'thì bên mucinht.com có sẵn hàng.',
+    url: 'https://mucinht.com/giay-in-bill-k57-k80-tphcm/',
   },
   'thu-thuat-tin-hoc/top-3-máy-in-chuyên-in-đơn-hàng-giá-rẻ-tiết-kiệm-chi-phí': {
     truoc: 'Shop in nhiều đơn mỗi ngày thường chuyển sang',
     anchor: 'máy in nhiệt in tem vận đơn khổ A6',
     sau: '— dòng máy này bên mucinht.com có bán và bảo hành.',
+    url: 'https://mucinht.com/giay-in-nhiet-a6-tem-van-don/',
   },
 };
 
 function crossLinkBlock(o) {
   return `
       <p class="cross-hint">${esc(o.truoc)}
-        <a href="${MUCINHT.service}" rel="noopener">${esc(o.anchor)}</a> ${esc(o.sau)}</p>`;
+        <a href="${o.url || MUCINHT.service}" rel="noopener">${esc(o.anchor)}</a> ${esc(o.sau)}</p>`;
 }
 
 /* Hai bài cùng nhắm cụm "thay ruy băng máy in kim Epson LQ" đang giẫm chân nhau trên Google:
@@ -930,6 +940,11 @@ ${renderFooter(menu, prefix)}
 `;
     const outFile = path.join(ROOT, page.path.split('/').join(path.sep) + '.html');
     fs.mkdirSync(path.dirname(outFile), { recursive: true });
+    /* Ghi nhớ trang nào NỘI DUNG thật sự đổi so với lần dựng trước, để sitemap chỉ cập nhật
+       lastmod đúng những trang đó. Khai cả 167 trang cùng đổi trong một ngày là tín hiệu sai
+       gửi cho Google — lần sau nó không còn tin lastmod của site này nữa. */
+    const cu = fs.existsSync(outFile) ? fs.readFileSync(outFile, 'utf8') : null;
+    if (cu !== html) DOI_NOI_DUNG.add(page.path);
     fs.writeFileSync(outFile, html, 'utf8');
     n++;
   }
@@ -955,7 +970,9 @@ ${renderFooter(menu, prefix)}
     });
     home = home.replace('</head>', '<script type="application/ld+json">' + homeSchema + '</script>\n</head>');
     if (!NOINDEX) home = home.replace(/\s*<meta name="robots" content="noindex">(<!--[^>]*-->)?/g, '');
-    fs.writeFileSync(path.join(ROOT, 'index.html'), home, 'utf8');
+    const homeFile = path.join(ROOT, 'index.html');
+    if (!fs.existsSync(homeFile) || fs.readFileSync(homeFile, 'utf8') !== home) DOI_NOI_DUNG.add('__home__');
+    fs.writeFileSync(homeFile, home, 'utf8');
     console.log('  ✓ index.html (trang chủ, menu 2 cấp inline)');
   }
 
@@ -995,11 +1012,25 @@ ${renderFooter(menu, prefix)}
   console.log('  ✓ ' + nStub + ' trang chuyển hướng (URL cũ/sai -> trang đúng)');
 
   // sitemap: trang chủ + tất cả trang (kể cả khi noindex, để sẵn cho lúc gắn domain)
+  // lastmod: giữ nguyên ngày cũ cho trang không đổi nội dung, chỉ trang đổi mới lấy ngày hôm nay.
   const today = new Date().toISOString().slice(0, 10);
-  const urls = [SITE_URL + '/'].concat(pages.map(p => SITE_URL + '/' + encPath(p.path)).sort());
-  fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
+  const sitemapFile = path.join(ROOT, 'sitemap.xml');
+  const lastmodCu = new Map();
+  if (fs.existsSync(sitemapFile)) {
+    for (const m of fs.readFileSync(sitemapFile, 'utf8').matchAll(/<loc>([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod>/g))
+      lastmodCu.set(m[1], m[2]);
+  }
+  const urlCuaTrang = new Map(pages.map(p => [SITE_URL + '/' + encPath(p.path), p.path]));
+  const urls = [SITE_URL + '/'].concat([...urlCuaTrang.keys()].sort());
+  const lastmodCua = u => {
+    const p = urlCuaTrang.get(u);
+    if (p === undefined) return DOI_NOI_DUNG.has('__home__') ? today : (lastmodCu.get(u) || today);
+    if (DOI_NOI_DUNG.has(p)) return today;
+    return lastmodCu.get(u) || today;
+  };
+  fs.writeFileSync(sitemapFile,
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    urls.map(u => '  <url><loc>' + u + '</loc><lastmod>' + today + '</lastmod></url>').join('\n') +
+    urls.map(u => '  <url><loc>' + u + '</loc><lastmod>' + lastmodCua(u) + '</lastmod></url>').join('\n') +
     '\n</urlset>\n', 'utf8');
 
   // báo cáo link nội bộ đã khớp lại / không khớp được (link gãy sẵn trên site gốc)

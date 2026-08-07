@@ -13,6 +13,22 @@
       "loi": "nhấp nháy 2 đèn đỏ (đèn giấy và đèn mực) và máy tính báo \"Service Required\" hoặc \"Ink pad is at the end of its service life\"",
       "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l3250/",
       "taiNhan": "Tải phần mềm reset Epson L3250 (Adjustment Program)",
+      "dacDiem": [
+        "Khổ A4, làm được cả ba việc in – scan – photocopy trong một máy",
+        "4 màu mực, dùng mực Epson 003 loại đổ bình",
+        "Có wifi và Wi-Fi Direct nên in được thẳng từ điện thoại",
+        "Là máy văn phòng phổ thông: in hợp đồng, giấy tờ, hoá đơn hằng ngày",
+        "L3251 và L3256 chung nền phần cứng với L3250, khác nhau ở thị trường phân phối"
+      ],
+      "viSaoDay": "Đây là máy chạy đều mỗi ngày ở văn phòng. Mỗi lần bật máy, hoặc để lâu không in rồi in lại, máy đều tự chạy chu trình làm sạch đầu in và đẩy một ít mực xuống miếng thấm mực thải. Nghịch lý nhiều văn phòng gặp: in ít mỗi lần nhưng <strong>bật tắt máy nhiều lần trong ngày</strong> lại làm bộ đếm đầy nhanh hơn nơi in liên tục cả xấp.",
+      "luuYRieng": [
+        "Máy này có wifi, và đây là <strong>lỗi hay gặp nhất khi reset dòng L3250</strong>: Adjustment Program chỉ làm việc qua dây USB, để máy nối wifi thì phần mềm không nhìn thấy máy. Bắt buộc cắm dây USB trực tiếp.",
+        "Không cần gỡ cấu hình mạng của máy. Cắm thêm dây USB trong lúc reset, xong rút ra, máy vẫn in qua wifi như cũ."
+      ],
+      "faqRieng": [
+        ["Máy đang dùng wifi, reset có phải gỡ kết nối mạng không ?", "Không cần gỡ. Chỉ cần cắm dây USB nối thẳng máy in với máy tính trong lúc chạy Adjustment Program, xong thì rút dây ra, máy vẫn in qua wifi như cũ. Phần mềm reset không nhìn thấy máy qua wifi nên bắt buộc phải có dây."],
+        ["L3251 và L3256 dùng chung tool với L3250 được không ?", "Được. Ba đời này chung một nền phần cứng, chỉ khác thị trường phân phối nên dùng chung Adjustment Program của L3250. Ở bước chọn model, chọn đúng tên hiện trong danh sách; nếu không thấy L3251 hay L3256 thì chọn L3250."]
+      ],
       "lienQuan": ["Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110"]
     },
     {
@@ -25,6 +41,21 @@
       "loi": "nháy đèn đỏ liên tục và máy tính báo tràn bộ đếm mực thải",
       "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l4150/",
       "taiNhan": "Tải phần mềm reset Epson L4150 / L4160",
+      "dacDiem": [
+        "Khổ A4, in – scan – photocopy, mực đổ bình",
+        "<strong>L4160 có màn hình cảm ứng và in hai mặt tự động; L4150 không có hai thứ này</strong>",
+        "Có wifi, in được từ điện thoại",
+        "Định vị cao hơn dòng L3xxx một bậc — dành cho nơi in nhiều hơn"
+      ],
+      "viSaoDay": "Điểm khác biệt của L4160 nằm ở <strong>in hai mặt tự động</strong>: mỗi tờ giấy được kéo qua đầu in hai lượt, đầu in hoạt động nhiều hơn nên chu trình làm sạch cũng chạy dày hơn. Văn phòng nào để chế độ in hai mặt làm mặc định thường thấy máy báo tràn bộ đếm sớm hơn máy cùng loại in một mặt.",
+      "luuYRieng": [
+        "Với L4160 có màn hình: trong lúc phần mềm đang chạy, đừng bấm nút nào trên máy và đừng rút điện — để phần mềm tự làm xong.",
+        "Hai máy dùng chung phần mềm, nhưng ở bước chọn model phải chọn đúng tên máy của mình chứ không chọn bừa."
+      ],
+      "faqRieng": [
+        ["L4150 và L4160 khác nhau chỗ nào, cách reset có giống nhau không ?", "Hai máy chung nền phần cứng, khác ở chỗ L4160 có màn hình cảm ứng và in hai mặt tự động còn L4150 thì không. Cách reset giống hệt nhau và dùng chung một phần mềm — chỉ cần chọn đúng tên máy ở bước chọn model."],
+        ["Có nên tắt chế độ in hai mặt sau khi reset không ?", "Không cần tắt. In hai mặt làm đầu in chạy nhiều hơn nên bộ đếm nhích nhanh hơn, nhưng đó là đánh đổi để tiết kiệm phân nửa số giấy. Muốn giãn thời gian giữa hai lần reset thì chỉ bật in hai mặt cho tài liệu dài, còn giấy tờ một trang thì in một mặt."]
+      ],
       "lienQuan": ["Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251"]
     },
     {
@@ -37,6 +68,22 @@
       "loi": "nháy đèn đỏ và báo tràn bộ đếm mực thải, máy không nhận lệnh in",
       "tai": "https://tinhocnamphong.net/phan-mem-reset-may-in-epson-l805/",
       "taiNhan": "Tải phần mềm reset Epson L805 / L800 / L850",
+      "dacDiem": [
+        "Khổ A4, <strong>6 màu mực</strong> (mực Epson 673) — nhiều hơn máy văn phòng hai màu để ảnh chuyển sắc mượt hơn",
+        "Chỉ in, không scan và không photocopy",
+        "In được lên đĩa CD/DVD và thẻ nhựa PVC bằng khay chuyên dụng",
+        "Là máy của tiệm ảnh, tiệm in thẻ, in ảnh thẻ — không phải máy in giấy tờ văn phòng"
+      ],
+      "viSaoDay": "In ảnh phủ kín mặt giấy tốn mực gấp nhiều lần in văn bản — độ phủ 30–40% so với 5%. Đầu in 6 màu cũng phải làm sạch nhiều hơn đầu 4 màu. Vì vậy L805 chạm ngưỡng bộ đếm <strong>nhanh hơn hẳn</strong> máy văn phòng dùng cùng khoảng thời gian; tiệm ảnh chạy đều có khi vài tháng đã phải reset một lần.",
+      "luuYRieng": [
+        "Máy in ảnh nên phần lớn trường hợp <strong>miếng thấm mực thải đã no mực thật</strong> chứ không chỉ là con số đếm ảo. Reset xong nên thay hoặc vệ sinh miếng thấm, không thì mực thải trào ra dây vào ảnh và mặt bàn.",
+        "Nếu máy đang gắn khay in đĩa hoặc khay thẻ PVC, tháo khay ra trước khi reset để máy về đúng trạng thái sẵn sàng."
+      ],
+      "soTrangSauReset": "Với máy in ảnh thì con số thấp hơn máy văn phòng nhiều: in ảnh phủ kín khổ A4 mỗi lần reset thường đi được khoảng 1.000–2.000 tờ. Nếu in ảnh thẻ hoặc ghép nhiều tấm nhỏ trên một tờ thì được nhiều hơn vì tốn ít mực hơn.",
+      "faqRieng": [
+        ["Vì sao L805 mau đầy bộ đếm hơn máy in văn phòng ?", "Vì in ảnh phủ kín giấy tốn mực gấp 6–8 lần in văn bản, và đầu in 6 màu cần làm sạch nhiều hơn đầu 4 màu. Cùng một mốc thời gian, máy in ảnh chạm ngưỡng bộ đếm sớm hơn máy in giấy tờ là chuyện bình thường, không phải máy bị lỗi."],
+        ["Reset xong ảnh in ra bị sọc hoặc sai màu thì sao ?", "Đó là hai chuyện khác nhau. Reset chỉ xoá con số đếm trong bộ nhớ, không đụng gì tới đầu in. Ảnh bị sọc hay lệch màu là do đầu in tắc hoặc mực trong ống có bọt khí — cần chạy Head Cleaning rồi in Nozzle Check để kiểm tra, chứ reset thêm lần nữa cũng không hết."]
+      ],
       "lienQuan": ["Phan-mem-reset-may-in/phan-mem-reset-epson-l1800", "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc"]
     },
     {
@@ -49,6 +96,22 @@
       "loi": "nháy đèn đỏ và báo tràn bộ đếm mực thải sau khi in số lượng lớn khổ A3",
       "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l1800/",
       "taiNhan": "Tải phần mềm reset Epson L1800",
+      "dacDiem": [
+        "<strong>Khổ A3</strong> — in được poster, bản vẽ, ảnh lớn mà máy A4 chịu thua",
+        "6 màu mực (mực Epson 673), chỉ in, không scan",
+        "Hay dùng để in ảnh khổ lớn, in giấy chuyển nhiệt ép áo, in decal",
+        "Cùng nhóm máy A3 với L1300, nhưng L1300 chỉ 4 màu và thiên về bản vẽ, giấy tờ khổ lớn"
+      ],
+      "viSaoDay": "Khổ A3 gấp đôi diện tích A4 nên mỗi bản in và mỗi lần làm sạch đầu in đều tốn mực nhiều hơn. Cộng thêm đầu in 6 màu và kiểu dùng in ảnh phủ kín, L1800 là máy <strong>đầy bộ đếm nhanh nhất</strong> trong nhóm máy in phun Epson thông dụng.",
+      "luuYRieng": [
+        "Máy A3 sinh mực thải nhiều nên miếng thấm thường no mực thật. Nhiều thợ gắn thêm ống dẫn mực thải ra chai ngoài cho khỏi phải thay miếng thấm liên tục — nếu máy đã gắn ống, nhớ kiểm tra chai trước khi reset.",
+        "Máy nặng và cồng kềnh: đặt máy tính ngay cạnh máy in cho dây USB đủ ngắn. Dây nối dài quá 3 mét hay mất kết nối giữa chừng, reset đang dở là hỏng việc."
+      ],
+      "soTrangSauReset": "Máy A3 đi được ít hơn máy A4 khá nhiều: in ảnh phủ kín khổ A3 thì mỗi lần reset thường được khoảng 500–1.500 tờ. In bản vẽ nét mảnh trên nền trắng thì được nhiều hơn hẳn vì độ phủ mực thấp.",
+      "faqRieng": [
+        ["Reset L1800 có dùng chung phần mềm với L1300 không ?", "Không. Hai máy cùng khổ A3 nhưng khác số màu — L1800 sáu màu, L1300 bốn màu — nên mỗi máy có bản Adjustment Program riêng. Tải đúng bản cho model của mình; chọn sai model thì phần mềm vẫn chạy nhưng bộ đếm không về 0."],
+        ["Máy A3 in được bao nhiêu tờ thì lại phải reset ?", "Ít hơn máy A4 nhiều. In ảnh phủ kín khổ A3 thì mỗi lần reset thường đi được khoảng 500–1.500 tờ. Nếu in bản vẽ nét mảnh nền trắng thì được nhiều hơn vì tốn ít mực hơn."]
+      ],
       "lienQuan": ["Phan-mem-reset-may-in/phan-mem-reset-epson-l805"]
     },
     {

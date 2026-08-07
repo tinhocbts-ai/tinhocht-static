@@ -125,6 +125,7 @@ function anhQuyTrinh(p) {
 function cauHoi(p) {
   const chung = [
     ['Reset xong có in được bao nhiêu trang nữa ?',
+     p.soTrangSauReset ||
      'Mỗi lần reset bộ đếm, máy in tiếp được khoảng 5.000–10.000 trang văn bản với độ phủ mực 5%. Nếu in ảnh hoặc bản in nhiều màu (độ phủ 20–40%) thì số trang giảm còn khoảng 1.000–4.000 trang.'],
     ['Reset có làm hỏng máy in không ?',
      'Không. Reset chỉ đưa con số đếm trong bộ nhớ về 0, không tác động tới phần cơ hay đầu in. Tuy nhiên bộ đếm sinh ra để nhắc thay miếng thấm mực thải — nếu miếng thấm đã no mực thật thì cần thay, không thì mực thải có thể tràn ra ngoài.'],
@@ -139,7 +140,9 @@ function cauHoi(p) {
     'Dòng hộp mực HP 105A/106A dùng cho máy 135A/135W/137W <strong>không reset lại được bằng phần mềm</strong> — chip đếm hết hạn mức thì phải thay chip mới. Chip rời bán sẵn ngoài thị trường, thay bằng tay vài phút là xong.']);
   else chung.push(['Dùng chung phần mềm reset cho nhiều máy được không ?',
     'Mỗi key reset chỉ dùng được cho một máy in và thường chỉ một lần. Muốn reset máy khác hoặc reset lần tiếp theo thì cần key mới — giống như dùng thẻ cào điện thoại.']);
-  return chung;
+  /* Câu hỏi riêng của từng model đứng trước câu hỏi chung: khách vào trang L805 thì thứ họ
+     thắc mắc đầu tiên là chuyện in ảnh, không phải chuyện chung chung của mọi máy Epson. */
+  return (p.faqRieng || []).concat(chung);
 }
 
 /* ---------- dựng phần thân trang ---------- */
@@ -170,6 +173,12 @@ function renderNewPage(p, prefix, cfg, pagesByPath) {
       <p>Máy in <strong>${esc(p.model)}</strong> (và các đời cùng dòng ${esc(p.dongMay)}) sau một thời gian
          sử dụng sẽ ${p.loi}. Đây không phải máy hỏng — bộ đếm mực thải trong bộ nhớ đã chạm mức nhà sản
          xuất đặt sẵn nên máy tự khoá lệnh in. Reset lại bộ đếm là máy in tiếp bình thường.</p>
+${p.dacDiem ? `
+      <h2>${esc(p.model)} là máy như thế nào</h2>
+      <ul class="check-list">${p.dacDiem.map(d => '<li>' + d + '</li>').join('')}</ul>` : ''}
+${p.viSaoDay ? `
+      <h2>Vì sao ${esc(p.model)} đầy bộ đếm</h2>
+      <p>${p.viSaoDay}</p>` : ''}
 
       ${anhQuyTrinh(p)}
 
@@ -177,11 +186,11 @@ function renderNewPage(p, prefix, cfg, pagesByPath) {
       <ul class="check-list">${dauHieu.map(d => '<li>' + esc(d) + '</li>').join('')}</ul>
 
       <h2>Lưu ý trước khi làm</h2>
-      <ul class="check-list">
+      <ul class="check-list">${(p.luuYRieng || []).map(d => '<li>' + d + '</li>').join('')}
         <li>Nối máy in với máy tính bằng <strong>dây USB trực tiếp</strong>, không reset qua wifi hay qua hub chia cổng.</li>
         <li>Tắt phần mềm diệt virus và tường lửa trong lúc chạy, xong thì bật lại.</li>
-        <li>Máy in phải đang <strong>bật</strong> và ở trạng thái sẵn sàng, không kẹt giấy, không mở nắp.</li>
-        <li>Nếu miếng thấm mực thải đã no mực thật thì nên thay miếng thấm, tránh mực tràn ra bàn.</li>
+        <li>Máy in phải đang <strong>bật</strong> và ở trạng thái sẵn sàng, không kẹt giấy, không mở nắp.</li>${p.luuYRieng ? '' : `
+        <li>Nếu miếng thấm mực thải đã no mực thật thì nên thay miếng thấm, tránh mực tràn ra bàn.</li>`}
       </ul>
 
       <h2>Cách reset ${esc(p.model)} — ${buoc.length} bước</h2>
@@ -213,6 +222,9 @@ ${lienQuan ? `
 /* Chuyển trang mới sang dạng "blocks" để bộ sinh dữ liệu có cấu trúc đọc được các bước và hỏi–đáp */
 function toBlocks(p) {
   const blocks = [{ t: 'h1', text: p.h1 }];
+  (p.dacDiem || []).forEach(d => blocks.push({ t: 'li', text: d.replace(/<[^>]+>/g, '') }));
+  if (p.viSaoDay) blocks.push({ t: 'p', text: p.viSaoDay.replace(/<[^>]+>/g, '') });
+  (p.luuYRieng || []).forEach(d => blocks.push({ t: 'li', text: d.replace(/<[^>]+>/g, '') }));
   cacBuoc(p).forEach((b, i) => {
     blocks.push({ t: 'p', text: 'Bước ' + (i + 1) + ': ' + b[0] + '. ' + b[1].replace(/<[^>]+>/g, '') });
   });

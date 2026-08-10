@@ -187,6 +187,35 @@ phân giải URL (thử `<path>.html` trước, rồi mới tới `<path>/index.
 Có file `.nojekyll` ở gốc repo: tắt Jekyll để nó không bỏ qua file bắt đầu bằng `_` và không xử
 lý lạ với thư mục tên tiếng Việt.
 
+### ⚠️ Ba cái bẫy đã cắn thật (07/08/2026)
+
+**1. `node build-site.js` trần sẽ gắn `noindex` cho toàn bộ 166 trang.** Mặc định `NOINDEX` bật
+(dành cho bản demo github.io). Bản production **luôn** phải chạy:
+```bash
+NOINDEX=0 node build-site.js
+```
+Kiểm tra sau khi dựng: chỉ được có 53 file chứa `noindex` = 52 trang chuyển hướng + `404.html`.
+
+**2. KHÔNG BAO GIỜ sửa tay file `.html` đã dựng.** Commit `ebd50f7` sửa 3 backlink mucinht trực
+tiếp trong file `.html`; lần build kế tiếp ghi đè sạch, mất luôn thay đổi mà không ai biết. Mọi
+thứ phải sửa ở nguồn: `build-site.js`, `tools/*.js`, `data/*.json`.
+
+**3. Link nội bộ phải trỏ URL chính tắc, KHÔNG có đuôi `.html`, không trỏ `index.html`.** Vì
+`duong-dan.html` phục vụ được cả `/duong-dan` và `/duong-dan.html`, nếu link nội bộ trỏ bản `.html`
+thì Google index cả hai rồi báo "Trang thay thế có thẻ chính tắc thích hợp" cho mọi trang — có lúc
+nó chọn nhầm bản `.html` làm bản chính. Link tới trang chủ dùng `'./'`/`'../'` để ra đúng `/`,
+đừng dùng `index.html` (đó là URL trùng nữa) và đừng để `href=""`.
+Kiểm tra nhanh sau mỗi lần build:
+```bash
+grep -roh 'href="[^"]*\.html"' --include='*.html' . | grep -v 'href="http' | wc -l   # phải = 0
+```
+
+### Sitemap `lastmod`
+
+Build so nội dung trang mới với bản cũ trên đĩa, **chỉ trang thật sự đổi mới nhận ngày hôm nay**.
+Trước đây mỗi lần build là cả 167 URL cùng khai đổi — tín hiệu sai, Google sẽ thôi tin `lastmod`
+của site này. Đừng bỏ đoạn so sánh đó khi sửa `build-site.js`.
+
 ## ⏳ VIỆC CÒN LẠI
 
 1. **Đổi DNS + go-live** — xem mục "KHI GẮN TÊN MIỀN THẬT" ở trên (chờ chủ shop bấm nút).

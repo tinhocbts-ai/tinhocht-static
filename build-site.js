@@ -113,13 +113,13 @@ function shortLabel(title) {
 /* ---------------- menu 2 cấp ---------------- */
 const PILLARS = [
   { key: 'home', label: 'Nạp mực máy in', href: '', hrefIsIndex: false },
-  { key: 'Phan-mem-reset-may-in', label: 'Phần mềm reset', href: 'Phan-mem-reset-may-in.html' },
-  { key: 'sua-may-in-tai-hcm', label: 'Sửa máy in', href: 'sua-may-in-tai-hcm.html' },
-  { key: 'sua-may-tinh-tan-noi', label: 'Sửa máy tính', href: 'sua-may-tinh-tan-noi.html' },
-  { key: 'ban-may-in-cu-gia-re', label: 'Máy in cũ', href: 'ban-may-in-cu-gia-re.html' },
-  { key: 'thu-thuat-tin-hoc', label: 'Thủ thuật', href: 'thu-thuat-tin-hoc.html' },
-  { key: 'bang-gia-nap-muc-may-in-tan-noi', label: 'Bảng giá', href: 'bang-gia-nap-muc-may-in-tan-noi.html' },
-  { key: 'liên-hệ', label: 'Liên hệ', href: 'liên-hệ.html' },
+  { key: 'Phan-mem-reset-may-in', label: 'Phần mềm reset', href: 'Phan-mem-reset-may-in' },
+  { key: 'sua-may-in-tai-hcm', label: 'Sửa máy in', href: 'sua-may-in-tai-hcm' },
+  { key: 'sua-may-tinh-tan-noi', label: 'Sửa máy tính', href: 'sua-may-tinh-tan-noi' },
+  { key: 'ban-may-in-cu-gia-re', label: 'Máy in cũ', href: 'ban-may-in-cu-gia-re' },
+  { key: 'thu-thuat-tin-hoc', label: 'Thủ thuật', href: 'thu-thuat-tin-hoc' },
+  { key: 'bang-gia-nap-muc-may-in-tan-noi', label: 'Bảng giá', href: 'bang-gia-nap-muc-may-in-tan-noi' },
+  { key: 'liên-hệ', label: 'Liên hệ', href: 'liên-hệ' },
 ];
 
 function buildMenu(pages) {
@@ -131,11 +131,11 @@ function buildMenu(pages) {
       .sort((a, b) => shortLabel(a.title).localeCompare(shortLabel(b.title), 'vi'));
     // href: trang mục lục nếu tồn tại, không thì trang chủ (với pillar 'home')
     const self = byPath.get(pil.key);
-    const href = pil.key === 'home' ? '' : (self ? pil.href : (children[0] ? encPath(children[0].path) + '.html' : ''));
+    const href = pil.key === 'home' ? '' : (self ? pil.href : (children[0] ? encPath(children[0].path) : ''));
     menu.push({
       label: pil.label,
       href,
-      children: children.map(c => ({ label: shortLabel(c.title), href: encPath(c.path) + '.html' })),
+      children: children.map(c => ({ label: shortLabel(c.title), href: encPath(c.path) })),
       moreHref: self ? pil.href : '',
     });
   }
@@ -145,7 +145,7 @@ function buildMenu(pages) {
 function renderMenu(menu, prefix, curPath) {
   const items = menu.map(m => {
     const active = curPath && m.href && curPath.startsWith(m.href.replace(/\.html$/, '')) ? ' active' : '';
-    const topHref = (prefix + m.href) || 'index.html'; // pillar "Nạp mực" = trang chủ
+    const topHref = (prefix + m.href) || (prefix || './'); // pillar "Nạp mực" = trang chủ
     const top = '<a href="' + topHref + '" class="nav-top' + active + '">' + esc(m.label) +
       (m.children.length ? '<span class="caret" aria-hidden="true">▾</span>' : '') + '</a>';
     if (!m.children.length) return '<li class="nav-item">' + top + '</li>';
@@ -160,7 +160,7 @@ function renderMenu(menu, prefix, curPath) {
 
   return `<header class="site-header">
   <div class="container header-inner">
-    <a href="${prefix}index.html" class="logo">
+    <a href="${prefix || './'}" class="logo">
       <img class="logo-icon" src="${prefix}assets/img/logo-ht.jpg" alt="Tin Học HT" width="42" height="42">
       <span class="logo-text">
         <span><span class="logo-text-1">Tin Học</span> <span class="logo-text-2">HT</span></span>
@@ -172,7 +172,7 @@ function renderMenu(menu, prefix, curPath) {
     </button>
     <nav class="main-nav" id="mainNav" aria-label="Menu chính">
       <ul class="nav-list">
-        <li class="nav-item"><a href="${prefix}index.html" class="nav-top">Trang chủ</a></li>
+        <li class="nav-item"><a href="${prefix || './'}" class="nav-top">Trang chủ</a></li>
         ${items}
       </ul>
       <a href="tel:${cfg.hotlineTel}" class="hotline-btn hotline-btn-mobile">📞 Gọi ${cfg.hotlineDisplay}</a>
@@ -192,7 +192,8 @@ function renderMenu(menu, prefix, curPath) {
 }
 
 function renderFooter(menu, prefix) {
-  const links = menu.map(m => '<li><a href="' + prefix + m.href + '">' + esc(m.label) + '</a></li>').join('');
+  // pillar "Nạp mực" có href rỗng (= trang chủ) -> phải ra './' hoặc '../', không được để href="" (tự trỏ vào chính nó)
+  const links = menu.map(m => '<li><a href="' + ((prefix + m.href) || (prefix || './')) + '">' + esc(m.label) + '</a></li>').join('');
   return `<footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-col">
@@ -208,7 +209,7 @@ function renderFooter(menu, prefix) {
     </div>
     <div class="footer-col">
       <h2>Danh mục</h2>
-      <ul><li><a href="${prefix}index.html">Trang chủ</a></li>${links}</ul>
+      <ul><li><a href="${prefix || './'}">Trang chủ</a></li>${links}</ul>
     </div>
     <div class="footer-col">
       <h2>Khu vực phục vụ</h2>
@@ -331,10 +332,10 @@ function resolveHref(href, prefix, fromPath) {
   else if (href.startsWith('/')) raw = href;
   if (raw === null) return href; // link ngoài (tinhocnamphong.net, mucinht.com…) — giữ nguyên
   let p = decodeURIComponent(raw).replace(/[?#].*$/, '').replace(/^\/+/, '').replace(/\/+$/, '');
-  if (!p || p === 'home') return prefix + 'index.html';
+  if (!p || p === 'home') return (prefix || './');
   p = fixInternalPath(p, fromPath);
-  if (!PAGE_SET.has(p)) return prefix + 'index.html'; // không có trang thật -> về trang chủ, không để 404
-  return prefix + encPath(p) + '.html';
+  if (!PAGE_SET.has(p)) return (prefix || './'); // không có trang thật -> về trang chủ, không để 404
+  return prefix + encPath(p);
 }
 
 function linkify(text, links, prefix, fromPath) {
@@ -404,13 +405,13 @@ function crumbList(page, pages) {
 function breadcrumb(page, pages, prefix) {
   const parts = page.path.split('/');
   const byPath = new Map(pages.map(p => [p.path, p]));
-  const crumbs = [{ label: 'Trang chủ', href: prefix + 'index.html' }];
+  const crumbs = [{ label: 'Trang chủ', href: (prefix || './') }];
   for (let i = 0; i < parts.length - 1; i++) {
     const sub = parts.slice(0, i + 1).join('/');
     const pg = byPath.get(sub);
     const pil = PILLARS.find(p => p.key === sub);
     if (sub === 'home') continue;
-    if (pg || pil) crumbs.push({ label: pil ? pil.label : shortLabel(pg.title), href: prefix + encPath(sub) + '.html' });
+    if (pg || pil) crumbs.push({ label: pil ? pil.label : shortLabel(pg.title), href: prefix + encPath(sub) });
   }
   crumbs.push({ label: shortLabel(page.title), href: null });
   return '<nav class="breadcrumb" aria-label="Đường dẫn"><ol>' + crumbs.map(c =>
@@ -422,7 +423,7 @@ function childrenSection(page, pages, prefix) {
   if (!kids.length) return '';
   kids.sort((a, b) => shortLabel(a.title).localeCompare(shortLabel(b.title), 'vi'));
   return '\n      <section class="child-list"><h2>Xem thêm trong mục này</h2><ul class="card-grid">' +
-    kids.map(k => '<li><a href="' + prefix + encPath(k.path) + '.html"><strong>' + esc(shortLabel(k.title)) + '</strong>' +
+    kids.map(k => '<li><a href="' + prefix + encPath(k.path) + '"><strong>' + esc(shortLabel(k.title)) + '</strong>' +
       '<span>' + esc(metaDescOf(k).slice(0, 110)) + '…</span></a></li>').join('') + '</ul></section>';
 }
 
@@ -433,7 +434,7 @@ function relatedSection(page, pages, prefix) {
     p.path.split('/').length === page.path.split('/').length).slice(0, 8);
   if (sib.length < 2) return '';
   return '\n      <section class="related"><h2>Bài viết / dịch vụ liên quan</h2><ul class="link-list">' +
-    sib.map(s => '<li><a href="' + prefix + encPath(s.path) + '.html">' + esc(shortLabel(s.title)) + '</a></li>').join('') + '</ul></section>';
+    sib.map(s => '<li><a href="' + prefix + encPath(s.path) + '">' + esc(shortLabel(s.title)) + '</a></li>').join('') + '</ul></section>';
 }
 
 /* ---------------- trang Bảng giá (gộp 2 trang gốc) ---------------- */
@@ -497,7 +498,7 @@ function boostLinkBlock(cfgBoost, prefix) {
   return `
       <aside class="inline-guide">
         <p>${esc(cfgBoost.lead)}
-          <a href="${prefix}${encPath(cfgBoost.to)}.html"><strong>${esc(cfgBoost.anchor)}</strong></a>
+          <a href="${prefix}${encPath(cfgBoost.to)}"><strong>${esc(cfgBoost.anchor)}</strong></a>
         </p>
       </aside>`;
 }
@@ -612,7 +613,7 @@ function danCluster(hienTai, prefix, pageSet) {
   return `
       <aside class="dan-cluster">
         <p>${esc(o.truoc)}
-          <a href="${prefix}${encPath(o.to)}.html">${esc(o.anchor)}</a> ${esc(o.sau)}</p>
+          <a href="${prefix}${encPath(o.to)}">${esc(o.anchor)}</a> ${esc(o.sau)}</p>
       </aside>`;
 }
 
@@ -642,7 +643,7 @@ function priceTableCompact(prefix) {
           </table>
         </div>
         <ul class="price-notes"><li>${data.ghiChu.slice(0, 2).map(esc).join('</li><li>')}</li></ul>
-        <p><a class="btn btn-outline" href="${prefix}${encPath(PRICE_PATH)}.html">Xem bảng giá đầy đủ theo từng dòng máy →</a></p>
+        <p><a class="btn btn-outline" href="${prefix}${encPath(PRICE_PATH)}">Xem bảng giá đầy đủ theo từng dòng máy →</a></p>
       </section>`;
 }
 
@@ -700,7 +701,7 @@ function renderPricePage(page, pages, prefix) {
            Bấm vào quận của bạn để xem thời gian kỹ thuật có mặt và các dịch vụ kèm theo:</p>
         <ul class="link-list">${Object.keys(TEN_QUAN)
           .filter(q => PAGE_SET.has(pathCuaQuan(q)))
-          .map(q => `<li><a href="${prefix}${encPath(pathCuaQuan(q))}.html">Nạp mực máy in ${esc(TEN_QUAN[q])}</a></li>`)
+          .map(q => `<li><a href="${prefix}${encPath(pathCuaQuan(q))}">Nạp mực máy in ${esc(TEN_QUAN[q])}</a></li>`)
           .join('')}</ul>
       </section>
 ${gallery}
@@ -739,7 +740,7 @@ function khuVucLanCan(quan, prefix, pageSet) {
         <p>Kỹ thuật phụ trách ${esc(ten)} cũng nhận việc ở các quận sát bên. Nhà hoặc công ty nằm ở
            ranh giới thì bấm vào khu vực gần mình nhất để xem giá và thời gian có mặt:</p>
         <ul class="link-list">${ds.map(q =>
-          `<li><a href="${prefix}${encPath(pathCuaQuan(q))}.html">Nạp mực máy in ${esc(TEN_QUAN[q])}</a></li>`).join('')}</ul>
+          `<li><a href="${prefix}${encPath(pathCuaQuan(q))}">Nạp mực máy in ${esc(TEN_QUAN[q])}</a></li>`).join('')}</ul>
       </section>`;
 }
 
@@ -992,7 +993,7 @@ ${renderFooter(menu, prefix)}
     // luôn ghi lại: stub từ lần build trước có thể trỏ sai sau khi bộ khớp được sửa
     if (fs.existsSync(cur) && !/http-equiv="refresh"/.test(fs.readFileSync(cur, 'utf8'))) return false;
     const depth = fromPath.split('/').length;
-    const target = '../'.repeat(depth) + (toPath ? encPath(toPath) + '.html' : '');
+    const target = '../'.repeat(depth) + (toPath ? encPath(toPath) : '');
     const canon = SITE_URL + '/' + (toPath ? encPath(toPath) : '');
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'),

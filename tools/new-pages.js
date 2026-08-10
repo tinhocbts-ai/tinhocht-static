@@ -165,7 +165,7 @@ function renderNewPage(p, prefix, cfg, pagesByPath) {
 
   const lienQuan = (p.lienQuan || []).filter(x => pagesByPath.has(x)).map(x => {
     const t = pagesByPath.get(x);
-    return `<li><a href="${prefix}${x.split('/').map(encodeURIComponent).join('/')}.html">${esc(t)}</a></li>`;
+    return `<li><a href="${prefix}${x.split('/').map(encodeURIComponent).join('/')}">${esc(t)}</a></li>`;
   }).join('');
 
   return `<h1>${esc(p.h1)}</h1>

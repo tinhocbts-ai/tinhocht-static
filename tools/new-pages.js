@@ -163,6 +163,36 @@ function anhBai(p, prefix, viTri) {
       </figure>`).join('');
 }
 
+/* ---------- bảng tra cứu "máy của bạn → xem trang nào" ----------
+   Đây là thứ trang trụ tồn tại để làm: khách chưa biết máy mình cần tool gì, vào đây tra một
+   phát rồi đi thẳng tới trang model. Cũng là chỗ dồn link nội bộ về các trang model một cách
+   tự nhiên — không phải nhồi link vào thân bài.
+   Khai trong pages-new.json:
+     "bangTraCuu": { "tieuDe": "...", "cot": ["Dòng máy","Dấu hiệu"],
+       "dong": [ { "o": ["Epson L3210", "Nháy 2 đèn đỏ"], "toi": "<path trang>", "nhan": "Xem cách reset" } ] } */
+function bangTraCuu(p, prefix, pagesByPath) {
+  const b = p.bangTraCuu;
+  if (!b || !Array.isArray(b.dong)) return '';
+  const dong = b.dong.map(d => {
+    const co = d.toi && pagesByPath.has(d.toi);
+    const link = co
+      ? `<a href="${prefix}${d.toi.split('/').map(encodeURIComponent).join('/')}">${esc(d.nhan || 'Xem hướng dẫn')}</a>`
+      : '<span class="chua-co">đang cập nhật</span>';
+    return '<tr>' + d.o.map(x => '<td>' + x + '</td>').join('') + '<td>' + link + '</td></tr>';
+  }).join('\n          ');
+  return `
+      <h2 id="bang-tra-cuu">${esc(b.tieuDe || 'Tra nhanh: máy của bạn dùng cách nào')}</h2>
+      ${b.moTa ? '<p>' + b.moTa + '</p>' : ''}
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <thead><tr>${(b.cot || []).map(c => '<th>' + esc(c) + '</th>').join('')}<th>Hướng dẫn</th></tr></thead>
+          <tbody>
+          ${dong}
+          </tbody>
+        </table>
+      </div>`;
+}
+
 /* ---------- dựng phần thân trang ---------- */
 function renderNewPage(p, prefix, cfg, pagesByPath) {
   const buoc = cacBuoc(p);
@@ -240,6 +270,8 @@ ${p.tai ? `
           <a href="${p.tai}" rel="noopener">${esc(p.taiNhan)}</a></p>
         <p class="callout-note">File nằm ở tinhocnamphong.net thuộc cùng hệ thống với chúng tôi — tải miễn phí, không cần đăng ký.</p>
       </div>` : ''}
+
+${bangTraCuu(p, prefix, pagesByPath)}
 
       <h2 id="hoi-dap">Câu hỏi thường gặp</h2>
       ${faq.map((f, i) => `<h3 id="hoi-${i + 1}">${esc(f[0])}</h3>\n      <p>${f[1]}</p>`).join('\n      ')}

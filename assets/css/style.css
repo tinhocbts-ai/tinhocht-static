@@ -221,6 +221,13 @@ main a { overflow-wrap: anywhere; }
 .hinh-thuc-te img { border-radius: var(--radius); margin: 0; }
 .hinh-thuc-te figcaption { font-size: .86rem; color: var(--muted); margin-top: 8px; }
 
+/* Ảnh máy in thật kèm chú thích (bài hướng dẫn reset) — ảnh do shop tự chụp, đã vẽ khung
+   chỉ tới đúng nút/đèn bằng tools/anh-chu-thich.js */
+.anh-huong-dan { margin: 24px 0 28px; padding: 0; }
+.anh-huong-dan img { width: 100%; height: auto; display: block; border-radius: var(--radius);
+  border: 1px solid var(--line); margin: 0; }
+.anh-huong-dan figcaption { margin-top: 9px; font-size: .88rem; color: var(--muted); line-height: 1.5; }
+
 /* Câu dẫn sang trang cùng chủ đề — mỗi trang một câu riêng nên viết như một lời nhắc
    trong mạch bài, không phải khung điều hướng */
 .dan-cluster { margin: 28px 0; padding: 14px 18px; background: var(--bg-alt);

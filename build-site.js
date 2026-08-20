@@ -427,11 +427,40 @@ function childrenSection(page, pages, prefix) {
       '<span>' + esc(metaDescOf(k).slice(0, 110)) + '…</span></a></li>').join('') + '</ul></section>';
 }
 
+/* Giá trị thật từng trang (nhấp + hiển thị 90 ngày), do tools/gia-tri-trang.js kéo từ GSC.
+   Thiếu file cũng chạy được, chỉ là xếp trang liên quan kém tối ưu hơn. */
+const GIA_TRI = (() => {
+  try {
+    const j = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gia-tri-trang.json'), 'utf8'));
+    const m = new Map();
+    for (const [p, v] of Object.entries(j.trang || {})) m.set(p, v.diem || 0);
+    return m;
+  } catch { return new Map(); }
+})();
+const diemCua = p => GIA_TRI.get(p) ?? GIA_TRI.get(decodeURIComponent(p)) ?? 0;
+
 function relatedSection(page, pages, prefix) {
   const parent = page.path.split('/').slice(0, -1).join('/');
   if (!parent) return '';
-  const sib = pages.filter(p => p.path !== page.path && p.path.startsWith(parent + '/') &&
-    p.path.split('/').length === page.path.split('/').length).slice(0, 8);
+  /* Trước đây lấy 8 trang anh em ĐẦU BẢNG CHỮ CÁI — thành ra trang "bơm mực quận 4"
+     (6 hiển thị, 0 nhấp) nhận 44 link nội bộ còn trang reset Epson L310 (297 nhấp/90 ngày)
+     chỉ nhận 6. Nay chia làm hai phần:
+       · 4 trang GIÁ TRỊ NHẤT trong cùng thư mục — dồn link về nơi có khách thật;
+       · 2 trang KẾ TIẾP THEO VÒNG (thứ tự đường dẫn, quay vòng) — bảo đảm mọi trang đều
+         được ít nhất 2 trang anh em trỏ tới, không sinh trang mồ côi.
+     Chỉ dồn theo giá trị mà bỏ phần vòng thì đuôi dài mất sạch link — đã đo và thấy. */
+  const anhEm = pages.filter(p => p.path !== page.path && p.path.startsWith(parent + '/') &&
+    p.path.split('/').length === page.path.split('/').length);
+  if (anhEm.length < 2) return '';
+
+  const theoGiaTri = [...anhEm].sort((a, b) => diemCua(b.path) - diemCua(a.path)).slice(0, 4);
+
+  const vong = [...anhEm, page].sort((a, b) => a.path.localeCompare(b.path, 'vi'));
+  const viTri = vong.findIndex(p => p.path === page.path);
+  const keTiep = [1, 2].map(k => vong[(viTri + k) % vong.length]).filter(p => p && p.path !== page.path);
+
+  const sib = [];
+  for (const p of theoGiaTri.concat(keTiep)) if (!sib.some(x => x.path === p.path)) sib.push(p);
   if (sib.length < 2) return '';
   return '\n      <section class="related"><h2>Bài viết / dịch vụ liên quan</h2><ul class="link-list">' +
     sib.map(s => '<li><a href="' + prefix + encPath(s.path) + '">' + esc(shortLabel(s.title)) + '</a></li>').join('') + '</ul></section>';

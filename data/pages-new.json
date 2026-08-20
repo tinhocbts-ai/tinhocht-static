@@ -372,7 +372,204 @@
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
-        "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110"
+        "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110",
+        "Phan-mem-reset-may-in/adjustment-program-epson"
+      ]
+    },
+
+    {
+      "_ghichu": "TRANG TRỤ TỔNG — 960 lượt/th ở nhóm không nêu model ('cách reset máy in' 170, 'reset máy in' 140). Khách chưa biết máy mình cần gì. Vai trò: phân loại 3 kiểu reset rồi dẫn xuống đúng trang model — cũng là chỗ dồn link nội bộ tự nhiên.",
+      "path": "Phan-mem-reset-may-in/cach-reset-may-in",
+      "title": "Cách Reset Máy In — Tra Theo Hãng Epson, Brother, Canon, HP",
+      "desc": "Ba kiểu reset máy in hoàn toàn khác nhau tuỳ hãng: bộ đếm mực thải Epson, drum và toner Brother, chip mực HP và Canon. Tra bảng để biết máy của bạn làm cách nào.",
+      "h1": "Cách reset máy in — tra theo hãng máy của bạn",
+      "model": "máy in",
+      "dongMay": "Epson, Brother, Canon, HP, Samsung",
+      "loi": "báo lỗi và khoá lệnh in dù mực vẫn còn",
+      "faqChung": false,
+      "luuYChung": false,
+      "moBai": "\"Reset máy in\" nghe như một việc, thực ra là <strong>ba việc khác hẳn nhau</strong> tuỳ hãng máy. Máy phun Epson reset bằng phần mềm chạy trên máy tính. Máy laser Brother reset bằng cách bấm nút ngay trên máy. Máy HP và Canon lại là chuyện con chip gắn trên hộp mực. Làm theo hướng dẫn của hãng này cho máy hãng kia thì chắc chắn không ăn — nên việc đầu tiên là xác định máy mình thuộc nhóm nào.",
+      "dacDiem": [
+        "Điểm chung của cả ba: máy <strong>vẫn còn mực và vẫn in tốt</strong>, chỉ là bộ đếm trong bộ nhớ đã chạm ngưỡng nên máy tự khoá",
+        "Reset chỉ đưa con số đếm về 0, <strong>không tác động tới phần cơ hay đầu in</strong>",
+        "Reset <strong>không tạo ra mực</strong> — hộp cạn thật thì reset xong bản in vẫn mờ",
+        "Làm sai cách thì máy không nhận lệnh chứ không hỏng, cứ làm lại từ đầu"
+      ],
+      "viSaoTieuDe": "Vì sao máy còn mực mà vẫn khoá không cho in",
+      "viSaoDay": "Nhà sản xuất đặt sẵn một ngưỡng trong bộ nhớ máy — số trang đã in, số mực thải đã hứng, hoặc số trang con chip đếm được. Chạm ngưỡng là máy dừng, dù thực tế máy vẫn chạy tốt. Ngưỡng đó có lý do thật (miếng thấm mực thải đầy sẽ tràn, trống mòn sẽ in xấu) nhưng thường được đặt <strong>sớm hơn khá nhiều</strong> so với lúc linh kiện thật sự hỏng. Reset là đưa con số đếm về 0 để dùng tiếp phần tuổi thọ còn lại.",
+      "luuYRieng": [
+        "Xác định đúng hãng và đúng model <strong>trước khi làm gì cả</strong> — tra bảng cuối bài.",
+        "Đọc kỹ máy đang báo lỗi gì: hết mực, tràn mực thải, hay hỏng trống. Ba lỗi này xử lý khác nhau.",
+        "Nếu reset xong bản in vẫn mờ, có sọc, lem mực — đó là vấn đề của mực hoặc trống, không phải bộ đếm."
+      ],
+      "quyTrinh": [
+        {
+          "ten": "Kiểu 1 — máy phun Epson: chạy phần mềm trên máy tính",
+          "moTa": "Áp dụng cho toàn bộ dòng Epson L (L1110, L1210, L310, L3110, L3210, L3250, L805, L1800…). Máy đầy <strong>bộ đếm mực thải</strong>, phải dùng phần mềm Adjustment Program chạy trên máy tính, nối dây USB.",
+          "khiNao": [
+            "Máy Epson nháy <strong>2 đèn đỏ</strong> xen kẽ (đèn giấy và đèn mực)",
+            "Máy tính báo <em>Service Required</em> hoặc <em>Ink pad is at the end of its service life</em>",
+            "Lệnh in treo trong hàng đợi, máy không nhận lệnh mới"
+          ],
+          "buoc": [
+            ["Tìm đúng bản Adjustment Program cho model máy", "Mỗi dòng Epson có bản phần mềm riêng — tải nhầm bản của model khác thì chạy được nhưng bộ đếm không về 0. Tra bảng cuối bài để tới đúng trang model."],
+            ["Tắt phần mềm diệt virus, nối dây USB", "Adjustment Program hay bị diệt virus chặn nhầm. Tắt tạm, nối máy in với máy tính bằng dây USB trực tiếp — không reset qua wifi được."],
+            ["Chạy phần mềm, chọn đúng model rồi vào Particular adjustment mode", "Mở AdjProg.exe bằng quyền quản trị, chọn model và cổng Auto selection, sau đó vào <strong>Particular adjustment mode</strong>."],
+            ["Chọn Waste ink pad counter rồi bấm Initialize", "Tích ô Main pad counter, bấm Check để xem đang bao nhiêu phần trăm, rồi bấm <strong>Initialize</strong> để đưa về 0."],
+            ["Tắt máy in, chờ 10 giây, bật lại", "Đèn đỏ tắt, máy nhận lệnh in bình thường."]
+          ],
+          "xong": "Xem giải thích đầy đủ về phần mềm này ở trang <a href=\"adjustment-program-epson\">Adjustment Program Epson</a>."
+        },
+        {
+          "ten": "Kiểu 2 — máy laser Brother: bấm nút ngay trên máy",
+          "moTa": "Không cần máy tính, không cần phần mềm. Brother có <strong>hai bộ đếm riêng</strong>: một đếm mực (toner), một đếm tuổi thọ trống (drum), reset bằng hai thao tác khác nhau.",
+          "khiNao": [
+            "Đổ mực hoặc thay hộp mực xong mà máy vẫn báo hết mực",
+            "Máy báo <em>Replace Toner</em>, <em>Drum End Soon</em> hoặc <em>Replace Drum</em>",
+            "Đèn Toner hoặc đèn Drum trên bảng điều khiển sáng"
+          ],
+          "buoc": [
+            ["Xem máy có màn hình hay không", "Máy chỉ có đèn LED và nút Go thì reset bằng cách đếm số lần bấm. Máy có màn hình LCD, nút OK và mũi tên thì vào menu chọn lệnh. Hai cách hoàn toàn khác nhau."],
+            ["Xem đang báo mực hay báo trống", "Đèn Toner / chữ Replace Toner → reset mực. Đèn Drum / chữ Replace Drum → reset trống. Làm nhầm là không ăn."],
+            ["Làm theo đúng quy trình của loại máy đó", "Reset mực: tắt nguồn, giữ Go rồi bật lại, bấm Go theo số lần quy định. Reset drum: để máy bật, mở nắp, giữ Go tới khi đèn sáng hết (máy không màn hình) hoặc giữ OK để vào menu Drum Unit (máy có màn hình)."]
+          ],
+          "xong": "Chi tiết từng bước kèm ảnh bảng điều khiển máy thật: <a href=\"cach-reset-may-in-brother\">cách reset máy in Brother</a>."
+        },
+        {
+          "ten": "Kiểu 3 — máy HP, Canon, Samsung: chuyện con chip",
+          "moTa": "Hộp mực các dòng này có một con chip nhỏ đếm số trang. Chip đếm hết hạn mức là máy ngừng in, và <strong>phần lớn dòng đời mới không reset lại được bằng phần mềm</strong> — phải thay chip.",
+          "khiNao": [
+            "Máy báo <em>Toner low</em> hoặc <em>Replace toner</em> dù hộp mực vừa nạp đầy",
+            "Bản in vẫn đậm đẹp nhưng máy không nhận thêm lệnh in",
+            "Máy Canon phun báo mã lỗi <em>5B00</em> hoặc <em>1700</em>"
+          ],
+          "buoc": [
+            ["Phân biệt cảnh báo với khoá hẳn", "Máy chỉ báo <em>Toner low</em> mà vẫn in được thì chỉnh trong Printer properties cho máy bỏ qua cảnh báo, in tiếp tới khi mực nhạt thật."],
+            ["Tháo hộp mực, lau chân tiếp xúc chip", "Chip là miếng mạch nhỏ gắn cạnh hộp mực. Lau sạch chân tiếp xúc bằng khăn khô rồi lắp lại — khá nhiều ca chỉ là bẩn chân chip."],
+            ["Thay chip mới nếu vẫn không in", "Dòng HP 105A/106A và nhiều dòng laser đời mới không reset chip bằng phần mềm được, phải thay chip rời. Chip bán sẵn, thay bằng tay vài phút."],
+            ["Riêng máy phun Canon G-series thì dùng Service Tool", "Canon G1010/G2010/G3010 báo 5B00 là tràn bộ đếm mực thải, reset bằng phần mềm Service Tool giống kiểu Epson."]
+          ]
+        }
+      ],
+      "bangTraCuu": {
+        "tieuDe": "Tra nhanh: máy của bạn reset kiểu nào",
+        "moTa": "Tìm dòng máy gần đúng nhất rồi bấm vào cột cuối để tới hướng dẫn chi tiết từng bước.",
+        "cot": ["Dòng máy", "Kiểu reset", "Dấu hiệu thường gặp"],
+        "dong": [
+          { "o": ["Epson L3210, L3211", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L1210, L1250", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ, Service Required"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L3110", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L1110", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1110", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L3150, L3151", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L3250, L3251, L3256", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ, có wifi"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L4150, L4160", "Phần mềm Adjustment Program", "Nháy đèn đỏ liên tục"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L805, L800, L850", "Phần mềm Adjustment Program", "Máy in ảnh, đầy bộ đếm nhanh"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l805", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L1800, L1300 (khổ A3)", "Phần mềm Adjustment Program", "Tràn mực thải sau khi in nhiều A3"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L110, L210, L300, L350", "Phần mềm Adjustment Program", "Đời cũ, nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300", "nhan": "Xem hướng dẫn" },
+          { "o": ["Epson L310", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310", "nhan": "Xem hướng dẫn" },
+          { "o": ["Brother HL-L2321D, HL-L2320D", "Bấm nút Go trên máy", "Báo hết mực dù vừa đổ, Replace Drum"], "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d", "nhan": "Xem hướng dẫn" },
+          { "o": ["Brother HL-L2361DN, HL-L2366DW", "Menu trên màn hình LCD", "Replace Drum, Replace Toner"], "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2361dn-l2366dw", "nhan": "Xem hướng dẫn" },
+          { "o": ["Brother HL-L5210DN", "Bấm nút trên máy", "Báo hết mực sau khi thay hộp"], "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn", "nhan": "Xem hướng dẫn" },
+          { "o": ["Brother DCP-B7535DW", "Reset nhông hộp mực", "Báo hết mực sau khi đổ"], "toi": "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw", "nhan": "Xem hướng dẫn" },
+          { "o": ["Canon G1010, G2010, G3010", "Service Tool", "Báo lỗi 5B00 hoặc 1700"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-canon-g1010-g2010-g3010", "nhan": "Xem hướng dẫn" },
+          { "o": ["HP 135A, 135W, 137W", "Thay hoặc reset chip mực", "Toner low dù mực vừa nạp đầy"], "toi": "Phan-mem-reset-may-in/reset-chip-may-in-hp-135a-135w-137w", "nhan": "Xem hướng dẫn" },
+          { "o": ["HP 107A, 107W", "Thay hoặc reset chip mực", "Máy ngừng in dù còn mực"], "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-men-reset-hp-107a-107w-135a", "nhan": "Xem hướng dẫn" },
+          { "o": ["Samsung SCX-4300", "Reset chip mực", "Báo hết mực sau khi đổ"], "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-reset-muc-may-in-samsung-scx-4300-hieu-qua", "nhan": "Xem hướng dẫn" }
+        ]
+      },
+      "faqRieng": [
+        ["Reset máy in có làm hỏng máy không ?", "Không. Reset chỉ ghi lại một con số trong bộ nhớ, không đụng tới phần cơ, đầu in hay trống. Bấm sai thì máy đơn giản là không nhận lệnh, làm lại từ đầu là được. Cái cần lưu ý là lý do nhà sản xuất đặt ngưỡng: với máy phun, nếu miếng thấm mực thải đã no thật thì reset xong mực có thể trào ra ngoài — nên kiểm tra miếng thấm chứ đừng reset mãi."],
+        ["Reset máy in có mất bảo hành không ?", "Với máy Brother, HP, Canon thì reset bằng nút bấm hoặc thay chip là thao tác bình thường, không mất bảo hành. Với máy phun Epson, phần mềm Adjustment Program là công cụ nội bộ của hãng — dùng nó không làm hỏng máy nhưng cũng không phải quy trình hãng khuyến khích cho người dùng cuối. Máy còn hạn bảo hành thì nên mang ra trung tâm bảo hành trước."],
+        ["Máy tôi không có trong bảng thì làm sao ?", "Tìm dòng gần nhất cùng hãng và cùng loại (phun hay laser) — các đời cùng họ thường dùng chung quy trình. Nếu vẫn không chắc, gọi số bên dưới đọc tên model, kỹ thuật sẽ nói ngay máy đó reset kiểu gì, không tính phí tư vấn."],
+        ["Reset xong được bao lâu thì phải làm lại ?", "Tuỳ mức độ sử dụng. Máy phun Epson in văn bản thường 5.000–10.000 trang mới đầy lại bộ đếm, in ảnh phủ kín thì chỉ 1.000–2.000 trang. Máy laser Brother thì mỗi lần đổ mực là reset một lần. Máy in càng nhiều mỗi lần thì càng lâu phải reset — nghịch lý là bật tắt nhiều lần trong ngày lại làm đầy bộ đếm nhanh hơn."],
+        ["Tự reset ở nhà có được không hay phải gọi thợ ?", "Phần lớn trường hợp tự làm được, hướng dẫn trên trang này đủ chi tiết để làm theo. Nên gọi thợ khi: reset xong bản in vẫn mờ hoặc có sọc (vấn đề nằm ở mực hoặc trống), máy báo Drum Error, hoặc máy phun đã tràn mực thải ra ngoài. Những ca đó reset không giải quyết được."]
+      ],
+      "lienQuan": [
+        "Phan-mem-reset-may-in/adjustment-program-epson",
+        "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+        "Phan-mem-reset-may-in"
+      ]
+    },
+
+    {
+      "_ghichu": "TRANG TRỤ EPSON — 770 lượt/th ('adjustment program epson' 260, 'adjustment program' 140). Site đang xếp 7,8 cho từ khoá này mà không có trang trụ nào, đang ăn nhờ trang model lẻ.",
+      "path": "Phan-mem-reset-may-in/adjustment-program-epson",
+      "title": "Adjustment Program Epson Là Gì — Dùng Cho Máy Nào, Reset Ra Sao",
+      "desc": "Adjustment Program là phần mềm reset bộ đếm mực thải của máy in phun Epson. Giải thích phần mềm này làm gì, dùng cho model nào, 8 bước chạy và các lỗi hay gặp.",
+      "h1": "Adjustment Program Epson — phần mềm reset bộ đếm mực thải",
+      "model": "Epson",
+      "dongMay": "L110, L210, L310, L360, L805, L1110, L1210, L1800, L3110, L3150, L3210, L3250, L4150",
+      "loi": "nháy 2 đèn đỏ và báo tràn bộ đếm mực thải",
+      "faqChung": false,
+      "luuYChung": false,
+      "moBai": "<strong>Adjustment Program</strong> (nhiều nơi gọi tắt là AdjProg hoặc \"tool reset Epson\") là phần mềm kỹ thuật của Epson, dùng để chỉnh và đặt lại các thông số bên trong máy in phun — trong đó có <strong>bộ đếm mực thải</strong>. Đây là thứ duy nhất đưa máy Epson đang nháy 2 đèn đỏ trở lại làm việc. Bài này giải thích phần mềm làm gì, vì sao mỗi model một bản riêng, và chạy nó ra sao.",
+      "dacDiem": [
+        "Là <strong>phần mềm chạy trên máy tính Windows</strong>, không phải thao tác bấm nút trên máy in",
+        "Bắt buộc nối máy in với máy tính bằng <strong>dây USB</strong> — không chạy qua wifi hay mạng LAN",
+        "<strong>Mỗi dòng máy có một bản riêng</strong>, không dùng chung được",
+        "File thường bị phần mềm diệt virus báo nhầm là mã độc, phải tắt tạm mới chạy được"
+      ],
+      "viSaoTieuDe": "Bộ đếm mực thải là cái gì mà phải reset",
+      "viSaoDay": "Máy in phun mỗi lần bật lên hoặc để lâu không in đều tự chạy chu trình làm sạch đầu in, đẩy một ít mực xuống <strong>miếng thấm mực thải</strong> nằm dưới đáy máy. Máy đếm số mực đã đẩy xuống đó; chạm ngưỡng thì khoá lệnh in để mực khỏi trào ra ngoài. Ngưỡng này thường được đặt <strong>sớm hơn</strong> lúc miếng thấm thật sự no. Adjustment Program đưa con số đếm về 0 để dùng tiếp — nhưng nếu miếng thấm đã no mực thật thì phải thay miếng thấm, không thì mực trào ra bàn.",
+      "luuYRieng": [
+        "<strong>Chọn đúng model</strong> ở bước Select là điều quan trọng nhất. Chọn sai thì phần mềm vẫn chạy, vẫn báo thành công, nhưng bộ đếm không về 0.",
+        "Tắt phần mềm diệt virus và Windows Defender <strong>trước khi giải nén</strong>, không thì file bị xoá ngay khi vừa bung ra.",
+        "Chạy file AdjProg.exe bằng <strong>chuột phải → Run as administrator</strong>, chạy thường hay báo lỗi không thấy máy in.",
+        "Máy in phải đang <strong>bật</strong> và nối dây USB trực tiếp, không qua hub chia cổng."
+      ],
+      "quyTrinh": [
+        {
+          "ten": "Chạy Adjustment Program để reset bộ đếm",
+          "moTa": "Tám bước dưới đây giống nhau ở hầu hết dòng Epson L. Điểm khác nhau duy nhất giữa các model là <strong>bản phần mềm phải tải đúng</strong> — tra bảng bên dưới.",
+          "khiNao": [
+            "Máy nháy <strong>2 đèn đỏ</strong> xen kẽ (đèn giấy và đèn mực)",
+            "Máy tính báo <em>Service Required</em> hoặc <em>Ink pad is at the end of its service life</em>",
+            "Lệnh in treo trong hàng đợi, bản in không ra dù máy vẫn còn mực"
+          ],
+          "buoc": [
+            ["Tắt phần mềm diệt virus và tường lửa", "Adjustment Program hay bị các phần mềm diệt virus chặn nhầm. Tắt tạm Windows Defender và phần mềm diệt virus đang dùng, sau khi reset xong thì bật lại."],
+            ["Giải nén và chạy phần mềm", "Giải nén file vừa tải, chạy <strong>AdjProg.exe</strong> bằng chuột phải → <strong>Run as administrator</strong>. Cắm dây USB nối máy in với máy tính, bật máy in lên."],
+            ["Chọn đúng model máy in", "Bấm nút <strong>Select</strong>, ở mục Model Name chọn đúng model máy của mình, mục Port chọn <strong>Auto selection</strong> rồi bấm <strong>OK</strong>. Chọn sai model là reset không ăn."],
+            ["Vào chế độ Particular adjustment mode", "Ở màn hình chính, bấm <strong>Particular adjustment mode</strong> để mở danh sách các chức năng chỉnh máy."],
+            ["Chọn Waste ink pad counter", "Trong danh sách, tìm và chọn dòng <strong>Waste ink pad counter</strong> (bộ đếm mực thải) rồi bấm <strong>OK</strong>."],
+            ["Kiểm tra mức đếm hiện tại", "Tích vào ô <strong>Main pad counter</strong>, bấm <strong>Check</strong> để xem bộ đếm đang ở bao nhiêu phần trăm. Hiện 100% hoặc hơn là đúng máy đã tràn bộ đếm."],
+            ["Bấm Initialize để đưa bộ đếm về 0", "Vẫn giữ ô <strong>Main pad counter</strong> đang tích, bấm <strong>Initialize</strong> rồi bấm <strong>OK</strong> khi có hộp thoại xác nhận. Đây là bước chính."],
+            ["Tắt máy in và bật lại", "Tắt máy in bằng nút nguồn trên máy, chờ 10 giây rồi bật lại. Đèn đỏ tắt, máy nhận lệnh in bình thường."]
+          ],
+          "xong": "Một số dòng có thêm ô <strong>Platen pad counter</strong> bên cạnh Main pad counter. Nếu máy vẫn báo lỗi sau khi reset Main, quay lại tích thêm ô đó và Initialize lần nữa."
+        }
+      ],
+      "bangTraCuu": {
+        "tieuDe": "Máy nào dùng bản nào — bấm để tới trang tải và hướng dẫn",
+        "moTa": "Mỗi model một bản Adjustment Program riêng. Tìm đúng dòng máy của mình rồi bấm sang trang tương ứng.",
+        "cot": ["Dòng máy", "Đặc điểm"],
+        "dong": [
+          { "o": ["Epson L3210, L3211", "Phổ biến nhất, in–scan–copy"], "toi": "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L1210, L1250", "Chỉ in, không scan"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L3110", "In–scan–copy, không wifi"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L1110", "Chỉ in, gọn nhẹ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1110", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L3150, L3151", "In–scan–copy, có wifi"], "toi": "Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L3250, L3251, L3256", "Có wifi, hay reset hỏng vì để nối wifi"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L4150, L4160", "L4160 có màn hình và in 2 mặt"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L805, L800, L850", "6 màu, chuyên in ảnh và in đĩa"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l805", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L1800, L1300", "Khổ A3, in ảnh lớn và chuyển nhiệt"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L110, L210, L300, L350", "Các đời cũ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L310", "Đời cũ, vẫn rất phổ biến"], "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310", "nhan": "Tải và xem cách reset" },
+          { "o": ["Epson L350", "Đời cũ"], "toi": "Phan-mem-reset-may-in/Phan-mem-reset-may-in-epson-l350", "nhan": "Tải và xem cách reset" }
+        ]
+      },
+      "faqRieng": [
+        ["Adjustment Program có phải phần mềm crack không ?", "Không phải crack. Đây là công cụ kỹ thuật do chính Epson làm ra cho trung tâm bảo hành, dùng để chỉnh thông số máy sau khi sửa chữa. Nó bị coi là \"không chính thức\" vì hãng không phát hành công khai cho người dùng cuối, chứ bản thân phần mềm là đồ gốc của hãng."],
+        ["Vì sao máy diệt virus báo file này là virus ?", "Vì phần mềm can thiệp trực tiếp vào bộ nhớ thiết bị và thường được đóng gói lại nhiều lần khi chia sẻ, nên bị các bộ máy quét xếp vào nhóm đáng ngờ. Đây là báo nhầm phổ biến. Cách an toàn: tải từ nguồn tin cậy, tắt diệt virus lúc chạy, xong thì bật lại và quét lại máy."],
+        ["Một bản Adjustment Program reset được mấy lần ?", "Nhiều bản đi kèm khoá dùng một lần cho một máy — reset xong lần đó là hết, muốn reset lần sau phải xin khoá mới, giống thẻ cào. Cũng có bản dùng lại được nhiều lần. Cái này tuỳ nguồn tải chứ không phải tuỳ model máy."],
+        ["Chạy phần mềm mà không thấy máy in đâu ?", "Kiểm tra bốn thứ theo thứ tự: máy in đã bật chưa; dây USB có cắm trực tiếp không (đừng qua hub); có chạy bằng Run as administrator không; và có chọn đúng Port là Auto selection không. Máy Epson có wifi thì phải cắm thêm dây USB, phần mềm không thấy máy qua wifi."],
+        ["Reset xong máy vẫn nháy đèn đỏ thì sao ?", "Thử tích thêm ô <strong>Platen pad counter</strong> rồi Initialize lần nữa — một số dòng có hai bộ đếm. Nếu vẫn nháy, khả năng là chọn sai model lúc đầu, hoặc miếng thấm mực thải đã no thật và máy phát hiện được. Trường hợp sau thì phải thay miếng thấm."]
+      ],
+      "lienQuan": [
+        "Phan-mem-reset-may-in/cach-reset-may-in",
+        "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
+        "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210",
+        "Phan-mem-reset-may-in"
       ]
     },
 

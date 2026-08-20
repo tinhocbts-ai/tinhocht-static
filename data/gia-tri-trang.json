@@ -1,0 +1,791 @@
+{
+ "_ghichu": "Sinh bởi tools/gia-tri-trang.js — build-site.js dùng để xếp khối \"Bài viết / dịch vụ liên quan\" theo giá trị thật thay vì theo bảng chữ cái. Chạy lại mỗi 1-2 tháng.",
+ "ky": "2026-05-19 → 2026-08-17",
+ "trang": {
+  "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210": {
+   "nhap": 365,
+   "hienThi": 2802,
+   "diem": 3678.02
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310": {
+   "nhap": 297,
+   "hienThi": 1801,
+   "diem": 2988.01
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l1110": {
+   "nhap": 147,
+   "hienThi": 1161,
+   "diem": 1481.61
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110": {
+   "nhap": 128,
+   "hienThi": 1016,
+   "diem": 1290.16
+  },
+  "home/nap-muc-may-in-quan-tan-phu": {
+   "nhap": 99,
+   "hienThi": 1436,
+   "diem": 1004.36
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc": {
+   "nhap": 96,
+   "hienThi": 3869,
+   "diem": 998.69
+  },
+  "Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150": {
+   "nhap": 88,
+   "hienThi": 1062,
+   "diem": 890.62
+  },
+  "home/nap-muc-may-in-quan-10": {
+   "nhap": 80,
+   "hienThi": 1535,
+   "diem": 815.35
+  },
+  "home/nap-muc-may-in-quan-tan-binh": {
+   "nhap": 79,
+   "hienThi": 1941,
+   "diem": 809.41
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4": {
+   "nhap": 72,
+   "hienThi": 2124,
+   "diem": 741.24
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-brother-hl-l5100dn-dhon-gian": {
+   "nhap": 61,
+   "hienThi": 2218,
+   "diem": 632.18
+  },
+  "ban-may-in-cu-gia-re/ban-may-in-cu-gia-lai": {
+   "nhap": 57,
+   "hienThi": 495,
+   "diem": 574.95
+  },
+  "thu-thuat-tin-hoc/máy-brother-in-ra-giấy-chạy-chậm-nguyên-nhân-và-cách-khắc-phục": {
+   "nhap": 52,
+   "hienThi": 1618,
+   "diem": 536.18
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-phun-canon-toan-tap": {
+   "nhap": 45,
+   "hienThi": 1610,
+   "diem": 466.1
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-kéo-giấy-liên-tục-đơn-giản-nhất": {
+   "nhap": 40,
+   "hienThi": 1499,
+   "diem": 414.99
+  },
+  "thu-thuat-tin-hoc/tai-sao-phai-thay-drum-may-in-khi-nap-muc-lan-dau": {
+   "nhap": 28,
+   "hienThi": 1556,
+   "diem": 295.56
+  },
+  "": {
+   "nhap": 33,
+   "hienThi": 2209,
+   "diem": 352.09
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-dcp-l2520d-l2540dw-de-nhat": {
+   "nhap": 24,
+   "hienThi": 791,
+   "diem": 247.91
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/thứ-tự-trang-in-bị-lỗi": {
+   "nhap": 24,
+   "hienThi": 774,
+   "diem": 247.74
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-thay-ruy-bang-may-in-hoa-dhon-epson-lq-300-310-2190": {
+   "nhap": 23,
+   "hienThi": 656,
+   "diem": 236.56
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-màu-hp-báo-lỗi-er-11-đơn-giản-nhất": {
+   "nhap": 21,
+   "hienThi": 363,
+   "diem": 213.63
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/phan-men-reset-hp-107a-107w-135a": {
+   "nhap": 21,
+   "hienThi": 139,
+   "diem": 211.39
+  },
+  "home/bom-muc-may-in-tai-nha-24-7-o-pleiku---gialai": {
+   "nhap": 20,
+   "hienThi": 408,
+   "diem": 204.08
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-chip-may-in-hp-m107w": {
+   "nhap": 19,
+   "hienThi": 457,
+   "diem": 194.57
+  },
+  "home": {
+   "nhap": 18,
+   "hienThi": 452,
+   "diem": 184.52
+  },
+  "home/nap-muc-may-in-quan-3": {
+   "nhap": 17,
+   "hienThi": 1706,
+   "diem": 187.06
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/nap-muc-may-in-hp-laser-107a-107w": {
+   "nhap": 17,
+   "hienThi": 923,
+   "diem": 179.23
+  },
+  "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw": {
+   "nhap": 16,
+   "hienThi": 1675,
+   "diem": 176.75
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-muc-may-in-brother-l3551-cdw---chuan-nhat/hướng-dẫn-reset-mực-máy-in-epson-t50-t60-1394-1400": {
+   "nhap": 15,
+   "hienThi": 313,
+   "diem": 153.13
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l805": {
+   "nhap": 16,
+   "hienThi": 171,
+   "diem": 161.71
+  },
+  "home/nap-muc-may-in-quan-5/nạp-mực-máy-in-quận-5-đường-nguyễn-trãi": {
+   "nhap": 14,
+   "hienThi": 330,
+   "diem": 143.3
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300": {
+   "nhap": 13,
+   "hienThi": 67,
+   "diem": 130.67
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160": {
+   "nhap": 13,
+   "hienThi": 75,
+   "diem": 130.75
+  },
+  "home/nap-muc-may-in-quan-binh-thanh": {
+   "nhap": 13,
+   "hienThi": 1381,
+   "diem": 143.81
+  },
+  "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn": {
+   "nhap": 12,
+   "hienThi": 422,
+   "diem": 124.22
+  },
+  "home/nap-muc-may-in-quan-binh-tan/nap-mực-máy-in-đường-tên-lửa-quận-bình-tân": {
+   "nhap": 12,
+   "hienThi": 558,
+   "diem": 125.58
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-reset-muc-may-in-samsung-scx-4300-hieu-qua": {
+   "nhap": 12,
+   "hienThi": 179,
+   "diem": 121.79
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-tu-bom-muc-may-in-brother": {
+   "nhap": 12,
+   "hienThi": 866,
+   "diem": 128.66
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251": {
+   "nhap": 11,
+   "hienThi": 188,
+   "diem": 111.88
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-cài-đặt-in-2-mặt-cho-máy-canon-3300": {
+   "nhap": 11,
+   "hienThi": 1105,
+   "diem": 121.05
+  },
+  "home/bơm-mực-máy-in-tận-nơi-gía-rẻ-tại-mỹ-tho-tiền-giang": {
+   "nhap": 9,
+   "hienThi": 632,
+   "diem": 96.32
+  },
+  "thu-thuat-tin-hoc/huong-dan-cach-in-kho-giay-a5-tren-may-in-canon-lbp-3300": {
+   "nhap": 9,
+   "hienThi": 552,
+   "diem": 95.52
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-canon-g1010-g2010-g3010": {
+   "nhap": 8,
+   "hienThi": 177,
+   "diem": 81.77
+  },
+  "sua-may-in-tai-hcm/thu-mua-may-in-cu-tai-tphcm": {
+   "nhap": 8,
+   "hienThi": 299,
+   "diem": 82.99
+  },
+  "home/bơm-mực-máy-in-tại-kon-tum-uy-tín-giá-rẻ": {
+   "nhap": 7,
+   "hienThi": 75,
+   "diem": 70.75
+  },
+  "home/ban-can-nap-muc-may-in-gap-24-7-tai-hcm---thong-tin-o-day": {
+   "nhap": 7,
+   "hienThi": 900,
+   "diem": 79
+  },
+  "home/nap-muc-may-in-quan-phu-nhua": {
+   "nhap": 7,
+   "hienThi": 2374,
+   "diem": 93.74
+  },
+  "thu-thuat-tin-hoc/nạp-mực-máy-in-hp-48a-hp-pro-m15a-m16a-mfp-m28a-m28w-m29a": {
+   "nhap": 7,
+   "hienThi": 292,
+   "diem": 72.92
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-nạp-mực-máy-in-hp-laserjet-managed-mfp-e82550dn": {
+   "nhap": 7,
+   "hienThi": 86,
+   "diem": 70.86
+  },
+  "home/nap-muc-may-in-quan-binh-tan/nạp-mực-in-đường-lê-văn-quới-bình-tân-mực-đậm-đẹp": {
+   "nhap": 6,
+   "hienThi": 279,
+   "diem": 62.79
+  },
+  "home/thay-mực-máy-in-hp-neverstop-laser-1000w-1200w": {
+   "nhap": 6,
+   "hienThi": 150,
+   "diem": 61.5
+  },
+  "mua-bán-linh-kiện-máy-in-hp-canon-brother/bán-card-formater-canon-lbp-2900": {
+   "nhap": 6,
+   "hienThi": 253,
+   "diem": 62.53
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/tại-sao-máy-in-màu-hp-báo-lỗi-supply-problem": {
+   "nhap": 6,
+   "hienThi": 288,
+   "diem": 62.88
+  },
+  "Phan-mem-reset-may-in": {
+   "nhap": 5,
+   "hienThi": 132,
+   "diem": 51.32
+  },
+  "Phan-mem-reset-may-in/Phan-mem-reset-may-in-epson-l350": {
+   "nhap": 5,
+   "hienThi": 71,
+   "diem": 50.71
+  },
+  "home/nap-muc-may-in-gia-re-tp-hcm---chi-con-80k": {
+   "nhap": 5,
+   "hienThi": 957,
+   "diem": 59.57
+  },
+  "sua-may-in-tai-hcm/sua-may-in-quan-10": {
+   "nhap": 5,
+   "hienThi": 368,
+   "diem": 53.68
+  },
+  "home/bơm-mực-máy-in-tại-bình-phước-nạp-tận-nơi-giá-rẻ": {
+   "nhap": 4,
+   "hienThi": 231,
+   "diem": 42.31
+  },
+  "home/bơm-mực-máy-in-tại-quy-nhơn-tận-nơi-chuyên-nghiệp": {
+   "nhap": 4,
+   "hienThi": 108,
+   "diem": 41.08
+  },
+  "sua-may-in-tai-hcm/sua-may-in-tai-nha-quan-tan-binh": {
+   "nhap": 4,
+   "hienThi": 532,
+   "diem": 45.32
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-3": {
+   "nhap": 4,
+   "hienThi": 1297,
+   "diem": 52.97
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800": {
+   "nhap": 3,
+   "hienThi": 21,
+   "diem": 30.21
+  },
+  "bang-gia-nap-muc-may-in-tan-noi": {
+   "nhap": 3,
+   "hienThi": 411,
+   "diem": 34.11
+  },
+  "home/ho-tro-cai-dat-driver-may-in-mien-phi": {
+   "nhap": 3,
+   "hienThi": 67,
+   "diem": 30.67
+  },
+  "home/nap-muc-may-in-mau-tai-nha": {
+   "nhap": 3,
+   "hienThi": 425,
+   "diem": 34.25
+  },
+  "home/nap-muc-may-in-quan-8": {
+   "nhap": 3,
+   "hienThi": 145,
+   "diem": 31.45
+  },
+  "home/nap-muc-may-in-tai-binh-duong": {
+   "nhap": 3,
+   "hienThi": 347,
+   "diem": 33.47
+  },
+  "thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother": {
+   "nhap": 3,
+   "hienThi": 281,
+   "diem": 32.81
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-nap-muc-may-in-hp-laser-m102": {
+   "nhap": 3,
+   "hienThi": 118,
+   "diem": 31.18
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/nguyen-nhan-may-in-mau-khong-ra-deu-muc-va-cach-sua-chua": {
+   "nhap": 3,
+   "hienThi": 381,
+   "diem": 33.81
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/tại-sao-máy-in-brother-bị-mờ-nguyên-nhân-và-tuyệt-chiêu": {
+   "nhap": 3,
+   "hienThi": 230,
+   "diem": 32.3
+  },
+  "ban-may-in-cu-gia-re": {
+   "nhap": 2,
+   "hienThi": 46,
+   "diem": 20.46
+  },
+  "home/bơm-mực-máy-in-bao-nhiêu-tiền": {
+   "nhap": 2,
+   "hienThi": 161,
+   "diem": 21.61
+  },
+  "home/công-ty-bơm-mực-máy-in-tại-bắc-ninh": {
+   "nhap": 2,
+   "hienThi": 258,
+   "diem": 22.58
+  },
+  "home/nạp-mực-in-đường-trần-hưng-đạo-quận-1-tại-nhà": {
+   "nhap": 2,
+   "hienThi": 329,
+   "diem": 23.29
+  },
+  "home/nạp-mực-máy-in-hp-m130a-m130fn-m130fw-tận-nơi-giá-cực-rẻ": {
+   "nhap": 2,
+   "hienThi": 23,
+   "diem": 20.23
+  },
+  "home/nap-muc-may-in-quan-binh-tan/nạp-mực-máy-in-brother-tại-quận-bình-tân": {
+   "nhap": 2,
+   "hienThi": 97,
+   "diem": 20.97
+  },
+  "home/thay-mực-máy-in-hp-mfp-m436-tại-tp-hcm-giá-rẻ-nhất": {
+   "nhap": 2,
+   "hienThi": 150,
+   "diem": 21.5
+  },
+  "home/tuyển-kỹ-thuật-viên-máy-tính-mực-in-tại-tp-hcm": {
+   "nhap": 2,
+   "hienThi": 41,
+   "diem": 20.41
+  },
+  "nap-muc-may-in-bill---thay-muc-may-in-hoa-don": {
+   "nhap": 2,
+   "hienThi": 51,
+   "diem": 20.51
+  },
+  "sua-may-in-tai-hcm/sửa-máy-in-quận-bình-thạnh/công-ty-sửa-máy-in-đường-bạch-đằng-bình-thạnh": {
+   "nhap": 2,
+   "hienThi": 658,
+   "diem": 26.58
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-7": {
+   "nhap": 2,
+   "hienThi": 1155,
+   "diem": 31.55
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-hl-l2321d": {
+   "nhap": 2,
+   "hienThi": 173,
+   "diem": 21.73
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/những-lỗi-cơ-bản-của-hộp-mực": {
+   "nhap": 2,
+   "hienThi": 48,
+   "diem": 20.48
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/sua-may-in-hp-107a-107w": {
+   "nhap": 2,
+   "hienThi": 121,
+   "diem": 21.21
+  },
+  "ban-may-in-cu-gia-re/mua-ban-may-in-mau-cu": {
+   "nhap": 1,
+   "hienThi": 52,
+   "diem": 10.52
+  },
+  "home/nap-muc-may-in-quan-1": {
+   "nhap": 1,
+   "hienThi": 242,
+   "diem": 12.42
+  },
+  "home/nap-muc-may-in-quan-11": {
+   "nhap": 1,
+   "hienThi": 207,
+   "diem": 12.07
+  },
+  "home/nap-muc-may-in-quan-3/nạp-mực-máy-in-võ-thị-sáu-quận-3-247": {
+   "nhap": 1,
+   "hienThi": 80,
+   "diem": 10.8
+  },
+  "home/nap-muc-may-in-quan-5": {
+   "nhap": 1,
+   "hienThi": 97,
+   "diem": 10.97
+  },
+  "home/nap-muc-may-in-quan-5/nạp-mực-in-quận-5-i-đường-nguyễn-tri-phương": {
+   "nhap": 1,
+   "hienThi": 105,
+   "diem": 11.05
+  },
+  "home/nap-muc-may-in-quan-7": {
+   "nhap": 1,
+   "hienThi": 168,
+   "diem": 11.68
+  },
+  "home/nap-muc-may-in-quan-9": {
+   "nhap": 1,
+   "hienThi": 210,
+   "diem": 12.1
+  },
+  "home/nap-muc-may-in-quan-binh-tan": {
+   "nhap": 1,
+   "hienThi": 161,
+   "diem": 11.61
+  },
+  "home/nap-muc-may-in-quan-go-vap": {
+   "nhap": 1,
+   "hienThi": 106,
+   "diem": 11.06
+  },
+  "home/nap-muc-may-in-quan-phu-nhua/nạp-mực-máy-in-đường-huynh-văn-bánh-247": {
+   "nhap": 1,
+   "hienThi": 246,
+   "diem": 12.46
+  },
+  "home/nap-muc-may-in-quan-phu-nhua/nạp-mực-máy-in-đường-nguyễn-văn-trỗi-phú-nhuận-247": {
+   "nhap": 1,
+   "hienThi": 64,
+   "diem": 10.64
+  },
+  "liên-hệ": {
+   "nhap": 1,
+   "hienThi": 1272,
+   "diem": 22.72
+  },
+  "sua-may-in-tai-hcm/sửa-máy-in-quận-bình-thạnh": {
+   "nhap": 1,
+   "hienThi": 269,
+   "diem": 12.69
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-12": {
+   "nhap": 1,
+   "hienThi": 49,
+   "diem": 10.49
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-5": {
+   "nhap": 1,
+   "hienThi": 1378,
+   "diem": 23.78
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-6": {
+   "nhap": 1,
+   "hienThi": 835,
+   "diem": 18.35
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-phu-nhuan": {
+   "nhap": 1,
+   "hienThi": 1378,
+   "diem": 23.78
+  },
+  "thu-thuat-tin-hoc/huong-dan-reset-may-in-mau-brother-hl-3150-nhanh-nhat": {
+   "nhap": 1,
+   "hienThi": 32,
+   "diem": 10.32
+  },
+  "thu-thuat-tin-hoc/mua-máy-in-trắng-đen-nào-tốt-giá-rẻ": {
+   "nhap": 1,
+   "hienThi": 19,
+   "diem": 10.19
+  },
+  "thu-thuat-tin-hoc/thủ-thuật-máy-tính/sửa-lỗi-cột-wifi-bị-dấu-x-đỏ": {
+   "nhap": 1,
+   "hienThi": 341,
+   "diem": 13.41
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-cài-đặt-điện-thoại-với-máy-in-wifi": {
+   "nhap": 1,
+   "hienThi": 28,
+   "diem": 10.28
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-print-spooler-service-not-runing": {
+   "nhap": 1,
+   "hienThi": 173,
+   "diem": 11.73
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/loi-toner-empty-drum-life-may-in-panasonic-1500": {
+   "nhap": 1,
+   "hienThi": 136,
+   "diem": 11.36
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-hay-bi-ket-giay": {
+   "nhap": 1,
+   "hienThi": 547,
+   "diem": 15.469999999999999
+  },
+  "Phan-mem-reset-may-in/reset-chip-may-in-hp-135a-135w-137w": {
+   "nhap": 0,
+   "hienThi": 69,
+   "diem": 0.69
+  },
+  "home/đổ-mực-máy-in-canon-3300-tận-nơi-hcm": {
+   "nhap": 0,
+   "hienThi": 11,
+   "diem": 0.11
+  },
+  "home/ở-đâu-bơm-mực-máy-in-nhanh-nhất": {
+   "nhap": 0,
+   "hienThi": 376,
+   "diem": 3.76
+  },
+  "home/bơm-mực-máy-in-quận-4-có-mặt-nhanh-nhất-giá-rẻ": {
+   "nhap": 0,
+   "hienThi": 78,
+   "diem": 0.78
+  },
+  "home/nạp-mực-máy-in-canon-mf113w-110-112": {
+   "nhap": 0,
+   "hienThi": 67,
+   "diem": 0.67
+  },
+  "home/nạp-mực-máy-in-hp-m102a-m102w-giá-rẻ-nhất": {
+   "nhap": 0,
+   "hienThi": 42,
+   "diem": 0.42
+  },
+  "home/nạp-mực-máy-in-nhanh-có-mặt-siêu-tốc": {
+   "nhap": 0,
+   "hienThi": 15,
+   "diem": 0.15
+  },
+  "home/nạp-mực-máy-in-quận-11-tốc-độ-giá-cả": {
+   "nhap": 0,
+   "hienThi": 33,
+   "diem": 0.33
+  },
+  "home/nap-muc-may-in-gia-re-tp-hcm---chi-con-80k/nạp-mực-máy-in-chủ-nhật-bơm-mực-in-ngoài-giờ": {
+   "nhap": 0,
+   "hienThi": 5,
+   "diem": 0.05
+  },
+  "home/nap-muc-may-in-mau-tai-nha/thay-muc-may-in-mau-hp": {
+   "nhap": 0,
+   "hienThi": 316,
+   "diem": 3.16
+  },
+  "home/nap-muc-may-in-quan-12": {
+   "nhap": 0,
+   "hienThi": 126,
+   "diem": 1.26
+  },
+  "home/nap-muc-may-in-quan-2": {
+   "nhap": 0,
+   "hienThi": 263,
+   "diem": 2.63
+  },
+  "home/nap-muc-may-in-quan-2/nạp-mực-máy-in-quận-2-thảo-điền-an-phú": {
+   "nhap": 0,
+   "hienThi": 135,
+   "diem": 1.35
+  },
+  "home/nap-muc-may-in-quan-6": {
+   "nhap": 0,
+   "hienThi": 180,
+   "diem": 1.8
+  },
+  "home/nap-muc-may-in-quan-binh-tan/nạp-mực-in-quận-bình-tân-hitech": {
+   "nhap": 0,
+   "hienThi": 16,
+   "diem": 0.16
+  },
+  "home/nap-muc-may-in-quan-phu-nhua/nạp-mực-giá-rẻ-đường-phan-đăng-lưu-phú-nhuận-247": {
+   "nhap": 0,
+   "hienThi": 22,
+   "diem": 0.22
+  },
+  "home/thay-ruy-bang-muc-may-in-kim-epson-lq-300-lq-310": {
+   "nhap": 0,
+   "hienThi": 91,
+   "diem": 0.91
+  },
+  "liên-hệ/dịch-vụ-nạp-mực-máy-in-tphcm": {
+   "nhap": 0,
+   "hienThi": 84,
+   "diem": 0.84
+  },
+  "sua-may-in-tai-hcm": {
+   "nhap": 0,
+   "hienThi": 15,
+   "diem": 0.15
+  },
+  "sua-may-in-tai-hcm/bán-máy-in-cũ-giá-rẻ-máy-đẹp-lung-linh": {
+   "nhap": 0,
+   "hienThi": 8,
+   "diem": 0.08
+  },
+  "sua-may-tinh-tan-noi": {
+   "nhap": 0,
+   "hienThi": 57,
+   "diem": 0.57
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-1": {
+   "nhap": 0,
+   "hienThi": 103,
+   "diem": 1.03
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-10": {
+   "nhap": 0,
+   "hienThi": 362,
+   "diem": 3.62
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-11": {
+   "nhap": 0,
+   "hienThi": 304,
+   "diem": 3.04
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-2": {
+   "nhap": 0,
+   "hienThi": 54,
+   "diem": 0.54
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-4": {
+   "nhap": 0,
+   "hienThi": 331,
+   "diem": 3.31
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-8": {
+   "nhap": 0,
+   "hienThi": 759,
+   "diem": 7.59
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-9": {
+   "nhap": 0,
+   "hienThi": 372,
+   "diem": 3.72
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-binh-tan": {
+   "nhap": 0,
+   "hienThi": 228,
+   "diem": 2.28
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-binh-thanh": {
+   "nhap": 0,
+   "hienThi": 104,
+   "diem": 1.04
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-go-vap": {
+   "nhap": 0,
+   "hienThi": 134,
+   "diem": 1.34
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-tan-binh": {
+   "nhap": 0,
+   "hienThi": 240,
+   "diem": 2.4
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-tan-phu": {
+   "nhap": 0,
+   "hienThi": 1952,
+   "diem": 19.52
+  },
+  "thu-thuat-tin-hoc": {
+   "nhap": 0,
+   "hienThi": 17,
+   "diem": 0.17
+  },
+  "thu-thuat-tin-hoc/thủ-thuật-máy-tính": {
+   "nhap": 0,
+   "hienThi": 4,
+   "diem": 0.04
+  },
+  "thu-thuat-tin-hoc/thủ-thuật-máy-tính/ổ-cứng-ssd-là-gì-tốc-độ-của-sự-lựa-chọn": {
+   "nhap": 0,
+   "hienThi": 34,
+   "diem": 0.34
+  },
+  "thu-thuat-tin-hoc/thủ-thuật-máy-tính/20-thủ-thuật-excel-2013-cho-kế-toán": {
+   "nhap": 0,
+   "hienThi": 11,
+   "diem": 0.11
+  },
+  "thu-thuat-tin-hoc/thủ-thuật-máy-tính/hướng-dẫn-cài-đặt-tài-khoản-gmail-vào-outlook-2010": {
+   "nhap": 0,
+   "hienThi": 43,
+   "diem": 0.43
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in": {
+   "nhap": 0,
+   "hienThi": 8,
+   "diem": 0.08
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-cách-reser-máy-in-xeroc-3210-3220-đơn-giản-nhất": {
+   "nhap": 0,
+   "hienThi": 45,
+   "diem": 0.45
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hộp-mực-máy-in-17a18a19a-bị-lem-tại-sao": {
+   "nhap": 0,
+   "hienThi": 43,
+   "diem": 0.43
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-muc-may-in-brother-l3551-cdw---chuan-nhat": {
+   "nhap": 0,
+   "hienThi": 127,
+   "diem": 1.27
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-khong-in-dhuoc": {
+   "nhap": 0,
+   "hienThi": 40,
+   "diem": 0.4
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/lỗi-máy-in-bị-kẹt-giấy": {
+   "nhap": 0,
+   "hienThi": 229,
+   "diem": 2.29
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/máy-in-bị-nhòe-mực-tại-sao": {
+   "nhap": 0,
+   "hienThi": 33,
+   "diem": 0.33
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/máy-in-in-ra-toàn-giấy-trắng-tại-sao": {
+   "nhap": 0,
+   "hienThi": 122,
+   "diem": 1.22
+  },
+  "thu-thuat-tin-hoc/top-3-máy-in-chuyên-in-đơn-hàng-giá-rẻ-tiết-kiệm-chi-phí": {
+   "nhap": 0,
+   "hienThi": 25,
+   "diem": 0.25
+  }
+ }
+}

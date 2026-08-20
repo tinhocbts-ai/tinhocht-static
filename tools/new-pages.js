@@ -141,14 +141,36 @@ function cauHoi(p) {
   else chung.push(['Dùng chung phần mềm reset cho nhiều máy được không ?',
     'Mỗi key reset chỉ dùng được cho một máy in và thường chỉ một lần. Muốn reset máy khác hoặc reset lần tiếp theo thì cần key mới — giống như dùng thẻ cào điện thoại.']);
   /* Câu hỏi riêng của từng model đứng trước câu hỏi chung: khách vào trang L805 thì thứ họ
-     thắc mắc đầu tiên là chuyện in ảnh, không phải chuyện chung chung của mọi máy Epson. */
-  return (p.faqRieng || []).concat(chung);
+     thắc mắc đầu tiên là chuyện in ảnh, không phải chuyện chung chung của mọi máy Epson.
+     `faqChung: false` = bỏ hẳn nhóm câu hỏi chung. Dùng cho máy laser Brother/HP: nhóm chung
+     nói về bộ đếm mực thải và key reset của máy phun Epson, gắn vào trang laser là sai. */
+  return p.faqChung === false ? (p.faqRieng || []) : (p.faqRieng || []).concat(chung);
+}
+
+/* ---------- ảnh máy in THẬT kèm chú thích ----------
+   Ảnh gốc do shop tự chụp (kho projects/chotot/chotot-images), đã chèn chú thích bằng
+   tools/anh-chu-thich.js rồi đặt ở assets/img/p/. Khai trong pages-new.json:
+     "anh": [{ "file": "brother-2321d-nut-go", "alt": "...", "chu": "...", "viTri": 0 }]
+   viTri 0 = ngay sau đoạn mở bài · 1,2,3… = ngay trước quy trình thứ 1, 2, 3. */
+function anhBai(p, prefix, viTri) {
+  const ds = (p.anh || []).filter(a => (a.viTri || 0) === viTri);
+  if (!ds.length) return '';
+  return ds.map(a => `
+      <figure class="anh-huong-dan">
+        <img src="${prefix}assets/img/p/${encodeURIComponent(a.file)}.webp" alt="${esc(a.alt)}"
+             width="1000" height="563" loading="lazy" decoding="async">
+        ${a.chu ? '<figcaption>' + a.chu + '</figcaption>' : ''}
+      </figure>`).join('');
 }
 
 /* ---------- dựng phần thân trang ---------- */
 function renderNewPage(p, prefix, cfg, pagesByPath) {
   const buoc = cacBuoc(p);
   const faq = cauHoi(p);
+  /* Trang khai `quyTrinh` = có NHIỀU quy trình khác nhau trên cùng một máy (vd Brother: reset mực
+     và reset drum là hai thao tác riêng, bấm nút khác nhau). Trang không khai thì giữ nguyên
+     đường cũ một quy trình. */
+  const nhieuQuyTrinh = Array.isArray(p.quyTrinh) && p.quyTrinh.length > 0;
   const dauHieu = p.hpChip
     ? ['Máy hiện thông báo “Toner low” hoặc “Replace toner” dù hộp mực vừa nạp đầy',
        'Đèn báo mực nhấp nháy liên tục, lệnh in bị treo trong hàng đợi',
@@ -170,32 +192,48 @@ function renderNewPage(p, prefix, cfg, pagesByPath) {
 
   return `<h1>${esc(p.h1)}</h1>
 
-      <p>Máy in <strong>${esc(p.model)}</strong> (và các đời cùng dòng ${esc(p.dongMay)}) sau một thời gian
+      ${p.moBai
+    ? '<p>' + p.moBai + '</p>'
+    : `<p>Máy in <strong>${esc(p.model)}</strong> (và các đời cùng dòng ${esc(p.dongMay)}) sau một thời gian
          sử dụng sẽ ${p.loi}. Đây không phải máy hỏng — bộ đếm mực thải trong bộ nhớ đã chạm mức nhà sản
-         xuất đặt sẵn nên máy tự khoá lệnh in. Reset lại bộ đếm là máy in tiếp bình thường.</p>
+         xuất đặt sẵn nên máy tự khoá lệnh in. Reset lại bộ đếm là máy in tiếp bình thường.</p>`}
 ${p.dacDiem ? `
       <h2>${esc(p.model)} là máy như thế nào</h2>
       <ul class="check-list">${p.dacDiem.map(d => '<li>' + d + '</li>').join('')}</ul>` : ''}
 ${p.viSaoDay ? `
-      <h2>Vì sao ${esc(p.model)} đầy bộ đếm</h2>
+      <h2 id="vi-sao">${esc(p.viSaoTieuDe || 'Vì sao ' + p.model + ' đầy bộ đếm')}</h2>
       <p>${p.viSaoDay}</p>` : ''}
 
-      ${anhQuyTrinh(p)}
+${anhBai(p, prefix, 0)}
+${nhieuQuyTrinh ? '' : '\n      ' + anhQuyTrinh(p) + '\n'}
+      <h2 id="khi-nao-can">Khi nào cần reset ${esc(p.model)}</h2>
+      ${nhieuQuyTrinh
+    ? p.quyTrinh.map(q => `<h3>${esc(q.ten)}</h3>\n      <ul class="check-list">${(q.khiNao || []).map(d => '<li>' + d + '</li>').join('')}</ul>`).join('\n      ')
+    : `<ul class="check-list">${dauHieu.map(d => '<li>' + esc(d) + '</li>').join('')}</ul>`}
 
-      <h2>Khi nào cần reset ${esc(p.model)}</h2>
-      <ul class="check-list">${dauHieu.map(d => '<li>' + esc(d) + '</li>').join('')}</ul>
-
-      <h2>Lưu ý trước khi làm</h2>
-      <ul class="check-list">${(p.luuYRieng || []).map(d => '<li>' + d + '</li>').join('')}
+      <h2 id="luu-y">Lưu ý trước khi làm</h2>
+      <ul class="check-list">${(p.luuYRieng || []).map(d => '<li>' + d + '</li>').join('')}${p.luuYChung === false ? '' : `
         <li>Nối máy in với máy tính bằng <strong>dây USB trực tiếp</strong>, không reset qua wifi hay qua hub chia cổng.</li>
         <li>Tắt phần mềm diệt virus và tường lửa trong lúc chạy, xong thì bật lại.</li>
         <li>Máy in phải đang <strong>bật</strong> và ở trạng thái sẵn sàng, không kẹt giấy, không mở nắp.</li>${p.luuYRieng ? '' : `
-        <li>Nếu miếng thấm mực thải đã no mực thật thì nên thay miếng thấm, tránh mực tràn ra bàn.</li>`}
+        <li>Nếu miếng thấm mực thải đã no mực thật thì nên thay miếng thấm, tránh mực tràn ra bàn.</li>`}`}
       </ul>
 
-      <h2>Cách reset ${esc(p.model)} — ${buoc.length} bước</h2>
+${nhieuQuyTrinh
+    ? p.quyTrinh.map((q, qi) => `
+      <h2 id="quy-trinh-${qi + 1}">${esc(q.ten)} — ${q.buoc.length} bước</h2>
+      ${q.moTa ? '<p>' + q.moTa + '</p>' : ''}
+      ${anhBai(p, prefix, qi + 1)}
+      <ol class="steps">${q.buoc.map((b, i) => `
+        <li id="qt${qi + 1}-buoc-${i + 1}">
+          <h3>Bước ${i + 1}: ${esc(b[0])}</h3>
+          <p>${b[1]}</p>
+        </li>`).join('')}
+      </ol>${q.xong ? '\n      <p class="callout-note">' + q.xong + '</p>' : ''}`).join('\n')
+    : `
+      <h2 id="cac-buoc">Cách reset ${esc(p.model)} — ${buoc.length} bước</h2>
       <ol class="steps">${buocHtml}
-      </ol>
+      </ol>`}
 ${p.tai ? `
       <div class="callout callout-download">
         <p><strong>Tải phần mềm:</strong>
@@ -203,8 +241,8 @@ ${p.tai ? `
         <p class="callout-note">File nằm ở tinhocnamphong.net thuộc cùng hệ thống với chúng tôi — tải miễn phí, không cần đăng ký.</p>
       </div>` : ''}
 
-      <h2>Câu hỏi thường gặp</h2>
-      ${faq.map(f => `<h3>${esc(f[0])}</h3>\n      <p>${f[1]}</p>`).join('\n      ')}
+      <h2 id="hoi-dap">Câu hỏi thường gặp</h2>
+      ${faq.map((f, i) => `<h3 id="hoi-${i + 1}">${esc(f[0])}</h3>\n      <p>${f[1]}</p>`).join('\n      ')}
 
       <aside class="cta-box">
         <p><strong>Làm theo hướng dẫn mà máy vẫn không chịu in?</strong> Gọi kỹ thuật tới tận nơi kiểm tra —
@@ -225,6 +263,22 @@ function toBlocks(p) {
   (p.dacDiem || []).forEach(d => blocks.push({ t: 'li', text: d.replace(/<[^>]+>/g, '') }));
   if (p.viSaoDay) blocks.push({ t: 'p', text: p.viSaoDay.replace(/<[^>]+>/g, '') });
   (p.luuYRieng || []).forEach(d => blocks.push({ t: 'li', text: d.replace(/<[^>]+>/g, '') }));
+  if (Array.isArray(p.quyTrinh) && p.quyTrinh.length) {
+    // trang nhiều quy trình: đưa từng bước của MỌI quy trình vào blocks để schema HowTo đọc đúng
+    for (const q of p.quyTrinh) {
+      blocks.push({ t: 'h2', text: q.ten });
+      // gắn tên quy trình vào từng bước: trang có 2 quy trình thì số bước lặp lại từ 1,
+      // không nói rõ thì dữ liệu có cấu trúc đọc thành một chuỗi 10 bước liền mạch — sai.
+      q.buoc.forEach((b, i) => blocks.push({
+        t: 'p', text: 'Bước ' + (i + 1) + ' (' + q.ten + '): ' + b[0] + '. ' + b[1].replace(/<[^>]+>/g, ''),
+      }));
+    }
+    cauHoi(p).forEach(f => {
+      blocks.push({ t: 'h3', text: f[0] });
+      blocks.push({ t: 'p', text: f[1].replace(/<[^>]+>/g, '') });
+    });
+    return blocks;
+  }
   cacBuoc(p).forEach((b, i) => {
     blocks.push({ t: 'p', text: 'Bước ' + (i + 1) + ': ' + b[0] + '. ' + b[1].replace(/<[^>]+>/g, '') });
   });

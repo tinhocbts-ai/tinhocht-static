@@ -114,6 +114,268 @@
       ],
       "lienQuan": ["Phan-mem-reset-may-in/phan-mem-reset-epson-l805"]
     },
+
+    {
+      "_ghichu": "NHÓM BROTHER — viết 20/08/2026. Căn cứ: volume Google Ads 4.960 lượt/th cho cụm Brother (gấp 1,9 lần Epson) trong khi site chỉ có bài rời rạc. Quy trình bấm nút lấy theo mucinanphuoc.com, chủ shop đã xác nhận. Ảnh máy thật lấy từ kho chụp của shop bên projects/chotot.",
+      "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
+      "title": "Reset Máy In Brother HL-L2321D — Reset Mực Và Reset Drum",
+      "desc": "Hướng dẫn reset mực và reset drum máy in Brother HL-L2321D bằng nút Go, kèm ảnh chụp bảng đèn máy thật. Xử lý máy báo hết mực dù vừa đổ mực và báo Replace Drum.",
+      "h1": "Reset máy in Brother HL-L2321D — reset mực và reset drum bằng nút Go",
+      "model": "Brother HL-L2321D",
+      "dongMay": "HL-L2321D, HL-L2320D",
+      "loi": "báo hết mực dù hộp mực vừa đổ đầy, hoặc báo Replace Drum",
+      "faqChung": false,
+      "luuYChung": false,
+      "moBai": "Máy in <strong>Brother HL-L2321D</strong> có <strong>hai bộ đếm riêng biệt</strong>: một đếm mực (toner) và một đếm tuổi thọ trống (drum). Đổ mực xong mà máy vẫn báo hết mực là do bộ đếm mực chưa được đưa về 0 — không phải mực chưa vào. Hai bộ đếm này reset bằng <strong>hai thao tác khác nhau</strong>, làm nhầm cái này sang cái kia là không ăn. Bài này tách rõ từng quy trình.",
+      "anh": [
+        { "file": "brother-2321d-nut-go", "viTri": 0, "alt": "Bảng điều khiển máy in Brother HL-L2321D với đèn Toner, Drum, Paper, Ready và nút Go", "chu": "Toàn bộ thao tác reset của HL-L2321D làm bằng <strong>một nút Go duy nhất</strong>. Máy không có màn hình nên không hiện chữ gì — phải đếm số lần bấm và nhìn đèn." }
+      ],
+      "dacDiem": [
+        "Máy in laser trắng đen khổ A4, in hai mặt tự động",
+        "<strong>Không có màn hình LCD</strong> — chỉ 4 đèn báo: Toner, Drum, Paper, Ready và một nút Go",
+        "Kết nối bằng dây USB, bản HL-L2321D không có wifi",
+        "Hộp mực TN-2385, cụm trống DR-2385 — dùng chung với vài đời Brother laser cùng họ"
+      ],
+      "viSaoTieuDe": "Vì sao đổ mực đầy rồi máy vẫn báo hết mực",
+      "viSaoDay": "Bộ đếm mực của Brother nằm ở <strong>nhông (bánh răng) gắn bên hông hộp mực</strong>, không đo lượng mực thật trong hộp. Máy in đủ số trang nhà sản xuất đặt là nhông quay hết vòng và máy báo hết mực, dù bên trong còn mực hay vừa được đổ đầy. Reset chính là đưa con số đếm đó về 0 để máy chịu in tiếp.",
+      "luuYRieng": [
+        "Máy <strong>không có màn hình</strong> nên trong lúc thao tác sẽ không hiện thông báo nào cả. Đừng nghĩ là máy không nhận lệnh — cứ bấm đủ số lần rồi nhìn đèn Ready.",
+        "Reset mực và reset drum là <strong>hai quy trình khác nhau</strong>: một cái phải tắt nguồn trước, một cái để máy đang bật. Xem kỹ máy đang báo lỗi gì rồi mới chọn.",
+        "Reset chỉ xoá con số đếm, <strong>không tạo ra mực</strong>. Nếu hộp mực cạn thật thì reset xong bản in vẫn mờ — phải đổ mực."
+      ],
+      "quyTrinh": [
+        {
+          "ten": "Reset mực (toner) Brother HL-L2321D",
+          "moTa": "Dùng khi vừa đổ mực hoặc thay hộp mực mà máy vẫn báo hết mực. Quy trình này <strong>bắt đầu bằng việc tắt nguồn máy</strong>.",
+          "khiNao": [
+            "Vừa đổ mực hoặc thay hộp mực mới nhưng máy vẫn báo hết mực, không chịu in",
+            "Đèn <strong>Toner</strong> sáng vàng hoặc nhấp nháy liên tục",
+            "Máy tính hiện thông báo <em>Replace Toner</em> hoặc <em>Toner Ended</em>"
+          ],
+          "buoc": [
+            ["Tắt nguồn máy bằng nút nguồn", "Nhấn nút nguồn trên máy để tắt. <strong>Vẫn cắm nguyên dây điện</strong>, không rút phích và không tắt ổ cắm — bước sau cần bật lại ngay."],
+            ["Mở nắp trước, lấy cụm drum và hộp mực ra", "Mở nắp trước của máy, rút nguyên cụm trống kèm hộp mực ra ngoài, đặt lên mặt phẳng sạch. Để nắp mở nguyên như vậy."],
+            ["Giữ nút Go rồi bật nguồn", "Đè và giữ chặt nút <strong>Go</strong>, đồng thời nhấn nút nguồn để bật máy. Giữ Go khoảng <strong>3–5 giây</strong> rồi thả tay ra. Máy không hiện thông báo gì vì không có màn hình — đó là bình thường."],
+            ["Nhấn Go 9 lần, chờ 5 giây", "Nhấn nút <strong>Go</strong> đúng <strong>9 lần</strong> liên tiếp, rồi dừng tay chờ khoảng <strong>5 giây</strong>."],
+            ["Nhấn Go thêm 5 lần, chờ 5 giây", "Nhấn <strong>Go</strong> thêm <strong>5 lần</strong> nữa, rồi lại chờ khoảng <strong>5 giây</strong> cho máy nhận lệnh."],
+            ["Lắp cụm drum vào, đóng nắp và kiểm tra", "Lắp cụm trống kèm hộp mực trở lại đúng khớp, đóng nắp trước. Nhìn bảng đèn: <strong>đèn Ready sáng xanh</strong> và đèn Toner tắt là đã reset xong. In thử một trang để chắc chắn."]
+          ],
+          "xong": "Nếu sau khi đóng nắp đèn Toner vẫn sáng, khả năng cao là bấm thiếu hoặc thừa số lần. Tắt máy và làm lại từ bước 1 — làm lại nhiều lần không hại gì cho máy."
+        },
+        {
+          "ten": "Reset drum (trống) Brother HL-L2321D",
+          "moTa": "Dùng khi máy báo <em>Replace Drum</em> hoặc <em>Drum End Soon</em>. Quy trình này <strong>để máy đang bật</strong>, ngắn hơn hẳn reset mực.",
+          "khiNao": [
+            "Máy tính hiện <em>Drum End Soon</em> hoặc <em>Replace Drum</em>",
+            "Đèn <strong>Drum</strong> trên bảng điều khiển sáng hoặc nhấp nháy",
+            "Vừa thay cụm trống DR-2385 mới nhưng máy vẫn báo như cũ"
+          ],
+          "buoc": [
+            ["Mở nắp trước (máy vẫn đang bật)", "Để nguyên máy đang bật, mở nắp cửa phía trước. Khác với reset mực, quy trình này <strong>không tắt nguồn</strong>."],
+            ["Giữ nút Go cho tới khi các đèn sáng hết", "Nhấn và giữ nút <strong>Go</strong> khoảng <strong>8–10 giây</strong>, cho tới khi <strong>toàn bộ đèn LED trên máy đều phát sáng</strong> thì thả tay. Đèn sáng hết chính là dấu hiệu máy đã vào chế độ reset drum."],
+            ["Nhấn Go thêm một lần", "Nhấn nút <strong>Go</strong> thêm <strong>1 lần</strong> nữa để xác nhận."],
+            ["Đóng nắp và kiểm tra", "Đóng nắp trước lại. Đèn Drum tắt, đèn Ready sáng xanh là đã reset xong bộ đếm trống."]
+          ],
+          "xong": "Lưu ý phân biệt: máy báo <em>Drum Error</em> (khác với <em>Replace Drum</em>) hoặc bản in ra bị đen, có sọc dọc lặp lại thì <strong>trống đã hỏng thật</strong> — reset không cứu được, phải thay cụm trống mới."
+        }
+      ],
+      "faqRieng": [
+        ["Reset mực và reset drum khác nhau chỗ nào ?", "Đây là hai bộ đếm riêng. Bộ đếm <strong>mực</strong> tính số trang từ lần đổ mực gần nhất — reset khi đổ mực xong mà máy vẫn báo hết. Bộ đếm <strong>drum</strong> tính tuổi thọ cụm trống, thường khoảng 12.000 trang — reset khi máy báo Replace Drum. Thao tác cũng khác: reset mực phải tắt nguồn rồi giữ Go lúc bật lại, reset drum thì để máy đang bật."],
+        ["Máy Brother 2321D báo lỗi Paper thì có reset được không ?", "Không, đèn Paper là báo kẹt giấy hoặc hết giấy chứ không liên quan tới bộ đếm. Mở nắp sau và nắp trước kiểm tra xem có tờ giấy nào kẹt lại không, rút ra theo chiều giấy đi, kiểm tra khay còn giấy và giấy có bị ẩm dính vào nhau không. Reset không xử lý được lỗi này."],
+        ["Reset xong máy vẫn báo hết mực, phải làm sao ?", "Kiểm tra ba thứ theo thứ tự. Một là bấm đúng số lần chưa — máy không có màn hình nên rất dễ bấm nhầm, cứ tắt máy làm lại từ đầu. Hai là nhông reset bên hông hộp mực có bị kẹt hoặc gãy răng không. Ba là lau sạch chân tiếp xúc và mắt cảm biến trong lòng máy bằng khăn khô, bụi mực bám dày cũng làm máy đọc sai."],
+        ["Một hộp mực reset được bao nhiêu lần ?", "Về mặt máy thì reset được không giới hạn số lần. Nhưng hộp mực có tuổi thọ cơ khí thật: trống, gạt mực và trục từ mòn dần, thường sau 3–5 lần đổ mực là bản in bắt đầu mờ, có sọc hoặc lem. Tới lúc đó thay hộp mực mới rẻ hơn là cố reset thêm."],
+        ["Có cần vệ sinh gì trước khi reset không ?", "Nên lau bụi mực bám ở chân tiếp xúc hộp mực và mắt cảm biến trong lòng máy bằng khăn khô, đừng dùng nước hay cồn. Bụi mực dày làm máy đọc sai tín hiệu, reset xong vẫn báo lỗi. Trống thì lau nhẹ bằng khăn mềm khô, tuyệt đối không chạm tay trần vào mặt trống."]
+      ],
+      "lienQuan": [
+        "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4",
+        "thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother",
+        "Phan-mem-reset-may-in/cach-reset-may-in-brother"
+      ]
+    },
+
+    {
+      "_ghichu": "TRANG TRỤ Brother — gom cụm 2.530 lượt/th ở nhóm 'cách reset máy in brother', 'reset hộp mực brother'. Vai trò: giải thích drum khác toner, phân hai họ máy theo phần cứng, rồi dẫn xuống trang từng model.",
+      "path": "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+      "title": "Cách Reset Máy In Brother — Reset Mực Và Reset Drum",
+      "desc": "Phân biệt reset mực với reset drum máy in Brother, và hai cách reset theo loại máy: dòng chỉ có đèn LED bấm nút Go, dòng có màn hình LCD vào menu. Kèm ảnh máy thật.",
+      "h1": "Cách reset máy in Brother — reset mực và reset drum khác nhau thế nào",
+      "model": "máy in Brother",
+      "dongMay": "HL-L2321D, HL-L2361DN, HL-L2366DW, DCP, MFC",
+      "loi": "báo hết mực dù vừa đổ mực, hoặc báo Replace Drum",
+      "faqChung": false,
+      "luuYChung": false,
+      "moBai": "Máy in Brother báo hết mực ngay sau khi vừa đổ mực đầy là chuyện gặp hằng ngày. Nguyên nhân không nằm ở mực mà ở <strong>bộ đếm</strong> trong máy. Nhưng trước khi bấm nút, phải trả lời hai câu: máy đang báo <strong>mực</strong> hay báo <strong>trống (drum)</strong>, và máy của mình thuộc <strong>loại có màn hình hay chỉ có đèn</strong>. Trả lời sai một trong hai là bấm cả buổi không ăn.",
+      "anh": [
+        { "file": "brother-2321d-nut-go", "viTri": 1, "alt": "Bảng điều khiển Brother HL-L2321D chỉ có đèn LED và nút Go, không có màn hình", "chu": "Loại 1 — chỉ có <strong>đèn LED và nút Go</strong>, không màn hình. Reset bằng cách đếm số lần bấm Go." },
+        { "file": "brother-mfc-l2701dw-bang-dieu-khien", "viTri": 2, "alt": "Bảng điều khiển Brother MFC-L2701DW có màn hình LCD, nút OK và phím mũi tên", "chu": "Loại 2 — có <strong>màn hình LCD, nút OK và phím mũi tên</strong>. Reset bằng cách vào menu chọn lệnh, có chữ hiện lên nên dễ hơn hẳn." }
+      ],
+      "dacDiem": [
+        "<strong>Bộ đếm mực (toner)</strong> — nằm ở nhông bên hông hộp mực, đếm số trang từ lần đổ mực gần nhất. Máy báo <em>Replace Toner</em>, đèn Toner sáng.",
+        "<strong>Bộ đếm trống (drum)</strong> — đếm tuổi thọ cụm trống, thường khoảng 12.000 trang. Máy báo <em>Drum End Soon</em> hoặc <em>Replace Drum</em>, đèn Drum sáng.",
+        "Hai bộ đếm này <strong>độc lập với nhau</strong>: reset cái này không đụng gì tới cái kia.",
+        "Cụm trống và hộp mực là hai món rời, tháo ra được — trống là khối to hình chữ nhật, hộp mực là thanh nhỏ gài bên trong trống."
+      ],
+      "viSaoTieuDe": "Vì sao đổ mực đầy rồi máy vẫn báo hết mực",
+      "viSaoDay": "Máy in Brother <strong>không đo lượng mực thật</strong> trong hộp. Nó chỉ đếm số trang đã in kể từ lần reset gần nhất, thông qua một cái nhông gắn bên hông hộp mực. In đủ số trang nhà sản xuất đặt là nhông quay hết vòng, máy khoá lệnh in và báo hết mực — bất kể trong hộp còn bao nhiêu mực. Vì vậy đổ mực xong <strong>bắt buộc phải reset</strong>, nếu không máy vẫn không chịu in.",
+      "luuYRieng": [
+        "Nhìn <strong>đèn nào sáng</strong> hoặc chữ hiện trên màn hình trước khi làm: đèn Toner → reset mực; đèn Drum → reset drum. Làm nhầm quy trình thì không ăn.",
+        "Reset chỉ xoá con số đếm, <strong>không tạo ra mực</strong>. Hộp cạn thật thì reset xong bản in vẫn mờ.",
+        "Máy báo <em>Drum Error</em> (khác <em>Replace Drum</em>), hoặc bản in có sọc đen lặp lại theo chu kỳ — đó là trống hỏng thật, reset không cứu được."
+      ],
+      "quyTrinh": [
+        {
+          "ten": "Loại 1 — máy chỉ có đèn LED, không màn hình",
+          "moTa": "Gồm HL-L2321D, HL-L2320D và các đời HL laser đen trắng gọn. Bảng điều khiển chỉ có 4 đèn Toner / Drum / Paper / Ready và một nút <strong>Go</strong>. Vì không có màn hình nên máy không hiện chữ gì trong lúc thao tác — phải đếm số lần bấm.",
+          "khiNao": [
+            "Bảng điều khiển chỉ có đèn tròn và một nút Go, không có màn hình chữ",
+            "Máy báo lỗi qua đèn sáng/nháy chứ không hiện chữ"
+          ],
+          "buoc": [
+            ["Xác định đang cần reset mực hay reset drum", "Đèn <strong>Toner</strong> sáng → reset mực. Đèn <strong>Drum</strong> sáng → reset drum. Hai quy trình khác nhau hoàn toàn."],
+            ["Reset mực — tắt nguồn rồi giữ Go lúc bật lại", "Tắt máy bằng nút nguồn (vẫn cắm điện), mở nắp trước lấy cụm drum và hộp mực ra, giữ <strong>Go</strong> đồng thời bật nguồn, thả Go sau 3–5 giây. Nhấn <strong>Go 9 lần</strong>, chờ 5 giây, nhấn <strong>Go 5 lần</strong>, chờ 5 giây, rồi lắp lại và đóng nắp."],
+            ["Reset drum — để máy đang bật", "Mở nắp trước khi máy vẫn bật, giữ <strong>Go</strong> khoảng <strong>8–10 giây</strong> cho tới khi toàn bộ đèn sáng lên, thả tay, nhấn <strong>Go</strong> thêm 1 lần rồi đóng nắp."],
+            ["Kiểm tra bằng đèn Ready", "Đèn Ready sáng xanh, đèn báo lỗi tắt là xong. In thử một trang cho chắc."]
+          ],
+          "xong": "Xem hướng dẫn chi tiết từng bước kèm ảnh cho dòng phổ biến nhất: <a href=\"reset-may-in-brother-hl-l2321d\">reset máy in Brother HL-L2321D</a>."
+        },
+        {
+          "ten": "Loại 2 — máy có màn hình LCD",
+          "moTa": "Gồm HL-L2361DN, HL-L2366DW, các dòng DCP và MFC. Bảng điều khiển có màn hình chữ, nút <strong>OK</strong>, phím <strong>mũi tên lên/xuống</strong>. Loại này dễ hơn vì có chữ hiện lên xác nhận từng bước.",
+          "khiNao": [
+            "Bảng điều khiển có màn hình chữ nhỏ hiện tên máy hoặc trạng thái",
+            "Có nút OK và phím mũi tên lên / xuống"
+          ],
+          "buoc": [
+            ["Bật máy, đợi khởi động xong rồi mở nắp trước", "Để máy bật bình thường, chờ màn hình hiện trạng thái sẵn sàng rồi mới mở nắp cửa trước."],
+            ["Giữ nút OK cho tới khi màn hình hiện Drum Unit", "Nhấn giữ <strong>OK</strong> khoảng <strong>2 giây</strong>, màn hình sẽ hiện dòng <em>Drum Unit</em>. Bấm <strong>OK</strong> để chọn."],
+            ["Chọn Reset trên màn hình", "Dùng <strong>phím mũi tên lên</strong> để chọn <em>Reset</em>, rồi xác nhận. Màn hình báo đã reset xong bộ đếm trống."],
+            ["Đóng nắp và kiểm tra", "Đóng nắp trước, chờ máy trở về trạng thái sẵn sàng. Thông báo Replace Drum biến mất là được."]
+          ],
+          "xong": "Với reset <strong>mực</strong> trên loại có màn hình, cách bấm nút Go giống hệt loại 1, chỉ khác là màn hình sẽ hiện chữ <em>USER MODE</em> khi vào đúng chế độ. Chi tiết: <a href=\"reset-may-in-brother-hl-l2361dn-l2366dw\">reset Brother HL-L2361DN / HL-L2366DW</a>."
+        }
+      ],
+      "faqRieng": [
+        ["Làm sao biết máy cần reset mực hay reset drum ?", "Nhìn đèn hoặc chữ báo lỗi. Đèn <strong>Toner</strong> sáng hoặc máy tính báo <em>Replace Toner</em> là cần reset mực. Đèn <strong>Drum</strong> sáng hoặc báo <em>Drum End Soon</em>, <em>Replace Drum</em> là cần reset trống. Hai bộ đếm độc lập nên có khi phải làm cả hai, nhưng phải làm từng cái một."],
+        ["Drum và hộp mực khác nhau chỗ nào ?", "Cụm trống (drum) là khối chữ nhật lớn, bên trong có một trục tròn màu xanh lá hoặc xám — đây là bộ phận in hình lên giấy, tuổi thọ khoảng 12.000 trang. Hộp mực (toner) là thanh nhỏ gài vào trong cụm trống, chứa bột mực, hết thì đổ thêm. Trên dòng 2321D là cặp DR-2385 (trống) và TN-2385 (mực)."],
+        ["Reset máy in Brother có làm mất bảo hành không ?", "Reset bộ đếm là thao tác nhà sản xuất thiết kế sẵn trên máy, bấm bằng nút có sẵn, không can thiệp phần cứng hay phần mềm máy. Việc này không làm mất bảo hành. Cái ảnh hưởng bảo hành là tự tháo máy, thay linh kiện không chính hãng hoặc làm hỏng vỏ."],
+        ["Bấm sai số lần thì máy có sao không ?", "Không sao. Bấm sai thì đơn giản là máy không nhận lệnh reset, đèn vẫn báo như cũ. Tắt máy rồi làm lại từ đầu, bấm bao nhiêu lần cũng không hại tới máy."],
+        ["Đổ mực xong lần nào cũng phải reset à ?", "Đúng, mỗi lần đổ mực hoặc thay hộp mực đều phải reset lại bộ đếm, vì máy đếm số trang chứ không đo mực. Trừ khi hộp mực mới có sẵn nhông reset chưa quay — loại đó lắp vào máy tự nhận, không cần thao tác gì."]
+      ],
+      "lienQuan": [
+        "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
+        "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn",
+        "thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother"
+      ]
+    },
+
+    {
+      "_ghichu": "Dòng Brother CÓ màn hình LCD — quy trình reset drum khác hẳn 2321D (vào menu thay vì đếm nút). Nguồn quy trình: mucinnc.com.",
+      "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2361dn-l2366dw",
+      "title": "Reset Máy In Brother HL-L2361DN Và HL-L2366DW — Mực Và Drum",
+      "desc": "Hướng dẫn reset drum bằng menu màn hình LCD và reset mực bằng nút Go cho máy in Brother HL-L2361DN, HL-L2366DW. Kèm ảnh bảng điều khiển máy thật.",
+      "h1": "Reset máy in Brother HL-L2361DN / HL-L2366DW — reset mực và reset drum",
+      "model": "Brother HL-L2361DN",
+      "dongMay": "HL-L2361DN, HL-L2366DW",
+      "loi": "báo Replace Drum hoặc báo hết mực dù hộp mực vừa đổ đầy",
+      "faqChung": false,
+      "luuYChung": false,
+      "moBai": "<strong>HL-L2361DN</strong> và <strong>HL-L2366DW</strong> khác dòng HL-L2321D ở một điểm quyết định: hai máy này <strong>có màn hình LCD</strong>. Nhờ đó reset drum làm bằng cách vào menu chọn lệnh, có chữ hiện lên xác nhận — dễ và chắc ăn hơn hẳn kiểu đếm số lần bấm nút của máy không màn hình. Riêng reset mực thì vẫn dùng nút Go.",
+      "anh": [
+        { "file": "brother-2366dw-man-hinh", "viTri": 0, "alt": "Bảng điều khiển Brother HL-L2366DW với màn hình LCD, nút Back, OK, phím mũi tên và nút Go", "chu": "Điểm khác 2321D nằm ở đây: <strong>có màn hình LCD và nút OK, phím mũi tên</strong>. Reset drum vào thẳng menu, không phải đếm nút." }
+      ],
+      "dacDiem": [
+        "Máy in laser trắng đen A4, in hai mặt tự động",
+        "<strong>Có màn hình LCD</strong> — khác hẳn HL-L2321D vốn chỉ có đèn LED",
+        "HL-L2361DN có cổng mạng LAN; HL-L2366DW có thêm <strong>wifi</strong>",
+        "Cụm trống DR-2385, hộp mực TN-2385 — dùng chung với HL-L2321D"
+      ],
+      "viSaoTieuDe": "Vì sao có màn hình lại dễ reset hơn",
+      "viSaoDay": "Trên máy không màn hình, cả quy trình reset là <strong>đếm số lần bấm trong bóng tối</strong> — bấm thừa hay thiếu một cái là hỏng, mà không có gì báo cho biết. Máy có LCD thì mỗi bước đều hiện chữ: vào đúng menu thấy <em>Drum Unit</em>, chọn xong thấy <em>Reset</em>. Sai ở đâu biết ngay ở đó. Cùng một cụm trống DR-2385 nhưng thao tác trên hai loại máy này khác nhau hoàn toàn vì lý do đó.",
+      "luuYRieng": [
+        "Phải <strong>mở nắp trước</strong> thì menu Drum Unit mới hiện ra. Nắp đóng thì giữ OK cả buổi cũng không thấy gì.",
+        "Đợi máy khởi động xong hẳn (màn hình hiện trạng thái sẵn sàng) rồi mới thao tác.",
+        "Reset drum và reset mực là hai việc riêng: một cái vào menu, một cái bấm nút Go. Xem máy đang báo gì rồi chọn."
+      ],
+      "quyTrinh": [
+        {
+          "ten": "Reset drum bằng menu màn hình",
+          "moTa": "Dùng khi màn hình báo <em>Drum End Soon</em> hoặc <em>Replace Drum</em>. Đây là cách riêng của dòng có LCD.",
+          "khiNao": [
+            "Màn hình hiện <em>Drum End Soon</em> hoặc <em>Replace Drum</em>",
+            "Vừa thay cụm trống DR-2385 mới nhưng máy vẫn báo như cũ"
+          ],
+          "buoc": [
+            ["Bật máy, đợi khởi động xong", "Mở nguồn, chờ tới khi màn hình hiện trạng thái sẵn sàng. Đừng thao tác lúc máy còn đang khởi động."],
+            ["Mở nắp trước của máy", "Mở nắp cửa phía trước. Bước này bắt buộc — nắp đóng thì menu reset không hiện ra."],
+            ["Giữ OK khoảng 2 giây để gọi menu Drum Unit", "Nhấn giữ nút <strong>OK</strong> khoảng <strong>2 giây</strong>, màn hình hiện dòng <em>Drum Unit</em>. Bấm <strong>OK</strong> để vào."],
+            ["Chọn Reset", "Dùng <strong>phím mũi tên lên</strong> chọn <em>Reset</em>, rồi xác nhận. Màn hình báo bộ đếm trống đã về 0."],
+            ["Đóng nắp trước", "Đóng nắp lại, chờ máy về trạng thái sẵn sàng. Thông báo Replace Drum biến mất là xong."]
+          ]
+        },
+        {
+          "ten": "Reset mực bằng nút Go",
+          "moTa": "Reset mực thì hai dòng này dùng chung cách với HL-L2321D — vẫn là nút <strong>Go</strong>, không vào menu. Khác ở chỗ máy có màn hình nên sẽ thấy chữ <em>USER MODE</em> hiện lên khi vào đúng chế độ.",
+          "khiNao": [
+            "Vừa đổ mực hoặc thay hộp mực mà máy vẫn báo hết mực",
+            "Màn hình hiện <em>Replace Toner</em> hoặc <em>Toner Ended</em>"
+          ],
+          "buoc": [
+            ["Tắt nguồn bằng nút, vẫn cắm điện", "Nhấn nút nguồn tắt máy, giữ nguyên dây điện đang cắm."],
+            ["Mở nắp trước, lấy cụm drum và hộp mực ra", "Mở nắp, rút nguyên cụm trống kèm hộp mực ra ngoài, để nắp mở."],
+            ["Giữ Go rồi bật nguồn", "Đè giữ nút <strong>Go</strong>, đồng thời bật nguồn máy. Sau <strong>3 giây</strong> thả nút Go ra. Màn hình sẽ hiện <strong>USER MODE</strong> — đó là dấu hiệu đã vào đúng chế độ."],
+            ["Nhấn Go 9 lần", "Nhấn nút <strong>Go</strong> đúng <strong>9 lần</strong>. Đèn wifi trên máy HL-L2366DW có thể nhấp nháy một cái — bình thường."],
+            ["Lắp lại và đóng nắp", "Lắp cụm trống kèm hộp mực vào đúng khớp, đóng nắp trước. Máy trở về trạng thái sẵn sàng là đã reset xong."]
+          ],
+          "xong": "Muốn kiểm chứng, bấm <strong>OK 3 lần</strong> để máy in ra trang trạng thái — bản in sẽ cho thấy mức mực đã về 100%."
+        }
+      ],
+      "faqRieng": [
+        ["HL-L2361DN và HL-L2366DW khác nhau chỗ nào ?", "Cùng nền phần cứng, cùng dùng trống DR-2385 và mực TN-2385, cách reset giống hệt nhau. Khác ở kết nối: HL-L2361DN có cổng mạng LAN, còn HL-L2366DW có thêm wifi nên in được từ điện thoại. Chọn máy nào thì reset vẫn làm y như bài này."],
+        ["Giữ OK 2 giây mà không thấy Drum Unit hiện ra ?", "Kiểm tra hai thứ: <strong>nắp trước đã mở chưa</strong> — đây là lỗi hay gặp nhất, nắp đóng thì menu không hiện; và máy đã khởi động xong chưa. Nếu vẫn không được, thử giữ lâu hơn khoảng 4–5 giây."],
+        ["Reset drum trên máy này có dùng nút Go như 2321D được không ?", "Không nên. Dòng có màn hình được thiết kế để reset drum qua menu, làm theo menu vừa chắc vừa có xác nhận trên màn hình. Cách bấm Go của máy không màn hình có thể không ăn hoặc vào nhầm chế độ khác."],
+        ["Màn hình hiện USER MODE rồi tắt, có phải hỏng không ?", "Không. USER MODE chỉ hiện trong lúc máy ở chế độ nhận lệnh reset mực, làm xong hoặc đóng nắp là nó thoát ra và về trạng thái bình thường. Đó là dấu hiệu tốt cho biết đã vào đúng chế độ."]
+      ],
+      "lienQuan": [
+        "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+        "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d"
+      ]
+    },
+
+    {
+      "_ghichu": "Epson L1210 — 260 lượt/th, site chưa có trang. namphong đã có trang riêng; chủ shop chốt vẫn viết để chiếm thêm vị trí trên cùng trang kết quả.",
+      "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210",
+      "title": "Phần Mềm Reset Epson L1210 — Tool Miễn Phí Kèm Hướng Dẫn",
+      "desc": "Tải phần mềm reset bộ đếm mực thải Epson L1210 và hướng dẫn chạy Adjustment Program từng bước. Xử lý máy nháy 2 đèn đỏ, báo Service Required, không nhận lệnh in.",
+      "h1": "Phần mềm reset Epson L1210 — tool miễn phí kèm hướng dẫn từng bước",
+      "model": "Epson L1210",
+      "dongMay": "L1210, L1250",
+      "loi": "nháy 2 đèn đỏ (đèn giấy và đèn mực) và máy tính báo \"Service Required\" hoặc \"Ink pad is at the end of its service life\"",
+      "tai": "https://tinhocnamphong.net/phan-mem-reset-may-in-epson-l1210",
+      "taiNhan": "Tải phần mềm reset Epson L1210 (Adjustment Program)",
+      "anh": [
+        { "file": "epson-l1210-may-that", "viTri": 0, "alt": "Máy in phun Epson L1210 EcoTank đang in một bản ảnh màu khổ A4", "chu": "Epson L1210 là máy <strong>chỉ in</strong>, không scan không copy — khác L3210 cùng thời vốn làm được cả ba việc." }
+      ],
+      "dacDiem": [
+        "Khổ A4, 4 màu mực, dùng mực Epson 003 loại đổ bình",
+        "<strong>Chỉ in — không scan, không photocopy</strong>. Đây là điểm khác L3210 cùng đời",
+        "Không wifi, kết nối bằng dây USB",
+        "Máy gọn, giá mềm, hay gặp ở nhà và văn phòng nhỏ in giấy tờ hằng ngày"
+      ],
+      "viSaoDay": "L1210 chỉ in nên bị dùng theo kiểu bật lên in vài tờ rồi tắt, ngày vài lượt. Mỗi lần bật máy đều tự chạy chu trình làm sạch đầu in và đẩy một ít mực xuống miếng thấm mực thải. Kết quả là máy <strong>in ít nhưng vẫn đầy bộ đếm</strong> — nhiều khách thấy vô lý vì cả năm mới in vài trăm tờ mà máy đã khoá.",
+      "luuYRieng": [
+        "L1210 <strong>không có wifi</strong> nên không dính lỗi hay gặp ở dòng L3250: cứ cắm dây USB trực tiếp là phần mềm thấy máy.",
+        "Ở bước chọn model trong phần mềm, chọn đúng <strong>L1210</strong>. Nếu danh sách không có, chọn dòng gần nhất cùng nhóm — chọn sai model thì phần mềm vẫn chạy nhưng bộ đếm không về 0."
+      ],
+      "faqRieng": [
+        ["Epson L1210 và L3210 dùng chung tool reset được không ?", "Không nên. Hai máy tuy cùng đời và cùng dùng mực 003 nhưng khác cấu hình — L1210 chỉ in, L3210 có thêm scan và copy — nên mỗi máy có bản Adjustment Program riêng. Tải đúng bản cho model của mình, chọn sai model là reset không ăn."],
+        ["Máy nháy 2 đèn đỏ có phải hỏng đầu in không ?", "Thường là không. Nháy hai đèn đỏ xen kẽ kèm thông báo <em>Service Required</em> là báo tràn bộ đếm mực thải — lỗi phần mềm, reset là in tiếp. Nếu reset xong vẫn nháy đèn, hoặc bản in ra bị sọc, mất màu thì lúc đó mới nghi tới đầu in tắc."]
+      ],
+      "lienQuan": [
+        "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
+        "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110"
+      ]
+    },
+
     {
       "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300",
       "title": "Phần Mềm Reset Epson L110, L210, L300 — Tool Miễn Phí",

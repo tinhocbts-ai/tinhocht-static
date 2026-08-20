@@ -1,7 +1,6 @@
 {
   "_help": "Trang MỚI viết thêm (không có trên Google Sites cũ). Mỗi mục là 1 trang; build-site.js tự dựng HTML + dữ liệu có cấu trúc HowTo/FAQ. Thêm trang mới = thêm 1 mục ở đây rồi chạy 'node build-site.js'.",
   "_can_cu": "Chọn model dựa trên: (1) gợi ý tìm kiếm của Google cho thấy có người tìm, (2) tinhocnamphong.net cùng hệ thống đã có sẵn file tải nên link tải là thật, (3) site đang xếp hạng tốt cụm reset Epson nên viết thêm model là đi trên nền uy tín sẵn có.",
-
   "pages": [
     {
       "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251",
@@ -26,10 +25,19 @@
         "Không cần gỡ cấu hình mạng của máy. Cắm thêm dây USB trong lúc reset, xong rút ra, máy vẫn in qua wifi như cũ."
       ],
       "faqRieng": [
-        ["Máy đang dùng wifi, reset có phải gỡ kết nối mạng không ?", "Không cần gỡ. Chỉ cần cắm dây USB nối thẳng máy in với máy tính trong lúc chạy Adjustment Program, xong thì rút dây ra, máy vẫn in qua wifi như cũ. Phần mềm reset không nhìn thấy máy qua wifi nên bắt buộc phải có dây."],
-        ["L3251 và L3256 dùng chung tool với L3250 được không ?", "Được. Ba đời này chung một nền phần cứng, chỉ khác thị trường phân phối nên dùng chung Adjustment Program của L3250. Ở bước chọn model, chọn đúng tên hiện trong danh sách; nếu không thấy L3251 hay L3256 thì chọn L3250."]
+        [
+          "Máy đang dùng wifi, reset có phải gỡ kết nối mạng không ?",
+          "Không cần gỡ. Chỉ cần cắm dây USB nối thẳng máy in với máy tính trong lúc chạy Adjustment Program, xong thì rút dây ra, máy vẫn in qua wifi như cũ. Phần mềm reset không nhìn thấy máy qua wifi nên bắt buộc phải có dây."
+        ],
+        [
+          "L3251 và L3256 dùng chung tool với L3250 được không ?",
+          "Được. Ba đời này chung một nền phần cứng, chỉ khác thị trường phân phối nên dùng chung Adjustment Program của L3250. Ở bước chọn model, chọn đúng tên hiện trong danh sách; nếu không thấy L3251 hay L3256 thì chọn L3250."
+        ]
       ],
-      "lienQuan": ["Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110"]
+      "lienQuan": [
+        "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
+        "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110"
+      ]
     },
     {
       "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160",
@@ -53,10 +61,19 @@
         "Hai máy dùng chung phần mềm, nhưng ở bước chọn model phải chọn đúng tên máy của mình chứ không chọn bừa."
       ],
       "faqRieng": [
-        ["L4150 và L4160 khác nhau chỗ nào, cách reset có giống nhau không ?", "Hai máy chung nền phần cứng, khác ở chỗ L4160 có màn hình cảm ứng và in hai mặt tự động còn L4150 thì không. Cách reset giống hệt nhau và dùng chung một phần mềm — chỉ cần chọn đúng tên máy ở bước chọn model."],
-        ["Có nên tắt chế độ in hai mặt sau khi reset không ?", "Không cần tắt. In hai mặt làm đầu in chạy nhiều hơn nên bộ đếm nhích nhanh hơn, nhưng đó là đánh đổi để tiết kiệm phân nửa số giấy. Muốn giãn thời gian giữa hai lần reset thì chỉ bật in hai mặt cho tài liệu dài, còn giấy tờ một trang thì in một mặt."]
+        [
+          "L4150 và L4160 khác nhau chỗ nào, cách reset có giống nhau không ?",
+          "Hai máy chung nền phần cứng, khác ở chỗ L4160 có màn hình cảm ứng và in hai mặt tự động còn L4150 thì không. Cách reset giống hệt nhau và dùng chung một phần mềm — chỉ cần chọn đúng tên máy ở bước chọn model."
+        ],
+        [
+          "Có nên tắt chế độ in hai mặt sau khi reset không ?",
+          "Không cần tắt. In hai mặt làm đầu in chạy nhiều hơn nên bộ đếm nhích nhanh hơn, nhưng đó là đánh đổi để tiết kiệm phân nửa số giấy. Muốn giãn thời gian giữa hai lần reset thì chỉ bật in hai mặt cho tài liệu dài, còn giấy tờ một trang thì in một mặt."
+        ]
       ],
-      "lienQuan": ["Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251"]
+      "lienQuan": [
+        "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
+        "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251"
+      ]
     },
     {
       "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l805",
@@ -81,10 +98,19 @@
       ],
       "soTrangSauReset": "Với máy in ảnh thì con số thấp hơn máy văn phòng nhiều: in ảnh phủ kín khổ A4 mỗi lần reset thường đi được khoảng 1.000–2.000 tờ. Nếu in ảnh thẻ hoặc ghép nhiều tấm nhỏ trên một tờ thì được nhiều hơn vì tốn ít mực hơn.",
       "faqRieng": [
-        ["Vì sao L805 mau đầy bộ đếm hơn máy in văn phòng ?", "Vì in ảnh phủ kín giấy tốn mực gấp 6–8 lần in văn bản, và đầu in 6 màu cần làm sạch nhiều hơn đầu 4 màu. Cùng một mốc thời gian, máy in ảnh chạm ngưỡng bộ đếm sớm hơn máy in giấy tờ là chuyện bình thường, không phải máy bị lỗi."],
-        ["Reset xong ảnh in ra bị sọc hoặc sai màu thì sao ?", "Đó là hai chuyện khác nhau. Reset chỉ xoá con số đếm trong bộ nhớ, không đụng gì tới đầu in. Ảnh bị sọc hay lệch màu là do đầu in tắc hoặc mực trong ống có bọt khí — cần chạy Head Cleaning rồi in Nozzle Check để kiểm tra, chứ reset thêm lần nữa cũng không hết."]
+        [
+          "Vì sao L805 mau đầy bộ đếm hơn máy in văn phòng ?",
+          "Vì in ảnh phủ kín giấy tốn mực gấp 6–8 lần in văn bản, và đầu in 6 màu cần làm sạch nhiều hơn đầu 4 màu. Cùng một mốc thời gian, máy in ảnh chạm ngưỡng bộ đếm sớm hơn máy in giấy tờ là chuyện bình thường, không phải máy bị lỗi."
+        ],
+        [
+          "Reset xong ảnh in ra bị sọc hoặc sai màu thì sao ?",
+          "Đó là hai chuyện khác nhau. Reset chỉ xoá con số đếm trong bộ nhớ, không đụng gì tới đầu in. Ảnh bị sọc hay lệch màu là do đầu in tắc hoặc mực trong ống có bọt khí — cần chạy Head Cleaning rồi in Nozzle Check để kiểm tra, chứ reset thêm lần nữa cũng không hết."
+        ]
       ],
-      "lienQuan": ["Phan-mem-reset-may-in/phan-mem-reset-epson-l1800", "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc"]
+      "lienQuan": [
+        "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800",
+        "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc"
+      ]
     },
     {
       "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800",
@@ -109,12 +135,19 @@
       ],
       "soTrangSauReset": "Máy A3 đi được ít hơn máy A4 khá nhiều: in ảnh phủ kín khổ A3 thì mỗi lần reset thường được khoảng 500–1.500 tờ. In bản vẽ nét mảnh trên nền trắng thì được nhiều hơn hẳn vì độ phủ mực thấp.",
       "faqRieng": [
-        ["Reset L1800 có dùng chung phần mềm với L1300 không ?", "Không. Hai máy cùng khổ A3 nhưng khác số màu — L1800 sáu màu, L1300 bốn màu — nên mỗi máy có bản Adjustment Program riêng. Tải đúng bản cho model của mình; chọn sai model thì phần mềm vẫn chạy nhưng bộ đếm không về 0."],
-        ["Máy A3 in được bao nhiêu tờ thì lại phải reset ?", "Ít hơn máy A4 nhiều. In ảnh phủ kín khổ A3 thì mỗi lần reset thường đi được khoảng 500–1.500 tờ. Nếu in bản vẽ nét mảnh nền trắng thì được nhiều hơn vì tốn ít mực hơn."]
+        [
+          "Reset L1800 có dùng chung phần mềm với L1300 không ?",
+          "Không. Hai máy cùng khổ A3 nhưng khác số màu — L1800 sáu màu, L1300 bốn màu — nên mỗi máy có bản Adjustment Program riêng. Tải đúng bản cho model của mình; chọn sai model thì phần mềm vẫn chạy nhưng bộ đếm không về 0."
+        ],
+        [
+          "Máy A3 in được bao nhiêu tờ thì lại phải reset ?",
+          "Ít hơn máy A4 nhiều. In ảnh phủ kín khổ A3 thì mỗi lần reset thường đi được khoảng 500–1.500 tờ. Nếu in bản vẽ nét mảnh nền trắng thì được nhiều hơn vì tốn ít mực hơn."
+        ]
       ],
-      "lienQuan": ["Phan-mem-reset-may-in/phan-mem-reset-epson-l805"]
+      "lienQuan": [
+        "Phan-mem-reset-may-in/phan-mem-reset-epson-l805"
+      ]
     },
-
     {
       "_ghichu": "NHÓM BROTHER — viết 20/08/2026. Căn cứ: volume Google Ads 4.960 lượt/th cho cụm Brother (gấp 1,9 lần Epson) trong khi site chỉ có bài rời rạc. Quy trình bấm nút lấy theo mucinanphuoc.com, chủ shop đã xác nhận. Ảnh máy thật lấy từ kho chụp của shop bên projects/chotot.",
       "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
@@ -128,7 +161,12 @@
       "luuYChung": false,
       "moBai": "Máy in <strong>Brother HL-L2321D</strong> có <strong>hai bộ đếm riêng biệt</strong>: một đếm mực (toner) và một đếm tuổi thọ trống (drum). Đổ mực xong mà máy vẫn báo hết mực là do bộ đếm mực chưa được đưa về 0 — không phải mực chưa vào. Hai bộ đếm này reset bằng <strong>hai thao tác khác nhau</strong>, làm nhầm cái này sang cái kia là không ăn. Bài này tách rõ từng quy trình.",
       "anh": [
-        { "file": "brother-2321d-nut-go", "viTri": 0, "alt": "Bảng điều khiển máy in Brother HL-L2321D với đèn Toner, Drum, Paper, Ready và nút Go", "chu": "Toàn bộ thao tác reset của HL-L2321D làm bằng <strong>một nút Go duy nhất</strong>. Máy không có màn hình nên không hiện chữ gì — phải đếm số lần bấm và nhìn đèn." }
+        {
+          "file": "brother-2321d-nut-go",
+          "viTri": 0,
+          "alt": "Bảng điều khiển máy in Brother HL-L2321D với đèn Toner, Drum, Paper, Ready và nút Go",
+          "chu": "Toàn bộ thao tác reset của HL-L2321D làm bằng <strong>một nút Go duy nhất</strong>. Máy không có màn hình nên không hiện chữ gì — phải đếm số lần bấm và nhìn đèn."
+        }
       ],
       "dacDiem": [
         "Máy in laser trắng đen khổ A4, in hai mặt tự động",
@@ -153,12 +191,30 @@
             "Máy tính hiện thông báo <em>Replace Toner</em> hoặc <em>Toner Ended</em>"
           ],
           "buoc": [
-            ["Tắt nguồn máy bằng nút nguồn", "Nhấn nút nguồn trên máy để tắt. <strong>Vẫn cắm nguyên dây điện</strong>, không rút phích và không tắt ổ cắm — bước sau cần bật lại ngay."],
-            ["Mở nắp trước, lấy cụm drum và hộp mực ra", "Mở nắp trước của máy, rút nguyên cụm trống kèm hộp mực ra ngoài, đặt lên mặt phẳng sạch. Để nắp mở nguyên như vậy."],
-            ["Giữ nút Go rồi bật nguồn", "Đè và giữ chặt nút <strong>Go</strong>, đồng thời nhấn nút nguồn để bật máy. Giữ Go khoảng <strong>3–5 giây</strong> rồi thả tay ra. Máy không hiện thông báo gì vì không có màn hình — đó là bình thường."],
-            ["Nhấn Go 9 lần, chờ 5 giây", "Nhấn nút <strong>Go</strong> đúng <strong>9 lần</strong> liên tiếp, rồi dừng tay chờ khoảng <strong>5 giây</strong>."],
-            ["Nhấn Go thêm 5 lần, chờ 5 giây", "Nhấn <strong>Go</strong> thêm <strong>5 lần</strong> nữa, rồi lại chờ khoảng <strong>5 giây</strong> cho máy nhận lệnh."],
-            ["Lắp cụm drum vào, đóng nắp và kiểm tra", "Lắp cụm trống kèm hộp mực trở lại đúng khớp, đóng nắp trước. Nhìn bảng đèn: <strong>đèn Ready sáng xanh</strong> và đèn Toner tắt là đã reset xong. In thử một trang để chắc chắn."]
+            [
+              "Tắt nguồn máy bằng nút nguồn",
+              "Nhấn nút nguồn trên máy để tắt. <strong>Vẫn cắm nguyên dây điện</strong>, không rút phích và không tắt ổ cắm — bước sau cần bật lại ngay."
+            ],
+            [
+              "Mở nắp trước, lấy cụm drum và hộp mực ra",
+              "Mở nắp trước của máy, rút nguyên cụm trống kèm hộp mực ra ngoài, đặt lên mặt phẳng sạch. Để nắp mở nguyên như vậy."
+            ],
+            [
+              "Giữ nút Go rồi bật nguồn",
+              "Đè và giữ chặt nút <strong>Go</strong>, đồng thời nhấn nút nguồn để bật máy. Giữ Go khoảng <strong>3–5 giây</strong> rồi thả tay ra. Máy không hiện thông báo gì vì không có màn hình — đó là bình thường."
+            ],
+            [
+              "Nhấn Go 9 lần, chờ 5 giây",
+              "Nhấn nút <strong>Go</strong> đúng <strong>9 lần</strong> liên tiếp, rồi dừng tay chờ khoảng <strong>5 giây</strong>."
+            ],
+            [
+              "Nhấn Go thêm 5 lần, chờ 5 giây",
+              "Nhấn <strong>Go</strong> thêm <strong>5 lần</strong> nữa, rồi lại chờ khoảng <strong>5 giây</strong> cho máy nhận lệnh."
+            ],
+            [
+              "Lắp cụm drum vào, đóng nắp và kiểm tra",
+              "Lắp cụm trống kèm hộp mực trở lại đúng khớp, đóng nắp trước. Nhìn bảng đèn: <strong>đèn Ready sáng xanh</strong> và đèn Toner tắt là đã reset xong. In thử một trang để chắc chắn."
+            ]
           ],
           "xong": "Nếu sau khi đóng nắp đèn Toner vẫn sáng, khả năng cao là bấm thiếu hoặc thừa số lần. Tắt máy và làm lại từ bước 1 — làm lại nhiều lần không hại gì cho máy."
         },
@@ -171,20 +227,47 @@
             "Vừa thay cụm trống DR-2385 mới nhưng máy vẫn báo như cũ"
           ],
           "buoc": [
-            ["Mở nắp trước (máy vẫn đang bật)", "Để nguyên máy đang bật, mở nắp cửa phía trước. Khác với reset mực, quy trình này <strong>không tắt nguồn</strong>."],
-            ["Giữ nút Go cho tới khi các đèn sáng hết", "Nhấn và giữ nút <strong>Go</strong> khoảng <strong>8–10 giây</strong>, cho tới khi <strong>toàn bộ đèn LED trên máy đều phát sáng</strong> thì thả tay. Đèn sáng hết chính là dấu hiệu máy đã vào chế độ reset drum."],
-            ["Nhấn Go thêm một lần", "Nhấn nút <strong>Go</strong> thêm <strong>1 lần</strong> nữa để xác nhận."],
-            ["Đóng nắp và kiểm tra", "Đóng nắp trước lại. Đèn Drum tắt, đèn Ready sáng xanh là đã reset xong bộ đếm trống."]
+            [
+              "Mở nắp trước (máy vẫn đang bật)",
+              "Để nguyên máy đang bật, mở nắp cửa phía trước. Khác với reset mực, quy trình này <strong>không tắt nguồn</strong>."
+            ],
+            [
+              "Giữ nút Go cho tới khi các đèn sáng hết",
+              "Nhấn và giữ nút <strong>Go</strong> khoảng <strong>8–10 giây</strong>, cho tới khi <strong>toàn bộ đèn LED trên máy đều phát sáng</strong> thì thả tay. Đèn sáng hết chính là dấu hiệu máy đã vào chế độ reset drum."
+            ],
+            [
+              "Nhấn Go thêm một lần",
+              "Nhấn nút <strong>Go</strong> thêm <strong>1 lần</strong> nữa để xác nhận."
+            ],
+            [
+              "Đóng nắp và kiểm tra",
+              "Đóng nắp trước lại. Đèn Drum tắt, đèn Ready sáng xanh là đã reset xong bộ đếm trống."
+            ]
           ],
           "xong": "Lưu ý phân biệt: máy báo <em>Drum Error</em> (khác với <em>Replace Drum</em>) hoặc bản in ra bị đen, có sọc dọc lặp lại thì <strong>trống đã hỏng thật</strong> — reset không cứu được, phải thay cụm trống mới."
         }
       ],
       "faqRieng": [
-        ["Reset mực và reset drum khác nhau chỗ nào ?", "Đây là hai bộ đếm riêng. Bộ đếm <strong>mực</strong> tính số trang từ lần đổ mực gần nhất — reset khi đổ mực xong mà máy vẫn báo hết. Bộ đếm <strong>drum</strong> tính tuổi thọ cụm trống, thường khoảng 12.000 trang — reset khi máy báo Replace Drum. Thao tác cũng khác: reset mực phải tắt nguồn rồi giữ Go lúc bật lại, reset drum thì để máy đang bật."],
-        ["Máy Brother 2321D báo lỗi Paper thì có reset được không ?", "Không, đèn Paper là báo kẹt giấy hoặc hết giấy chứ không liên quan tới bộ đếm. Mở nắp sau và nắp trước kiểm tra xem có tờ giấy nào kẹt lại không, rút ra theo chiều giấy đi, kiểm tra khay còn giấy và giấy có bị ẩm dính vào nhau không. Reset không xử lý được lỗi này."],
-        ["Reset xong máy vẫn báo hết mực, phải làm sao ?", "Kiểm tra ba thứ theo thứ tự. Một là bấm đúng số lần chưa — máy không có màn hình nên rất dễ bấm nhầm, cứ tắt máy làm lại từ đầu. Hai là nhông reset bên hông hộp mực có bị kẹt hoặc gãy răng không. Ba là lau sạch chân tiếp xúc và mắt cảm biến trong lòng máy bằng khăn khô, bụi mực bám dày cũng làm máy đọc sai."],
-        ["Một hộp mực reset được bao nhiêu lần ?", "Về mặt máy thì reset được không giới hạn số lần. Nhưng hộp mực có tuổi thọ cơ khí thật: trống, gạt mực và trục từ mòn dần, thường sau 3–5 lần đổ mực là bản in bắt đầu mờ, có sọc hoặc lem. Tới lúc đó thay hộp mực mới rẻ hơn là cố reset thêm."],
-        ["Có cần vệ sinh gì trước khi reset không ?", "Nên lau bụi mực bám ở chân tiếp xúc hộp mực và mắt cảm biến trong lòng máy bằng khăn khô, đừng dùng nước hay cồn. Bụi mực dày làm máy đọc sai tín hiệu, reset xong vẫn báo lỗi. Trống thì lau nhẹ bằng khăn mềm khô, tuyệt đối không chạm tay trần vào mặt trống."]
+        [
+          "Reset mực và reset drum khác nhau chỗ nào ?",
+          "Đây là hai bộ đếm riêng. Bộ đếm <strong>mực</strong> tính số trang từ lần đổ mực gần nhất — reset khi đổ mực xong mà máy vẫn báo hết. Bộ đếm <strong>drum</strong> tính tuổi thọ cụm trống, thường khoảng 12.000 trang — reset khi máy báo Replace Drum. Thao tác cũng khác: reset mực phải tắt nguồn rồi giữ Go lúc bật lại, reset drum thì để máy đang bật."
+        ],
+        [
+          "Máy Brother 2321D báo lỗi Paper thì có reset được không ?",
+          "Không, đèn Paper là báo kẹt giấy hoặc hết giấy chứ không liên quan tới bộ đếm. Mở nắp sau và nắp trước kiểm tra xem có tờ giấy nào kẹt lại không, rút ra theo chiều giấy đi, kiểm tra khay còn giấy và giấy có bị ẩm dính vào nhau không. Reset không xử lý được lỗi này."
+        ],
+        [
+          "Reset xong máy vẫn báo hết mực, phải làm sao ?",
+          "Kiểm tra ba thứ theo thứ tự. Một là bấm đúng số lần chưa — máy không có màn hình nên rất dễ bấm nhầm, cứ tắt máy làm lại từ đầu. Hai là nhông reset bên hông hộp mực có bị kẹt hoặc gãy răng không. Ba là lau sạch chân tiếp xúc và mắt cảm biến trong lòng máy bằng khăn khô, bụi mực bám dày cũng làm máy đọc sai."
+        ],
+        [
+          "Một hộp mực reset được bao nhiêu lần ?",
+          "Về mặt máy thì reset được không giới hạn số lần. Nhưng hộp mực có tuổi thọ cơ khí thật: trống, gạt mực và trục từ mòn dần, thường sau 3–5 lần đổ mực là bản in bắt đầu mờ, có sọc hoặc lem. Tới lúc đó thay hộp mực mới rẻ hơn là cố reset thêm."
+        ],
+        [
+          "Có cần vệ sinh gì trước khi reset không ?",
+          "Nên lau bụi mực bám ở chân tiếp xúc hộp mực và mắt cảm biến trong lòng máy bằng khăn khô, đừng dùng nước hay cồn. Bụi mực dày làm máy đọc sai tín hiệu, reset xong vẫn báo lỗi. Trống thì lau nhẹ bằng khăn mềm khô, tuyệt đối không chạm tay trần vào mặt trống."
+        ]
       ],
       "lienQuan": [
         "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4",
@@ -192,7 +275,6 @@
         "Phan-mem-reset-may-in/cach-reset-may-in-brother"
       ]
     },
-
     {
       "_ghichu": "TRANG TRỤ Brother — gom cụm 2.530 lượt/th ở nhóm 'cách reset máy in brother', 'reset hộp mực brother'. Vai trò: giải thích drum khác toner, phân hai họ máy theo phần cứng, rồi dẫn xuống trang từng model.",
       "path": "Phan-mem-reset-may-in/cach-reset-may-in-brother",
@@ -206,8 +288,18 @@
       "luuYChung": false,
       "moBai": "Máy in Brother báo hết mực ngay sau khi vừa đổ mực đầy là chuyện gặp hằng ngày. Nguyên nhân không nằm ở mực mà ở <strong>bộ đếm</strong> trong máy. Nhưng trước khi bấm nút, phải trả lời hai câu: máy đang báo <strong>mực</strong> hay báo <strong>trống (drum)</strong>, và máy của mình thuộc <strong>loại có màn hình hay chỉ có đèn</strong>. Trả lời sai một trong hai là bấm cả buổi không ăn.",
       "anh": [
-        { "file": "brother-2321d-nut-go", "viTri": 1, "alt": "Bảng điều khiển Brother HL-L2321D chỉ có đèn LED và nút Go, không có màn hình", "chu": "Loại 1 — chỉ có <strong>đèn LED và nút Go</strong>, không màn hình. Reset bằng cách đếm số lần bấm Go." },
-        { "file": "brother-mfc-l2701dw-bang-dieu-khien", "viTri": 2, "alt": "Bảng điều khiển Brother MFC-L2701DW có màn hình LCD, nút OK và phím mũi tên", "chu": "Loại 2 — có <strong>màn hình LCD, nút OK và phím mũi tên</strong>. Reset bằng cách vào menu chọn lệnh, có chữ hiện lên nên dễ hơn hẳn." }
+        {
+          "file": "brother-2321d-nut-go",
+          "viTri": 1,
+          "alt": "Bảng điều khiển Brother HL-L2321D chỉ có đèn LED và nút Go, không có màn hình",
+          "chu": "Loại 1 — chỉ có <strong>đèn LED và nút Go</strong>, không màn hình. Reset bằng cách đếm số lần bấm Go."
+        },
+        {
+          "file": "brother-mfc-l2701dw-bang-dieu-khien",
+          "viTri": 2,
+          "alt": "Bảng điều khiển Brother MFC-L2701DW có màn hình LCD, nút OK và phím mũi tên",
+          "chu": "Loại 2 — có <strong>màn hình LCD, nút OK và phím mũi tên</strong>. Reset bằng cách vào menu chọn lệnh, có chữ hiện lên nên dễ hơn hẳn."
+        }
       ],
       "dacDiem": [
         "<strong>Bộ đếm mực (toner)</strong> — nằm ở nhông bên hông hộp mực, đếm số trang từ lần đổ mực gần nhất. Máy báo <em>Replace Toner</em>, đèn Toner sáng.",
@@ -231,10 +323,22 @@
             "Máy báo lỗi qua đèn sáng/nháy chứ không hiện chữ"
           ],
           "buoc": [
-            ["Xác định đang cần reset mực hay reset drum", "Đèn <strong>Toner</strong> sáng → reset mực. Đèn <strong>Drum</strong> sáng → reset drum. Hai quy trình khác nhau hoàn toàn."],
-            ["Reset mực — tắt nguồn rồi giữ Go lúc bật lại", "Tắt máy bằng nút nguồn (vẫn cắm điện), mở nắp trước lấy cụm drum và hộp mực ra, giữ <strong>Go</strong> đồng thời bật nguồn, thả Go sau 3–5 giây. Nhấn <strong>Go 9 lần</strong>, chờ 5 giây, nhấn <strong>Go 5 lần</strong>, chờ 5 giây, rồi lắp lại và đóng nắp."],
-            ["Reset drum — để máy đang bật", "Mở nắp trước khi máy vẫn bật, giữ <strong>Go</strong> khoảng <strong>8–10 giây</strong> cho tới khi toàn bộ đèn sáng lên, thả tay, nhấn <strong>Go</strong> thêm 1 lần rồi đóng nắp."],
-            ["Kiểm tra bằng đèn Ready", "Đèn Ready sáng xanh, đèn báo lỗi tắt là xong. In thử một trang cho chắc."]
+            [
+              "Xác định đang cần reset mực hay reset drum",
+              "Đèn <strong>Toner</strong> sáng → reset mực. Đèn <strong>Drum</strong> sáng → reset drum. Hai quy trình khác nhau hoàn toàn."
+            ],
+            [
+              "Reset mực — tắt nguồn rồi giữ Go lúc bật lại",
+              "Tắt máy bằng nút nguồn (vẫn cắm điện), mở nắp trước lấy cụm drum và hộp mực ra, giữ <strong>Go</strong> đồng thời bật nguồn, thả Go sau 3–5 giây. Nhấn <strong>Go 9 lần</strong>, chờ 5 giây, nhấn <strong>Go 5 lần</strong>, chờ 5 giây, rồi lắp lại và đóng nắp."
+            ],
+            [
+              "Reset drum — để máy đang bật",
+              "Mở nắp trước khi máy vẫn bật, giữ <strong>Go</strong> khoảng <strong>8–10 giây</strong> cho tới khi toàn bộ đèn sáng lên, thả tay, nhấn <strong>Go</strong> thêm 1 lần rồi đóng nắp."
+            ],
+            [
+              "Kiểm tra bằng đèn Ready",
+              "Đèn Ready sáng xanh, đèn báo lỗi tắt là xong. In thử một trang cho chắc."
+            ]
           ],
           "xong": "Xem hướng dẫn chi tiết từng bước kèm ảnh cho dòng phổ biến nhất: <a href=\"reset-may-in-brother-hl-l2321d\">reset máy in Brother HL-L2321D</a>."
         },
@@ -246,20 +350,47 @@
             "Có nút OK và phím mũi tên lên / xuống"
           ],
           "buoc": [
-            ["Bật máy, đợi khởi động xong rồi mở nắp trước", "Để máy bật bình thường, chờ màn hình hiện trạng thái sẵn sàng rồi mới mở nắp cửa trước."],
-            ["Giữ nút OK cho tới khi màn hình hiện Drum Unit", "Nhấn giữ <strong>OK</strong> khoảng <strong>2 giây</strong>, màn hình sẽ hiện dòng <em>Drum Unit</em>. Bấm <strong>OK</strong> để chọn."],
-            ["Chọn Reset trên màn hình", "Dùng <strong>phím mũi tên lên</strong> để chọn <em>Reset</em>, rồi xác nhận. Màn hình báo đã reset xong bộ đếm trống."],
-            ["Đóng nắp và kiểm tra", "Đóng nắp trước, chờ máy trở về trạng thái sẵn sàng. Thông báo Replace Drum biến mất là được."]
+            [
+              "Bật máy, đợi khởi động xong rồi mở nắp trước",
+              "Để máy bật bình thường, chờ màn hình hiện trạng thái sẵn sàng rồi mới mở nắp cửa trước."
+            ],
+            [
+              "Giữ nút OK cho tới khi màn hình hiện Drum Unit",
+              "Nhấn giữ <strong>OK</strong> khoảng <strong>2 giây</strong>, màn hình sẽ hiện dòng <em>Drum Unit</em>. Bấm <strong>OK</strong> để chọn."
+            ],
+            [
+              "Chọn Reset trên màn hình",
+              "Dùng <strong>phím mũi tên lên</strong> để chọn <em>Reset</em>, rồi xác nhận. Màn hình báo đã reset xong bộ đếm trống."
+            ],
+            [
+              "Đóng nắp và kiểm tra",
+              "Đóng nắp trước, chờ máy trở về trạng thái sẵn sàng. Thông báo Replace Drum biến mất là được."
+            ]
           ],
           "xong": "Với reset <strong>mực</strong> trên loại có màn hình, cách bấm nút Go giống hệt loại 1, chỉ khác là màn hình sẽ hiện chữ <em>USER MODE</em> khi vào đúng chế độ. Chi tiết: <a href=\"reset-may-in-brother-hl-l2361dn-l2366dw\">reset Brother HL-L2361DN / HL-L2366DW</a>."
         }
       ],
       "faqRieng": [
-        ["Làm sao biết máy cần reset mực hay reset drum ?", "Nhìn đèn hoặc chữ báo lỗi. Đèn <strong>Toner</strong> sáng hoặc máy tính báo <em>Replace Toner</em> là cần reset mực. Đèn <strong>Drum</strong> sáng hoặc báo <em>Drum End Soon</em>, <em>Replace Drum</em> là cần reset trống. Hai bộ đếm độc lập nên có khi phải làm cả hai, nhưng phải làm từng cái một."],
-        ["Drum và hộp mực khác nhau chỗ nào ?", "Cụm trống (drum) là khối chữ nhật lớn, bên trong có một trục tròn màu xanh lá hoặc xám — đây là bộ phận in hình lên giấy, tuổi thọ khoảng 12.000 trang. Hộp mực (toner) là thanh nhỏ gài vào trong cụm trống, chứa bột mực, hết thì đổ thêm. Trên dòng 2321D là cặp DR-2385 (trống) và TN-2385 (mực)."],
-        ["Reset máy in Brother có làm mất bảo hành không ?", "Reset bộ đếm là thao tác nhà sản xuất thiết kế sẵn trên máy, bấm bằng nút có sẵn, không can thiệp phần cứng hay phần mềm máy. Việc này không làm mất bảo hành. Cái ảnh hưởng bảo hành là tự tháo máy, thay linh kiện không chính hãng hoặc làm hỏng vỏ."],
-        ["Bấm sai số lần thì máy có sao không ?", "Không sao. Bấm sai thì đơn giản là máy không nhận lệnh reset, đèn vẫn báo như cũ. Tắt máy rồi làm lại từ đầu, bấm bao nhiêu lần cũng không hại tới máy."],
-        ["Đổ mực xong lần nào cũng phải reset à ?", "Đúng, mỗi lần đổ mực hoặc thay hộp mực đều phải reset lại bộ đếm, vì máy đếm số trang chứ không đo mực. Trừ khi hộp mực mới có sẵn nhông reset chưa quay — loại đó lắp vào máy tự nhận, không cần thao tác gì."]
+        [
+          "Làm sao biết máy cần reset mực hay reset drum ?",
+          "Nhìn đèn hoặc chữ báo lỗi. Đèn <strong>Toner</strong> sáng hoặc máy tính báo <em>Replace Toner</em> là cần reset mực. Đèn <strong>Drum</strong> sáng hoặc báo <em>Drum End Soon</em>, <em>Replace Drum</em> là cần reset trống. Hai bộ đếm độc lập nên có khi phải làm cả hai, nhưng phải làm từng cái một."
+        ],
+        [
+          "Drum và hộp mực khác nhau chỗ nào ?",
+          "Cụm trống (drum) là khối chữ nhật lớn, bên trong có một trục tròn màu xanh lá hoặc xám — đây là bộ phận in hình lên giấy, tuổi thọ khoảng 12.000 trang. Hộp mực (toner) là thanh nhỏ gài vào trong cụm trống, chứa bột mực, hết thì đổ thêm. Trên dòng 2321D là cặp DR-2385 (trống) và TN-2385 (mực)."
+        ],
+        [
+          "Reset máy in Brother có làm mất bảo hành không ?",
+          "Reset bộ đếm là thao tác nhà sản xuất thiết kế sẵn trên máy, bấm bằng nút có sẵn, không can thiệp phần cứng hay phần mềm máy. Việc này không làm mất bảo hành. Cái ảnh hưởng bảo hành là tự tháo máy, thay linh kiện không chính hãng hoặc làm hỏng vỏ."
+        ],
+        [
+          "Bấm sai số lần thì máy có sao không ?",
+          "Không sao. Bấm sai thì đơn giản là máy không nhận lệnh reset, đèn vẫn báo như cũ. Tắt máy rồi làm lại từ đầu, bấm bao nhiêu lần cũng không hại tới máy."
+        ],
+        [
+          "Đổ mực xong lần nào cũng phải reset à ?",
+          "Đúng, mỗi lần đổ mực hoặc thay hộp mực đều phải reset lại bộ đếm, vì máy đếm số trang chứ không đo mực. Trừ khi hộp mực mới có sẵn nhông reset chưa quay — loại đó lắp vào máy tự nhận, không cần thao tác gì."
+        ]
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
@@ -267,7 +398,6 @@
         "thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother"
       ]
     },
-
     {
       "_ghichu": "Dòng Brother CÓ màn hình LCD — quy trình reset drum khác hẳn 2321D (vào menu thay vì đếm nút). Nguồn quy trình: mucinnc.com.",
       "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2361dn-l2366dw",
@@ -281,7 +411,12 @@
       "luuYChung": false,
       "moBai": "<strong>HL-L2361DN</strong> và <strong>HL-L2366DW</strong> khác dòng HL-L2321D ở một điểm quyết định: hai máy này <strong>có màn hình LCD</strong>. Nhờ đó reset drum làm bằng cách vào menu chọn lệnh, có chữ hiện lên xác nhận — dễ và chắc ăn hơn hẳn kiểu đếm số lần bấm nút của máy không màn hình. Riêng reset mực thì vẫn dùng nút Go.",
       "anh": [
-        { "file": "brother-2366dw-man-hinh", "viTri": 0, "alt": "Bảng điều khiển Brother HL-L2366DW với màn hình LCD, nút Back, OK, phím mũi tên và nút Go", "chu": "Điểm khác 2321D nằm ở đây: <strong>có màn hình LCD và nút OK, phím mũi tên</strong>. Reset drum vào thẳng menu, không phải đếm nút." }
+        {
+          "file": "brother-2366dw-man-hinh",
+          "viTri": 0,
+          "alt": "Bảng điều khiển Brother HL-L2366DW với màn hình LCD, nút Back, OK, phím mũi tên và nút Go",
+          "chu": "Điểm khác 2321D nằm ở đây: <strong>có màn hình LCD và nút OK, phím mũi tên</strong>. Reset drum vào thẳng menu, không phải đếm nút."
+        }
       ],
       "dacDiem": [
         "Máy in laser trắng đen A4, in hai mặt tự động",
@@ -305,11 +440,26 @@
             "Vừa thay cụm trống DR-2385 mới nhưng máy vẫn báo như cũ"
           ],
           "buoc": [
-            ["Bật máy, đợi khởi động xong", "Mở nguồn, chờ tới khi màn hình hiện trạng thái sẵn sàng. Đừng thao tác lúc máy còn đang khởi động."],
-            ["Mở nắp trước của máy", "Mở nắp cửa phía trước. Bước này bắt buộc — nắp đóng thì menu reset không hiện ra."],
-            ["Giữ OK khoảng 2 giây để gọi menu Drum Unit", "Nhấn giữ nút <strong>OK</strong> khoảng <strong>2 giây</strong>, màn hình hiện dòng <em>Drum Unit</em>. Bấm <strong>OK</strong> để vào."],
-            ["Chọn Reset", "Dùng <strong>phím mũi tên lên</strong> chọn <em>Reset</em>, rồi xác nhận. Màn hình báo bộ đếm trống đã về 0."],
-            ["Đóng nắp trước", "Đóng nắp lại, chờ máy về trạng thái sẵn sàng. Thông báo Replace Drum biến mất là xong."]
+            [
+              "Bật máy, đợi khởi động xong",
+              "Mở nguồn, chờ tới khi màn hình hiện trạng thái sẵn sàng. Đừng thao tác lúc máy còn đang khởi động."
+            ],
+            [
+              "Mở nắp trước của máy",
+              "Mở nắp cửa phía trước. Bước này bắt buộc — nắp đóng thì menu reset không hiện ra."
+            ],
+            [
+              "Giữ OK khoảng 2 giây để gọi menu Drum Unit",
+              "Nhấn giữ nút <strong>OK</strong> khoảng <strong>2 giây</strong>, màn hình hiện dòng <em>Drum Unit</em>. Bấm <strong>OK</strong> để vào."
+            ],
+            [
+              "Chọn Reset",
+              "Dùng <strong>phím mũi tên lên</strong> chọn <em>Reset</em>, rồi xác nhận. Màn hình báo bộ đếm trống đã về 0."
+            ],
+            [
+              "Đóng nắp trước",
+              "Đóng nắp lại, chờ máy về trạng thái sẵn sàng. Thông báo Replace Drum biến mất là xong."
+            ]
           ]
         },
         {
@@ -320,27 +470,196 @@
             "Màn hình hiện <em>Replace Toner</em> hoặc <em>Toner Ended</em>"
           ],
           "buoc": [
-            ["Tắt nguồn bằng nút, vẫn cắm điện", "Nhấn nút nguồn tắt máy, giữ nguyên dây điện đang cắm."],
-            ["Mở nắp trước, lấy cụm drum và hộp mực ra", "Mở nắp, rút nguyên cụm trống kèm hộp mực ra ngoài, để nắp mở."],
-            ["Giữ Go rồi bật nguồn", "Đè giữ nút <strong>Go</strong>, đồng thời bật nguồn máy. Sau <strong>3 giây</strong> thả nút Go ra. Màn hình sẽ hiện <strong>USER MODE</strong> — đó là dấu hiệu đã vào đúng chế độ."],
-            ["Nhấn Go 9 lần", "Nhấn nút <strong>Go</strong> đúng <strong>9 lần</strong>. Đèn wifi trên máy HL-L2366DW có thể nhấp nháy một cái — bình thường."],
-            ["Lắp lại và đóng nắp", "Lắp cụm trống kèm hộp mực vào đúng khớp, đóng nắp trước. Máy trở về trạng thái sẵn sàng là đã reset xong."]
+            [
+              "Tắt nguồn bằng nút, vẫn cắm điện",
+              "Nhấn nút nguồn tắt máy, giữ nguyên dây điện đang cắm."
+            ],
+            [
+              "Mở nắp trước, lấy cụm drum và hộp mực ra",
+              "Mở nắp, rút nguyên cụm trống kèm hộp mực ra ngoài, để nắp mở."
+            ],
+            [
+              "Giữ Go rồi bật nguồn",
+              "Đè giữ nút <strong>Go</strong>, đồng thời bật nguồn máy. Sau <strong>3 giây</strong> thả nút Go ra. Màn hình sẽ hiện <strong>USER MODE</strong> — đó là dấu hiệu đã vào đúng chế độ."
+            ],
+            [
+              "Nhấn Go 9 lần",
+              "Nhấn nút <strong>Go</strong> đúng <strong>9 lần</strong>. Đèn wifi trên máy HL-L2366DW có thể nhấp nháy một cái — bình thường."
+            ],
+            [
+              "Lắp lại và đóng nắp",
+              "Lắp cụm trống kèm hộp mực vào đúng khớp, đóng nắp trước. Máy trở về trạng thái sẵn sàng là đã reset xong."
+            ]
           ],
           "xong": "Muốn kiểm chứng, bấm <strong>OK 3 lần</strong> để máy in ra trang trạng thái — bản in sẽ cho thấy mức mực đã về 100%."
         }
       ],
       "faqRieng": [
-        ["HL-L2361DN và HL-L2366DW khác nhau chỗ nào ?", "Cùng nền phần cứng, cùng dùng trống DR-2385 và mực TN-2385, cách reset giống hệt nhau. Khác ở kết nối: HL-L2361DN có cổng mạng LAN, còn HL-L2366DW có thêm wifi nên in được từ điện thoại. Chọn máy nào thì reset vẫn làm y như bài này."],
-        ["Giữ OK 2 giây mà không thấy Drum Unit hiện ra ?", "Kiểm tra hai thứ: <strong>nắp trước đã mở chưa</strong> — đây là lỗi hay gặp nhất, nắp đóng thì menu không hiện; và máy đã khởi động xong chưa. Nếu vẫn không được, thử giữ lâu hơn khoảng 4–5 giây."],
-        ["Reset drum trên máy này có dùng nút Go như 2321D được không ?", "Không nên. Dòng có màn hình được thiết kế để reset drum qua menu, làm theo menu vừa chắc vừa có xác nhận trên màn hình. Cách bấm Go của máy không màn hình có thể không ăn hoặc vào nhầm chế độ khác."],
-        ["Màn hình hiện USER MODE rồi tắt, có phải hỏng không ?", "Không. USER MODE chỉ hiện trong lúc máy ở chế độ nhận lệnh reset mực, làm xong hoặc đóng nắp là nó thoát ra và về trạng thái bình thường. Đó là dấu hiệu tốt cho biết đã vào đúng chế độ."]
+        [
+          "HL-L2361DN và HL-L2366DW khác nhau chỗ nào ?",
+          "Cùng nền phần cứng, cùng dùng trống DR-2385 và mực TN-2385, cách reset giống hệt nhau. Khác ở kết nối: HL-L2361DN có cổng mạng LAN, còn HL-L2366DW có thêm wifi nên in được từ điện thoại. Chọn máy nào thì reset vẫn làm y như bài này."
+        ],
+        [
+          "Giữ OK 2 giây mà không thấy Drum Unit hiện ra ?",
+          "Kiểm tra hai thứ: <strong>nắp trước đã mở chưa</strong> — đây là lỗi hay gặp nhất, nắp đóng thì menu không hiện; và máy đã khởi động xong chưa. Nếu vẫn không được, thử giữ lâu hơn khoảng 4–5 giây."
+        ],
+        [
+          "Reset drum trên máy này có dùng nút Go như 2321D được không ?",
+          "Không nên. Dòng có màn hình được thiết kế để reset drum qua menu, làm theo menu vừa chắc vừa có xác nhận trên màn hình. Cách bấm Go của máy không màn hình có thể không ăn hoặc vào nhầm chế độ khác."
+        ],
+        [
+          "Màn hình hiện USER MODE rồi tắt, có phải hỏng không ?",
+          "Không. USER MODE chỉ hiện trong lúc máy ở chế độ nhận lệnh reset mực, làm xong hoặc đóng nắp là nó thoát ra và về trạng thái bình thường. Đó là dấu hiệu tốt cho biết đã vào đúng chế độ."
+        ]
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/cach-reset-may-in-brother",
         "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d"
       ]
     },
-
+    {
+      "_ghichu": "Brother MFC/DCP 2701 — 430 lượt/th. Quy trình gom từ 4 nguồn (maytinhdinhhau, mucinchinhhang, trieunang, viettuhaiprinting): các nguồn KHỚP ở khung chung (mở nắp → giữ OK → hiện Replace Drum) nhưng KHÁC ở nút bấm cuối. Vì firmware mỗi đời một khác và không nút nào hại máy, bài viết theo hướng 'thử cách 1, không ăn thì cách 2'. Cần chủ shop xác nhận lại trên máy thật.",
+      "path": "Phan-mem-reset-may-in/reset-may-in-brother-mfc-l2701dw",
+      "title": "Reset Máy In Brother MFC-L2701DW Và DCP-L2701D — Mực Và Drum",
+      "desc": "Cách reset mực TN-2385 và reset drum DR-2385 cho máy in Brother MFC-L2701DW, MFC-L2701D bằng nút OK trên bàn phím. Kèm ảnh bảng điều khiển máy thật và cách reset bằng nhông.",
+      "h1": "Reset máy in Brother MFC-L2701DW / DCP-L2701D — reset mực và reset drum",
+      "model": "Brother MFC-L2701DW",
+      "dongMay": "MFC-L2701DW, MFC-L2701D, MFC-L2700DW, DCP-L2701D",
+      "loi": "báo Replace Toner dù hộp mực vừa thay, hoặc báo Replace Drum",
+      "faqChung": false,
+      "luuYChung": false,
+      "moBai": "Dòng <strong>MFC-L2701DW</strong> là máy đa năng có bàn phím số và màn hình LCD, nên cách reset khác cả hai dòng HL đã nói ở các bài trước. Điểm cần biết trước: hộp mực <strong>TN-2385</strong> in khoảng 2.600 trang, cụm trống <strong>DR-2385</strong> khoảng 12.000 trang — hai bộ đếm riêng, hai thông báo riêng, và reset theo hai đường riêng.",
+      "anh": [
+        {
+          "file": "brother-mfc-l2701dw-bang-dieu-khien",
+          "viTri": 0,
+          "alt": "Bảng điều khiển máy in Brother MFC-L2701DW với màn hình LCD, nút OK, phím mũi tên và nút Clear",
+          "chu": "Bảng điều khiển MFC-L2701DW: có <strong>màn hình LCD, nút OK, phím mũi tên và cả bàn phím số</strong>. Bàn phím số là thứ dòng HL không có — và một số đời dùng chính nó để reset."
+        }
+      ],
+      "dacDiem": [
+        "Máy laser trắng đen đa năng: in – scan – copy – fax, có khay nạp bản gốc tự động",
+        "<strong>Có bàn phím số</strong> bên phải — dòng HL-L2321D và HL-L2366DW đều không có",
+        "MFC-L2701DW có wifi; MFC-L2701D và DCP-L2701D bản không wifi",
+        "Hộp mực <strong>TN-2385</strong> (~2.600 trang), cụm trống <strong>DR-2385</strong> (~12.000 trang) — dùng chung với dòng HL-L2321D"
+      ],
+      "viSaoTieuDe": "Vì sao thay hộp mực mới rồi máy vẫn báo Replace Toner",
+      "viSaoDay": "Hộp mực Brother chính hãng có sẵn một cái <strong>nhông (bánh răng) chưa quay</strong>; lắp vào máy là máy tự nhận và tự đưa bộ đếm về 0. Nhưng hộp mực đổ lại, hoặc hộp mực không kèm nhông mới, thì nhông đã quay hết vòng từ lần trước — máy đọc ra \"vẫn hết mực\" dù trong hộp đầy mực. Lúc đó phải reset bằng tay. Đây cũng là lý do thợ nạp mực tận nơi luôn phải làm thêm bước này.",
+      "luuYRieng": [
+        "<strong>Phải mở nắp trước</strong> thì menu reset mới gọi ra được. Màn hình hiện <em>Front Cover open</em> là đúng, cứ để nguyên vậy mà thao tác.",
+        "Đọc kỹ máy báo <em>Replace Toner</em> hay <em>Replace Drum</em> rồi mới chọn quy trình — hai thông báo, hai đường khác nhau.",
+        "Các đời 2701 có firmware khác nhau chút ít nên nút bấm cuối cùng không giống nhau hoàn toàn. Bài này đưa <strong>hai cách</strong>: làm cách 1 trước, không ăn thì làm cách 2. Bấm nhầm không hại gì cho máy."
+      ],
+      "quyTrinh": [
+        {
+          "ten": "Reset mực (toner) — cách 1, dùng nút OK",
+          "moTa": "Cách phổ biến nhất, làm được trên hầu hết đời 2701. Dùng khi máy báo <em>Replace Toner</em> hoặc <em>Toner Low</em> sau khi đã nạp hoặc thay mực.",
+          "khiNao": [
+            "Vừa nạp mực hoặc thay hộp mực mà màn hình vẫn hiện <em>Replace Toner</em>",
+            "Màn hình hiện <em>Toner Low</em> liên tục dù hộp mực còn đầy",
+            "Hộp mực đổ lại, không kèm nhông reset mới"
+          ],
+          "buoc": [
+            [
+              "Mở nắp trước và để nguyên như vậy",
+              "Mở nắp cửa trước của máy — chỗ lấy cụm trống và hộp mực ra. Màn hình LCD sẽ hiện <em>Front Cover open</em>. Giữ nguyên nắp mở suốt quá trình."
+            ],
+            [
+              "Nhấn giữ nút OK vài giây",
+              "Đè giữ nút <strong>OK</strong> khoảng <strong>2–3 giây</strong>, tới khi màn hình đổi sang dòng <em>Replace Drum</em> thì thả tay ra."
+            ],
+            [
+              "Xác nhận",
+              "Màn hình hiện lựa chọn xác nhận (một số đời hiện <em>Accept</em>). Bấm <strong>OK</strong> để đồng ý."
+            ],
+            [
+              "Đóng nắp trước",
+              "Đóng nắp lại, chờ máy về trạng thái sẵn sàng. Thông báo Replace Toner biến mất là đã reset xong."
+            ]
+          ],
+          "xong": "Không thấy màn hình đổi sang <em>Replace Drum</em> khi giữ OK? Kiểm tra lại nắp trước đã mở chưa — đây là lỗi hay gặp nhất. Vẫn không được thì làm cách 2."
+        },
+        {
+          "ten": "Reset mực (toner) — cách 2, dùng nút Clear",
+          "moTa": "Dùng khi cách 1 không ăn. Một số đời 2701 nhận lệnh reset mực qua nút <strong>Clear</strong> thay vì OK.",
+          "khiNao": [
+            "Đã làm cách 1 mà máy vẫn báo <em>Replace Toner</em>"
+          ],
+          "buoc": [
+            [
+              "Mở nắp trước",
+              "Mở nắp cửa trước, để nguyên nắp mở."
+            ],
+            [
+              "Nhấn giữ nút Clear khoảng 5 giây",
+              "Đè giữ nút <strong>Clear</strong> (nút mũi tên vòng lại, nằm bên trái cụm bàn phím số) khoảng <strong>5 giây</strong>, tới khi màn hình phản hồi thì thả."
+            ],
+            [
+              "Xác nhận nếu máy hỏi",
+              "Màn hình hiện lựa chọn thì bấm <strong>OK</strong> hoặc chọn <em>Yes</em>."
+            ],
+            [
+              "Đóng nắp và in thử",
+              "Đóng nắp, chờ máy sẵn sàng rồi in thử một trang."
+            ]
+          ]
+        },
+        {
+          "ten": "Reset drum (cụm trống)",
+          "moTa": "Dùng khi máy báo <em>Replace Drum</em> hoặc <em>Drum End Soon</em>. Cụm trống DR-2385 có tuổi thọ khoảng 12.000 trang.",
+          "khiNao": [
+            "Màn hình hiện <em>Replace Drum</em> hoặc <em>Drum End Soon</em>",
+            "Vừa thay cụm trống DR-2385 mới mà máy vẫn báo như cũ"
+          ],
+          "buoc": [
+            [
+              "Mở nắp trước",
+              "Mở nắp cửa trước, màn hình hiện <em>Front Cover open</em>."
+            ],
+            [
+              "Nhấn giữ OK khoảng 2 giây",
+              "Đè giữ <strong>OK</strong> khoảng <strong>2 giây</strong> cho tới khi màn hình hiện <em>Replace Drum</em> kèm lựa chọn <em>Yes / No</em>."
+            ],
+            [
+              "Chọn lệnh reset trống",
+              "Nhấn <strong>phím mũi tên Lên</strong> (hoặc bấm số <strong>1</strong> trên bàn phím) để xác nhận đặt lại bộ đếm trống. Một số đời dùng tổ hợp <strong>* 0 0</strong> trên bàn phím số thay cho mũi tên — nếu mũi tên không ăn thì thử tổ hợp này."
+            ],
+            [
+              "Đợi máy xử lý rồi đóng nắp",
+              "Chờ vài giây cho máy hoàn tất, sau đó đóng nắp trước. Thông báo Replace Drum biến mất là xong."
+            ]
+          ],
+          "xong": "Máy báo <em>Drum Error</em> (khác <em>Replace Drum</em>), hoặc bản in có sọc đen lặp lại đều đặn theo chu kỳ — đó là trống hỏng thật, reset không cứu được, phải thay cụm trống DR-2385 mới."
+        }
+      ],
+      "faqRieng": [
+        [
+          "Reset bằng nút và reset bằng nhông khác nhau thế nào ?",
+          "Reset bằng nút là bấm trên bảng điều khiển như hướng dẫn ở trên, ai cũng làm được. Reset bằng <strong>nhông</strong> là thay hoặc xoay lại cái bánh răng nhỏ gắn bên hông hộp mực — thợ nạp mực hay dùng vì làm một lần là hộp mực tự nhận mãi, khỏi phải bấm nút mỗi lần. Cách nhông cần tháo hộp mực nên người dùng thường thôi."
+        ],
+        [
+          "MFC-L2701DW và MFC-L2701D khác nhau chỗ nào ?",
+          "Cùng nền phần cứng, cùng hộp mực TN-2385 và trống DR-2385, cách reset giống hệt nhau. Khác duy nhất là bản DW có <strong>wifi</strong> nên in được từ điện thoại, bản D thì chỉ nối dây."
+        ],
+        [
+          "Vì sao giữ OK lại hiện chữ Replace Drum trong khi tôi muốn reset mực ?",
+          "Đó là màn hình chung của chế độ reset trên dòng này — máy đưa ra một menu, còn việc nó reset mực hay reset trống là do <strong>nút bấm tiếp theo</strong> quyết định. Đóng nắp luôn thì thường là reset mực; bấm mũi tên Lên để xác nhận thì là reset trống. Chi tiết ở hai quy trình trên."
+        ],
+        [
+          "Hộp mực TN-2385 in được bao nhiêu trang ?",
+          "Khoảng <strong>2.600 trang</strong> với độ phủ mực tiêu chuẩn 5% — tức là văn bản chữ bình thường. In tài liệu nhiều hình, nhiều vùng đen thì số trang giảm đáng kể. Cụm trống DR-2385 thì khoảng 12.000 trang, tức vài lần thay mực mới phải thay trống một lần."
+        ],
+        [
+          "Reset xong vẫn báo lỗi thì kiểm tra gì ?",
+          "Ba thứ theo thứ tự: nắp trước đã mở đúng lúc thao tác chưa; có bấm nhầm quy trình mực sang quy trình trống không; và chân tiếp xúc hộp mực có bám bụi mực dày không — lau bằng khăn khô rồi lắp lại. Vẫn không được thì thử cách 2 ở trên."
+        ]
+      ],
+      "lienQuan": [
+        "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+        "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2361dn-l2366dw",
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-dcp-l2520d-l2540dw-de-nhat"
+      ]
+    },
     {
       "_ghichu": "Epson L1210 — 260 lượt/th, site chưa có trang. namphong đã có trang riêng; chủ shop chốt vẫn viết để chiếm thêm vị trí trên cùng trang kết quả.",
       "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210",
@@ -353,7 +672,12 @@
       "tai": "https://tinhocnamphong.net/phan-mem-reset-may-in-epson-l1210",
       "taiNhan": "Tải phần mềm reset Epson L1210 (Adjustment Program)",
       "anh": [
-        { "file": "epson-l1210-may-that", "viTri": 0, "alt": "Máy in phun Epson L1210 EcoTank đang in một bản ảnh màu khổ A4", "chu": "Epson L1210 là máy <strong>chỉ in</strong>, không scan không copy — khác L3210 cùng thời vốn làm được cả ba việc." }
+        {
+          "file": "epson-l1210-may-that",
+          "viTri": 0,
+          "alt": "Máy in phun Epson L1210 EcoTank đang in một bản ảnh màu khổ A4",
+          "chu": "Epson L1210 là máy <strong>chỉ in</strong>, không scan không copy — khác L3210 cùng thời vốn làm được cả ba việc."
+        }
       ],
       "dacDiem": [
         "Khổ A4, 4 màu mực, dùng mực Epson 003 loại đổ bình",
@@ -367,8 +691,14 @@
         "Ở bước chọn model trong phần mềm, chọn đúng <strong>L1210</strong>. Nếu danh sách không có, chọn dòng gần nhất cùng nhóm — chọn sai model thì phần mềm vẫn chạy nhưng bộ đếm không về 0."
       ],
       "faqRieng": [
-        ["Epson L1210 và L3210 dùng chung tool reset được không ?", "Không nên. Hai máy tuy cùng đời và cùng dùng mực 003 nhưng khác cấu hình — L1210 chỉ in, L3210 có thêm scan và copy — nên mỗi máy có bản Adjustment Program riêng. Tải đúng bản cho model của mình, chọn sai model là reset không ăn."],
-        ["Máy nháy 2 đèn đỏ có phải hỏng đầu in không ?", "Thường là không. Nháy hai đèn đỏ xen kẽ kèm thông báo <em>Service Required</em> là báo tràn bộ đếm mực thải — lỗi phần mềm, reset là in tiếp. Nếu reset xong vẫn nháy đèn, hoặc bản in ra bị sọc, mất màu thì lúc đó mới nghi tới đầu in tắc."]
+        [
+          "Epson L1210 và L3210 dùng chung tool reset được không ?",
+          "Không nên. Hai máy tuy cùng đời và cùng dùng mực 003 nhưng khác cấu hình — L1210 chỉ in, L3210 có thêm scan và copy — nên mỗi máy có bản Adjustment Program riêng. Tải đúng bản cho model của mình, chọn sai model là reset không ăn."
+        ],
+        [
+          "Máy nháy 2 đèn đỏ có phải hỏng đầu in không ?",
+          "Thường là không. Nháy hai đèn đỏ xen kẽ kèm thông báo <em>Service Required</em> là báo tràn bộ đếm mực thải — lỗi phần mềm, reset là in tiếp. Nếu reset xong vẫn nháy đèn, hoặc bản in ra bị sọc, mất màu thì lúc đó mới nghi tới đầu in tắc."
+        ]
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
@@ -376,7 +706,6 @@
         "Phan-mem-reset-may-in/adjustment-program-epson"
       ]
     },
-
     {
       "_ghichu": "TRANG TRỤ TỔNG — 960 lượt/th ở nhóm không nêu model ('cách reset máy in' 170, 'reset máy in' 140). Khách chưa biết máy mình cần gì. Vai trò: phân loại 3 kiểu reset rồi dẫn xuống đúng trang model — cũng là chỗ dồn link nội bộ tự nhiên.",
       "path": "Phan-mem-reset-may-in/cach-reset-may-in",
@@ -412,11 +741,26 @@
             "Lệnh in treo trong hàng đợi, máy không nhận lệnh mới"
           ],
           "buoc": [
-            ["Tìm đúng bản Adjustment Program cho model máy", "Mỗi dòng Epson có bản phần mềm riêng — tải nhầm bản của model khác thì chạy được nhưng bộ đếm không về 0. Tra bảng cuối bài để tới đúng trang model."],
-            ["Tắt phần mềm diệt virus, nối dây USB", "Adjustment Program hay bị diệt virus chặn nhầm. Tắt tạm, nối máy in với máy tính bằng dây USB trực tiếp — không reset qua wifi được."],
-            ["Chạy phần mềm, chọn đúng model rồi vào Particular adjustment mode", "Mở AdjProg.exe bằng quyền quản trị, chọn model và cổng Auto selection, sau đó vào <strong>Particular adjustment mode</strong>."],
-            ["Chọn Waste ink pad counter rồi bấm Initialize", "Tích ô Main pad counter, bấm Check để xem đang bao nhiêu phần trăm, rồi bấm <strong>Initialize</strong> để đưa về 0."],
-            ["Tắt máy in, chờ 10 giây, bật lại", "Đèn đỏ tắt, máy nhận lệnh in bình thường."]
+            [
+              "Tìm đúng bản Adjustment Program cho model máy",
+              "Mỗi dòng Epson có bản phần mềm riêng — tải nhầm bản của model khác thì chạy được nhưng bộ đếm không về 0. Tra bảng cuối bài để tới đúng trang model."
+            ],
+            [
+              "Tắt phần mềm diệt virus, nối dây USB",
+              "Adjustment Program hay bị diệt virus chặn nhầm. Tắt tạm, nối máy in với máy tính bằng dây USB trực tiếp — không reset qua wifi được."
+            ],
+            [
+              "Chạy phần mềm, chọn đúng model rồi vào Particular adjustment mode",
+              "Mở AdjProg.exe bằng quyền quản trị, chọn model và cổng Auto selection, sau đó vào <strong>Particular adjustment mode</strong>."
+            ],
+            [
+              "Chọn Waste ink pad counter rồi bấm Initialize",
+              "Tích ô Main pad counter, bấm Check để xem đang bao nhiêu phần trăm, rồi bấm <strong>Initialize</strong> để đưa về 0."
+            ],
+            [
+              "Tắt máy in, chờ 10 giây, bật lại",
+              "Đèn đỏ tắt, máy nhận lệnh in bình thường."
+            ]
           ],
           "xong": "Xem giải thích đầy đủ về phần mềm này ở trang <a href=\"adjustment-program-epson\">Adjustment Program Epson</a>."
         },
@@ -429,9 +773,18 @@
             "Đèn Toner hoặc đèn Drum trên bảng điều khiển sáng"
           ],
           "buoc": [
-            ["Xem máy có màn hình hay không", "Máy chỉ có đèn LED và nút Go thì reset bằng cách đếm số lần bấm. Máy có màn hình LCD, nút OK và mũi tên thì vào menu chọn lệnh. Hai cách hoàn toàn khác nhau."],
-            ["Xem đang báo mực hay báo trống", "Đèn Toner / chữ Replace Toner → reset mực. Đèn Drum / chữ Replace Drum → reset trống. Làm nhầm là không ăn."],
-            ["Làm theo đúng quy trình của loại máy đó", "Reset mực: tắt nguồn, giữ Go rồi bật lại, bấm Go theo số lần quy định. Reset drum: để máy bật, mở nắp, giữ Go tới khi đèn sáng hết (máy không màn hình) hoặc giữ OK để vào menu Drum Unit (máy có màn hình)."]
+            [
+              "Xem máy có màn hình hay không",
+              "Máy chỉ có đèn LED và nút Go thì reset bằng cách đếm số lần bấm. Máy có màn hình LCD, nút OK và mũi tên thì vào menu chọn lệnh. Hai cách hoàn toàn khác nhau."
+            ],
+            [
+              "Xem đang báo mực hay báo trống",
+              "Đèn Toner / chữ Replace Toner → reset mực. Đèn Drum / chữ Replace Drum → reset trống. Làm nhầm là không ăn."
+            ],
+            [
+              "Làm theo đúng quy trình của loại máy đó",
+              "Reset mực: tắt nguồn, giữ Go rồi bật lại, bấm Go theo số lần quy định. Reset drum: để máy bật, mở nắp, giữ Go tới khi đèn sáng hết (máy không màn hình) hoặc giữ OK để vào menu Drum Unit (máy có màn hình)."
+            ]
           ],
           "xong": "Chi tiết từng bước kèm ảnh bảng điều khiển máy thật: <a href=\"cach-reset-may-in-brother\">cách reset máy in Brother</a>."
         },
@@ -444,45 +797,237 @@
             "Máy Canon phun báo mã lỗi <em>5B00</em> hoặc <em>1700</em>"
           ],
           "buoc": [
-            ["Phân biệt cảnh báo với khoá hẳn", "Máy chỉ báo <em>Toner low</em> mà vẫn in được thì chỉnh trong Printer properties cho máy bỏ qua cảnh báo, in tiếp tới khi mực nhạt thật."],
-            ["Tháo hộp mực, lau chân tiếp xúc chip", "Chip là miếng mạch nhỏ gắn cạnh hộp mực. Lau sạch chân tiếp xúc bằng khăn khô rồi lắp lại — khá nhiều ca chỉ là bẩn chân chip."],
-            ["Thay chip mới nếu vẫn không in", "Dòng HP 105A/106A và nhiều dòng laser đời mới không reset chip bằng phần mềm được, phải thay chip rời. Chip bán sẵn, thay bằng tay vài phút."],
-            ["Riêng máy phun Canon G-series thì dùng Service Tool", "Canon G1010/G2010/G3010 báo 5B00 là tràn bộ đếm mực thải, reset bằng phần mềm Service Tool giống kiểu Epson."]
+            [
+              "Phân biệt cảnh báo với khoá hẳn",
+              "Máy chỉ báo <em>Toner low</em> mà vẫn in được thì chỉnh trong Printer properties cho máy bỏ qua cảnh báo, in tiếp tới khi mực nhạt thật."
+            ],
+            [
+              "Tháo hộp mực, lau chân tiếp xúc chip",
+              "Chip là miếng mạch nhỏ gắn cạnh hộp mực. Lau sạch chân tiếp xúc bằng khăn khô rồi lắp lại — khá nhiều ca chỉ là bẩn chân chip."
+            ],
+            [
+              "Thay chip mới nếu vẫn không in",
+              "Dòng HP 105A/106A và nhiều dòng laser đời mới không reset chip bằng phần mềm được, phải thay chip rời. Chip bán sẵn, thay bằng tay vài phút."
+            ],
+            [
+              "Riêng máy phun Canon G-series thì dùng Service Tool",
+              "Canon G1010/G2010/G3010 báo 5B00 là tràn bộ đếm mực thải, reset bằng phần mềm Service Tool giống kiểu Epson."
+            ]
           ]
         }
       ],
       "bangTraCuu": {
         "tieuDe": "Tra nhanh: máy của bạn reset kiểu nào",
         "moTa": "Tìm dòng máy gần đúng nhất rồi bấm vào cột cuối để tới hướng dẫn chi tiết từng bước.",
-        "cot": ["Dòng máy", "Kiểu reset", "Dấu hiệu thường gặp"],
+        "cot": [
+          "Dòng máy",
+          "Kiểu reset",
+          "Dấu hiệu thường gặp"
+        ],
         "dong": [
-          { "o": ["Epson L3210, L3211", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L1210, L1250", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ, Service Required"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L3110", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L1110", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1110", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L3150, L3151", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L3250, L3251, L3256", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ, có wifi"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L4150, L4160", "Phần mềm Adjustment Program", "Nháy đèn đỏ liên tục"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L805, L800, L850", "Phần mềm Adjustment Program", "Máy in ảnh, đầy bộ đếm nhanh"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l805", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L1800, L1300 (khổ A3)", "Phần mềm Adjustment Program", "Tràn mực thải sau khi in nhiều A3"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L110, L210, L300, L350", "Phần mềm Adjustment Program", "Đời cũ, nháy 2 đèn đỏ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300", "nhan": "Xem hướng dẫn" },
-          { "o": ["Epson L310", "Phần mềm Adjustment Program", "Nháy 2 đèn đỏ"], "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310", "nhan": "Xem hướng dẫn" },
-          { "o": ["Brother HL-L2321D, HL-L2320D", "Bấm nút Go trên máy", "Báo hết mực dù vừa đổ, Replace Drum"], "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d", "nhan": "Xem hướng dẫn" },
-          { "o": ["Brother HL-L2361DN, HL-L2366DW", "Menu trên màn hình LCD", "Replace Drum, Replace Toner"], "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2361dn-l2366dw", "nhan": "Xem hướng dẫn" },
-          { "o": ["Brother HL-L5210DN", "Bấm nút trên máy", "Báo hết mực sau khi thay hộp"], "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn", "nhan": "Xem hướng dẫn" },
-          { "o": ["Brother DCP-B7535DW", "Reset nhông hộp mực", "Báo hết mực sau khi đổ"], "toi": "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw", "nhan": "Xem hướng dẫn" },
-          { "o": ["Canon G1010, G2010, G3010", "Service Tool", "Báo lỗi 5B00 hoặc 1700"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-canon-g1010-g2010-g3010", "nhan": "Xem hướng dẫn" },
-          { "o": ["HP 135A, 135W, 137W", "Thay hoặc reset chip mực", "Toner low dù mực vừa nạp đầy"], "toi": "Phan-mem-reset-may-in/reset-chip-may-in-hp-135a-135w-137w", "nhan": "Xem hướng dẫn" },
-          { "o": ["HP 107A, 107W", "Thay hoặc reset chip mực", "Máy ngừng in dù còn mực"], "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-men-reset-hp-107a-107w-135a", "nhan": "Xem hướng dẫn" },
-          { "o": ["Samsung SCX-4300", "Reset chip mực", "Báo hết mực sau khi đổ"], "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-reset-muc-may-in-samsung-scx-4300-hieu-qua", "nhan": "Xem hướng dẫn" }
+          {
+            "o": [
+              "Epson L3210, L3211",
+              "Phần mềm Adjustment Program",
+              "Nháy 2 đèn đỏ"
+            ],
+            "toi": "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L1210, L1250",
+              "Phần mềm Adjustment Program",
+              "Nháy 2 đèn đỏ, Service Required"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L3110",
+              "Phần mềm Adjustment Program",
+              "Nháy 2 đèn đỏ"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L1110",
+              "Phần mềm Adjustment Program",
+              "Nháy 2 đèn đỏ"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1110",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L3150, L3151",
+              "Phần mềm Adjustment Program",
+              "Nháy 2 đèn đỏ"
+            ],
+            "toi": "Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L3250, L3251, L3256",
+              "Phần mềm Adjustment Program",
+              "Nháy 2 đèn đỏ, có wifi"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L4150, L4160",
+              "Phần mềm Adjustment Program",
+              "Nháy đèn đỏ liên tục"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L805, L800, L850",
+              "Phần mềm Adjustment Program",
+              "Máy in ảnh, đầy bộ đếm nhanh"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l805",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L1800, L1300 (khổ A3)",
+              "Phần mềm Adjustment Program",
+              "Tràn mực thải sau khi in nhiều A3"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L110, L210, L300, L350",
+              "Phần mềm Adjustment Program",
+              "Đời cũ, nháy 2 đèn đỏ"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Epson L310",
+              "Phần mềm Adjustment Program",
+              "Nháy 2 đèn đỏ"
+            ],
+            "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Brother HL-L2321D, HL-L2320D",
+              "Bấm nút Go trên máy",
+              "Báo hết mực dù vừa đổ, Replace Drum"
+            ],
+            "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Brother HL-L2361DN, HL-L2366DW",
+              "Menu trên màn hình LCD",
+              "Replace Drum, Replace Toner"
+            ],
+            "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2361dn-l2366dw",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Brother HL-L5210DN",
+              "Bấm nút trên máy",
+              "Báo hết mực sau khi thay hộp"
+            ],
+            "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Brother MFC-L2701DW, MFC-L2701D",
+              "Nút OK trên bàn phím",
+              "Replace Toner, Replace Drum"
+            ],
+            "toi": "Phan-mem-reset-may-in/reset-may-in-brother-mfc-l2701dw",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Brother DCP-B7535DW",
+              "Reset nhông hộp mực",
+              "Báo hết mực sau khi đổ"
+            ],
+            "toi": "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Canon G1010, G2010, G3010",
+              "Service Tool",
+              "Báo lỗi 5B00 hoặc 1700"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-canon-g1010-g2010-g3010",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "HP 135A, 135W, 137W",
+              "Thay hoặc reset chip mực",
+              "Toner low dù mực vừa nạp đầy"
+            ],
+            "toi": "Phan-mem-reset-may-in/reset-chip-may-in-hp-135a-135w-137w",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "HP 107A, 107W",
+              "Thay hoặc reset chip mực",
+              "Máy ngừng in dù còn mực"
+            ],
+            "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-men-reset-hp-107a-107w-135a",
+            "nhan": "Xem hướng dẫn"
+          },
+          {
+            "o": [
+              "Samsung SCX-4300",
+              "Reset chip mực",
+              "Báo hết mực sau khi đổ"
+            ],
+            "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-reset-muc-may-in-samsung-scx-4300-hieu-qua",
+            "nhan": "Xem hướng dẫn"
+          }
         ]
       },
       "faqRieng": [
-        ["Reset máy in có làm hỏng máy không ?", "Không. Reset chỉ ghi lại một con số trong bộ nhớ, không đụng tới phần cơ, đầu in hay trống. Bấm sai thì máy đơn giản là không nhận lệnh, làm lại từ đầu là được. Cái cần lưu ý là lý do nhà sản xuất đặt ngưỡng: với máy phun, nếu miếng thấm mực thải đã no thật thì reset xong mực có thể trào ra ngoài — nên kiểm tra miếng thấm chứ đừng reset mãi."],
-        ["Reset máy in có mất bảo hành không ?", "Với máy Brother, HP, Canon thì reset bằng nút bấm hoặc thay chip là thao tác bình thường, không mất bảo hành. Với máy phun Epson, phần mềm Adjustment Program là công cụ nội bộ của hãng — dùng nó không làm hỏng máy nhưng cũng không phải quy trình hãng khuyến khích cho người dùng cuối. Máy còn hạn bảo hành thì nên mang ra trung tâm bảo hành trước."],
-        ["Máy tôi không có trong bảng thì làm sao ?", "Tìm dòng gần nhất cùng hãng và cùng loại (phun hay laser) — các đời cùng họ thường dùng chung quy trình. Nếu vẫn không chắc, gọi số bên dưới đọc tên model, kỹ thuật sẽ nói ngay máy đó reset kiểu gì, không tính phí tư vấn."],
-        ["Reset xong được bao lâu thì phải làm lại ?", "Tuỳ mức độ sử dụng. Máy phun Epson in văn bản thường 5.000–10.000 trang mới đầy lại bộ đếm, in ảnh phủ kín thì chỉ 1.000–2.000 trang. Máy laser Brother thì mỗi lần đổ mực là reset một lần. Máy in càng nhiều mỗi lần thì càng lâu phải reset — nghịch lý là bật tắt nhiều lần trong ngày lại làm đầy bộ đếm nhanh hơn."],
-        ["Tự reset ở nhà có được không hay phải gọi thợ ?", "Phần lớn trường hợp tự làm được, hướng dẫn trên trang này đủ chi tiết để làm theo. Nên gọi thợ khi: reset xong bản in vẫn mờ hoặc có sọc (vấn đề nằm ở mực hoặc trống), máy báo Drum Error, hoặc máy phun đã tràn mực thải ra ngoài. Những ca đó reset không giải quyết được."]
+        [
+          "Reset máy in có làm hỏng máy không ?",
+          "Không. Reset chỉ ghi lại một con số trong bộ nhớ, không đụng tới phần cơ, đầu in hay trống. Bấm sai thì máy đơn giản là không nhận lệnh, làm lại từ đầu là được. Cái cần lưu ý là lý do nhà sản xuất đặt ngưỡng: với máy phun, nếu miếng thấm mực thải đã no thật thì reset xong mực có thể trào ra ngoài — nên kiểm tra miếng thấm chứ đừng reset mãi."
+        ],
+        [
+          "Reset máy in có mất bảo hành không ?",
+          "Với máy Brother, HP, Canon thì reset bằng nút bấm hoặc thay chip là thao tác bình thường, không mất bảo hành. Với máy phun Epson, phần mềm Adjustment Program là công cụ nội bộ của hãng — dùng nó không làm hỏng máy nhưng cũng không phải quy trình hãng khuyến khích cho người dùng cuối. Máy còn hạn bảo hành thì nên mang ra trung tâm bảo hành trước."
+        ],
+        [
+          "Máy tôi không có trong bảng thì làm sao ?",
+          "Tìm dòng gần nhất cùng hãng và cùng loại (phun hay laser) — các đời cùng họ thường dùng chung quy trình. Nếu vẫn không chắc, gọi số bên dưới đọc tên model, kỹ thuật sẽ nói ngay máy đó reset kiểu gì, không tính phí tư vấn."
+        ],
+        [
+          "Reset xong được bao lâu thì phải làm lại ?",
+          "Tuỳ mức độ sử dụng. Máy phun Epson in văn bản thường 5.000–10.000 trang mới đầy lại bộ đếm, in ảnh phủ kín thì chỉ 1.000–2.000 trang. Máy laser Brother thì mỗi lần đổ mực là reset một lần. Máy in càng nhiều mỗi lần thì càng lâu phải reset — nghịch lý là bật tắt nhiều lần trong ngày lại làm đầy bộ đếm nhanh hơn."
+        ],
+        [
+          "Tự reset ở nhà có được không hay phải gọi thợ ?",
+          "Phần lớn trường hợp tự làm được, hướng dẫn trên trang này đủ chi tiết để làm theo. Nên gọi thợ khi: reset xong bản in vẫn mờ hoặc có sọc (vấn đề nằm ở mực hoặc trống), máy báo Drum Error, hoặc máy phun đã tràn mực thải ra ngoài. Những ca đó reset không giải quyết được."
+        ]
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/adjustment-program-epson",
@@ -490,7 +1035,6 @@
         "Phan-mem-reset-may-in"
       ]
     },
-
     {
       "_ghichu": "TRANG TRỤ EPSON — 770 lượt/th ('adjustment program epson' 260, 'adjustment program' 140). Site đang xếp 7,8 cho từ khoá này mà không có trang trụ nào, đang ăn nhờ trang model lẻ.",
       "path": "Phan-mem-reset-may-in/adjustment-program-epson",
@@ -527,14 +1071,38 @@
             "Lệnh in treo trong hàng đợi, bản in không ra dù máy vẫn còn mực"
           ],
           "buoc": [
-            ["Tắt phần mềm diệt virus và tường lửa", "Adjustment Program hay bị các phần mềm diệt virus chặn nhầm. Tắt tạm Windows Defender và phần mềm diệt virus đang dùng, sau khi reset xong thì bật lại."],
-            ["Giải nén và chạy phần mềm", "Giải nén file vừa tải, chạy <strong>AdjProg.exe</strong> bằng chuột phải → <strong>Run as administrator</strong>. Cắm dây USB nối máy in với máy tính, bật máy in lên."],
-            ["Chọn đúng model máy in", "Bấm nút <strong>Select</strong>, ở mục Model Name chọn đúng model máy của mình, mục Port chọn <strong>Auto selection</strong> rồi bấm <strong>OK</strong>. Chọn sai model là reset không ăn."],
-            ["Vào chế độ Particular adjustment mode", "Ở màn hình chính, bấm <strong>Particular adjustment mode</strong> để mở danh sách các chức năng chỉnh máy."],
-            ["Chọn Waste ink pad counter", "Trong danh sách, tìm và chọn dòng <strong>Waste ink pad counter</strong> (bộ đếm mực thải) rồi bấm <strong>OK</strong>."],
-            ["Kiểm tra mức đếm hiện tại", "Tích vào ô <strong>Main pad counter</strong>, bấm <strong>Check</strong> để xem bộ đếm đang ở bao nhiêu phần trăm. Hiện 100% hoặc hơn là đúng máy đã tràn bộ đếm."],
-            ["Bấm Initialize để đưa bộ đếm về 0", "Vẫn giữ ô <strong>Main pad counter</strong> đang tích, bấm <strong>Initialize</strong> rồi bấm <strong>OK</strong> khi có hộp thoại xác nhận. Đây là bước chính."],
-            ["Tắt máy in và bật lại", "Tắt máy in bằng nút nguồn trên máy, chờ 10 giây rồi bật lại. Đèn đỏ tắt, máy nhận lệnh in bình thường."]
+            [
+              "Tắt phần mềm diệt virus và tường lửa",
+              "Adjustment Program hay bị các phần mềm diệt virus chặn nhầm. Tắt tạm Windows Defender và phần mềm diệt virus đang dùng, sau khi reset xong thì bật lại."
+            ],
+            [
+              "Giải nén và chạy phần mềm",
+              "Giải nén file vừa tải, chạy <strong>AdjProg.exe</strong> bằng chuột phải → <strong>Run as administrator</strong>. Cắm dây USB nối máy in với máy tính, bật máy in lên."
+            ],
+            [
+              "Chọn đúng model máy in",
+              "Bấm nút <strong>Select</strong>, ở mục Model Name chọn đúng model máy của mình, mục Port chọn <strong>Auto selection</strong> rồi bấm <strong>OK</strong>. Chọn sai model là reset không ăn."
+            ],
+            [
+              "Vào chế độ Particular adjustment mode",
+              "Ở màn hình chính, bấm <strong>Particular adjustment mode</strong> để mở danh sách các chức năng chỉnh máy."
+            ],
+            [
+              "Chọn Waste ink pad counter",
+              "Trong danh sách, tìm và chọn dòng <strong>Waste ink pad counter</strong> (bộ đếm mực thải) rồi bấm <strong>OK</strong>."
+            ],
+            [
+              "Kiểm tra mức đếm hiện tại",
+              "Tích vào ô <strong>Main pad counter</strong>, bấm <strong>Check</strong> để xem bộ đếm đang ở bao nhiêu phần trăm. Hiện 100% hoặc hơn là đúng máy đã tràn bộ đếm."
+            ],
+            [
+              "Bấm Initialize để đưa bộ đếm về 0",
+              "Vẫn giữ ô <strong>Main pad counter</strong> đang tích, bấm <strong>Initialize</strong> rồi bấm <strong>OK</strong> khi có hộp thoại xác nhận. Đây là bước chính."
+            ],
+            [
+              "Tắt máy in và bật lại",
+              "Tắt máy in bằng nút nguồn trên máy, chờ 10 giây rồi bật lại. Đèn đỏ tắt, máy nhận lệnh in bình thường."
+            ]
           ],
           "xong": "Một số dòng có thêm ô <strong>Platen pad counter</strong> bên cạnh Main pad counter. Nếu máy vẫn báo lỗi sau khi reset Main, quay lại tích thêm ô đó và Initialize lần nữa."
         }
@@ -542,28 +1110,130 @@
       "bangTraCuu": {
         "tieuDe": "Máy nào dùng bản nào — bấm để tới trang tải và hướng dẫn",
         "moTa": "Mỗi model một bản Adjustment Program riêng. Tìm đúng dòng máy của mình rồi bấm sang trang tương ứng.",
-        "cot": ["Dòng máy", "Đặc điểm"],
+        "cot": [
+          "Dòng máy",
+          "Đặc điểm"
+        ],
         "dong": [
-          { "o": ["Epson L3210, L3211", "Phổ biến nhất, in–scan–copy"], "toi": "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L1210, L1250", "Chỉ in, không scan"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L3110", "In–scan–copy, không wifi"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L1110", "Chỉ in, gọn nhẹ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1110", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L3150, L3151", "In–scan–copy, có wifi"], "toi": "Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L3250, L3251, L3256", "Có wifi, hay reset hỏng vì để nối wifi"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L4150, L4160", "L4160 có màn hình và in 2 mặt"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L805, L800, L850", "6 màu, chuyên in ảnh và in đĩa"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l805", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L1800, L1300", "Khổ A3, in ảnh lớn và chuyển nhiệt"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L110, L210, L300, L350", "Các đời cũ"], "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L310", "Đời cũ, vẫn rất phổ biến"], "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310", "nhan": "Tải và xem cách reset" },
-          { "o": ["Epson L350", "Đời cũ"], "toi": "Phan-mem-reset-may-in/Phan-mem-reset-may-in-epson-l350", "nhan": "Tải và xem cách reset" }
+          {
+            "o": [
+              "Epson L3210, L3211",
+              "Phổ biến nhất, in–scan–copy"
+            ],
+            "toi": "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L1210, L1250",
+              "Chỉ in, không scan"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1210",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L3110",
+              "In–scan–copy, không wifi"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L1110",
+              "Chỉ in, gọn nhẹ"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1110",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L3150, L3151",
+              "In–scan–copy, có wifi"
+            ],
+            "toi": "Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L3250, L3251, L3256",
+              "Có wifi, hay reset hỏng vì để nối wifi"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l3250-l3251",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L4150, L4160",
+              "L4160 có màn hình và in 2 mặt"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l4150-l4160",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L805, L800, L850",
+              "6 màu, chuyên in ảnh và in đĩa"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l805",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L1800, L1300",
+              "Khổ A3, in ảnh lớn và chuyển nhiệt"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L110, L210, L300, L350",
+              "Các đời cũ"
+            ],
+            "toi": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L310",
+              "Đời cũ, vẫn rất phổ biến"
+            ],
+            "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310",
+            "nhan": "Tải và xem cách reset"
+          },
+          {
+            "o": [
+              "Epson L350",
+              "Đời cũ"
+            ],
+            "toi": "Phan-mem-reset-may-in/Phan-mem-reset-may-in-epson-l350",
+            "nhan": "Tải và xem cách reset"
+          }
         ]
       },
       "faqRieng": [
-        ["Adjustment Program có phải phần mềm crack không ?", "Không phải crack. Đây là công cụ kỹ thuật do chính Epson làm ra cho trung tâm bảo hành, dùng để chỉnh thông số máy sau khi sửa chữa. Nó bị coi là \"không chính thức\" vì hãng không phát hành công khai cho người dùng cuối, chứ bản thân phần mềm là đồ gốc của hãng."],
-        ["Vì sao máy diệt virus báo file này là virus ?", "Vì phần mềm can thiệp trực tiếp vào bộ nhớ thiết bị và thường được đóng gói lại nhiều lần khi chia sẻ, nên bị các bộ máy quét xếp vào nhóm đáng ngờ. Đây là báo nhầm phổ biến. Cách an toàn: tải từ nguồn tin cậy, tắt diệt virus lúc chạy, xong thì bật lại và quét lại máy."],
-        ["Một bản Adjustment Program reset được mấy lần ?", "Nhiều bản đi kèm khoá dùng một lần cho một máy — reset xong lần đó là hết, muốn reset lần sau phải xin khoá mới, giống thẻ cào. Cũng có bản dùng lại được nhiều lần. Cái này tuỳ nguồn tải chứ không phải tuỳ model máy."],
-        ["Chạy phần mềm mà không thấy máy in đâu ?", "Kiểm tra bốn thứ theo thứ tự: máy in đã bật chưa; dây USB có cắm trực tiếp không (đừng qua hub); có chạy bằng Run as administrator không; và có chọn đúng Port là Auto selection không. Máy Epson có wifi thì phải cắm thêm dây USB, phần mềm không thấy máy qua wifi."],
-        ["Reset xong máy vẫn nháy đèn đỏ thì sao ?", "Thử tích thêm ô <strong>Platen pad counter</strong> rồi Initialize lần nữa — một số dòng có hai bộ đếm. Nếu vẫn nháy, khả năng là chọn sai model lúc đầu, hoặc miếng thấm mực thải đã no thật và máy phát hiện được. Trường hợp sau thì phải thay miếng thấm."]
+        [
+          "Adjustment Program có phải phần mềm crack không ?",
+          "Không phải crack. Đây là công cụ kỹ thuật do chính Epson làm ra cho trung tâm bảo hành, dùng để chỉnh thông số máy sau khi sửa chữa. Nó bị coi là \"không chính thức\" vì hãng không phát hành công khai cho người dùng cuối, chứ bản thân phần mềm là đồ gốc của hãng."
+        ],
+        [
+          "Vì sao máy diệt virus báo file này là virus ?",
+          "Vì phần mềm can thiệp trực tiếp vào bộ nhớ thiết bị và thường được đóng gói lại nhiều lần khi chia sẻ, nên bị các bộ máy quét xếp vào nhóm đáng ngờ. Đây là báo nhầm phổ biến. Cách an toàn: tải từ nguồn tin cậy, tắt diệt virus lúc chạy, xong thì bật lại và quét lại máy."
+        ],
+        [
+          "Một bản Adjustment Program reset được mấy lần ?",
+          "Nhiều bản đi kèm khoá dùng một lần cho một máy — reset xong lần đó là hết, muốn reset lần sau phải xin khoá mới, giống thẻ cào. Cũng có bản dùng lại được nhiều lần. Cái này tuỳ nguồn tải chứ không phải tuỳ model máy."
+        ],
+        [
+          "Chạy phần mềm mà không thấy máy in đâu ?",
+          "Kiểm tra bốn thứ theo thứ tự: máy in đã bật chưa; dây USB có cắm trực tiếp không (đừng qua hub); có chạy bằng Run as administrator không; và có chọn đúng Port là Auto selection không. Máy Epson có wifi thì phải cắm thêm dây USB, phần mềm không thấy máy qua wifi."
+        ],
+        [
+          "Reset xong máy vẫn nháy đèn đỏ thì sao ?",
+          "Thử tích thêm ô <strong>Platen pad counter</strong> rồi Initialize lần nữa — một số dòng có hai bộ đếm. Nếu vẫn nháy, khả năng là chọn sai model lúc đầu, hoặc miếng thấm mực thải đã no thật và máy phát hiện được. Trường hợp sau thì phải thay miếng thấm."
+        ]
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/cach-reset-may-in",
@@ -572,7 +1242,6 @@
         "Phan-mem-reset-may-in"
       ]
     },
-
     {
       "path": "Phan-mem-reset-may-in/phan-mem-reset-epson-l110-l210-l300",
       "title": "Phần Mềm Reset Epson L110, L210, L300 — Tool Miễn Phí",
@@ -583,7 +1252,10 @@
       "loi": "nháy 2 đèn đỏ xen kẽ và báo hết hạn sử dụng miếng thấm mực thải",
       "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l210/",
       "taiNhan": "Tải phần mềm reset Epson L110 / L210 / L300",
-      "lienQuan": ["Phan-mem-reset-may-in/Phan-mem-reset-may-in-epson-l350", "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310"]
+      "lienQuan": [
+        "Phan-mem-reset-may-in/Phan-mem-reset-may-in-epson-l350",
+        "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310"
+      ]
     },
     {
       "path": "Phan-mem-reset-may-in/phan-mem-reset-canon-g1010-g2010-g3010",
@@ -596,7 +1268,41 @@
       "tai": "https://tinhocnamphong.net/phan-mem-reset-may-in-canon-g1010-g2010-g3010/",
       "taiNhan": "Tải phần mềm reset Canon G1010 / G2010 / G3010 (Service Tool)",
       "canon": true,
-      "lienQuan": ["thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-phun-canon-toan-tap"]
+      "dacDiem": [
+        "Máy in phun <strong>bình mực ngoài</strong> (Canon gọi là dòng G — MegaTank), mực GI-790 bốn màu",
+        "<strong>G1010 chỉ in</strong>; G2010 thêm scan và copy; G3010 có đủ ba việc và thêm <strong>wifi</strong>",
+        "Cách reset của cả ba giống hệt nhau vì chung nền phần cứng",
+        "Khác Epson ở chỗ Canon dùng <strong>Service Tool</strong>, không phải Adjustment Program"
+      ],
+      "viSaoTieuDe": "Mã lỗi 5B00 và 1700 nghĩa là gì",
+      "viSaoDay": "Cả hai mã đều báo một chuyện: <strong>bộ đếm mực thải đã đầy</strong>. Máy in phun mỗi lần bật hoặc để lâu không in đều tự làm sạch đầu in, đẩy mực xuống miếng thấm dưới đáy máy. Canon đếm số mực đã đẩy xuống đó, chạm ngưỡng là khoá lệnh in và hiện 5B00 (một số đời hiện 1700). Máy <strong>vẫn còn mực và vẫn in tốt</strong> — chỉ là con số đếm đã chạm trần.",
+      "luuYRieng": [
+        "Máy phải vào được <strong>Service Mode</strong> thì Service Tool mới nhận. Bấm tổ hợp phím mà đèn không sáng đứng yên thì làm lại từ đầu, đừng chạy phần mềm vội.",
+        "G3010 có wifi nhưng Service Tool <strong>chỉ làm việc qua dây USB</strong> — cắm dây trực tiếp, không reset qua mạng.",
+        "Mỗi lần bấm Set trong Service Tool máy sẽ nhả ra một tờ giấy trắng. Đó là dấu hiệu máy nhận lệnh, không phải lỗi — nhớ để sẵn giấy trong khay."
+      ],
+      "faqRieng": [
+        [
+          "Máy Canon báo lỗi 5B00 có phải hỏng nặng không ?",
+          "Không. 5B00 (một số đời báo 1700) chỉ là báo tràn bộ đếm mực thải — máy vẫn còn mực, đầu in vẫn tốt, chỉ là bộ đếm trong bộ nhớ chạm ngưỡng nhà sản xuất đặt sẵn nên máy tự khoá. Reset xong là in tiếp bình thường."
+        ],
+        [
+          "G1010, G2010, G3010 có dùng chung cách reset không ?",
+          "Có. Ba máy chung nền phần cứng, chỉ khác chức năng: G1010 chỉ in, G2010 thêm scan và copy, G3010 có thêm wifi. Tổ hợp phím vào Service Mode và các bước trong Service Tool giống hệt nhau."
+        ],
+        [
+          "Reset xong máy vẫn nháy đèn cam thì sao ?",
+          "Kiểm tra ba thứ: máy đã vào đúng Service Mode chưa (đèn nguồn sáng đứng yên, máy không phản ứng gì); dây USB có cắm trực tiếp không; và đã bấm cả <strong>Clear Ink Counter</strong> lẫn <strong>EEPROM Clear</strong> chưa — thiếu bước EEPROM Clear thì bộ đếm không thật sự về 0."
+        ],
+        [
+          "Miếng thấm mực thải đầy thật thì sao ?",
+          "Reset chỉ xoá con số đếm chứ không hút mực ra. Máy dùng lâu năm, đã reset vài lần, mà thấy mực rịn ra đáy hoặc mùi mực nồng thì miếng thấm đã no thật — cần tháo vệ sinh hoặc thay, không thì mực trào ra bàn."
+        ]
+      ],
+      "lienQuan": [
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-phun-canon-toan-tap",
+        "Phan-mem-reset-may-in/cach-reset-may-in"
+      ]
     },
     {
       "path": "Phan-mem-reset-may-in/reset-chip-may-in-hp-135a-135w-137w",
@@ -609,7 +1315,46 @@
       "tai": "https://tinhocnamphong.net/reset-chip-may-in-hp-135a-135w-137w/",
       "taiNhan": "Xem chi tiết cách reset chip HP 135A / 135W / 137W",
       "hpChip": true,
-      "lienQuan": ["thu-thuat-tin-hoc/thu-thuat-may-in/phan-men-reset-hp-107a-107w-135a", "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-chip-may-in-hp-m107w"]
+      "dacDiem": [
+        "Máy laser trắng đen đa năng: in – scan – copy trong một máy",
+        "<strong>135A</strong> bản cơ bản · <strong>135W</strong> có wifi · <strong>137W</strong> thêm cổng mạng và khay nạp bản gốc tự động",
+        "Dùng <strong>hộp mực 106A</strong> và <strong>cụm trống 120A</strong> — hai món RỜI NHAU, giống kiểu Brother",
+        "Cùng họ mực với dòng HP Laser 107A / 107W nên hộp mực dùng chung được"
+      ],
+      "viSaoTieuDe": "Vì sao HP khó reset hơn Epson và Brother",
+      "viSaoDay": "Máy Epson đếm mực thải trong bộ nhớ máy, Brother đếm bằng cái nhông trên hộp mực — cả hai đều đưa về 0 được. HP thì gắn hẳn <strong>một con chip điện tử trên hộp mực</strong>, chip tự đếm số trang và <strong>khoá lại khi hết hạn mức</strong>. Với dòng 106A này, chip đã khoá thì <strong>phần mềm không mở lại được</strong> — đây là điểm khác biệt lớn nhất, và cũng là lý do nhiều bài hướng dẫn trên mạng hứa hẹn quá lời.",
+      "luuYRieng": [
+        "Phân biệt rõ hai trạng thái: máy báo <em>Toner low</em> mà <strong>vẫn in được</strong> chỉ là cảnh báo — chỉnh cho máy bỏ qua là in tiếp. Máy <strong>ngừng in hẳn</strong> mới là chip đã khoá.",
+        "Nhiều ca chỉ là <strong>bẩn chân chip</strong>: tháo hộp mực, lau chân tiếp xúc bằng khăn khô rồi lắp lại là chạy. Thử cái này trước khi tính chuyện thay chip.",
+        "Máy này có <strong>trống 120A rời</strong>. Bản in mờ hoặc có sọc đen lặp lại theo chu kỳ là do trống mòn, không phải do mực — thay chip không giải quyết được."
+      ],
+      "faqRieng": [
+        [
+          "Chip mực HP 106A có reset lại bằng phần mềm được không ?",
+          "Không. Dòng 106A dùng cho máy 135A/135W/137W thuộc nhóm chip khoá cứng — hết hạn mức là phải <strong>thay chip mới</strong>, không có phần mềm nào mở lại được. Chip rời bán sẵn ngoài thị trường, giá rẻ, tháo lắp bằng tay vài phút. Bài nào hứa reset bằng phần mềm cho dòng này thì nên xem lại."
+        ],
+        [
+          "Máy báo Toner low nhưng vẫn in được, có cần làm gì không ?",
+          "Chưa cần. Đó mới là cảnh báo mực sắp hết. Vào <em>Control Panel → Devices and Printers</em>, chuột phải máy in → <em>Printer properties → Device Settings</em>, chuyển mục cảnh báo mực sang <strong>Continue</strong>. Máy sẽ in tiếp cho tới khi mực nhạt thật rồi hẵng nạp."
+        ],
+        [
+          "Nạp mực xong máy vẫn không in, thay chip là xong chưa ?",
+          "Thường là xong. Nhưng làm theo thứ tự cho đỡ tốn: lau chân chip trước, không được thì mới thay chip. Nếu thay chip rồi mà bản in vẫn mờ hoặc có sọc thì vấn đề nằm ở trống 120A hoặc mực kém chất lượng, không phải chip nữa."
+        ],
+        [
+          "135A, 135W và 137W có khác nhau khi reset không ?",
+          "Không khác. Ba máy dùng chung hộp mực 106A và trống 120A, cách xử lý giống hệt nhau. Khác nhau chỉ ở kết nối và tiện ích: 135A cơ bản, 135W có wifi, 137W thêm cổng mạng và khay nạp bản gốc tự động."
+        ],
+        [
+          "Trống 120A bao lâu phải thay ?",
+          "Trống có tuổi thọ dài hơn mực khá nhiều — thường vài lần thay mực mới phải thay trống một lần. Dấu hiệu trống hết: bản in có <strong>sọc đen hoặc vệt mờ lặp lại đều đặn</strong> theo chu kỳ trên trang, hoặc nền giấy bị xám. Lúc đó thay trống chứ đừng thay mực thêm."
+        ]
+      ],
+      "lienQuan": [
+        "thu-thuat-tin-hoc/thu-thuat-may-in/phan-men-reset-hp-107a-107w-135a",
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-chip-may-in-hp-m107w",
+        "Phan-mem-reset-may-in/cach-reset-may-in"
+      ]
     },
     {
       "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn",
@@ -620,7 +1365,10 @@
       "dongMay": "HL-L5210DN, HL-L5210DW, HL-L5100DN",
       "loi": "báo \"Replace Toner\" hoặc \"Toner Ended\" dù hộp mực vừa được nạp đầy",
       "brother": true,
-      "lienQuan": ["thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-brother-hl-l5100dn-dhon-gian", "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-hl-l2321d"]
+      "lienQuan": [
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-brother-hl-l5100dn-dhon-gian",
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-hl-l2321d"
+      ]
     }
   ]
 }

@@ -1,0 +1,403 @@
+{
+ "_ghichu": "Sinh từ tab Pool của Google Sheet bot Chợ Tốt + ảnh thật trong projects/chotot/chotot-images. giaBan = giá đang rao trên Chợ Tốt + 200.000đ. Chạy lại: scratchpad/tao-danh-sach.js",
+ "capNhat": "2026-08-24",
+ "soMay": 44,
+ "may": [
+  {
+   "slug": "canon-8610",
+   "ten": "Canon LBP 8610",
+   "giaChoTot": 4400000,
+   "giaBan": 4600000,
+   "anh": "assets/img/may-cu/canon-8610.webp",
+   "soAnhKho": 135,
+   "nguonAnh": "canon-lbp-8610/dot1/frame_1779518708407_yon3ml_d1.jpg"
+  },
+  {
+   "slug": "brother-2701dw",
+   "ten": "Brother MFC-L2701DW",
+   "giaChoTot": 3450000,
+   "giaBan": 3650000,
+   "anh": "assets/img/may-cu/brother-2701dw.webp",
+   "soAnhKho": 1629,
+   "nguonAnh": "brother-2701dw/original/frame_1787385714999_8v78f2.jpg"
+  },
+  {
+   "slug": "canon-3500",
+   "ten": "Canon LBP 3500",
+   "giaChoTot": 3450000,
+   "giaBan": 3650000,
+   "anh": "assets/img/may-cu/canon-3500.webp",
+   "soAnhKho": 387,
+   "nguonAnh": "canon-lbp-3500/dot1/frame_1780370031737_3pin1v_d1.jpg"
+  },
+  {
+   "slug": "brother-7535dw",
+   "ten": "Brother DCP-B7535DW",
+   "giaChoTot": 3400000,
+   "giaBan": 3600000,
+   "anh": "assets/img/may-cu/brother-7535dw.webp",
+   "soAnhKho": 93,
+   "nguonAnh": "brother-7535dw/dot1/frame_1786698883048_05tbo6_d1.jpg"
+  },
+  {
+   "slug": "canon-6230dw",
+   "ten": "Canon LBP 6230dw",
+   "giaChoTot": 3200000,
+   "giaBan": 3400000,
+   "anh": "assets/img/may-cu/canon-6230dw.webp",
+   "soAnhKho": 424,
+   "nguonAnh": "canon-6230dw/dot1/frame_1781148238685_k7zz2a_d1.jpg"
+  },
+  {
+   "slug": "canon-212dw",
+   "ten": "Canon LBP 212dw",
+   "giaChoTot": 3200000,
+   "giaBan": 3400000,
+   "anh": "assets/img/may-cu/canon-212dw.webp",
+   "soAnhKho": 280,
+   "nguonAnh": "canon-212dw/dot1/frame_1782703230709_kvpiia_d1.jpg"
+  },
+  {
+   "slug": "canon-223dw",
+   "ten": "Canon LBP 223dw",
+   "giaChoTot": 3200000,
+   "giaBan": 3400000,
+   "anh": "assets/img/may-cu/canon-223dw.webp",
+   "soAnhKho": 243,
+   "nguonAnh": "canon-lbp-223dw/original/frame_1787300932551_cysz7q.jpg"
+  },
+  {
+   "slug": "brother-2701d",
+   "ten": "Brother MFC-L2701D",
+   "giaChoTot": 3100000,
+   "giaBan": 3300000,
+   "anh": "assets/img/may-cu/brother-2701d.webp",
+   "soAnhKho": 1585,
+   "nguonAnh": "brother-2701d/original/frame_1787385487255_t2iign.jpg"
+  },
+  {
+   "slug": "canon-6700",
+   "ten": "Canon LBP 6700",
+   "giaChoTot": 3000000,
+   "giaBan": 3200000,
+   "anh": "assets/img/may-cu/canon-6700.webp",
+   "soAnhKho": 17,
+   "nguonAnh": "canon-lbp-6700/original/frame_1778725330768_v9vhub.jpg"
+  },
+  {
+   "slug": "canon-6230dn",
+   "ten": "Canon LBP 6230dn",
+   "giaChoTot": 2800000,
+   "giaBan": 3000000,
+   "anh": "assets/img/may-cu/canon-6230dn.webp",
+   "soAnhKho": 416,
+   "nguonAnh": "canon-6230dn/dot1/frame_1782529703268_wy737k_d1.jpg"
+  },
+  {
+   "slug": "canon-6220dn",
+   "ten": "Canon LBP 6220dn",
+   "giaChoTot": 2800000,
+   "giaBan": 3000000,
+   "anh": "assets/img/may-cu/canon-6220dn.webp",
+   "soAnhKho": 32,
+   "nguonAnh": "canon-6220dn/dot1/frame_1779342286759_4gyrv4_d1.jpg"
+  },
+  {
+   "slug": "brother-2520d",
+   "ten": "Brother DCP-L2520D",
+   "giaChoTot": 2400000,
+   "giaBan": 2600000,
+   "anh": "assets/img/may-cu/brother-2520d.webp",
+   "soAnhKho": 1470,
+   "nguonAnh": "brother-2520d/original/frame_1787302500105_mc76tg.jpg"
+  },
+  {
+   "slug": "hp-137fnw",
+   "ten": "HP Laser MFP 137fnw",
+   "giaChoTot": 2400000,
+   "giaBan": 2600000,
+   "anh": "assets/img/may-cu/hp-137fnw.webp",
+   "soAnhKho": 309,
+   "nguonAnh": "hp-137fnw/dot1/frame_1783493893446_jyi3jo_d1.jpg"
+  },
+  {
+   "slug": "brother-2366dw",
+   "ten": "Brother HL-L2366DW",
+   "giaChoTot": 2300000,
+   "giaBan": 2500000,
+   "anh": "assets/img/may-cu/brother-2366dw.webp",
+   "soAnhKho": 1098,
+   "nguonAnh": "brother-2366dw/original/frame_1787198703048_n9c4pu.jpg"
+  },
+  {
+   "slug": "canon-6030w",
+   "ten": "Canon LBP 6030W",
+   "giaChoTot": 2200000,
+   "giaBan": 2400000,
+   "anh": "assets/img/may-cu/canon-6030w.webp",
+   "soAnhKho": 764,
+   "nguonAnh": "canon-6030w/original/frame_1787388928358_kpmbd7.jpg"
+  },
+  {
+   "slug": "canon-2900",
+   "ten": "Canon LBP 2900",
+   "giaChoTot": 2200000,
+   "giaBan": 2400000,
+   "anh": "assets/img/may-cu/canon-2900.webp",
+   "soAnhKho": 1193,
+   "nguonAnh": "canon-2900/original/frame_1787304280765_l8ajyy.jpg"
+  },
+  {
+   "slug": "brother-2361dn",
+   "ten": "Brother HL-L2361DN",
+   "giaChoTot": 2100000,
+   "giaBan": 2300000,
+   "anh": "assets/img/may-cu/brother-2361dn.webp",
+   "soAnhKho": 1294,
+   "nguonAnh": "brother-2361dn/original/frame_1787216746710_z95tzf.jpg"
+  },
+  {
+   "slug": "hp-211d",
+   "ten": "HP Laser MFP 211d",
+   "giaChoTot": 2050000,
+   "giaBan": 2250000,
+   "anh": "assets/img/may-cu/hp-211d.webp",
+   "soAnhKho": 399,
+   "nguonAnh": "hp-211d/original/frame_1787301860407_jgzp8s.jpg"
+  },
+  {
+   "slug": "canon-6200d",
+   "ten": "Canon LBP 6200d",
+   "giaChoTot": 1950000,
+   "giaBan": 2150000,
+   "anh": "assets/img/may-cu/canon-6200d.webp",
+   "soAnhKho": 736,
+   "nguonAnh": "canon-6200d/original/frame_1787200567757_hnvgcv.jpg"
+  },
+  {
+   "slug": "hp-135w",
+   "ten": "HP Laser MFP 135w",
+   "giaChoTot": 1950000,
+   "giaBan": 2150000,
+   "anh": "assets/img/may-cu/hp-135w.webp",
+   "soAnhKho": 918,
+   "nguonAnh": "hp-135w/original/frame_1787200400252_pj9451.jpg"
+  },
+  {
+   "slug": "canon-3010",
+   "ten": "Canon MF 3010",
+   "giaChoTot": 1950000,
+   "giaBan": 2150000,
+   "anh": "assets/img/may-cu/canon-3010.webp",
+   "soAnhKho": 374,
+   "nguonAnh": "canon-3010/dot1/frame_1783496481859_wi63z1_d1.jpg"
+  },
+  {
+   "slug": "brother-2321d",
+   "ten": "Brother HL-L2321D",
+   "giaChoTot": 1900000,
+   "giaBan": 2100000,
+   "anh": "assets/img/may-cu/brother-2321d.webp",
+   "soAnhKho": 1135,
+   "nguonAnh": "brother-2321d/dot1/frame_1783996272486_5py2vl_d1.jpg"
+  },
+  {
+   "slug": "brother-2100d",
+   "ten": "BROTHER B2100D",
+   "giaChoTot": 1900000,
+   "giaBan": 2100000,
+   "anh": "assets/img/may-cu/brother-2100d.webp",
+   "soAnhKho": 206,
+   "nguonAnh": "brother-b2100d/original/frame_1787387806640_j0d6ek.jpg"
+  },
+  {
+   "slug": "hp-400",
+   "ten": "HP LaserJet Pro 400",
+   "giaChoTot": 1850000,
+   "giaBan": 2050000,
+   "anh": "assets/img/may-cu/hp-400.webp",
+   "soAnhKho": 265,
+   "nguonAnh": "hp-pro-400/dot1/frame_1780388917833_1rjvvv_d1.jpg"
+  },
+  {
+   "slug": "hp-12w",
+   "ten": "HP M12w",
+   "giaChoTot": 1750000,
+   "giaBan": 1950000,
+   "anh": "assets/img/may-cu/hp-12w.webp",
+   "soAnhKho": 96,
+   "nguonAnh": "hp-m12w/original/frame_1787299219867_cqxevi.jpg"
+  },
+  {
+   "slug": "hp-107w",
+   "ten": "HP Laser 107w",
+   "giaChoTot": 1700000,
+   "giaBan": 1900000,
+   "anh": "assets/img/may-cu/hp-107w.webp",
+   "soAnhKho": 1302,
+   "nguonAnh": "hp-laser-107w/original/frame_1779520779745_stlqwd.jpg"
+  },
+  {
+   "slug": "canon-3300",
+   "ten": "Canon LBP 3300",
+   "giaChoTot": 1650000,
+   "giaBan": 1850000,
+   "anh": "assets/img/may-cu/canon-3300.webp",
+   "soAnhKho": 286,
+   "nguonAnh": "canon-3300/dot1/frame_1781152017060_46o2e3_d1.jpg"
+  },
+  {
+   "slug": "hp-p2035",
+   "ten": "HP LaserJet P2035",
+   "giaChoTot": 1600000,
+   "giaBan": 1800000,
+   "anh": "assets/img/may-cu/hp-p2035.webp",
+   "soAnhKho": 112,
+   "nguonAnh": "hp-2035/dot1/frame_1781606519530_sclkon_d1.jpg"
+  },
+  {
+   "slug": "epson-1210",
+   "ten": "Epson L1210",
+   "giaChoTot": 1600000,
+   "giaBan": 1800000,
+   "anh": "assets/img/may-cu/epson-1210.webp",
+   "soAnhKho": 122,
+   "nguonAnh": "epson-l1210/dot1/frame_1782455001870_ku9pub_d1.jpg"
+  },
+  {
+   "slug": "canon-6030",
+   "ten": "Canon LBP 6030",
+   "giaChoTot": 1550000,
+   "giaBan": 1750000,
+   "anh": "assets/img/may-cu/canon-6030.webp",
+   "soAnhKho": 628,
+   "nguonAnh": "canon-6030/original/frame_1787300336346_nty734.jpg"
+  },
+  {
+   "slug": "hp-177fw",
+   "ten": "Hp Color Laser Pro M177fw",
+   "giaChoTot": 1500000,
+   "giaBan": 1700000,
+   "anh": "assets/img/may-cu/hp-177fw.webp",
+   "soAnhKho": 76,
+   "nguonAnh": "hp-color-laser-pro-m177fw/dot1/frame_1780112950133_7rm8mn_d1.jpg"
+  },
+  {
+   "slug": "hp-108a",
+   "ten": "HP Laser 108a",
+   "giaChoTot": 1450000,
+   "giaBan": 1650000,
+   "anh": "assets/img/may-cu/hp-108a.webp",
+   "soAnhKho": 198,
+   "nguonAnh": "hp-108a/dot1/frame_1780372229381_laea3z_d1.jpg"
+  },
+  {
+   "slug": "hp-1020",
+   "ten": "HP LaserJet 1020",
+   "giaChoTot": 1400000,
+   "giaBan": 1600000,
+   "anh": "assets/img/may-cu/hp-1020.webp",
+   "soAnhKho": 121,
+   "nguonAnh": "hp-1020/dot1/frame_1781669072194_b8o950_d1.jpg"
+  },
+  {
+   "slug": "hp-107a",
+   "ten": "HP Laser 107a",
+   "giaChoTot": 1400000,
+   "giaBan": 1600000,
+   "anh": "assets/img/may-cu/hp-107a.webp",
+   "soAnhKho": 1226,
+   "nguonAnh": "hp-107a/original/frame_1787215348668_t2hc0y.jpg"
+  },
+  {
+   "slug": "hp-12a",
+   "ten": "Hp M12a",
+   "giaChoTot": 1350000,
+   "giaBan": 1550000,
+   "anh": "assets/img/may-cu/hp-12a.webp",
+   "soAnhKho": 1033,
+   "nguonAnh": "hp-m12a/original/frame_1787297953737_0y4v70.jpg"
+  },
+  {
+   "slug": "hp-1102",
+   "ten": "Hp 1102",
+   "giaChoTot": 1350000,
+   "giaBan": 1550000,
+   "anh": "assets/img/may-cu/hp-1102.webp",
+   "soAnhKho": 966,
+   "nguonAnh": "hp-1102/original/frame_1787299847180_v855tq.jpg"
+  },
+  {
+   "slug": "hp-1000w",
+   "ten": "Hp Nerverstop 1000w",
+   "giaChoTot": 1200000,
+   "giaBan": 1400000,
+   "anh": "assets/img/may-cu/hp-1000w.webp",
+   "soAnhKho": 864,
+   "nguonAnh": "hp-nerverstop-1000w/original/frame_1787302985282_wsumy6.jpg"
+  },
+  {
+   "slug": "hp-1005",
+   "ten": "Hp 1005",
+   "giaChoTot": 1150000,
+   "giaBan": 1350000,
+   "anh": "assets/img/may-cu/hp-1005.webp",
+   "soAnhKho": 1118,
+   "nguonAnh": "hp-1005/dot1/frame_1783997259257_ddjhj3_d1.jpg"
+  },
+  {
+   "slug": "epson-82",
+   "ten": "Epson T82",
+   "giaChoTot": 850000,
+   "giaBan": 1050000,
+   "anh": "assets/img/may-cu/epson-82.webp",
+   "soAnhKho": 77,
+   "nguonAnh": "epson-t82/dot1/frame_1786180306889_pzfzic_d1.jpg"
+  },
+  {
+   "slug": "apos-200",
+   "ten": "Apos 200",
+   "giaChoTot": 800000,
+   "giaBan": 1000000,
+   "anh": "assets/img/may-cu/apos-200.webp",
+   "soAnhKho": 17,
+   "nguonAnh": "apos-200/original/frame_1778725759902_3ecqsa.jpg"
+  },
+  {
+   "slug": "epson-3150",
+   "ten": "Epson L3150",
+   "giaChoTot": 700000,
+   "giaBan": 900000,
+   "anh": "assets/img/may-cu/epson-3150.webp",
+   "soAnhKho": 17,
+   "nguonAnh": "epson-l3150/original/frame_1778469515058_brl7cq.jpg"
+  },
+  {
+   "slug": "epson-267e",
+   "ten": "Epson M267E",
+   "giaChoTot": 650000,
+   "giaBan": 850000,
+   "anh": "assets/img/may-cu/epson-267e.webp",
+   "soAnhKho": 91,
+   "nguonAnh": "epson-m267e/dot1/frame_1781324832671_q479c6_d1.jpg"
+  },
+  {
+   "slug": "birch-cp-q-3",
+   "ten": "BIRCH CP Q3",
+   "giaChoTot": 650000,
+   "giaBan": 850000,
+   "anh": "assets/img/may-cu/birch-cp-q-3.webp",
+   "soAnhKho": 90,
+   "nguonAnh": "birch-cp-q3/dot1/frame_1781326029992_sldmy8_d1.jpg"
+  },
+  {
+   "slug": "xprinter-260",
+   "ten": "XPRINTER Q260",
+   "giaChoTot": 600000,
+   "giaBan": 800000,
+   "anh": "assets/img/may-cu/xprinter-260.webp",
+   "soAnhKho": 86,
+   "nguonAnh": "xprinter-q260/dot1/frame_1781323977582_tm4g7f_d1.jpg"
+  }
+ ]
+}

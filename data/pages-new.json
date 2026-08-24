@@ -1369,6 +1369,60 @@
         "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-brother-hl-l5100dn-dhon-gian",
         "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-hl-l2321d"
       ]
+    },
+    {
+      "_ghichu": "Trang danh sach may in cu dang ban. Du lieu tu tab Pool cua Google Sheet bot Cho Tot + anh that trong projects/chotot/chotot-images. Gia ban = gia rao Cho Tot + 200.000d. Chay lai danh sach: scratchpad/tao-danh-sach.js (phien 24/08).",
+      "path": "ban-may-in-cu-gia-re/may-in-cu-dang-ban",
+      "title": "Máy In Cũ Đang Bán — Bảng Giá Và Ảnh Thật Từng Máy",
+      "desc": "Danh sách máy in cũ Tin Học HT đang có sẵn: Canon, Brother, HP, Epson. Ảnh chụp máy thật, giá niêm yết, bảo hành 3 tháng, chạy thử trước mặt khách khi giao.",
+      "h1": "Máy in cũ đang bán — ảnh thật, giá thật, bảo hành 3 tháng",
+      "model": "máy in cũ",
+      "dongMay": "Canon, Brother, HP, Epson",
+      "loi": "cần thay máy mới mà không muốn mua máy nguyên giá",
+      "faqChung": false,
+      "luuYChung": false,
+      "danhSachMay": true,
+      "moBai": "Toàn bộ máy dưới đây là <strong>máy thật đang có tại tiệm</strong>, ảnh do chính chúng tôi chụp chứ không lấy ảnh mẫu của hãng. Máy nào cũng đã qua kiểm tra, vệ sinh, thay linh kiện hao mòn nếu cần, và <strong>chạy thử trước mặt khách</strong> lúc giao. Bảo hành 3 tháng, trong thời gian đó hỏng gì sửa nấy miễn phí.",
+      "dacDiem": [
+        "Ảnh trong bảng là <strong>ảnh chụp máy thật</strong>, không phải ảnh quảng cáo của hãng",
+        "Giá đã gồm kiểm tra, vệ sinh và <strong>bảo hành 3 tháng</strong>",
+        "Giao tận nơi trong TP.HCM, lắp đặt và cài driver tại chỗ",
+        "Máy cũ mỗi cái một tình trạng — số lượng mỗi mã có hạn, nên gọi trước"
+      ],
+      "viSaoTieuDe": "Vì sao nên cân nhắc máy in cũ",
+      "viSaoDay": "Một máy laser văn phòng mới tầm 4–6 triệu, trong khi cùng dòng đó máy cũ còn tốt chỉ khoảng một nửa. Máy in laser vốn <strong>bền theo số trang in</strong> chứ không theo tuổi máy — một cái máy 5 năm nhưng in ít vẫn còn nguyên tuổi thọ, trong khi máy 2 năm chạy văn phòng đông người thì đã mòn. Vì vậy điều đáng hỏi không phải máy sản xuất năm nào, mà là <strong>đã in bao nhiêu trang và trống còn tốt không</strong> — cái này chúng tôi kiểm và nói thật khi giao máy.",
+      "luuYRieng": [
+        "Hỏi rõ <strong>số trang đã in</strong> và tình trạng cụm trống trước khi chốt — đó mới là tuổi thọ thật của máy laser.",
+        "Máy càng phổ biến thì mực và linh kiện càng rẻ, càng dễ thay. Các dòng Canon 2900, HP 107a, Brother 2321D thuộc nhóm này.",
+        "Nếu in ít, dưới 500 trang một tháng, thì mua máy cũ dòng phổ thông là hợp lý nhất — máy mới đắt gấp đôi mà cũng chỉ dùng ngần đó."
+      ],
+      "faqRieng": [
+        [
+          "Máy in cũ bảo hành bao lâu ?",
+          "Bảo hành <strong>3 tháng</strong> kể từ ngày giao. Trong thời gian đó máy hỏng do lỗi kỹ thuật thì chúng tôi sửa miễn phí, không sửa được thì đổi máy tương đương. Bảo hành không áp dụng cho hỏng hóc do rơi vỡ, vào nước hay dùng mực kém chất lượng gây tắc đầu in."
+        ],
+        [
+          "Có được xem máy chạy thử trước khi mua không ?",
+          "Có, và đây là điều chúng tôi luôn làm. Lúc giao máy sẽ cắm điện in thử vài trang ngay trước mặt khách để kiểm tra bản in đậm đều, không sọc, kéo giấy êm. Khách xem xong ưng thì mới nhận máy."
+        ],
+        [
+          "Mua máy cũ về nạp mực có tốn kém hơn máy mới không ?",
+          "Không. Chi phí mực phụ thuộc vào <strong>dòng máy</strong> chứ không phải máy cũ hay mới. Các dòng trong bảng đều là dòng phổ thông, mực và linh kiện bán sẵn, giá nạp mực bằng đúng giá niêm yết của tiệm."
+        ],
+        [
+          "Máy trong bảng hết thì có máy khác không ?",
+          "Có. Kho máy thay đổi liên tục nên bảng này chỉ là những máy đang có lúc cập nhật. Gọi hỏi dòng máy mình cần, nếu chưa có sẵn thì chúng tôi tìm và báo lại trong vài ngày."
+        ],
+        [
+          "Có nhận thu mua máy in cũ không ?",
+          "Có. Chúng tôi thu mua máy in cũ mọi tình trạng, kể cả máy hỏng để lấy linh kiện. Gọi mô tả tình trạng máy là báo giá được ngay, đến tận nơi xem và trả tiền luôn."
+        ]
+      ],
+      "lienQuan": [
+        "ban-may-in-cu-gia-re",
+        "sua-may-in-tai-hcm/thu-mua-may-in-cu-tai-tphcm",
+        "bang-gia-nap-muc-may-in-tan-noi"
+      ]
     }
   ]
 }

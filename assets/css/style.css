@@ -326,3 +326,20 @@ main a { overflow-wrap: anywhere; }
   .float-zalo { background: #0068ff; }
   .float-call { background: var(--accent); font-size: 1.1rem; }
 }
+
+/* Lưới máy in cũ đang bán — ảnh chụp máy thật từ kho của shop, giá lấy từ tab Pool
+   của Google Sheet bot Chợ Tốt rồi cộng thêm. Xem data/may-in-cu.json */
+.luoi-may { list-style: none; padding: 0; margin: 22px 0 26px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.the-may { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  background: #fff; display: flex; flex-direction: column; }
+.the-may img { width: 100%; height: auto; display: block; margin: 0; aspect-ratio: 560/380;
+  object-fit: cover; }
+.the-may-noi-dung { padding: 12px 14px 14px; }
+.the-may h3 { margin: 0 0 6px; font-size: .98rem; line-height: 1.35; }
+.the-may-gia { margin: 0; font-weight: 700; color: var(--accent); font-size: 1.06rem; }
+@media (max-width: 480px) {
+  .luoi-may { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .the-may h3 { font-size: .88rem; }
+  .the-may-gia { font-size: .96rem; }
+}

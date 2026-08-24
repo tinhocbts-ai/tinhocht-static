@@ -9,6 +9,8 @@
  */
 'use strict';
 
+const fs = require('fs');
+const path = require('path');
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 /* ---------- các bước reset theo từng hãng ---------- */
@@ -193,8 +195,40 @@ function bangTraCuu(p, prefix, pagesByPath) {
       </div>`;
 }
 
+/* ---------- danh sách máy in cũ đang bán ----------
+   Dữ liệu: data/may-in-cu.json — sinh từ tab Pool của Google Sheet bot Chợ Tốt, ảnh lấy từ
+   kho ảnh thật của shop (projects/chotot/chotot-images). Giá bán = giá đang rao Chợ Tốt + 200.000đ.
+   Trang khai "danhSachMay": true thì chèn khối này. */
+function danhSachMay(p, prefix) {
+  if (!p.danhSachMay) return '';
+  let d;
+  try { d = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'may-in-cu.json'), 'utf8')); }
+  catch { return ''; }
+  const ds = d.may || [];
+  if (!ds.length) return '';
+  const tien = n => n.toLocaleString('vi-VN') + 'đ';
+  return `
+      <h2 id="danh-sach">Máy in cũ đang có sẵn — ${ds.length} máy</h2>
+      <p>Giá dưới đây đã gồm kiểm tra, vệ sinh và <strong>bảo hành 3 tháng</strong>. Máy nào cũng
+         chạy thử trước mặt khách trước khi giao. Số lượng mỗi mã có hạn, gọi trước cho chắc.</p>
+      <ul class="luoi-may">
+        ${ds.map(m => `<li class="the-may">
+          <img src="${prefix}${m.anh}" alt="Máy in cũ ${esc(m.ten)} đã qua kiểm tra, bán tại Tin Học HT"
+               width="560" height="380" loading="lazy" decoding="async">
+          <div class="the-may-noi-dung">
+            <h3>${esc(m.ten)}</h3>
+            <p class="the-may-gia">${tien(m.giaBan)}</p>
+          </div>
+        </li>`).join('\n        ')}
+      </ul>
+      <p class="callout-note">Bảng giá cập nhật ${esc(d.capNhat || '')}. Máy cũ mỗi cái một tình trạng —
+         gọi ${esc(cfgHotline)} để hỏi máy còn hay hết và xem ảnh thật của đúng cái máy đó.</p>`;
+}
+let cfgHotline = '';
+
 /* ---------- dựng phần thân trang ---------- */
 function renderNewPage(p, prefix, cfg, pagesByPath) {
+  cfgHotline = cfg.hotlineDisplay || '';
   const buoc = cacBuoc(p);
   const faq = cauHoi(p);
   /* Trang khai `quyTrinh` = có NHIỀU quy trình khác nhau trên cùng một máy (vd Brother: reset mực
@@ -272,6 +306,7 @@ ${p.tai ? `
       </div>` : ''}
 
 ${bangTraCuu(p, prefix, pagesByPath)}
+${danhSachMay(p, prefix)}
 
       <h2 id="hoi-dap">Câu hỏi thường gặp</h2>
       ${faq.map((f, i) => `<h3 id="hoi-${i + 1}">${esc(f[0])}</h3>\n      <p>${f[1]}</p>`).join('\n      ')}

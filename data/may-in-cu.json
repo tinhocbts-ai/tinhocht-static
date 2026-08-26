@@ -1,6 +1,6 @@
 {
  "_ghichu": "Sinh từ tab Pool của Google Sheet bot Chợ Tốt + ảnh thật trong projects/chotot/chotot-images. giaBan = giá đang rao trên Chợ Tốt + 200.000đ. Chạy lại: scratchpad/tao-danh-sach.js",
- "capNhat": "2026-08-24",
+ "capNhat": "2026-08-26",
  "soMay": 44,
  "may": [
   {
@@ -11,7 +11,13 @@
    "moTa": "Máy in đã qua sử dụng Canon in trắng đen, khổ A3 A4 A5, máy in 1 mặt chuyên in bản vẽ khay giấy lên tới 250 tờ. In A4 18 trang/phút. A3 9 trang/phút. Bản in rõ đẹp.",
    "anh": "assets/img/may-cu/canon-8610.webp",
    "soAnhKho": 135,
-   "nguonAnh": "canon-lbp-8610/dot1/frame_1779518708407_yon3ml_d1.jpg"
+   "nguonAnh": "canon-lbp-8610/dot1/frame_1779518708407_yon3ml_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-8610.webp",
+    "assets/img/may-cu/canon-8610-2.webp",
+    "assets/img/may-cu/canon-8610-3.webp",
+    "assets/img/may-cu/canon-8610-4.webp"
+   ]
   },
   {
    "slug": "brother-2701dw",
@@ -21,7 +27,13 @@
    "moTa": "Máy in cũ laser trắng đen Brother máy hỗ trợ in tốc độ nhanh kết hợp chế độ in 2 mặt tiện lợi, có photo scan và in không dây từ nhiều thiết bị điện tử khác, bản in rõ đẹp sắc nét, khổ giấy in a4a5.",
    "anh": "assets/img/may-cu/brother-2701dw.webp",
    "soAnhKho": 1629,
-   "nguonAnh": "brother-2701dw/original/frame_1787385714999_8v78f2.jpg"
+   "nguonAnh": "brother-2701dw/original/frame_1787385714999_8v78f2.jpg",
+   "anhs": [
+    "assets/img/may-cu/brother-2701dw.webp",
+    "assets/img/may-cu/brother-2701dw-2.webp",
+    "assets/img/may-cu/brother-2701dw-3.webp",
+    "assets/img/may-cu/brother-2701dw-4.webp"
+   ]
   },
   {
    "slug": "canon-3500",
@@ -31,7 +43,13 @@
    "moTa": "Máy in A3 Canon cũ máy hỗ trợ in 1 mặt, chuyên in bản vẽ cho bản in rõ đẹp độ bền cao.",
    "anh": "assets/img/may-cu/canon-3500.webp",
    "soAnhKho": 387,
-   "nguonAnh": "canon-lbp-3500/dot1/frame_1780370031737_3pin1v_d1.jpg"
+   "nguonAnh": "canon-lbp-3500/dot1/frame_1780370031737_3pin1v_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-3500.webp",
+    "assets/img/may-cu/canon-3500-2.webp",
+    "assets/img/may-cu/canon-3500-3.webp",
+    "assets/img/may-cu/canon-3500-4.webp"
+   ]
   },
   {
    "slug": "brother-7535dw",
@@ -41,7 +59,13 @@
    "moTa": "Máy in cũ laser trắng đen, máy hỗ trợ in tốc độ nhanh và kết hợp chế độ in 2 mặt tiện lợi, bản in rõ đẹp sắc nét, dễ cài đặt và sử dụng, có thể in không dây từ nhiều thiết bị điện tử khác, khổ giấy in A4A5.",
    "anh": "assets/img/may-cu/brother-7535dw.webp",
    "soAnhKho": 93,
-   "nguonAnh": "brother-7535dw/dot1/frame_1786698883048_05tbo6_d1.jpg"
+   "nguonAnh": "brother-7535dw/dot1/frame_1786698883048_05tbo6_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/brother-7535dw.webp",
+    "assets/img/may-cu/brother-7535dw-2.webp",
+    "assets/img/may-cu/brother-7535dw-3.webp",
+    "assets/img/may-cu/brother-7535dw-4.webp"
+   ]
   },
   {
    "slug": "canon-6230dw",
@@ -51,7 +75,13 @@
    "moTa": "Máy in cũ laser in trắng đen Canon máy in tốc độ nhanh và hỗ trợ in 2 mặt thật tiện lợi, dễ cài đặt và sử dụng có kết nối không dây từ nhiều thiết bị điện tử khác, khổ giấy in a4a5.",
    "anh": "assets/img/may-cu/canon-6230dw.webp",
    "soAnhKho": 424,
-   "nguonAnh": "canon-6230dw/dot1/frame_1781148238685_k7zz2a_d1.jpg"
+   "nguonAnh": "canon-6230dw/dot1/frame_1781148238685_k7zz2a_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-6230dw.webp",
+    "assets/img/may-cu/canon-6230dw-2.webp",
+    "assets/img/may-cu/canon-6230dw-3.webp",
+    "assets/img/may-cu/canon-6230dw-4.webp"
+   ]
   },
   {
    "slug": "canon-212dw",
@@ -61,7 +91,13 @@
    "moTa": "Máy in cũ Canon laser trắng đen máy in tốc độ nhanh và in 2 mặt tiện ích, máy có kết nối không dây từ nhiều thiết bị điện tử khác, dễ cài đặt và sử dụng, bản in rõ đẹp sắc nét. Khổ giấy in a4a5.",
    "anh": "assets/img/may-cu/canon-212dw.webp",
    "soAnhKho": 280,
-   "nguonAnh": "canon-212dw/dot1/frame_1782703230709_kvpiia_d1.jpg"
+   "nguonAnh": "canon-212dw/dot1/frame_1782703230709_kvpiia_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-212dw.webp",
+    "assets/img/may-cu/canon-212dw-2.webp",
+    "assets/img/may-cu/canon-212dw-3.webp",
+    "assets/img/may-cu/canon-212dw-4.webp"
+   ]
   },
   {
    "slug": "canon-223dw",
@@ -71,7 +107,13 @@
    "moTa": "Máy in laser cũ trắng đen Canon máy in tốc độ nhanh và có chế độ in 2 mặt tiện lơi, kết nối không dây tiện ích từ nhiều thiết bị điện tử khác, bản in rõ đẹp sắc nét dễ cài đặt và sử dụng. Khổ giấy in A4A5.",
    "anh": "assets/img/may-cu/canon-223dw.webp",
    "soAnhKho": 243,
-   "nguonAnh": "canon-lbp-223dw/original/frame_1787300932551_cysz7q.jpg"
+   "nguonAnh": "canon-lbp-223dw/original/frame_1787300932551_cysz7q.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-223dw.webp",
+    "assets/img/may-cu/canon-223dw-2.webp",
+    "assets/img/may-cu/canon-223dw-3.webp",
+    "assets/img/may-cu/canon-223dw-4.webp"
+   ]
   },
   {
    "slug": "brother-2701d",
@@ -81,7 +123,13 @@
    "moTa": "Máy in đã qua sử dụng laser trắng đen Brother máy in tốc độ nhanh và có chế độ in 2 mặt tự động, có photo scan khi cần dùng, bản in rõ đẹp sắc nét, dễ cài đặt và sử dụng, khổ giấy in A4A5.",
    "anh": "assets/img/may-cu/brother-2701d.webp",
    "soAnhKho": 1585,
-   "nguonAnh": "brother-2701d/original/frame_1787385487255_t2iign.jpg"
+   "nguonAnh": "brother-2701d/original/frame_1787385487255_t2iign.jpg",
+   "anhs": [
+    "assets/img/may-cu/brother-2701d.webp",
+    "assets/img/may-cu/brother-2701d-2.webp",
+    "assets/img/may-cu/brother-2701d-3.webp",
+    "assets/img/may-cu/brother-2701d-4.webp"
+   ]
   },
   {
    "slug": "canon-6700",
@@ -91,7 +139,13 @@
    "moTa": "Máy in cũ Laser trắng đen, máy in nhanh khay giấy và hộp mực to, bản in rõ đẹp, dễ cài đặt và sử dụng, máy cơ chạy êm.",
    "anh": "assets/img/may-cu/canon-6700.webp",
    "soAnhKho": 17,
-   "nguonAnh": "canon-lbp-6700/original/frame_1778725330768_v9vhub.jpg"
+   "nguonAnh": "canon-lbp-6700/original/frame_1778725330768_v9vhub.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-6700.webp",
+    "assets/img/may-cu/canon-6700-2.webp",
+    "assets/img/may-cu/canon-6700-3.webp",
+    "assets/img/may-cu/canon-6700-4.webp"
+   ]
   },
   {
    "slug": "canon-6230dn",
@@ -101,7 +155,13 @@
    "moTa": "Máy in đã qua sử dụng laser trắng đen Canon máy in nhanh hỗ trợ in 2 mặt tiện lợi có thể kết nối network khi cần dùng, bản in rõ đẹp độ bền cao, dễ sử dụng và cài đặt.",
    "anh": "assets/img/may-cu/canon-6230dn.webp",
    "soAnhKho": 416,
-   "nguonAnh": "canon-6230dn/dot1/frame_1782529703268_wy737k_d1.jpg"
+   "nguonAnh": "canon-6230dn/dot1/frame_1782529703268_wy737k_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-6230dn.webp",
+    "assets/img/may-cu/canon-6230dn-2.webp",
+    "assets/img/may-cu/canon-6230dn-3.webp",
+    "assets/img/may-cu/canon-6230dn-4.webp"
+   ]
   },
   {
    "slug": "canon-6220dn",
@@ -111,7 +171,13 @@
    "moTa": "Máy in đã qua sử dụng đơn năng, máy in nhanh hỗ trợ 2 mặt tiện lợi, có thể in qua network khi cần, bản in rõ đẹp dễ sử dụng và cài đặt, chi phí nạp mực rẻ.",
    "anh": "assets/img/may-cu/canon-6220dn.webp",
    "soAnhKho": 32,
-   "nguonAnh": "canon-6220dn/dot1/frame_1779342286759_4gyrv4_d1.jpg"
+   "nguonAnh": "canon-6220dn/dot1/frame_1779342286759_4gyrv4_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-6220dn.webp",
+    "assets/img/may-cu/canon-6220dn-2.webp",
+    "assets/img/may-cu/canon-6220dn-3.webp",
+    "assets/img/may-cu/canon-6220dn-4.webp"
+   ]
   },
   {
    "slug": "brother-2520d",
@@ -121,7 +187,13 @@
    "moTa": "Máy in cũ laser trắng đen máy hỗ trợ in nhanh và có chế độ 2 mặt tiện dụng, photo scan khi cần thiết, bản in rõ đẹp sắc nét, dễ sử dụng và cài đặt khổ giấy in thông dụng A4A5.",
    "anh": "assets/img/may-cu/brother-2520d.webp",
    "soAnhKho": 1470,
-   "nguonAnh": "brother-2520d/original/frame_1787302500105_mc76tg.jpg"
+   "nguonAnh": "brother-2520d/original/frame_1787302500105_mc76tg.jpg",
+   "anhs": [
+    "assets/img/may-cu/brother-2520d.webp",
+    "assets/img/may-cu/brother-2520d-2.webp",
+    "assets/img/may-cu/brother-2520d-3.webp",
+    "assets/img/may-cu/brother-2520d-4.webp"
+   ]
   },
   {
    "slug": "hp-137fnw",
@@ -131,7 +203,13 @@
    "moTa": "Máy in laser trắng đen đã qua sử dụng HP máy chỉ hỗ trợ in 1 mặt nhanh có photo scan khi cần, máy cơ chạy êm và mượt bản in rõ đẹp dễ sử dụng và cài đặt có thể in không dây từ điện thoại và nhiều thiết bị điện tử khác.",
    "anh": "assets/img/may-cu/hp-137fnw.webp",
    "soAnhKho": 309,
-   "nguonAnh": "hp-137fnw/dot1/frame_1783493893446_jyi3jo_d1.jpg"
+   "nguonAnh": "hp-137fnw/dot1/frame_1783493893446_jyi3jo_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-137fnw.webp",
+    "assets/img/may-cu/hp-137fnw-2.webp",
+    "assets/img/may-cu/hp-137fnw-3.webp",
+    "assets/img/may-cu/hp-137fnw-4.webp"
+   ]
   },
   {
    "slug": "brother-2366dw",
@@ -141,7 +219,13 @@
    "moTa": "Máy in cũ laser trắng đen Brother máy in tốc độ nhanh và có chế độ in 2 mặt tự động, kết nối in không dây từ nhiều thiết bị điện tử khác, khổ giấy in A4A5 thông dụng.",
    "anh": "assets/img/may-cu/brother-2366dw.webp",
    "soAnhKho": 1098,
-   "nguonAnh": "brother-2366dw/original/frame_1787198703048_n9c4pu.jpg"
+   "nguonAnh": "brother-2366dw/original/frame_1787198703048_n9c4pu.jpg",
+   "anhs": [
+    "assets/img/may-cu/brother-2366dw.webp",
+    "assets/img/may-cu/brother-2366dw-2.webp",
+    "assets/img/may-cu/brother-2366dw-3.webp",
+    "assets/img/may-cu/brother-2366dw-4.webp"
+   ]
   },
   {
    "slug": "canon-6030w",
@@ -151,7 +235,13 @@
    "moTa": "Máy in cũ laser trắng đen Canon máy hỗ trợ in 1 mặt thiết kế nhỏ gọn phù hợp văn phòng nhỏ và gia đình, dễ cài đặt và sử dụng có kết nối wifi từ nhiều thiết bị điện tử khác.",
    "anh": "assets/img/may-cu/canon-6030w.webp",
    "soAnhKho": 764,
-   "nguonAnh": "canon-6030w/original/frame_1787388928358_kpmbd7.jpg"
+   "nguonAnh": "canon-6030w/original/frame_1787388928358_kpmbd7.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-6030w.webp",
+    "assets/img/may-cu/canon-6030w-2.webp",
+    "assets/img/may-cu/canon-6030w-3.webp",
+    "assets/img/may-cu/canon-6030w-4.webp"
+   ]
   },
   {
    "slug": "canon-2900",
@@ -161,7 +251,13 @@
    "moTa": "Máy in cũ laser trắng đen Canon máy chỉ hỗ trợ in 1 mặt, bản in rõ đẹp sắc nét độ bền cao, chi phí nạp mực thấp dễ cài đặt và sử dụng khổ giấy in thông dụng a4a5.",
    "anh": "assets/img/may-cu/canon-2900.webp",
    "soAnhKho": 1193,
-   "nguonAnh": "canon-2900/original/frame_1787304280765_l8ajyy.jpg"
+   "nguonAnh": "canon-2900/original/frame_1787304280765_l8ajyy.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-2900.webp",
+    "assets/img/may-cu/canon-2900-2.webp",
+    "assets/img/may-cu/canon-2900-3.webp",
+    "assets/img/may-cu/canon-2900-4.webp"
+   ]
   },
   {
    "slug": "brother-2361dn",
@@ -171,7 +267,13 @@
    "moTa": "Máy in đã qua sử dụng Laser in trắng đen Brother máy in tốc độ cao hỗ trợ in 2 mặt tiện lợi, dễ cài đặt có thể kết nối network khi cần thiết, bản in sắc nét rõ đẹp, khổ giấy in A4A5 thông dụng.",
    "anh": "assets/img/may-cu/brother-2361dn.webp",
    "soAnhKho": 1294,
-   "nguonAnh": "brother-2361dn/original/frame_1787216746710_z95tzf.jpg"
+   "nguonAnh": "brother-2361dn/original/frame_1787216746710_z95tzf.jpg",
+   "anhs": [
+    "assets/img/may-cu/brother-2361dn.webp",
+    "assets/img/may-cu/brother-2361dn-2.webp",
+    "assets/img/may-cu/brother-2361dn-3.webp",
+    "assets/img/may-cu/brother-2361dn-4.webp"
+   ]
   },
   {
    "slug": "hp-211d",
@@ -181,7 +283,13 @@
    "moTa": "Máy in đã qua sử dụng HP Laser trắng đen máy in tốc độ nhanh có chế độ 2 mặt tự động, dễ cài đặt và sử dụng, bản in rõ đẹp sắc nét, chi phí nạp mực giá thấp khổ giấy in thông dụng A4A5.",
    "anh": "assets/img/may-cu/hp-211d.webp",
    "soAnhKho": 399,
-   "nguonAnh": "hp-211d/original/frame_1787301860407_jgzp8s.jpg"
+   "nguonAnh": "hp-211d/original/frame_1787301860407_jgzp8s.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-211d.webp",
+    "assets/img/may-cu/hp-211d-2.webp",
+    "assets/img/may-cu/hp-211d-3.webp",
+    "assets/img/may-cu/hp-211d-4.webp"
+   ]
   },
   {
    "slug": "canon-6200d",
@@ -191,7 +299,13 @@
    "moTa": "Máy in đã qua sử dụng laser trắng đen máy in nhanh và có chế độ in 2 mặt tiện lợi, dễ cài đặt và sử dụng chi phí nạp mực thấp, bản in sắc nét độ bền cao, khổ giấy in a4a5.",
    "anh": "assets/img/may-cu/canon-6200d.webp",
    "soAnhKho": 736,
-   "nguonAnh": "canon-6200d/original/frame_1787200567757_hnvgcv.jpg"
+   "nguonAnh": "canon-6200d/original/frame_1787200567757_hnvgcv.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-6200d.webp",
+    "assets/img/may-cu/canon-6200d-2.webp",
+    "assets/img/may-cu/canon-6200d-3.webp",
+    "assets/img/may-cu/canon-6200d-4.webp"
+   ]
   },
   {
    "slug": "hp-135w",
@@ -201,7 +315,13 @@
    "moTa": "Máy in đã qua sử dụng HP laser trắng đen máy hỗ trợ in nhanh có kết hợp photo scan khi cần dùng, kết nối không dây từ nhiều thiết bị điện tử khác, dễ cài đặt bản in rõ đẹp, khổ giấy in thông dụng A4A5.",
    "anh": "assets/img/may-cu/hp-135w.webp",
    "soAnhKho": 918,
-   "nguonAnh": "hp-135w/original/frame_1787200400252_pj9451.jpg"
+   "nguonAnh": "hp-135w/original/frame_1787200400252_pj9451.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-135w.webp",
+    "assets/img/may-cu/hp-135w-2.webp",
+    "assets/img/may-cu/hp-135w-3.webp",
+    "assets/img/may-cu/hp-135w-4.webp"
+   ]
   },
   {
    "slug": "canon-3010",
@@ -211,7 +331,13 @@
    "moTa": "Máy in Canon laser cũ máy hỗ trợ in 1 mặt nhanh, có photo scan bản in rõ đẹp sắc nét, dễ cài đặt và sử dụng , chi phí nạp mực thấp.",
    "anh": "assets/img/may-cu/canon-3010.webp",
    "soAnhKho": 374,
-   "nguonAnh": "canon-3010/dot1/frame_1783496481859_wi63z1_d1.jpg"
+   "nguonAnh": "canon-3010/dot1/frame_1783496481859_wi63z1_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-3010.webp",
+    "assets/img/may-cu/canon-3010-2.webp",
+    "assets/img/may-cu/canon-3010-3.webp",
+    "assets/img/may-cu/canon-3010-4.webp"
+   ]
   },
   {
    "slug": "brother-2321d",
@@ -221,7 +347,13 @@
    "moTa": "Máy in laser trắng đen đã qua sử dụng Brother máy in tốc độ nhanh và có chế độ in 2 mặt tự động, dễ cài đặt và sử dụng, bản in sắc nét rõ đẹp, khổ giấy in thông dụng A4A5.",
    "anh": "assets/img/may-cu/brother-2321d.webp",
    "soAnhKho": 1135,
-   "nguonAnh": "brother-2321d/dot1/frame_1783996272486_5py2vl_d1.jpg"
+   "nguonAnh": "brother-2321d/dot1/frame_1783996272486_5py2vl_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/brother-2321d.webp",
+    "assets/img/may-cu/brother-2321d-2.webp",
+    "assets/img/may-cu/brother-2321d-3.webp",
+    "assets/img/may-cu/brother-2321d-4.webp"
+   ]
   },
   {
    "slug": "brother-2100d",
@@ -231,7 +363,13 @@
    "moTa": "Máy in đã qua sử dụng laser trắng đen Brother máy hỗ trợ in nhanh và có chế độ in 2 mặt tiện lợi, bản in rõ đẹp sắc nét, dễ cài đặt và sử dụng, khổ giấy in thông dụng A4A5.",
    "anh": "assets/img/may-cu/brother-2100d.webp",
    "soAnhKho": 206,
-   "nguonAnh": "brother-b2100d/original/frame_1787387806640_j0d6ek.jpg"
+   "nguonAnh": "brother-b2100d/original/frame_1787387806640_j0d6ek.jpg",
+   "anhs": [
+    "assets/img/may-cu/brother-2100d.webp",
+    "assets/img/may-cu/brother-2100d-2.webp",
+    "assets/img/may-cu/brother-2100d-3.webp",
+    "assets/img/may-cu/brother-2100d-4.webp"
+   ]
   },
   {
    "slug": "hp-400",
@@ -241,7 +379,13 @@
    "moTa": "Máy in đã qua sử dụng HP in nhanh và có chệ độ 2 mặt tự động, hộp mực to bản in đẹp và rõ, khổ a4a5 thông dụng.",
    "anh": "assets/img/may-cu/hp-400.webp",
    "soAnhKho": 265,
-   "nguonAnh": "hp-pro-400/dot1/frame_1780388917833_1rjvvv_d1.jpg"
+   "nguonAnh": "hp-pro-400/dot1/frame_1780388917833_1rjvvv_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-400.webp",
+    "assets/img/may-cu/hp-400-2.webp",
+    "assets/img/may-cu/hp-400-3.webp",
+    "assets/img/may-cu/hp-400-4.webp"
+   ]
   },
   {
    "slug": "hp-12w",
@@ -251,7 +395,13 @@
    "moTa": "Máy in đã qua sử dụng HP Laser trắng đen máy chỉ hỗ trợ in 1 mặt nhanh và có kết nối không dây từ nhiều thiết bị điện tử khác, bản in rõ đẹp sắc nét, dễ sử dụng và cài đặt , khổ giấy in A4A5.",
    "anh": "assets/img/may-cu/hp-12w.webp",
    "soAnhKho": 96,
-   "nguonAnh": "hp-m12w/original/frame_1787299219867_cqxevi.jpg"
+   "nguonAnh": "hp-m12w/original/frame_1787299219867_cqxevi.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-12w.webp",
+    "assets/img/may-cu/hp-12w-2.webp",
+    "assets/img/may-cu/hp-12w-3.webp",
+    "assets/img/may-cu/hp-12w-4.webp"
+   ]
   },
   {
    "slug": "hp-107w",
@@ -261,7 +411,13 @@
    "moTa": "Máy in đen trắng laser hỗ trợ in 1 mặt đơn năng, tối độ in 20 trang/phút A4. Máy thiết kế nhỏ gọn dễ cài đặt và sử dụng.",
    "anh": "assets/img/may-cu/hp-107w.webp",
    "soAnhKho": 1302,
-   "nguonAnh": "hp-laser-107w/original/frame_1779520779745_stlqwd.jpg"
+   "nguonAnh": "hp-laser-107w/original/frame_1779520779745_stlqwd.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-107w.webp",
+    "assets/img/may-cu/hp-107w-2.webp",
+    "assets/img/may-cu/hp-107w-3.webp",
+    "assets/img/may-cu/hp-107w-4.webp"
+   ]
   },
   {
    "slug": "canon-3300",
@@ -271,7 +427,13 @@
    "moTa": "Máy in đã qua sử dụng Canon trắng đen máy hỗ trợ in 1 mặt và in nhanh bản in rõ đẹp dễ cài đặt và sử dụng hộp mực to chi phí nạp mực rẻ.",
    "anh": "assets/img/may-cu/canon-3300.webp",
    "soAnhKho": 286,
-   "nguonAnh": "canon-3300/dot1/frame_1781152017060_46o2e3_d1.jpg"
+   "nguonAnh": "canon-3300/dot1/frame_1781152017060_46o2e3_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-3300.webp",
+    "assets/img/may-cu/canon-3300-2.webp",
+    "assets/img/may-cu/canon-3300-3.webp",
+    "assets/img/may-cu/canon-3300-4.webp"
+   ]
   },
   {
    "slug": "hp-p2035",
@@ -281,7 +443,13 @@
    "moTa": "Công nghệ in: Laser trắng đen Tốc độ in: Lên đến 30 trang/phút Độ phân giải: 600 x 600 dpi (HP FastRes 1200) Khổ giấy: A4, A5, Letter, Legal... Cổng kết nối: USB 2.0 (bản P2035N có thêm cổng mạng LAN) Khay giấy vào: 250 tờ + khay đa năng 50 tờ In đảo mặt: Thủ công Vật tư sử dụng Hộp mực: HP 05A (CE505A) Dung lượng: Khoảng 2.300 trang độ phủ tiêu chuẩn 5%.",
    "anh": "assets/img/may-cu/hp-p2035.webp",
    "soAnhKho": 112,
-   "nguonAnh": "hp-2035/dot1/frame_1781606519530_sclkon_d1.jpg"
+   "nguonAnh": "hp-2035/dot1/frame_1781606519530_sclkon_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-p2035.webp",
+    "assets/img/may-cu/hp-p2035-2.webp",
+    "assets/img/may-cu/hp-p2035-3.webp",
+    "assets/img/may-cu/hp-p2035-4.webp"
+   ]
   },
   {
    "slug": "epson-1210",
@@ -291,7 +459,13 @@
    "moTa": "Máy ngoại hình khá đẹp bản in sắc nét tốc độ in nhanh có thể in trắng đen và màu.",
    "anh": "assets/img/may-cu/epson-1210.webp",
    "soAnhKho": 122,
-   "nguonAnh": "epson-l1210/dot1/frame_1782455001870_ku9pub_d1.jpg"
+   "nguonAnh": "epson-l1210/dot1/frame_1782455001870_ku9pub_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/epson-1210.webp",
+    "assets/img/may-cu/epson-1210-2.webp",
+    "assets/img/may-cu/epson-1210-3.webp",
+    "assets/img/may-cu/epson-1210-4.webp"
+   ]
   },
   {
    "slug": "canon-6030",
@@ -301,7 +475,13 @@
    "moTa": "Máy in đã qua sử dụng laser in trắng đen Canon, máy nhỏ gọn phù hợp văn phòng nhỏ và gia đình, chỉ hỗ trợ in 1 mặt chi phí nạp mực giá rẻ, độ bền cao, full phụ kiện theo máy.",
    "anh": "assets/img/may-cu/canon-6030.webp",
    "soAnhKho": 628,
-   "nguonAnh": "canon-6030/original/frame_1787300336346_nty734.jpg"
+   "nguonAnh": "canon-6030/original/frame_1787300336346_nty734.jpg",
+   "anhs": [
+    "assets/img/may-cu/canon-6030.webp",
+    "assets/img/may-cu/canon-6030-2.webp",
+    "assets/img/may-cu/canon-6030-3.webp",
+    "assets/img/may-cu/canon-6030-4.webp"
+   ]
   },
   {
    "slug": "hp-177fw",
@@ -311,7 +491,13 @@
    "moTa": "Máy đã qua sử dụng thanh lý cho AE trong nghề HP máy in màu hỗ trợ in 1 mặt có thể in không dây từ nhiều thiết bị.",
    "anh": "assets/img/may-cu/hp-177fw.webp",
    "soAnhKho": 76,
-   "nguonAnh": "hp-color-laser-pro-m177fw/dot1/frame_1780112950133_7rm8mn_d1.jpg"
+   "nguonAnh": "hp-color-laser-pro-m177fw/dot1/frame_1780112950133_7rm8mn_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-177fw.webp",
+    "assets/img/may-cu/hp-177fw-2.webp",
+    "assets/img/may-cu/hp-177fw-3.webp",
+    "assets/img/may-cu/hp-177fw-4.webp"
+   ]
   },
   {
    "slug": "hp-108a",
@@ -321,7 +507,13 @@
    "moTa": "Máy in đã qua sử dụng HP laser trắng đen máy chỉ hỗ trợ in 1 mặt, máy thiết kế nhỏ gọn bản in sắc nét rõ đẹp, dễ cài đặt.",
    "anh": "assets/img/may-cu/hp-108a.webp",
    "soAnhKho": 198,
-   "nguonAnh": "hp-108a/dot1/frame_1780372229381_laea3z_d1.jpg"
+   "nguonAnh": "hp-108a/dot1/frame_1780372229381_laea3z_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-108a.webp",
+    "assets/img/may-cu/hp-108a-2.webp",
+    "assets/img/may-cu/hp-108a-3.webp",
+    "assets/img/may-cu/hp-108a-4.webp"
+   ]
   },
   {
    "slug": "hp-1020",
@@ -331,7 +523,13 @@
    "moTa": "Máy in cũ HP chỉ hỗ trợ in 1 mặt độ bền cao bản in rõ đẹp sắc nét , cơ máy chạy êm và mượt, dễ cài đặt và sử dụng. Chi phí nạp mực thấp.",
    "anh": "assets/img/may-cu/hp-1020.webp",
    "soAnhKho": 121,
-   "nguonAnh": "hp-1020/dot1/frame_1781669072194_b8o950_d1.jpg"
+   "nguonAnh": "hp-1020/dot1/frame_1781669072194_b8o950_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-1020.webp",
+    "assets/img/may-cu/hp-1020-2.webp",
+    "assets/img/may-cu/hp-1020-3.webp",
+    "assets/img/may-cu/hp-1020-4.webp"
+   ]
   },
   {
    "slug": "hp-107a",
@@ -341,7 +539,13 @@
    "moTa": "Máy in cũ HP laser trắng đen máy thiết kế nhỏ gọn chỉ hỗ trợ in nhanh 1 mặt, dễ cài đặt và sử dụng bản in sắc nét rõ đẹp, cơ máy chạy êm và mượt độ bền cao, khổ giấy in A4A5 thông dụng.",
    "anh": "assets/img/may-cu/hp-107a.webp",
    "soAnhKho": 1226,
-   "nguonAnh": "hp-107a/original/frame_1787215348668_t2hc0y.jpg"
+   "nguonAnh": "hp-107a/original/frame_1787215348668_t2hc0y.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-107a.webp",
+    "assets/img/may-cu/hp-107a-2.webp",
+    "assets/img/may-cu/hp-107a-3.webp",
+    "assets/img/may-cu/hp-107a-4.webp"
+   ]
   },
   {
    "slug": "hp-12a",
@@ -351,7 +555,13 @@
    "moTa": "Máy in cũ laser in trắng đen HP máy thiết kế nhỏ gọn hỗ trợ in 1 mặt nhanh, dễ cài đặt và sử dụng bản in rõ đẹp sắc nét, chi phí nạp mực thấp. Khổ giấy in A4A5.",
    "anh": "assets/img/may-cu/hp-12a.webp",
    "soAnhKho": 1033,
-   "nguonAnh": "hp-m12a/original/frame_1787297953737_0y4v70.jpg"
+   "nguonAnh": "hp-m12a/original/frame_1787297953737_0y4v70.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-12a.webp",
+    "assets/img/may-cu/hp-12a-2.webp",
+    "assets/img/may-cu/hp-12a-3.webp",
+    "assets/img/may-cu/hp-12a-4.webp"
+   ]
   },
   {
    "slug": "hp-1102",
@@ -361,7 +571,13 @@
    "moTa": "Máy in laser trắng đen HP máy thiết kế nhỏ gọn hỗ trợ in 1 mặt bản in rõ đẹp sắc nét độ bền cao, máy cơ chạy êm và mượt, dễ cài đặt và sử dụng, chi phí nạp mực thấp. Khổ giấy in a4a5 thông dụng.",
    "anh": "assets/img/may-cu/hp-1102.webp",
    "soAnhKho": 966,
-   "nguonAnh": "hp-1102/original/frame_1787299847180_v855tq.jpg"
+   "nguonAnh": "hp-1102/original/frame_1787299847180_v855tq.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-1102.webp",
+    "assets/img/may-cu/hp-1102-2.webp",
+    "assets/img/may-cu/hp-1102-3.webp",
+    "assets/img/may-cu/hp-1102-4.webp"
+   ]
   },
   {
    "slug": "hp-1000w",
@@ -371,7 +587,13 @@
    "moTa": "Máy in đã qua sử dụng HP Máy chỉ hỗ trợ in nhanh 1 mặt bản in sắc nét rõ đẹp hộp mực to, có kết nối in wifi từ nhiều thiết bị điện tử khác, dễ cài đặt khổ giấy in A4A5.",
    "anh": "assets/img/may-cu/hp-1000w.webp",
    "soAnhKho": 864,
-   "nguonAnh": "hp-nerverstop-1000w/original/frame_1787302985282_wsumy6.jpg"
+   "nguonAnh": "hp-nerverstop-1000w/original/frame_1787302985282_wsumy6.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-1000w.webp",
+    "assets/img/may-cu/hp-1000w-2.webp",
+    "assets/img/may-cu/hp-1000w-3.webp",
+    "assets/img/may-cu/hp-1000w-4.webp"
+   ]
   },
   {
    "slug": "hp-1005",
@@ -381,7 +603,13 @@
    "moTa": "Máy in đã qua sử dụng HP laser trắng đen máy nhỏ gọn dễ cài đặt và sử dụng hộp nạp giá rẻ, bản in sắc nét rõ đẹp khổ giấy in thông dụng A4A5,.",
    "anh": "assets/img/may-cu/hp-1005.webp",
    "soAnhKho": 1118,
-   "nguonAnh": "hp-1005/dot1/frame_1783997259257_ddjhj3_d1.jpg"
+   "nguonAnh": "hp-1005/dot1/frame_1783997259257_ddjhj3_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/hp-1005.webp",
+    "assets/img/may-cu/hp-1005-2.webp",
+    "assets/img/may-cu/hp-1005-3.webp",
+    "assets/img/may-cu/hp-1005-4.webp"
+   ]
   },
   {
    "slug": "epson-82",
@@ -391,7 +619,13 @@
    "moTa": "Máy in hóa đơn cũ Epson máy in có độ phân giải 150mm/s. Đây là dòng được nhà hàng siêu thị tin dùng vì tuổi thọ dao cắt bền, kết nối cáp USB.",
    "anh": "assets/img/may-cu/epson-82.webp",
    "soAnhKho": 77,
-   "nguonAnh": "epson-t82/dot1/frame_1786180306889_pzfzic_d1.jpg"
+   "nguonAnh": "epson-t82/dot1/frame_1786180306889_pzfzic_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/epson-82.webp",
+    "assets/img/may-cu/epson-82-2.webp",
+    "assets/img/may-cu/epson-82-3.webp",
+    "assets/img/may-cu/epson-82-4.webp"
+   ]
   },
   {
    "slug": "apos-200",
@@ -401,7 +635,13 @@
    "moTa": "Máy in nhiệt phổ biến, dùng cho những mô hình kinh doanh nhỏ quán cafe và nhà hàng...",
    "anh": "assets/img/may-cu/apos-200.webp",
    "soAnhKho": 17,
-   "nguonAnh": "apos-200/original/frame_1778725759902_3ecqsa.jpg"
+   "nguonAnh": "apos-200/original/frame_1778725759902_3ecqsa.jpg",
+   "anhs": [
+    "assets/img/may-cu/apos-200.webp",
+    "assets/img/may-cu/apos-200-2.webp",
+    "assets/img/may-cu/apos-200-3.webp",
+    "assets/img/may-cu/apos-200-4.webp"
+   ]
   },
   {
    "slug": "epson-3150",
@@ -411,7 +651,13 @@
    "moTa": "Thanh lí ae thợ lấy linh kiện hoặc làm lại bán nha đầu thiếu tia màu đen tình trạng vẫn còn in ấn tốt.",
    "anh": "assets/img/may-cu/epson-3150.webp",
    "soAnhKho": 17,
-   "nguonAnh": "epson-l3150/original/frame_1778469515058_brl7cq.jpg"
+   "nguonAnh": "epson-l3150/original/frame_1778469515058_brl7cq.jpg",
+   "anhs": [
+    "assets/img/may-cu/epson-3150.webp",
+    "assets/img/may-cu/epson-3150-2.webp",
+    "assets/img/may-cu/epson-3150-3.webp",
+    "assets/img/may-cu/epson-3150-4.webp"
+   ]
   },
   {
    "slug": "epson-267e",
@@ -421,7 +667,13 @@
    "moTa": "Máy in nhiệt cũ Epson dùng trong siêu thị và quán cafe thông dụng khổ giấy in tối đa 72mm hoặc 80mm kết nối USB Tiện lợi dễ dùng.",
    "anh": "assets/img/may-cu/epson-267e.webp",
    "soAnhKho": 91,
-   "nguonAnh": "epson-m267e/dot1/frame_1781324832671_q479c6_d1.jpg"
+   "nguonAnh": "epson-m267e/dot1/frame_1781324832671_q479c6_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/epson-267e.webp",
+    "assets/img/may-cu/epson-267e-2.webp",
+    "assets/img/may-cu/epson-267e-3.webp",
+    "assets/img/may-cu/epson-267e-4.webp"
+   ]
   },
   {
    "slug": "birch-cp-q-3",
@@ -431,7 +683,13 @@
    "moTa": "Máy in nhiệt cũ lý tưởng dành cho nhà hàng và quán cafe, kết nối cổng USB. Khổ giấy in 80mm.",
    "anh": "assets/img/may-cu/birch-cp-q-3.webp",
    "soAnhKho": 90,
-   "nguonAnh": "birch-cp-q3/dot1/frame_1781326029992_sldmy8_d1.jpg"
+   "nguonAnh": "birch-cp-q3/dot1/frame_1781326029992_sldmy8_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/birch-cp-q-3.webp",
+    "assets/img/may-cu/birch-cp-q-3-2.webp",
+    "assets/img/may-cu/birch-cp-q-3-3.webp",
+    "assets/img/may-cu/birch-cp-q-3-4.webp"
+   ]
   },
   {
    "slug": "xprinter-260",
@@ -441,7 +699,13 @@
    "moTa": "Máy in bill cũ máy nhỏ gọn khổ giấy in 80mm kết nối USB+LAN, FULL phụ kiện theo máy.",
    "anh": "assets/img/may-cu/xprinter-260.webp",
    "soAnhKho": 86,
-   "nguonAnh": "xprinter-q260/dot1/frame_1781323977582_tm4g7f_d1.jpg"
+   "nguonAnh": "xprinter-q260/dot1/frame_1781323977582_tm4g7f_d1.jpg",
+   "anhs": [
+    "assets/img/may-cu/xprinter-260.webp",
+    "assets/img/may-cu/xprinter-260-2.webp",
+    "assets/img/may-cu/xprinter-260-3.webp",
+    "assets/img/may-cu/xprinter-260-4.webp"
+   ]
   }
  ]
 }

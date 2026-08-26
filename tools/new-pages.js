@@ -215,6 +215,9 @@ function danhSachMay(p, prefix) {
         ${ds.map(m => `<li class="the-may">
           <img src="${prefix}${m.anh}" alt="Máy in cũ ${esc(m.ten)} đã qua kiểm tra, bán tại Tin Học HT"
                width="560" height="380" loading="lazy" decoding="async">
+          ${(m.anhs || []).length > 1 ? '<div class="the-may-them">' + m.anhs.slice(1).map((a, i) =>
+            `<img src="${prefix}${a}" alt="${esc(m.ten)} — ảnh thật góc ${i + 2}" width="300" height="204" loading="lazy" decoding="async">`
+          ).join('') + '</div>' : ''}
           <div class="the-may-noi-dung">
             <h3>${esc(m.ten)}</h3>
             <p class="the-may-gia">${tien(m.giaBan)}</p>

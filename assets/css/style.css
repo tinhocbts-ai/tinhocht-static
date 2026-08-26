@@ -344,3 +344,5 @@ main a { overflow-wrap: anywhere; }
   .the-may-gia { font-size: .96rem; }
 }
 .the-may-mota { margin: 8px 0 0; font-size: .85rem; line-height: 1.5; color: var(--muted); }
+.the-may-them { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.the-may-them img { width: 100%; height: auto; display: block; margin: 0; aspect-ratio: 300/204; object-fit: cover; }

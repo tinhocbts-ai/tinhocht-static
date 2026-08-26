@@ -516,10 +516,45 @@ function crossLinkBlock(o) {
    bài hướng dẫn (290 từ) đứng vị trí 6,3 với 24 lượt nhấp, còn trang dịch vụ (929 từ) đứng
    vị trí 16 và 0 lượt nhấp. Cho trang yếu trỏ về bài mạnh để dồn tín hiệu về một chỗ. */
 const BOOST_LINK = {
+  /* Dan link tu trang GOOGLE HAY GHE sang trang MOI. GSC bao 6 trang moi "khong phat hien
+     duoc trang gioi thieu nao" — nguyen nhan that: chung phan lon chi duoc link tu chinh
+     cac trang moi khac ma Google cung chua bo toi. Phai co link tu trang DA INDEX va
+     duoc bo thuong xuyen thi Google moi tim ra duong sang. */
   'home/thay-ruy-bang-muc-may-in-kim-epson-lq-300-lq-310': {
     to: 'thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-thay-ruy-bang-may-in-hoa-dhon-epson-lq-300-310-2190',
     anchor: 'Hướng dẫn cách thay ruy băng máy in kim Epson LQ 300 / LQ 310 / LQ 2190',
     lead: 'Muốn tự thay ruy băng tại chỗ, xem hướng dẫn từng bước kèm hình:',
+  },
+  // tool-reset-bo-dem-epson-l3210 = trang manh nhat site (365 nhap/90 ngay), Google ghe thuong xuyen
+  'Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210': {
+    to: 'ban-may-in-cu-gia-re/may-in-cu-dang-ban',
+    anchor: 'danh sách máy in cũ đang bán kèm ảnh và giá',
+    lead: 'Máy reset hoài vẫn hỏng, sửa tốn hơn giá trị máy thì xem thử',
+  },
+  'bang-gia-nap-muc-may-in-tan-noi': {
+    to: 'ban-may-in-cu-gia-re/may-in-cu-dang-ban',
+    anchor: 'máy in cũ đã kiểm tra, bảo hành 3 tháng',
+    lead: 'Máy quá cũ, nạp mực xong vẫn in xấu thì thay máy có khi rẻ hơn — xem',
+  },
+  'thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310': {
+    to: 'Phan-mem-reset-may-in/cach-reset-may-in',
+    anchor: 'cách reset máy in theo từng hãng',
+    lead: 'Máy hãng khác thì cách reset khác hẳn — tra bảng ở trang',
+  },
+  'thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4': {
+    to: 'Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d',
+    anchor: 'hướng dẫn reset mực và reset drum HL-L2321D',
+    lead: 'Đèn tắt rồi mà máy vẫn báo hết mực thì cần reset bộ đếm — xem',
+  },
+  'thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother': {
+    to: 'Phan-mem-reset-may-in/cach-reset-may-in-brother',
+    anchor: 'cách reset máy in Brother — phân biệt reset mực và reset drum',
+    lead: 'Lỗi báo hết mực hoặc Replace Drum thì xử lý theo',
+  },
+  'Phan-mem-reset-may-in/phan-mem-reset-epson-l3110': {
+    to: 'Phan-mem-reset-may-in/phan-mem-reset-epson-l1210',
+    anchor: 'phần mềm reset Epson L1210',
+    lead: 'Máy L1210 dùng bản tool riêng, không dùng chung với L3110 —',
   },
 };
 

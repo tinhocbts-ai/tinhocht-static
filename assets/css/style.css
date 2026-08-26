@@ -343,3 +343,4 @@ main a { overflow-wrap: anywhere; }
   .the-may h3 { font-size: .88rem; }
   .the-may-gia { font-size: .96rem; }
 }
+.the-may-mota { margin: 8px 0 0; font-size: .85rem; line-height: 1.5; color: var(--muted); }

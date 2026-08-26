@@ -218,6 +218,7 @@ function danhSachMay(p, prefix) {
           <div class="the-may-noi-dung">
             <h3>${esc(m.ten)}</h3>
             <p class="the-may-gia">${tien(m.giaBan)}</p>
+            ${m.moTa ? '<p class="the-may-mota">' + esc(m.moTa) + '</p>' : ''}
           </div>
         </li>`).join('\n        ')}
       </ul>

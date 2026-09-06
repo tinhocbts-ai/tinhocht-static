@@ -63,7 +63,15 @@ function loadPages() {
 
 /* Trang trùng nội dung -> gộp về 1 trang chính, URL cũ giữ lại dưới dạng chuyển hướng
    (KHÔNG xoá URL nào, nên link cũ trỏ vào đâu cũng không gãy). */
-const MERGE_INTO = { 'bảng-giá': 'bang-gia-nap-muc-may-in-tan-noi' };
+const MERGE_INTO = {
+  'bảng-giá': 'bang-gia-nap-muc-may-in-tan-noi',
+  /* Bài reset drum 2321D cũ trùng chủ đề y hệt trang reset mới, mà 3 tháng chỉ được 1 lượt nhấp
+     (181 hiển thị, vị trí 27,3). Ba trang cùng nhắm "brother 2321d" khiến Google không biết chọn
+     trang nào cho cụm reset — trang mới tụt xuống 52,9. Gộp bài cũ về trang mới để còn một đích
+     duy nhất. Bài "nháy 4 đèn" GIỮ NGUYÊN vì đang ăn 78 nhấp và khác ý định tìm kiếm. */
+  'thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-hl-l2321d':
+    'Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d',
+};
 
 /* Ghi đè title/description — CHỈ dùng cho trang gộp có title mơ hồ ("BẢNG GIÁ" bị trùng 2 trang,
    vị trí GSC 27 nên gần như không có ranking để mất). KHÔNG áp dụng cho 8 trang ngôi sao. */
@@ -1050,17 +1058,18 @@ ${renderFooter(menu, prefix)}
   /* Stub chuyển hướng: URL cũ/sai -> trang thật.
      Gồm /home (gộp trang chủ) + mọi URL gãy mà bộ khớp đã tìm được trang đúng,
      để ai lỡ truy cập URL cũ (hoặc Google còn giữ) vẫn về đúng nội dung, không gặp 404. */
-  function writeStub(fromPath, toPath) {
-    if (!fromPath || PAGE_SET.has(fromPath)) return false;       // không đè trang thật
-    const dir = path.join(ROOT, fromPath.split('/').join(path.sep));
-    const cur = path.join(dir, 'index.html');
+  function writeStub(fromPath, toPath, kieuFile) {
+    if (!fromPath || (PAGE_SET.has(fromPath) && !kieuFile)) return false;       // không đè trang thật
+    const dir = kieuFile ? path.dirname(path.join(ROOT, fromPath.split('/').join(path.sep))) : path.join(ROOT, fromPath.split('/').join(path.sep));
+    const cur = kieuFile ? path.join(ROOT, fromPath.split('/').join(path.sep) + '.html') : path.join(dir, 'index.html');
     // luôn ghi lại: stub từ lần build trước có thể trỏ sai sau khi bộ khớp được sửa
-    if (fs.existsSync(cur) && !/http-equiv="refresh"/.test(fs.readFileSync(cur, 'utf8'))) return false;
-    const depth = fromPath.split('/').length;
+    // kieuFile = trang da chu dong gop (MERGE_INTO) -> duoc phep ghi de ban cu
+    if (!kieuFile && fs.existsSync(cur) && !/http-equiv="refresh"/.test(fs.readFileSync(cur, 'utf8'))) return false;
+    const depth = fromPath.split('/').length - (kieuFile ? 1 : 0);
     const target = '../'.repeat(depth) + (toPath ? encPath(toPath) : '');
     const canon = SITE_URL + '/' + (toPath ? encPath(toPath) : '');
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'),
+    fs.writeFileSync(cur,
       '<!DOCTYPE html>\n<html lang="vi">\n<head>\n<meta charset="UTF-8">\n<title>Đang chuyển hướng…</title>\n' +
       '<link rel="canonical" href="' + canon + '">\n<meta name="robots" content="noindex">\n' +
       '<meta http-equiv="refresh" content="0; url=' + target + '">\n' +
@@ -1072,6 +1081,8 @@ ${renderFooter(menu, prefix)}
   for (const [from, to] of Object.entries(MERGE_INTO)) {
     fs.rmSync(path.join(ROOT, from.split('/').join(path.sep)), { recursive: true, force: true });
     if (writeStub(from, to)) nStub++;
+    // URL Google da lap chi muc la ban KHONG co dau / cuoi -> chuyen huong ca file .html
+    if (writeStub(from, to, true)) nStub++;
   }
   for (const [from, to] of FIX_LOG.entries()) if (writeStub(from, to)) nStub++;
   console.log('  ✓ ' + nStub + ' trang chuyển hướng (URL cũ/sai -> trang đúng)');

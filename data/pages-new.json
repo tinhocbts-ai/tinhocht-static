@@ -1036,17 +1036,17 @@
       ]
     },
     {
-      "_ghichu": "TRANG TRỤ EPSON — 770 lượt/th ('adjustment program epson' 260, 'adjustment program' 140). Site đang xếp 7,8 cho từ khoá này mà không có trang trụ nào, đang ăn nhờ trang model lẻ.",
+      "_ghichu": "DOI HUONG 01/09/2026: ban dau nham thang cum \"adjustment program epson\" nhung trang tool-reset-bo-dem-epson-l3210 (363 nhap/3 thang, vi tri 5,2) dang giu het cum do — trang tru 0 hien thi suot 9 ngay du da index. Doi sang y dinh KHAC: nguoi chua biet may minh dung ban tool nao. Khong tranh tu khoa voi L3210 nua, ma dan link xuong no.",
       "path": "Phan-mem-reset-may-in/adjustment-program-epson",
-      "title": "Adjustment Program Epson Là Gì — Dùng Cho Máy Nào, Reset Ra Sao",
-      "desc": "Adjustment Program là phần mềm reset bộ đếm mực thải của máy in phun Epson. Giải thích phần mềm này làm gì, dùng cho model nào, 8 bước chạy và các lỗi hay gặp.",
-      "h1": "Adjustment Program Epson — phần mềm reset bộ đếm mực thải",
+      "title": "Máy In Epson Nào Dùng Bản Reset Nào — Bảng Tra 12 Dòng Máy",
+      "desc": "Tra nhanh model Epson của bạn dùng bản Adjustment Program nào: L1110, L1210, L310, L3110, L3210, L3250, L805, L1800… Kèm giải thích vì sao mỗi máy một bản riêng.",
+      "h1": "Máy Epson của bạn dùng bản reset nào — bảng tra theo model",
       "model": "Epson",
       "dongMay": "L110, L210, L310, L360, L805, L1110, L1210, L1800, L3110, L3150, L3210, L3250, L4150",
       "loi": "nháy 2 đèn đỏ và báo tràn bộ đếm mực thải",
       "faqChung": false,
       "luuYChung": false,
-      "moBai": "<strong>Adjustment Program</strong> (nhiều nơi gọi tắt là AdjProg hoặc \"tool reset Epson\") là phần mềm kỹ thuật của Epson, dùng để chỉnh và đặt lại các thông số bên trong máy in phun — trong đó có <strong>bộ đếm mực thải</strong>. Đây là thứ duy nhất đưa máy Epson đang nháy 2 đèn đỏ trở lại làm việc. Bài này giải thích phần mềm làm gì, vì sao mỗi model một bản riêng, và chạy nó ra sao.",
+      "moBai": "Điều làm hỏng việc nhiều nhất khi reset máy Epson không phải các bước bấm, mà là <strong>tải nhầm bản phần mềm</strong>. Mỗi dòng máy có một bản Adjustment Program riêng; chọn sai model thì phần mềm vẫn chạy, vẫn báo thành công, nhưng bộ đếm không hề về 0. Trang này để tra đúng bản cho máy của bạn trước khi làm gì khác.",
       "dacDiem": [
         "Là <strong>phần mềm chạy trên máy tính Windows</strong>, không phải thao tác bấm nút trên máy in",
         "Bắt buộc nối máy in với máy tính bằng <strong>dây USB</strong> — không chạy qua wifi hay mạng LAN",

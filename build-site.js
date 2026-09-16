@@ -14,6 +14,8 @@ const fs = require('fs');
 const path = require('path');
 const { buildSchema } = require('./tools/schema');
 const { renderQuanManh, quanManhBlocks } = require('./tools/quan-manh');
+/* Trang sửa máy tính / sửa máy in theo quận viết lại từ đầu — xem tools/dich-vu-quan.js */
+const { DICH_VU_QUAN, DVQ_BY_PATH, renderDichVuQuan, trangDichVuQuan } = require('./tools/dich-vu-quan');
 const { renderNewPage, toBlocks } = require('./tools/new-pages');
 
 const ROOT = __dirname;
@@ -57,6 +59,13 @@ function loadPages() {
   // trang mới: tạo "blocks" giả để bộ sinh dữ liệu có cấu trúc đọc được các bước và hỏi–đáp
   for (const np of NEW_PAGES) {
     pages.push({ path: np.path, title: np.title, metaDesc: np.desc, blocks: toBlocks(np), isNew: true });
+  }
+  /* Trang dịch vụ theo quận viết lại (data/dich-vu-quan.json): đường dẫn đã có trên bản cũ
+     thì THAY HẲN tiêu đề + nội dung; đường dẫn chưa có thì tạo trang mới. */
+  for (const dv of DICH_VU_QUAN) {
+    const cu = pages.find(p => p.path === dv.path);
+    if (cu) { cu.title = dv.title; cu.metaDesc = dv.desc; cu.blocks = [{ t: 'h1', text: dv.h1 }]; }
+    else pages.push({ path: dv.path, title: dv.title, metaDesc: dv.desc, blocks: [{ t: 'h1', text: dv.h1 }], isNew: true });
   }
   return pages;
 }
@@ -559,6 +568,13 @@ const BOOST_LINK = {
     anchor: 'cách reset máy in Brother — phân biệt reset mực và reset drum',
     lead: 'Lỗi báo hết mực hoặc Replace Drum thì xử lý theo',
   },
+  /* Trang sửa máy in Tân Bình (532 hiển thị/90 ngày) đã tự viết "khu vực Tân Bình - Tân Phú"
+     trong bài nhưng không có link — trỏ sang trang sửa máy in Tân Phú mới để Google tìm ra. */
+  'sua-may-in-tai-hcm/sua-may-in-tai-nha-quan-tan-binh': {
+    to: 'sua-may-in-tai-hcm/sua-may-in-quan-tan-phu',
+    anchor: 'sửa máy in tại nhà Quận Tân Phú',
+    lead: 'Khách ở phía Tân Kỳ Tân Quý, Âu Cơ, Luỹ Bán Bích xem trang riêng cho khu vực đó:',
+  },
   'Phan-mem-reset-may-in/phan-mem-reset-epson-l3110': {
     to: 'Phan-mem-reset-may-in/phan-mem-reset-epson-l1210',
     anchor: 'phần mềm reset Epson L1210',
@@ -816,6 +832,24 @@ function khuVucLanCan(quan, prefix, pageSet) {
       </section>`;
 }
 
+/* Một câu dẫn ngắn trên trang nạp mực quận, trỏ tới trang sửa máy in / sửa máy tính của
+   cùng quận đó (chỉ in link tới trang thật sự tồn tại). Mỗi quận một tên, một bộ đường dẫn
+   nên không sinh đoạn trùng nhau giữa các trang. */
+function dichVuCungQuan(quan, prefix, pageSet) {
+  const ten = TEN_QUAN[quan];
+  const ds = [
+    ['sua-may-in', 'sửa máy in tại nhà ' + ten],
+    ['sua-may-tinh', 'sửa máy tính tại nhà ' + ten],
+  ].map(([loai, nhan]) => ({ path: trangDichVuQuan(loai, quan, pageSet), nhan })).filter(x => x.path);
+  if (!ds.length) return '';
+  return `
+      <aside class="inline-guide">
+        <p>Máy in hỏng hay máy tính không nhận máy in thì cùng số hotline này nhận luôn:
+          ${ds.map(x => '<a href="' + prefix + encPath(x.path) + '"><strong>' + esc(x.nhan) + '</strong></a>').join(' · ')}.
+        </p>
+      </aside>`;
+}
+
 /* Địa bàn phục vụ của từng quận: tuyến đường, địa điểm quen thuộc, quãng đường từ cửa hàng.
    Lý do thêm: đo trên chính site cho thấy trang quận 3 dài hơn và được nhiều liên kết hơn
    trang quận 10 nhưng vẫn đứng sau 4 bậc. Khác biệt còn lại là mức độ cụ thể về địa lý —
@@ -934,6 +968,12 @@ function build() {
     let body;
     if (NEW_BY_PATH.has(page.path)) {
       body = renderNewPage(NEW_BY_PATH.get(page.path), prefix, cfg, new Map(pages.map(x => [x.path, x.title])));
+    } else if (DVQ_BY_PATH.has(page.path)) {
+      /* Trang sửa máy tính / sửa máy in theo quận: nội dung viết lại, blocks sinh kèm để
+         dữ liệu có cấu trúc đọc được hỏi–đáp (FAQPage) và trích mô tả cho danh sách con */
+      const r = renderDichVuQuan(DVQ_BY_PATH.get(page.path), prefix, cfg, PAGE_SET);
+      body = r.html;
+      page.blocks = r.blocks;
     } else if (page.path === PRICE_PATH) {
       body = renderPricePage(page, allPages, prefix);
       body += danCluster(page.path, prefix, PAGE_SET);
@@ -968,6 +1008,10 @@ function build() {
            trong các tìm kiếm theo quận, trước đây khách phải nhảy sang trang khác mới thấy. */
         body += priceTableCompact(prefix);
         page.coBangGia = true;   // để phần dữ liệu có cấu trúc chỉ khai giá ở trang thật sự có bảng giá
+        /* Chùm cùng quận: nạp mực ↔ sửa máy in ↔ sửa máy tính của CÙNG quận phải thấy nhau.
+           Đo GSC 09/2026: trang nạp mực Tân Phú đứng vị trí 1,7 nhưng hai trang dịch vụ còn lại
+           của Tân Phú không nhận được link nào từ nó — sức mạnh không chảy sang. */
+        body += dichVuCungQuan(quan, prefix, PAGE_SET);
         body += hoiDapQuan(quan, prefix);
         body += khuVucLanCan(quan, prefix, PAGE_SET);
       }
@@ -1017,7 +1061,11 @@ ${renderFooter(menu, prefix)}
        lastmod đúng những trang đó. Khai cả 167 trang cùng đổi trong một ngày là tín hiệu sai
        gửi cho Google — lần sau nó không còn tin lastmod của site này nữa. */
     const cu = fs.existsSync(outFile) ? fs.readFileSync(outFile, 'utf8') : null;
-    if (cu !== html) DOI_NOI_DUNG.add(page.path);
+    /* Chỉ so phần <main>: menu/chân trang đổi (thêm 1 trang vào menu) là mọi trang đều khác,
+       nếu tính cả phần đó thì lastmod của 174 trang cùng nhảy về hôm nay — đúng cái tín hiệu sai
+       nói ở trên. */
+    const ruot = h => (h && (h.match(/<main[\s\S]*?<\/main>/) || [h])[0].replace(/\r/g, ''));  // bỏ \r: git autocrlf ghi CRLF lúc checkout
+    if (ruot(cu) !== ruot(html)) DOI_NOI_DUNG.add(page.path);
     fs.writeFileSync(outFile, html, 'utf8');
     n++;
   }

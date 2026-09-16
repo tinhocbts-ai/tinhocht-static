@@ -1,0 +1,19 @@
+{
+  "_help": "Bảng giá tiền công sửa máy tính tại nhà — in trên các trang 'sửa máy tính quận X' dựng bằng tools/dich-vu-quan.js. Sửa ở đây rồi chạy NOINDEX=0 node build-site.js.",
+  "_nguon": "Lấy nguyên từ bảng giá đã đăng trên các trang sửa máy tính của bản Google Sites cũ (mục 'Bảng giá dịch vụ sửa chữa máy tính tận nơi'). Chưa có giá mới hơn trong site — nếu giá đã đổi thì sửa ở đây trước khi build.",
+  "muc": [
+    { "viec": "Cài Windows (10, 11 hoặc bản cũ hợp máy) kèm bộ phần mềm văn phòng", "gia": "80.000 – 120.000đ" },
+    { "viec": "Cài Office, font chữ, bộ gõ tiếng Việt, phần mềm đọc PDF", "gia": "60.000đ" },
+    { "viec": "Cài driver máy in, máy fax, webcam, card màn hình còn thiếu", "gia": "80.000đ" },
+    { "viec": "Cài phần mềm thiết kế: Photoshop, Corel, AutoCAD, 3Ds Max", "gia": "60.000đ" },
+    { "viec": "Cài phần mềm diệt virus (bản quyền do khách chọn)", "gia": "50.000đ" },
+    { "viec": "Diệt virus, gỡ quảng cáo, sửa lỗi Windows", "gia": "80.000 – 120.000đ" },
+    { "viec": "Kiểm tra máy, xử lý lỗi phần mềm, vệ sinh máy", "gia": "80.000 – 100.000đ" },
+    { "viec": "Cài macOS hoặc Windows cho MacBook, iMac", "gia": "150.000đ" }
+  ],
+  "ghiChu": [
+    "Đây là tiền công, chưa gồm linh kiện. Linh kiện thay thế (ổ SSD, RAM, nguồn, màn hình, bàn phím) báo giá theo đúng model trước khi thay.",
+    "Không tính phí đi lại trong nội thành. Kiểm tra xong mà khách không sửa thì không mất tiền công.",
+    "Công ty dùng thường xuyên có thể ký phiếu từng lần, thanh toán gộp cuối tháng, xuất hoá đơn VAT."
+  ]
+}

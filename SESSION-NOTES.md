@@ -216,6 +216,32 @@ Build so nội dung trang mới với bản cũ trên đĩa, **chỉ trang thậ
 Trước đây mỗi lần build là cả 167 URL cùng khai đổi — tín hiệu sai, Google sẽ thôi tin `lastmod`
 của site này. Đừng bỏ đoạn so sánh đó khi sửa `build-site.js`.
 
+## 🎯 Chùm Tân Phú — 3 trang cùng quận nối vào nhau (16/09/2026)
+
+**Đo GSC 48 ngày trước/sau go-live (10/06–27/07 vs 28/07–13/09):** nhấp 1.185 → 1.323 (+12%), CTR 2,97% → 3,69%,
+vị trí 12,7 → 12,0, không trang nào biến mất. Phần tăng đến từ 8 trang reset viết mới (~290 nhấp); trang cũ tính
+riêng giảm ~13%. Chuyển nền GitHub không làm hại gì.
+
+**Tân Phú:** trang nạp mực vẫn đứng 1,7 nhưng nhấp 40 → 16 (CTR 40% → 24%); "sửa máy tính quận tân phú" 850 hiển thị
+vị trí 11,7 mà **0 nhấp** (trang cũ 629 từ, không H2, còn chữ "quận 3" chép nhầm); "sửa máy in quận tân phú" chưa có
+trang riêng nên Google xếp trang nạp mực ở vị trí 22.
+
+Đã làm (nguồn sửa: `data/*.json` + `tools/dich-vu-quan.js`, KHÔNG sửa file .html):
+- `tools/dich-vu-quan.js` + `data/dich-vu-quan.json`: bộ dựng trang **sửa máy tính / sửa máy in theo quận**. Đường dẫn
+  đã có → thay hẳn nội dung; chưa có → tạo trang mới (tự vào menu, sitemap, breadcrumb). Link chỉ in khi trang đích tồn tại.
+- Viết lại `sua-may-tinh-tan-noi/sua-may-tinh-quan-tan-phu` (2.075 từ: bảng lỗi–xử lý, bảng laptop tại chỗ/mang về,
+  bảng giá tiền công, 5 bước, FAQ 6 câu → FAQPage) và tạo mới `sua-may-in-tai-hcm/sua-may-in-quan-tan-phu` (1.737 từ).
+- `data/bang-gia-sua-may-tinh.json`: giá công lấy nguyên từ bảng giá bản Google Sites cũ — **chủ shop cần xác nhận lại**.
+- Trang nạp mực Tân Phú: giữ nguyên title, viết lại mô tả (mô tả cũ là địa chỉ chép từ Google Sites); 2 câu dẫn có link
+  sang 2 trang dịch vụ cùng quận (`data/quan-manh.json`).
+- `dichVuCungQuan()` trong build: mọi trang nạp mực quận có thêm 1 câu trỏ tới sửa máy in / sửa máy tính CÙNG quận.
+- Trang chủ + trang sửa máy in Tân Bình trỏ sang trang mới. Link ngữ cảnh vào trang sửa máy tính TP: 17 → 22.
+- **Sitemap lastmod chỉ so phần `<main>`** (bỏ `\r`): thêm 1 trang vào menu làm mọi trang khác đi, trước đây sẽ khai
+  174 trang cùng đổi trong một ngày.
+
+Việc kế tiếp cùng mẫu: viết lại trang sửa máy tính Quận 5 (1.042 hiển thị, vị trí 10,1), Quận 7, Quận 3, Phú Nhuận —
+chỉ cần thêm mục vào `data/dich-vu-quan.json`.
+
 ## ⏳ VIỆC CÒN LẠI
 
 1. **Đổi DNS + go-live** — xem mục "KHI GẮN TÊN MIỀN THẬT" ở trên (chờ chủ shop bấm nút).

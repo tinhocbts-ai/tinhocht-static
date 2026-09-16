@@ -10,10 +10,6 @@
     "title": "Sửa Máy Tính Tại Nhà Quận 8 — Thợ Tới Trong 30 Phút",
     "desc": "Sửa máy tính, laptop tận nhà quận 8: máy chạy chậm, không lên nguồn, mất mạng, cài lại Windows. Kiểm tra trước, báo giá sau, chỉ thu tiền khi máy chạy ổn."
   },
-  "sua-may-tinh-tan-noi/sua-may-tinh-quan-tan-phu": {
-    "title": "Sửa Máy Tính Tại Nhà Quận Tân Phú — Có Mặt Sau 30 Phút",
-    "desc": "Sửa máy tính, laptop tận nơi quận Tân Phú: treo máy, chạy chậm, không lên nguồn, lỗi wifi, cài Windows và phần mềm văn phòng. Báo giá trước khi làm."
-  },
   "sua-may-tinh-tan-noi/sua-may-tinh-quan-7": {
     "title": "Sửa Máy Tính Tại Nhà Quận 7 — Kỹ Thuật Đến Trong 30 Phút",
     "desc": "Dịch vụ sửa máy tính, laptop tận nhà quận 7: máy chậm, treo, không vào được mạng, cài lại Windows. Kiểm tra tận nơi, báo giá trước, bảo hành sau sửa."
@@ -157,5 +153,10 @@
   "liên-hệ/dịch-vụ-nạp-mực-máy-in-tphcm": {
     "title": "Liên Hệ Nạp Mực Máy In TP.HCM — Đặt Lịch, Hoá Đơn VAT",
     "desc": "Cách đặt lịch nạp mực máy in tại TP.HCM: gọi hotline hoặc Zalo, đọc mã máy là báo giá ngay. Xuất hoá đơn VAT, công nợ cuối tháng cho doanh nghiệp."
+  },
+  "_ghi_chu_tan_phu": "16/09/2026: trang nạp mực Tân Phú vẫn đứng 1,7 nhưng tỷ lệ nhấp tụt 40% → 24% (48 ngày trước/sau 28/07). Mô tả cũ là địa chỉ chép từ Google Sites (\"TRUNG TÂM MỰC IN HI-TECH 64 Lương Trúc Đàm...\"). GIỮ NGUYÊN title, chỉ viết lại mô tả. Title/mô tả trang sửa máy tính + sửa máy in Tân Phú nằm trong data/dich-vu-quan.json.",
+  "home/nap-muc-may-in-quan-tan-phu": {
+    "title": "Nạp mực in quận Tân Phú | Có Mặt Nhanh - Bơm Mực In 24/7",
+    "desc": "Nạp mực máy in tận nơi Quận Tân Phú: laser từ 90.000đ, in phun, laser màu — có mặt 20 phút, in thử tại chỗ, bảo hành đến hết mực. Nhận cả thứ 7, chủ nhật."
   }
 }

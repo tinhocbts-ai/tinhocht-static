@@ -229,7 +229,21 @@
       },
       {
         "t": "p",
-        "text": "Hộ kinh doanh in số lượng lớn nên cân nhắc thêm một hộp mực nạp sẵn để xoay vòng: hết là thay ngay trong một phút, hộp cạn đưa thợ bơm lại trong lần ghé sau. Tiền mực không đổi mà máy gần như không có phút chết. Máy giở chứng giữa mùa — kẹt giấy liên tục, kéo giấy đôi — thì gọi sửa máy in theo cùng số hotline — thợ cũng kiểm tra rồi báo giá trước khi làm, không phải tìm chỗ khác."
+        "text": "Hộ kinh doanh in số lượng lớn nên cân nhắc thêm một hộp mực nạp sẵn để xoay vòng: hết là thay ngay trong một phút, hộp cạn đưa thợ bơm lại trong lần ghé sau. Tiền mực không đổi mà máy gần như không có phút chết."
+      },
+      {
+        "t": "plink",
+        "truoc": "Máy giở chứng giữa mùa — kẹt giấy liên tục, kéo giấy đôi, in ra sọc — thì gọi",
+        "path": "sua-may-in-tai-hcm/sua-may-in-quan-tan-phu",
+        "anchor": "sửa máy in tại nhà Quận Tân Phú",
+        "sau": "theo cùng số hotline: thợ kiểm tra rồi báo giá trước khi làm, không phải tìm chỗ khác."
+      },
+      {
+        "t": "plink",
+        "truoc": "Tiệm có máy tính bán hàng chạy chậm, không nhận máy in, mất wifi thì cùng lượt ghé thợ xử lý luôn —",
+        "path": "sua-may-tinh-tan-noi/sua-may-tinh-quan-tan-phu",
+        "anchor": "sửa máy tính tại nhà Quận Tân Phú",
+        "sau": "có bảng giá tiền công công khai."
       },
       {
         "t": "hinh",

@@ -1,0 +1,201 @@
+{
+  "_help": "Trang dịch vụ SỬA MÁY TÍNH / SỬA MÁY IN theo quận, viết lại từ đầu. Mỗi mục = 1 trang. Dựng bởi tools/dich-vu-quan.js. Thêm quận mới = thêm 1 mục (đường dẫn trang có sẵn thì nội dung ở đây thay hẳn bản cũ; đường dẫn mới thì tự tạo trang). Chạy: NOINDEX=0 node build-site.js",
+  "_can_cu": "GSC 10/06–13/09/2026: 'sửa máy tính quận tân phú' 850 hiển thị, vị trí 11,7, 0 nhấp; 'sửa laptop tại nhà quận tân phú' 285 hiển thị vị trí 14,8; 'sửa máy in quận tân phú' 54 hiển thị, trang nạp mực đang đứng vị trí 22 vì chưa có trang riêng. Tân Phú là quận có trang nạp mực mạnh nhất site (vị trí 1,7) nên chùm ba trang cùng quận phải nối vào nhau.",
+  "_chong_trung_lap": "Hai trang viết theo hai góc khác nhau: sửa máy tính = góc văn phòng nhỏ và hộ kinh doanh online quanh Tây Thạnh – Sơn Kỳ; sửa máy in = góc tiệm photo và cửa hàng in đơn. Không dùng chung câu nào với trang nạp mực Tân Phú (góc hộ kinh doanh in ấn).",
+  "pages": [
+    {
+      "path": "sua-may-tinh-tan-noi/sua-may-tinh-quan-tan-phu",
+      "loai": "sua-may-tinh",
+      "quan": "quan-tan-phu",
+      "title": "Sửa Máy Tính, Laptop Tại Nhà Quận Tân Phú — Có Mặt 30 Phút",
+      "desc": "Sửa máy tính, laptop tận nơi Quận Tân Phú: không lên nguồn, chạy chậm, mất wifi, không nhận máy in, cài Windows. Tiền công từ 60.000đ, báo giá trước khi làm.",
+      "h1": "Sửa máy tính, laptop tại nhà Quận Tân Phú — có mặt 30 phút, báo giá trước khi làm",
+      "moBai": [
+        "Máy tính ở Tân Phú hỏng thường rơi vào giờ xấu nhất: shop đang chốt đơn, kế toán đang làm báo cáo, con đang học online. Mang máy ra tiệm nghĩa là tháo dây, chở đi, chờ vài ngày, rồi về cắm lại không chắc đúng chỗ. Kỹ thuật Tin Học HT tới tận nơi, sửa ngay trên bàn của khách, phần lớn lỗi xong trong một lần ghé.",
+        "Từ cửa hàng 79 Bắc Hải (Quận 10) sang Tân Phú chỉ khoảng 6 km, kỹ thuật chạy chừng 15 phút, cộng thời gian chuẩn bị là có mặt trong <strong>30 phút</strong> vào giờ hành chính. Khách gọi nhiều nhất là văn phòng nhỏ và kho hàng quanh khu công nghiệp Tân Bình (phường Tây Thạnh), shop online ở Sơn Kỳ – Tân Quý và hộ gia đình dọc Luỹ Bán Bích, Âu Cơ."
+      ],
+      "cungQuanDan": "Cùng một số hotline cho cả ba việc ở Tân Phú:",
+      "cungQuan": [
+        { "path": "home/nap-muc-may-in-quan-tan-phu", "anchor": "nạp mực máy in Quận Tân Phú" },
+        { "path": "sua-may-in-tai-hcm/sua-may-in-quan-tan-phu", "anchor": "sửa máy in tại nhà Quận Tân Phú" }
+      ],
+      "khoi": [
+        { "t": "h2", "text": "Lỗi máy tính hay gặp ở Tân Phú và cách xử lý ngay tại nhà" },
+        { "t": "p", "text": "Bảng dưới là các lỗi kỹ thuật gặp nhiều nhất khi đi Tân Phú trong mấy tháng qua, kèm cách xử lý thật và thời gian máy phải nghỉ. Khách đọc trước sẽ biết lỗi của mình rơi vào nhóm nào để nói qua điện thoại cho đúng — thợ mang đúng linh kiện, khỏi phải chạy hai lượt." },
+        {
+          "t": "table",
+          "cols": ["Máy đang bị gì", "Nguyên nhân hay gặp", "Xử lý tại chỗ", "Máy nghỉ bao lâu"],
+          "rows": [
+            ["Bấm nút không lên nguồn, quạt không quay", "Nguồn máy bàn hỏng, nút nguồn kẹt, laptop chai pin / hỏng sạc", "Đo nguồn, thử nguồn dự phòng; thay nguồn hoặc sạc ngay nếu có sẵn", "20–40 phút"],
+            ["Lên nguồn nhưng màn hình đen, kêu bíp", "RAM tiếp xúc kém, card màn hình lỏng, main lỗi", "Vệ sinh chân RAM, cắm lại card; main lỗi thì báo giá mang về", "15–30 phút"],
+            ["Chạy chậm, mở Excel mất cả phút, hay treo", "Ổ cứng HDD cũ, đầy rác, nhiều phần mềm tự chạy", "Dọn máy, tắt ứng dụng khởi động; nâng SSD nếu khách đồng ý", "30–60 phút"],
+            ["Màn hình xanh, tự khởi động lại", "Lỗi driver, RAM lỗi, ổ cứng bad sector", "Đọc mã lỗi, test RAM và ổ cứng, cài lại driver hoặc Windows", "30–90 phút"],
+            ["Không bắt được wifi, mạng LAN chập chờn", "Driver mạng, cấu hình IP, dây mạng hoặc router", "Cài lại driver, đặt lại IP, bấm lại đầu dây mạng", "15–30 phút"],
+            ["Không nhận máy in, in báo lỗi", "Driver sai phiên bản, chia sẻ máy in trong mạng bị lỗi", "Cài đúng driver, chia sẻ lại máy in cho cả văn phòng", "15–30 phút"],
+            ["Hiện quảng cáo, trình duyệt tự mở trang lạ", "Nhiễm phần mềm quảng cáo, virus", "Diệt virus, gỡ phần mềm rác, giữ nguyên dữ liệu", "30–60 phút"],
+            ["Laptop nóng, quạt kêu to, tự tắt", "Bụi bít khe tản nhiệt, keo tản nhiệt khô", "Vệ sinh tản nhiệt, tra keo mới ngay tại nhà", "30–45 phút"],
+            ["Laptop vỡ màn hình, liệt phím, chai pin", "Va đập, dùng lâu", "Báo đúng model để thợ mang sẵn linh kiện, thay tại chỗ", "30–60 phút"]
+          ]
+        },
+        { "t": "p", "text": "Điểm chung của mọi ca: <strong>thợ kiểm tra và báo giá trước, khách đồng ý mới làm</strong>. Máy phải thay linh kiện thì đọc rõ tên linh kiện và giá, không có chuyện làm xong mới báo số." },
+
+        { "t": "h2", "text": "Sửa laptop tại nhà Quận Tân Phú — việc gì làm tại chỗ, việc gì phải mang về" },
+        { "t": "p", "text": "Nhiều khách ở Tân Phú hỏi thẳng: laptop có sửa tại nhà được không, hay kiểu gì cũng phải mang đi? Trả lời thật theo từng loại việc:" },
+        {
+          "t": "table",
+          "cols": ["Việc cần làm", "Làm tại nhà được không", "Ghi chú"],
+          "rows": [
+            ["Cài Windows, Office, phần mềm chuyên ngành", "Được, xong trong một lần", "Sao lưu dữ liệu ra ổ khác trước khi cài"],
+            ["Vệ sinh tản nhiệt, tra keo, thay pin", "Được", "Mang sẵn keo tản nhiệt và pin nếu khách báo model"],
+            ["Nâng RAM, thay ổ SSD, chuyển dữ liệu sang ổ mới", "Được", "Chuyển nguyên Windows và dữ liệu, không phải cài lại"],
+            ["Thay màn hình, bàn phím, bản lề", "Được nếu có linh kiện đúng model", "Báo model trước một ngày để thợ lấy hàng"],
+            ["Hàn chip, sửa main, vào nước", "Không — phải mang về xưởng", "Có biên nhận ghi tình trạng máy, hẹn ngày trả, báo giá trước khi sửa"],
+            ["Cứu dữ liệu ổ cứng hỏng", "Tuỳ mức độ", "Ổ còn nhận thì lấy ngay tại chỗ; ổ chết cơ phải mang về"]
+          ]
+        },
+        { "t": "p", "text": "Máy mang về xưởng luôn có <strong>biên nhận</strong> ghi rõ model, số máy, tình trạng lúc nhận và ngày hẹn trả. Khách cần máy làm việc trong lúc chờ có thể mượn máy dự phòng." },
+
+        { "t": "h2", "text": "Bảng giá sửa máy tính tại nhà Quận Tân Phú" },
+        { "t": "p", "text": "Giá dưới đây là tiền công, áp dụng cho cả máy bàn và laptop, đã gồm công tới tận nơi trong Tân Phú. Linh kiện nếu phải thay sẽ báo giá riêng theo model trước khi làm." },
+        { "t": "bang-gia-may-tinh" },
+        { "t": "plink", "truoc": "Văn phòng hay tiệm dùng nhiều máy in thì tra thêm", "path": "bang-gia-nap-muc-may-in-tan-noi", "anchor": "bảng giá nạp mực máy in tận nơi", "sau": "— cùng một lần ghé, thợ làm luôn cả máy in, không tính thêm công đi lại." },
+
+        { "t": "h2", "text": "Quy trình sửa máy tính tận nơi tại Tân Phú" },
+        {
+          "t": "steps",
+          "buoc": [
+            ["Gọi hoặc nhắn Zalo mô tả lỗi", "Nói máy bàn hay laptop, hãng và model nếu biết, máy đang hiện gì trên màn hình. Kỹ thuật hỏi thêm vài câu rồi báo khoảng giá sơ bộ ngay trên điện thoại. Lỗi đơn giản như mất wifi, không in được thì được hướng dẫn thử trước, miễn phí."],
+            ["Kỹ thuật xuất phát, có mặt trong 30 phút", "Thợ phụ trách khu Tân Phú mang theo bộ dụng cụ, nguồn thử, RAM thử, ổ SSD, dây mạng và bộ cài Windows. Khách báo model laptop trước thì mang thêm linh kiện đúng máy."],
+            ["Kiểm tra và báo giá trước khi làm", "Tìm đúng nguyên nhân rồi nói rõ: lỗi gì, cần làm gì, bao nhiêu tiền, mất bao lâu. Khách đồng ý mới bắt đầu. Không sửa được thì không tính công."],
+            ["Sửa ngay tại bàn, dữ liệu giữ nguyên", "Phải cài lại Windows thì sao lưu tài liệu, hình ảnh, dữ liệu kế toán ra ổ khác trước. Xong việc cài lại máy in, phần mềm khách đang dùng, đưa máy về đúng trạng thái làm việc."],
+            ["Bàn giao, in phiếu dịch vụ, bảo hành", "Khách tự thử lại máy. Phiếu dịch vụ ghi việc đã làm và thời hạn bảo hành: công sửa bảo hành 1 tháng, linh kiện thay mới bảo hành theo hãng. Công ty cần hoá đơn VAT thì xuất theo yêu cầu."]
+          ]
+        },
+
+        { "t": "h2", "text": "Vì sao văn phòng ở Tân Phú gọi thợ tới thay vì mang máy ra tiệm" },
+        {
+          "t": "ul",
+          "items": [
+            "<strong>Không mất buổi làm việc:</strong> máy nghỉ đúng thời gian sửa, thường dưới một giờ, không phải chở đi rồi chờ vài ngày.",
+            "<strong>Thấy tận mắt thợ làm gì:</strong> tháo gì, thay gì, khách đứng bên cạnh xem — không lo bị tráo linh kiện.",
+            "<strong>Cả văn phòng làm một lượt:</strong> vài máy cùng lỗi mạng, cùng cần cài phần mềm thì thợ xử lý một lần, tính công theo máy, không tính thêm đi lại.",
+            "<strong>Máy in, mạng, máy tính cùng một thợ:</strong> máy tính không nhận máy in là lỗi hay gặp nhất ở văn phòng — thợ sửa được cả hai đầu, không phải gọi hai chỗ.",
+            "<strong>Công nợ cuối tháng:</strong> công ty ký phiếu từng lần, gộp thanh toán và xuất hoá đơn một lượt."
+          ]
+        },
+        { "t": "plink", "truoc": "Muốn tự xử lý vài lỗi nhỏ trước khi gọi thợ, xem mục", "path": "thu-thuat-tin-hoc/thủ-thuật-máy-tính", "anchor": "thủ thuật máy tính", "sau": "— có bài sửa lỗi wifi dấu X đỏ, cài Gmail vào Outlook, chọn ổ SSD." }
+      ],
+      "diaBan": {
+        "h2": "Địa bàn sửa máy tính tận nơi trong Quận Tân Phú",
+        "mo": "Tân Phú là quận có nhiều công ty nhỏ, kho hàng và shop online, máy tính chạy cả ngày nên hỏng cũng nhiều.",
+        "ket": "Văn phòng trên tầng cao, kho trong khu công nghiệp hay nhà trong hẻm đều nhận, không tính thêm phí. Khách ở giáp ranh Tân Bình, Quận 11 hay Bình Tân gọi cùng số, thợ gần nhất sẽ tới."
+      },
+      "faqTieuDe": "Câu hỏi thường gặp khi gọi sửa máy tính ở Tân Phú",
+      "faq": [
+        ["Sửa máy tính tại nhà Quận Tân Phú giá bao nhiêu?", "Tiền công từ 50.000đ tới 150.000đ tuỳ việc: cài Windows kèm phần mềm văn phòng 80.000–120.000đ, diệt virus 80.000–120.000đ, vệ sinh và xử lý lỗi 80.000–100.000đ. Đã gồm công tới tận nơi trong Tân Phú. Linh kiện thay thế báo giá riêng trước khi làm."],
+        ["Bao lâu thì thợ tới Tân Phú?", "Giờ hành chính thường trong 30 phút vì kỹ thuật phụ trách khu Tân Phú và Tân Bình trực sẵn quanh Tân Kỳ Tân Quý – Âu Cơ. Trưa hoặc giờ mưa lớn có thể chậm thêm 15 phút, thợ sẽ báo trước."],
+        ["Cài lại Windows có mất dữ liệu không?", "Không, nếu báo trước. Thợ sao lưu tài liệu, hình ảnh, file kế toán và dữ liệu trên màn hình ra ổ khác rồi mới cài. Cài xong chép trả về đúng chỗ cũ và cài lại máy in, phần mềm khách đang dùng."],
+        ["Laptop có sửa ngay tại nhà được không?", "Phần lớn là được: cài phần mềm, vệ sinh tản nhiệt, thay pin, nâng RAM, thay SSD, thay màn hình hoặc bàn phím nếu đã báo model trước. Chỉ lỗi main, hàn chip, máy vào nước mới phải mang về xưởng, có biên nhận và hẹn ngày trả."],
+        ["Có sửa ngoài giờ và cuối tuần ở Tân Phú không?", "Có, nhận cả thứ 7, chủ nhật và buổi tối cho trường hợp gấp, không tính phụ phí. Gọi trước để kỹ thuật sắp lịch và mang đúng linh kiện."],
+        ["Công ty cần hoá đơn và thanh toán cuối tháng được không?", "Được. Xuất hoá đơn VAT theo yêu cầu, doanh nghiệp dùng thường xuyên ký phiếu từng lần rồi thanh toán gộp cuối tháng."]
+      ],
+      "lanCan": "Kỹ thuật phụ trách Tân Phú cũng chạy sang các quận sát bên. Ở giáp ranh thì bấm đúng khu vực để xem thời gian có mặt:"
+    },
+
+    {
+      "path": "sua-may-in-tai-hcm/sua-may-in-quan-tan-phu",
+      "loai": "sua-may-in",
+      "quan": "quan-tan-phu",
+      "title": "Sửa Máy In Tại Nhà Quận Tân Phú — Kẹt Giấy, In Mờ, Có Mặt 20 Phút",
+      "desc": "Sửa máy in tận nơi Quận Tân Phú: kẹt giấy, in mờ, in sọc, không nhận lệnh, báo đèn đỏ, máy in phun tắc đầu phun. Kiểm tra, báo giá trước khi làm, có mặt 20–30 phút.",
+      "h1": "Sửa máy in tại nhà Quận Tân Phú — kẹt giấy, in mờ, không nhận lệnh, có mặt 20–30 phút",
+      "moBai": [
+        "Tiệm photo trên Luỹ Bán Bích, cửa hàng in đơn quanh Aeon Mall, văn phòng ở Tây Thạnh — ở Tân Phú máy in là cái máy kiếm tiền, dừng một buổi là mất một buổi doanh thu. Nên khi máy kẹt giấy liên tục, in ra mờ, hoặc bấm in mà máy đứng im, thợ Tin Học HT tới thẳng chỗ máy trong <strong>20–30 phút</strong> để xử lý tại chỗ, không bắt khách tháo máy chở đi.",
+        "Nhận sửa mọi hãng đang dùng nhiều ở Tân Phú: laser HP, Canon, Brother, Samsung, Fuji Xerox; máy in phun Epson, Canon dùng mực bình; máy in kim Epson LQ in hoá đơn; máy đa năng in – scan – photo cỡ nhỏ. Máy nào thợ cũng kiểm tra rồi <strong>báo giá trước, đồng ý mới làm</strong>."
+      ],
+      "cungQuanDan": "Cùng một số hotline cho cả ba việc ở Tân Phú:",
+      "cungQuan": [
+        { "path": "home/nap-muc-may-in-quan-tan-phu", "anchor": "nạp mực máy in Quận Tân Phú" },
+        { "path": "sua-may-tinh-tan-noi/sua-may-tinh-quan-tan-phu", "anchor": "sửa máy tính tại nhà Quận Tân Phú" }
+      ],
+      "khoi": [
+        { "t": "h2", "text": "Máy in đang bị gì — thợ xử lý thế nào ngay tại Tân Phú" },
+        { "t": "p", "text": "Mỗi triệu chứng trên bản in gần như chỉ về một nhóm linh kiện. Bảng này giúp chủ tiệm đoán trước lỗi để hỏi giá qua điện thoại, và biết ca nào thợ làm xong tại chỗ, ca nào phải mang máy về." },
+        {
+          "t": "table",
+          "cols": ["Triệu chứng", "Thường do", "Thợ làm gì", "Tại chỗ hay mang về"],
+          "rows": [
+            ["Kẹt giấy liên tục, kéo hai ba tờ một lần", "Bánh xe kéo giấy mòn, miếng tách giấy chai", "Thay bánh kéo giấy, thay miếng tách, vệ sinh đường giấy", "Tại chỗ, 20–30 phút"],
+            ["Bản in mờ, nhạt dần, chữ xám", "Hết mực, trống hoặc trục từ đã mòn", "Nạp mực; trống mòn thì thay trống, báo giá theo model", "Tại chỗ, 15–30 phút"],
+            ["Sọc đen dọc trang, chấm đen lặp đều", "Gạt mực hỏng, trống xước, lô sấy dính mực", "Thay gạt, thay trống hoặc vệ sinh lô sấy", "Tại chỗ, 20–40 phút"],
+            ["Chữ bong, lấy tay quẹt là trôi mực", "Lô sấy hỏng, bao lụa rách, mực kém", "Thay bao lụa hoặc lô sấy", "Máy nhỏ làm tại chỗ; máy lớn mang về 1–2 ngày"],
+            ["Bấm in máy đứng im, báo offline, treo lệnh", "Driver lỗi, cổng USB hoặc wifi rớt, dịch vụ in của Windows dừng", "Cài lại driver, đặt lại kết nối, khởi động lại dịch vụ in", "Tại chỗ, 15–20 phút"],
+            ["Đèn đỏ nhấp nháy, máy không nhận lệnh", "Máy in phun Epson đầy bộ đếm mực thải; laser báo kẹt hoặc mở nắp", "Reset bộ đếm, thay miếng thấm nếu no mực; kiểm tra cảm biến nắp, giấy", "Tại chỗ, 15–30 phút"],
+            ["Máy in phun ra sọc màu, mất một màu", "Tắc đầu phun do để lâu không in, mực khô", "Thông đầu phun, xả mực, in test cân màu", "Tại chỗ, 30–45 phút; tắc nặng mang về"],
+            ["Brother báo Replace Toner / Replace Drum dù mới nạp mực", "Máy chưa được reset bộ đếm mực hoặc drum", "Reset mực và reset drum đúng cách theo từng đời máy", "Tại chỗ, 10 phút"],
+            ["HP báo hết mực sau khi nạp, không chịu in", "Chip hộp mực đã đếm hết số trang", "Thay chip mới, lắp lại hộp mực", "Tại chỗ, 10–15 phút"],
+            ["Máy in kim in hoá đơn mờ, rách băng", "Ruy băng hết, đầu kim bẩn hoặc gãy kim", "Thay ruy băng, vệ sinh đầu kim; gãy kim thì thay đầu kim", "Tại chỗ, 15 phút; thay đầu kim mang về"]
+          ]
+        },
+        { "t": "p", "text": "Thợ mang theo sẵn linh kiện hay hỏng nhất của các dòng máy phổ biến — bánh kéo giấy, gạt, trống Canon 2900 / HP 12A, bao lụa máy nhỏ, chip HP, ruy băng LQ — nên phần lớn ca ở Tân Phú xong ngay lần ghé đầu. Linh kiện hiếm hơn thì hẹn lại, thường trong ngày hôm sau." },
+
+        { "t": "h2", "text": "Chi phí sửa máy in ở Tân Phú tính thế nào" },
+        { "t": "p", "text": "Sửa máy in không có một bảng giá cố định như nạp mực, vì cùng một lỗi kẹt giấy nhưng máy Canon 2900 và máy HP khổ A3 thay linh kiện khác hẳn nhau. Cách tính minh bạch là:" },
+        {
+          "t": "ul",
+          "items": [
+            "<strong>Hỏi qua điện thoại, Zalo: miễn phí.</strong> Lỗi kết nối, không nhận lệnh, cài driver thường được hướng dẫn xử lý ngay, không cần thợ tới.",
+            "<strong>Thợ tới kiểm tra rồi báo giá gồm hai phần</strong>: tiền công và tiền linh kiện, đọc rõ tên linh kiện. Khách đồng ý mới làm.",
+            "<strong>Không sửa được thì không tính công.</strong> Máy quá cũ, sửa tốn hơn giá trị máy thì thợ nói thẳng để khách cân nhắc đổi máy.",
+            "<strong>Nạp mực đi kèm tính theo bảng giá niêm yết</strong>, không cộng thêm vì thợ đã có mặt.",
+            "<strong>Bảo hành</strong>: linh kiện thay mới bảo hành 1–3 tháng tuỳ loại, ghi rõ trên phiếu dịch vụ."
+          ]
+        },
+        { "t": "plink", "truoc": "Máy hỏng nặng, sửa không đáng, xem thử", "path": "ban-may-in-cu-gia-re/may-in-cu-dang-ban", "anchor": "máy in cũ đang bán kèm ảnh thật và giá", "sau": "— máy đã kiểm tra, bảo hành 3 tháng, giao tận nơi Tân Phú." },
+
+        { "t": "h2", "text": "Quy trình sửa máy in tận nơi ở Quận Tân Phú" },
+        {
+          "t": "steps",
+          "buoc": [
+            ["Gọi hoặc gửi Zalo kèm ảnh bản in lỗi", "Đọc tên máy in ghi trên thân máy và tả máy đang làm sao: kẹt ở đâu, in ra thế nào, đèn nào sáng. Gửi ảnh bản in lỗi là thợ đoán được 80% nguyên nhân và báo khoảng giá luôn."],
+            ["Thợ tới trong 20–30 phút, mang sẵn linh kiện", "Kỹ thuật phụ trách khu Tân Phú xuất phát ngay, mang theo linh kiện của đúng dòng máy khách vừa đọc."],
+            ["Kiểm tra máy, in test, báo giá", "Mở máy xem đường giấy, hộp mực, trống, lô sấy; in trang test để chốt nguyên nhân. Báo giá công và linh kiện, khách đồng ý mới làm."],
+            ["Sửa tại chỗ, thử lại bằng tài liệu thật", "Thay linh kiện, vệ sinh máy, cài lại driver nếu cần. Xong in thử đúng loại giấy và file tiệm hay in để chắc máy chạy đúng việc của khách."],
+            ["Bàn giao, phiếu dịch vụ, bảo hành", "Phiếu ghi lỗi, linh kiện đã thay, thời hạn bảo hành. Công ty cần hoá đơn VAT hoặc công nợ cuối tháng thì ghi luôn vào phiếu."]
+          ]
+        },
+
+        { "t": "h2", "text": "Tự kiểm tra 5 phút trước khi gọi thợ" },
+        { "t": "p", "text": "Vài lỗi máy in ở tiệm tự xử lý được, đỡ mất công chờ. Site có sẵn bài hướng dẫn từng bước:" },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn hay dùng nhất khi máy in ở Tân Phú giở chứng:",
+          "items": [
+            { "path": "thu-thuat-tin-hoc/thu-thuat-may-in/lỗi-máy-in-bị-kẹt-giấy", "anchor": "Máy in bị kẹt giấy — lấy giấy đúng cách, không làm rách bao lụa" },
+            { "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-khong-in-dhuoc", "anchor": "Máy in không in được — kiểm tra kết nối và hàng đợi in" },
+            { "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4", "anchor": "Brother HL-L2321D nháy 4 đèn — xử lý từng trường hợp" },
+            { "path": "thu-thuat-tin-hoc/máy-brother-in-ra-giấy-chạy-chậm-nguyên-nhân-và-cách-khắc-phục", "anchor": "Máy Brother in ra giấy chạy chậm — nguyên nhân và cách chỉnh" },
+            { "path": "Phan-mem-reset-may-in/cach-reset-may-in", "anchor": "Cách reset máy in theo từng hãng khi máy báo đèn đỏ" },
+            { "path": "home/ho-tro-cai-dat-driver-may-in-mien-phi", "anchor": "Hỗ trợ cài driver máy in miễn phí qua điện thoại, TeamViewer" }
+          ]
+        },
+        { "t": "callout", "text": "Làm theo mà máy vẫn kẹt, vẫn mờ thì gọi. Lỗi cơ khí bên trong máy — bánh kéo giấy mòn, lô sấy hỏng — không tự xử lý được, tháo sai còn gãy thêm chốt nhựa." }
+      ],
+      "diaBan": {
+        "h2": "Địa bàn sửa máy in tận nơi trong Quận Tân Phú",
+        "mo": "Từ 79 Bắc Hải (Quận 10) sang Tân Phú khoảng 6 km, thợ chạy chừng 15 phút.",
+        "ket": "Tiệm photo mặt tiền, shop trong hẻm hay văn phòng trên tầng đều nhận, không tính phí đi lại. Máy in khổ A3 và máy đa năng nặng thì thợ sửa ngay tại chỗ đặt máy, không yêu cầu khách khiêng đi đâu."
+      },
+      "faqTieuDe": "Câu hỏi thường gặp khi gọi sửa máy in ở Tân Phú",
+      "faq": [
+        ["Sửa máy in tại Tân Phú có mất phí kiểm tra không?", "Không. Thợ kiểm tra, báo giá công và linh kiện, khách đồng ý mới làm. Không sửa được hoặc khách không sửa thì không tính công, không tính phí đi lại."],
+        ["Máy in kẹt giấy liên tục sửa mất bao lâu?", "Thường 20–30 phút tại chỗ: thay bánh kéo giấy và miếng tách giấy, vệ sinh đường giấy. Đây là lỗi thợ gặp nhiều nhất ở tiệm photo Tân Phú nên linh kiện lúc nào cũng mang sẵn cho các dòng Canon, HP, Brother phổ biến."],
+        ["Máy in phun Epson mất một màu, in sọc có sửa tại chỗ được không?", "Phần lớn được: thông đầu phun, xả mực và in test cân màu tại chỗ, mất 30–45 phút. Đầu phun tắc quá lâu, mực khô cứng thì phải mang về ngâm và xử lý, thợ sẽ báo trước."],
+        ["Vừa nạp mực xong máy vẫn báo hết mực thì sao?", "Máy Brother cần reset bộ đếm mực hoặc drum; máy HP dòng mới cần thay chip trên hộp mực; máy Epson mực bình báo đèn đỏ thì reset bộ đếm mực thải. Cả ba việc thợ làm tại chỗ trong 10–15 phút."],
+        ["Có sửa máy in ngoài giờ và chủ nhật ở Tân Phú không?", "Có. Tiệm photo và cửa hàng in đơn hay hỏng máy đúng cuối tuần nên nhận cả thứ 7, chủ nhật và buổi tối, không phụ thu. Gọi trước để thợ mang đúng linh kiện."],
+        ["Máy in quá cũ, có nên sửa nữa không?", "Thợ sẽ nói thẳng khi chi phí sửa gần bằng giá máy cũ cùng loại. Khi đó có thể xem máy in cũ đã kiểm tra, bảo hành 3 tháng để thay, hoặc thu lại máy cũ trừ vào máy mới."]
+      ],
+      "lanCan": "Thợ phụ trách Tân Phú cũng nhận sửa máy in ở các quận sát bên. Khách ở giáp ranh bấm khu vực gần mình:"
+    }
+  ]
+}

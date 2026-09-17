@@ -265,5 +265,163 @@
         "chuThich": "Thông đầu phun cho máy in màu — công đoạn quyết định bản in không sọc"
       }
     ]
+  },
+  "_them_17_09": "17/09/2026 thêm Quận 3 (1.110 hiển thị, vị trí 7,8, CTR 0,8%) và Phú Nhuận (927 hiển thị, vị trí 10,7). Góc riêng: Quận 3 = mỗi dòng máy văn phòng bơm mực khác nhau chỗ nào; Phú Nhuận = biết trước lúc hết mực qua số trang mỗi hộp. Không dùng chung câu với Q10 / Tân Bình / Tân Phú.",
+  "quan-3": {
+    "path": "home/nap-muc-may-in-quan-3",
+    "goc": "mỗi dòng máy văn phòng bơm mực một kiểu",
+    "khoi": [
+      {
+        "t": "h2",
+        "text": "Bơm mực máy in Quận 3: mỗi dòng máy làm một kiểu"
+      },
+      {
+        "t": "p",
+        "text": "Văn phòng nhà phố dọc Nam Kỳ Khởi Nghĩa, Võ Văn Tần, Điện Biên Phủ và các phòng khám quanh Bệnh viện Bình Dân thường dùng lẫn nhiều đời máy trong cùng một tầng. Cùng gọi là bơm mực, nhưng máy Canon đời cũ chỉ cần đổ mực, còn máy HP đời mới hay Brother thì đổ xong phải xử lý bộ đếm, không thì máy vẫn báo hết mực. Đọc tên máy trước khi gọi giúp kỹ thuật mang đúng thứ cần dùng."
+      },
+      {
+        "t": "table",
+        "cols": [
+          "Dòng máy hay gặp ở Quận 3",
+          "Bơm mực gồm những gì",
+          "Giá"
+        ],
+        "rows": [
+          [
+            "Canon LBP 2900, 3300, HP 1020, P1102",
+            "Đổ mực, vệ sinh trục từ và trống, in thử",
+            "90.000đ"
+          ],
+          [
+            "Canon LBP 6030, MF3010",
+            "Đổ mực hộp 325, lau gạt mực thải",
+            "90.000đ"
+          ],
+          [
+            "HP 107A, 107W, 135A, 135W",
+            "Đổ mực và thay chip, vì chip khoá máy sau khi hết số trang",
+            "90.000đ, chip báo giá riêng"
+          ],
+          [
+            "Brother HL-L2321D, DCP-L2520D, MFC-L2701DW",
+            "Đổ mực TN-2385 và reset nhông đếm",
+            "140.000đ"
+          ],
+          [
+            "Epson L3110, L3210, L1210 in phun",
+            "Châm mực bình, in trang kiểm tra đầu phun",
+            "90.000đ"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Máy HP đời 107 và 135 là trường hợp khách Quận 3 hay hiểu lầm nhất: đổ đầy mực mà máy vẫn không in, tưởng đổ mực hỏng. Thật ra con chip trên hộp mực đã đếm đủ số trang và khoá lệnh in, phải thay chip mới in tiếp được."
+      },
+      {
+        "t": "plink",
+        "truoc": "Muốn hiểu chip HP khoá máy thế nào trước khi gọi, xem",
+        "path": "Phan-mem-reset-may-in/reset-chip-may-in-hp-135a-135w-137w",
+        "anchor": "reset chip máy in HP 135A, 135W, 137W",
+        "sau": "."
+      },
+      {
+        "t": "h2",
+        "text": "Cửa hàng cách Quận 3 chỉ 10 phút chạy xe"
+      },
+      {
+        "t": "p",
+        "text": "Từ 79 Bắc Hải sang trung tâm Quận 3 khoảng 2,8 km. Văn phòng gọi buổi sáng thường có kỹ thuật tới trước giờ nghỉ trưa, bơm mực xong trong 15–20 phút mỗi máy. Tầng có nhiều máy thì làm một lượt, không tính thêm công đi lại cho từng máy."
+      },
+      {
+        "t": "plink",
+        "truoc": "Máy Brother cần đổ mực kèm reset thì xem riêng",
+        "path": "home/thay-muc-may-in-brother",
+        "anchor": "thay mực máy in Brother tận nơi",
+        "sau": "— có bảng mã hộp mực cho từng đời máy."
+      }
+    ]
+  },
+  "quan-phu-nhua": {
+    "path": "home/nap-muc-may-in-quan-phu-nhua",
+    "goc": "biết trước lúc hết mực qua số trang mỗi hộp",
+    "khoi": [
+      {
+        "t": "h2",
+        "text": "Biết trước lúc máy sắp hết mực để gọi bơm mực đúng lúc"
+      },
+      {
+        "t": "p",
+        "text": "Văn phòng nhỏ, phòng khám nha khoa, spa dọc Phan Xích Long, Huỳnh Văn Bánh, Phan Đình Phùng thường in không nhiều nhưng đều tay. Hộp mực vì thế cạn dần rất lâu, rồi đột ngột nhạt đúng hôm cần in hợp đồng hay phiếu hẹn. Cách chủ động nhất là biết mỗi lần bơm mực máy mình in được khoảng bao nhiêu trang."
+      },
+      {
+        "t": "table",
+        "cols": [
+          "Dòng máy",
+          "Hộp mực",
+          "Một lần bơm in được khoảng"
+        ],
+        "rows": [
+          [
+            "HP 1010, 1020, 1018",
+            "HP 12A",
+            "2.000 trang"
+          ],
+          [
+            "Canon LBP 2900, 3000",
+            "Cartridge 303",
+            "2.000 trang"
+          ],
+          [
+            "Canon LBP 3300, 3360",
+            "Cartridge 308",
+            "2.500 trang"
+          ],
+          [
+            "HP M102, M130",
+            "HP 17A",
+            "1.600 trang"
+          ],
+          [
+            "HP 107A, 107W, 135A, 135W",
+            "HP 106A",
+            "1.000 trang"
+          ],
+          [
+            "Brother HL-L2321D, DCP-L2520D",
+            "TN-2385",
+            "2.600 trang"
+          ],
+          [
+            "Samsung ML-1660, SCX-3200",
+            "MLT-D104S",
+            "1.500 trang"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Số trang tính theo trang A4 in chữ thông thường. In bảng biểu, hình ảnh, phiếu có logo đậm thì hết nhanh hơn. Bơm mực đầy đủ thì in được tương đương hộp mới."
+      },
+      {
+        "t": "h2",
+        "text": "Cách tính nhanh ngày nào nên gọi"
+      },
+      {
+        "t": "p",
+        "text": "Lấy số trang ở bảng trên chia cho số trang văn phòng in mỗi ngày. Ví dụ phòng khám in khoảng 40 phiếu một ngày trên máy Canon 2900: 2.000 chia 40 là chừng 50 ngày làm việc, tức gần hai tháng rưỡi. Ghi ngày bơm mực lên thân máy, tới tuần thứ chín thì gọi, khỏi bị động."
+      },
+      {
+        "t": "p",
+        "text": "Máy in ít, một hộp dùng cả năm thì nên nhờ kỹ thuật kiểm tra thêm trống và trục từ mỗi lần bơm mực. Hai bộ phận này lão hoá theo thời gian chứ không chỉ theo số trang, bản in nền xám là dấu hiệu cần thay."
+      },
+      {
+        "t": "plink",
+        "truoc": "Muốn biết trống máy in là gì và khi nào phải thay, xem",
+        "path": "thu-thuat-tin-hoc/tai-sao-phai-thay-drum-may-in-khi-nap-muc-lan-dau",
+        "anchor": "vì sao nạp mực lần đầu phải thay drum",
+        "sau": "."
+      }
+    ]
   }
 }

@@ -273,6 +273,32 @@ Còn chờ chủ shop: trang hộp mực TN-2385 / trống DR-2385 (mảng vật
 Muốn bỏ file .html đã dựng để build lại sạch thì loại `src/` ra: `git checkout -- $(git ls-files -m '*.html' | grep -v '^src/')`.
 Hoặc đừng checkout — build tự ghi đè mọi file dựng.
 
+## 🛠 Tối ưu toàn site máy in (17/09/2026)
+
+Nguyên tắc chủ shop chốt: **nuôi tinhocht độc lập** — không chuyển hướng, không gỡ trang, không dẫn khách sang site nhà khác.
+Trang đang có thì làm tốt hơn; thiếu mới thêm. Mảng sửa máy tính không đụng.
+
+Đo GSC 16/06–14/09 (731 nhấp / 28.619 hiển thị, 152 trang) rồi làm:
+- **Tên thương hiệu:** build đổi "Nam Phong" → "Hi-Tech" và số 0915 510 203 → hotline ngay khi nạp trang DOM (`lamSachTrang`),
+  sạch cả trong dữ liệu có cấu trúc. Trước: 8 trang ghi Nam Phong, 1 trang ghi số namphong.
+- **12 title + mô tả mới** (`data/seo-meta.json`, ghi chú `_ghi_chu_17_09`): nạp mực Q3 (CTR 0,8% ở vị trí 7,8) và Phú Nhuận thêm "Bơm mực"
+  vì đó là từ nhiều hiển thị nhất; sửa máy in Tân Bình (vị trí 6,8, 0 nhấp), Q10, trang con Bạch Đằng (Google chọn nó cho
+  "sửa máy in quận bình thạnh", vị trí 11 — trang quận chỉ 41); reset B7535DW; in ngược thứ tự trang; giấy trắng; thu mua; thủ thuật tin học.
+- **Phân vai 3 bài kẹt giấy** đang tranh "tại sao máy in bị kẹt giấy liên tục": lỗi-máy-in-bị-kẹt-giấy = tự lấy giấy;
+  sua-loi-may-in-hay-bi-ket-giay = kẹt liên tục do bao lụa/trục ép; kéo-giấy-liên-tục = cuốn nhiều tờ. Thêm BOOST từ bài 1 sang bài 2.
+- **Bài in ngược thứ tự trang:** title hứa PDF/Word mà bài chỉ có XP/7 → viết thêm Adobe Reader, Word, driver Windows 10/11
+  (`data/noi-dung-them.json`; khối viết thêm nay hỗ trợ `h3` và `ul`).
+- **Khối riêng nạp mực Q3 và Phú Nhuận** (`data/quan-manh.json`): Q3 = mỗi dòng máy bơm mực khác nhau; Phú Nhuận = số trang
+  mỗi hộp mực để biết lúc gọi. Độ trùng với trang quận khác giảm (Q3↔PN 31% → 27%).
+- **Hai trang trụ viết lại** (`data/trang-dich-vu.json`): `sua-may-in-tai-hcm` (tra triệu chứng, theo hãng, theo khu vực,
+  máy cũ/thu mua) và `thu-thuat-tin-hoc/thu-thuat-may-in` → "Lỗi máy in thường gặp — tra theo triệu chứng" dẫn tới ~45 bài.
+
+**Trục trụ cột hiện có:** Nạp mực (trang chủ + bảng giá + 18 trang quận) · Phần mềm reset (trang trụ Epson, cách reset theo hãng,
+cách reset Brother) · Sửa máy in (trang trụ mới) · Lỗi máy in (trang trụ mới) · Máy in cũ · Brother (thay mực, sửa, kẹt giấy, 6 trang reset).
+Còn thiếu một trụ: **vật tư Brother TN-2385 / DR-2385** — chờ chủ shop chốt vì mảng SKU đang giao mucinminhtien.
+
+Đo lại sau 3–4 tuần (~10/10/2026): CTR nạp mực Q3/Phú Nhuận, sửa máy in Tân Bình/Bạch Đằng, bài in ngược trang, vị trí 3 bài kẹt giấy.
+
 ## ⏳ VIỆC CÒN LẠI
 
 1. **Đổi DNS + go-live** — xem mục "KHI GẮN TÊN MIỀN THẬT" ở trên (chờ chủ shop bấm nút).

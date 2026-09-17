@@ -985,6 +985,604 @@
           "Thường do bánh kéo giấy bám bụi hoặc miếng tách giấy trong khay đã chai. Lau bánh kéo giấy bằng khăn ẩm vắt khô trước. Vẫn kéo đôi thì cần thay miếng tách giấy."
         ]
       ]
+    },
+    {
+      "path": "sua-may-in-tai-hcm",
+      "loai": "sua-may-in",
+      "_ghi_chu": "17/09/2026: trang trụ cũ chỉ có title \"Sửa Máy In\", mô tả là số điện thoại chép từ Google Sites, vị trí 39,8. Viết lại thành trang trụ thật, dẫn tới mọi trang sửa máy in theo hãng, theo khu vực và các bài tự xử lý lỗi.",
+      "title": "Sửa Máy In Tận Nơi TP.HCM — Kẹt Giấy, In Mờ, Báo Giá Trước",
+      "desc": "Sửa máy in tận nơi TP.HCM mọi hãng HP, Canon, Brother, Epson, Samsung: kẹt giấy, in mờ, vệt đen, báo lỗi, không nhận lệnh in. Kiểm tra, báo giá trước khi làm.",
+      "h1": "Sửa máy in tận nơi TP.HCM — mọi hãng, kiểm tra và báo giá trước khi làm",
+      "moBai": [
+        "Máy in hỏng thường không cần mang đi đâu. Phần lớn lỗi văn phòng gặp hằng ngày như kẹt giấy, kéo giấy đôi, bản in mờ, vệt đen, báo đèn đỏ hay không nhận lệnh in đều nằm ở vài bộ phận hay mòn và xử lý được ngay tại chỗ đặt máy. Kỹ thuật Tin Học HT tới tận nơi trong nội thành TP.HCM, xem bệnh, <strong>báo giá trước</strong>, khách đồng ý mới làm.",
+        "Trang này gom mọi thứ về sửa máy in trên site: tra nhanh triệu chứng, trang riêng cho từng hãng và từng khu vực, bài hướng dẫn tự xử lý cho lỗi nhỏ, và lựa chọn khi máy đã quá cũ không đáng sửa."
+      ],
+      "cungQuanDan": "Máy chỉ hết mực, không hỏng gì thì xem",
+      "cungQuan": [
+        {
+          "path": "bang-gia-nap-muc-may-in-tan-noi",
+          "anchor": "bảng giá nạp mực máy in tận nơi"
+        }
+      ],
+      "khoi": [
+        {
+          "t": "h2",
+          "text": "Tra nhanh: máy in đang bị gì"
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Triệu chứng",
+            "Bộ phận thường liên quan",
+            "Tự xử lý trước được không"
+          ],
+          "rows": [
+            [
+              "Giấy kẹt giữa chừng, máy báo kẹt giấy",
+              "Giấy ẩm, giấy nạp lệch, mẩu giấy vụn trong máy",
+              "Được — lấy giấy đúng cách, thay giấy khô"
+            ],
+            [
+              "Kẹt giấy lặp lại dù đã đổi giấy",
+              "Bao lụa rách, trục ép hỏng, bánh kéo giấy mòn",
+              "Không — cần thay linh kiện"
+            ],
+            [
+              "Cuốn hai ba tờ một lúc hoặc không cuốn giấy",
+              "Bánh kéo giấy bám bụi, miếng tách giấy chai",
+              "Lau được; mòn thì phải thay"
+            ],
+            [
+              "Bản in nhạt đều, chữ xám",
+              "Hết mực",
+              "Không — cần nạp mực"
+            ],
+            [
+              "Vệt đen dọc trang",
+              "Dây sạc hoặc mặt trống bẩn, trống xước",
+              "Lau dây sạc được; trống xước phải thay"
+            ],
+            [
+              "Ra toàn giấy trắng",
+              "Trục từ mòn, lỗi driver, lỗi cáp",
+              "Thử cài lại driver và đổi cáp trước"
+            ],
+            [
+              "Chữ bong, quẹt tay là nhoè",
+              "Cụm sấy yếu, bao lụa mòn",
+              "Không — cần thay linh kiện cụm sấy"
+            ],
+            [
+              "Epson nháy hai đèn đỏ",
+              "Bộ đếm mực thải đầy",
+              "Được — reset bằng phần mềm"
+            ],
+            [
+              "Brother, HP báo hết mực dù vừa đổ",
+              "Nhông đếm hoặc chip hộp mực",
+              "Brother reset được; HP đời mới phải thay chip"
+            ],
+            [
+              "Bấm in mà máy đứng im",
+              "Hàng đợi in treo, dịch vụ in của Windows dừng, driver",
+              "Được — xoá hàng đợi, khởi động lại dịch vụ in"
+            ]
+          ]
+        },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn tự xử lý cho các lỗi trên:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/lỗi-máy-in-bị-kẹt-giấy",
+              "anchor": "Máy in bị kẹt giấy — tự lấy giấy ra và xử lý tại nhà"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-hay-bi-ket-giay",
+              "anchor": "Máy in kẹt giấy liên tục — rách bao lụa, hỏng trục ép"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-kéo-giấy-liên-tục-đơn-giản-nhất",
+              "anchor": "Máy in kéo nhiều tờ giấy cùng lúc"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/máy-in-in-ra-toàn-giấy-trắng-tại-sao",
+              "anchor": "Máy in in ra giấy trắng"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/máy-in-bị-nhòe-mực-tại-sao",
+              "anchor": "Máy in bị nhoè mực"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-khong-in-dhuoc",
+              "anchor": "Máy in không in được"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-print-spooler-service-not-runing",
+              "anchor": "Lỗi Print Spooler — dịch vụ in của Windows bị dừng"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in",
+              "anchor": "Xem tất cả lỗi máy in, tra theo triệu chứng"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Sửa tại chỗ hay phải mang về"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "<strong>Làm tại chỗ:</strong> thay bánh kéo giấy, miếng tách giấy, gạt mực, trống; lau dây sạc, cảm biến; reset bộ đếm; cài driver, cài in qua mạng và wifi; thông đầu phun máy in phun.",
+            "<strong>Tuỳ máy:</strong> thay bao lụa và cụm sấy — máy A4 nhỏ làm tại chỗ, máy khổ lớn hoặc máy đa năng phải tháo nhiều thì mang về.",
+            "<strong>Mang về xưởng:</strong> hỏng bo mạch, cháy nguồn, gãy khung cơ, máy bị vô nước. Có biên nhận ghi tình trạng máy và ngày hẹn trả, báo giá trước khi sửa."
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Sửa máy in theo hãng"
+        },
+        {
+          "t": "p",
+          "text": "Mỗi hãng có một kiểu lỗi đặc trưng. Brother hay báo hết mực và lỗi drum do bộ đếm, Epson in phun báo đèn đỏ khi đầy mực thải, HP đời mới khoá máy bằng chip hộp mực, Canon đời cũ bền nhưng hay mòn bao lụa và bánh kéo giấy."
+        },
+        {
+          "t": "links",
+          "dan": "Trang riêng theo hãng:",
+          "items": [
+            {
+              "path": "sua-may-in-tai-hcm/sua-may-in-brother",
+              "anchor": "Sửa máy in Brother tận nơi"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/adjustment-program-epson",
+              "anchor": "Máy in Epson báo đèn đỏ — bảng tra bản reset từng dòng máy"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc",
+              "anchor": "Máy in Epson in sai màu, bản in bị sọc"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-phun-canon-toan-tap",
+              "anchor": "Reset máy in phun Canon mọi dòng máy"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/reset-chip-may-in-hp-135a-135w-137w",
+              "anchor": "Máy in HP 135A, 135W, 137W báo hết mực — chip hộp mực"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-may-in-hp-107a-107w",
+              "anchor": "Sửa máy in HP 107A, 107W"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/tại-sao-máy-in-màu-hp-báo-lỗi-supply-problem",
+              "anchor": "Máy in màu HP báo lỗi Supply Problem"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-reset-muc-may-in-samsung-scx-4300-hieu-qua",
+              "anchor": "Reset mực Samsung SCX-4300"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/loi-toner-empty-drum-life-may-in-panasonic-1500",
+              "anchor": "Panasonic báo Toner Empty, Drum Life"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Sửa máy in theo khu vực"
+        },
+        {
+          "t": "p",
+          "text": "Nhận sửa tận nơi khắp các quận nội thành. Các khu vực dưới đây có trang riêng ghi rõ tuyến đường và thời gian có mặt."
+        },
+        {
+          "t": "links",
+          "dan": "Trang khu vực:",
+          "items": [
+            {
+              "path": "sua-may-in-tai-hcm/sua-may-in-quan-10",
+              "anchor": "Sửa máy in Quận 10"
+            },
+            {
+              "path": "sua-may-in-tai-hcm/sua-may-in-tai-nha-quan-tan-binh",
+              "anchor": "Sửa máy in Quận Tân Bình"
+            },
+            {
+              "path": "sua-may-in-tai-hcm/sua-may-in-quan-tan-phu",
+              "anchor": "Sửa máy in Quận Tân Phú"
+            },
+            {
+              "path": "sua-may-in-tai-hcm/sửa-máy-in-quận-bình-thạnh",
+              "anchor": "Sửa máy in Quận Bình Thạnh"
+            },
+            {
+              "path": "sua-may-in-tai-hcm/sửa-máy-in-quận-bình-thạnh/công-ty-sửa-máy-in-đường-bạch-đằng-bình-thạnh",
+              "anchor": "Sửa máy in đường Bạch Đằng, Bình Thạnh"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Chi phí sửa máy in tính thế nào"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Hỏi qua điện thoại hoặc Zalo không mất tiền. Lỗi driver, hàng đợi in, reset thường hướng dẫn xong ngay trong cuộc gọi.",
+            "Kỹ thuật kiểm tra rồi báo giá gồm tiền công và tiền linh kiện, đọc rõ tên linh kiện. Khách đồng ý mới làm.",
+            "Không sửa được thì không tính công, không tính phí đi lại.",
+            "Sửa kèm nạp mực thì phần nạp mực tính đúng bảng giá niêm yết.",
+            "Linh kiện thay mới có bảo hành ghi trên phiếu dịch vụ. Công ty cần hoá đơn VAT hoặc thanh toán cuối tháng thì ghi luôn."
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Máy quá cũ, sửa không đáng thì sao"
+        },
+        {
+          "t": "p",
+          "text": "Khi tiền sửa gần bằng một máy cũ cùng loại, kỹ thuật sẽ nói thẳng. Lúc đó có ba lựa chọn: đổi sang máy cũ đã kiểm tra, bán lại máy hỏng, hoặc vừa bán máy cũ vừa lấy máy khác cho gọn."
+        },
+        {
+          "t": "links",
+          "dan": "Máy in cũ và thu mua:",
+          "items": [
+            {
+              "path": "ban-may-in-cu-gia-re/may-in-cu-dang-ban",
+              "anchor": "Máy in cũ đang bán — ảnh thật và giá từng máy"
+            },
+            {
+              "path": "sua-may-in-tai-hcm/bán-máy-in-cũ-giá-rẻ-máy-đẹp-lung-linh",
+              "anchor": "Bán máy in cũ giá rẻ"
+            },
+            {
+              "path": "sua-may-in-tai-hcm/thu-mua-may-in-cu-tai-tphcm",
+              "anchor": "Thu mua máy in cũ, máy in hư tận nơi"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Quy trình sửa máy in tận nơi"
+        },
+        {
+          "t": "steps",
+          "buoc": [
+            [
+              "Gọi hoặc nhắn Zalo, đọc tên máy",
+              "Tên máy ghi ở mặt trước hoặc nắp trên. Chụp ảnh bản in lỗi hay màn hình đang báo gửi kèm thì càng dễ đoán bệnh."
+            ],
+            [
+              "Kỹ thuật tới, in trang kiểm tra",
+              "In trang thử để khoanh vùng: lỗi ở đường giấy, ở hộp mực và trống, ở cụm sấy hay ở phần mềm."
+            ],
+            [
+              "Báo giá, khách đồng ý mới làm",
+              "Nói rõ hỏng bộ phận nào, thay gì, bao nhiêu tiền, làm tại chỗ hay phải mang về."
+            ],
+            [
+              "Sửa và in thử bằng tài liệu thật",
+              "Xong việc in đúng loại giấy và file khách hay dùng, in hai mặt nếu máy có."
+            ],
+            [
+              "Bàn giao, ghi phiếu bảo hành",
+              "Phiếu ghi lỗi đã sửa, linh kiện đã thay và thời hạn bảo hành."
+            ]
+          ]
+        },
+        {
+          "t": "plink",
+          "truoc": "Máy in chạy lâu, bụi nhiều, kéo giấy đôi thì nhiều khi chỉ cần",
+          "path": "sua-may-in-tai-hcm/ve-sinh-may-in-tan-noi",
+          "anchor": "vệ sinh máy in tận nơi",
+          "sau": "chứ chưa phải thay linh kiện."
+        }
+      ],
+      "faqTieuDe": "Hỏi đáp khi sửa máy in tận nơi",
+      "faq": [
+        [
+          "Sửa máy in tận nơi có mất phí kiểm tra không?",
+          "Không. Kỹ thuật tới kiểm tra, báo giá công và linh kiện, khách đồng ý mới làm. Không sửa được hoặc khách không sửa thì không tính tiền."
+        ],
+        [
+          "Máy in bị gì thì sửa tại chỗ được?",
+          "Kẹt giấy, kéo giấy đôi, vệt đen, báo hết mực, báo đèn đỏ, không nhận lệnh in, lỗi driver và in qua mạng đều làm tại chỗ. Hỏng bo mạch, cháy nguồn, vô nước mới phải mang về."
+        ],
+        [
+          "Nhận sửa những hãng máy in nào?",
+          "HP, Canon, Brother, Epson, Samsung, Xerox, Panasonic, gồm máy laser trắng đen, laser màu, máy in phun và máy đa năng in – scan – copy."
+        ],
+        [
+          "Bao lâu thì kỹ thuật tới?",
+          "Trong giờ hành chính thường 20–30 phút ở nội thành TP.HCM. Quận xa hơn hoặc giờ cao điểm thì lâu hơn, kỹ thuật báo trước khi xuất phát."
+        ],
+        [
+          "Máy in cũ có nên sửa không?",
+          "Nếu chỉ thay bánh kéo giấy, gạt hay trống thì thường đáng sửa. Hỏng cụm sấy kèm bo mạch thì chi phí có khi gần bằng một máy cũ đã kiểm tra, kỹ thuật sẽ nói rõ để khách chọn."
+        ]
+      ]
+    },
+    {
+      "path": "thu-thuat-tin-hoc/thu-thuat-may-in",
+      "loai": "trang-tru",
+      "_ghi_chu": "17/09/2026: trang mục cũ chỉ là danh sách tự sinh, title \"Thủ Thuật Máy In\", gần như không có hiển thị. Viết lại thành trang tra lỗi theo triệu chứng, dẫn tới toàn bộ bài hướng dẫn máy in — nhiều bài trong đó đang nhận dưới 8 link nội bộ.",
+      "title": "Lỗi Máy In Thường Gặp — Tra Theo Triệu Chứng Và Hãng Máy",
+      "desc": "Tra lỗi máy in theo triệu chứng: kẹt giấy, in mờ, giấy trắng, nhoè mực, báo hết mực, đèn đỏ, không in được. Hướng dẫn tự sửa cho Epson, Brother, Canon, HP, Samsung.",
+      "h1": "Lỗi máy in thường gặp — tra theo triệu chứng, tự sửa tại nhà",
+      "moBai": [
+        "Máy in báo lỗi thì câu hỏi đầu tiên là: tự sửa được không, hay phải gọi thợ? Trang này xếp các bài hướng dẫn trên site theo đúng điều bạn đang thấy trên máy — giấy kẹt, bản in xấu, máy báo đèn hay máy không chịu in — để tìm ra bài cần đọc trong vài giây.",
+        "Mỗi nhóm có một đoạn ngắn nói lỗi thường nằm ở đâu, sau đó là các bài làm theo từng bước. Lỗi nào cần thay linh kiện thì bài có ghi rõ, khỏi mất công tháo máy."
+      ],
+      "khoi": [
+        {
+          "t": "h2",
+          "text": "Kẹt giấy, kéo giấy đôi, không cuốn giấy"
+        },
+        {
+          "t": "p",
+          "text": "Kẹt một lần thường do giấy: ẩm, nạp lệch, quá dày. Kẹt lặp lại dù đã đổi giấy là do linh kiện mòn — bánh kéo giấy, miếng tách giấy, bao lụa hoặc trục ép."
+        },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/lỗi-máy-in-bị-kẹt-giấy",
+              "anchor": "Máy in bị kẹt giấy — tự lấy giấy ra và xử lý tại nhà"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-hay-bi-ket-giay",
+              "anchor": "Kẹt giấy liên tục — rách bao lụa, hỏng trục ép"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-kéo-giấy-liên-tục-đơn-giản-nhất",
+              "anchor": "Máy in kéo nhiều tờ giấy cùng lúc"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/may-in-brother-bi-ket-giay",
+              "anchor": "Máy in Brother bị kẹt giấy — Jam Inside, Jam Rear, Jam 2-sided"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Bản in xấu: mờ, trắng, nhoè, sọc, sai màu"
+        },
+        {
+          "t": "p",
+          "text": "Máy laser in mờ đều cả trang là hết mực; in vệt hay chấm lặp lại là trống hoặc trục từ; chữ bong, quẹt tay nhoè là cụm sấy. Máy in phun sọc ngang hay thiếu màu thường do đầu phun tắc."
+        },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/máy-in-in-ra-toàn-giấy-trắng-tại-sao",
+              "anchor": "Máy in in ra giấy trắng"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/máy-in-bị-nhòe-mực-tại-sao",
+              "anchor": "Máy in bị nhoè mực"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hộp-mực-máy-in-17a18a19a-bị-lem-tại-sao",
+              "anchor": "Hộp mực 17A, 18A, 19A bị lem"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/những-lỗi-cơ-bản-của-hộp-mực",
+              "anchor": "Những lỗi cơ bản của hộp mực"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/tại-sao-máy-in-brother-bị-mờ-nguyên-nhân-và-tuyệt-chiêu",
+              "anchor": "Máy in Brother bị mờ"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc",
+              "anchor": "Máy in Epson in sai màu, bị sọc"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/nguyen-nhan-may-in-mau-khong-ra-deu-muc-va-cach-sua-chua",
+              "anchor": "Máy in màu không ra đều mực"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/tai-sao-phai-thay-drum-may-in-khi-nap-muc-lan-dau",
+              "anchor": "Vì sao nạp mực lần đầu phải thay drum"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Máy báo hết mực, nháy đèn, báo lỗi drum"
+        },
+        {
+          "t": "p",
+          "text": "Phần lớn không phải hỏng mà là bộ đếm: Epson đếm mực thải, Brother đếm bằng nhông hộp mực và bộ đếm trống, HP và Samsung đếm bằng chip. Reset hoặc thay chip là máy in tiếp."
+        },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn:",
+          "items": [
+            {
+              "path": "Phan-mem-reset-may-in/cach-reset-may-in",
+              "anchor": "Cách reset máy in — tra theo hãng"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/adjustment-program-epson",
+              "anchor": "Epson báo đèn đỏ — bảng tra bản reset 12 dòng máy"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310",
+              "anchor": "Phần mềm reset Epson L310"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-muc-may-in-brother-l3551-cdw---chuan-nhat/hướng-dẫn-reset-mực-máy-in-epson-t50-t60-1394-1400",
+              "anchor": "Reset mực Epson T50, T60, 1390, 1400"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+              "anchor": "Cách reset máy in Brother — mực và drum"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4",
+              "anchor": "Brother HL-L2321D nháy 4 đèn"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-dcp-l2520d-l2540dw-de-nhat",
+              "anchor": "Brother báo lỗi drum — reset trống trong 1 phút"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-brother-hl-l5100dn-dhon-gian",
+              "anchor": "Reset Brother HL-L5100DN khi báo hết mực"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-muc-may-in-brother-l3551-cdw---chuan-nhat",
+              "anchor": "Reset mực Brother L3551CDW"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-phun-canon-toan-tap",
+              "anchor": "Reset máy in phun Canon"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-chip-may-in-hp-m107w",
+              "anchor": "Reset chip HP MFP 135W"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/phan-men-reset-hp-107a-107w-135a",
+              "anchor": "Phần mềm reset HP 107A"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-reset-muc-may-in-samsung-scx-4300-hieu-qua",
+              "anchor": "Reset mực Samsung SCX-4300"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-cách-reser-máy-in-xeroc-3210-3220-đơn-giản-nhất",
+              "anchor": "Reset Xerox 3210, 3220"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/loi-toner-empty-drum-life-may-in-panasonic-1500",
+              "anchor": "Panasonic 1500 báo Toner Empty, Drum Life"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-màu-hp-báo-lỗi-er-11-đơn-giản-nhất",
+              "anchor": "Máy in màu HP báo lỗi Er 11"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/tại-sao-máy-in-màu-hp-báo-lỗi-supply-problem",
+              "anchor": "Máy in màu HP báo Supply Problem"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Bấm in mà máy không in"
+        },
+        {
+          "t": "p",
+          "text": "Máy vẫn sáng đèn bình thường mà không nhận lệnh thì lỗi thường ở máy tính: hàng đợi in bị treo, dịch vụ in của Windows dừng, driver sai hoặc máy in đổi địa chỉ mạng."
+        },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-khong-in-dhuoc",
+              "anchor": "Máy in không in được"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-print-spooler-service-not-runing",
+              "anchor": "Lỗi Print Spooler Service not running"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-cài-đặt-điện-thoại-với-máy-in-wifi",
+              "anchor": "In từ điện thoại qua máy in wifi"
+            },
+            {
+              "path": "home/ho-tro-cai-dat-driver-may-in-mien-phi",
+              "anchor": "Hỗ trợ cài driver máy in miễn phí"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Cài đặt khi in: hai mặt, khổ A5, thứ tự trang"
+        },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/thứ-tự-trang-in-bị-lỗi",
+              "anchor": "In ngược thứ tự trang PDF, Word — cách chỉnh"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-cài-đặt-in-2-mặt-cho-máy-canon-3300",
+              "anchor": "Cài in 2 mặt cho Canon 3300"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/huong-dan-cach-in-kho-giay-a5-tren-may-in-canon-lbp-3300",
+              "anchor": "In khổ giấy A5 trên Canon LBP 3300"
+            }
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Tự nạp mực, thay ruy băng"
+        },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-tu-bom-muc-may-in-brother",
+              "anchor": "Tự bơm mực máy in Brother"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw",
+              "anchor": "Nạp mực và reset Brother DCP-B7535DW"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-nap-muc-may-in-hp-laser-m102",
+              "anchor": "Nạp mực HP Laser M102"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-nạp-mực-máy-in-hp-laserjet-managed-mfp-e82550dn",
+              "anchor": "Nạp mực HP LaserJet Managed E82550DN"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-thay-ruy-bang-may-in-hoa-dhon-epson-lq-300-310-2190",
+              "anchor": "Thay ruy băng máy in kim Epson LQ-300, 310, 2190"
+            }
+          ]
+        },
+        {
+          "t": "callout",
+          "text": "Làm theo bài mà máy vẫn lỗi, hoặc lỗi cần tháo linh kiện thì xem trang sửa máy in tận nơi — kỹ thuật tới kiểm tra và báo giá trước khi làm."
+        },
+        {
+          "t": "plink",
+          "truoc": "Gọi thợ tới tận nơi:",
+          "path": "sua-may-in-tai-hcm",
+          "anchor": "sửa máy in tận nơi TP.HCM",
+          "sau": "."
+        }
+      ],
+      "faqTieuDe": "Hỏi đáp chung về lỗi máy in",
+      "faq": [
+        [
+          "Làm sao biết lỗi máy in tự sửa được hay phải gọi thợ?",
+          "Lỗi do giấy, do bộ đếm mực hoặc do máy tính như hàng đợi in, driver thường tự xử lý được theo bài hướng dẫn. Lỗi lặp lại dù đã làm đúng các bước, hoặc cần tháo cụm sấy, bao lụa, bo mạch thì nên gọi thợ."
+        ],
+        [
+          "Máy in báo hết mực nhưng vừa đổ mực thì làm gì?",
+          "Máy đang đếm bằng bộ đếm chứ không đo mực thật. Epson reset bộ đếm mực thải, Brother reset nhông đếm hoặc drum, HP đời mới thay chip hộp mực. Tra đúng hãng trong nhóm máy báo hết mực ở trên."
+        ],
+        [
+          "Máy in in ra vệt đen dọc trang là hỏng gì?",
+          "Thường do dây sạc hoặc mặt trống bám bẩn. Lau dây sạc trước; vẫn còn vệt thì mặt trống đã xước, phải thay trống."
+        ]
+      ]
     }
   ]
 }

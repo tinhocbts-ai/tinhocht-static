@@ -47,12 +47,12 @@
     "desc": "Nạp mực máy in tại nhà quận Gò Vấp cho HP, Canon, Brother, Samsung. Giá từ 90.000đ đã gồm công tới nơi, in thử trước khi bàn giao, bảo hành đến hết mực."
   },
   "home/nap-muc-may-in-quan-phu-nhua": {
-    "title": "Nạp Mực Máy In Quận Phú Nhuận — Từ 90.000đ, Tới 20 Phút",
-    "desc": "Nạp mực máy in tận nơi quận Phú Nhuận: HP, Canon, Brother, Samsung, Xerox. Giá từ 90.000đ gồm công đến tận nơi, in thử tại chỗ, bảo hành đến hết mực."
+    "title": "Bơm Mực Máy In Quận Phú Nhuận Tận Nơi — 90.000đ, 20 Phút",
+    "desc": "Bơm mực, nạp mực máy in tận nơi Quận Phú Nhuận: HP, Canon, Brother, Samsung, Xerox. 90.000đ gồm công tới nơi, in thử tại chỗ, bảo hành đến hết mực."
   },
   "home/nap-muc-may-in-quan-3": {
-    "title": "Nạp Mực Máy In Quận 3 Tận Nơi — Từ 90.000đ, Có Mặt 20 Phút",
-    "desc": "Nạp mực máy in tại nhà quận 3 cho HP, Canon, Brother, Samsung. Giá từ 90.000đ đã gồm công tới nơi, in thử trước khi giao, xuất hoá đơn VAT theo yêu cầu."
+    "title": "Bơm Mực Máy In Quận 3 Tận Nơi — Nạp Mực 90.000đ, 20 Phút",
+    "desc": "Bơm mực, nạp mực máy in tận nơi Quận 3: HP, Canon, Brother, Samsung. 90.000đ gồm công tới nơi, cửa hàng chỉ cách 10 phút, in thử trước khi nhận tiền."
   },
   "home/nap-muc-may-in-quan-12": {
     "title": "Nạp Mực Máy In Quận 12 Tận Nơi — Từ 90.000đ, 20–30 Phút",
@@ -83,8 +83,8 @@
     "desc": "Cần nạp mực máy in gấp ở TP.HCM? Kỹ thuật có mặt trong 20–30 phút, làm cả thứ 7, chủ nhật và ngoài giờ. Giá từ 90.000đ, in thử ngay trước khi bàn giao."
   },
   "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw": {
-    "title": "Cách Nạp Mực Và Reset Máy In Brother B7535DW Chi Tiết",
-    "desc": "Hướng dẫn nạp mực và reset bộ đếm máy in Brother DCP-B7535DW từng bước kèm hình: tháo hộp mực, đổ mực, reset chip, in thử. Tự làm tại chỗ trong 10 phút."
+    "title": "Reset Mực Brother DCP-B7535DW — Nạp Mực Và Reset Từng Bước",
+    "desc": "Máy Brother DCP-B7535DW báo Replace Toner hoặc lỗi drum: cách reset mực, reset trống và nạp mực TN-B022 từng bước kèm hình, làm tại chỗ trong 10 phút."
   },
   "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-kéo-giấy-liên-tục-đơn-giản-nhất": {
     "title": "Máy In Kéo Nhiều Tờ Giấy Cùng Lúc — Cách Sửa Tại Chỗ",
@@ -115,8 +115,8 @@
     "desc": "Tổng hợp cách reset máy in phun Canon khi báo tràn mực thải, nháy đèn cam: reset bằng phím trên máy và bằng phần mềm Service Tool, kèm mã lỗi thường gặp."
   },
   "thu-thuat-tin-hoc/thu-thuat-may-in/thứ-tự-trang-in-bị-lỗi": {
-    "title": "Máy In Ra Ngược Thứ Tự Trang — Cách Chỉnh Lại Trong 30 Giây",
-    "desc": "Máy in in ngược thứ tự trang, trang cuối ra trước? Chỉnh lại trong phần Advanced của driver hoặc cài đặt in ngược. Hướng dẫn cho Word, PDF và Excel."
+    "title": "In Ngược Thứ Tự Trang PDF, Word — Cách Chỉnh Trong 30 Giây",
+    "desc": "Máy in ra trang cuối trước, in PDF bị ngược thứ tự trang? Cách chỉnh trong Adobe Reader, Word và driver máy in Windows 10, 11 — chỉnh một lần là xong."
   },
   "thu-thuat-tin-hoc/thủ-thuật-máy-tính/sửa-lỗi-cột-wifi-bị-dấu-x-đỏ": {
     "title": "Wifi Bị Dấu X Đỏ, Không Vào Được Mạng — 6 Cách Sửa Nhanh",
@@ -158,5 +158,38 @@
   "home/nap-muc-may-in-quan-tan-phu": {
     "title": "Nạp mực in quận Tân Phú | Có Mặt Nhanh - Bơm Mực In 24/7",
     "desc": "Nạp mực máy in tận nơi Quận Tân Phú: laser từ 90.000đ, in phun, laser màu — có mặt 20 phút, in thử tại chỗ, bảo hành đến hết mực. Nhận cả thứ 7, chủ nhật."
-  }
+  },
+  "sua-may-in-tai-hcm/sua-may-in-tai-nha-quan-tan-binh": {
+    "title": "Sửa Máy In Quận Tân Bình Tại Nhà — Có Mặt 20 Phút",
+    "desc": "Sửa máy in tận nơi Quận Tân Bình: kẹt giấy, in mờ, vệt đen, lem mực, không nhận lệnh in. HP, Canon, Brother, Samsung. Kiểm tra và báo giá trước khi làm."
+  },
+  "sua-may-in-tai-hcm/sua-may-in-quan-10": {
+    "title": "Sửa Máy In Quận 10 Tận Nơi — Cửa Hàng Ngay Trong Quận",
+    "desc": "Sửa máy in tại nhà Quận 10: kẹt giấy, in mờ, lem mực, báo lỗi, không in được. Cửa hàng ngay trong quận nên có mặt nhanh; kiểm tra, báo giá trước khi sửa."
+  },
+  "sua-may-in-tai-hcm/sửa-máy-in-quận-bình-thạnh/công-ty-sửa-máy-in-đường-bạch-đằng-bình-thạnh": {
+    "title": "Sửa Máy In Quận Bình Thạnh — Tận Nơi Khu Bạch Đằng, 20 Phút",
+    "desc": "Sửa máy in tận nơi Quận Bình Thạnh, đường Bạch Đằng và các tuyến lân cận: kẹt giấy, lem mực, in không ra chữ, máy kêu to. Báo giá trước khi làm."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/lỗi-máy-in-bị-kẹt-giấy": {
+    "title": "Máy In Bị Kẹt Giấy — Tự Lấy Giấy Ra Và Xử Lý Tại Nhà",
+    "desc": "Máy in bị kẹt giấy: lấy giấy kẹt ra đúng cách không rách, kiểm tra giấy nạp lệch, giấy ẩm, giấy quá dày hoặc quá mỏng. Các bước tự làm trước khi gọi thợ."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-hay-bi-ket-giay": {
+    "title": "Máy In Kẹt Giấy Liên Tục — Rách Bao Lụa, Hỏng Trục Ép",
+    "desc": "Tại sao máy in bị kẹt giấy liên tục dù đã đổi giấy: rách bao lụa, hỏng trục ép ở HP 1010, 1020, Canon 2900, 6030. Cách nhận biết từng lỗi và cách sửa."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/máy-in-in-ra-toàn-giấy-trắng-tại-sao": {
+    "title": "Máy In In Ra Giấy Trắng — Do Trục Từ, Driver Hay Cáp?",
+    "desc": "Máy in in ra toàn giấy trắng dù vừa nạp mực: nguyên nhân hay gặp ở Canon 2900, HP là trục từ mòn, lỗi driver, lỗi cáp. Cách kiểm tra từng nguyên nhân."
+  },
+  "sua-may-in-tai-hcm/thu-mua-may-in-cu-tai-tphcm": {
+    "title": "Thu Mua Máy In Cũ Tận Nơi TP.HCM — Máy Hư Vẫn Mua",
+    "desc": "Thu mua máy in cũ, máy in hư tận nơi các quận TP.HCM: HP, Canon, Brother, Epson. Gọi hoặc nhắn Zalo, nhân viên tới tận nơi xem máy và trả tiền ngay."
+  },
+  "thu-thuat-tin-hoc": {
+    "title": "Thủ Thuật Máy In, Máy Tính — Tự Sửa Lỗi Tại Nhà",
+    "desc": "Hướng dẫn tự sửa lỗi máy in: kẹt giấy, in mờ, báo hết mực, reset Epson, Brother, Canon, HP; cài in 2 mặt, in ngược thứ tự trang. Kèm thủ thuật máy tính."
+  },
+  "_ghi_chu_17_09": "17/09/2026 tối ưu toàn site: viết lại title/mô tả cho trang nhiều hiển thị mà CTR thấp so với vị trí (GSC 16/06–14/09). Không đụng trang CTR ≥5%. Ba bài kẹt giấy được phân vai: lỗi-máy-in-bị-kẹt-giấy = tự lấy giấy; sua-loi-may-in-hay-bi-ket-giay = kẹt liên tục do linh kiện; kéo-giấy-liên-tục = cuốn nhiều tờ. Bình Thạnh: tối ưu trang con Bạch Đằng vì Google đang chọn nó (vị trí 11) chứ không phải trang quận (41)."
 }

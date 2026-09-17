@@ -38,7 +38,8 @@ const fixPhones = s => String(s)
   .replace(/ | | /g, ' ')
   .replace(/089[\s.\-]*886[\s.\-]*0052/g, cfg.hotlineDisplay)
   .replace(/098[\s.\-]*131[\s.\-]*9853/g, cfg.hotlineDisplay)
-  .replace(/0981319853|0898860052/g, cfg.hotlineTel);
+  .replace(/0915[\s.\-]*510[\s.\-]*203/g, cfg.hotlineDisplay)          // hotline tinhocnamphong.net — nuôi tinhocht độc lập (17/09/2026)
+  .replace(/0981319853|0898860052|0915510203/g, cfg.hotlineTel);
 const esc = s => fixPhones(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const encPath = p => p.split('/').map(encodeURIComponent).join('/');
 
@@ -47,6 +48,20 @@ const encPath = p => p.split('/').map(encodeURIComponent).join('/');
 const NEW_PAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pages-new.json'), 'utf8')).pages;
 const NEW_BY_PATH = new Map(NEW_PAGES.map(p => [p.path, p]));
 
+/* Nội dung cũ chép từ site nhà có ghi "Nam Phong". Chủ shop muốn tinhocht đứng độc lập (17/09/2026),
+   nên đổi thành tên đang dùng trên chính các trang này. Chạy trên title, mô tả và mọi khối chữ. */
+const lamSachTen = s => typeof s === 'string'
+  ? fixPhones(s).replace(/Công ty tin học nam phong/gi, 'Công ty Tin Học Hi-Tech').replace(/\bNam\s+Phong\b/gi, 'Hi-Tech')
+  : s;
+function lamSachTrang(p) {
+  p.title = lamSachTen(p.title); p.metaDesc = lamSachTen(p.metaDesc);
+  for (const b of p.blocks || []) {
+    b.text = lamSachTen(b.text);
+    for (const l of b.links || []) l.text = lamSachTen(l.text);
+  }
+  return p;
+}
+
 function loadPages() {
   const pages = [];
   for (const f of fs.readdirSync(DOM_DIR)) {
@@ -54,7 +69,7 @@ function loadPages() {
     const p = JSON.parse(fs.readFileSync(path.join(DOM_DIR, f), 'utf8'));
     if (!p.path || p.path === 'home') continue;              // /home == trang chủ (stub redirect)
     if (/dịch-vụ-mạng-tổng-đài|untitled-page/.test(p.path)) continue; // đã chốt loại
-    pages.push(p);
+    pages.push(lamSachTrang(p));
   }
   // trang mới: tạo "blocks" giả để bộ sinh dữ liệu có cấu trúc đọc được các bước và hỏi–đáp
   for (const np of NEW_PAGES) {
@@ -603,6 +618,13 @@ const BOOST_LINK = {
     anchor: 'sửa máy in tại nhà Quận Tân Phú',
     lead: 'Khách ở phía Tân Kỳ Tân Quý, Âu Cơ, Luỹ Bán Bích xem trang riêng cho khu vực đó:',
   },
+  /* Ba bài kẹt giấy cũ cùng tranh "tại sao máy in bị kẹt giấy liên tục" (~200 hiển thị, cả ba đứng 30–70).
+     Phân vai: bài này = tự lấy giấy, xử lý giấy; bài hay-bi-ket-giay = kẹt liên tục do hỏng linh kiện. */
+  'thu-thuat-tin-hoc/thu-thuat-may-in/lỗi-máy-in-bị-kẹt-giấy': {
+    to: 'thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-hay-bi-ket-giay',
+    anchor: 'máy in kẹt giấy liên tục — rách bao lụa, hỏng trục ép',
+    lead: 'Đã đổi giấy, lấy giấy đúng cách mà vẫn kẹt lại hoài thì lỗi nằm ở linh kiện, xem',
+  },
   'Phan-mem-reset-may-in/phan-mem-reset-epson-l3110': {
     to: 'Phan-mem-reset-may-in/phan-mem-reset-epson-l1210',
     anchor: 'phần mềm reset Epson L1210',
@@ -708,7 +730,10 @@ function bangThoiGianDiChuyen() {
 function noiDungThem(p) {
   const o = THEM[p];
   if (!o || !o.khoi) return '';
-  const html = o.khoi.map(b => b.h2 ? `<h2>${esc(b.h2)}</h2>` : `<p>${esc(b.p)}</p>`).join('\n      ');
+  const html = o.khoi.map(b => b.h2 ? `<h2>${esc(b.h2)}</h2>`
+    : b.h3 ? `<h3>${esc(b.h3)}</h3>`
+    : b.ul ? `<ul class="check-list">${b.ul.map(x => '<li>' + esc(x) + '</li>').join('')}</ul>`
+    : `<p>${esc(b.p)}</p>`).join('\n      ');
   return `
       <section class="them-noi-dung">
       ${html}
@@ -720,7 +745,12 @@ function noiDungThem(p) {
 function themVaoBlocks(page) {
   const o = THEM[page.path];
   if (!o || !o.khoi) return;
-  for (const b of o.khoi) page.blocks.push(b.h2 ? { t: 'h2', text: b.h2 } : { t: 'p', text: b.p });
+  for (const b of o.khoi) {
+    if (b.h2) page.blocks.push({ t: 'h2', text: b.h2 });
+    else if (b.h3) page.blocks.push({ t: 'h3', text: b.h3 });
+    else if (b.ul) for (const x of b.ul) page.blocks.push({ t: 'li', text: x });
+    else page.blocks.push({ t: 'p', text: b.p });
+  }
 }
 
 function danCluster(hienTai, prefix, pageSet) {

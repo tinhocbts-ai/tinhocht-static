@@ -596,6 +596,13 @@ const BOOST_LINK = {
     anchor: 'vệ sinh máy in tận nơi',
     lead: 'Bánh kéo giấy bám bụi là nguyên nhân hay gặp nhất — nếu không tự lau được thì gọi',
   },
+  /* Trang sửa máy in Tân Bình (532 hiển thị/90 ngày) đã tự viết "khu vực Tân Bình - Tân Phú"
+     trong bài nhưng không có link — trỏ sang trang sửa máy in Tân Phú để Google tìm ra. */
+  'sua-may-in-tai-hcm/sua-may-in-tai-nha-quan-tan-binh': {
+    to: 'sua-may-in-tai-hcm/sua-may-in-quan-tan-phu',
+    anchor: 'sửa máy in tại nhà Quận Tân Phú',
+    lead: 'Khách ở phía Tân Kỳ Tân Quý, Âu Cơ, Luỹ Bán Bích xem trang riêng cho khu vực đó:',
+  },
   'Phan-mem-reset-may-in/phan-mem-reset-epson-l3110': {
     to: 'Phan-mem-reset-may-in/phan-mem-reset-epson-l1210',
     anchor: 'phần mềm reset Epson L1210',
@@ -1136,21 +1143,6 @@ ${renderFooter(menu, prefix)}
     if (writeStub(from, to, true)) nStub++;
   }
   for (const [from, to] of FIX_LOG.entries()) if (writeStub(from, to)) nStub++;
-  /* Trang đã rút khỏi tinhocht, chuyển thẳng sang trang cùng chủ đề của site nhà đang xếp hạng tốt hơn.
-     Khai trong data/chuyen-sang-site-khac.json. Không đè trang thật đang dựng. */
-  const CHUYEN_NGOAI = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'chuyen-sang-site-khac.json'), 'utf8'));
-  for (const [from, url] of Object.entries(CHUYEN_NGOAI)) {
-    if (from.startsWith('_') || PAGE_SET.has(from)) continue;
-    const cur = path.join(ROOT, from.split('/').join(path.sep) + '.html');
-    fs.mkdirSync(path.dirname(cur), { recursive: true });
-    fs.writeFileSync(cur,
-      '<!DOCTYPE html>\n<html lang="vi">\n<head>\n<meta charset="UTF-8">\n<title>Đang chuyển hướng…</title>\n' +
-      '<link rel="canonical" href="' + url + '">\n<meta name="robots" content="noindex">\n' +
-      '<meta http-equiv="refresh" content="0; url=' + url + '">\n' +
-      '<script>location.replace("' + url + '");</script>\n</head>\n' +
-      '<body><p>Trang này đã chuyển sang <a href="' + url + '">' + url + '</a></p></body>\n</html>\n', 'utf8');
-    nStub++;
-  }
   console.log('  ✓ ' + nStub + ' trang chuyển hướng (URL cũ/sai -> trang đúng)');
 
   // sitemap: trang chủ + tất cả trang (kể cả khi noindex, để sẵn cho lúc gắn domain)

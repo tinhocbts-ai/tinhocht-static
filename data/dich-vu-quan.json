@@ -14,7 +14,7 @@
         "Máy tính ở Tân Phú hỏng thường rơi vào giờ xấu nhất: shop đang chốt đơn, kế toán đang làm báo cáo, con đang học online. Mang máy ra tiệm nghĩa là tháo dây, chở đi, chờ vài ngày, rồi về cắm lại không chắc đúng chỗ. Kỹ thuật Tin Học HT tới tận nơi, sửa ngay trên bàn của khách, phần lớn lỗi xong trong một lần ghé.",
         "Từ cửa hàng 79 Bắc Hải (Quận 10) sang Tân Phú chỉ khoảng 6 km, kỹ thuật chạy chừng 15 phút, cộng thời gian chuẩn bị là có mặt trong <strong>30 phút</strong> vào giờ hành chính. Khách gọi nhiều nhất là văn phòng nhỏ và kho hàng quanh khu công nghiệp Tân Bình (phường Tây Thạnh), shop online ở Sơn Kỳ – Tân Quý và hộ gia đình dọc Luỹ Bán Bích, Âu Cơ."
       ],
-      "cungQuanDan": "Máy in trong nhà cần nạp mực thì cùng số hotline nhận luôn:",
+      "cungQuanDan": "Cùng một số hotline cho cả ba việc ở Tân Phú:",
       "cungQuan": [
         {
           "path": "home/nap-muc-may-in-quan-tan-phu",
@@ -493,9 +493,7 @@
           "Thợ sẽ nói thẳng khi chi phí sửa gần bằng giá máy cũ cùng loại. Khi đó có thể xem máy in cũ đã kiểm tra, bảo hành 3 tháng để thay, hoặc thu lại máy cũ trừ vào máy mới."
         ]
       ],
-      "lanCan": "Thợ phụ trách Tân Phú cũng nhận sửa máy in ở các quận sát bên. Khách ở giáp ranh bấm khu vực gần mình:",
-      "tamTat": true,
-      "_tamTat_ly_do": "17/09/2026 rút theo hướng 2 (tinhocht và namphong chung một doanh nghiệp; namphong đứng 3,4 cho \"sửa máy in quận tân phú\"). URL chuyển sang namphong qua data/chuyen-sang-site-khac.json. Muốn bật lại: xoá tamTat + xoá dòng chuyển hướng."
+      "lanCan": "Thợ phụ trách Tân Phú cũng nhận sửa máy in ở các quận sát bên. Khách ở giáp ranh bấm khu vực gần mình:"
     }
   ]
 }

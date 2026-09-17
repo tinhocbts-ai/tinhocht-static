@@ -256,10 +256,10 @@ hướng 1 (tách hẳn — cần số điện thoại riêng, gỡ MST/địa c
 trang reset Epson mới cho model namphong đã có. Mảng sửa máy tính: không phát triển (nghề đã nghỉ), trang cũ để nguyên.
 
 Đã làm:
-- Rút `sua-may-in-tai-hcm/sua-may-in-quan-tan-phu`: `tamTat` trong `data/dich-vu-quan.json`, URL chuyển sang
-  namphong qua `data/chuyen-sang-site-khac.json` (build ghi file chuyển hướng noindex + canonical ngoài).
-- Bỏ câu dẫn "sửa máy in / sửa máy tính cùng quận" trên mọi trang nạp mực quận; bỏ BOOST Tân Bình → Tân Phú.
-- Link "sửa máy in Quận Tân Phú" trên trang nạp mực Tân Phú trỏ thẳng sang namphong (`plink` có `url`).
+- ~~Rút trang sửa máy in Tân Phú, chuyển hướng sang namphong~~ — **HOÀN NGUYÊN cùng ngày**. Chủ shop không yêu cầu,
+  tự ý làm là sai. Trang `sua-may-in-tai-hcm/sua-may-in-quan-tan-phu` giữ trên tinhocht như cũ, link nội bộ trỏ về nó như cũ.
+  **KHÔNG chuyển hướng, KHÔNG dẫn link từ tinhocht sang namphong khi chủ shop chưa bảo.**
+- Bỏ câu dẫn "sửa máy in / sửa máy tính cùng quận" (`dichVuCungQuan`) trên mọi trang nạp mực quận.
 - 4 trang mới trong `data/trang-dich-vu.json` (cùng bộ dựng `tools/dich-vu-quan.js`, để trống `quan`):
   `home/thay-muc-may-in-brother`, `sua-may-in-tai-hcm/sua-may-in-brother`, `sua-may-in-tai-hcm/ve-sinh-may-in-tan-noi`,
   `thu-thuat-tin-hoc/thu-thuat-may-in/may-in-brother-bi-ket-giay`. 1.350–1.577 từ, trùng nhau 2–4%, trùng bài kẹt giấy cũ ≤13%.

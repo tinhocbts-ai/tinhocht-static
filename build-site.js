@@ -15,7 +15,7 @@ const path = require('path');
 const { buildSchema } = require('./tools/schema');
 const { renderQuanManh, quanManhBlocks } = require('./tools/quan-manh');
 /* Trang sửa máy tính / sửa máy in theo quận viết lại từ đầu — xem tools/dich-vu-quan.js */
-const { DICH_VU_QUAN, DVQ_BY_PATH, renderDichVuQuan, trangDichVuQuan } = require('./tools/dich-vu-quan');
+const { DICH_VU_QUAN, DVQ_BY_PATH, renderDichVuQuan } = require('./tools/dich-vu-quan');
 const { renderNewPage, toBlocks } = require('./tools/new-pages');
 
 const ROOT = __dirname;
@@ -568,12 +568,33 @@ const BOOST_LINK = {
     anchor: 'cách reset máy in Brother — phân biệt reset mực và reset drum',
     lead: 'Lỗi báo hết mực hoặc Replace Drum thì xử lý theo',
   },
-  /* Trang sửa máy in Tân Bình (532 hiển thị/90 ngày) đã tự viết "khu vực Tân Bình - Tân Phú"
-     trong bài nhưng không có link — trỏ sang trang sửa máy in Tân Phú mới để Google tìm ra. */
-  'sua-may-in-tai-hcm/sua-may-in-tai-nha-quan-tan-binh': {
-    to: 'sua-may-in-tai-hcm/sua-may-in-quan-tan-phu',
-    anchor: 'sửa máy in tại nhà Quận Tân Phú',
-    lead: 'Khách ở phía Tân Kỳ Tân Quý, Âu Cơ, Luỹ Bán Bích xem trang riêng cho khu vực đó:',
+  /* Hướng 2 (17/09/2026): dẫn khách từ bài hướng dẫn Brother / kẹt giấy đang có hiển thị sang
+     4 trang mới ở chỗ namphong yếu hoặc vắng. Trang mới chỉ được Google tìm ra nhanh khi có link
+     từ trang nó đã quen ghé. */
+  'thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-tu-bom-muc-may-in-brother': {
+    to: 'home/thay-muc-may-in-brother',
+    anchor: 'thay mực máy in Brother tận nơi — 140.000đ gồm reset',
+    lead: 'Không muốn dính mực tay hay sợ reset sai thì gọi',
+  },
+  'thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw': {
+    to: 'home/thay-muc-may-in-brother',
+    anchor: 'thay mực máy in Brother tận nơi',
+    lead: 'Cần làm ngay tại văn phòng, kỹ thuật tới đổ mực và reset tại chỗ —',
+  },
+  'thu-thuat-tin-hoc/thu-thuat-may-in/tại-sao-máy-in-brother-bị-mờ-nguyên-nhân-và-tuyệt-chiêu': {
+    to: 'sua-may-in-tai-hcm/sua-may-in-brother',
+    anchor: 'sửa máy in Brother tận nơi',
+    lead: 'Đổ mực rồi mà bản in vẫn mờ, vẫn vệt thì lỗi nằm ở trống hoặc cụm sấy — xem',
+  },
+  'thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-hay-bi-ket-giay': {
+    to: 'thu-thuat-tin-hoc/thu-thuat-may-in/may-in-brother-bi-ket-giay',
+    anchor: 'máy in Brother bị kẹt giấy — lấy giấy theo từng thông báo',
+    lead: 'Máy Brother báo Jam Inside, Jam Rear, Jam 2-sided thì làm theo',
+  },
+  'thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-kéo-giấy-liên-tục-đơn-giản-nhất': {
+    to: 'sua-may-in-tai-hcm/ve-sinh-may-in-tan-noi',
+    anchor: 'vệ sinh máy in tận nơi',
+    lead: 'Bánh kéo giấy bám bụi là nguyên nhân hay gặp nhất — nếu không tự lau được thì gọi',
   },
   'Phan-mem-reset-may-in/phan-mem-reset-epson-l3110': {
     to: 'Phan-mem-reset-may-in/phan-mem-reset-epson-l1210',
@@ -832,24 +853,6 @@ function khuVucLanCan(quan, prefix, pageSet) {
       </section>`;
 }
 
-/* Một câu dẫn ngắn trên trang nạp mực quận, trỏ tới trang sửa máy in / sửa máy tính của
-   cùng quận đó (chỉ in link tới trang thật sự tồn tại). Mỗi quận một tên, một bộ đường dẫn
-   nên không sinh đoạn trùng nhau giữa các trang. */
-function dichVuCungQuan(quan, prefix, pageSet) {
-  const ten = TEN_QUAN[quan];
-  const ds = [
-    ['sua-may-in', 'sửa máy in tại nhà ' + ten],
-    ['sua-may-tinh', 'sửa máy tính tại nhà ' + ten],
-  ].map(([loai, nhan]) => ({ path: trangDichVuQuan(loai, quan, pageSet), nhan })).filter(x => x.path);
-  if (!ds.length) return '';
-  return `
-      <aside class="inline-guide">
-        <p>Máy in hỏng hay máy tính không nhận máy in thì cùng số hotline này nhận luôn:
-          ${ds.map(x => '<a href="' + prefix + encPath(x.path) + '"><strong>' + esc(x.nhan) + '</strong></a>').join(' · ')}.
-        </p>
-      </aside>`;
-}
-
 /* Địa bàn phục vụ của từng quận: tuyến đường, địa điểm quen thuộc, quãng đường từ cửa hàng.
    Lý do thêm: đo trên chính site cho thấy trang quận 3 dài hơn và được nhiều liên kết hơn
    trang quận 10 nhưng vẫn đứng sau 4 bậc. Khác biệt còn lại là mức độ cụ thể về địa lý —
@@ -1008,10 +1011,10 @@ function build() {
            trong các tìm kiếm theo quận, trước đây khách phải nhảy sang trang khác mới thấy. */
         body += priceTableCompact(prefix);
         page.coBangGia = true;   // để phần dữ liệu có cấu trúc chỉ khai giá ở trang thật sự có bảng giá
-        /* Chùm cùng quận: nạp mực ↔ sửa máy in ↔ sửa máy tính của CÙNG quận phải thấy nhau.
-           Đo GSC 09/2026: trang nạp mực Tân Phú đứng vị trí 1,7 nhưng hai trang dịch vụ còn lại
-           của Tân Phú không nhận được link nào từ nó — sức mạnh không chảy sang. */
-        body += dichVuCungQuan(quan, prefix, PAGE_SET);
+        /* ĐÃ BỎ 17/09/2026: câu dẫn "sửa máy in / sửa máy tính cùng quận" trên mọi trang nạp mực quận.
+           tinhocht và tinhocnamphong.net lộ rõ là một doanh nghiệp (chung số, MST, địa chỉ) mà namphong
+           đứng top 2–7 cho "sửa máy in quận X". Chủ shop chọn hướng "chung một công ty": tinhocht không
+           đẩy trang dịch vụ theo quận nữa. Xem SESSION-NOTES mục "Hướng 2". */
         body += hoiDapQuan(quan, prefix);
         body += khuVucLanCan(quan, prefix, PAGE_SET);
       }
@@ -1133,6 +1136,21 @@ ${renderFooter(menu, prefix)}
     if (writeStub(from, to, true)) nStub++;
   }
   for (const [from, to] of FIX_LOG.entries()) if (writeStub(from, to)) nStub++;
+  /* Trang đã rút khỏi tinhocht, chuyển thẳng sang trang cùng chủ đề của site nhà đang xếp hạng tốt hơn.
+     Khai trong data/chuyen-sang-site-khac.json. Không đè trang thật đang dựng. */
+  const CHUYEN_NGOAI = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'chuyen-sang-site-khac.json'), 'utf8'));
+  for (const [from, url] of Object.entries(CHUYEN_NGOAI)) {
+    if (from.startsWith('_') || PAGE_SET.has(from)) continue;
+    const cur = path.join(ROOT, from.split('/').join(path.sep) + '.html');
+    fs.mkdirSync(path.dirname(cur), { recursive: true });
+    fs.writeFileSync(cur,
+      '<!DOCTYPE html>\n<html lang="vi">\n<head>\n<meta charset="UTF-8">\n<title>Đang chuyển hướng…</title>\n' +
+      '<link rel="canonical" href="' + url + '">\n<meta name="robots" content="noindex">\n' +
+      '<meta http-equiv="refresh" content="0; url=' + url + '">\n' +
+      '<script>location.replace("' + url + '");</script>\n</head>\n' +
+      '<body><p>Trang này đã chuyển sang <a href="' + url + '">' + url + '</a></p></body>\n</html>\n', 'utf8');
+    nStub++;
+  }
   console.log('  ✓ ' + nStub + ' trang chuyển hướng (URL cũ/sai -> trang đúng)');
 
   // sitemap: trang chủ + tất cả trang (kể cả khi noindex, để sẵn cho lúc gắn domain)

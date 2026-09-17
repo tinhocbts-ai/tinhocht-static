@@ -170,7 +170,8 @@ function renderQuanManh(qm, prefix, esc, encPath) {
         </tbody>
       </table></div>`);
     } else if (b.t === 'plink') {
-      out.push(`<p>${esc(b.truoc)} <a href="${prefix}${encPath(b.path)}">${esc(b.anchor)}</a> ${esc(b.sau)}</p>`);
+      const href = b.url ? b.url : prefix + encPath(b.path);   // url = link sang site khác
+      out.push(`<p>${esc(b.truoc)} <a href="${href}"${b.url ? ' rel="noopener"' : ''}>${esc(b.anchor)}</a> ${esc(b.sau)}</p>`);
     } else if (b.t === 'hinh') {
       if (!fs.existsSync(path.join(HINH_DIR, b.file))) continue; // ảnh chưa chụp -> bỏ qua, không để ảnh vỡ
       out.push(`<figure class="hinh-thuc-te">

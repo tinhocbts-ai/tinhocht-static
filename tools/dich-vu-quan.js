@@ -24,7 +24,11 @@ const DIA_BAN = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quan-dia-ban
 const LAN_CAN = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quan-lan-can.json'), 'utf8'));
 const TEN_QUAN = LAN_CAN._ten_hien_thi;
 
-const PAGES = DATA.pages;
+/* Mục có "tamTat": true thì không dựng (giữ nội dung để sau này bật lại) */
+/* data/trang-dich-vu.json: trang dịch vụ / bài lỗi KHÔNG theo quận (không có 'quan' thì bỏ khối địa bàn, giáp ranh) */
+const THEM_TRANG = fs.existsSync(path.join(ROOT, 'data', 'trang-dich-vu.json'))
+  ? JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'trang-dich-vu.json'), 'utf8')).pages : [];
+const PAGES = DATA.pages.concat(THEM_TRANG).filter(p => !p.tamTat);
 const BY_PATH = new Map(PAGES.map(p => [p.path, p]));
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -149,4 +153,4 @@ function renderDichVuQuan(p, prefix, cfg, pageSet) {
   return { html: out.filter(Boolean).join('\n      '), blocks };
 }
 
-module.exports = { DICH_VU_QUAN: PAGES, DVQ_BY_PATH: BY_PATH, renderDichVuQuan, trangDichVuQuan: trangCungLoai };
+module.exports = { DICH_VU_QUAN: PAGES, DVQ_BY_PATH: BY_PATH, renderDichVuQuan };

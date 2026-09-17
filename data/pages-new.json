@@ -272,7 +272,9 @@
       "lienQuan": [
         "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4",
         "thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother",
-        "Phan-mem-reset-may-in/cach-reset-may-in-brother"
+        "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+        "home/thay-muc-may-in-brother",
+        "sua-may-in-tai-hcm/sua-may-in-brother"
       ]
     },
     {
@@ -395,7 +397,9 @@
       "lienQuan": [
         "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
         "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn",
-        "thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother"
+        "thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother",
+        "home/thay-muc-may-in-brother",
+        "sua-may-in-tai-hcm/sua-may-in-brother"
       ]
     },
     {
@@ -514,7 +518,9 @@
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/cach-reset-may-in-brother",
-        "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d"
+        "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
+        "home/thay-muc-may-in-brother",
+        "sua-may-in-tai-hcm/sua-may-in-brother"
       ]
     },
     {
@@ -657,7 +663,9 @@
       "lienQuan": [
         "Phan-mem-reset-may-in/cach-reset-may-in-brother",
         "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2361dn-l2366dw",
-        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-dcp-l2520d-l2540dw-de-nhat"
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-dcp-l2520d-l2540dw-de-nhat",
+        "home/thay-muc-may-in-brother",
+        "sua-may-in-tai-hcm/sua-may-in-brother"
       ]
     },
     {
@@ -1367,7 +1375,9 @@
       "brother": true,
       "lienQuan": [
         "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-may-in-brother-hl-l5100dn-dhon-gian",
-        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-hl-l2321d"
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-hl-l2321d",
+        "home/thay-muc-may-in-brother",
+        "sua-may-in-tai-hcm/sua-may-in-brother"
       ]
     },
     {

@@ -1,0 +1,990 @@
+{
+  "_help": "Trang dịch vụ / bài lỗi KHÔNG theo quận, dựng bằng cùng bộ tools/dich-vu-quan.js (để trống 'quan' thì không có khối địa bàn và khu vực giáp ranh). Chạy: NOINDEX=0 node build-site.js",
+  "_can_cu": "Hướng 2 chốt 17/09/2026: tinhocht và tinhocnamphong.net là một doanh nghiệp, nên tinhocht chỉ làm ở chỗ namphong yếu hoặc vắng. GSC 15/06–14/09/2026 + Google Ads TP.HCM 20/08: 'thay mực máy in brother' 140/th (tinhocht 37,5, namphong gần như vắng), 'mực máy in brother' 210/th, 'bơm mực máy in brother' 70 (hai site ~13), 'sửa máy in brother' 110 (namphong 19,2, tinhocht vắng), 'vệ sinh máy in tận nơi' 140 (cả hai vắng), 'máy in brother bị kẹt giấy' 20 (cả hai vắng). KHÔNG làm 'sửa chữa máy in' — namphong đã đứng 5,7 với 1.116 hiển thị.",
+  "_su_that_dung_chung": "Chỉ dùng số liệu đã có trên site: nạp mực laser Brother 140.000đ, in phun 90.000đ (data/bang-gia.json); TN-2385 ~2.600 trang, DR-2385 ~12.000 trang; DCP-B7535DW dùng TN-B022/DR-B022; 'bảo dưỡng vệ sinh máy in miễn phí trước khi thay, đổ mực' (quy trình nạp mực đang đăng). Không ghi giá sửa chữa, giá trống, giá vệ sinh chuyên sâu — báo giá trước khi làm.",
+  "pages": [
+    {
+      "path": "home/thay-muc-may-in-brother",
+      "loai": "nap-muc",
+      "title": "Thay Mực Máy In Brother Tận Nơi TP.HCM — 140.000đ, 20 Phút",
+      "desc": "Thay mực, bơm mực máy in Brother tận nơi TP.HCM: HL-L2321D, L2366DW, DCP-L2520D, MFC-L2701DW, B7535DW. 140.000đ gồm reset hộp mực, in thử tại chỗ.",
+      "h1": "Thay mực máy in Brother tận nơi TP.HCM — 140.000đ, đã gồm reset và in thử",
+      "moBai": [
+        "Máy in Brother có một cái khó mà máy HP hay Canon không có: đổ mực xong chưa chắc máy đã chịu in. Brother không đo mực thật trong hộp, nó đếm số trang bằng cái nhông gắn bên hông hộp mực. Đổ đầy mà không đưa bộ đếm về 0 thì máy vẫn báo <strong>Replace Toner</strong>, đèn Toner vẫn sáng. Vì vậy thay mực máy in Brother là trọn một việc gồm ba phần: đổ mực, reset, in thử.",
+        "Kỹ thuật tới tận chỗ đặt máy trong nội thành TP.HCM, thường 20–30 phút sau khi gọi. Giá nạp mực máy in laser trắng đen Brother là <strong>140.000đ</strong>, không cộng phí đi lại, đã gồm reset hộp mực và in thử cho khách xem trước khi nhận tiền."
+      ],
+      "cungQuanDan": "Muốn tự làm trước thì xem:",
+      "cungQuan": [
+        {
+          "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-tu-bom-muc-may-in-brother",
+          "anchor": "cách tự bơm mực máy in Brother tại nhà"
+        },
+        {
+          "path": "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+          "anchor": "cách reset máy in Brother"
+        }
+      ],
+      "khoi": [
+        {
+          "t": "h2",
+          "text": "Máy Brother của bạn dùng hộp mực nào"
+        },
+        {
+          "t": "p",
+          "text": "Đọc tên máy in trên mặt trước hoặc nắp trên, rồi dò bảng dưới. Biết mã hộp mực trước thì khi gọi chỉ cần đọc mã, kỹ thuật mang đúng loại mực và đúng nhông reset, khỏi chạy hai lượt."
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Dòng máy Brother",
+            "Hộp mực / cụm trống",
+            "Lưu ý khi thay mực"
+          ],
+          "rows": [
+            [
+              "HL-L2321D, HL-L2320D",
+              "TN-2385 / DR-2385",
+              "Không có màn hình, chỉ 4 đèn — reset bằng nút Go, bấm sai số lần là không ăn"
+            ],
+            [
+              "HL-L2361DN, HL-L2366DW",
+              "TN-2385 / DR-2385",
+              "Có màn hình LCD, reset qua menu; bản DW in được qua wifi"
+            ],
+            [
+              "DCP-L2520D, DCP-L2540DW",
+              "TN-2385 / DR-2385",
+              "Máy in – scan – copy, reset mực và reset trống là hai thao tác riêng"
+            ],
+            [
+              "MFC-L2701D, MFC-L2701DW, DCP-L2701D",
+              "TN-2385 / DR-2385",
+              "Có bàn phím số và khay nạp bản gốc; hộp mực ~2.600 trang"
+            ],
+            [
+              "DCP-B7535DW",
+              "TN-B022 / DR-B022",
+              "Dòng hộp mực rời lớn; đổ mực xong phải reset theo menu riêng của dòng B"
+            ],
+            [
+              "HL-1211W, DCP-1616NW, DCP-1601",
+              "Hộp mực liền trống nhỏ",
+              "Máy gia đình, in ít; đổ mực kèm vệ sinh trống là đủ"
+            ],
+            [
+              "HL-2240, HL-2250, MFC-7360",
+              "Đời cũ, hộp mực và trống rời",
+              "Máy đã chạy nhiều năm, thường phải kiểm tra trống trước khi đổ mực"
+            ],
+            [
+              "Brother in phun màu",
+              "Mực bình",
+              "Tính theo giá máy in phun, 90.000đ"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Dòng TN-2385 phổ biến nhất ở văn phòng TP.HCM. Một hộp in khoảng 2.600 trang, còn cụm trống DR-2385 chạy khoảng 12.000 trang, tức trống chịu được chừng bốn lần đổ mực trước khi cần thay."
+        },
+        {
+          "t": "h2",
+          "text": "Dấu hiệu máy Brother cần thay mực, và dấu hiệu không phải do mực"
+        },
+        {
+          "t": "p",
+          "text": "Nhiều khách gọi thay mực trong khi máy đang hỏng chỗ khác. Phân biệt trước để khỏi tốn tiền đổ mực mà máy vẫn in xấu:"
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Máy đang báo",
+            "Nguyên nhân thật",
+            "Cần làm gì"
+          ],
+          "rows": [
+            [
+              "Toner Low, bản in vẫn đậm",
+              "Bộ đếm sắp hết vòng, mực còn",
+              "Chưa cần đổ, in tiếp đến khi báo Replace Toner"
+            ],
+            [
+              "Replace Toner, máy ngừng in",
+              "Nhông đếm đã quay hết vòng",
+              "Đổ mực và reset hộp mực"
+            ],
+            [
+              "Bản in nhạt đều cả trang",
+              "Mực cạn thật",
+              "Đổ mực"
+            ],
+            [
+              "Vừa đổ mực vẫn báo Replace Toner",
+              "Chưa reset, hoặc reset sai loại hộp",
+              "Reset lại đúng thao tác, không cần đổ thêm"
+            ],
+            [
+              "Drum End Soon, Replace Drum",
+              "Bộ đếm trống, không liên quan mực",
+              "Reset trống nếu trống còn tốt, thay trống nếu bản in có vệt"
+            ],
+            [
+              "Vệt đen dọc trang, chấm đen lặp lại đều",
+              "Dây sạc trên trống bẩn hoặc trống xước",
+              "Vệ sinh dây sạc; trống xước thì thay trống"
+            ],
+            [
+              "Cartridge Error",
+              "Hộp mực chưa gài chặt vào cụm trống",
+              "Tháo ra gài lại đến khi nghe tiếng tách"
+            ]
+          ]
+        },
+        {
+          "t": "plink",
+          "truoc": "Máy HL-L2321D nháy cả 4 đèn cùng lúc là lỗi khác hẳn chuyện hết mực, xem riêng",
+          "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4",
+          "anchor": "Brother HL-L2321D nháy 4 đèn",
+          "sau": "trước khi gọi đổ mực."
+        },
+        {
+          "t": "h2",
+          "text": "Giá thay mực máy in Brother tận nơi"
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Loại máy Brother",
+            "Giá thay mực",
+            "Đã gồm"
+          ],
+          "rows": [
+            [
+              "Laser trắng đen (HL, DCP, MFC dòng phổ thông)",
+              "140.000đ",
+              "Đổ mực, reset hộp mực, vệ sinh cơ bản, in thử"
+            ],
+            [
+              "Máy in phun màu dùng mực bình",
+              "90.000đ",
+              "Châm mực các màu, in trang kiểm tra đầu phun"
+            ],
+            [
+              "Dòng hộp mực lớn (B7535DW, HL-L5100DN, HL-L5210DN)",
+              "Báo giá theo máy",
+              "Lượng mực đổ nhiều hơn dòng TN-2385"
+            ],
+            [
+              "Thay cụm trống",
+              "Báo giá theo mã trống",
+              "Chỉ thay khi trống hỏng thật, có in thử cho xem vệt lỗi"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Giá đã gồm công tới tận nơi trong nội thành, không phụ thu. Trước khi đổ mực, kỹ thuật lau đường giấy và hút bụi mực thừa trong máy — phần bảo dưỡng này không tính thêm. Máy phải thay linh kiện thì báo tên linh kiện và giá trước, khách đồng ý mới làm."
+        },
+        {
+          "t": "plink",
+          "truoc": "So với các hãng khác, xem đầy đủ trong",
+          "path": "bang-gia-nap-muc-may-in-tan-noi",
+          "anchor": "bảng giá nạp mực máy in tận nơi",
+          "sau": "— HP, Canon, Samsung, Xerox, Panasonic đều có giá niêm yết."
+        },
+        {
+          "t": "h2",
+          "text": "Thay mực Brother tại chỗ diễn ra thế nào"
+        },
+        {
+          "t": "steps",
+          "buoc": [
+            [
+              "Đọc tên máy qua điện thoại hoặc Zalo",
+              "Chỉ cần tên máy in, ví dụ HL-L2366DW. Máy đang báo gì trên màn hình hay đèn nào sáng thì nói luôn — kỹ thuật biết trước là hết mực thật hay lỗi trống."
+            ],
+            [
+              "Tháo cụm trống và hộp mực ra khỏi máy",
+              "Mở nắp trước, kéo cả khối trống kèm hộp mực ra, đặt lên giấy lót để mực không rơi xuống bàn. Hộp mực tách khỏi trống bằng lẫy xanh."
+            ],
+            [
+              "Đổ mực và thay nhông reset",
+              "Làm sạch mực thải trong hộp, đổ lượng mực đúng loại, thay hoặc chỉnh lại nhông đếm bên hông hộp mực. Nhông đúng vị trí thì máy tự nhận hộp mới."
+            ],
+            [
+              "Lau dây sạc, gắn lại và reset",
+              "Kéo lẫy xanh trên cụm trống qua lại vài lần để làm sạch dây sạc — đây là chỗ hay gây vệt đen dọc trang. Gắn lại vào máy, reset hộp mực bằng nút hoặc menu tuỳ đời máy."
+            ],
+            [
+              "In thử và bàn giao",
+              "In trang cấu hình và một trang tài liệu thật của khách. Bản in đều, không vệt thì mới nhận tiền. Bảo hành đến khi hết hộp mực."
+            ]
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Tự bơm mực Brother hay gọi thợ"
+        },
+        {
+          "t": "p",
+          "text": "Tự bơm mực TN-2385 làm được nếu có tua vít, mực đúng loại và chịu khó bụi tay. Chỗ khách tự làm hay hỏng nhất không phải lúc đổ mực mà là lúc reset: máy HL-L2321D không có màn hình, bấm thừa một lần nút Go là quay về đầu mà không có gì báo. Ai in ít, có thời gian thì tự làm theo hướng dẫn. Văn phòng cần máy chạy lại ngay thì gọi thợ cho nhanh."
+        },
+        {
+          "t": "links",
+          "dan": "Hướng dẫn trên site cho từng đời Brother:",
+          "items": [
+            {
+              "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
+              "anchor": "Reset Brother HL-L2321D — reset mực và reset drum"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2361dn-l2366dw",
+              "anchor": "Reset Brother HL-L2361DN và HL-L2366DW"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/reset-may-in-brother-mfc-l2701dw",
+              "anchor": "Reset Brother MFC-L2701DW và DCP-L2701D"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-reset-drum-may-in-brother-dcp-l2520d-l2540dw-de-nhat",
+              "anchor": "Reset trống Brother DCP-L2520D, DCP-L2540DW"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/huong-dan-cach-nap-muc-reset-muc-may-in-brother-b7535dw",
+              "anchor": "Nạp mực và reset Brother DCP-B7535DW"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l5210dn",
+              "anchor": "Reset Brother HL-L5210DN khi báo hết mực"
+            }
+          ]
+        },
+        {
+          "t": "plink",
+          "truoc": "Máy Brother còn hỏng chỗ khác ngoài mực — kẹt giấy, in vệt, không nhận lệnh — thì xem",
+          "path": "sua-may-in-tai-hcm/sua-may-in-brother",
+          "anchor": "sửa máy in Brother tận nơi",
+          "sau": "."
+        }
+      ],
+      "faqTieuDe": "Hỏi đáp khi thay mực máy in Brother",
+      "faq": [
+        [
+          "Thay mực máy in Brother tận nơi giá bao nhiêu?",
+          "Máy laser trắng đen Brother dòng phổ thông 140.000đ một lần, máy in phun Brother dùng mực bình 90.000đ. Giá đã gồm công tới tận nơi trong nội thành TP.HCM, reset hộp mực và in thử. Dòng hộp mực lớn như DCP-B7535DW, HL-L5210DN báo giá theo máy trước khi làm."
+        ],
+        [
+          "Đổ mực xong máy Brother vẫn báo Replace Toner thì sao?",
+          "Máy chưa được reset hoặc nhông đếm bên hông hộp mực chưa về đúng vị trí. Không cần đổ thêm mực. Reset lại theo đúng đời máy: HL-L2321D dùng nút Go, HL-L2366DW và MFC-L2701DW dùng menu trên màn hình."
+        ],
+        [
+          "Hộp mực TN-2385 in được bao nhiêu trang?",
+          "Khoảng 2.600 trang giấy A4 in chữ thông thường. In nhiều bảng biểu, hình ảnh thì ít hơn. Cụm trống DR-2385 đi kèm chạy khoảng 12.000 trang, nên một trống dùng được chừng bốn lần đổ mực."
+        ],
+        [
+          "Thay mực có phải thay luôn cụm trống không?",
+          "Không. Hộp mực và trống là hai món rời. Chỉ thay trống khi bản in có vệt đen dọc, chấm đen lặp lại đều hoặc nền xám mà vệ sinh không hết. Máy báo Replace Drum nhưng bản in vẫn sạch thì reset bộ đếm trống là đủ."
+        ],
+        [
+          "Bao lâu thì kỹ thuật tới?",
+          "Trong giờ hành chính thường 20–30 phút ở nội thành TP.HCM. Thay mực tại chỗ mất thêm khoảng 15–20 phút, gồm cả reset và in thử."
+        ],
+        [
+          "Có bảo hành sau khi thay mực không?",
+          "Bảo hành đến khi hết hộp mực. Trong thời gian đó bản in bị mờ, lem hay vệt do mực thì gọi lại, kỹ thuật quay lại xử lý không tính tiền."
+        ]
+      ]
+    },
+    {
+      "path": "sua-may-in-tai-hcm/sua-may-in-brother",
+      "loai": "sua-may-in",
+      "title": "Sửa Máy In Brother Tận Nơi TP.HCM — Kẹt Giấy, Vệt Đen, Báo Lỗi",
+      "desc": "Sửa máy in Brother tận nơi TP.HCM: kẹt giấy, kéo giấy đôi, vệt đen dọc trang, báo Drum, nháy 4 đèn, không in qua wifi. Kiểm tra và báo giá trước khi làm.",
+      "h1": "Sửa máy in Brother tận nơi TP.HCM — kẹt giấy, vệt đen, báo lỗi drum",
+      "moBai": [
+        "Máy in Brother laser bền, nhưng dòng máy nhỏ phổ biến ở văn phòng TP.HCM như HL-L2321D, HL-L2366DW, DCP-L2520D hay MFC-L2701DW có vài chỗ hỏng lặp đi lặp lại theo đúng một kiểu. Gặp nhiều ca giống nhau thì kỹ thuật đọc bệnh nhanh: nghe tiếng máy kéo giấy, nhìn vệt trên bản in, xem đèn nào nháy là biết cần mở chỗ nào.",
+        "Kỹ thuật tới tận chỗ đặt máy trong nội thành TP.HCM, kiểm tra xong <strong>báo giá trước</strong>, khách đồng ý mới làm. Phần lớn lỗi Brother xử lý ngay tại chỗ; chỉ khi hỏng cụm sấy trên máy lớn hoặc bo mạch mới phải mang về."
+      ],
+      "cungQuanDan": "Máy chỉ hết mực, không hỏng gì khác thì xem",
+      "cungQuan": [
+        {
+          "path": "home/thay-muc-may-in-brother",
+          "anchor": "thay mực máy in Brother tận nơi"
+        }
+      ],
+      "khoi": [
+        {
+          "t": "h2",
+          "text": "Bệnh thường gặp của máy in Brother laser"
+        },
+        {
+          "t": "p",
+          "text": "Mỗi triệu chứng chỉ về một cụm linh kiện khá rõ. Đọc bảng này trước khi gọi, khách tả đúng bệnh thì kỹ thuật mang đúng linh kiện."
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Triệu chứng",
+            "Cụm hay hỏng",
+            "Xử lý",
+            "Tại chỗ hay mang về"
+          ],
+          "rows": [
+            [
+              "Không kéo giấy, hoặc kéo hai ba tờ một lần",
+              "Bánh kéo giấy mòn, miếng tách giấy trong khay chai",
+              "Vệ sinh hoặc thay bánh kéo giấy và miếng tách",
+              "Tại chỗ"
+            ],
+            [
+              "Báo Jam Inside, Jam Rear liên tục dù đã lấy hết giấy",
+              "Mẩu giấy vụn kẹt sâu, cảm biến giấy kẹt, cụm sấy bẩn",
+              "Mở cụm sấy lấy mẩu giấy, lau cảm biến",
+              "Tại chỗ"
+            ],
+            [
+              "Báo Jam 2-sided khi in hai mặt",
+              "Khay đảo mặt phía sau lệch hoặc bẩn",
+              "Tháo khay đảo mặt, lấy giấy, chỉnh lại",
+              "Tại chỗ"
+            ],
+            [
+              "Vệt đen dọc trang, thẳng từ trên xuống",
+              "Dây sạc trong cụm trống bám bụi mực",
+              "Lau dây sạc bằng lẫy xanh, in thử lại",
+              "Tại chỗ, vài phút"
+            ],
+            [
+              "Chấm đen hoặc vệt trắng lặp lại đều theo khoảng cách",
+              "Mặt trống xước hoặc dính mực",
+              "Lau trống; xước thì thay cụm trống",
+              "Tại chỗ"
+            ],
+            [
+              "Chữ bong, quẹt tay là nhoè mực",
+              "Cụm sấy yếu nhiệt hoặc bao sấy mòn",
+              "Thay linh kiện cụm sấy",
+              "Máy nhỏ tại chỗ, máy lớn mang về"
+            ],
+            [
+              "Replace Drum dù vừa thay trống",
+              "Chưa reset bộ đếm trống",
+              "Reset trống theo đúng đời máy",
+              "Tại chỗ, 2 phút"
+            ],
+            [
+              "HL-L2321D nháy cả 4 đèn cùng lúc",
+              "Lỗi dịch vụ: cụm sấy, cảm biến hoặc bo mạch",
+              "Đọc mã lỗi, xử lý theo từng mã",
+              "Tuỳ mã lỗi"
+            ],
+            [
+              "HL-L2366DW, MFC-L2701DW không in qua wifi",
+              "Máy đổi địa chỉ mạng sau khi mất điện hoặc đổi modem",
+              "Đặt địa chỉ mạng cố định, cài lại cổng in",
+              "Tại chỗ"
+            ],
+            [
+              "Máy kêu lạch cạch, giấy nhăn khi ra",
+              "Nhông kéo giấy mòn răng, dị vật trong máy",
+              "Mở máy tìm dị vật, thay nhông nếu mòn",
+              "Tại chỗ hoặc mang về"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Lỗi vệt đen dọc trang là ca gặp nhiều nhất và rẻ nhất: đa số chỉ cần kéo lẫy xanh trên cụm trống qua lại vài lần để lau dây sạc. Khách thử trước bước này, hết vệt thì khỏi phải gọi."
+        },
+        {
+          "t": "h2",
+          "text": "Dòng máy Brother nhận sửa"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "<strong>Laser trắng đen văn phòng nhỏ:</strong> HL-L2321D, HL-L2320D, HL-L2361DN, HL-L2366DW, HL-1211W.",
+            "<strong>Đa năng in – scan – copy:</strong> DCP-L2520D, DCP-L2540DW, MFC-L2701D, MFC-L2701DW, DCP-1616NW, DCP-B7535DW.",
+            "<strong>Laser tốc độ cao cho phòng in nhiều:</strong> HL-L5100DN, HL-L5210DN.",
+            "<strong>Đời cũ còn chạy:</strong> HL-2240, HL-2250, MFC-7360 — linh kiện vẫn còn, sửa được nếu chi phí hợp lý.",
+            "<strong>Máy in phun Brother dùng mực bình:</strong> tắc đầu phun, báo đầy hộp thấm mực thải."
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Chi phí sửa máy in Brother tính thế nào"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "<strong>Hỏi qua điện thoại, Zalo không mất tiền.</strong> Lỗi reset, lỗi wifi, lỗi driver thường hướng dẫn xử lý được ngay.",
+            "<strong>Báo giá hai phần sau khi kiểm tra:</strong> tiền công và tiền linh kiện, đọc rõ tên linh kiện. Khách đồng ý mới làm.",
+            "<strong>Không sửa được thì không tính công.</strong>",
+            "<strong>Sửa kèm đổ mực</strong> thì phần đổ mực tính theo giá niêm yết 140.000đ cho máy laser Brother phổ thông.",
+            "<strong>Máy quá cũ</strong>, chi phí sửa gần bằng giá máy cũ cùng loại thì kỹ thuật nói thẳng để khách cân nhắc."
+          ]
+        },
+        {
+          "t": "plink",
+          "truoc": "Muốn so giá sửa với giá đổi máy, xem",
+          "path": "ban-may-in-cu-gia-re/may-in-cu-dang-ban",
+          "anchor": "máy in cũ đang bán kèm ảnh thật và giá",
+          "sau": "— có cả Brother đời HL-L2321D và DCP-L2520D."
+        },
+        {
+          "t": "h2",
+          "text": "Quy trình sửa máy in Brother tại chỗ"
+        },
+        {
+          "t": "steps",
+          "buoc": [
+            [
+              "Gửi tên máy và ảnh bản in lỗi",
+              "Chụp một trang in bị lỗi hoặc màn hình đang báo, gửi qua Zalo. Vệt dọc, chấm lặp, chữ bong mỗi thứ chỉ về một cụm khác nhau, nhìn ảnh là biết mang gì theo."
+            ],
+            [
+              "Kỹ thuật tới, in trang kiểm tra",
+              "In trang cấu hình của máy để xem số trang đã chạy, bộ đếm trống còn bao nhiêu, rồi in thêm một trang thử để khoanh vùng lỗi."
+            ],
+            [
+              "Báo giá trước khi mở máy",
+              "Nói rõ hỏng cụm nào, thay gì, bao nhiêu tiền, bao lâu xong. Khách đồng ý mới tháo máy."
+            ],
+            [
+              "Sửa và in thử bằng tài liệu thật",
+              "Thay hoặc vệ sinh linh kiện, reset bộ đếm nếu cần, rồi in đúng loại tài liệu văn phòng hay dùng, in hai mặt nếu máy có chức năng này."
+            ],
+            [
+              "Bàn giao, ghi phiếu bảo hành",
+              "Phiếu ghi lỗi, linh kiện đã thay và thời hạn bảo hành linh kiện. Công ty cần hoá đơn VAT hoặc thanh toán cuối tháng thì ghi luôn."
+            ]
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Tự kiểm tra trước khi gọi thợ"
+        },
+        {
+          "t": "links",
+          "dan": "Các bài hướng dẫn Brother trên site, làm theo được tại chỗ:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/may-in-brother-bi-ket-giay",
+              "anchor": "Máy in Brother bị kẹt giấy — lấy giấy đúng chỗ theo thông báo"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4",
+              "anchor": "Brother HL-L2321D nháy 4 đèn — nguyên nhân và cách sửa"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/huong-dan-sua-loi-may-in-brother",
+              "anchor": "Lỗi trống drum máy in Brother"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/tại-sao-máy-in-brother-bị-mờ-nguyên-nhân-và-tuyệt-chiêu",
+              "anchor": "Máy in Brother bị mờ — nguyên nhân"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/máy-brother-in-ra-giấy-chạy-chậm-nguyên-nhân-và-cách-khắc-phục",
+              "anchor": "Máy Brother in ra giấy chạy chậm"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+              "anchor": "Cách reset máy in Brother — reset mực và reset drum"
+            }
+          ]
+        },
+        {
+          "t": "callout",
+          "text": "Đã lau dây sạc, đã reset mà bản in vẫn vệt, máy vẫn kẹt thì nên gọi. Cụm sấy và nhông kéo giấy nằm sâu trong máy, tháo sai dễ gãy lẫy nhựa."
+        }
+      ],
+      "faqTieuDe": "Hỏi đáp khi sửa máy in Brother",
+      "faq": [
+        [
+          "Máy in Brother in ra vệt đen dọc trang sửa thế nào?",
+          "Đa số do dây sạc trong cụm trống bám bụi mực. Mở nắp trước, kéo cụm trống ra, kéo lẫy xanh trên trống qua lại vài lần rồi đưa lẫy về đúng chỗ cũ. Vẫn còn vệt thì trống đã xước, cần thay cụm trống."
+        ],
+        [
+          "Máy Brother kẹt giấy liên tục có sửa tại chỗ được không?",
+          "Được. Thường do bánh kéo giấy mòn, miếng tách giấy chai hoặc mẩu giấy vụn kẹt trong cụm sấy. Kỹ thuật mở máy lấy dị vật, vệ sinh hoặc thay bánh kéo giấy ngay tại chỗ."
+        ],
+        [
+          "Sửa máy in Brother có mất phí kiểm tra không?",
+          "Không. Kỹ thuật kiểm tra, báo giá công và linh kiện, khách đồng ý mới làm. Không sửa được hoặc khách không sửa thì không tính tiền."
+        ],
+        [
+          "Máy báo Replace Drum có phải thay trống ngay không?",
+          "Chưa chắc. Đó là bộ đếm trống báo đủ số trang. Nếu bản in vẫn sạch thì reset bộ đếm là in tiếp được. Chỉ thay trống khi bản in có vệt, chấm hoặc nền xám."
+        ],
+        [
+          "HL-L2366DW mất kết nối wifi sau khi đổi modem thì sao?",
+          "Máy vẫn giữ tên mạng cũ hoặc bị cấp địa chỉ mạng mới nên máy tính không tìm thấy. Cần kết nối lại máy vào mạng mới, đặt địa chỉ mạng cố định và cài lại cổng in trên các máy tính."
+        ],
+        [
+          "Máy Brother cũ có nên sửa không?",
+          "Máy HL-2240, MFC-7360 vẫn có linh kiện. Nếu chỉ thay bánh kéo giấy hay trống thì sửa đáng tiền. Hỏng cụm sấy kèm bo mạch thì chi phí thường gần bằng một máy cũ đời mới hơn, kỹ thuật sẽ nói rõ để khách chọn."
+        ]
+      ]
+    },
+    {
+      "path": "sua-may-in-tai-hcm/ve-sinh-may-in-tan-noi",
+      "loai": "sua-may-in",
+      "title": "Vệ Sinh Máy In Tận Nơi TP.HCM — Hết Kẹt Giấy, Bản In Sạch",
+      "desc": "Vệ sinh máy in tận nơi TP.HCM: laser và in phun, lau đường giấy, bánh kéo giấy, dây sạc trống, thông đầu phun. Miễn phí vệ sinh cơ bản khi nạp mực.",
+      "h1": "Vệ sinh máy in tận nơi TP.HCM — laser và in phun, làm ngay tại bàn",
+      "moBai": [
+        "Phần lớn máy in hỏng lặt vặt không phải vì linh kiện chết mà vì bẩn. Bụi giấy bám lên bánh kéo giấy làm máy trượt, kéo hai tờ một lúc. Bụi mực bám dây sạc làm vệt đen dọc trang. Mực khô trên đầu phun làm máy in phun mất màu. Vệ sinh đúng chỗ là hết, không phải thay gì.",
+        "Kỹ thuật tới tận chỗ đặt máy trong nội thành TP.HCM, tháo đúng các cụm cần làm sạch rồi in thử cho khách xem. Khách nạp mực được <strong>bảo dưỡng vệ sinh cơ bản miễn phí</strong> trước khi đổ mực. Vệ sinh chuyên sâu như tháo cụm sấy hay ngâm đầu phun thì báo giá trước khi làm."
+      ],
+      "cungQuanDan": "Vệ sinh kèm nạp mực thì tiện nhất:",
+      "cungQuan": [
+        {
+          "path": "bang-gia-nap-muc-may-in-tan-noi",
+          "anchor": "bảng giá nạp mực máy in tận nơi"
+        }
+      ],
+      "khoi": [
+        {
+          "t": "h2",
+          "text": "Khi nào máy in cần vệ sinh"
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Dấu hiệu",
+            "Chỗ bẩn",
+            "Vệ sinh xong sẽ thế nào"
+          ],
+          "rows": [
+            [
+              "Kéo hai ba tờ một lần, hoặc không kéo giấy",
+              "Bánh kéo giấy và miếng tách giấy bám bụi giấy",
+              "Máy kéo từng tờ trở lại"
+            ],
+            [
+              "Vệt đen chạy dọc trang",
+              "Dây sạc trong cụm trống bám bụi mực",
+              "Hết vệt dọc"
+            ],
+            [
+              "Nền trang in xám mờ, lem nhẹ",
+              "Bụi mực đọng trong đường giấy, hộp mực thải đầy",
+              "Nền trắng lại"
+            ],
+            [
+              "Giấy ra có vết bẩn cùng một chỗ",
+              "Trục ép hoặc bao sấy dính mực",
+              "Hết vết lặp"
+            ],
+            [
+              "Máy in phun mất nét, sọc ngang, thiếu màu",
+              "Đầu phun khô mực, tắc lỗ phun",
+              "In trang kiểm tra đủ màu"
+            ],
+            [
+              "Máy in phun kêu rít khi đầu in chạy",
+              "Thanh trượt khô dầu, bám bụi",
+              "Đầu in chạy êm"
+            ],
+            [
+              "Máy để lâu không dùng, in lại bị lỗi",
+              "Mực khô, bụi tích nhiều tháng",
+              "Chạy lại ổn định"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Mốc hợp lý cho văn phòng in đều mỗi ngày là vệ sinh khoảng sáu tháng một lần, hoặc mỗi lần nạp mực. Máy ở nơi nhiều bụi như kho hàng, xưởng, cửa hàng mặt tiền thì nên dày hơn."
+        },
+        {
+          "t": "h2",
+          "text": "Vệ sinh máy in laser gồm những gì"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "<strong>Đường giấy:</strong> lau bánh kéo giấy, miếng tách giấy trong khay và các con lăn dẫn giấy bằng dung dịch làm sạch cao su, không dùng xăng thơm làm chai cao su.",
+            "<strong>Cụm trống:</strong> lau dây sạc, lau nhẹ mặt trống bằng khăn mềm khô. Máy Brother có lẫy xanh để lau dây sạc ngay trên trống.",
+            "<strong>Hút bụi mực:</strong> hút sạch bụi mực rơi trong lòng máy, không thổi bằng hơi vì bụi mực bay khắp văn phòng.",
+            "<strong>Hộp mực thải:</strong> đổ mực thải ở hộp mực liền trống như Canon 2900, HP 12A trước khi đầy tràn ra bản in.",
+            "<strong>Cảm biến giấy:</strong> lau các cảm biến quang, tránh máy báo kẹt giấy giả.",
+            "<strong>Cụm sấy:</strong> chỉ tháo khi có vết bẩn lặp trên giấy hoặc chữ bị bong. Phần này báo giá trước."
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Vệ sinh máy in phun gồm những gì"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "<strong>Chạy làm sạch đầu phun bằng phần mềm của máy</strong>, in trang kiểm tra để xem màu nào còn tắc.",
+            "<strong>Thông đầu phun thủ công</strong> khi chạy phần mềm vài lần vẫn thiếu nét. Tắc nặng do để lâu mới phải tháo đầu phun ngâm — báo giá trước.",
+            "<strong>Lau đệm chụp đầu phun</strong> và gạt mực, hai chỗ mực khô hay bám làm đầu phun tắc lại nhanh.",
+            "<strong>Lau thanh trượt và dải mã vạch</strong> đầu in chạy trên đó, bẩn là máy in lệch dòng.",
+            "<strong>Kiểm tra miếng thấm mực thải.</strong> Máy Epson báo hai đèn đỏ nhấp nháy thường do bộ đếm mực thải đầy, cần reset và thay miếng thấm nếu đã no mực."
+          ]
+        },
+        {
+          "t": "plink",
+          "truoc": "Máy Epson đang báo đèn đỏ thì xem trước",
+          "path": "Phan-mem-reset-may-in/adjustment-program-epson",
+          "anchor": "bảng tra bản reset cho từng dòng Epson",
+          "sau": "— vệ sinh không làm tắt được lỗi này."
+        },
+        {
+          "t": "h2",
+          "text": "Chi phí vệ sinh máy in"
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Hạng mục",
+            "Chi phí",
+            "Ghi chú"
+          ],
+          "rows": [
+            [
+              "Vệ sinh cơ bản khi nạp mực",
+              "Không tính thêm",
+              "Lau đường giấy, hút bụi mực, lau dây sạc trống"
+            ],
+            [
+              "Vệ sinh riêng máy laser, không nạp mực",
+              "Báo giá theo máy",
+              "Tính theo cỡ máy: máy A4 nhỏ khác máy đa năng lớn"
+            ],
+            [
+              "Thông đầu phun máy in phun",
+              "Báo giá theo mức tắc",
+              "In trang kiểm tra trước và sau cho khách xem"
+            ],
+            [
+              "Tháo vệ sinh cụm sấy",
+              "Báo giá trước",
+              "Chỉ làm khi có vết bẩn lặp hoặc chữ bong"
+            ],
+            [
+              "Văn phòng nhiều máy, vệ sinh định kỳ",
+              "Báo giá theo số máy",
+              "Hẹn lịch cố định, thanh toán cuối tháng, xuất hoá đơn VAT"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Mọi hạng mục đều báo giá trước khi làm. Vệ sinh xong mà bản in vẫn lỗi do linh kiện hỏng thật, kỹ thuật chỉ ra linh kiện đó và báo giá thay, khách quyết định có làm hay không."
+        },
+        {
+          "t": "h2",
+          "text": "Quy trình vệ sinh máy in tại chỗ"
+        },
+        {
+          "t": "steps",
+          "buoc": [
+            [
+              "In trang thử trước khi đụng vào máy",
+              "Giữ lại bản in trước khi vệ sinh để so sánh. Khách thấy rõ khác biệt, kỹ thuật cũng biết chỗ nào còn cần làm tiếp."
+            ],
+            [
+              "Trải giấy lót, tháo hộp mực hoặc mở nắp đầu phun",
+              "Bụi mực và mực nước đều bám rất lâu, nên lót kín bàn trước khi tháo."
+            ],
+            [
+              "Làm sạch từng cụm theo đúng dấu hiệu lỗi",
+              "Đường giấy, dây sạc, mặt trống, cảm biến với máy laser; đầu phun, đệm chụp, thanh trượt với máy in phun. Không tháo những cụm không liên quan."
+            ],
+            [
+              "Lắp lại, in trang thử lần hai",
+              "So với bản in ban đầu. Còn lỗi thì khoanh vùng tiếp, hết lỗi thì in thêm tài liệu thật của khách."
+            ],
+            [
+              "Dọn sạch chỗ làm và bàn giao",
+              "Gom giấy lót, lau bàn. Ghi lại ngày vệ sinh để lần sau biết hạn."
+            ]
+          ]
+        },
+        {
+          "t": "h2",
+          "text": "Tự vệ sinh được phần nào"
+        },
+        {
+          "t": "p",
+          "text": "Khách tự làm an toàn được ba việc: lau bánh kéo giấy bằng khăn ẩm vắt thật khô, kéo lẫy xanh lau dây sạc trên trống máy Brother, và chạy chức năng làm sạch đầu phun trong phần mềm máy in phun. Những việc còn lại cần tháo máy, làm sai dễ xước trống hoặc gãy lẫy."
+        },
+        {
+          "t": "links",
+          "dan": "Bài hướng dẫn liên quan:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-kéo-giấy-liên-tục-đơn-giản-nhất",
+              "anchor": "Máy in kéo nhiều tờ giấy cùng lúc — cách sửa tại chỗ"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc",
+              "anchor": "Máy in Epson in sai màu, bản in bị sọc"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/máy-in-bị-nhòe-mực-tại-sao",
+              "anchor": "Máy in bị nhoè mực tại sao"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/nguyen-nhan-may-in-mau-khong-ra-deu-muc-va-cach-sua-chua",
+              "anchor": "Máy in màu không ra đều mực"
+            },
+            {
+              "path": "sua-may-in-tai-hcm/sua-may-in-brother",
+              "anchor": "Sửa máy in Brother tận nơi"
+            }
+          ]
+        }
+      ],
+      "faqTieuDe": "Hỏi đáp về vệ sinh máy in",
+      "faq": [
+        [
+          "Vệ sinh máy in tận nơi có mất phí không?",
+          "Khi nạp mực, phần vệ sinh cơ bản gồm lau đường giấy, hút bụi mực và lau dây sạc trống không tính thêm. Vệ sinh riêng không kèm nạp mực, thông đầu phun hay tháo cụm sấy thì báo giá theo máy trước khi làm."
+        ],
+        [
+          "Bao lâu nên vệ sinh máy in một lần?",
+          "Văn phòng in đều mỗi ngày nên vệ sinh khoảng sáu tháng một lần hoặc mỗi lần nạp mực. Máy đặt ở kho, xưởng, cửa hàng nhiều bụi thì nên làm thường hơn."
+        ],
+        [
+          "Máy in kéo nhiều tờ cùng lúc có phải chỉ cần vệ sinh không?",
+          "Đa số trường hợp là bánh kéo giấy và miếng tách giấy bám bụi, vệ sinh là hết. Nếu cao su đã mòn nhẵn hoặc nứt thì phải thay, kỹ thuật sẽ cho xem trước khi báo giá."
+        ],
+        [
+          "Vệ sinh có hết vệt đen dọc trang không?",
+          "Hết nếu vệt do dây sạc hoặc mặt trống bám bẩn. Nếu mặt trống đã xước thì vệ sinh không hết, phải thay trống."
+        ],
+        [
+          "Máy in phun để lâu không in, vệ sinh có cứu được không?",
+          "Phần lớn cứu được bằng cách chạy làm sạch và thông đầu phun. Đầu phun khô cứng quá lâu thì phải tháo ngâm, có trường hợp đầu phun hỏng hẳn phải thay, kỹ thuật in trang kiểm tra để khách thấy trước."
+        ],
+        [
+          "Vệ sinh máy in mất bao lâu?",
+          "Vệ sinh cơ bản máy laser khoảng 15–20 phút. Thông đầu phun máy in phun 30–45 phút tuỳ mức tắc. Máy nghỉ đúng thời gian đó, không phải mang đi đâu."
+        ]
+      ]
+    },
+    {
+      "path": "thu-thuat-tin-hoc/thu-thuat-may-in/may-in-brother-bi-ket-giay",
+      "loai": "bai-loi",
+      "title": "Máy In Brother Bị Kẹt Giấy — Lấy Giấy Đúng Chỗ Theo Thông Báo",
+      "desc": "Máy in Brother báo Jam Inside, Jam Rear, Jam Tray, Jam 2-sided: cách lấy giấy kẹt đúng chỗ, an toàn với cụm sấy, và vì sao máy cứ kẹt giấy hoài.",
+      "h1": "Máy in Brother bị kẹt giấy — lấy giấy đúng chỗ theo từng thông báo",
+      "moBai": [
+        "Máy in Brother laser báo kẹt giấy khá rõ: máy có màn hình thì hiện đúng vị trí kẹt, máy chỉ có đèn như HL-L2321D thì đèn báo lỗi giấy sáng. Lấy giấy đúng chỗ thì chỉ mất một hai phút. Kéo bừa từ khay ra thì giấy dễ rách, để lại mẩu vụn trong máy, và máy tiếp tục báo kẹt dù không còn thấy tờ nào.",
+        "Bài này viết cho dòng Brother laser phổ biến ở văn phòng: HL-L2321D, HL-L2361DN, HL-L2366DW, DCP-L2520D, DCP-L2540DW, MFC-L2701DW. Các đời khác cùng hãng có nắp và lẫy đặt tương tự."
+      ],
+      "khoi": [
+        {
+          "t": "h2",
+          "text": "Thông báo kẹt giấy nào, giấy nằm ở đâu"
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Thông báo trên máy",
+            "Giấy kẹt ở đâu",
+            "Mở chỗ nào"
+          ],
+          "rows": [
+            [
+              "Jam Tray1, Jam Tray",
+              "Ngay đầu khay, giấy chưa vào hẳn máy",
+              "Rút khay giấy ra"
+            ],
+            [
+              "Jam Inside",
+              "Bên trong, chỗ cụm trống và hộp mực",
+              "Mở nắp trước, kéo cụm trống ra"
+            ],
+            [
+              "Jam Rear",
+              "Phía sau, ở cụm sấy nơi giấy đi ra",
+              "Mở nắp sau"
+            ],
+            [
+              "Jam 2-sided",
+              "Ở khay đảo mặt dưới đáy phía sau",
+              "Rút khay giấy, kéo khay đảo mặt ra"
+            ],
+            [
+              "Máy chỉ có đèn: đèn lỗi giấy sáng",
+              "Chưa biết chỗ",
+              "Kiểm tra lần lượt khay, nắp trước, nắp sau"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Nếu vừa in xong mà kẹt ở phía sau, <strong>để máy bật khoảng 10 phút cho quạt làm nguội</strong> rồi mới mở nắp sau. Cụm sấy lúc đang in rất nóng, chạm tay vào dễ bỏng."
+        },
+        {
+          "t": "h2",
+          "text": "Cách lấy giấy kẹt trên máy Brother, từng bước"
+        },
+        {
+          "t": "steps",
+          "buoc": [
+            [
+              "Rút hẳn khay giấy ra",
+              "Kéo khay giấy ra khỏi máy. Nhìn vào khe trống bên trong, thấy mép giấy thì kéo từ từ bằng hai tay về phía mình. Kéo chậm, đều tay để giấy không rách."
+            ],
+            [
+              "Mở nắp trước, lấy cụm trống ra",
+              "Mở nắp trước, cầm tay cầm kéo cả khối trống kèm hộp mực ra. Đặt lên tờ giấy lót trên mặt phẳng. Không chạm tay vào mặt trống màu xanh lá hoặc xanh đậm, dấu vân tay làm bản in có vết."
+            ],
+            [
+              "Lấy giấy trong lòng máy",
+              "Nhìn vào chỗ vừa rút cụm trống, kéo tờ giấy kẹt ra từ từ. Có tờ nằm dưới cụm trống thì lật cụm trống lên kiểm tra luôn."
+            ],
+            [
+              "Mở nắp sau, kéo giấy ra từ phía cụm sấy",
+              "Mở nắp sau. Nhiều đời Brother có lẫy xanh hai bên cụm sấy, kéo lẫy về phía mình để mở nắp cụm sấy rồi kéo giấy ra từ từ. Lấy xong nhớ đưa lẫy về đúng vị trí cũ rồi mới đóng nắp sau."
+            ],
+            [
+              "Kiểm tra khay đảo mặt",
+              "Máy in hai mặt tự động có khay đảo mặt ở dưới đáy phía sau. Rút khay giấy, kéo khay đảo mặt ra, lấy giấy kẹt rồi đẩy khay vào lại cho khớp."
+            ],
+            [
+              "Lắp lại và đóng nắp",
+              "Đẩy cụm trống vào máy đến khi khớp, đóng nắp trước. Máy có màn hình sẽ tự hết báo lỗi. Máy chỉ có đèn mà đèn vẫn sáng thì bấm nút Go một lần."
+            ]
+          ]
+        },
+        {
+          "t": "callout",
+          "text": "Giấy rách để lại mẩu nhỏ trong máy là lý do hay gặp nhất khiến máy báo kẹt hoài sau khi đã lấy giấy. Ghép các mảnh vừa kéo ra lại xem có đủ tờ không. Thiếu một góc thì mẩu đó vẫn nằm trong cụm sấy hoặc gần cảm biến giấy."
+        },
+        {
+          "t": "h2",
+          "text": "Vì sao máy Brother cứ kẹt giấy hoài"
+        },
+        {
+          "t": "table",
+          "cols": [
+            "Nguyên nhân",
+            "Cách nhận ra",
+            "Cách khắc phục"
+          ],
+          "rows": [
+            [
+              "Nạp giấy quá vạch giới hạn",
+              "Chồng giấy cao hơn dấu ▼ trên thanh gạt khay",
+              "Bớt giấy xuống dưới vạch"
+            ],
+            [
+              "Thanh gạt khổ giấy không sát",
+              "Giấy xô lệch trong khay",
+              "Đẩy thanh gạt sát mép giấy, không ép cong giấy"
+            ],
+            [
+              "Giấy ẩm, cong mép hoặc quá mỏng",
+              "Kẹt nhiều vào mùa mưa, giấy để ngoài bao",
+              "Dùng giấy A4 70–80 gsm, cất giấy trong bao kín"
+            ],
+            [
+              "Bánh kéo giấy bám bụi hoặc mòn",
+              "Kéo hai ba tờ một lúc, hoặc không kéo tờ nào",
+              "Lau bánh kéo giấy; mòn nhẵn thì thay"
+            ],
+            [
+              "Miếng tách giấy trong khay chai",
+              "Luôn kéo giấy đôi dù giấy tốt",
+              "Thay miếng tách giấy"
+            ],
+            [
+              "Mẩu giấy vụn, kẹp giấy rơi vào máy",
+              "Báo kẹt ngay khi bắt đầu in, không thấy tờ nào",
+              "Soi đèn vào lòng máy, lấy dị vật ra"
+            ],
+            [
+              "Lẫy ở nắp sau chưa đưa về chỗ cũ",
+              "Báo kẹt phía sau ngay sau lần lấy giấy trước",
+              "Mở nắp sau, đưa lẫy về đúng vị trí"
+            ],
+            [
+              "Cụm sấy mòn",
+              "Giấy ra bị nhăn, cuốn vào trong",
+              "Thay linh kiện cụm sấy — nên gọi thợ"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Bốn nguyên nhân đầu khách tự xử lý được. Ba nguyên nhân sau cần mở máy: thay miếng tách giấy, lấy dị vật nằm sâu, hoặc thay linh kiện cụm sấy."
+        },
+        {
+          "t": "h2",
+          "text": "Mẹo để máy Brother ít kẹt giấy"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Xoè và gõ đều chồng giấy trước khi cho vào khay để các tờ không dính nhau.",
+            "Không trộn giấy cũ in mặt sau lẫn với giấy mới trong cùng một khay; giấy đã qua cụm sấy một lần thường cong mép.",
+            "Không in giấy có ghim, băng keo hay giấy than.",
+            "Giấy dày, bìa, nhãn dán thì đưa qua khe nạp tay nếu máy có, không bỏ vào khay chính.",
+            "Lau bánh kéo giấy mỗi lần nạp mực. Kỹ thuật tới nạp mực có làm luôn phần này."
+          ]
+        },
+        {
+          "t": "links",
+          "dan": "Bài liên quan:",
+          "items": [
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-sửa-lỗi-máy-in-kéo-giấy-liên-tục-đơn-giản-nhất",
+              "anchor": "Máy in kéo nhiều tờ giấy cùng lúc — cách sửa tại chỗ"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-hay-bi-ket-giay",
+              "anchor": "Máy in hay bị kẹt giấy — các lỗi ở máy HP, Canon"
+            },
+            {
+              "path": "thu-thuat-tin-hoc/thu-thuat-may-in/sua-loi-may-in-brother-hl-l2321d-nhay-4",
+              "anchor": "Brother HL-L2321D nháy 4 đèn"
+            },
+            {
+              "path": "Phan-mem-reset-may-in/cach-reset-may-in-brother",
+              "anchor": "Cách reset máy in Brother"
+            }
+          ]
+        },
+        {
+          "t": "plink",
+          "truoc": "Làm hết các bước mà máy vẫn kẹt, xem",
+          "path": "sua-may-in-tai-hcm/sua-may-in-brother",
+          "anchor": "sửa máy in Brother tận nơi",
+          "sau": "— kỹ thuật tới kiểm tra, báo giá trước khi làm."
+        }
+      ],
+      "faqTieuDe": "Hỏi đáp khi máy in Brother kẹt giấy",
+      "faq": [
+        [
+          "Đã lấy hết giấy mà máy Brother vẫn báo kẹt giấy?",
+          "Thường còn mẩu giấy rách nằm trong cụm sấy hoặc che cảm biến giấy. Ghép các mảnh đã lấy ra xem có thiếu góc nào không, rồi mở nắp sau, kéo hai lẫy xanh xuống để kiểm tra kỹ. Không thấy gì mà vẫn báo thì cảm biến giấy có thể bị kẹt, nên gọi thợ."
+        ],
+        [
+          "Máy Brother báo Jam 2-sided là kẹt ở đâu?",
+          "Kẹt ở khay đảo mặt dưới đáy phía sau máy, dùng khi in hai mặt tự động. Rút khay giấy ra, kéo khay đảo mặt ra khỏi máy, lấy giấy rồi đẩy khay vào lại cho khớp."
+        ],
+        [
+          "Lấy giấy kẹt phía sau có bị bỏng không?",
+          "Có thể, vì cụm sấy rất nóng khi vừa in. Để máy bật khoảng 10 phút cho quạt làm nguội rồi mới mở nắp sau và kéo giấy."
+        ],
+        [
+          "Máy Brother HL-L2321D không có màn hình thì biết kẹt ở đâu?",
+          "Máy chỉ sáng đèn lỗi giấy, không nói vị trí. Kiểm tra lần lượt khay giấy, bên trong nắp trước, nắp sau và khay đảo mặt. Lấy giấy xong đóng nắp, đèn vẫn sáng thì bấm nút Go một lần."
+        ],
+        [
+          "Máy Brother cứ kéo hai tờ một lần là hỏng gì?",
+          "Thường do bánh kéo giấy bám bụi hoặc miếng tách giấy trong khay đã chai. Lau bánh kéo giấy bằng khăn ẩm vắt khô trước. Vẫn kéo đôi thì cần thay miếng tách giấy."
+        ]
+      ]
+    }
+  ]
+}

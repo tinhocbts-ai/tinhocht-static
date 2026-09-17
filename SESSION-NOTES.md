@@ -235,12 +235,43 @@ trang riêng nên Google xếp trang nạp mực ở vị trí 22.
 - Trang nạp mực Tân Phú: giữ nguyên title, viết lại mô tả (mô tả cũ là địa chỉ chép từ Google Sites); 2 câu dẫn có link
   sang 2 trang dịch vụ cùng quận (`data/quan-manh.json`).
 - `dichVuCungQuan()` trong build: mọi trang nạp mực quận có thêm 1 câu trỏ tới sửa máy in / sửa máy tính CÙNG quận.
-- Trang chủ + trang sửa máy in Tân Bình trỏ sang trang mới. Link ngữ cảnh vào trang sửa máy tính TP: 17 → 22.
+- ~~Trang chủ trỏ sang trang mới~~ — thực tế KHÔNG lên site: lệnh `git checkout -- '*.html'` trước khi build đã hoàn nguyên luôn `src/index.html` (xem bẫy số 4). Link ngữ cảnh vào trang sửa máy tính TP: 17 → 22.
 - **Sitemap lastmod chỉ so phần `<main>`** (bỏ `\r`): thêm 1 trang vào menu làm mọi trang khác đi, trước đây sẽ khai
   174 trang cùng đổi trong một ngày.
 
 Việc kế tiếp cùng mẫu: viết lại trang sửa máy tính Quận 5 (1.042 hiển thị, vị trí 10,1), Quận 7, Quận 3, Phú Nhuận —
 chỉ cần thêm mục vào `data/dich-vu-quan.json`.
+
+## 🧭 Hướng 2 — tinhocht và namphong là MỘT công ty (17/09/2026)
+
+**Đã kiểm tra:** hai site không độc lập. Chung số 0934 393 550 (hotline tinhocht = Zalo namphong), chung MST 0315587367,
+chung địa chỉ 79 Bắc Hải / 77 Cửu Long / 64 Lương Trúc Đàm, tinhocht còn chữ "Nam Phong" ở 8 trang cũ, 8 trang reset ghi
+"thuộc cùng hệ thống". Chữ trong bài thì không chép nhau (0–2%). Namphong đứng top 2–7 cho "sửa máy in quận X" và top 2–3
+cho hầu hết reset Epson (L1210: 472 nhấp vs 20).
+
+**Chủ shop chốt hướng 2:** chấp nhận chung một công ty, tinhocht chỉ làm ở chỗ namphong yếu hoặc vắng. Đủ lực sẽ quay lại
+hướng 1 (tách hẳn — cần số điện thoại riêng, gỡ MST/địa chỉ trùng/chữ Nam Phong/câu "cùng hệ thống").
+
+**KHÔNG làm trên tinhocht:** trang dịch vụ theo quận (sửa máy in / nạp mực quận X), "sửa chữa máy in" (namphong 5,7),
+trang reset Epson mới cho model namphong đã có. Mảng sửa máy tính: không phát triển (nghề đã nghỉ), trang cũ để nguyên.
+
+Đã làm:
+- Rút `sua-may-in-tai-hcm/sua-may-in-quan-tan-phu`: `tamTat` trong `data/dich-vu-quan.json`, URL chuyển sang
+  namphong qua `data/chuyen-sang-site-khac.json` (build ghi file chuyển hướng noindex + canonical ngoài).
+- Bỏ câu dẫn "sửa máy in / sửa máy tính cùng quận" trên mọi trang nạp mực quận; bỏ BOOST Tân Bình → Tân Phú.
+- Link "sửa máy in Quận Tân Phú" trên trang nạp mực Tân Phú trỏ thẳng sang namphong (`plink` có `url`).
+- 4 trang mới trong `data/trang-dich-vu.json` (cùng bộ dựng `tools/dich-vu-quan.js`, để trống `quan`):
+  `home/thay-muc-may-in-brother`, `sua-may-in-tai-hcm/sua-may-in-brother`, `sua-may-in-tai-hcm/ve-sinh-may-in-tan-noi`,
+  `thu-thuat-tin-hoc/thu-thuat-may-in/may-in-brother-bi-ket-giay`. 1.350–1.577 từ, trùng nhau 2–4%, trùng bài kẹt giấy cũ ≤13%.
+- Dẫn link vào: trang chủ, 5 trang reset Brother (`lienQuan`), 5 BOOST_LINK từ bài Brother / kẹt giấy cũ.
+- Chỉ dùng giá đã có: Brother laser 140.000đ, in phun 90.000đ, "vệ sinh miễn phí khi đổ mực". Giá sửa, trống, vệ sinh
+  chuyên sâu ghi "báo giá trước" — **chủ shop có giá thì bổ sung vào `data/trang-dich-vu.json`**.
+
+Còn chờ chủ shop: trang hộp mực TN-2385 / trống DR-2385 (mảng vật tư đang giao mucinminhtien trong PHAN-VUNG-SEO.md).
+
+### ⚠️ Bẫy số 4: `git checkout -- '*.html'` hoàn nguyên cả `src/index.html`
+Muốn bỏ file .html đã dựng để build lại sạch thì loại `src/` ra: `git checkout -- $(git ls-files -m '*.html' | grep -v '^src/')`.
+Hoặc đừng checkout — build tự ghi đè mọi file dựng.
 
 ## ⏳ VIỆC CÒN LẠI
 

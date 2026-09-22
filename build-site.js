@@ -37,6 +37,7 @@ const DOI_NOI_DUNG = new Set();
 const fixPhones = s => String(s)
   .replace(/ | | /g, ' ')
   .replace(/089[\s.\-]*886[\s.\-]*0052/g, cfg.hotlineDisplay)
+  .replace(/089[\s.\-]*886[\s.\-]*8864/g, cfg.hotlineDisplay)          // gõ nhầm 1 số của Zalo (…9964) — audit 21/09/2026
   .replace(/098[\s.\-]*131[\s.\-]*9853/g, cfg.hotlineDisplay)
   .replace(/0915[\s.\-]*510[\s.\-]*203/g, cfg.hotlineDisplay)          // hotline tinhocnamphong.net — nuôi tinhocht độc lập (17/09/2026)
   .replace(/0981319853|0898860052|0915510203/g, cfg.hotlineTel);
@@ -48,13 +49,72 @@ const encPath = p => p.split('/').map(encodeURIComponent).join('/');
 const NEW_PAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pages-new.json'), 'utf8')).pages;
 const NEW_BY_PATH = new Map(NEW_PAGES.map(p => [p.path, p]));
 
+/* Nội dung cũ từ Google Sites gán NHÃN NGƯỢC cho 2 số: ghi "Tel: 089 886 9964" (số Zalo) và
+   "Zalo: 0934 393 550" (số hotline) — ngược hẳn với site.config.json và ngược với chính nút bấm
+   trên cùng trang đó (href="tel:0934393550", zalo.me/0898869964). Khách gọi vào số ghi là Tel thì
+   gặp đường chỉ nhận Zalo, và ngược lại. Audit 21/09/2026 đếm được 15 trang bị lỗi này.
+   Sửa theo NHÃN: số nào đứng sau chữ "Tel/điện thoại/hotline" thì thành hotline, sau "Zalo" thì
+   thành số Zalo. Regex số cho phép mọi cách ngắt (0934393550 / 0934 393 550 / 0934 39 35 50). */
+const rxSo = d => new RegExp(d.split('').join('[\\s.\\-]*'), 'gi');
+const RX_SO_ZALO = rxSo(cfg.zaloTel);        // 0898869964
+const RX_SO_HOTLINE = rxSo(cfg.hotlineTel);  // 0934393550
+const fixNhanSo = s => String(s)
+  .replace(new RegExp('((?:tel|điện\\s*thoại|hotline|đt)\\s*:?\\s*)' + RX_SO_ZALO.source, 'gi'),
+    (m, nhan) => nhan + cfg.hotlineDisplay)
+  .replace(new RegExp('(zalo\\s*:?\\s*)' + RX_SO_HOTLINE.source, 'gi'),
+    (m, nhan) => nhan + cfg.zaloDisplay);
+
+/* Địa chỉ công ty: chủ shop chốt 21/09/2026 — NAP chính là 79 Bắc Hải, Phường 15, Quận 10.
+   Nội dung cũ còn khai 2 địa chỉ khác cho CÙNG một trụ sở Quận 10:
+     · "77 Cửu Long, phường 15, quận 10" (3 trang) — đây lại đúng là địa chỉ tinhocnamphong.net
+       đang hiện trong kết quả Google, nên để nguyên là tự trộn thực thể với site kia;
+     · "95 bắc hải, quận 10" (1 trang) — biến thể sai số nhà của chính địa chỉ thật.
+   Hai cái này quy về địa chỉ thật. CÁC CHI NHÁNH (Hồng Lạc/Âu Cơ – Tân Bình, Trần Văn Đang – Quận 3)
+   và các trang tỉnh GIỮ NGUYÊN: chủ shop xác nhận đó là cửa hàng bạn / nhân viên mở. */
+const fixDiaChi = s => String(s)
+  .replace(/77\s*Cửu\s*Long/gi, '79 Bắc Hải')
+  .replace(/95\s*bắc\s*hải/gi, '79 Bắc Hải');
+
+/* Lỗi chính tả từ bản Google Sites cũ. Audit 21/09/2026: 131/179 trang dính ít nhất một lỗi —
+   với một tiệm bán tay nghề kỹ thuật thì đây là tín hiệu tin cậy nhìn thấy ngay.
+   CHỈ sửa những chữ không có nghĩa khác, và "sẻ" phải chừa "chia sẻ" (18 chỗ dùng đúng).
+   KHÔNG đụng tới đường dẫn: hàm này chỉ chạy trên tiêu đề / mô tả / chữ trong khối nội dung. */
+const fixChinhTa = s => String(s)
+  .replace(/windown/gi, 'Windows')
+  .replace(/xeroc/gi, 'Xerox')
+  .replace(/mặt\s+dù/gi, 'mặc dù')
+  .replace(/giáy/g, 'giấy').replace(/Giáy/g, 'Giấy')
+  .replace(/kiễm/g, 'kiểm').replace(/Kiễm/g, 'Kiểm')
+  .replace(/Kỹ thuật viện/g, 'Kỹ thuật viên')
+  /* \b của JS chỉ tính ký tự ASCII nên "sẻ" / "gở" không bao giờ khớp \b…\b (ẻ, ở không phải
+     ký tự từ theo ASCII). Dùng lookaround Unicode \p{L} thay cho \b. */
+  .replace(/(?<![\p{L}])gở(?![\p{L}])/gu, 'gỡ')
+  .replace(/(?<!chia )(?<![\p{L}])sẻ(?![\p{L}])/gu, 'sẽ')
+  .replace(/(?<!Chia )(?<![\p{L}])Sẻ(?![\p{L}])/gu, 'Sẽ');
+
 /* Nội dung cũ chép từ site nhà có ghi "Nam Phong". Chủ shop muốn tinhocht đứng độc lập (17/09/2026),
    nên đổi thành tên đang dùng trên chính các trang này. Chạy trên title, mô tả và mọi khối chữ. */
 const lamSachTen = s => typeof s === 'string'
-  ? fixPhones(s).replace(/Công ty tin học nam phong/gi, 'Công ty Tin Học Hi-Tech').replace(/\bNam\s+Phong\b/gi, 'Hi-Tech')
+  ? fixChinhTa(fixDiaChi(fixNhanSo(fixPhones(s)))).replace(/Công ty tin học nam phong/gi, 'Công ty Tin Học Hi-Tech').replace(/\bNam\s+Phong\b/gi, 'Hi-Tech')
   : s;
+
+/* Tiêu đề từ Google Sites còn kẹp dấu ngoặc kép quảng cáo: `… &quot;Giá Rẻ&quot;`. Trên kết quả
+   Google nó hiện đúng ký tự " (đọc như nội dung chép lại) và ăn mất 2-4 ký tự trong 60 ký tự
+   được hiển thị; H1 trên trang cũng in ra nguyên `&quot;`. Audit 21/09/2026: 24 trang / 9.653 lượt
+   hiển thị. Bỏ dấu ngoặc, dọn dấu câu thừa còn lại, sửa vài lỗi chính tả nằm ngay trên tiêu đề. */
+function lamSachTieuDe(t) {
+  if (typeof t !== 'string') return t;
+  return t
+    .replace(/["'“”‘’]/g, '')
+    .replace(/\s*[:\-–]\s*$/, '')
+    .replace(/\s+([,.!?:;])/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\bGÍA\b/g, 'GIÁ')
+    .trim();
+}
+
 function lamSachTrang(p) {
-  p.title = lamSachTen(p.title); p.metaDesc = lamSachTen(p.metaDesc);
+  p.title = lamSachTieuDe(lamSachTen(p.title)); p.metaDesc = lamSachTen(p.metaDesc);
   for (const b of p.blocks || []) {
     b.text = lamSachTen(b.text);
     for (const l of b.links || []) l.text = lamSachTen(l.text);
@@ -149,6 +209,10 @@ const PILLARS = [
   { key: 'sua-may-in-tai-hcm', label: 'Sửa máy in', href: 'sua-may-in-tai-hcm' },
   { key: 'sua-may-tinh-tan-noi', label: 'Sửa máy tính', href: 'sua-may-tinh-tan-noi' },
   { key: 'ban-may-in-cu-gia-re', label: 'Máy in cũ', href: 'ban-may-in-cu-gia-re' },
+  /* Cụm linh kiện trước 22/09/2026 KHÔNG có trong menu và không trang nào ngoài chính nó trỏ tới
+     (mồ côi hoàn toàn) — dù trang "bán card formater Canon LBP 2900" tự nó đã kiếm được
+     253 lượt hiển thị / 6 lượt nhấp trong 90 ngày mà không có một link nội bộ nào. */
+  { key: 'mua-bán-linh-kiện-máy-in-hp-canon-brother', label: 'Linh kiện', href: 'mua-bán-linh-kiện-máy-in-hp-canon-brother' },
   { key: 'thu-thuat-tin-hoc', label: 'Thủ thuật', href: 'thu-thuat-tin-hoc' },
   { key: 'bang-gia-nap-muc-may-in-tan-noi', label: 'Bảng giá', href: 'bang-gia-nap-muc-may-in-tan-noi' },
   { key: 'liên-hệ', label: 'Liên hệ', href: 'liên-hệ' },
@@ -412,10 +476,52 @@ function renderBlocks(blocks, prefix, imgPrefix, fromPath) {
   return out.join('\n      ');
 }
 
+/* Cắt mô tả ở ranh giới TỪ, quanh 155 ký tự. Trước đây cắt cứng ở 300 ký tự: Google chỉ hiện
+   ~155 ký tự trên desktop và ~120 trên mobile, nên hơn nửa mô tả không ai thấy, lại còn đứt giữa
+   từ. Audit 21/09/2026: 94 trang / 29.970 lượt hiển thị bị vậy, dài trung bình 206 ký tự.
+   Ưu tiên cắt ở cuối câu (dấu . ! ?) nếu câu đó đã đủ dài, không thì cắt ở khoảng trắng + thêm "…".
+   CHỈ áp cho mô tả máy tự lấy; mô tả viết tay trong data/seo-meta.json đi đường TITLE_OVERRIDE,
+   không qua hàm này. */
+function cutDesc(s, max = 155) {
+  s = String(s).replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max + 1);
+  const cauHet = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('! '), cut.lastIndexOf('? '));
+  if (cauHet >= 90) return cut.slice(0, cauHet + 1).trim();
+  const khoangTrang = cut.lastIndexOf(' ');
+  return cut.slice(0, khoangTrang > 90 ? khoangTrang : max).replace(/[,;:\-–—\s]+$/, '') + '…';
+}
+
 function metaDescOf(page) {
-  if (page.metaDesc) return page.metaDesc.replace(/\s+/g, ' ').slice(0, 300);
+  if (page.metaDesc) return cutDesc(page.metaDesc);
   const b = page.blocks.find(x => (x.t === 'p' || x.t === 'li') && x.text && x.text.length > 60);
-  return b ? b.text.replace(/\s+/g, ' ').slice(0, 300) : shortLabel(page.title);
+  return b ? cutDesc(b.text) : shortLabel(page.title);
+}
+
+/* Open Graph + Twitter Card + favicon. Trước 22/09/2026 site KHÔNG có thẻ nào trong nhóm này:
+   mỗi lần khách dán link vào Zalo hay Facebook là ra một ô xám không ảnh, không tiêu đề tử tế,
+   và tab trình duyệt / kết quả Google trên mobile hiện icon trắng vì thiếu favicon.
+   og:image ưu tiên ảnh thật của trang, thiếu thì dùng ảnh mặc định có logo + hotline. */
+function ogTags({ title, desc, url, image, prefix }) {
+  return [
+    `<meta property="og:type" content="${url === SITE_URL + '/' ? 'website' : 'article'}">`,
+    `<meta property="og:site_name" content="Tin Học HT">`,
+    `<meta property="og:locale" content="vi_VN">`,
+    `<meta property="og:title" content="${esc(title)}">`,
+    `<meta property="og:description" content="${esc(desc)}">`,
+    `<meta property="og:url" content="${url}">`,
+    `<meta property="og:image" content="${image}">`,
+    `<meta property="og:image:width" content="1200">`,
+    `<meta property="og:image:height" content="630">`,
+    `<meta property="og:image:alt" content="${esc(title)}">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:title" content="${esc(title)}">`,
+    `<meta name="twitter:description" content="${esc(desc)}">`,
+    `<meta name="twitter:image" content="${image}">`,
+    `<link rel="icon" href="${prefix}assets/img/favicon.png" type="image/png" sizes="48x48">`,
+    `<link rel="apple-touch-icon" href="${prefix}assets/img/apple-touch-icon.png">`,
+    `<meta name="theme-color" content="#0b5fa5">`,
+  ].join('\n');
 }
 
 /* Danh sách cấp bậc trang — dùng chung cho breadcrumb hiển thị và dữ liệu có cấu trúc */
@@ -1060,6 +1166,13 @@ function build() {
     const pageTitle = TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].title : page.title;
     const pageDesc = TITLE_OVERRIDE[page.path] ? TITLE_OVERRIDE[page.path].desc : metaDescOf(page);
 
+    /* Ảnh Open Graph: dùng ảnh mặc định 1200×630 (JPEG, có logo + hotline) cho MỌI trang.
+       Cố ý không lấy ảnh đầu của trang: gần hết là .webp tên băm, không rõ kích thước thật
+       (Zalo có trường hợp không đọc webp), và nhiều trang cũ ảnh đầu là banner clip-art 2020 —
+       lấy làm ảnh chia sẻ thì xấu hơn là không có. Khi nào có ảnh 1200×630 riêng cho từng cụm
+       thì thay ở đây. */
+    const ogImage = SITE_URL + '/assets/img/og-default.jpg';
+
     const html = `<!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -1068,6 +1181,7 @@ function build() {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="${esc(pageDesc)}">
 <link rel="canonical" href="${SITE_URL}/${encPath(page.path)}">${NOINDEX ? '\n<meta name="robots" content="noindex"><!-- demo github.io — bỏ dòng này khi gắn domain thật (NOINDEX=0) -->' : ''}
+${ogTags({ title: pageTitle, desc: pageDesc, url: SITE_URL + '/' + encPath(page.path), image: ogImage, prefix })}
 <link rel="stylesheet" href="${prefix}assets/css/style.css">
 <script type="application/ld+json">${buildSchema({
   SITE_URL, page, crumbs: crumbList(page, pages), title: pageTitle,

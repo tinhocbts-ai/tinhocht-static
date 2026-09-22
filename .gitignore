@@ -10,3 +10,7 @@ Thumbs.db
 node_modules/
 *.bak
 *.log
+
+# Bao cao audit SEO (22/09/2026) - de ngoai git vi GitHub Pages phuc vu MOI file trong repo,
+# commit vao la ca bao cao + du lieu GSC + phan tich doi thu nam public tren www.tinhocht.com/
+www.tinhocht.com-audit/

@@ -191,5 +191,56 @@
     "title": "Thủ Thuật Máy In, Máy Tính — Tự Sửa Lỗi Tại Nhà",
     "desc": "Hướng dẫn tự sửa lỗi máy in: kẹt giấy, in mờ, báo hết mực, reset Epson, Brother, Canon, HP; cài in 2 mặt, in ngược thứ tự trang. Kèm thủ thuật máy tính."
   },
-  "_ghi_chu_17_09": "17/09/2026 tối ưu toàn site: viết lại title/mô tả cho trang nhiều hiển thị mà CTR thấp so với vị trí (GSC 16/06–14/09). Không đụng trang CTR ≥5%. Ba bài kẹt giấy được phân vai: lỗi-máy-in-bị-kẹt-giấy = tự lấy giấy; sua-loi-may-in-hay-bi-ket-giay = kẹt liên tục do linh kiện; kéo-giấy-liên-tục = cuốn nhiều tờ. Bình Thạnh: tối ưu trang con Bạch Đằng vì Google đang chọn nó (vị trí 11) chứ không phải trang quận (41)."
+  "_ghi_chu_17_09": "17/09/2026 tối ưu toàn site: viết lại title/mô tả cho trang nhiều hiển thị mà CTR thấp so với vị trí (GSC 16/06–14/09). Không đụng trang CTR ≥5%. Ba bài kẹt giấy được phân vai: lỗi-máy-in-bị-kẹt-giấy = tự lấy giấy; sua-loi-may-in-hay-bi-ket-giay = kẹt liên tục do linh kiện; kéo-giấy-liên-tục = cuốn nhiều tờ. Bình Thạnh: tối ưu trang con Bạch Đằng vì Google đang chọn nó (vị trí 11) chứ không phải trang quận (41).",
+  "_ghi_chu_22_09": "22/09/2026 — audit toàn site (bộ claude-seo). Viết mô tả cho 10 trang nhiều hiển thị mà gần như không ra nhấp (≥300 hiển thị, CTR <1,5% trong 90 ngày 19/05–17/08) và chưa có mô tả viết tay. Giữ nguyên quy tắc cũ: KHÔNG đụng trang CTR ≥5%. Các trang còn lại trong hàng đợi xem www.tinhocht.com-audit/rewrite-queue.md.",
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-5": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 5 — Thợ Tới Trong 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nhà quận 5: máy không lên nguồn, chạy chậm, mất mạng, lỗi Windows. Xem máy trước, báo giá rồi mới sửa.",
+    "vi_sao": "1.378 hiển thị / 1 nhấp (0,07%). Tiêu đề cũ 'Sửa Máy Tính Quận 5' dài 19 ký tự, không nói được gì."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-6": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 6 — Có Mặt Trong 30 Phút",
+    "desc": "Sửa máy tính, laptop tại nhà quận 6: cài lại Windows, thay ổ cứng SSD, máy chạy chậm, không vào mạng. Báo giá trước khi sửa.",
+    "vi_sao": "835 hiển thị / 1 nhấp (0,12%)."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-9": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 9 (TP Thủ Đức) — Trong 30 Phút",
+    "desc": "Sửa máy tính, laptop tận nhà quận 9 – TP Thủ Đức: không lên nguồn, chạy chậm, lỗi Windows, thay SSD. Chỉ thu tiền khi máy chạy lại.",
+    "vi_sao": "372 hiển thị / 0 nhấp."
+  },
+  "sua-may-tinh-tan-noi/sua-may-tinh-quan-10": {
+    "title": "Sửa Máy Tính Tại Nhà Quận 10 — Cửa Hàng Ở 79 Bắc Hải",
+    "desc": "Cửa hàng ngay 79 Bắc Hải, quận 10 nên thợ tới nhà rất nhanh: máy chạy chậm, không lên nguồn, cài Windows, thay SSD. Mang máy ghé tiệm cũng được.",
+    "vi_sao": "362 hiển thị / 0 nhấp. Đây là quận đặt cửa hàng — lợi thế gần nhất mà tiêu đề cũ không nhắc."
+  },
+  "liên-hệ": {
+    "title": "Liên Hệ Tin Học HT — Nạp Mực, Sửa Máy In, Sửa Máy Tính",
+    "desc": "Gọi 0934 393 550 hoặc nhắn Zalo 089 886 9964 để đặt thợ nạp mực, sửa máy in, sửa máy tính tận nơi TP.HCM. Cửa hàng chính: 79 Bắc Hải, Quận 10.",
+    "vi_sao": "1.272 hiển thị / 1 nhấp (0,08%). Tiêu đề cũ là 'LIÊN HỆ' — 7 ký tự viết hoa, không có tên thương hiệu lẫn dịch vụ."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/hướng-dẫn-cài-đặt-in-2-mặt-cho-máy-canon-3300": {
+    "title": "Cách Cài Đặt In 2 Mặt Cho Máy In Canon LBP 3300 (Có Hình)",
+    "desc": "Hướng dẫn cài in 2 mặt cho máy in Canon LBP 3300 ngay trong driver, từng bước kèm hình — máy không có bộ đảo giấy vẫn in 2 mặt được theo 2 lượt.",
+    "vi_sao": "1.105 hiển thị / 11 nhấp (1,0%). Tiêu đề cũ viết thường hết, không có chữ nào cho biết bài có hình."
+  },
+  "thu-thuat-tin-hoc/thu-thuat-may-in/nguyen-nhan-may-in-mau-khong-ra-deu-muc-va-cach-sua-chua": {
+    "title": "Máy In Màu Không Ra Đều Mực — Nguyên Nhân Và Cách Xử Lý",
+    "desc": "Máy in màu HP, Canon, Epson in lệch màu, mất màu hay mực không đều: các nguyên nhân thường gặp và cách xử lý từng lỗi trước khi phải gọi thợ.",
+    "vi_sao": "381 hiển thị / 3 nhấp (0,79%)."
+  },
+  "home/nap-muc-may-in-mau-tai-nha/thay-muc-may-in-mau-hp": {
+    "title": "Thay Mực Máy In Màu HP Tận Nơi TP.HCM — 300.000đ",
+    "desc": "Thay, nạp mực máy in màu HP tận nơi TP.HCM: CP1025, M176, M177… laser màu 300.000đ, kỹ thuật có mặt 20–30 phút, in thử tại chỗ, bảo hành hết mực.",
+    "vi_sao": "316 hiển thị / 0 nhấp. Trang có giá thật nhưng tiêu đề cũ 'Thay mực máy in màu Hp' không nói giá lẫn khu vực."
+  },
+  "home/nap-muc-may-in-tai-binh-duong": {
+    "title": "Nạp Mực Máy In Tại Bình Dương — Thuận An, Lái Thiêu",
+    "desc": "Nạp mực, bơm mực máy in tận nơi Bình Dương khu Thuận An, Lái Thiêu: laser trắng đen, in màu, đủ dòng HP, Canon, Brother, Samsung, Ricoh.",
+    "vi_sao": "347 hiển thị / 3 nhấp (0,86%)."
+  },
+  "home/bơm-mực-máy-in-tận-nơi-gía-rẻ-tại-mỹ-tho-tiền-giang": {
+    "title": "Bơm Mực Máy In Tận Nơi Mỹ Tho — Tiền Giang",
+    "desc": "Bơm mực, thay mực máy in tận nơi tại Mỹ Tho – Tiền Giang: laser trắng đen, máy in màu HP, Canon, Brother, Samsung. Gọi trước, kỹ thuật tới tận nhà.",
+    "vi_sao": "632 hiển thị / 9 nhấp (1,42%). Tiêu đề cũ có lỗi chính tả 'GÍA RẺ' và cặp nháy kép thừa."
+  }
 }

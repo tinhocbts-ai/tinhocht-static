@@ -14,6 +14,26 @@
 <meta name="description" content="Nạp mực, bơm mực máy in tại nhà toàn TP.HCM: laser trắng đen từ 90.000đ, in màu 300.000đ. Kỹ thuật có mặt 20-30 phút, miễn phí đi lại, bảo hành hết mực.">
 <meta name="robots" content="noindex"><!-- GO DONG NAY khi gan domain that -->
 <link rel="canonical" href="https://www.tinhocht.com/">
+<!-- Open Graph + Twitter Card + favicon (thêm 22/09/2026). Trước đó cả site không có thẻ nào
+     trong nhóm này, nên link dán vào Zalo/Facebook ra ô xám không ảnh, tab trình duyệt hiện
+     icon trắng. Các trang con nhận khối tương đương từ ogTags() trong build-site.js. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tin Học HT">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Nạp Mực Máy In Tận Nơi TP.HCM — Bơm &amp; Thay Mực Tại Nhà">
+<meta property="og:description" content="Nạp mực, bơm mực máy in tại nhà toàn TP.HCM: laser trắng đen từ 90.000đ, in màu 300.000đ. Kỹ thuật có mặt 20-30 phút, miễn phí đi lại, bảo hành hết mực.">
+<meta property="og:url" content="https://www.tinhocht.com/">
+<meta property="og:image" content="https://www.tinhocht.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tin Học HT — nạp mực, sửa máy in, sửa máy tính tận nơi TP.HCM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nạp Mực Máy In Tận Nơi TP.HCM — Bơm &amp; Thay Mực Tại Nhà">
+<meta name="twitter:description" content="Nạp mực, bơm mực máy in tại nhà toàn TP.HCM: laser trắng đen từ 90.000đ, in màu 300.000đ. Kỹ thuật có mặt 20-30 phút, miễn phí đi lại, bảo hành hết mực.">
+<meta name="twitter:image" content="https://www.tinhocht.com/assets/img/og-default.jpg">
+<link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#0b5fa5">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -29,7 +49,9 @@
         <h1>Tin Học Hi-Tech — Nạp mực máy in tại nhà TP.HCM</h1>
         <p class="hero-sub">Nạp Mực Máy In Tại Nhà - Sửa Máy In Tận Nơi - Sửa Máy Tính Giá Rẻ</p>
         <p>Công ty tin học hi-tech tại Tphcm chuyên bơm mực máy in tại nhà các loại Hp - canon - samsung - brother - ricoh... nạp mực máy in trắng đen, bơm mực máy in màu các loại, nhận nạp mực tại tất cả các quận huyện Tphcm.</p>
-        <p><strong>Trung Tâm Mực In Hi-Tech</strong><br>ĐT: 089 886 9964 - Zalo: 0934 393550</p>
+        <!-- Nhãn 2 số trước 22/09/2026 bị ngược (ĐT ghi số Zalo và ngược lại) — khách gọi vào
+             số ghi là ĐT thì gặp đường chỉ nhận Zalo. Lấy thẳng từ site.config.json cho khỏi lệch. -->
+        <p><strong>Trung Tâm Mực In Hi-Tech</strong><br>ĐT: {{hotlineDisplay}} - Zalo: {{zaloDisplay}}</p>
         <div class="hero-cta">
           <a href="tel:{{hotlineTel}}" class="btn btn-primary">📞 Gọi ngay {{hotlineDisplay}}</a>
           <a href="https://zalo.me/{{zaloTel}}" class="btn btn-outline" target="_blank" rel="noopener">💬 Chat Zalo</a>
@@ -60,10 +82,10 @@
       <ul class="check-list">
         <li>Nạp mực máy in tận nơi, sửa máy in tại nhà khách hàng</li>
         <li>Dịch vụ bơm mực máy in tại nhà uy tín chất lượng.</li>
-        <li>Hi-tech luôn làm việc thứ 7, chủ nhật và ngày nghĩ lễ - 24/7</li>
+        <li>Hi-tech luôn làm việc thứ 7, chủ nhật và ngày nghỉ lễ - 24/7</li>
         <li>Nạp mực máy in giá rẻ - tiết kiệm chi phí cho khách hàng.</li>
         <li>Sửa máy in tận nơi nhanh và đảm bảo uy tín</li>
-        <li>Hitech Luôn nhận trách trách nhiệm nếu có sự cố xẩy ra.</li>
+        <li>Hitech Luôn nhận trách trách nhiệm nếu có sự cố xảy ra.</li>
         <li>Nạp mực máy in, sửa máy in, máy tính luôn đi kèm với chế độ bảo hành.</li>
         <li>Bản in luôn đẹp sau khi nạp mực và in test.</li>
         <li>Chỉ nhận thanh toán khi khách hàng hài lòng về chất lượng và dịch vụ</li>
@@ -72,21 +94,21 @@
       </ul>
 
       <h3>3. Chất Lượng thay mực in của Hi-Tech</h3>
-      <p>Với đội ngũ kỹ thuật nhiều năm kinh nghiệm trong lĩnh vực máy in và máy tính, rãi đều tại các quận huyện Tp HCM như: quận 1, quận 3, quận 5, 6, 10, 11, quận Phú nhuận, quận tân bình, quận Tân phú ...</p>
+      <p>Với đội ngũ kỹ thuật nhiều năm kinh nghiệm trong lĩnh vực máy in và máy tính, trải đều tại các quận huyện Tp HCM như: quận 1, quận 3, quận 5, 6, 10, 11, quận Phú nhuận, quận tân bình, quận Tân phú ...</p>
       <p>chúng tôi luôn mong muốn đem đến dịch vụ nạp mực máy in tận nơi nhanh &amp; chất lượng nhất, cùng với chế độ hậu mãi và bảo hành Uy tín.</p>
-      <p>Nắm bắt nhu cầu cần nạp mực máy in tại nhà nhanh cho chất lượng đẹp của Quý công ty, doanh nghiệp cũng như những cá thể khác. HiTech computer luôn nhắc nhở mỗi KTV phải luôn lấy quy tắt " khách hàng là thượng đế " để phục vụ tốt nhất. có được niềm tin của quý khách hàng là sự thành công của chúng tôi</p>
-      <p>Luôn có kỹ thuật túc trực tại quận Tp HCM, Khi quý khách gọi sẻ có kỹ thuật đến ngay trong vòng 20'</p>
+      <p>Nắm bắt nhu cầu cần nạp mực máy in tại nhà nhanh cho chất lượng đẹp của Quý công ty, doanh nghiệp cũng như những cá thể khác. HiTech computer luôn nhắc nhở mỗi KTV phải luôn lấy quy tắc " khách hàng là thượng đế " để phục vụ tốt nhất. có được niềm tin của quý khách hàng là sự thành công của chúng tôi</p>
+      <p>Luôn có kỹ thuật túc trực tại quận Tp HCM, Khi quý khách gọi sẽ có kỹ thuật đến ngay trong vòng 20'</p>
 
       <div class="callout">
         <p><a href="liên-hệ/">BẠN cần nạp mực máy in GẤP 24/7 tại HCM ? - thông tin ở đây</a></p>
         <p><strong>Nạp mực máy in GIÁ RẺ TP HCM - chỉ còn 90K</strong></p>
-        <p>Khi hết mực hoặc máy in gặp sự cố, hãy gọi cho chúng tôi: => <a href="tel:{{zaloTel}}">089 886 9964</a> &lt;=</p>
+        <p>Khi hết mực hoặc máy in gặp sự cố, hãy gọi cho chúng tôi: => <a href="tel:{{hotlineTel}}">{{hotlineDisplay}}</a> &lt;=</p>
       </div>
 
       <h3>Nạp mực máy in tại nhà cam kết : Nhanh - Giá Rẻ</h3>
       <ul class="check-list">
         <li><strong>Nhanh:</strong> Chúng tôi sẽ có mặt nhanh trong 30 phút sau khi Quý khách liên hệ</li>
-        <li><strong>Rẽ:</strong> Linh kiện mực in, máy in giá rẽ hơn so với thị trường</li>
+        <li><strong>Rẻ:</strong> Linh kiện mực in, máy in giá rẻ hơn so với thị trường</li>
         <li><strong>Chất lượng:</strong> Nạp mực máy in chất lượng, làm giảm tỉ lệ hao mòn linh kiện</li>
         <li><strong>Phục vụ tận nơi:</strong> Phục vụ tận nơi với bất ký sự cố nào xãy ra với máy in, mực in</li>
         <li><strong>Công nợ:</strong> Quý công ty có thể thanh toán 1 lần vào cuối mỗi tháng</li>
@@ -126,7 +148,7 @@
   <section class="section">
     <div class="container">
       <h2>Bơm Mực Máy In TPHCM, Nạp mực in tại nhà, Thay mực in tận nơi giá rẻ</h2>
-      <p>Dịch vụ nạp mực máy in tận nơi HCM của chúng tôi chuyên: Nạp các loại mực máy in HP, Canon, Brother, Xeroc, Samsung, Panasonic... cung cấp linh kiện mực in, máy in chính hãng giá rẻ cho cá nhân, doanh nghiệp.</p>
+      <p>Dịch vụ nạp mực máy in tận nơi HCM của chúng tôi chuyên: Nạp các loại mực máy in HP, Canon, Brother, Xerox, Samsung, Panasonic... cung cấp linh kiện mực in, máy in chính hãng giá rẻ cho cá nhân, doanh nghiệp.</p>
       <p class="callout-text">BƠM MỰC MÁY IN TẬN NƠI HCM =&gt; Hotline <a href="tel:{{hotlineTel}}">0934.39.35.50</a></p>
       <ul class="check-list">
         <li>Mực chúng tôi nạp là mực loại 1 nên bản in rõ đẹp đẹp</li>
@@ -160,7 +182,7 @@
       <ul class="check-list check-list-2col">
         <li>Sửa máy tính, máy in tận nơi</li>
         <li>Thay mực máy in phun màu</li>
-        <li>Cài đặt windown và các ứng dụng văn phòng</li>
+        <li>Cài đặt Windows và các ứng dụng văn phòng</li>
         <li>Nâng cấp, sửa chữa máy tính PC - Láptop</li>
         <li>Vệ sinh, tối ưu, diệt virus cho máy tính</li>
         <li>Cung cấp linh kiện máy tính, máy in.</li>
@@ -203,14 +225,14 @@
         <img src="assets/img/home/home-8.jpg" alt="" width="181" height="160" loading="lazy">
       </div>
 
-      <p>Nạp Mực Máy In HP · Nạp Mực Máy In Canon · Nạp Mực Máy In Brother · Sửa Máy In Samsung · Nạp Mực Máy In Xeroc · Nạp Mực Máy In Lexmark · Nạp Mực Máy In Panasonic · Nạp Mực Máy In Epson · Nạp Mực Máy In Oki</p>
+      <p>Nạp Mực Máy In HP · Nạp Mực Máy In Canon · Nạp Mực Máy In Brother · Sửa Máy In Samsung · Nạp Mực Máy In Xerox · Nạp Mực Máy In Lexmark · Nạp Mực Máy In Panasonic · Nạp Mực Máy In Epson · Nạp Mực Máy In Oki</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <h2>Các Dịch Vụ Liên Quan:</h2>
-      <p>Nạp mực máy in canon tận nơi quận 11 · Bơm mực máy in A3, A4 ở tphcm · Bơm mực máy in màu các loại như Hp, Canon, Brother ...Q5 · Thay mực máy in Brother nhanh ở tp hcm · Nạp mực máy in Samsung ở tp hcm · Đổ mực máy in Recoh tận nơi tp hcm · Nạp mực máy in Xeroc tại nhà tphcm · cửa hàng nạp mực máy in Lexmark ở quận Bình Tân tại tp. hcm · Công ty bơm mực máy in tại nhà giá rẻ nhất tại tphcm · Đổ mực máy in các loại Panasonic, xerox, recoh quận Gò vấp · Dịch vụ đổ mực máy in tại tphcm giá rẻ · Cần bơm mực máy in gấp tại quận tân bình · cần nạp mực máy in gấp - liên hệ: 0934393550 · Nạp mực máy in canon LBP 2900 chỉ 90K</p>
+      <p>Nạp mực máy in canon tận nơi quận 11 · Bơm mực máy in A3, A4 ở tphcm · Bơm mực máy in màu các loại như Hp, Canon, Brother ...Q5 · Thay mực máy in Brother nhanh ở tp hcm · Nạp mực máy in Samsung ở tp hcm · Đổ mực máy in Ricoh tận nơi tp hcm · Nạp mực máy in Xerox tại nhà tphcm · cửa hàng nạp mực máy in Lexmark ở quận Bình Tân tại tp. hcm · Công ty bơm mực máy in tại nhà giá rẻ nhất tại tphcm · Đổ mực máy in các loại Panasonic, xerox, Ricoh quận Gò vấp · Dịch vụ đổ mực máy in tại tphcm giá rẻ · Cần bơm mực máy in gấp tại quận tân bình · cần nạp mực máy in gấp - liên hệ: 0934393550 · Nạp mực máy in canon LBP 2900 chỉ 90K</p>
 
       <p>Máy in Brother: <a href="home/thay-muc-may-in-brother">thay mực máy in Brother tận nơi</a> ·
         <a href="sua-may-in-tai-hcm/sua-may-in-brother">sửa máy in Brother</a> ·
@@ -255,7 +277,7 @@
 
       <p>Nạp mực máy in tận nơi Tp.HCM · Bơm mực máy in tại nhà Tp.HCM · Đổ mực máy in Quận Tân Bình · Nạp mực máy in Quận Tận Nơi Q. 10 · Nạp mực máy in giá rẻ tại HCM · Sửa chữa máy tính tận nơi Tp.HCM · Sửa chữa máy in tận nhà Tp. HCM · Cài đặt máy tính laptop tận nơi HCM · Sửa máy in tận nơi HCM giá rẻ · Bơm mực máy in màu</p>
 
-      <p>Dịch vụ sửa máy tính tận nơi giá rẻ, dịch vụ nạp mực máy in tận nơi cho các dòng HP, Canon, Brother, Panasonic, Samsung Xeroc, đổ mực máy in phun cho các dòng HP, Canon, Epson, Brother... Nạp mực giá rẻ tại Tp. HCM. Sửa máy tính tại nhà, cài đặt windown tận nơi, vệ sinh laptop, sửa laptop, Sửa máy in tận nơi.</p>
+      <p>Dịch vụ sửa máy tính tận nơi giá rẻ, dịch vụ nạp mực máy in tận nơi cho các dòng HP, Canon, Brother, Panasonic, Samsung Xerox, đổ mực máy in phun cho các dòng HP, Canon, Epson, Brother... Nạp mực giá rẻ tại Tp. HCM. Sửa máy tính tại nhà, cài đặt Windows tận nơi, vệ sinh laptop, sửa laptop, Sửa máy in tận nơi.</p>
 
       <div class="grid grid-3 photo-grid">
         <img src="assets/img/home/home-12.jpg" alt="" width="198" height="136" loading="lazy">

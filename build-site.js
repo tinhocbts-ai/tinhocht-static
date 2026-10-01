@@ -1218,7 +1218,18 @@ ${renderFooter(menu, prefix)}
     /* Chỉ so phần <main>: menu/chân trang đổi (thêm 1 trang vào menu) là mọi trang đều khác,
        nếu tính cả phần đó thì lastmod của 174 trang cùng nhảy về hôm nay — đúng cái tín hiệu sai
        nói ở trên. */
-    const ruot = h => (h && (h.match(/<main[\s\S]*?<\/main>/) || [h])[0].replace(/\r/g, ''));  // bỏ \r: git autocrlf ghi CRLF lúc checkout
+    /* So cả <main> LẪN tiêu đề + mô tả. Trước 01/10/2026 chỉ so <main>, nên một đợt chỉ sửa
+       title/description trong data/seo-meta.json sẽ KHÔNG làm lastmod nhảy — tức là Google không
+       nhận được tín hiệu nào để quay lại đọc. Đó đúng là thứ mình cần nó đọc lại nhất.
+       Vẫn KHÔNG tính menu/chân trang: thêm 1 trang vào menu là cả 179 trang cùng "đổi", khai
+       lastmod mới cho tất cả là tín hiệu sai, lần sau Google không còn tin lastmod của site này. */
+    const ruot = h => {
+      if (!h) return h;
+      const than = (h.match(/<main[\s\S]*?<\/main>/) || [h])[0];
+      const tieuDe = (h.match(/<title>[\s\S]*?<\/title>/) || [''])[0];
+      const moTa = (h.match(/<meta name="description"[^>]*>/) || [''])[0];
+      return (tieuDe + moTa + than).replace(/\r/g, '');  // bỏ \r: git autocrlf ghi CRLF lúc checkout
+    };
     if (ruot(cu) !== ruot(html)) DOI_NOI_DUNG.add(page.path);
     fs.writeFileSync(outFile, html, 'utf8');
     n++;

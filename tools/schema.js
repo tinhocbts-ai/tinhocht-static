@@ -109,7 +109,7 @@ function extractFaq(blocks) {
 
 /* ---------- API chính ---------- */
 function buildSchema(opts) {
-  const { SITE_URL, page, crumbs, title, description, imageUrl } = opts;
+  const { SITE_URL, page, crumbs, title, description, imageUrl, datePublished, dateModified } = opts;
   const url = SITE_URL + '/' + page.path.split('/').map(encodeURIComponent).join('/') + '/';
   const graph = [];
 
@@ -124,30 +124,46 @@ function buildSchema(opts) {
     graph.push({ '@type': 'WebPage', '@id': url + '#page', url, name: title,
       description, isPartOf: { '@id': SITE_ID(SITE_URL) }, inLanguage: 'vi-VN',
       publisher: { '@id': ORG_ID(SITE_URL) } });
+    /* Bản rút gọn của hồ sơ doanh nghiệp + website, nhúng vào MỌI trang.
+       Trước 01/10/2026 chỉ trang chủ mới có hai node này, trong khi 178 trang còn lại vẫn trỏ
+       author/publisher/provider/isPartOf tới @id của chúng — tức là trỏ vào khoảng không:
+       máy đọc từng trang một, nó không sang trang chủ để tra. Giữ cùng @id nên không trùng lặp
+       thực thể, chỉ là mỗi trang tự đủ thông tin. */
+    graph.push({
+      '@type': ['LocalBusiness', 'ComputerStore'], '@id': ORG_ID(SITE_URL),
+      name: biz.name, url: SITE_URL + '/', telephone: '+84934393550',
+      address: {
+        '@type': 'PostalAddress', streetAddress: biz.street,
+        addressLocality: biz.district, addressRegion: biz.city,
+        postalCode: biz.postalCode, addressCountry: biz.countryCode,
+      },
+    });
+    graph.push({
+      '@type': 'WebSite', '@id': SITE_ID(SITE_URL), url: SITE_URL + '/',
+      name: biz.name, publisher: { '@id': ORG_ID(SITE_URL) }, inLanguage: 'vi-VN',
+    });
   }
 
   // 2) Đường dẫn phân cấp — hiện ngay dưới tiêu đề trong kết quả tìm kiếm
   if (crumbs && crumbs.length > 1) graph.push(breadcrumb(SITE_URL, crumbs));
 
-  // 3) Bài hướng dẫn có các bước rõ ràng
-  const steps = isGuide(page.path) ? extractSteps(page.blocks || []) : null;
-  if (steps) {
-    graph.push({
-      '@type': 'HowTo', name: title, description, inLanguage: 'vi-VN',
-      image: imageUrl || undefined,
-      step: steps.map((s, i) => ({
-        '@type': 'HowToStep', position: i + 1,
-        name: s.text.length > 70 ? s.text.slice(0, 68) + '…' : s.text,
-        text: s.text, url: url + '#buoc-' + s.n,
-      })),
-      publisher: { '@id': ORG_ID(SITE_URL) },
-    });
-  } else if (isGuide(page.path) && page.path) {
+  /* 3) Bài hướng dẫn.
+     Trước 01/10/2026 bài có các bước rõ ràng được khai là HowTo. Google đã BỎ kết quả nổi bật
+     cho HowTo từ 2023 — khai tiếp cũng không hiện gì, trong khi 37 trang dùng nó lại chính là
+     cụm phần mềm reset đang sinh tiền. Nay dồn hết về Article và đính kèm ngày, vì ngày mới là
+     thứ Google và trợ lý AI thật sự dùng. Các bước vẫn nằm nguyên trong thân bài. */
+  if (isGuide(page.path) && page.path) {
+    const steps = extractSteps(page.blocks || []);
     graph.push({
       '@type': 'Article', headline: title.slice(0, 110), description,
       image: imageUrl || undefined, inLanguage: 'vi-VN',
+      datePublished: datePublished || undefined,
+      dateModified: dateModified || datePublished || undefined,
       author: { '@id': ORG_ID(SITE_URL) }, publisher: { '@id': ORG_ID(SITE_URL) },
       mainEntityOfPage: { '@id': url + '#page' },
+      /* Giữ số bước làm thông tin mô tả — không phải để lấy kết quả nổi bật, mà để máy đọc
+         biết đây là bài hướng dẫn từng bước chứ không phải bài giới thiệu. */
+      articleSection: steps ? 'Hướng dẫn ' + steps.length + ' bước' : undefined,
     });
   }
 

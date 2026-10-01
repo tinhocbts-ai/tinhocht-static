@@ -44,6 +44,27 @@ const fixPhones = s => String(s)
 const esc = s => fixPhones(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const encPath = p => p.split('/').map(encodeURIComponent).join('/');
 
+/* Ngày cho dữ liệu có cấu trúc. Toàn site trước 01/10/2026 không có datePublished/dateModified
+   nào — bài hướng dẫn kỹ thuật không ngày trông như đã bỏ hoang, và các trợ lý AI gần như luôn
+   ưu tiên nội dung có ngày.
+   · datePublished: ngày URL lên bản tĩnh, sinh từ git bởi tools/ngay-dang.js.
+   · dateModified : lấy đúng lastmod mà sitemap đang dùng (ngày nội dung đổi thật). Đọc từ
+     sitemap.xml của LẦN DỰNG TRƯỚC, nên sau một lần sửa nội dung phải chạy build 2 lượt thì
+     ngày trong schema mới khớp sitemap — lượt 2 không làm lastmod nhảy tiếp vì bộ so sánh
+     chỉ nhìn <title>, <meta description> và <main>, còn schema nằm ngoài ba chỗ đó. */
+const NGAY_DANG = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'ngay-dang.json'), 'utf8')).trang; }
+  catch { return {}; }
+})();
+const LASTMOD_CU = (() => {
+  const m = new Map();
+  const f = path.join(ROOT, 'sitemap.xml');
+  if (fs.existsSync(f)) {
+    for (const x of fs.readFileSync(f, 'utf8').matchAll(/<loc>([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod>/g)) m.set(x[1], x[2]);
+  }
+  return m;
+})();
+
 /* Trang MỚI viết thêm (data/pages-new.json) — không có trên bản Google Sites cũ.
    Nhắm các model máy in đang có người tìm mà site chưa có trang. */
 const NEW_PAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pages-new.json'), 'utf8')).pages;
@@ -1188,6 +1209,8 @@ ${ogTags({ title: pageTitle, desc: pageDesc, url: SITE_URL + '/' + encPath(page.
   description: pageDesc,
   imageUrl: (page.blocks || []).filter(b => b.t === 'img' && b.local)[0]
     ? SITE_URL + '/' + (page.blocks.filter(b => b.t === 'img' && b.local)[0].local) : '',
+  datePublished: NGAY_DANG[page.path] || '',
+  dateModified: LASTMOD_CU.get(SITE_URL + '/' + encPath(page.path)) || '',
 })}</script>
 </head>
 <body>

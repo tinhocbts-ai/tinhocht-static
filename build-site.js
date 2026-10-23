@@ -26,6 +26,27 @@ const DOM_DIR = path.join(EXPORT, 'pages-dom');
    Google sẽ coi là URL khác và ranking cũ không chuyển sang. */
 const SITE_URL = 'https://www.tinhocht.com';
 const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), 'utf8'));
+
+/* Thẻ chuyển đổi Google Ads (gọi + Zalo) — cfg.ads, chèn trước </head> của MỌI trang:
+   khách bấm quảng cáo xong còn đi xem bảng giá rồi mới gọi, cuộc gọi đó vẫn phải được tính. */
+function adsTag() {
+  const a = cfg.ads;
+  if (!a || !a.gtagId) return '';
+  return `<script async src="https://www.googletagmanager.com/gtag/js?id=${a.gtagId}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${a.gtagId}');
+document.addEventListener('click', function (e) {
+  var l = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+  if (!l) return;
+  var h = l.getAttribute('href') || '';
+  var t = h.indexOf('tel:') === 0 ? '${a.sendToCall}' : h.indexOf('zalo.me') !== -1 ? '${a.sendToZalo}' : null;
+  if (t) gtag('event', 'conversion', { send_to: t });
+}, true);
+</script>`;
+}
 const NOINDEX = process.env.NOINDEX !== '0'; // demo github.io: noindex; gắn domain thật -> NOINDEX=0
 /* Đường dẫn các trang có nội dung thật sự khác so với lần dựng trước (dùng cho lastmod sitemap).
    Trang chủ ghi bằng khoá riêng '__home__' vì nó không nằm trong danh sách pages. */
@@ -1212,6 +1233,7 @@ ${ogTags({ title: pageTitle, desc: pageDesc, url: SITE_URL + '/' + encPath(page.
   datePublished: NGAY_DANG[page.path] || '',
   dateModified: LASTMOD_CU.get(SITE_URL + '/' + encPath(page.path)) || '',
 })}</script>
+${adsTag()}
 </head>
 <body>
 ${renderMenu(menu, prefix, page.path)}
@@ -1277,7 +1299,7 @@ ${renderFooter(menu, prefix)}
       description: (home.match(/name="description" content="([^"]*)"/) || [, ''])[1],
       imageUrl: SITE_URL + '/assets/img/logo-ht.jpg',
     });
-    home = home.replace('</head>', '<script type="application/ld+json">' + homeSchema + '</script>\n</head>');
+    home = home.replace('</head>', '<script type="application/ld+json">' + homeSchema + '</script>\n' + adsTag() + '\n</head>');
     if (!NOINDEX) home = home.replace(/\s*<meta name="robots" content="noindex">(<!--[^>]*-->)?/g, '');
     const homeFile = path.join(ROOT, 'index.html');
     if (!fs.existsSync(homeFile) || fs.readFileSync(homeFile, 'utf8') !== home) DOI_NOI_DUNG.add('__home__');

@@ -131,5 +131,25 @@ gtag('config', 'AW-18526290631');
   <a class="call" href="tel:0934393550">📞 Gọi 0934 393 550</a>
   <a class="zalo" href="https://zalo.me/0898869964" target="_blank" rel="noopener">💬 Chat Zalo</a>
 </div>
+<!-- ads-calllog-v1: nhật ký bấm gọi → Google Form → Sheet → nhập khách thật vào Google Ads (adsgoogle/data/calls/README.md) -->
+<script>
+(function(){try{
+var q=new URLSearchParams(location.search),g=q.get('gclid');
+if(g){localStorage.setItem('_ht_gclid',JSON.stringify({g:g,t:Date.now()}));}
+function gid(){try{var o=JSON.parse(localStorage.getItem('_ht_gclid')||'null');if(!o)return'';if(Date.now()-o.t>90*864e5)return'';return o.g;}catch(x){return'';}}
+var sent=false;
+document.addEventListener('click',function(ev){
+ if(!ev.isTrusted||sent)return;
+ var a=ev.target.closest&&ev.target.closest('a[href^="tel:"],a[href*="zalo.me"]');if(!a)return;
+ var g=gid();if(!g)return;sent=true;
+ var kind=a.getAttribute('href').indexOf('tel:')===0?'goi':'zalo';
+ var d=new FormData();
+ d.append('entry.1170266095',g);d.append('entry.138633163',location.pathname);
+ d.append('entry.2050608494',new Date().toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh'}));
+ d.append('entry.1058356040','tinhocht');d.append('entry.1645863857',kind);
+ fetch('https://docs.google.com/forms/d/e/1FAIpQLSdGmtnssPys8M0fVDWWuhj4UcL1jr1DjIik_SqHUC5X_qh3XA/formResponse',{method:'POST',mode:'no-cors',body:d,keepalive:true});
+},true);
+}catch(x){}})();
+</script>
 </body>
 </html>

@@ -357,5 +357,6 @@ riêng ở cuối bài qua `data/noi-dung-them.json` (mỗi trang ~330–430 t�
 Kết quả: 4 trang còn trùng nhau 42–49% (trước 60–74%). Cả cụm reset không còn cặp nào ≥50% (ban đầu 22 cặp).
 Muốn xuống nữa thì phải sửa chữ bài gốc — chưa làm.
 
-**Lỗi có sẵn trong bài gốc, chưa sửa, chờ chủ shop:** trang L3150 đoạn mở bài ghi nhầm "Epson L3210"; cũng trang này còn
-hai số điện thoại không phải hotline (xem mục "Về chúng tôi" của trang).
+**Lỗi có sẵn trong bài gốc trang L3150 — đã sửa trong `build-site.js` (14/11, chủ shop duyệt):** đoạn mở bài, mô tả và dòng tags ghi nhầm
+"L3210" → "L3150" (sửa riêng trang này trong `lamSachTrang`, chừa link tham khảo sang trang L3210); hai số cũ 0932 764482 / Zalo 0775 168 841
+→ hotline và Zalo trong `site.config.json` (`fixPhones`). Trang `home/công-ty-bơm-mực-máy-in-tại-bắc-ninh` còn số 0932.334.229 — chưa đụng, chờ chủ shop.

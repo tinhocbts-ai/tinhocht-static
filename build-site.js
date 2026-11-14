@@ -61,6 +61,9 @@ const fixPhones = s => String(s)
   .replace(/089[\s.\-]*886[\s.\-]*8864/g, cfg.hotlineDisplay)          // gõ nhầm 1 số của Zalo (…9964) — audit 21/09/2026
   .replace(/098[\s.\-]*131[\s.\-]*9853/g, cfg.hotlineDisplay)
   .replace(/0915[\s.\-]*510[\s.\-]*203/g, cfg.hotlineDisplay)          // hotline tinhocnamphong.net — nuôi tinhocht độc lập (17/09/2026)
+  /* 14/11/2026: hai số cũ còn sót trên trang reset Epson L3150 (mục "Về chúng tôi") */
+  .replace(/0932[\s.\-]*764[\s.\-]*482/g, cfg.hotlineDisplay)
+  .replace(/0775[\s.\-]*168[\s.\-]*841/g, cfg.zaloDisplay)
   .replace(/0981319853|0898860052|0915510203/g, cfg.hotlineTel);
 const esc = s => fixPhones(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const encPath = p => p.split('/').map(encodeURIComponent).join('/');
@@ -160,6 +163,14 @@ function lamSachTrang(p) {
   for (const b of p.blocks || []) {
     b.text = lamSachTen(b.text);
     for (const l of b.links || []) l.text = lamSachTen(l.text);
+  }
+  /* Trang reset L3150 chép từ trang L3210 nên đoạn mở bài, mô tả và dòng tags còn ghi nhầm "L3210"
+     (14/11/2026). Chỉ sửa khối KHÔNG có link: khối có link là mục "tham khảo" trỏ sang đúng trang
+     L3210, phải giữ nguyên. */
+  if (p.path === 'Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150') {
+    const sua = s => typeof s === 'string' ? s.replace(/L3210/gi, 'L3150') : s;
+    p.metaDesc = sua(p.metaDesc);
+    for (const b of p.blocks || []) if (!(b.links || []).length) b.text = sua(b.text);
   }
   return p;
 }

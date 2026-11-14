@@ -211,20 +211,20 @@ const TITLE_OVERRIDE = {
      nội dung cũ nên không bấm. Đổi title + mô tả để lấy lại lượt nhấp; nội dung bài giữ nguyên. */
   'thu-thuat-tin-hoc/top-3-máy-in-chuyên-in-đơn-hàng-giá-rẻ-tiết-kiệm-chi-phí': {
     title: 'Top 3 Máy In Đơn Hàng Giá Rẻ Cho Shop Online — Chọn Loại Nào?',
-    desc: 'So sánh 3 máy in dùng để in đơn hàng cho shop bán online: máy in A4 Canon 2900 in đơn tiết kiệm, và các lựa chọn khác. Kèm giá nạp mực thực tế và tư vấn chọn theo lượng đơn mỗi ngày.',
+    desc: 'So sánh 3 máy in đơn hàng cho shop online: Canon 2900 in A4 tiết kiệm và các lựa chọn khác, kèm giá nạp mực thực tế, tư vấn chọn theo lượng đơn/ngày.',
   },
   /* Bài hướng dẫn ruy băng đang đứng vị trí 6,3 với 727 lượt hiển thị nhưng chỉ 24 lượt nhấp
      (3,3% — thấp so với vị trí này). Giữ nguyên title vì đang xếp hạng tốt, chỉ viết mô tả
      riêng thay cho đoạn tự cắt, để người tìm thấy ngay "có hình từng bước, tự làm được". */
   'thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-cach-thay-ruy-bang-may-in-hoa-dhon-epson-lq-300-310-2190': {
     title: 'Hướng Dẫn Cách Thay Ruy Băng Máy In Hóa Đơn Epson LQ 300/310/2190',
-    desc: 'Cách thay ruy băng (băng mực) máy in kim Epson LQ 300+, LQ 310, LQ 2190 — hướng dẫn từng bước kèm hình, tự làm tại chỗ trong 5 phút, không cần gọi thợ. Kèm mẹo tránh kẹt băng và lệch mực.',
+    desc: 'Cách thay ruy băng máy in kim Epson LQ 300+, LQ 310, LQ 2190 — từng bước kèm hình, tự làm trong 5 phút không cần gọi thợ, kèm mẹo tránh kẹt băng.',
   },
   /* Trang này trùng chủ đề với bài trên nên bị chia phiếu (vị trí 16, 0 lượt nhấp). Nội dung thật
      của nó là TRANG DỊCH VỤ, nên đổi title theo hướng "thay tận nơi" để tách khỏi ý định "tự làm". */
   'home/thay-ruy-bang-muc-may-in-kim-epson-lq-300-lq-310': {
     title: 'Thay Ruy Băng Máy In Kim Epson LQ 300/310 Tận Nơi TP.HCM',
-    desc: 'Dịch vụ thay ruy băng máy in kim Epson LQ 300, LQ 310, LQ 2190 tận nơi tại TP.HCM — kỹ thuật có mặt trong 20–30 phút, có sẵn băng mực, kiểm tra đầu kim và căn chỉnh bản in trước khi bàn giao.',
+    desc: 'Thay ruy băng máy in kim Epson LQ 300, LQ 310, LQ 2190 tận nơi TP.HCM — có mặt 20–30 phút, sẵn băng mực, kiểm tra đầu kim, căn chỉnh bản in khi bàn giao.',
   },
   'bang-gia-nap-muc-may-in-tan-noi': {
     title: 'Bảng Giá Nạp Mực Máy In Tận Nơi TP.HCM — Công Khai, Không Phụ Thu',
@@ -461,8 +461,15 @@ function fixInternalPath(p, fromPath) {
   return p;
 }
 
+/* Link ngoài đã chết (kiểm 14/11/2026): bỏ thẻ <a>, giữ nguyên chữ. Link sống nhưng còn http:// thì nâng https.
+   Link sang tinhocnamphong.net cố ý KHÔNG đụng (chủ shop chốt 14/11: gỡ có thể làm trang bên kia tụt). */
+const LINK_CHET = /^https?:\/\/(filemare\.com\/|www\.mayin\.com\/8-tien-ich|(www\.)?muchinhitech\.com)/i;
+const LINK_LEN_HTTPS = /^http:\/\/(www\.)?mediafire\.com\//i;
+
 function resolveHref(href, prefix, fromPath) {
   if (!href) return '';
+  if (LINK_CHET.test(href)) return '';
+  if (LINK_LEN_HTTPS.test(href)) return href.replace(/^http:/i, 'https:');
   if (/^(tel:|mailto:|#)/i.test(href)) return href;
   let raw = null;
   const m = href.match(/^https?:\/\/(?:www\.)?tinhocht\.com(\/.*)?$/i);
@@ -532,6 +539,69 @@ function cutDesc(s, max = 155) {
   if (cauHet >= 90) return cut.slice(0, cauHet + 1).trim();
   const khoangTrang = cut.lastIndexOf(' ');
   return cut.slice(0, khoangTrang > 90 ? khoangTrang : max).replace(/[,;:\-–—\s]+$/, '') + '…';
+}
+
+/* Ảnh: gắn alt + width/height còn thiếu, chạy trên HTML đã dựng (mọi bộ sinh trang đều đi qua).
+   Audit 14/11/2026: 490/862 ảnh nội dung để alt="" (ảnh chép từ Google Sites cũ không có chú thích)
+   và 487 ảnh thiếu kích thước. alt="" làm ảnh không bao giờ lên Google Hình ảnh và Google không biết
+   ảnh minh hoạ gì; thiếu width/height làm trang nhảy khi ảnh tải xong.
+   - alt: lấy tiêu đề mục (h1–h4) gần nhất phía trên ảnh — đúng ngữ cảnh ảnh đang minh hoạ; ảnh nằm
+     trước mọi tiêu đề thì lấy tên trang. Nhiều ảnh dưới cùng một mục thì đánh số "ảnh 2, ảnh 3"
+     để không trùng alt. Ảnh đã có alt viết tay thì KHÔNG đụng.
+   - width/height: đọc từ data/img-size.json (sinh bằng `node tools/img-size.js`). CSS đã có
+     `img { height: auto }` nên ảnh vẫn co theo khung, chỉ giữ chỗ đúng tỉ lệ. */
+const IMG_SIZE = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'img-size.json'), 'utf8')); }
+  catch { return {}; }
+})();
+const ANH_ALT_TAY = {   // ảnh trang chủ — alt viết theo nội dung ảnh thật
+  'assets/img/home/home-3.jpg': '5 cam kết của Tin Học HT: đúng hẹn, tận tâm, chuyên nghiệp, trách nhiệm, uy tín',
+  'assets/img/home/home-4.jpg': 'Gọi ngay để đặt lịch nạp mực máy in tận nơi',
+  'assets/img/home/home-5.jpg': 'Kỹ thuật viên đi xe máy tới nạp mực máy in tận nơi TP.HCM',
+  'assets/img/home/home-6.jpg': 'Máy in laser HP LaserJet trắng đen',
+  'assets/img/home/home-7.jpg': 'Máy in Canon LBP 2900',
+  'assets/img/home/home-8.jpg': 'Máy in laser Brother',
+  'assets/img/home/home-9.jpg': 'Máy in đa năng Samsung',
+  'assets/img/home/home-10.jpg': 'Máy in Xerox Phaser',
+  'assets/img/home/home-11.jpg': 'Máy in laser trắng đen văn phòng',
+  'assets/img/home/home-12.jpg': 'Máy in đa năng Panasonic',
+  'assets/img/home/home-13.jpg': 'Máy in HP LaserJet Pro',
+  'assets/img/home/home-14.jpg': 'Máy in OKI',
+};
+const THONG_KE_ANH = { alt: 0, kichThuoc: 0 };
+function chuanHoaAnh(html, tenTrang) {
+  const vung = html.match(/<main[\s\S]*?<\/main>/) || html.match(/<body[\s\S]*<\/body>/);
+  if (!vung) return html;
+  const sach = s => s.replace(/<[^>]+>/g, ' ').replace(/&quot;|["“”]/g, '').replace(/[📞💬▷►»→•]/gu, ' ').replace(/\s+/g, ' ')
+    .replace(/^[\s\d.:–—-]+/, '').replace(/[\s:–—-]+$/, '').trim();
+  let mucHienTai = '';
+  const dem = new Map();
+  const tenGon = sach(esc(tenTrang)).slice(0, 110);
+  const moi = vung[0].replace(/<h([1-4])\b[^>]*>([\s\S]*?)<\/h\1>|<img\b[^>]*>/g, (tag, lv, noi) => {
+    if (lv) { const t = sach(noi); if (t.length >= 4) mucHienTai = t.slice(0, 110); return tag; }
+    const src = (tag.match(/\ssrc="([^"]+)"/) || [])[1] || '';
+    let rel = src.replace(/^(\.\.\/)+/, '').replace(/^\.?\//, '');
+    try { rel = decodeURIComponent(rel); } catch { /* giữ nguyên */ }
+    let out = tag;
+    if (!/\swidth=/.test(out) && IMG_SIZE[rel]) {
+      const [w, h] = IMG_SIZE[rel];
+      out = out.replace(/^<img/, `<img width="${w}" height="${h}"`);
+      THONG_KE_ANH.kichThuoc++;
+    }
+    if (!/\salt="[^"]+"/.test(out)) {
+      let alt = ANH_ALT_TAY[rel];
+      if (!alt) {
+        const goc = mucHienTai || tenGon;
+        const n = (dem.get(goc) || 0) + 1; dem.set(goc, n);
+        alt = n === 1 ? goc : goc + ' – ảnh ' + n;
+      }
+      alt = alt.replace(/"/g, '&quot;');
+      out = /\salt=/.test(out) ? out.replace(/\salt="[^"]*"/, ` alt="${alt}"`) : out.replace(/^<img/, `<img alt="${alt}"`);
+      THONG_KE_ANH.alt++;
+    }
+    return out;
+  });
+  return html.replace(vung[0], () => moi);
 }
 
 function metaDescOf(page) {
@@ -1215,7 +1285,7 @@ function build() {
        thì thay ở đây. */
     const ogImage = SITE_URL + '/assets/img/og-default.jpg';
 
-    const html = `<!DOCTYPE html>
+    const html = chuanHoaAnh(`<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -1253,7 +1323,7 @@ ${renderFooter(menu, prefix)}
 <script src="${prefix}assets/js/nav.js"></script>
 </body>
 </html>
-`;
+`, page.title);
     const outFile = path.join(ROOT, page.path.split('/').join(path.sep) + '.html');
     fs.mkdirSync(path.dirname(outFile), { recursive: true });
     /* Ghi nhớ trang nào NỘI DUNG thật sự đổi so với lần dựng trước, để sitemap chỉ cập nhật
@@ -1273,7 +1343,10 @@ ${renderFooter(menu, prefix)}
       const than = (h.match(/<main[\s\S]*?<\/main>/) || [h])[0];
       const tieuDe = (h.match(/<title>[\s\S]*?<\/title>/) || [''])[0];
       const moTa = (h.match(/<meta name="description"[^>]*>/) || [''])[0];
-      return (tieuDe + moTa + than).replace(/\r/g, '');  // bỏ \r: git autocrlf ghi CRLF lúc checkout
+      /* Thẻ <img> chỉ so theo src: đợt 14/11/2026 gắn alt/width/height cho 490 ảnh trên 148 trang —
+         nội dung chữ không đổi, không nên khai lastmod mới hàng loạt chỉ vì thuộc tính ảnh. */
+      const anhGon = s => s.replace(/<img\b[^>]*?\ssrc="([^"]*)"[^>]*>/g, '<img src="$1">');
+      return anhGon(tieuDe + moTa + than).replace(/\r/g, '');  // bỏ \r: git autocrlf ghi CRLF lúc checkout
     };
     if (ruot(cu) !== ruot(html)) DOI_NOI_DUNG.add(page.path);
     fs.writeFileSync(outFile, html, 'utf8');
@@ -1301,10 +1374,12 @@ ${renderFooter(menu, prefix)}
     });
     home = home.replace('</head>', '<script type="application/ld+json">' + homeSchema + '</script>\n' + adsTag() + '\n</head>');
     if (!NOINDEX) home = home.replace(/\s*<meta name="robots" content="noindex">(<!--[^>]*-->)?/g, '');
+    home = chuanHoaAnh(home, 'Tin Học HT — nạp mực, sửa máy in tận nơi TP.HCM');
     const homeFile = path.join(ROOT, 'index.html');
     if (!fs.existsSync(homeFile) || fs.readFileSync(homeFile, 'utf8') !== home) DOI_NOI_DUNG.add('__home__');
     fs.writeFileSync(homeFile, home, 'utf8');
     console.log('  ✓ index.html (trang chủ, menu 2 cấp inline)');
+    console.log(`  ✓ ảnh: gắn alt cho ${THONG_KE_ANH.alt} ảnh, width/height cho ${THONG_KE_ANH.kichThuoc} ảnh`);
   }
 
   // 404 + stub /home -> /

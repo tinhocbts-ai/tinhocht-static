@@ -122,5 +122,61 @@
         "p": "Chỉnh trong driver thì áp dụng cho mọi phần mềm trên máy tính đó. Văn phòng dùng chung một máy in thì mỗi máy tính có cài đặt riêng, phải chỉnh lại trên đúng máy tính đang in ra ngược."
       }
     ]
+  },
+  "ban-may-in-cu-gia-re": {
+    "_ghi_chu": "14/11/2026: trang mẹ chỉ có 86 chữ + danh sách trang con. Viết thêm phần giới thiệu thật (lấy từ cách làm của tiệm ở trang máy in cũ đang bán) để trang có nội dung riêng.",
+    "khoi": [
+      {
+        "h2": "Mua máy in cũ ở Tin Học HT"
+      },
+      {
+        "p": "Tiệm bán máy in cũ các hãng Canon, Brother, HP, Epson, Samsung: máy laser trắng đen cho văn phòng, máy in màu, máy khổ A3 in bản vẽ. Danh sách máy đang có sẵn kèm ảnh chụp máy thật và giá niêm yết nằm ở trang “Máy in cũ đang bán” trong mục này."
+      },
+      {
+        "p": "Máy nào cũng được kiểm tra, vệ sinh, thay linh kiện hao mòn nếu cần và chạy thử trước mặt khách lúc giao. Mỗi máy bảo hành 3 tháng. Trong TP.HCM tiệm giao tận nơi, lắp đặt và cài driver tại chỗ; ở tỉnh thì gọi trước để hỏi cách giao."
+      },
+      {
+        "h3": "Chọn máy in cũ thế nào cho khỏi hớ"
+      },
+      {
+        "ul": [
+          "Hỏi số trang máy đã in, không chỉ hỏi năm sản xuất: máy laser hao mòn theo số trang in.",
+          "Hỏi tình trạng trống (drum) và hộp mực đi kèm — đây là hai thứ tốn tiền nhất nếu phải thay ngay.",
+          "Xác định nhu cầu trước: in trắng đen văn phòng, in màu, in 2 mặt tự động hay cần khổ A3.",
+          "Hỏi giá nạp mực của dòng máy đó: máy rẻ nhưng mực đắt thì về lâu dài vẫn tốn."
+        ]
+      },
+      {
+        "p": "Máy cũ mỗi cái một tình trạng và số lượng mỗi mã có hạn, nên gọi 0934 393 550 hoặc nhắn Zalo trước khi qua xem máy."
+      }
+    ]
+  },
+  "Phan-mem-reset-may-in": {
+    "_ghi_chu": "14/11/2026: trang mẹ của cụm sinh tiền chỉ có danh sách trang con. Viết thêm phần giải thích chung để trang có nội dung riêng, không lặp nội dung trang con.",
+    "khoi": [
+      {
+        "h2": "Reset máy in là gì, khi nào cần reset"
+      },
+      {
+        "p": "Nhiều dòng máy in đếm số trang hoặc lượng mực đã dùng và tự khoá khi bộ đếm chạm ngưỡng, dù máy vẫn còn chạy tốt. Reset là đưa bộ đếm đó về 0 để máy in lại được. Mỗi hãng khoá theo một kiểu khác nhau nên cách reset cũng khác nhau."
+      },
+      {
+        "ul": [
+          "Epson in phun (L110, L310, L805, L1110, L1210, L3110, L3210…): khoá vì bộ đếm mực thải đầy — máy nháy 2 đèn đỏ, máy tính báo “hộp mực đã hết hạn sử dụng, liên hệ bộ phận hỗ trợ Epson”. Reset bằng phần mềm Adjustment Program đúng model.",
+          "Brother laser: báo Replace Drum, Drum End Soon hoặc báo hết mực sau khi đã nạp. Reset bằng phím trên máy, không cần phần mềm.",
+          "Canon in phun (G1010, G2010, G3010…): báo lỗi mực thải đầy, reset bằng phần mềm Service Tool.",
+          "HP laser đời mới (107a, 135a…): hộp mực gắn chip, sau khi nạp cần reset hoặc thay chip mới nhận mực."
+        ]
+      },
+      {
+        "h3": "Lưu ý trước khi reset"
+      },
+      {
+        "p": "Reset Epson, Canon chỉ xoá con số trong bộ đếm — tấm mút hút mực thải trong máy vẫn đầy như cũ. Nếu đã reset nhiều lần, nên vệ sinh hoặc thay tấm mực thải, hoặc lắp ống dẫn mực thải ra ngoài, để mực không tràn ra đáy máy và mặt bàn."
+      },
+      {
+        "p": "Tra đúng model máy của bạn trong danh sách bên dưới để tải đúng bản phần mềm. Làm không được hoặc không muốn tự làm, gọi 0934 393 550 — kỹ thuật hướng dẫn qua điện thoại hoặc tới tận nơi tại TP.HCM."
+      }
+    ]
   }
 }

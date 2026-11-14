@@ -360,3 +360,19 @@ Muốn xuống nữa thì phải sửa chữ bài gốc — chưa làm.
 **Lỗi có sẵn trong bài gốc trang L3150 — đã sửa trong `build-site.js` (14/11, chủ shop duyệt):** đoạn mở bài, mô tả và dòng tags ghi nhầm
 "L3210" → "L3150" (sửa riêng trang này trong `lamSachTrang`, chừa link tham khảo sang trang L3210); hai số cũ 0932 764482 / Zalo 0775 168 841
 → hotline và Zalo trong `site.config.json` (`fixPhones`). Trang `home/công-ty-bơm-mực-máy-in-tại-bắc-ninh` còn số 0932.334.229 — chưa đụng, chờ chủ shop.
+
+## ☎️ Gom số điện thoại lạ về hotline (14/11/2026) — đã push 14/11
+
+Chủ shop chốt: trang ở TP.HCM chỉ ghi hotline của tiệm. Quét 236 trang đã dựng (chữ nhìn thấy + link tel/zalo), sửa trong
+`fixPhones` của `build-site.js` (thêm `soLinhHoat` — khớp số dù chèn dấu cách/chấm ở đâu):
+- `home/nap-muc-may-in-quan-6`: 0934 49 35 50 (gõ nhầm hotline)
+- `home/nạp-mực-in-đường-trần-hưng-đạo-quận-1-tại-nhà`: 0988553353
+- `liên-hệ/dịch-vụ-nạp-mực-máy-in-tphcm`: 0898 86 00 52 (số cũ, viết cách quãng khác mẫu)
+- `ban-may-in-cu-gia-re/ban-may-in-cu-gia-lai`: 098 131 98753 (số cũ, thừa 1 chữ số)
+- `thu-thuat-may-in/huong-dan-sua-loi-may-in-khong-in-dhuoc`: 089 668 0052 (gõ nhầm số cũ)
+- `thu-thuat-may-in/máy-in-bị-nhòe-mực-tại-sao`: 0935 39 35 50 (gõ nhầm hotline)
+- `home/nap-muc-may-in-tai-binh-duong`: 091 5510203 (hotline namphong) → hotline; "Zalo : 091 5510203" → Zalo của tiệm
+- Kéo theo: trang Bắc Giang cũng có 0988.55.33.53 nên đổi theo.
+
+**Chưa đụng, chờ chủ shop:** số ở trang tỉnh — Bắc Giang (0916 288 255), Bắc Kạn, Bắc Ninh, Bình Phước, Kon Tum, Quy Nhơn,
+Mỹ Tho — và số 0909007800 ở trang tuyển kỹ thuật viên. Quét lại: `scan-phone.js` (phiên 14/11) hoặc grep số ≠ hotline/Zalo.

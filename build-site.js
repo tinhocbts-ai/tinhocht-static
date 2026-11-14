@@ -55,12 +55,25 @@ const DOI_NOI_DUNG = new Set();
 /* ---------------- tiện ích ---------------- */
 /* 2 số ngoài hệ thống -> hotline công ty (đã chốt với chủ shop 28/07/2026).
    Chuẩn hoá cả non-breaking space vì Google Sites hay chèn  giữa các cụm số. */
+/* Khớp một số điện thoại dù người gõ chèn dấu cách / chấm / gạch ở bất kỳ đâu giữa các chữ số. */
+const soLinhHoat = so => new RegExp('(?<!\\d)' + so.split('').join('[\\s.\\-]*') + '(?!\\d)', 'g');
 const fixPhones = s => String(s)
   .replace(/ | | /g, ' ')
   .replace(/089[\s.\-]*886[\s.\-]*0052/g, cfg.hotlineDisplay)
   .replace(/089[\s.\-]*886[\s.\-]*8864/g, cfg.hotlineDisplay)          // gõ nhầm 1 số của Zalo (…9964) — audit 21/09/2026
   .replace(/098[\s.\-]*131[\s.\-]*9853/g, cfg.hotlineDisplay)
   .replace(/0915[\s.\-]*510[\s.\-]*203/g, cfg.hotlineDisplay)          // hotline tinhocnamphong.net — nuôi tinhocht độc lập (17/09/2026)
+  /* 14/11/2026 — chủ shop chốt: trang ở TP.HCM chỉ ghi hotline của tiệm. Quét 236 trang thấy các số
+     dưới đây lọt lưới vì gõ nhầm hoặc viết cách quãng khác mẫu ở trên. Số ở trang TỈNH (Bắc Giang,
+     Kon Tum, Quy Nhơn, Mỹ Tho, Bắc Kạn, Bắc Ninh, Bình Phước) và số tuyển dụng CHƯA đụng. */
+  .replace(/Zalo\s*:\s*091[\s.\-]*5510203/g, 'Zalo : ' + cfg.zaloDisplay)   // Bình Dương: "Zalo : 091 5510203"
+  .replace(soLinhHoat('09813198753'), cfg.hotlineDisplay)                  // máy in cũ giá lại: thừa 1 số
+  .replace(soLinhHoat('0898860052'), cfg.hotlineDisplay)                   // liên hệ: "0898 86 00 52"
+  .replace(soLinhHoat('0915510203'), cfg.hotlineDisplay)                   // Bình Dương: "091 5510203"
+  .replace(soLinhHoat('0896680052'), cfg.hotlineDisplay)                   // lỗi không in được: gõ nhầm 089 886 0052
+  .replace(soLinhHoat('0934493550'), cfg.hotlineDisplay)                   // nạp mực Quận 6: gõ nhầm hotline
+  .replace(soLinhHoat('0935393550'), cfg.hotlineDisplay)                   // nhòe mực: gõ nhầm hotline
+  .replace(soLinhHoat('0988553353'), cfg.hotlineDisplay)                   // Trần Hưng Đạo Quận 1 (số này cũng nằm ở trang Bắc Giang → đổi theo)
   /* 14/11/2026: hai số cũ còn sót trên trang reset Epson L3150 (mục "Về chúng tôi") */
   .replace(/0932[\s.\-]*764[\s.\-]*482/g, cfg.hotlineDisplay)
   .replace(/0775[\s.\-]*168[\s.\-]*841/g, cfg.zaloDisplay)

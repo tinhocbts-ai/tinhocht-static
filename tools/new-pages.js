@@ -40,8 +40,10 @@ function cacBuoc(p) {
     ['Lắp lại và in thử', 'Lắp hộp mực vào đúng khớp, đóng nắp, bật máy và in thử một trang. Nếu bản in mờ hoặc có sọc thì vấn đề nằm ở mực hoặc trống, không phải chip.'],
   ];
 
-  /* Mặc định: dòng Epson dùng phần mềm Adjustment Program */
-  return [
+  /* Mặc định: dòng Epson dùng phần mềm Adjustment Program.
+     `buocRieng` trong pages-new.json = { "<số bước>": "nội dung riêng của model" } — chỉ dùng khi
+     model đó THẬT SỰ làm khác (máy có wifi, có màn hình, có khay đĩa…). Không dùng để đảo chữ. */
+  const macDinh = [
     ['Tắt phần mềm diệt virus và tường lửa', 'Adjustment Program hay bị các phần mềm diệt virus chặn nhầm. Tắt tạm Windows Defender và phần mềm diệt virus đang dùng, sau khi reset xong thì bật lại.'],
     ['Giải nén và chạy phần mềm', 'Giải nén file vừa tải, chạy <strong>AdjProg.exe</strong> bằng chuột phải → <strong>Run as administrator</strong>. Cắm dây USB nối máy in với máy tính, bật máy in lên.'],
     ['Chọn đúng model máy in', 'Bấm nút <strong>Select</strong>, ở mục Model Name chọn đúng <strong>' + esc(p.model) + '</strong>, mục Port chọn <strong>Auto selection</strong> rồi bấm <strong>OK</strong>. Chọn sai model là reset không ăn.'],
@@ -51,6 +53,11 @@ function cacBuoc(p) {
     ['Bấm Initialize để đưa bộ đếm về 0', 'Vẫn giữ ô <strong>Main pad counter</strong> đang tích, bấm <strong>Initialize</strong> rồi bấm <strong>OK</strong> khi có hộp thoại xác nhận. Đây là bước chính, làm xong bộ đếm về 0.'],
     ['Tắt máy in và bật lại', 'Tắt máy in bằng nút nguồn trên máy, chờ 10 giây rồi bật lại. Đèn đỏ tắt, máy nhận lệnh in bình thường.'],
   ];
+  Object.entries(p.buocRieng || {}).forEach(([so, noiDung]) => {
+    const i = Number(so) - 1;
+    if (macDinh[i]) macDinh[i] = [macDinh[i][0], noiDung];
+  });
+  return macDinh;
 }
 
 /* ---------- sơ đồ quy trình dạng SVG (tự vẽ, không tải ảnh ngoài nên không tốn tốc độ) ----------
@@ -142,6 +149,19 @@ function cauHoi(p) {
     'Dòng hộp mực HP 105A/106A dùng cho máy 135A/135W/137W <strong>không reset lại được bằng phần mềm</strong> — chip đếm hết hạn mức thì phải thay chip mới. Chip rời bán sẵn ngoài thị trường, thay bằng tay vài phút là xong.']);
   else chung.push(['Dùng chung phần mềm reset cho nhiều máy được không ?',
     'Mỗi key reset chỉ dùng được cho một máy in và thường chỉ một lần. Muốn reset máy khác hoặc reset lần tiếp theo thì cần key mới — giống như dùng thẻ cào điện thoại.']);
+  /* `faqChung` là MẢNG = chỉ giữ những câu chung được nêu tên: "so-trang", "hong-may", "van-loi",
+     "key" (và câu theo hãng luôn giữ). Dùng cho các trang reset Epson: bốn câu chung in y hệt trên
+     mọi trang model là nguồn trùng lặp lớn nhất, nên mỗi trang chỉ giữ câu hợp với máy đó và trả
+     lời phần còn lại bằng câu hỏi riêng. */
+  if (Array.isArray(p.faqChung)) {
+    const khoa = new Map([
+      ['Reset xong có in được bao nhiêu trang nữa ?', 'so-trang'],
+      ['Reset có làm hỏng máy in không ?', 'hong-may'],
+      ['Máy vẫn báo lỗi sau khi reset thì sao ?', 'van-loi'],
+      ['Dùng chung phần mềm reset cho nhiều máy được không ?', 'key'],
+    ]);
+    return (p.faqRieng || []).concat(chung.filter(c => !khoa.has(c[0]) || p.faqChung.includes(khoa.get(c[0]))));
+  }
   /* Câu hỏi riêng của từng model đứng trước câu hỏi chung: khách vào trang L805 thì thứ họ
      thắc mắc đầu tiên là chuyện in ảnh, không phải chuyện chung chung của mọi máy Epson.
      `faqChung: false` = bỏ hẳn nhóm câu hỏi chung. Dùng cho máy laser Brother/HP: nhóm chung
@@ -239,7 +259,7 @@ function renderNewPage(p, prefix, cfg, pagesByPath) {
      và reset drum là hai thao tác riêng, bấm nút khác nhau). Trang không khai thì giữ nguyên
      đường cũ một quy trình. */
   const nhieuQuyTrinh = Array.isArray(p.quyTrinh) && p.quyTrinh.length > 0;
-  const dauHieu = p.hpChip
+  const dauHieu = Array.isArray(p.dauHieu) ? p.dauHieu : p.hpChip
     ? ['Máy hiện thông báo “Toner low” hoặc “Replace toner” dù hộp mực vừa nạp đầy',
        'Đèn báo mực nhấp nháy liên tục, lệnh in bị treo trong hàng đợi',
        'Bản in vẫn đậm đẹp nhưng máy không chịu nhận thêm lệnh in']

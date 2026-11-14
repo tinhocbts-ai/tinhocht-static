@@ -320,3 +320,27 @@ Còn thiếu một trụ: **vật tư Brother TN-2385 / DR-2385** — chờ ch�
   `& "$env:LOCALAPPDATA\Microsoft\WinGet\Links\gh.exe" api ...`
 - `serve.js` nhận `PORT` từ env và phục vụ URL không có `/` cuối; `.claude/launch.json` bật `autoPort`.
 - Nhánh git là **master** (không phải main).
+
+## ✂️ Giảm trùng 6 trang reset Epson (14/11/2026) — đã push 14/11
+
+Đo 14/11 (cụm 8 từ, chỉ thân bài, tính trên trang ngắn hơn): 10 trang reset Epson trùng nhau 53–81%, 22 cặp ≥50%.
+Nguồn trùng của 6 trang viết mới là khuôn `tools/new-pages.js`: 8 bước, 4 câu hỏi chung, đoạn mở bài, 3 dấu hiệu in y hệt.
+Trang L110-L210-L300 không có đoạn riêng nào nên trùng 81% với ba trang khác.
+
+Đã làm (nguồn: `data/pages-new.json` + `tools/new-pages.js`):
+- Ba tuỳ chọn mới cho trang Epson: `buocRieng` (nội dung riêng cho một bước — chỉ dùng khi model thật sự làm khác),
+  `faqChung` dạng mảng (chọn câu chung nào được giữ: so-trang / hong-may / van-loi / key), `dauHieu` (dấu hiệu riêng).
+  Trang không khai thì chạy y như cũ — Canon, HP, Brother không đổi.
+- 6 trang L3250, L4150/L4160, L805, L1800, L1210, L110/L210/L300: mở bài riêng, dấu hiệu riêng, 1–3 bước riêng,
+  thêm 1 câu hỏi "reset xong vẫn báo lỗi" theo từng máy, mỗi trang chỉ giữ tối đa 1 câu hỏi chung.
+- L110-L210-L300 viết thêm đủ `dacDiem`, `viSaoDay`, `luuYRieng`, 3 câu hỏi riêng (821 → 1.079 từ).
+- L4150/L4160: sửa "màn hình cảm ứng" → "màn hình LCD" (L4160 dùng màn hình LCD với phím bấm) — **chủ shop kiểm lại trên máy thật**.
+
+Kết quả: 6 trang này còn trùng nhau 31–36% (phần còn lại là 8 bước dùng chung, đúng thực tế). Số cặp ≥50% toàn cụm: 22 → 6.
+L1800 ngắn đi 1.113 → 973 từ do bỏ 4 câu hỏi chung.
+
+**Chưa đụng:** L1110, L3110, L3150, L3210 vẫn trùng nhau 60–74%. Đây là nội dung gốc từ Google Sites (quy tắc giữ nguyên văn)
+và là nhóm đang kéo click, nên chờ chủ shop quyết. Hướng an toàn: thêm khối riêng qua `data/noi-dung-them.json`, không xoá chữ cũ.
+
+Số liệu nền để đo lại sau 3–4 tuần (GSC 15/10–11/11): L805 95 nhấp vị trí 3,9 · L1210 87 / 5,1 · L3250 13 / ~6 ·
+L1800 9 / 5,2 · L4150 5 / 6,1 · L110-L210-L300 14 / 5,9.

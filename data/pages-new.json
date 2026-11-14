@@ -32,7 +32,24 @@
         [
           "L3251 và L3256 dùng chung tool với L3250 được không ?",
           "Được. Ba đời này chung một nền phần cứng, chỉ khác thị trường phân phối nên dùng chung Adjustment Program của L3250. Ở bước chọn model, chọn đúng tên hiện trong danh sách; nếu không thấy L3251 hay L3256 thì chọn L3250."
+        ],
+        [
+          "Bấm Check mà phần mềm báo lỗi, không hiện phần trăm thì sao ?",
+          "Đó là phần mềm chưa nối được với máy qua dây USB (thường hiện “communication error”). Kiểm tra dây đã cắm chặt hai đầu chưa, đổi sang cổng USB khác trên máy tính, rồi bấm lại <strong>Select</strong> và ở mục Port chọn cổng có chữ USB thay cho Auto selection. Làm đủ mà vẫn báo lỗi thì gọi 0934 393 550 để kỹ thuật kiểm tra tận nơi."
         ]
+      ],
+      "moBai": "Epson <strong>L3250</strong> (cùng L3251, L3256) là máy in – scan – copy có wifi rất phổ biến ở văn phòng nhỏ. Khi máy nhấp nháy 2 đèn đỏ (đèn giấy và đèn mực), còn máy tính báo “Service Required” hoặc “Ink pad is at the end of its service life”, thì bộ đếm mực thải đã đầy chứ máy không hỏng. Điểm riêng của dòng này: máy quen chạy wifi, nhưng muốn reset thì bắt buộc phải cắm dây USB.",
+      "dauHieu": [
+        "Đèn giấy và đèn mực nhấp nháy đỏ xen kẽ; cả điện thoại lẫn máy tính đều không in được qua wifi",
+        "Phần mềm Epson trên máy tính báo Service Required hoặc “Ink pad is at the end of its service life”",
+        "Bấm nút copy ngay trên máy cũng không chạy — khác với lỗi mạng, vốn chỉ làm mất lệnh in từ xa còn copy vẫn được"
+      ],
+      "buocRieng": {
+        "2": "Giải nén file vừa tải, chạy <strong>AdjProg.exe</strong> bằng chuột phải → <strong>Run as administrator</strong>. Lấy dây USB cắm thẳng từ L3250 vào máy tính — máy đang nối wifi cũng phải cắm, vì phần mềm không tìm thấy máy qua mạng. Bật máy in lên.",
+        "8": "Tắt máy in bằng nút nguồn, chờ 10 giây rồi bật lại. Hai đèn đỏ hết nháy, máy tự nối lại wifi như trước. Rút dây USB ra rồi in thử một trang từ điện thoại hoặc máy tính qua wifi để chắc máy đã nhận lệnh."
+      },
+      "faqChung": [
+        "hong-may"
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
@@ -51,7 +68,7 @@
       "taiNhan": "Tải phần mềm reset Epson L4150 / L4160",
       "dacDiem": [
         "Khổ A4, in – scan – photocopy, mực đổ bình",
-        "<strong>L4160 có màn hình cảm ứng và in hai mặt tự động; L4150 không có hai thứ này</strong>",
+        "<strong>L4160 có màn hình LCD và in hai mặt tự động; L4150 không có hai thứ này</strong>",
         "Có wifi, in được từ điện thoại",
         "Định vị cao hơn dòng L3xxx một bậc — dành cho nơi in nhiều hơn"
       ],
@@ -63,12 +80,29 @@
       "faqRieng": [
         [
           "L4150 và L4160 khác nhau chỗ nào, cách reset có giống nhau không ?",
-          "Hai máy chung nền phần cứng, khác ở chỗ L4160 có màn hình cảm ứng và in hai mặt tự động còn L4150 thì không. Cách reset giống hệt nhau và dùng chung một phần mềm — chỉ cần chọn đúng tên máy ở bước chọn model."
+          "Hai máy chung nền phần cứng, khác ở chỗ L4160 có màn hình LCD và in hai mặt tự động còn L4150 thì không. Cách reset giống hệt nhau và dùng chung một phần mềm — chỉ cần chọn đúng tên máy ở bước chọn model."
         ],
         [
           "Có nên tắt chế độ in hai mặt sau khi reset không ?",
           "Không cần tắt. In hai mặt làm đầu in chạy nhiều hơn nên bộ đếm nhích nhanh hơn, nhưng đó là đánh đổi để tiết kiệm phân nửa số giấy. Muốn giãn thời gian giữa hai lần reset thì chỉ bật in hai mặt cho tài liệu dài, còn giấy tờ một trang thì in một mặt."
+        ],
+        [
+          "Reset xong L4160 vẫn hiện thông báo trên màn hình thì sao ?",
+          "Tắt máy bằng nút nguồn rồi bật lại đã — thông báo chỉ mất sau khi máy khởi động lại. Nếu vẫn còn, mở lại phần mềm và bấm <strong>Check</strong>: con số chưa về 0 nghĩa là lần trước chọn nhầm tên máy (chọn L4150 cho máy L4160 hoặc ngược lại). Chọn lại đúng tên rồi bấm Initialize lần nữa. Vẫn không được thì gọi 0934 393 550."
         ]
+      ],
+      "moBai": "Epson <strong>L4150</strong> và <strong>L4160</strong> là hai máy in – scan – copy có wifi, đứng trên dòng L3xxx một bậc. Khi bộ đếm mực thải đầy, L4150 nháy đèn đỏ liên tục, còn L4160 hiện hẳn thông báo trên màn hình; máy tính thì báo tràn bộ đếm mực thải. Máy không hỏng — reset bộ đếm bằng Adjustment Program là in tiếp.",
+      "dauHieu": [
+        "L4150: đèn đỏ trên bảng nút nháy liên tục, bấm nút nào cũng không ăn",
+        "L4160: màn hình hiện thông báo miếng thấm mực (ink pad) đã hết hạn sử dụng và bảo liên hệ Epson",
+        "Máy tính báo tràn bộ đếm mực thải, lệnh in gửi sang nằm lại trong hàng đợi"
+      ],
+      "buocRieng": {
+        "3": "Bấm nút <strong>Select</strong>, ở mục Model Name chọn đúng tên máy đang cắm — <strong>L4150</strong> hoặc <strong>L4160</strong>, hai máy là hai mục riêng trong danh sách. Mục Port chọn <strong>Auto selection</strong> rồi bấm <strong>OK</strong>.",
+        "8": "Tắt máy bằng nút nguồn, chờ 10 giây rồi bật lại. L4150 hết nháy đèn đỏ; L4160 trở về màn hình chính, không còn thông báo ink pad. In thử một trang."
+      },
+      "faqChung": [
+        "key"
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
@@ -105,7 +139,24 @@
         [
           "Reset xong ảnh in ra bị sọc hoặc sai màu thì sao ?",
           "Đó là hai chuyện khác nhau. Reset chỉ xoá con số đếm trong bộ nhớ, không đụng gì tới đầu in. Ảnh bị sọc hay lệch màu là do đầu in tắc hoặc mực trong ống có bọt khí — cần chạy Head Cleaning rồi in Nozzle Check để kiểm tra, chứ reset thêm lần nữa cũng không hết."
+        ],
+        [
+          "Reset xong L805 vẫn nháy đèn đỏ thì kiểm tra gì ?",
+          "Theo thứ tự: đã tháo khay đĩa / khay thẻ ra chưa, máy có đang cắm dây USB hay chỉ nối wifi, và ở bước Select đã chọn đúng <strong>L805</strong> chưa (L800 và L850 là mục khác). Làm lại đủ ba chỗ mà đèn vẫn nháy thì gọi 0934 393 550 để kỹ thuật kiểm tra."
         ]
+      ],
+      "moBai": "Epson <strong>L805</strong> (cùng lứa L800, L850) là máy in ảnh 6 màu của tiệm ảnh và tiệm in thẻ. Máy chạy ảnh đều tay một thời gian sẽ nháy đèn đỏ, báo tràn bộ đếm mực thải và không nhận lệnh in nữa. Khác với máy văn phòng, ở L805 bộ đếm đầy thường đi kèm miếng thấm đã no mực thật — nên ngoài chuyện reset, trang này nói kỹ cả phần miếng thấm.",
+      "dauHieu": [
+        "Đèn mực và đèn giấy nháy đỏ xen kẽ, máy đứng im dù trước đó vẫn in ảnh bình thường",
+        "Máy tính báo Service Required hoặc tràn bộ đếm mực thải, lệnh in ảnh nằm lại trong hàng đợi",
+        "Có khi thấy vệt mực loang dưới đáy máy — lúc đó miếng thấm đã no thật chứ không chỉ là con số đếm"
+      ],
+      "buocRieng": {
+        "2": "Giải nén file vừa tải, chạy <strong>AdjProg.exe</strong> bằng chuột phải → <strong>Run as administrator</strong>. Tháo khay in đĩa hoặc khay thẻ PVC nếu đang gắn. L805 có wifi nhưng phần mềm chỉ làm việc qua dây, nên cắm dây USB nối máy in với máy tính rồi bật máy in lên.",
+        "8": "Tắt máy in bằng nút nguồn, chờ 10 giây rồi bật lại. Đèn đỏ tắt. Trước khi in ảnh cho khách, in một tờ <strong>Nozzle Check</strong>: reset không đụng tới đầu in, nhưng máy nằm chờ lâu thì đầu in dễ khô mất vài tia."
+      },
+      "faqChung": [
+        "so-trang"
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/phan-mem-reset-epson-l1800",
@@ -142,8 +193,23 @@
         [
           "Máy A3 in được bao nhiêu tờ thì lại phải reset ?",
           "Ít hơn máy A4 nhiều. In ảnh phủ kín khổ A3 thì mỗi lần reset thường đi được khoảng 500–1.500 tờ. Nếu in bản vẽ nét mảnh nền trắng thì được nhiều hơn vì tốn ít mực hơn."
+        ],
+        [
+          "Reset xong L1800 vẫn nháy đèn đỏ thì do đâu ?",
+          "Hay gặp hai chuyện: tải nhầm bản phần mềm của L1300, hoặc dây USB quá dài làm rớt kết nối đúng lúc bấm Initialize. Mở lại phần mềm, bấm <strong>Check</strong> xem con số đã về 0 chưa; chưa về thì đổi dây ngắn hơn và làm lại. Đã về 0 mà đèn còn nháy thì gọi 0934 393 550 để kỹ thuật kiểm tra."
         ]
       ],
+      "moBai": "Epson <strong>L1800</strong> là máy in ảnh khổ A3, 6 màu, hay nằm ở xưởng in áo và tiệm in ảnh lớn. In số lượng lớn khổ A3 một thời gian, máy sẽ nháy đèn đỏ và báo tràn bộ đếm mực thải. Bộ đếm reset được bằng Adjustment Program; riêng với máy A3 thì nên xem lại cả đường mực thải, vì lượng mực xả ra nhiều hơn máy A4 hẳn.",
+      "dauHieu": [
+        "Đèn đỏ nháy, máy không chịu in tiếp dù mực trong bình còn nhiều",
+        "Máy tính báo Service Required hoặc tràn bộ đếm mực thải",
+        "Lệnh in khổ A3 gửi sang nằm lại trong hàng đợi, tắt bật lại máy cũng không hết"
+      ],
+      "buocRieng": {
+        "2": "Giải nén file vừa tải, chạy <strong>AdjProg.exe</strong> bằng chuột phải → <strong>Run as administrator</strong>. Đặt máy tính sát máy in, dùng dây USB ngắn (dưới 3 mét) cắm thẳng vào L1800 rồi bật máy.",
+        "3": "Bấm nút <strong>Select</strong>, ở mục Model Name chọn đúng <strong>Epson L1800</strong> — đừng nhầm với L1300, máy A3 bốn màu dùng bản phần mềm khác. Mục Port chọn <strong>Auto selection</strong> rồi bấm <strong>OK</strong>."
+      },
+      "faqChung": [],
       "lienQuan": [
         "Phan-mem-reset-may-in/phan-mem-reset-epson-l805"
       ]
@@ -706,7 +772,24 @@
         [
           "Máy nháy 2 đèn đỏ có phải hỏng đầu in không ?",
           "Thường là không. Nháy hai đèn đỏ xen kẽ kèm thông báo <em>Service Required</em> là báo tràn bộ đếm mực thải — lỗi phần mềm, reset là in tiếp. Nếu reset xong vẫn nháy đèn, hoặc bản in ra bị sọc, mất màu thì lúc đó mới nghi tới đầu in tắc."
+        ],
+        [
+          "Reset xong L1210 vẫn nháy đèn thì kiểm tra gì ?",
+          "Mở lại phần mềm và bấm <strong>Check</strong>. Con số vẫn từ 100% trở lên nghĩa là lần trước chọn nhầm model — hay nhầm với L3210 hoặc L1110 vì tên gần giống. Con số đã về 0 mà đèn còn nháy thì hoặc chưa tắt bật lại máy, hoặc máy đang báo lỗi khác như kẹt giấy. Không tự xử lý được thì gọi 0934 393 550."
         ]
+      ],
+      "moBai": "Epson <strong>L1210</strong> (và L1250 cùng dòng) là máy chỉ in, hay dùng ở nhà và văn phòng nhỏ. Dấu hiệu bộ đếm mực thải đầy: nháy 2 đèn đỏ (đèn giấy và đèn mực), máy tính báo “Service Required” hoặc “Ink pad is at the end of its service life”. Nhiều người gặp lỗi này khi máy mới in vài trăm tờ và tưởng máy hỏng — thật ra chỉ cần reset bộ đếm.",
+      "dauHieu": [
+        "Đèn giấy và đèn mực nháy đỏ xen kẽ ngay khi bật máy",
+        "Máy tính báo Service Required hoặc “Ink pad is at the end of its service life”",
+        "Bình mực nhìn còn đầy mà máy không nhận lệnh in — lỗi này không liên quan tới lượng mực"
+      ],
+      "buocRieng": {
+        "2": "Giải nén file vừa tải, chạy <strong>AdjProg.exe</strong> bằng chuột phải → <strong>Run as administrator</strong>. L1210 chỉ có cổng USB, nên cứ cắm dây thẳng vào máy tính là phần mềm thấy máy. Bật máy in lên.",
+        "8": "Tắt máy in bằng nút nguồn, chờ 10 giây rồi bật lại. Hai đèn đỏ hết nháy, chỉ còn đèn nguồn sáng. In thử một trang."
+      },
+      "faqChung": [
+        "so-trang"
       ],
       "lienQuan": [
         "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210",
@@ -1260,6 +1343,43 @@
       "loi": "nháy 2 đèn đỏ xen kẽ và báo hết hạn sử dụng miếng thấm mực thải",
       "tai": "https://tinhocnamphong.net/phan-mem-reset-epson-l210/",
       "taiNhan": "Tải phần mềm reset Epson L110 / L210 / L300",
+      "moBai": "Epson <strong>L110, L210, L300 và L350</strong> là lứa máy in phun bình mực liền ra đời khoảng 2012–2013, tới nay nhiều máy đã chạy trên mười năm. Máy tới tuổi này mà nháy 2 đèn đỏ xen kẽ, máy tính báo <em>Service Required</em> thì thường là bộ đếm mực thải đã đầy chứ không phải hỏng bo hay hỏng đầu in. Reset bộ đếm là máy in tiếp — nhưng với máy đã cũ cỡ này, đọc kỹ phần lưu ý về miếng thấm bên dưới trước khi làm.",
+      "dacDiem": [
+        "Bốn máy cùng một lứa, dùng chung mực Epson 664 bốn màu, bình mực gắn bên hông máy",
+        "<strong>L110 và L300 chỉ in</strong>; L210 và L350 làm được cả in – scan – photocopy",
+        "Cả bốn máy không có wifi (bản có wifi là L355), đều nối máy tính bằng dây USB",
+        "Bên hông bình mực có khoá vận chuyển — phải gạt về vị trí in thì mực mới xuống đầu in",
+        "Máy đời cũ nhưng bền, vẫn còn chạy nhiều ở tiệm photo, quầy thu ngân và hộ gia đình"
+      ],
+      "viSaoDay": "Lý do đơn giản nhất là tuổi máy. Bộ đếm cộng dồn từ ngày máy xuất xưởng: mỗi lần bật máy, mỗi lần chạy làm sạch đầu in đều cộng thêm một ít. Một chiếc L210 dùng mười năm, dù mỗi ngày chỉ in vài tờ, cũng đã qua hàng nghìn lần bật tắt. Nhiều máy trong lứa này <strong>đã được reset một hai lần rồi</strong> — nếu bạn mua lại máy cũ thì nhiều khả năng lần này không phải lần đầu.",
+      "luuYRieng": [
+        "Máy lứa này phần lớn <strong>miếng thấm đã no mực thật</strong>, nhất là máy từng reset trước đó. Nhìn mặt bàn dưới đáy máy: thấy vệt mực loang thì phải thay hoặc vệ sinh miếng thấm rồi mới reset.",
+        "Trong phần mềm, L110, L210, L300 và L350 là bốn mục riêng. Chọn đúng tên máy đang cắm, không chọn thay cho nhau.",
+        "Cài driver máy in trước. Máy tính chưa nhận ra máy in qua cổng USB thì phần mềm reset cũng không thấy máy."
+      ],
+      "dauHieu": [
+        "Hai đèn đỏ (đèn giấy và đèn mực) nháy xen kẽ nhau",
+        "Máy tính hiện Service Required hoặc “A printer’s ink pad is at the end of its service life”",
+        "Bật máy lên là nháy đèn ngay, đầu in không chạy, bấm nút nào cũng không ăn"
+      ],
+      "buocRieng": {
+        "3": "Bấm nút <strong>Select</strong>, ở mục Model Name chọn đúng tên máy đang cắm: <strong>L110, L210, L300</strong> hoặc <strong>L350</strong>. Mục Port chọn <strong>Auto selection</strong> rồi bấm <strong>OK</strong>. Bốn tên nằm sát nhau trong danh sách nên rất dễ bấm nhầm."
+      },
+      "faqChung": [],
+      "faqRieng": [
+        [
+          "L110, L210, L300, L350 dùng chung một phần mềm reset được không ?",
+          "Được, bốn máy cùng lứa nên chung một bộ Adjustment Program. Nhưng trong phần mềm mỗi máy là một mục riêng: bấm Select rồi chọn đúng tên máy đang cắm. Chọn L210 cho máy L110 thì phần mềm vẫn chạy mà bộ đếm không về 0."
+        ],
+        [
+          "Máy đã reset một lần rồi, reset tiếp được không ?",
+          "Được. Cái cần lo không phải bộ đếm mà là miếng thấm: sau mỗi lần reset, máy tiếp tục xả mực thải xuống miếng thấm cũ. Reset từ lần thứ hai mà chưa từng thay miếng thấm thì mực rất dễ tràn ra đáy máy. Thay miếng thấm, hoặc gắn ống dẫn mực thải ra chai ngoài, rồi hãy reset."
+        ],
+        [
+          "Reset xong vẫn nháy 2 đèn đỏ thì do đâu ?",
+          "Với lứa máy này hay gặp ba nguyên nhân: chọn nhầm tên máy trong phần mềm, dây USB cũ chập chờn, hoặc chưa tắt máy bật lại sau khi bấm Initialize. Làm lại đủ ba chỗ đó mà đèn vẫn nháy thì máy đang báo lỗi khác — gọi 0934 393 550 để kỹ thuật kiểm tra tận nơi."
+        ]
+      ],
       "lienQuan": [
         "Phan-mem-reset-may-in/Phan-mem-reset-may-in-epson-l350",
         "thu-thuat-tin-hoc/thu-thuat-may-in/phan-mem-reset-may-in-epson-l310"

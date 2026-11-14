@@ -344,3 +344,18 @@ và là nhóm đang kéo click, nên chờ chủ shop quyết. Hướng an toàn
 
 Số liệu nền để đo lại sau 3–4 tuần (GSC 15/10–11/11): L805 95 nhấp vị trí 3,9 · L1210 87 / 5,1 · L3250 13 / ~6 ·
 L1800 9 / 5,2 · L4150 5 / 6,1 · L110-L210-L300 14 / 5,9.
+
+### 4 trang reset gốc: thêm khối riêng (14/11/2026) — đã push 14/11
+
+L1110, L3110, L3150, L3210 là bài gốc Google Sites, chỉ khác nhau tên model nên trùng 60–74%. Không sửa chữ gốc; thêm khối
+riêng ở cuối bài qua `data/noi-dung-them.json` (mỗi trang ~330–430 từ, 2 câu hỏi → FAQPage):
+- L1110: đọc kiểu nháy đèn (bài gốc hứa "tra mã lỗi phía dưới" mà không có), máy chỉ in, phân biệt với L1210.
+- L3110: nút Check đọc phần trăm bộ đếm (8 bước gốc bỏ qua), máy đa năng không wifi, phân biệt với L3150.
+- L3150: máy có wifi vẫn phải reset qua dây USB, phân biệt tràn bộ đếm với mất wifi.
+- L3210: khác L3110 / L3250 chỗ nào, miếng thấm sau nhiều lần reset.
+
+Kết quả: 4 trang còn trùng nhau 42–49% (trước 60–74%). Cả cụm reset không còn cặp nào ≥50% (ban đầu 22 cặp).
+Muốn xuống nữa thì phải sửa chữ bài gốc — chưa làm.
+
+**Lỗi có sẵn trong bài gốc, chưa sửa, chờ chủ shop:** trang L3150 đoạn mở bài ghi nhầm "Epson L3210"; cũng trang này còn
+hai số điện thoại không phải hotline (xem mục "Về chúng tôi" của trang).

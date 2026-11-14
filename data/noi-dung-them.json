@@ -178,5 +178,163 @@
         "p": "Tra đúng model máy của bạn trong danh sách bên dưới để tải đúng bản phần mềm. Làm không được hoặc không muốn tự làm, gọi 0934 393 550 — kỹ thuật hướng dẫn qua điện thoại hoặc tới tận nơi tại TP.HCM."
       }
     ]
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l1110": {
+    "_ghi_chu": "14/11/2026: trùng 74% với trang L3110 (bài gốc chỉ khác tên model). Bài gốc hứa \"tra mã lỗi phía dưới\" nhưng không có bảng nào — phần thêm viết đúng chỗ thiếu đó: đọc kiểu nháy đèn, và chuyện riêng của máy chỉ in L1110.",
+    "khoi": [
+      {
+        "h2": "Đèn trên Epson L1110 nháy kiểu nào thì mới cần reset"
+      },
+      {
+        "p": "L1110 không có màn hình, máy báo lỗi bằng hai đèn: đèn giấy và đèn mực. Không phải cứ đèn đỏ là tràn bộ đếm. Nhìn kỹ kiểu nháy trước khi tải phần mềm, kẻo reset xong máy vẫn đứng im vì lỗi nằm ở chỗ khác."
+      },
+      {
+        "ul": [
+          "Đèn giấy sáng đứng: máy hết giấy hoặc kéo nhiều tờ một lúc. Nạp lại giấy rồi bấm nút trên máy, không cần reset.",
+          "Đèn giấy nháy một mình: kẹt giấy. Rút tờ giấy kẹt ra theo chiều giấy đi, bấm nút để máy chạy tiếp.",
+          "Đèn giấy và đèn mực nháy xen kẽ nhau: đây mới là tràn bộ đếm mực thải, làm theo hướng dẫn reset ở trên.",
+          "Các đèn cùng nháy một lượt: máy báo lỗi cơ, thường do vật lạ hoặc mẩu giấy kẹt trên đường chạy của đầu in. Tắt máy, kiểm tra bên trong rồi bật lại. Trường hợp này reset không giải quyết được."
+        ]
+      },
+      {
+        "h2": "L1110 là máy chỉ in — reset có gì khác các máy đa năng"
+      },
+      {
+        "p": "L1110 chỉ có chức năng in, dùng mực Epson 003 và không có wifi. Máy nối với máy tính bằng một sợi dây USB duy nhất, nên bước kết nối đơn giản hơn các máy có wifi: sợi dây đang dùng để in hằng ngày cũng chính là sợi dây dùng để reset, không phải cắm thêm gì."
+      },
+      {
+        "p": "Vì chỉ in nên L1110 hay được dùng kiểu bật lên in vài tờ rồi tắt. Mỗi lần bật, máy tự làm sạch đầu in và xả một ít mực xuống miếng thấm, bộ đếm theo đó nhích lên. Máy in ít mà vẫn báo tràn bộ đếm là chuyện bình thường với cách dùng này, không phải máy lỗi."
+      },
+      {
+        "h3": "L1110 và L1210 có dùng chung phần mềm reset không ?"
+      },
+      {
+        "p": "Không. L1210 là đời sau của L1110, nhìn bên ngoài gần giống nhau và cùng dùng mực 003, nhưng mỗi máy có bản phần mềm riêng. Xem tên máy in trên mặt trước rồi tải đúng bản. Chọn nhầm thì phần mềm vẫn chạy tới cuối nhưng bộ đếm không về 0."
+      },
+      {
+        "h3": "Reset xong L1110 vẫn nháy hai đèn thì sao ?"
+      },
+      {
+        "p": "Tắt máy bằng nút nguồn, chờ khoảng 10 giây rồi bật lại, vì máy chỉ nhận con số mới sau khi khởi động lại. Nếu đèn vẫn nháy xen kẽ, mở lại phần mềm kiểm tra đã chọn đúng L1110 chưa. Làm lại mà không được thì gọi 0934 393 550 để kỹ thuật kiểm tra tận nơi."
+      }
+    ]
+  },
+  "Phan-mem-reset-may-in/phan-mem-reset-epson-l3110": {
+    "_ghi_chu": "14/11/2026: trùng 74% với L1110, 66% với L3210. Tám bước trong bài gốc bỏ qua nút Check — phần thêm viết về việc đọc con số bộ đếm trước và sau khi reset, và chuyện riêng của máy đa năng không wifi.",
+    "khoi": [
+      {
+        "h2": "Xem bộ đếm Epson L3110 đang ở bao nhiêu phần trăm"
+      },
+      {
+        "p": "Trong cửa sổ Waste Ink Pad Counter của phần mềm có nút Check nằm cạnh nút Initialize. Tích vào ô Main pad counter rồi bấm Check, phần mềm đọc con số đang lưu trong máy và hiện ra dưới dạng phần trăm. Nên bấm Check trước khi reset, vì con số này cho biết máy có thật sự tràn bộ đếm hay không."
+      },
+      {
+        "ul": [
+          "Từ 100% trở lên: đúng là tràn bộ đếm, bấm Initialize để đưa về 0.",
+          "Còn thấp, ví dụ 40–60%, mà máy vẫn nháy đèn: lỗi nằm ở chỗ khác như kẹt giấy hoặc kẹt đầu in. Reset lúc này không có tác dụng.",
+          "Phần mềm báo lỗi kết nối, không hiện con số: máy tính chưa thấy máy in. Kiểm tra dây USB và bấm Select chọn lại cổng."
+        ]
+      },
+      {
+        "p": "Sau khi bấm Initialize và tắt bật lại máy, bấm Check thêm một lần. Con số về 0% là reset đã ăn. Ghi lại ngày reset ở đâu đó: lần sau máy báo lại, bạn biết bộ đếm đầy sau bao lâu và ước được lúc nào cần xem tới miếng thấm."
+      },
+      {
+        "h2": "L3110 là máy in – scan – copy không có wifi"
+      },
+      {
+        "p": "L3110 làm được ba việc in, scan và photocopy, dùng mực Epson 003, nối máy tính bằng dây USB và không có wifi. Khi tràn bộ đếm, máy khoá cả ba chức năng: bấm nút copy ngay trên máy cũng không chạy. Đây là cách phân biệt nhanh với lỗi driver hay lỗi máy tính, vốn chỉ làm mất lệnh in từ máy tính còn copy trực tiếp trên máy vẫn được."
+      },
+      {
+        "h3": "L3110 và L3150 khác nhau chỗ nào khi reset ?"
+      },
+      {
+        "p": "Hai máy cùng đời, khác ở chỗ L3150 có wifi còn L3110 thì không. Cách reset giống nhau và đều phải làm qua dây USB. Trong danh sách model của phần mềm, hai máy là hai mục riêng, nên chọn đúng tên in trên mặt trước máy."
+      },
+      {
+        "h3": "Scan được mà không in được thì có phải tràn bộ đếm không ?"
+      },
+      {
+        "p": "Không. Tràn bộ đếm thì máy khoá hết, scan cũng không chạy. Nếu máy vẫn scan bình thường mà in không ra, hãy kiểm tra hàng đợi in, driver và dây USB trước. Tự kiểm tra không ra thì gọi 0934 393 550."
+      }
+    ]
+  },
+  "Phan-mem-reset-may-in/download-phan-mem-reset-epson-l3150": {
+    "_ghi_chu": "14/11/2026: trùng 68% với L3210 (đoạn mở bài gốc còn ghi nhầm L3210). Phần thêm viết về điểm riêng của L3150: máy có wifi, reset phải qua dây USB.",
+    "khoi": [
+      {
+        "h2": "Epson L3150 có wifi — reset vẫn phải cắm dây USB"
+      },
+      {
+        "p": "L3150 là máy in – scan – copy có wifi và Wi-Fi Direct, dùng mực Epson 003. Nhiều văn phòng lắp máy xong chỉ in qua wifi, sợi dây USB theo máy cất luôn trong hộp. Tới lúc cần reset thì phải lấy sợi dây đó ra: phần mềm reset chỉ nói chuyện với máy qua cổng USB, không tìm thấy máy qua mạng."
+      },
+      {
+        "ul": [
+          "Dùng dây USB máy in loại đầu vuông, cắm thẳng vào cổng USB trên máy tính, không qua bộ chia cổng.",
+          "Không cần xoá hay cài lại wifi trên máy in. Cắm dây chỉ để reset, xong thì rút ra.",
+          "Nếu máy tính chưa từng nối L3150 bằng dây, chờ Windows nhận thiết bị xong rồi mới mở phần mềm.",
+          "Bật lại máy sau khi reset, máy tự nối lại mạng wifi cũ. In thử một trang từ điện thoại để chắc."
+        ]
+      },
+      {
+        "h2": "Phân biệt tràn bộ đếm với mất kết nối wifi"
+      },
+      {
+        "p": "Với máy in qua wifi, hai lỗi này dễ bị nhầm vì cùng một biểu hiện: gửi lệnh in mà không thấy giấy ra. Cách phân biệt là nhìn vào máy in chứ không nhìn vào điện thoại. Tràn bộ đếm thì hai đèn đỏ trên máy nháy xen kẽ và nút copy trên máy cũng không chạy. Mất wifi thì máy không nháy đèn đỏ, đặt giấy lên bấm copy vẫn ra bản bình thường — lúc đó việc cần làm là nối lại mạng, không phải reset."
+      },
+      {
+        "h3": "Reset xong L3150 có mất cài đặt wifi không ?"
+      },
+      {
+        "p": "Không. Reset chỉ đưa bộ đếm mực thải về 0, không đụng tới cấu hình mạng. Tên wifi và mật khẩu đã lưu trong máy vẫn còn nguyên."
+      },
+      {
+        "h3": "In từ điện thoại thì có reset bằng điện thoại được không ?"
+      },
+      {
+        "p": "Không được. Phần mềm reset là chương trình chạy trên máy tính Windows và cần dây USB. Nếu không có máy tính, gọi 0934 393 550 để kỹ thuật mang máy tới reset tận nơi."
+      }
+    ]
+  },
+  "Phan-mem-reset-may-in/tool-reset-bo-dem-epson-l3210": {
+    "_ghi_chu": "14/11/2026: trùng 68% với L3150, 66% với L3110. Phần thêm viết về chỗ L3210 khác các đời gần nó (L3110, L3250) và chuyện miếng thấm sau nhiều lần reset.",
+    "khoi": [
+      {
+        "h2": "Epson L3210 khác L3110 và L3250 chỗ nào"
+      },
+      {
+        "p": "Ba máy này hay bị nhầm vì nhìn gần giống nhau và cùng dùng mực Epson 003. Khi reset thì không được nhầm, vì mỗi máy có bản phần mềm riêng."
+      },
+      {
+        "ul": [
+          "L3110: đời trước, in – scan – copy, không wifi.",
+          "L3210: đời sau của L3110, in – scan – copy, không wifi, nối máy tính bằng dây USB.",
+          "L3250: cùng đời với L3210 nhưng có thêm wifi."
+        ]
+      },
+      {
+        "p": "Tên máy in ngay trên mặt trước, phía trên khay giấy ra. Xem đúng tên rồi mới tải phần mềm. Tải bản của L3110 hay L3250 về chạy cho L3210 thì phần mềm vẫn mở được, vẫn bấm Initialize được, nhưng bộ đếm trong máy không đổi."
+      },
+      {
+        "h2": "Reset nhiều lần rồi thì nhớ tới miếng thấm"
+      },
+      {
+        "p": "Bộ đếm sinh ra để nhắc một việc có thật: mực thải khi máy làm sạch đầu in chảy xuống một miếng thấm nằm trong máy. Reset đưa con số về 0 nhưng miếng thấm thì không tự sạch lại. Lần reset đầu thường chưa sao vì nhà sản xuất đặt ngưỡng báo sớm. Từ lần thứ hai, thứ ba thì nên kiểm tra miếng thấm, nhất là ở những nơi in nhiều hoặc hay chạy làm sạch đầu in."
+      },
+      {
+        "p": "Dấu hiệu miếng thấm đã no: mặt bàn dưới đáy máy có vệt mực, hoặc mép dưới tờ giấy in ra dính mực. Gặp vậy thì thay hoặc vệ sinh miếng thấm trước, rồi mới reset."
+      },
+      {
+        "h3": "L3210 không có wifi thì reset có dễ hơn không ?"
+      },
+      {
+        "p": "Có, ở bước kết nối. L3210 vốn in qua dây USB nên máy tính đã nhận máy sẵn; chỉ cần mở phần mềm lên là thấy máy, không phải đi tìm dây như các máy quen in wifi."
+      },
+      {
+        "h3": "Bao lâu thì L3210 phải reset lại ?"
+      },
+      {
+        "p": "Tuỳ cách dùng chứ không tính theo tháng. Máy in văn bản đều mỗi ngày và ít khi tắt thì lâu đầy hơn máy bật tắt nhiều lần trong ngày hoặc hay chạy làm sạch đầu in. Nếu thấy khoảng cách giữa hai lần reset ngắn dần, gọi 0934 393 550 để kỹ thuật kiểm tra đầu in và miếng thấm."
+      }
+    ]
   }
 }

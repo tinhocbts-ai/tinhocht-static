@@ -1553,6 +1553,198 @@
         "sua-may-in-tai-hcm/thu-mua-may-in-cu-tai-tphcm",
         "bang-gia-nap-muc-may-in-tan-noi"
       ]
+    },
+    {
+      "_ghichu": "Viết 17/11/2026. Căn cứ: Google Ads (toàn quốc) hủy lệnh in 1.000 · xóa lệnh in 880 · xóa lệnh máy in canon 2900 720 · hủy lệnh máy in 390 · xóa lệnh máy in 320 lượt/tháng, cạnh tranh Thấp; cả 8 web hệ thống chưa có bài. Nguồn số: adsgoogle/data/keywords/2026-11-17/. CHƯA có ảnh chụp màn hình (lúc viết máy đang khóa màn hình) — có ảnh thì khai thêm \"anh\".",
+      "path": "thu-thuat-tin-hoc/thu-thuat-may-in/cach-huy-lenh-in-xoa-lenh-may-in",
+      "title": "Cách Hủy Lệnh In, Xóa Lệnh Máy In Bị Kẹt (Canon 2900, Brother, HP)",
+      "desc": "Hướng dẫn hủy lệnh in, xóa lệnh máy in trên Windows 10 và 11: hủy một lệnh, xóa hết hàng chờ, xử lý lệnh in bị kẹt không xóa được bằng Print Spooler. Áp dụng cho Canon 2900, Brother, HP, Epson.",
+      "h1": "Cách hủy lệnh in, xóa lệnh máy in bị kẹt trên Windows",
+      "model": "lệnh in",
+      "dongMay": "Canon LBP 2900, Brother, HP, Epson",
+      "loi": "kẹt lệnh in trong hàng chờ",
+      "faqChung": false,
+      "luuYChung": false,
+      "moBai": "Bấm in nhầm file, in nhầm 50 bản thay vì 5, hoặc máy đứng im mà lệnh cứ nằm đó không chịu chạy — cả ba trường hợp đều xử lý ở cùng một chỗ: <strong>hàng chờ in</strong> (print queue) của Windows. Bài này đi từ cách nhẹ nhất tới cách mạnh nhất: hủy một lệnh in, xóa hết lệnh trong hàng chờ, rồi tới cách xóa lệnh in bị kẹt khi bấm hủy mãi không mất. Các bước giống nhau cho mọi máy in cắm vào máy tính Windows 10 và Windows 11, từ Canon LBP 2900, Brother, HP tới Epson.",
+      "viSaoTieuDe": "Vì sao bấm hủy rồi mà lệnh in vẫn không mất",
+      "viSaoDay": "Khi bấm in, Windows không gửi thẳng file sang máy in mà đưa cho một dịch vụ tên <strong>Print Spooler</strong>. Dịch vụ này ghi lệnh in thành file tạm, xếp hàng, rồi chuyển dần sang máy in. Lệnh in bị kẹt thường do một trong ba chuyện: máy in đang tắt, hết giấy hoặc lỏng dây nên lệnh đầu hàng không đi được và chặn mọi lệnh phía sau; file in bị lỗi làm Print Spooler đứng; hoặc lệnh đã ở trạng thái <em>Deleting</em> nhưng Windows chờ máy in trả lời mãi không được. Trường hợp thứ ba là lúc bấm hủy bao nhiêu lần cũng vô ích, phải dừng hẳn Print Spooler rồi xóa file tạm bằng tay.",
+      "khiNaoTieuDe": "Chọn cách nào cho trường hợp của bạn",
+      "luuYRieng": [
+        "Hủy lệnh trên máy tính chỉ xóa phần <strong>chưa gửi</strong> sang máy in. Những trang máy in đã nhận vào bộ nhớ vẫn sẽ in ra. Muốn dừng ngay thì tắt nguồn máy in khoảng 10 giây, hoặc kéo khay giấy ra, rồi mới hủy lệnh.",
+        "Máy in dùng chung qua mạng: lệnh nằm ở máy tính đã bấm in, hoặc ở máy tính đang chia sẻ máy in. Phải xóa ở đúng máy đó, xóa ở máy khác không có tác dụng.",
+        "Cách dừng Print Spooler cần tài khoản có quyền quản trị (Administrator). Máy công ty bị khóa quyền thì nhờ người quản lý máy làm bước này.",
+        "Dừng Print Spooler sẽ xóa <strong>toàn bộ</strong> lệnh đang chờ của mọi máy in trên máy tính đó. Lệnh nào còn cần thì in lại sau."
+      ],
+      "quyTrinh": [
+        {
+          "ten": "Hủy một lệnh in đang chờ",
+          "moTa": "Dùng khi vừa bấm in nhầm và muốn bỏ đúng lệnh đó, giữ lại các lệnh khác.",
+          "khiNao": [
+            "Bấm in nhầm file, nhầm số bản hoặc nhầm máy in",
+            "Muốn bỏ một lệnh nhưng giữ các lệnh khác đang xếp hàng"
+          ],
+          "buoc": [
+            [
+              "Mở hàng chờ in",
+              "Khi đang có lệnh in, góc phải thanh tác vụ (cạnh đồng hồ) hiện <strong>biểu tượng máy in</strong>; bấm đúp vào đó là mở được hàng chờ. Không thấy biểu tượng thì vào <strong>Settings</strong>: Windows 11 chọn <strong>Bluetooth &amp; devices → Printers &amp; scanners</strong>, Windows 10 chọn <strong>Devices → Printers &amp; scanners</strong>. Bấm vào tên máy in rồi bấm <strong>Open print queue</strong> (Windows 10 ghi là <strong>Open queue</strong>)."
+            ],
+            [
+              "Chọn lệnh cần hủy",
+              "Cửa sổ hàng chờ liệt kê từng lệnh theo tên file, kèm trạng thái và số trang. Lệnh trên cùng là lệnh đang in hoặc đang kẹt."
+            ],
+            [
+              "Bấm Cancel",
+              "Bấm chuột phải vào lệnh rồi chọn <strong>Cancel</strong>. Windows hỏi lại thì chọn <strong>Yes</strong>. Trên Windows 11 bản mới, nút Cancel nằm trong dấu ba chấm ở cuối dòng của lệnh."
+            ],
+            [
+              "Chờ lệnh biến mất",
+              "Trạng thái đổi sang <em>Deleting</em> rồi lệnh mất khỏi danh sách sau vài giây. Nếu hơn một phút vẫn còn chữ Deleting thì lệnh đã kẹt, chuyển xuống cách dừng Print Spooler bên dưới."
+            ]
+          ]
+        },
+        {
+          "ten": "Xóa toàn bộ lệnh in trong hàng chờ",
+          "moTa": "Dùng khi hàng chờ dồn nhiều lệnh, thường do bấm in nhiều lần vì thấy máy không chạy.",
+          "khiNao": [
+            "Bấm in nhiều lần vì máy không chạy, giờ hàng chờ có cả chục lệnh giống nhau",
+            "Vừa sửa xong máy (nạp giấy, cắm lại dây) và không muốn máy in ra hết chỗ lệnh cũ"
+          ],
+          "buoc": [
+            [
+              "Mở hàng chờ in",
+              "Làm như bước 1 ở trên: bấm đúp biểu tượng máy in cạnh đồng hồ, hoặc vào Settings → Printers &amp; scanners → tên máy in → Open print queue."
+            ],
+            [
+              "Chọn Cancel All Documents",
+              "Ở cửa sổ kiểu cũ (Windows 10 và nhiều máy Windows 11), bấm menu <strong>Printer</strong> ở góc trên bên trái rồi chọn <strong>Cancel All Documents</strong>. Ở cửa sổ kiểu mới của Windows 11, bấm dấu ba chấm phía trên danh sách rồi chọn <strong>Cancel all</strong>."
+            ],
+            [
+              "Xác nhận và in thử lại",
+              "Chọn <strong>Yes</strong> khi được hỏi. Hàng chờ trống thì in thử lại một trang. Nếu lệnh mới lại nằm im, nguyên nhân là ở máy in (hết giấy, kẹt giấy, lỏng dây, máy đang ở chế độ Offline), không phải ở hàng chờ."
+            ]
+          ]
+        },
+        {
+          "ten": "Xóa lệnh in bị kẹt bằng cách dừng Print Spooler",
+          "moTa": "Dùng khi lệnh in hiện <em>Deleting</em> mãi không mất, hoặc bấm Cancel không có phản ứng gì. Đây là cách xử lý dứt điểm, cần quyền quản trị.",
+          "khiNao": [
+            "Lệnh in hiện chữ Deleting hơn một phút vẫn không mất",
+            "Bấm Cancel hoặc Cancel All Documents mà danh sách không đổi",
+            "Khởi động lại máy tính rồi lệnh cũ vẫn còn nằm đó"
+          ],
+          "buoc": [
+            [
+              "Mở cửa sổ Services",
+              "Nhấn tổ hợp phím <strong>Windows + R</strong>, gõ <strong>services.msc</strong> rồi nhấn Enter."
+            ],
+            [
+              "Dừng dịch vụ Print Spooler",
+              "Kéo xuống tìm dòng <strong>Print Spooler</strong>, bấm chuột phải và chọn <strong>Stop</strong>. Giữ nguyên cửa sổ Services, chưa đóng."
+            ],
+            [
+              "Xóa file lệnh in tạm",
+              "Mở File Explorer, dán đường dẫn <strong>C:\\Windows\\System32\\spool\\PRINTERS</strong> vào thanh địa chỉ rồi nhấn Enter. Windows hỏi quyền thì bấm <strong>Continue</strong>. Chọn hết các file trong thư mục (Ctrl + A) và xóa. Chỉ xóa file bên trong, <strong>không xóa thư mục PRINTERS</strong>."
+            ],
+            [
+              "Bật lại Print Spooler",
+              "Quay lại cửa sổ Services, bấm chuột phải vào <strong>Print Spooler</strong> và chọn <strong>Start</strong>."
+            ],
+            [
+              "Tắt bật máy in rồi in thử",
+              "Tắt nguồn máy in khoảng 10 giây rồi bật lại để xóa phần dữ liệu còn nằm trong bộ nhớ máy. Mở lại hàng chờ, danh sách phải trống. In thử một trang."
+            ]
+          ],
+          "xong": "Các file trong thư mục PRINTERS (đuôi .SHD và .SPL) chỉ là lệnh in tạm. Xóa chúng không ảnh hưởng tới driver hay cài đặt máy in."
+        },
+        {
+          "ten": "Xóa lệnh in bằng ba dòng lệnh",
+          "moTa": "Cùng kết quả với cách dừng Print Spooler ở trên nhưng nhanh hơn, hợp với người quen gõ lệnh hoặc phải xử lý nhiều máy.",
+          "khiNao": [
+            "Đã quen dùng cửa sổ lệnh và muốn làm nhanh",
+            "Phải xóa lệnh in kẹt trên nhiều máy tính trong văn phòng"
+          ],
+          "buoc": [
+            [
+              "Mở Command Prompt bằng quyền quản trị",
+              "Bấm nút Start, gõ <strong>cmd</strong>, bấm chuột phải vào <strong>Command Prompt</strong> và chọn <strong>Run as administrator</strong>."
+            ],
+            [
+              "Gõ lần lượt ba lệnh",
+              "Gõ từng dòng, nhấn Enter sau mỗi dòng:<br><code>net stop spooler</code><br><code>del /Q /F /S \"%systemroot%\\System32\\spool\\PRINTERS\\*.*\"</code><br><code>net start spooler</code>"
+            ],
+            [
+              "Kiểm tra lại hàng chờ",
+              "Dòng cuối báo <em>The Print Spooler service was started successfully</em> là xong. Mở hàng chờ in kiểm tra danh sách đã trống rồi in thử."
+            ]
+          ]
+        }
+      ],
+      "bangTraCuu": {
+        "tieuDe": "Hủy lệnh in ngay trên máy in",
+        "moTa": "Một số máy in hủy được lệnh đang chạy bằng nút bấm trên thân máy, đỡ phải mở máy tính.",
+        "cot": [
+          "Máy in",
+          "Cách hủy trên máy"
+        ],
+        "dong": [
+          {
+            "o": [
+              "Canon LBP 2900",
+              "Máy <strong>không có nút hủy</strong> trên thân. Hủy trong hàng chờ in của Windows, hoặc trong cửa sổ trạng thái Canon hiện lên khi đang in: menu <strong>Job → Cancel Job</strong>."
+            ],
+            "toi": "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-khong-in-dhuoc",
+            "nhan": "Máy in không in được"
+          },
+          {
+            "o": [
+              "Brother không màn hình (HL-L2321D và máy cùng dòng)",
+              "Nhấn giữ nút <strong>Go</strong> khoảng 2 giây để hủy lệnh đang in."
+            ],
+            "toi": "Phan-mem-reset-may-in/reset-may-in-brother-hl-l2321d",
+            "nhan": "Reset Brother HL-L2321D"
+          },
+          {
+            "o": [
+              "Máy có màn hình LCD (Brother, HP, Canon đa năng)",
+              "Nhấn nút <strong>Cancel</strong> hoặc <strong>Stop</strong> (thường có dấu X) trên bảng điều khiển."
+            ],
+            "toi": "sua-may-in-tai-hcm",
+            "nhan": "Sửa máy in tận nơi"
+          }
+        ]
+      },
+      "faqRieng": [
+        [
+          "Hủy lệnh in rồi mà máy vẫn in tiếp thì làm sao ?",
+          "Phần máy đang in là dữ liệu đã nằm trong bộ nhớ của máy in, hủy trên máy tính không rút lại được. Tắt nguồn máy in khoảng 10 giây (hoặc kéo khay giấy ra), xóa hết lệnh trong hàng chờ rồi mới bật máy lại."
+        ],
+        [
+          "Xóa lệnh in máy Canon 2900 có khác máy khác không ?",
+          "Không khác. Canon LBP 2900 không có nút hủy trên thân máy nên mọi thao tác làm trên máy tính: mở hàng chờ in rồi Cancel, hoặc dùng menu Job → Cancel Job trong cửa sổ trạng thái Canon. Lệnh kẹt cứng thì dừng Print Spooler như hướng dẫn ở trên."
+        ],
+        [
+          "Lệnh in hiện chữ Deleting mãi không mất là bị gì ?",
+          "Windows đã nhận yêu cầu xóa nhưng đang chờ máy in phản hồi, thường do máy in tắt, mất kết nối hoặc Print Spooler bị treo. Khởi động lại máy tính có khi hết, có khi không. Cách chắc chắn là dừng Print Spooler, xóa file trong thư mục PRINTERS rồi bật lại."
+        ],
+        [
+          "Xóa file trong thư mục PRINTERS có làm mất driver máy in không ?",
+          "Không. Thư mục đó chỉ chứa lệnh in tạm đang chờ. Driver và cài đặt máy in nằm ở chỗ khác. Chỉ cần nhớ dừng Print Spooler trước khi xóa, nếu không Windows sẽ báo file đang được dùng."
+        ],
+        [
+          "Hủy lệnh xong, máy in ra cả xấp giấy toàn ký tự lạ ?",
+          "Đó là phần dữ liệu dở dang còn sót trong bộ nhớ máy in. Tắt máy in, rút dây USB, xóa sạch hàng chờ trên máy tính, chờ 10 giây rồi cắm dây và bật lại."
+        ],
+        [
+          "Xóa sạch hàng chờ rồi mà in lệnh mới vẫn kẹt ?",
+          "Lúc này lỗi không còn nằm ở lệnh in. Kiểm tra máy in có đang bật, có giấy, dây USB cắm chặt, và trong cửa sổ hàng chờ menu Printer không bị tích ở dòng <strong>Use Printer Offline</strong> hay <strong>Pause Printing</strong>. Vẫn không được thì gọi 0934 393 550 để kỹ thuật tới kiểm tra."
+        ]
+      ],
+      "lienQuan": [
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-print-spooler-service-not-runing",
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-khong-in-dhuoc",
+        "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-keo-giay-lien-tuc",
+        "sua-may-in-tai-hcm"
+      ]
     }
   ]
 }

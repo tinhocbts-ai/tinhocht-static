@@ -294,7 +294,7 @@ ${p.viSaoDay ? `
 
 ${anhBai(p, prefix, 0)}
 ${nhieuQuyTrinh ? '' : '\n      ' + anhQuyTrinh(p) + '\n'}
-      <h2 id="khi-nao-can">Khi nào cần reset ${esc(p.model)}</h2>
+      <h2 id="khi-nao-can">${esc(p.khiNaoTieuDe || 'Khi nào cần reset ' + p.model)}</h2>
       ${nhieuQuyTrinh
     ? p.quyTrinh.map(q => `<h3>${esc(q.ten)}</h3>\n      <ul class="check-list">${(q.khiNao || []).map(d => '<li>' + d + '</li>').join('')}</ul>`).join('\n      ')
     : `<ul class="check-list">${dauHieu.map(d => '<li>' + esc(d) + '</li>').join('')}</ul>`}

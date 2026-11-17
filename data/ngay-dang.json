@@ -1,7 +1,7 @@
 {
   "_help": "Ngày URL xuất hiện lần đầu trên bản tĩnh (commit đầu tiên thêm file). Sinh bởi tools/ngay-dang.js.",
   "_luu_y": "KHÔNG phải ngày viết bài gốc trên Google Sites — dữ liệu đó không còn. Xem đầu file tools/ngay-dang.js.",
-  "_sinh_luc": "2026-10-01",
+  "_sinh_luc": "2026-11-17",
   "trang": {
     "": "2026-07-28",
     "Phan-mem-reset-may-in": "2026-07-28",
@@ -82,6 +82,7 @@
     "home/thay-muc-may-in-hp-mfp-m436-tp-hcm": "2026-07-28",
     "home/thay-ruy-bang-muc-may-in-kim-epson-lq-300-lq-310": "2026-07-28",
     "kinh-nghiem---thu-thuat": "2026-07-28",
+    "lp/nap-muc-may-in-quan-10": "2026-10-29",
     "nap-muc-may-in-bill---thay-muc-may-in-hoa-don": "2026-07-28",
     "nap-muc-may-in-bill---thay-muc-may-in-hoa-don/thay-muc-may-in-bill-epson-tm-u220": "2026-07-28",
     "sua-may-in-tai-hcm": "2026-07-28",
@@ -130,6 +131,7 @@
     "thu-thuat-tin-hoc/may-in-chuyen-in-don-hang-gia-re": "2026-07-28",
     "thu-thuat-tin-hoc/tai-sao-phai-thay-drum-may-in-khi-nap-muc-lan-dau": "2026-07-28",
     "thu-thuat-tin-hoc/thu-thuat-may-in": "2026-07-28",
+    "thu-thuat-tin-hoc/thu-thuat-may-in/cach-huy-lenh-in-xoa-lenh-may-in": "2026-11-17",
     "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau---bang-in-bi-xoc": "2026-07-28",
     "thu-thuat-tin-hoc/thu-thuat-may-in/cach-xu-ly-may-in-epson-in-khong-dung-mau-mang-in-bi-soc": "2026-07-28",
     "thu-thuat-tin-hoc/thu-thuat-may-in/hop-muc-may-in-17a-18a-19a-bi-lem---tai-sao": "2026-07-28",

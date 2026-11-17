@@ -96,6 +96,11 @@ document.addEventListener('click', function (e) {
       <p>Khi bấm in, Windows không gửi thẳng file sang máy in mà đưa cho một dịch vụ tên <strong>Print Spooler</strong>. Dịch vụ này ghi lệnh in thành file tạm, xếp hàng, rồi chuyển dần sang máy in. Lệnh in bị kẹt thường do một trong ba chuyện: máy in đang tắt, hết giấy hoặc lỏng dây nên lệnh đầu hàng không đi được và chặn mọi lệnh phía sau; file in bị lỗi làm Print Spooler đứng; hoặc lệnh đã ở trạng thái <em>Deleting</em> nhưng Windows chờ máy in trả lời mãi không được. Trường hợp thứ ba là lúc bấm hủy bao nhiêu lần cũng vô ích, phải dừng hẳn Print Spooler rồi xóa file tạm bằng tay.</p>
 
 
+      <figure class="anh-huong-dan">
+        <img src="../../assets/img/p/huy-lenh-in-hang-cho-canon-2900.webp" alt="Cửa sổ hàng chờ in của máy in Canon LBP2900 trên Windows 11 với ba lệnh in, lệnh đầu hàng báo Error - Printing"
+             width="1000" height="563" loading="lazy" decoding="async">
+        <figcaption>Hàng chờ in của Windows: lệnh nằm dưới cùng là lệnh gửi trước nhất. Khi nó báo <strong>Error - Printing</strong> thì hai lệnh phía trên cũng đứng chờ theo.</figcaption>
+      </figure>
 
       <h2 id="khi-nao-can">Chọn cách nào cho trường hợp của bạn</h2>
       <h3>Hủy một lệnh in đang chờ</h3>
@@ -115,6 +120,11 @@ document.addEventListener('click', function (e) {
       <h2 id="quy-trinh-1">Hủy một lệnh in đang chờ — 4 bước</h2>
       <p>Dùng khi vừa bấm in nhầm và muốn bỏ đúng lệnh đó, giữ lại các lệnh khác.</p>
       
+      <figure class="anh-huong-dan">
+        <img src="../../assets/img/p/huy-lenh-in-cancel-mot-lenh.webp" alt="Chọn một lệnh in trong hàng chờ rồi mở menu Document, bấm Cancel để hủy lệnh in đó"
+             width="1000" height="563" loading="lazy" decoding="async">
+        <figcaption>Chọn đúng lệnh cần bỏ rồi vào <strong>Document → Cancel</strong>. Bấm chuột phải vào lệnh cũng ra đúng menu này.</figcaption>
+      </figure>
       <ol class="steps">
         <li id="qt1-buoc-1">
           <h3>Bước 1: Mở hàng chờ in</h3>
@@ -126,7 +136,7 @@ document.addEventListener('click', function (e) {
         </li>
         <li id="qt1-buoc-3">
           <h3>Bước 3: Bấm Cancel</h3>
-          <p>Bấm chuột phải vào lệnh rồi chọn <strong>Cancel</strong>. Windows hỏi lại thì chọn <strong>Yes</strong>. Trên Windows 11 bản mới, nút Cancel nằm trong dấu ba chấm ở cuối dòng của lệnh.</p>
+          <p>Bấm chuột phải vào lệnh rồi chọn <strong>Cancel</strong>, hoặc chọn lệnh rồi vào menu <strong>Document → Cancel</strong>. Windows hỏi lại thì chọn <strong>Yes</strong>. Trên Windows 11 bản mới, nút Cancel nằm trong dấu ba chấm ở cuối dòng của lệnh.</p>
         </li>
         <li id="qt1-buoc-4">
           <h3>Bước 4: Chờ lệnh biến mất</h3>
@@ -137,6 +147,11 @@ document.addEventListener('click', function (e) {
       <h2 id="quy-trinh-2">Xóa toàn bộ lệnh in trong hàng chờ — 3 bước</h2>
       <p>Dùng khi hàng chờ dồn nhiều lệnh, thường do bấm in nhiều lần vì thấy máy không chạy.</p>
       
+      <figure class="anh-huong-dan">
+        <img src="../../assets/img/p/huy-lenh-in-cancel-all-documents.webp" alt="Menu Printer trong cửa sổ hàng chờ in, mục Cancel All Documents để xóa toàn bộ lệnh in"
+             width="1000" height="563" loading="lazy" decoding="async">
+        <figcaption><strong>Printer → Cancel All Documents</strong> xóa một lượt toàn bộ lệnh đang chờ của máy in này.</figcaption>
+      </figure>
       <ol class="steps">
         <li id="qt2-buoc-1">
           <h3>Bước 1: Mở hàng chờ in</h3>
@@ -155,6 +170,11 @@ document.addEventListener('click', function (e) {
       <h2 id="quy-trinh-3">Xóa lệnh in bị kẹt bằng cách dừng Print Spooler — 5 bước</h2>
       <p>Dùng khi lệnh in hiện <em>Deleting</em> mãi không mất, hoặc bấm Cancel không có phản ứng gì. Đây là cách xử lý dứt điểm, cần quyền quản trị.</p>
       
+      <figure class="anh-huong-dan">
+        <img src="../../assets/img/p/huy-lenh-in-services-print-spooler.webp" alt="Cửa sổ Services của Windows với dòng Print Spooler đang chọn và nút Stop the service"
+             width="1000" height="563" loading="lazy" decoding="async">
+        <figcaption>Trong cửa sổ Services, chọn dòng <strong>Print Spooler</strong> rồi bấm <strong>Stop</strong> ở cột bên trái (hoặc chuột phải → Stop).</figcaption>
+      </figure>
       <ol class="steps">
         <li id="qt3-buoc-1">
           <h3>Bước 1: Mở cửa sổ Services</h3>
@@ -182,6 +202,11 @@ document.addEventListener('click', function (e) {
       <h2 id="quy-trinh-4">Xóa lệnh in bằng ba dòng lệnh — 3 bước</h2>
       <p>Cùng kết quả với cách dừng Print Spooler ở trên nhưng nhanh hơn, hợp với người quen gõ lệnh hoặc phải xử lý nhiều máy.</p>
       
+      <figure class="anh-huong-dan">
+        <img src="../../assets/img/p/huy-lenh-in-cmd-net-stop-spooler.webp" alt="Cửa sổ Command Prompt quyền Administrator chạy ba lệnh net stop spooler, del thư mục PRINTERS và net start spooler"
+             width="1000" height="563" loading="lazy" decoding="async">
+        <figcaption>Ba lệnh chạy thật trên Windows 11. Dòng báo một file .TMP đang được dùng là bình thường, không ảnh hưởng: các file lệnh in .SHD và .SPL đã xóa hết.</figcaption>
+      </figure>
       <ol class="steps">
         <li id="qt4-buoc-1">
           <h3>Bước 1: Mở Command Prompt bằng quyền quản trị</h3>

@@ -1555,7 +1555,7 @@
       ]
     },
     {
-      "_ghichu": "Viết 17/11/2026. Căn cứ: Google Ads (toàn quốc) hủy lệnh in 1.000 · xóa lệnh in 880 · xóa lệnh máy in canon 2900 720 · hủy lệnh máy in 390 · xóa lệnh máy in 320 lượt/tháng, cạnh tranh Thấp; cả 8 web hệ thống chưa có bài. Nguồn số: adsgoogle/data/keywords/2026-11-17/. CHƯA có ảnh chụp màn hình (lúc viết máy đang khóa màn hình) — có ảnh thì khai thêm \"anh\".",
+      "_ghichu": "Viết 17/11/2026. Căn cứ: Google Ads (toàn quốc) hủy lệnh in 1.000 · xóa lệnh in 880 · xóa lệnh máy in canon 2900 720 · hủy lệnh máy in 390 · xóa lệnh máy in 320 lượt/tháng, cạnh tranh Thấp; cả 8 web hệ thống chưa có bài. Nguồn số: adsgoogle/data/keywords/2026-11-17/. Ảnh: chụp cửa sổ Windows 11 thật ngày 17/11/2026 bằng shared/tools/chup-cua-so.ps1, ghép + chú thích bằng tools/anh-man-hinh.js; máy in trong ảnh là máy in ảo đặt tên Canon LBP2900 (chủ shop đồng ý), ảnh gốc ở adsgoogle/data/sites/tinhocht/anh-huy-lenh-in/.",
       "path": "thu-thuat-tin-hoc/thu-thuat-may-in/cach-huy-lenh-in-xoa-lenh-may-in",
       "title": "Cách Hủy Lệnh In, Xóa Lệnh Máy In Bị Kẹt (Canon 2900, Brother, HP)",
       "desc": "Hướng dẫn hủy lệnh in, xóa lệnh máy in trên Windows 10 và 11: hủy một lệnh, xóa hết hàng chờ, xử lý lệnh in bị kẹt không xóa được bằng Print Spooler. Áp dụng cho Canon 2900, Brother, HP, Epson.",
@@ -1594,7 +1594,7 @@
             ],
             [
               "Bấm Cancel",
-              "Bấm chuột phải vào lệnh rồi chọn <strong>Cancel</strong>. Windows hỏi lại thì chọn <strong>Yes</strong>. Trên Windows 11 bản mới, nút Cancel nằm trong dấu ba chấm ở cuối dòng của lệnh."
+              "Bấm chuột phải vào lệnh rồi chọn <strong>Cancel</strong>, hoặc chọn lệnh rồi vào menu <strong>Document → Cancel</strong>. Windows hỏi lại thì chọn <strong>Yes</strong>. Trên Windows 11 bản mới, nút Cancel nằm trong dấu ba chấm ở cuối dòng của lệnh."
             ],
             [
               "Chờ lệnh biến mất",
@@ -1744,6 +1744,38 @@
         "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-khong-in-dhuoc",
         "thu-thuat-tin-hoc/thu-thuat-may-in/huong-dan-sua-loi-may-in-keo-giay-lien-tuc",
         "sua-may-in-tai-hcm"
+      ],
+      "anh": [
+        {
+          "file": "huy-lenh-in-hang-cho-canon-2900",
+          "viTri": 0,
+          "alt": "Cửa sổ hàng chờ in của máy in Canon LBP2900 trên Windows 11 với ba lệnh in, lệnh đầu hàng báo Error - Printing",
+          "chu": "Hàng chờ in của Windows: lệnh nằm dưới cùng là lệnh gửi trước nhất. Khi nó báo <strong>Error - Printing</strong> thì hai lệnh phía trên cũng đứng chờ theo."
+        },
+        {
+          "file": "huy-lenh-in-cancel-mot-lenh",
+          "viTri": 1,
+          "alt": "Chọn một lệnh in trong hàng chờ rồi mở menu Document, bấm Cancel để hủy lệnh in đó",
+          "chu": "Chọn đúng lệnh cần bỏ rồi vào <strong>Document → Cancel</strong>. Bấm chuột phải vào lệnh cũng ra đúng menu này."
+        },
+        {
+          "file": "huy-lenh-in-cancel-all-documents",
+          "viTri": 2,
+          "alt": "Menu Printer trong cửa sổ hàng chờ in, mục Cancel All Documents để xóa toàn bộ lệnh in",
+          "chu": "<strong>Printer → Cancel All Documents</strong> xóa một lượt toàn bộ lệnh đang chờ của máy in này."
+        },
+        {
+          "file": "huy-lenh-in-services-print-spooler",
+          "viTri": 3,
+          "alt": "Cửa sổ Services của Windows với dòng Print Spooler đang chọn và nút Stop the service",
+          "chu": "Trong cửa sổ Services, chọn dòng <strong>Print Spooler</strong> rồi bấm <strong>Stop</strong> ở cột bên trái (hoặc chuột phải → Stop)."
+        },
+        {
+          "file": "huy-lenh-in-cmd-net-stop-spooler",
+          "viTri": 4,
+          "alt": "Cửa sổ Command Prompt quyền Administrator chạy ba lệnh net stop spooler, del thư mục PRINTERS và net start spooler",
+          "chu": "Ba lệnh chạy thật trên Windows 11. Dòng báo một file .TMP đang được dùng là bình thường, không ảnh hưởng: các file lệnh in .SHD và .SPL đã xóa hết."
+        }
       ]
     }
   ]

@@ -1,0 +1,222 @@
+/* MẪU giao diện mới trang chủ tinhocht.com — nạp SAU style.css, chỉ áp cho body.mau.
+   Ý tưởng: cả trang là một tờ giấy vừa in ra — nền giấy ấm, chữ màu mực toner,
+   xanh lá của logo HT làm màu thương hiệu, cam cho nút gọi, dải thử màu C-M-Y-K làm chi tiết nhận diện. */
+.mau {
+  --paper: #f5f2ea;
+  --sheet: #fffdf8;
+  --ink: #16211b;
+  --ink-soft: #46524b;
+  --rule: #d9d3c4;
+  --green: #17793a;
+  --green-deep: #0d4a25;
+  --call: #cf4a0c;
+  --call-press: #b23f09;
+  --c: #0a9fd0; --m: #d2217a; --y: #f0c200;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --display: 'Bricolage Grotesque', 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+  --text: 'Be Vietnam Pro', 'Segoe UI', Roboto, Arial, sans-serif;
+  --brand: var(--green); --brand-dark: var(--ink); --accent: var(--call); --muted: var(--ink-soft); --line: var(--rule);
+  background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 1.0625rem; line-height: 1.7;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+.mau ::selection { background: var(--y); color: var(--ink); }
+.mau :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+.mau .container { max-width: 1160px; padding: 0 24px; }
+.mau .ic { width: 1.15em; height: 1.15em; fill: currentColor; flex: none; }
+
+/* Dải thử màu trên cùng — như mép tờ in thử */
+.mau::before { content: ""; display: block; height: 5px;
+  background: linear-gradient(90deg, var(--c) 0 25%, var(--m) 25% 50%, var(--y) 50% 75%, var(--ink) 75% 100%); }
+
+/* ---------- Header ---------- */
+.mau .site-header { background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: saturate(1.2) blur(10px); border-bottom: 1px solid var(--rule); }
+.mau .header-inner { padding: 12px 24px; }
+.mau .logo-icon { width: 44px; height: 44px; border: 0; }
+.mau .logo-text { font-family: var(--display); font-size: 1.15rem; letter-spacing: -0.01em; }
+.mau .logo-text-1 { color: var(--ink); }
+.mau .logo-text-2 { color: var(--green); }
+.mau .logo-text small { font-family: var(--text); font-size: .72rem; color: var(--ink-soft); letter-spacing: 0; }
+.mau .main-nav a { color: var(--ink); font-weight: 500; font-size: .9rem; border-bottom: 0; }
+.mau .main-nav .nav-top { padding: 8px 2px; background: linear-gradient(var(--green), var(--green)) left bottom / 0 2px no-repeat; transition: background-size 200ms var(--ease-out), color 160ms ease; }
+.mau .main-nav .submenu { background: var(--sheet); border-color: var(--rule); border-radius: 10px; box-shadow: 0 18px 40px -12px rgba(22, 33, 27, .28); }
+.mau .main-nav .submenu a:hover { background: var(--paper); color: var(--green); }
+.mau .hotline-btn { background: var(--call); border-radius: 10px; font-weight: 600; padding: 11px 18px; transition: transform 160ms var(--ease-out), background-color 160ms ease; }
+.mau .hotline-btn:active { transform: scale(.97); }
+@media (hover: hover) and (pointer: fine) {
+  .mau .main-nav .nav-top:hover, .mau .main-nav .nav-top.active { color: var(--green); background-size: 100% 2px; }
+  .mau .hotline-btn:hover { background: var(--call-press); }
+}
+
+/* ---------- Nút ---------- */
+.mau .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 12px; padding: 15px 24px; font-weight: 600; font-size: 1.02rem; line-height: 1.2;
+  transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease, box-shadow 200ms var(--ease-out); }
+.mau .btn:active { transform: scale(.97); }
+.mau .btn-primary { background: var(--call); color: #fff; box-shadow: 0 10px 22px -10px rgba(207, 74, 12, .7); }
+.mau .btn-outline { background: var(--sheet); color: var(--ink); border: 1px solid var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .mau .btn-primary:hover { background: var(--call-press); box-shadow: 0 14px 26px -10px rgba(207, 74, 12, .8); }
+  .mau .btn-outline:hover { background: var(--ink); color: var(--sheet); }
+}
+
+/* ---------- Hero ---------- */
+.mau .mau-hero { background: none; color: var(--ink); padding: clamp(40px, 6vw, 84px) 0 clamp(48px, 7vw, 96px); overflow: hidden; }
+.mau .mau-hero-inner { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.mau .mau-hero h1 { font-family: var(--display); font-weight: 800; color: var(--ink); font-size: clamp(2.3rem, 5.4vw, 4.3rem); line-height: 1.08; letter-spacing: -0.035em; margin: 0 0 22px; text-wrap: balance; }
+.mau .mau-hero .hero-sub { color: var(--green); font-weight: 600; font-size: clamp(1.02rem, 1.5vw, 1.2rem); line-height: 1.45; margin: 0 0 14px; }
+.mau .mau-hero p { color: var(--ink-soft); }
+.mau .mau-hero-lede { max-width: 56ch; margin: 0 0 28px; font-size: 1.05rem; }
+.mau .mau-hero .hero-cta { margin: 0 0 22px; gap: 12px; }
+.mau .mau-hero-contact { font-size: .95rem; margin: 0; font-variant-numeric: tabular-nums; }
+.mau .mau-hero-contact strong { color: var(--ink); }
+
+/* Máy in "nhả" phiếu giá — khoảnh khắc chuyển động duy nhất của trang */
+.mau .mau-printer { position: relative; max-width: 420px; width: 100%; justify-self: end; }
+.mau .mau-slot { position: relative; z-index: 2; height: 22px; border-radius: 11px; background: var(--ink);
+  box-shadow: inset 0 -7px 0 rgba(255, 255, 255, .07), 0 12px 18px -8px rgba(22, 33, 27, .55); }
+.mau .mau-slot::after { content: ""; position: absolute; right: 18px; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: #58d07c; box-shadow: 0 0 0 3px rgba(88, 208, 124, .22); }
+.mau .mau-feed { margin: -11px 18px 0; padding-bottom: 28px; overflow: hidden; }
+.mau .mau-sheet { background: var(--sheet); padding: 36px 26px 22px; border: 1px solid var(--rule); border-top: 0; border-radius: 0 0 6px 6px;
+  box-shadow: 0 22px 26px -18px rgba(22, 33, 27, .5); animation: mau-print 1300ms var(--ease-out) 250ms both; }
+@keyframes mau-print { from { transform: translateY(-101%); } to { transform: translateY(0); } }
+.mau .mau-sheet-head { display: flex; align-items: center; gap: 14px; padding-bottom: 16px; border-bottom: 2px solid var(--ink); }
+.mau .mau-sheet-head img { width: 60px; height: 60px; border-radius: 50%; flex: none; }
+.mau .mau-sheet-head p { margin: 0; font-family: var(--display); font-weight: 700; font-size: 1.12rem; line-height: 1.25; color: var(--ink); letter-spacing: -0.01em; }
+.mau .mau-sheet-head span { font-family: var(--text); font-weight: 400; font-size: .86rem; color: var(--ink-soft); letter-spacing: 0; }
+.mau .mau-sheet-rows { margin: 0; }
+.mau .mau-sheet-rows div { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px dashed var(--rule); }
+.mau .mau-sheet-rows dt { font-size: .9rem; color: var(--ink-soft); line-height: 1.4; }
+.mau .mau-sheet-rows dd { margin: 0; font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+.mau .mau-sheet-foot { margin: 12px 0 18px; font-size: .82rem; color: var(--ink-soft); }
+.mau .mau-cmyk { display: flex; gap: 5px; }
+.mau .mau-cmyk i { width: 16px; height: 16px; }
+.mau .mau-cmyk i:nth-child(1) { background: var(--c); }
+.mau .mau-cmyk i:nth-child(2) { background: var(--m); }
+.mau .mau-cmyk i:nth-child(3) { background: var(--y); }
+.mau .mau-cmyk i:nth-child(4) { background: var(--ink); }
+
+/* chữ hero vào lần lượt, một lần khi tải trang */
+.mau .mau-hero-text > * { animation: mau-rise 560ms var(--ease-out) both; }
+.mau .mau-hero-text > :nth-child(2) { animation-delay: 60ms; }
+.mau .mau-hero-text > :nth-child(3) { animation-delay: 110ms; }
+.mau .mau-hero-text > :nth-child(4) { animation-delay: 150ms; }
+.mau .mau-hero-text > :nth-child(5) { animation-delay: 180ms; }
+@keyframes mau-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Khối nội dung chung ---------- */
+.mau .section { padding: clamp(56px, 8vw, 104px) 0; background: none; border-top: 1px solid var(--rule); }
+.mau main h2 { font-family: var(--display); font-weight: 700; color: var(--ink); font-size: clamp(1.7rem, 3.3vw, 2.7rem); line-height: 1.14; letter-spacing: -0.028em; margin: 0 0 22px; max-width: 24ch; text-wrap: balance; }
+.mau main p + h2, .mau main ul + h2, .mau main div + h2 { margin-top: clamp(56px, 7vw, 88px); }
+.mau main h3 { font-family: var(--display); font-weight: 700; color: var(--ink); font-size: clamp(1.2rem, 1.9vw, 1.45rem); line-height: 1.25; letter-spacing: -0.015em; margin: 48px 0 14px; max-width: 52ch; }
+.mau main .section p { max-width: 70ch; margin: 0 0 12px; color: var(--ink-soft); }
+.mau main .section p a, .mau main .section li a { color: var(--green-deep); font-weight: 500; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--green) 55%, transparent); text-decoration-thickness: 1.5px; text-underline-offset: 4px; transition: text-decoration-color 160ms ease, color 160ms ease; }
+@media (hover: hover) and (pointer: fine) { .mau main .section p a:hover, .mau main .section li a:hover { color: var(--green); text-decoration-color: var(--green); } }
+.mau main .lead { font-family: var(--display); font-weight: 700; font-size: clamp(1.35rem, 2.4vw, 1.9rem); line-height: 1.25; letter-spacing: -0.02em; color: var(--ink) !important; max-width: 30ch !important; margin-bottom: 10px !important; }
+.mau main .section img { border-radius: 6px; }
+
+/* danh sách có dấu tích: hàng kẻ mảnh như bảng thông số in */
+.mau .check-list { gap: 0; margin: 18px 0 8px; max-width: 860px; }
+.mau .check-list li { padding: 13px 0 13px 34px; border-top: 1px solid var(--rule); color: var(--ink); line-height: 1.55; }
+.mau .check-list li:last-child { border-bottom: 1px solid var(--rule); }
+.mau .check-list li::before { content: ""; left: 2px; top: 19px; width: 18px; height: 12px;
+  background: var(--green); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 12'%3E%3Cpath d='M1.5 6.2 6.4 10.6 16.5 1.4' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 12'%3E%3Cpath d='M1.5 6.2 6.4 10.6 16.5 1.4' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; }
+.mau .check-list-2col { max-width: none; column-gap: 48px; }
+@media (min-width: 861px) {
+  .mau .check-list-2col li:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--rule); }
+}
+
+/* "cam kết": nhãn đậm bên trái, nội dung bên phải */
+.mau .mau-terms li { display: grid; grid-template-columns: 11.5rem 1fr; column-gap: 20px; padding-left: 0; }
+.mau .mau-terms li::before { display: none; }
+.mau .mau-terms strong { font-family: var(--display); font-weight: 700; color: var(--green-deep); }
+
+/* khối kêu gọi: băng mực đậm */
+.mau .callout { background: var(--ink); color: var(--sheet); border: 0; border-radius: 10px; padding: clamp(26px, 4vw, 44px); margin: 44px 0 8px; max-width: 860px; }
+.mau main .section .callout p { color: #cfd6cf; margin: 0 0 10px; max-width: none; }
+.mau main .section .callout p:last-child { margin-bottom: 0; }
+.mau main .section .callout strong { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 2.6vw, 1.9rem); line-height: 1.2; letter-spacing: -0.02em; color: var(--sheet); margin: 6px 0; }
+.mau main .section .callout a { color: var(--y); text-decoration-color: color-mix(in srgb, var(--y) 55%, transparent); font-variant-numeric: tabular-nums; }
+@media (hover: hover) and (pointer: fine) { .mau main .section .callout a:hover { color: #fff; text-decoration-color: #fff; } }
+.mau main .section .callout-text { font-family: var(--display); font-weight: 700; font-size: clamp(1.15rem, 2vw, 1.45rem); color: var(--ink); letter-spacing: -0.01em; margin: 26px 0 10px; }
+
+/* ---------- Khối 1: ảnh minh hoạ gốc ---------- */
+.mau .mau-s1 img { margin: 26px 0 clamp(48px, 6vw, 72px); border: 1px solid var(--rule); box-shadow: 0 24px 34px -24px rgba(22, 33, 27, .45); }
+
+/* ---------- Khối 2: bảng giá trên nền mực ---------- */
+.mau .mau-s2 { background: var(--ink); border-top: 0; }
+.mau .mau-s2 h2 { color: var(--sheet); }
+.mau main .mau-s2 p { color: #c3ccc4; }
+.mau main .mau-s2 .lead { color: var(--sheet) !important; font-family: var(--text); font-weight: 500; font-size: 1.05rem; letter-spacing: 0; max-width: 70ch !important; }
+.mau main .mau-s2 p a { color: var(--y); text-decoration-color: color-mix(in srgb, var(--y) 55%, transparent); }
+.mau .mau-s2 .price-table-wrap { border: 0; border-radius: 0; margin-top: 36px; }
+.mau .mau-s2 .price-table { background: none; font-size: .95rem; }
+.mau .mau-s2 .price-table thead th { background: none; color: #93a097; font-weight: 500; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; padding: 0 0 12px; border-bottom: 2px solid var(--sheet); }
+.mau .mau-s2 .price-table thead th:last-child { text-align: right; }
+.mau .mau-s2 .price-table tbody tr, .mau .mau-s2 .price-table tbody tr:nth-child(even) { background: none; }
+.mau .mau-s2 .price-table tbody tr + tr { border-top: 0; }
+.mau .mau-s2 .price-table td { padding: 18px 24px 18px 0; border-bottom: 1px solid rgba(255, 253, 248, .16); color: #dfe5df; line-height: 1.6; vertical-align: top; }
+.mau .mau-s2 .price-table td.price { padding-right: 0; white-space: nowrap; text-align: right; font-family: var(--display); font-weight: 700; font-size: 1.08rem; color: var(--y); font-variant-numeric: tabular-nums; }
+@media (hover: hover) and (pointer: fine) { .mau .mau-s2 .price-table tbody tr { transition: background-color 160ms ease; } .mau .mau-s2 .price-table tbody tr:hover { background: rgba(255, 253, 248, .05); } }
+
+/* ---------- Khối 4: trang giấy trắng + ảnh gốc ---------- */
+.mau .mau-s4 { background: var(--sheet); }
+.mau .photo-grid { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; margin: 0 0 clamp(40px, 5vw, 64px); }
+.mau .photo-grid img { width: auto; max-width: 100%; height: auto; max-height: 240px; border: 1px solid var(--rule); background: #fff; border-radius: 6px; }
+.mau .mau-s4 h3 + p + p + .photo-grid, .mau .mau-s4 p + .photo-grid, .mau .mau-s5 .photo-grid { margin-top: 36px; }
+.mau .mau-s5 .photo-grid:last-child { margin-bottom: 0; }
+
+/* ---------- Khối 5: danh sách link quận / thủ thuật ---------- */
+.mau .mau-s5 .check-list-2col li { padding: 0; }
+.mau .mau-s5 .check-list-2col li::before { display: none; }
+.mau main .mau-s5 .check-list-2col li a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 2px; color: var(--ink); font-weight: 500; text-decoration: none; transition: color 160ms ease; }
+.mau .mau-s5 .check-list-2col li a::after { content: ""; flex: none; width: 18px; height: 12px; background: var(--green);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 12'%3E%3Cpath d='M1 6h15M11 1l5 5-5 5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 12'%3E%3Cpath d='M1 6h15M11 1l5 5-5 5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 200ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .mau main .mau-s5 .check-list-2col li a:hover { color: var(--green); }
+  .mau .mau-s5 .check-list-2col li a:hover::after { transform: translateX(4px); }
+}
+
+/* ---------- Footer ---------- */
+.mau .site-footer { background: var(--ink); color: #c3ccc4; padding: clamp(48px, 6vw, 80px) 0 24px; }
+.mau .site-footer h2 { font-family: var(--display); font-weight: 700; color: var(--sheet); letter-spacing: -0.01em; }
+.mau .site-footer a { color: #e6ebe6; transition: color 160ms ease; }
+@media (hover: hover) and (pointer: fine) { .mau .site-footer a:hover { color: var(--y); } }
+.mau .site-footer .copyright { color: #8f9b93; border-top-color: rgba(255, 253, 248, .14); }
+
+/* ---------- Nút nổi (máy tính) — thanh gọi nhanh (điện thoại) có sẵn của site ---------- */
+.mau .float-btn { box-shadow: 0 12px 22px -10px rgba(22, 33, 27, .6); transition: transform 160ms var(--ease-out); }
+.mau .float-btn:active { transform: scale(.95); }
+.mau .float-call { background: var(--call); }
+
+/* ---------- Màn hình nhỏ ---------- */
+@media (max-width: 900px) {
+  .mau .mau-hero-inner { grid-template-columns: 1fr; }
+  .mau .mau-printer { justify-self: start; max-width: 400px; }
+}
+@media (max-width: 860px) {
+  .mau .main-nav { background: var(--sheet); }
+}
+@media (max-width: 720px) {
+  .mau { font-size: 1rem; padding-bottom: 76px; }
+  .mau .container { padding: 0 18px; }
+  .mau .mau-hero .hero-cta .btn { flex: 1 1 100%; justify-content: center; }
+  .mau .mau-terms li { grid-template-columns: 1fr; row-gap: 2px; }
+  .mau .mau-s2 .price-table td { padding: 16px 14px 16px 0; font-size: .9rem; }
+  .mau .mau-s2 .price-table td.price { white-space: normal; width: 96px; font-size: 1rem; }
+  .mau .photo-grid img { max-height: 150px; }
+  .mau .mobile-cta-bar { gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(12px); border-top: 1px solid var(--rule); }
+  .mau .mobile-cta-bar .mobile-cta { display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-variant-numeric: tabular-nums; transition: transform 160ms var(--ease-out); }
+  .mau .mobile-cta-bar .mobile-cta:active { transform: scale(.97); }
+  .mau .mobile-cta-bar .call { flex: 1.6; background: var(--call); color: #fff; }
+  .mau .mobile-cta-bar .zalo { background: var(--sheet); color: var(--ink); border: 1px solid var(--ink); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mau .mau-sheet, .mau .mau-hero-text > * { animation: none; }
+  .mau .btn, .mau .hotline-btn, .mau .mobile-cta-bar .mobile-cta { transition: none; }
+}
+
+.mau .check-list + p { margin-top: 22px; }
+.mau a[href^="tel:"] { white-space: nowrap; }
